@@ -16,6 +16,8 @@ export async function buildDomainModule(): Promise<string> {
         if (id === `\0${entry}`) return [
           `export * from ${JSON.stringify(join(root, 'src/domain/task-context.ts'))};`,
           `export * from ${JSON.stringify(join(root, 'src/domain/units.ts'))};`,
+          `export * from ${JSON.stringify(join(root, 'src/domain/progress.ts'))};`,
+          `export * from ${JSON.stringify(join(root, 'src/persistence/progress-store.ts'))};`,
         ].join('\n');
       },
     }],
