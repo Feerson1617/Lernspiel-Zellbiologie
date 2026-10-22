@@ -1,0 +1,134 @@
+{
+  "reviewId": "P01c-self-check-2026-10-22",
+  "reviewKind": "self_check",
+  "commitSha": "787faa2e02ef016bb8fa5873bdaf5164e4b370ee",
+  "sourceVersions": [
+    "Konzept 1.0 / 22.10.2026",
+    "main after merge PR #3: a91d6e240e9532c4142033f0f8b0b28e943051af",
+    "21 unchanged protected files: qa/source-manifest.json",
+    "Progress schemaVersion 1 unchanged; caller-provided task/rubric/model/content labels; no historical migration invented"
+  ],
+  "environment": {
+    "testedAtUTC": "2026-10-22T12:19:05.243661+00:00",
+    "os": "Linux-6.18.55-x86_64-with-glibc2.41",
+    "python": "3.12.14",
+    "node": "v24.19.0",
+    "npm": "11.9.0",
+    "browser": "Chromium 154.0.8037.57 built on Debian GNU/Linux 13 (trixie)",
+    "countsScope": "Final complete regression on the implementation commit. A later documentation-only commit adds this report; preliminary attempts are not added to final totals.",
+    "technicalSuites": {
+      "unit": 271,
+      "content": 114,
+      "build": 6,
+      "browser": 27
+    },
+    "newUnitCases": {
+      "progress": 104,
+      "storage": 28
+    },
+    "newBrowserCases": 15,
+    "conceptChecks": {
+      "passed": 694,
+      "failed": 0,
+      "typescriptDeclarationCheckExecuted": true,
+      "scope": "Separate editorial data/schema/reference-arithmetic check; no runtime correction or simulation."
+    },
+    "identityCoverage": {
+      "unchangedTasks": 79,
+      "unchangedMissionModuleRecords": 19
+    },
+    "protectedSourceFilesUnchanged": 21,
+    "runtimeBoundary": "Start page remains unchanged and does not create a progress store. Real browser tests build the new modules in memory with the production runtime-import guard enabled; no test module is written to dist.",
+    "contextLimit": "The binding-approved schema v1 contains no contextHash. JSON restoration preserves historical metadata but never restores a current-success receipt. P02 must provide a new context-bound corrector handoff; this module cannot judge biological answers.",
+    "historyLimit": "A different content envelope stays untouched on disk and is exposed as history. New work stays in session; explicit metadata export and own-key reset are available. No automatic mixing or invented migration.",
+    "assistanceRule": "For one task/instance/version tuple, assistance cannot revert to independent; solution_viewed cannot revert to less disclosure. A new example requires a new instance ID. No mastery certificate is inferred.",
+    "storageFailureSimulation": "Real Chromium localStorage and reload roundtrip. Accessor/method overrides throw DOMException SecurityError and QuotaExceededError at the browser storage boundary. Browser quota was not filled to capacity; no real-device private-mode test.",
+    "concurrencyLimit": "Unexpected prior changes to the own key stop writes; no atomic multi-tab transaction or synchronization claimed.",
+    "distArtifacts": [
+      {
+        "file": "assets/favicon-BBsVGNz0.svg",
+        "bytes": 196,
+        "sha256": "aa985a2fdd116dc0dbecda5e953bc794ee0d8b57808ea234e8fce79bae75a37e"
+      },
+      {
+        "file": "assets/index-92g-guUY.js",
+        "bytes": 3752,
+        "sha256": "c8006380bebf1dd37080164407046abbce1af76b9264a3fdd12f7bec3e1f7515"
+      },
+      {
+        "file": "assets/index-D6JBs7Gr.css",
+        "bytes": 5803,
+        "sha256": "e8a3871aa7485d1b1d7dc1c5d5c99fe725e03cca96102b89a6dfd86848a3cc7e"
+      },
+      {
+        "file": "index.html",
+        "bytes": 962,
+        "sha256": "bfad6ec651669679ca18461711cb577f8ee6b7406456b9fa56f4981468b2d1fa"
+      }
+    ],
+    "productionArtifactsByteIdenticalToP01bAndP00": true,
+    "localReports": [
+      "qa/generated/unit.json",
+      "qa/generated/content.json",
+      "qa/generated/build.json",
+      "qa/generated/playwright.json",
+      "qa/generated/concept.json"
+    ],
+    "preliminaryAttempts": [
+      {
+        "command": "npx vitest run tests/unit/progress.test.ts tests/unit/progress-store.test.ts",
+        "passed": 123,
+        "failed": 0,
+        "note": "Before additional assistance-history and version-boundary cases."
+      },
+      {
+        "command": "npm run test:browser",
+        "exitCode": 1,
+        "browserTestsExecuted": 0,
+        "diagnosis": "Publication guard blocked an untracked .vitest/json/output.json created by the targeted Vitest invocation. Removed only that generated report and empty directories; used qa/generated outputs thereafter. Protection was not weakened."
+      },
+      {
+        "command": "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:browser",
+        "passed": 24,
+        "failed": 0,
+        "note": "Before the final additional browser version/assistance case, included in final 27-case browser regression."
+      }
+    ]
+  },
+  "executedCommands": [
+    "npm run check:types",
+    "npx vitest run tests/unit/progress.test.ts tests/unit/progress-store.test.ts",
+    "npm run test:unit",
+    "npm run test:browser",
+    "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:browser",
+    "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run check",
+    "npm run check:publish",
+    "git diff --cached --check",
+    "Python SHA-256 comparison of 21 protected source files and 4 dist artifacts with previous report",
+    "JSON Schema validation of this self-check manifest"
+  ],
+  "caseCounts": {
+    "passed": 418,
+    "failed": 0,
+    "skipped": 0
+  },
+  "newCases": [
+    "All 30 status/assistance combinations; clarification versus clarify status; solution viewing never becomes completion or independent performance.",
+    "History retains assistance; same-instance support cannot be erased by later independent claims; new example can add a separate independent record.",
+    "Exact schema keys, all 79 canonical task IDs available, immutable snapshots, duplicate/unknown IDs, missing/invalid labels and unsupported schemas.",
+    "Raw answers/names/extra hash fields, accessors/toJSON, symbols, sparse arrays, NaN/Infinity and hidden data rejected without logging input contents.",
+    "Live bound attempts versus JSON-restored unverified metadata; each version, changed concentration/profile/instance/seed invalidates old success; stale handoffs rejected.",
+    "Roundtrip, own-key reset, explicit metadata exports, blocked getter/read/write/removal, quota recovery, corrupted/manipulated storage and foreign-key preservation.",
+    "Unknown content history preserved, invalid envelopes quarantined without overwrite, unexpected own-key changes stop writes.",
+    "Actual Chromium desktop/tablet/mobile: reload and foreign storage, DOMException simulations, version/context changes, help history and no context/raw-answer serialization."
+  ],
+  "blockedChecks": [
+    "Independent countercheck by ChatGPT remains pending; this report is only a Codex self-check.",
+    "WebKit and real iPad/Safari, real private-browsing storage policies and physical storage exhaustion were not tested.",
+    "Private original exam/expectation horizons were not supplied or accessed; private source/case-proximity review not performed.",
+    "No runtime corrector, missions, biology simulation, grading or 3D model exists; empty model and separate-review suites were not run or claimed green.",
+    "GitHub Actions results are separate from this local report. Feature branches do not deploy; no merge authorized or performed."
+  ],
+  "criticalFindings": [],
+  "releaseStatus": "development_only"
+}
