@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "baseCommit": "49fe4936cf0250ef5bc0b36f369085b0c36fd082",
+  "conceptVersion": "1.0 / 22.10.2026",
+  "scope": "P00; original concept and editorial specifications remain unchanged. No tasks or biological models released.",
+  "requirements": [
+    "R01",
+    "R19",
+    "R20"
+  ],
+  "privateOriginals": {
+    "accessed": false,
+    "includedInRepository": false,
+    "limitation": "Private teaching/exam originals were not supplied; no private source comparison or transfer-case proximity review claimed."
+  },
+  "protectedFiles": [
+    {
+      "path": "00_START_HIER.md",
+      "sha256": "2ec7ca079e4923f60d8d76f92f8eaca8b13527850bc53dada2b8394faeba4cf6"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "9e98e305aa93c9e98639d5f7ecee996bebb54dacde2c5445f593b961ed35b0ba"
+    },
+    {
+      "path": "A_Fach_Didaktik.md",
+      "sha256": "c746a7d923ae49288a6def1ab1c15cbfc51a00da3492df6bf1f19ea786dbdf2f"
+    },
+    {
+      "path": "B_Technik_Modelle.md",
+      "sha256": "059f0c3ed58aabd0e73338edf97c25fefbfd72c097b71a580bbd90cd4e5853b2"
+    },
+    {
+      "path": "C_Feedback_Pruefung.md",
+      "sha256": "36ff79eed41c13feb206dbe821cd10fac5755855ff0251696835ebea869d28ef"
+    },
+    {
+      "path": "D_Entwicklungsroadmap.md",
+      "sha256": "af91d18dde9e5c60d164c8f9f3fc41f0ba4c6aba7330ef78c2d4a5b94426ca9d"
+    },
+    {
+      "path": "E_Codex_Masterauftrag.md",
+      "sha256": "6189886f427e1ee84ece38d4ae6985b36d8628b6db964d398a64e1b1a527ee54"
+    },
+    {
+      "path": "F_Aufgabenkatalog.md",
+      "sha256": "e4a64195dc6b96780426487e274531694a6d9a1305717c3148df1151cef6b24a"
+    },
+    {
+      "path": "spec/asset-briefs.json",
+      "sha256": "993c8405b6af2313617945bcfcb91ba4eaa1a828d97cf602780a01a6f8a59c06"
+    },
+    {
+      "path": "spec/contracts.d.ts",
+      "sha256": "28bb1fa6d12d1f55c344dcbaf0d3f7b4a2cf279cd3e139367d73b234756bbb05"
+    },
+    {
+      "path": "spec/missions.json",
+      "sha256": "d3dbf0162accc97342863ac0818aefbbb7fd51c5d663df93e394a3b23b32ad53"
+    },
+    {
+      "path": "spec/model-vectors.json",
+      "sha256": "e4dc765eb78dcdb0ea027310e3dbf7312aa5834f707be860a50a5b5c47b924e9"
+    },
+    {
+      "path": "spec/progress.schema.json",
+      "sha256": "deceeb876a0d34034ff33e839577b7f21a0a924f822975f0583cf8c45a2857c4"
+    },
+    {
+      "path": "spec/reference-fixtures.json",
+      "sha256": "9ff2735aba43510b2175a7d3e2267fed92a56d16883e2b8d05417cdb55d5403e"
+    },
+    {
+      "path": "spec/requirements.json",
+      "sha256": "ba27e7b13112039ca05ef9cbc8ba838d6866b5a6495bcc8d4f0ecc04f0a095db"
+    },
+    {
+      "path": "spec/result.schema.json",
+      "sha256": "9ea4e1d937dedcc6c5e854bc4ed9f7c6102fd231c85419b210b5a099b324645d"
+    },
+    {
+      "path": "spec/review-manifest.schema.json",
+      "sha256": "02e0e7174d7bd5d78479d0c3b8cf4a7cafe50eb83f02eef77d8175d74de5c878"
+    },
+    {
+      "path": "spec/task.schema.json",
+      "sha256": "520466ba8cb12721ce79cfb94de430da902a6069686460967ded33f1d9a0c6fc"
+    },
+    {
+      "path": "spec/tasks.json",
+      "sha256": "1ff30e88a212b1cd7480d55a2faa926c1f3eb9d81b3cb66d7a9e548284314438"
+    },
+    {
+      "path": "spec/text-rubrics.json",
+      "sha256": "191b80c7c7d386c6cd9476d8007ed1771d049b556ebc3d18bea8d4e740535555"
+    },
+    {
+      "path": "tools/check_spec.py",
+      "sha256": "832c7014459d677f0dd8e17950efd9cbc1787001371a83810aa070e46e2c429a"
+    }
+  ]
+}
