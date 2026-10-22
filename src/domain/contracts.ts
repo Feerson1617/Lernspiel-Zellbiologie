@@ -34,7 +34,7 @@ export interface TaskCatalog {
   readonly tasks: readonly TaskMetadata[];
 }
 
-/** Structural extension point only. P01b supplies values and version binding. */
+/** Separate caller-provided labels, validated/bound by the TaskContext factory. */
 export interface VersionInfo {
   readonly taskVersion: string;
   readonly rubricVersion: string;

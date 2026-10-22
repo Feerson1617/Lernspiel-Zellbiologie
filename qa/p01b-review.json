@@ -1,0 +1,153 @@
+{
+  "reviewId": "P01b-self-check-2026-10-22",
+  "reviewKind": "self_check",
+  "commitSha": "533101e5ec3e438698c4a3715a24adb000ae5b86",
+  "sourceVersions": [
+    "Konzept 1.0 / 22.10.2026",
+    "main after PR #2: 255c05c5506696701eca92dd236955addab60f84",
+    "21 unchanged protected source files: qa/source-manifest.json",
+    "Task context hash protocol sha256-v1; independent caller-provided task/rubric/content/model labels; no simulation versions assigned"
+  ],
+  "environment": {
+    "testedAtUTC": "2026-10-22T10:34:32.762542+00:00",
+    "os": "Linux-6.18.55-x86_64-with-glibc2.41",
+    "python": "3.12.14",
+    "node": "v24.19.0",
+    "npm": "11.9.0",
+    "browser": "Chromium 154.0.8037.57 built on Debian GNU/Linux 13 (trixie)",
+    "countsScope": "Final complete regression on the code commit above. The following documentation commit only adds this manifest. Preliminary attempts are separate, not added to final counts.",
+    "technicalSuites": {
+      "unit": 139,
+      "contentMetadata": 114,
+      "build": 6,
+      "browser": 12
+    },
+    "newUnitCases": {
+      "context": 49,
+      "units": 51
+    },
+    "conceptChecks": {
+      "passed": 694,
+      "failed": 0,
+      "typescriptDeclarationCheckExecuted": true,
+      "scope": "Separate editorial schema/content/reference arithmetic check, not runtime answer evaluation or simulation."
+    },
+    "identityCoverage": {
+      "unchangedTasks": 79,
+      "unchangedMissionModuleRecords": 19
+    },
+    "protectedSourceFilesUnchanged": 21,
+    "newDependency": {
+      "name": "@noble/hashes",
+      "version": "2.4.0",
+      "license": "MIT",
+      "purpose": "Pure synchronous portable SHA-256; pinned with artifact integrity in package-lock.json"
+    },
+    "hashOracle": "Explicit canonical JSON test string and Node crypto SHA-256; same expected identity asserted in actual Chromium on three viewports.",
+    "runtimeBoundary": "No spec/editorial imports. The start page does not load the new domain functions. Browser tests temporarily build a production-guarded domain module in memory and route it only in the test browser.",
+    "quantityConvention": {
+      "concentration": "mol/m3",
+      "amount": "mol",
+      "volume": "m3",
+      "pressureOrPotential": "Pa",
+      "absoluteTemperature": "K",
+      "time": "s"
+    },
+    "numericLimits": "IEEE-754 binary64; finite values required; linear nonzero-to-zero underflow and overflow rejected; relative checks for tiny values. Absolute quantities are nonnegative except pressure-unit values; signed exchanges and temperature differences are outside this contract.",
+    "modelLimits": "All relevant state must be explicitly supplied. No biological state validator, model registry, automatic version issuance or real-time calibration implemented.",
+    "distArtifacts": [
+      {
+        "file": "assets/favicon-BBsVGNz0.svg",
+        "bytes": 196,
+        "sha256": "aa985a2fdd116dc0dbecda5e953bc794ee0d8b57808ea234e8fce79bae75a37e"
+      },
+      {
+        "file": "assets/index-92g-guUY.js",
+        "bytes": 3752,
+        "sha256": "c8006380bebf1dd37080164407046abbce1af76b9264a3fdd12f7bec3e1f7515"
+      },
+      {
+        "file": "assets/index-D6JBs7Gr.css",
+        "bytes": 5803,
+        "sha256": "e8a3871aa7485d1b1d7dc1c5d5c99fe725e03cca96102b89a6dfd86848a3cc7e"
+      },
+      {
+        "file": "index.html",
+        "bytes": 962,
+        "sha256": "bfad6ec651669679ca18461711cb577f8ee6b7406456b9fa56f4981468b2d1fa"
+      }
+    ],
+    "productionArtifactsByteIdenticalToP00": true,
+    "npmAudit": "0 known vulnerabilities at execution time, including development dependencies.",
+    "localReports": [
+      "qa/generated/unit.json",
+      "qa/generated/content.json",
+      "qa/generated/build.json",
+      "qa/generated/playwright.json",
+      "qa/generated/concept.json"
+    ],
+    "preliminaryAttempts": [
+      {
+        "command": "npm run check:types",
+        "exitCode": 1,
+        "diagnostics": 5,
+        "diagnosis": "UnitFor<D> needed distribution for union dimension parameters; two intentional invalid ID/phase fixtures needed explicit unknown casts. Fixed without removing negative static checks."
+      },
+      {
+        "command": "npm run test:unit",
+        "passed": 139,
+        "failed": 0,
+        "note": "Runtime unit tests passed; initial type diagnostics were resolved separately."
+      },
+      {
+        "command": "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:browser",
+        "passed": 9,
+        "failed": 3,
+        "diagnosis": "The domain test helper expected an object but Vite returned one library output in an array. Normalized both API return forms while still requiring one self-contained module."
+      },
+      {
+        "command": "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npx playwright test tests/browser/domain.spec.ts --project=desktop-chromium",
+        "passed": 1,
+        "failed": 0,
+        "note": "Targeted verification after the helper correction; final regression covers all three projects."
+      }
+    ]
+  },
+  "executedCommands": [
+    "npm view @noble/hashes version engines license exports --json",
+    "npm install --save-exact @noble/hashes@2.4.0 --no-fund --no-audit",
+    "npm run check:types",
+    "npm run test:unit",
+    "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:browser",
+    "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npx playwright test tests/browser/domain.spec.ts --project=desktop-chromium",
+    "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run check",
+    "npm run check:publish",
+    "npm audit --audit-level=high",
+    "git diff --cached --check",
+    "SHA-256 checks of all protected files and the four dist artifacts against the P00 manifest",
+    "JSON Schema validation of this self-check manifest"
+  ],
+  "caseCounts": {
+    "passed": 271,
+    "failed": 0,
+    "skipped": 0
+  },
+  "newCases": [
+    "Explicit canonical JSON and Node SHA-256 oracle; nested/integer/Unicode key order; array order, tiny numbers, types and signed values.",
+    "All version labels, task, instance, seed, phase, concentration, pressure, cell profile and model time affect context identity.",
+    "Deep copied/frozen data, shared references, prediction capture before mutation and recomputation of supplied hashes.",
+    "Missing/invalid labels/IDs/phases, inconsistent duplicate model version, unsupported JSON values, cycles, accessors, sparse arrays and hidden fields rejected.",
+    "Matching bindings accepted only as bindings; stale and contradictory bindings rejected without answer grading.",
+    "Independent decimal targets for mol/L, mmol/L, pL, pmol, MPa, Celsius and minutes; wrong/missing units, nonfinite numbers, negative absolute values, overflow and underflow rejected.",
+    "Browser execution of the actual bundled pure-domain functions in desktop/tablet/mobile Chromium, with matching cross-runtime hash and SI values."
+  ],
+  "blockedChecks": [
+    "No independent countercheck performed or claimed; this is a self-check, not teacher release.",
+    "Private original exams/expectation horizons not supplied or accessed; private source/case-proximity review not performed.",
+    "WebKit and real iPad/Safari not tested; Chromium viewport/touch emulation is not real-device certification.",
+    "Model and separate-review suites have no implementation and were not executed; no zero-test success claimed.",
+    "GitHub Actions result is separate from this local report; deployment is intentionally restricted to reviewed main pushes."
+  ],
+  "criticalFindings": [],
+  "releaseStatus": "development_only"
+}
