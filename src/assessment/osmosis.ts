@@ -5,6 +5,7 @@ import type { OsmosisFeedbackCode } from './osmosis-feedback.ts';
 import { parseTermAnswer } from './term-grammar.ts';
 import type { TermClause, TermGrammarProfile, TermMeaning, TermRef } from './term-grammar.ts';
 import { tokenizeText } from './text.ts';
+import { asNamingFrames, namingObjectFrames, namingSubjectFrames } from './naming-frames.ts';
 
 export const OSMOSIS_TASK_ID = 'M6.02';
 export const OSMOSIS_FIELD_ID = 'process';
@@ -17,10 +18,23 @@ const SUBJECTS = [
   ['der', 'wassertransportvorgang'], ['der', 'transportvorgang'], ['der', 'prozess'],
   ['dieser', 'prozess'], ['die', 'transportart'],
   ['der', 'transport'], ['die', 'gesuchte', 'transportart'],
+  ['die', 'bezeichnung', 'des', 'vorgangs'],
 ];
 /** Field-specific naming subjects; none of the membrane frames are inherited. */
 const PROFILE: TermGrammarProfile = {
   frames: [
+    ...namingSubjectFrames(SUBJECTS),
+    ...namingObjectFrames([['den', 'vorgang'], ['diesen', 'vorgang'], ['den', 'prozess'], ['diesen', 'prozess'], ['den', 'transport'], ['den', 'wassertransport']]),
+    ...asNamingFrames(['vorgang', 'prozess']),
+    ...['vorgang', 'prozess'].flatMap(noun => [
+      { words: ['bei', 'dem', noun, 'handelt', 'es', 'sich', 'um'], insertions: true as const },
+      { words: ['bei', 'diesem', noun, 'handelt', 'es', 'sich', 'um'], insertions: true as const },
+      { words: ['fuer', 'den', noun, 'passt'], insertions: true as const },
+      { words: ['fuer', 'diesen', noun, 'wuerde', 'ich'], endings: [['sagen'], ['nennen']], insertions: true as const },
+      { words: ['ich', 'wuerde', 'bei', 'diesem', noun, 'von'], endings: [['sprechen']], insertions: true as const },
+    ]),
+    ...SUBJECTS.map(subject => ({ words: [...subject, 'wird', 'als'], endings: [['bezeichnet']], insertions: true as const })),
+    ['den', 'beschriebenen', 'wassertransport', 'nennt', 'man'],
     ...SUBJECTS.flatMap((subject) => [['heisst'], ['ist'], ['nennt', 'man'], ['wird']].flatMap((verb) =>
       [[...subject, ...verb], [...subject, 'hier', ...verb]])),
     ['der', 'fachbegriff', 'ist'], ['der', 'gesuchte', 'begriff', 'ist'],
@@ -33,6 +47,7 @@ const PROFILE: TermGrammarProfile = {
     ['wir', 'sprechen', 'hier', 'von'],
     ['den', 'vorgang', 'nennt', 'man'], ['den', 'transport', 'nennt', 'man'],
   ], contextAdverbs: ['hier', 'dabei'],
+  postFrames: [['ist', 'der', 'gesuchte', 'vorgang']],
 };
 const MEANINGS: readonly TermMeaning[] = [
   { id: 'osmosis', forms: [['osmose']], spellingVariants: ['osmosse', 'osmosee', 'ossmose', 'osmsoe'] },

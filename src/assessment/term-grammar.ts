@@ -1,6 +1,6 @@
 import { editDistance, isLimitedTypo } from './text.ts';
 import type { TextToken } from './text.ts';
-import { CERTAINTY_TAILS, COMMON_NAMING_FRAMES, POST_NAMING_FRAMES } from './naming-frames.ts';
+import { CERTAINTY_TAILS, COMMON_NAMING_FRAMES, NAMING_MODIFIERS, POST_NAMING_FRAMES } from './naming-frames.ts';
 import type { NamingFrame, NamingFrameInput } from './naming-frames.ts';
 
 export interface TermMeaning {
@@ -30,7 +30,7 @@ const QUOTES: Readonly<Record<string, string>> = Object.freeze({ '„': '“', '
 const HEDGES = [
   ['ich', 'bin', 'mir', 'nicht', 'sicher', ',', 'aber'],
   ['meiner', 'meinung', 'nach'], ['ich', 'wuerde', 'sagen'],
-  ['meines', 'wissens'],
+  ['meines', 'wissens'], ['meiner', 'ansicht', 'nach'], ['aus', 'meiner', 'sicht'],
   ['ich', 'nehme', 'an'], ['ich', 'glaube', 'mal'],
   ['ich', 'denke'], ['ich', 'glaube'], ['ich', 'vermute'],
   ['vielleicht'], ['wahrscheinlich'], ['vermutlich'], ['eventuell'],
@@ -44,6 +44,7 @@ const FRAMES = [
   ['die', 'gesuchte', 'struktur', 'nennt', 'man'], ['diese', 'grenze', 'wird'],
   ['die', 'bezeichnung', 'lautet'], ['meine', 'antwort', ':'], ['gesucht', 'wird'],
   ['ich', 'wuerde', 'die', 'membran'],
+  ['ich', 'wuerde', 'die', 'grenze'],
   ['die', 'membran', 'nennt', 'man'], ['die', 'membran', 'heisst'],
   ['die', 'membran', 'wird'], ['sie', 'wird'],
   ['diese', 'membran', 'heisst'], ['die', 'membran', 'ist'],
@@ -58,6 +59,7 @@ export interface TermGrammarProfile {
   /** Replaces the default membrane naming frames; never silently appends them. */
   readonly frames: readonly NamingFrameInput[];
   readonly contextAdverbs?: readonly string[];
+  readonly postFrames?: readonly (readonly string[])[];
 }
 
 /** Finite T1 grammar. Complete consumption is mandatory; unknown text stays unknown. */
@@ -68,15 +70,57 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
   const sequence = (index: number, words: readonly string[]) => words.every((word, offset) => at(index + offset) === word);
   const shortHedge = (index: number) => HEDGES.find((words) => words.length === 1 && sequence(index, words));
   const skipContextAdverb = (index: number) => profile?.contextAdverbs?.includes(at(index) ?? '') ? index + 1 : index;
-  const frames: readonly NamingFrame[] = [...COMMON_NAMING_FRAMES, ...(profile?.frames ?? FRAMES).map(input => {
+  const skipNamingModifiers = (start: number) => {
+    let index = start;
+    for (let count = 0; count < 3; count++) {
+      const words = NAMING_MODIFIERS.find(words => sequence(index, words));
+      if (!words) break;
+      index += words.length;
+    }
+    return index;
+  };
+  // Optional modifiers occupy explicit gaps in naming constructions only.
+  // The original tokens/offsets remain intact; no general text filtering occurs.
+  const matchNaming = (start: number, words: readonly string[], insertions = true): number | null => {
+    let index = start;
+    for (const [offset, word] of words.entries()) {
+      if (at(index) !== word && insertions && offset > 0) index = skipNamingModifiers(index);
+      if (at(index) !== word) return null;
+      index++;
+    }
+    return index;
+  };
+  const inputs: readonly NamingFrame[] = [...COMMON_NAMING_FRAMES, ...(profile?.frames ?? FRAMES).map(input => {
     if (!Array.isArray(input)) return input as NamingFrame;
     const words = input as readonly string[];
     const ending = words[1] === 'muesste' || words[1] === 'koennte' ? 'sein'
       : words.at(-1) === 'wird' && words[0] !== 'gesucht' ? 'genannt'
         : words[0] === 'ich' && words[1] === 'wuerde' ? 'nennen' : null;
-    return { words, endings: ending ? [[ending]] : [[]] };
-  })].sort((a, b) => b.words.length - a.words.length);
-  const frameAt = (index: number) => frames.find(frame => sequence(index, frame.words));
+    return { words, endings: ending ? [[ending]] : [[]], insertions: true as const };
+  })];
+  // Equal prefixes may offer distinct *required* endings. Keep all alternatives
+  // instead of selecting the first prefix and silently losing another ending.
+  const unique = new Map<string, NamingFrame>();
+  for (const frame of inputs) {
+    const key = JSON.stringify([frame.words, frame.negated, frame.contrastPreposition, frame.insertions]);
+    const previous = unique.get(key);
+    unique.set(key, previous ? { ...frame, endings: [...(previous.endings ?? [[]]), ...(frame.endings ?? [[]])] } : frame);
+  }
+  const frames = [...unique.values()].sort((a, b) => b.words.length - a.words.length);
+  const frameAt = (index: number) => {
+    for (const frame of frames) {
+      const next = matchNaming(index, frame.words, frame.insertions === true);
+      if (next === null) continue;
+      // A bare preposition is less specific than the existing explicit
+      // metanaming relation "mit <name> meine ich <description>".
+      if (frame.words.length === 1 && frame.words[0] === 'mit') {
+        const named = term(next);
+        if (named && sequence(named.next, ['meine', 'ich'])) continue;
+      }
+      return { ...frame, next };
+    }
+    return undefined;
+  };
 
   function term(index: number): ReadTerm | null {
     if (ARTICLES.has(at(index) ?? '')) index++;
@@ -127,6 +171,7 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
       if (!hedge) break;
       index += hedge.length;
       if (at(index) === ',' || at(index) === ':') index++;
+      if (!frameAt(index)) index = skipNamingModifiers(index);
     }
     // Existential naming frame. Only a harmless one-word hedge can occur before "um".
     let existential = false;
@@ -138,11 +183,10 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
       index++; existential = true;
     }
     const frame = frameAt(index);
-    if (frame) index += frame.words.length;
+    if (frame) index = frame.next;
     const framed = !!frame || existential;
     if (frame) {
-      index = skipContextAdverb(index);
-      if (at(index) === 'doch' || at(index) === 'wohl') index++;
+      index = skipNamingModifiers(index);
       if (at(index) === ',') {
         const aside = CERTAINTY_TAILS.find(words => sequence(index + 1, words) && at(index + words.length + 1) === ',');
         if (aside) index += aside.length + 2;
@@ -158,13 +202,13 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
     if (metaname) { if (framed || negated) return null; index++; }
     const first = term(index);
     if (!first) return null;
-    index = skipContextAdverb(first.next);
+    index = framed ? skipNamingModifiers(first.next) : skipContextAdverb(first.next);
     let value: TermClause;
     const span = () => ({ start: tokens[start]!.start, end: tokens[index - 1]!.end });
     function finish(value: TermClause): Readonly<{ value: TermClause; next: number }> | null {
-      const ending = (frame?.endings ?? [[]]).find(words => sequence(index, words));
-      if (!ending) return null;
-      index += ending.length;
+      const ending = (frame?.endings ?? [[]]).map(words => matchNaming(index, words)).find(next => next !== null);
+      if (ending === undefined) return null;
+      index = ending;
       if (at(index) === ',') {
         const tail = CERTAINTY_TAILS.find(words => sequence(index + 1, words));
         if (tail) index += tail.length + 1;
@@ -173,12 +217,15 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
     }
     // In a subordinate naming frame the final "ist" closes the frame; it does
     // not open a second biological identity assertion after the selected name.
-    if (frame?.endings?.some(words => words.length > 0 && sequence(index, words))) {
+    if (frame?.endings?.some(words => words.length > 0 && matchNaming(index, words) !== null)) {
       return finish({ kind: 'name', terms: [first.term], connector: 'single', negated, ...span() });
     }
     if (!framed && !negated) {
-      const post = POST_NAMING_FRAMES.find(words => sequence(index, words));
-      if (post) { index += post.length; return finish({ kind: 'name', terms: [first.term], connector: 'single', negated: false, ...span() }); }
+      const post = [...POST_NAMING_FRAMES, ...(profile?.postFrames ?? [])].map(words => matchNaming(index, words)).filter(next => next !== null).sort((a, b) => b - a)[0];
+      if (post !== undefined && !sequence(index, ['ist', 'der', 'name', 'der'])) {
+        index = skipNamingModifiers(post);
+        return finish({ kind: 'name', terms: [first.term], connector: 'single', negated: false, ...span() });
+      }
     }
     // A boundary is explicitly named by its owner, not inferred from occurrence of a target word.
     if (at(index) === 'besitzt' && !framed && !negated && !metaname) {

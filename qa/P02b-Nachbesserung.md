@@ -1,5 +1,9 @@
 # P02b – Nachbesserung nach unabhängiger Fachprüfung
 
+**Historischer Prüfstand.** Die erneute Gegenprüfung des Heads `32cf4fc` fand
+weiterhin erhebliche Erkennungslücken. Aktueller Nachweis und zweite Korrektur:
+[P02b-Zweite-Nachbesserung.md](P02b-Zweite-Nachbesserung.md).
+
 **Codex-Selbstprüfung, keine unabhängige Gegenprüfung oder Unterrichtsfreigabe.**
 Nur M6.02/process und die notwendige gemeinsame Benennungsgrammatik; kein P02c.
 

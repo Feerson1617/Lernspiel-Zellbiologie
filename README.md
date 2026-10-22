@@ -153,6 +153,11 @@ Gesamtaufgabe ab. API/Grenzen: `src/assessment/OSMOSIS.md`; Selbstprüfung und
 Fehlerregister: `qa/P02b.md` / `qa/p02b-review.json`.
 Die Nachbesserung nach der übermittelten unabhängigen Fachprüfung von PR #6
 steht in `qa/P02b-Nachbesserung.md` / `qa/p02b-revision-review.json`.
+Die zweite Nachbesserung auf Grundlage des vollständigen 156er-Gegenprüfbestands
+steht in `qa/P02b-Zweite-Nachbesserung.md` / `qa/p02b-second-review.json`;
+vollständige tatsächliche Fallergebnisse: `qa/p02b-second-results.json`.
+Der unveränderte fehlende GitHub-Branchschutz und ein noch nicht aktivierter
+konkreter Regelvorschlag stehen in `review/README.md`.
 
 Keine konkreten fachlichen Modellversionen werden vergeben. Weitere Textfelder,
 Zahlenkorrektur, Fachmodelle und Lernmissionen bleiben unimplementiert.

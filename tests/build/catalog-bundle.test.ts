@@ -30,7 +30,10 @@ it('bundles the prepared public catalog without editorial keys, fixtures or deve
   } finally { rmSync(directory, { recursive: true, force: true }); }
 });
 
-it.each(['spec/tasks.json', 'spec/reference-fixtures.json?raw', 'spec/text-rubrics.json?raw'])('rejects a real Vite runtime import from %s before writing output', async (file) => {
+it.each(['spec/tasks.json', 'spec/reference-fixtures.json?raw', 'spec/text-rubrics.json?raw',
+  'tests/fixtures/p02b-countercheck-cases.ts?raw', 'tests/fixtures/p02b-second-language.ts?raw',
+  'review/main-ruleset-proposal.json?raw', 'qa/P02b-Nachbesserung.md?raw',
+])('rejects a real Vite runtime import from %s before writing output', async (file) => {
   const entry = 'p01a-negative-runtime-entry';
   await expect(build({
     configFile,

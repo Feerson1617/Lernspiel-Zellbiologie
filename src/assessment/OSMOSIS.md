@@ -93,6 +93,29 @@ Zusätze verhindern unverändert Grün; es gibt keine allgemeine Erklärungskorr
 Nachweise und getrennte Erkennungsquoten stehen in `qa/P02b-Nachbesserung.md`
 und `qa/p02b-revision-review.json`.
 
+### Zweite Nachbesserung: zusammensetzbare Satzstellung
+
+Benennungssubjekt, finites Verb, Voranstellung und optionaler Einschub werden
+getrennt kombiniert. Beispiele der Konstruktionen: Subjekt + „lautet“,
+„hier“ + Verb + Subjekt, „ich würde“ + Objekt + Name + „nennen“ und Name +
+„wäre“ + Benennungssubjekt. Fachspezifische Vorgangsobjekte bleiben im
+Osmoseprofil; die Standardrahmen für Membranen bleiben getrennt.
+
+`NAMING_MODIFIERS` enthält ausschließlich explizite Benennungs-/Unsicherheits-
+fragmente, etwa „hier“, „also“ und „meiner Ansicht nach“. Sie werden nur in
+erkannten Benennungsrahmen an Wortgrenzen interpretiert, nie aus wissenschaftlichen
+Prädikaten oder beliebigen Resten gelöscht. Pro Lücke sind höchstens drei
+Fragmente möglich. Negationen gehören nicht zu diesen Einschüben.
+Gleiche Präfixe vereinigen ihre gebundenen Endungsalternativen. Spezifische
+Metabenennungen wie „mit A meine ich B“ oder „A ist der Name der B“ behalten
+Vorrang vor kurzen unvollständigen Rahmen.
+
+Die 156 übermittelten Gegenprüffälle werden ohne veränderte Sollmengen zu
+bekannten Regressionen. Weitere 60 kurze und 20 längere richtige Antworten
+sind ein eigener, vor dem ersten Lauf festgelegter Selbstprüfbestand, keine
+unabhängige Gegenprüfung. Alle Ergebnisse einschließlich Klärungen:
+`qa/p02b-second-results.json`; Nachweis: `qa/P02b-Zweite-Nachbesserung.md`.
+
 ## Kontrolliert überführte Fachregel
 
 Grundlagen: C, M6.02 in F/`spec/tasks.json`, `TERM_OSMOSIS`, `M6.02.C01`,
