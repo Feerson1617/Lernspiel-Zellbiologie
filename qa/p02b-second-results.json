@@ -1,6 +1,7 @@
 {
   "scope": "P02b second revision; supplied known regressions and fresh self-check; no independent release",
   "baselineSha": "32cf4fcb1756ea41ab6d99abef725865151d7bd3",
+  "manifest": "p02b-second-review.json",
   "cases": [
     {
       "id": "short-correct-01",
@@ -8513,6 +8514,708 @@
         "taskId": "M6.02",
         "taskVersion": "review-task-20261022",
         "unassessedRelevantText": true
+      }
+    }
+  ],
+  "fieldScopeCases": [
+    {
+      "field": "tonoplast",
+      "text": "Ich nehme an, dass der Vorgang Tonoplast heißt.",
+      "expected": [
+        "clarify"
+      ],
+      "id": "scope-process-1-1",
+      "group": "field-scope",
+      "rationale": "Process reference belongs exclusively to the osmosis profile.",
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:20a17448d54c40a183b43bf93e79b6b1cca97d59a26fcf71e36c4ee671e7e0ab",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 47,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Ich nehme an, dass der Vorgang Tonoplast heißt."
+              }
+            ],
+            "id": "Z1.02.C01",
+            "reasonCode": "TONOPLAST_UNASSESSED",
+            "status": "clarify"
+          }
+        ],
+        "feedbackCode": "TONOPLAST_UNASSESSED",
+        "rubricVersion": "review-rubric-20261022",
+        "status": "clarify",
+        "taskId": "Z1.02",
+        "taskVersion": "review-task-20261022",
+        "unassessedRelevantText": true
+      }
+    },
+    {
+      "field": "osmosis",
+      "text": "Ich nehme an, dass der Vorgang Osmose heißt.",
+      "expected": [
+        "correct"
+      ],
+      "id": "scope-process-1-2",
+      "group": "field-scope",
+      "rationale": "Process reference belongs exclusively to the osmosis profile.",
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:1861030d7b6e07740ef1cc96c30fa5fb3ffd50147e2592ae7de1e945cb33f11e",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 43,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Ich nehme an, dass der Vorgang Osmose heißt"
+              }
+            ],
+            "id": "M6.02.C01",
+            "reasonCode": "OSMOSIS_CORRECT",
+            "status": "correct"
+          }
+        ],
+        "feedbackCode": "OSMOSIS_CORRECT",
+        "rubricVersion": "review-rubric-20261022",
+        "status": "correct",
+        "taskId": "M6.02",
+        "taskVersion": "review-task-20261022",
+        "unassessedRelevantText": false
+      }
+    },
+    {
+      "field": "osmosis",
+      "text": "Ich nehme an, dass der Vorgang Plasmolyse heißt.",
+      "expected": [
+        "incorrect"
+      ],
+      "id": "scope-process-1-3",
+      "group": "field-scope",
+      "rationale": "Process reference belongs exclusively to the osmosis profile.",
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:1861030d7b6e07740ef1cc96c30fa5fb3ffd50147e2592ae7de1e945cb33f11e",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 47,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Ich nehme an, dass der Vorgang Plasmolyse heißt"
+              }
+            ],
+            "id": "M6.02.C01",
+            "reasonCode": "OSMOSIS_WRONG_PLASMOLYSIS",
+            "status": "incorrect"
+          }
+        ],
+        "feedbackCode": "OSMOSIS_WRONG_PLASMOLYSIS",
+        "rubricVersion": "review-rubric-20261022",
+        "status": "incorrect",
+        "taskId": "M6.02",
+        "taskVersion": "review-task-20261022",
+        "unassessedRelevantText": false
+      }
+    },
+    {
+      "field": "osmosis",
+      "text": "Ich nehme an, dass der Vorgang Osmose oder Plasmolyse heißt.",
+      "expected": [
+        "clarify"
+      ],
+      "id": "scope-process-1-4",
+      "group": "field-scope",
+      "rationale": "Process reference belongs exclusively to the osmosis profile.",
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:1861030d7b6e07740ef1cc96c30fa5fb3ffd50147e2592ae7de1e945cb33f11e",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 59,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Ich nehme an, dass der Vorgang Osmose oder Plasmolyse heißt"
+              }
+            ],
+            "id": "M6.02.C01",
+            "reasonCode": "OSMOSIS_COMPETING",
+            "status": "clarify"
+          }
+        ],
+        "feedbackCode": "OSMOSIS_COMPETING",
+        "rubricVersion": "review-rubric-20261022",
+        "status": "clarify",
+        "taskId": "M6.02",
+        "taskVersion": "review-task-20261022",
+        "unassessedRelevantText": false
+      }
+    },
+    {
+      "field": "tonoplast",
+      "text": "Ich nenne als Vorgang Tonoplast.",
+      "expected": [
+        "clarify"
+      ],
+      "id": "scope-process-2-1",
+      "group": "field-scope",
+      "rationale": "Process reference belongs exclusively to the osmosis profile.",
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:20a17448d54c40a183b43bf93e79b6b1cca97d59a26fcf71e36c4ee671e7e0ab",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 32,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Ich nenne als Vorgang Tonoplast."
+              }
+            ],
+            "id": "Z1.02.C01",
+            "reasonCode": "TONOPLAST_UNASSESSED",
+            "status": "clarify"
+          }
+        ],
+        "feedbackCode": "TONOPLAST_UNASSESSED",
+        "rubricVersion": "review-rubric-20261022",
+        "status": "clarify",
+        "taskId": "Z1.02",
+        "taskVersion": "review-task-20261022",
+        "unassessedRelevantText": true
+      }
+    },
+    {
+      "field": "osmosis",
+      "text": "Ich nenne als Vorgang Osmose.",
+      "expected": [
+        "correct"
+      ],
+      "id": "scope-process-2-2",
+      "group": "field-scope",
+      "rationale": "Process reference belongs exclusively to the osmosis profile.",
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:1861030d7b6e07740ef1cc96c30fa5fb3ffd50147e2592ae7de1e945cb33f11e",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 28,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Ich nenne als Vorgang Osmose"
+              }
+            ],
+            "id": "M6.02.C01",
+            "reasonCode": "OSMOSIS_CORRECT",
+            "status": "correct"
+          }
+        ],
+        "feedbackCode": "OSMOSIS_CORRECT",
+        "rubricVersion": "review-rubric-20261022",
+        "status": "correct",
+        "taskId": "M6.02",
+        "taskVersion": "review-task-20261022",
+        "unassessedRelevantText": false
+      }
+    },
+    {
+      "field": "osmosis",
+      "text": "Ich nenne als Vorgang Plasmolyse.",
+      "expected": [
+        "incorrect"
+      ],
+      "id": "scope-process-2-3",
+      "group": "field-scope",
+      "rationale": "Process reference belongs exclusively to the osmosis profile.",
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:1861030d7b6e07740ef1cc96c30fa5fb3ffd50147e2592ae7de1e945cb33f11e",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 32,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Ich nenne als Vorgang Plasmolyse"
+              }
+            ],
+            "id": "M6.02.C01",
+            "reasonCode": "OSMOSIS_WRONG_PLASMOLYSIS",
+            "status": "incorrect"
+          }
+        ],
+        "feedbackCode": "OSMOSIS_WRONG_PLASMOLYSIS",
+        "rubricVersion": "review-rubric-20261022",
+        "status": "incorrect",
+        "taskId": "M6.02",
+        "taskVersion": "review-task-20261022",
+        "unassessedRelevantText": false
+      }
+    },
+    {
+      "field": "osmosis",
+      "text": "Ich nenne als Vorgang Osmose oder Plasmolyse.",
+      "expected": [
+        "clarify"
+      ],
+      "id": "scope-process-2-4",
+      "group": "field-scope",
+      "rationale": "Process reference belongs exclusively to the osmosis profile.",
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:1861030d7b6e07740ef1cc96c30fa5fb3ffd50147e2592ae7de1e945cb33f11e",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 44,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Ich nenne als Vorgang Osmose oder Plasmolyse"
+              }
+            ],
+            "id": "M6.02.C01",
+            "reasonCode": "OSMOSIS_COMPETING",
+            "status": "clarify"
+          }
+        ],
+        "feedbackCode": "OSMOSIS_COMPETING",
+        "rubricVersion": "review-rubric-20261022",
+        "status": "clarify",
+        "taskId": "M6.02",
+        "taskVersion": "review-task-20261022",
+        "unassessedRelevantText": false
+      }
+    },
+    {
+      "field": "tonoplast",
+      "text": "Tonoplast, so heißt der Vorgang.",
+      "expected": [
+        "clarify"
+      ],
+      "id": "scope-process-3-1",
+      "group": "field-scope",
+      "rationale": "Process reference belongs exclusively to the osmosis profile.",
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:20a17448d54c40a183b43bf93e79b6b1cca97d59a26fcf71e36c4ee671e7e0ab",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 32,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Tonoplast, so heißt der Vorgang."
+              }
+            ],
+            "id": "Z1.02.C01",
+            "reasonCode": "TONOPLAST_UNASSESSED",
+            "status": "clarify"
+          }
+        ],
+        "feedbackCode": "TONOPLAST_UNASSESSED",
+        "rubricVersion": "review-rubric-20261022",
+        "status": "clarify",
+        "taskId": "Z1.02",
+        "taskVersion": "review-task-20261022",
+        "unassessedRelevantText": true
+      }
+    },
+    {
+      "field": "osmosis",
+      "text": "Osmose, so heißt der Vorgang.",
+      "expected": [
+        "correct"
+      ],
+      "id": "scope-process-3-2",
+      "group": "field-scope",
+      "rationale": "Process reference belongs exclusively to the osmosis profile.",
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:1861030d7b6e07740ef1cc96c30fa5fb3ffd50147e2592ae7de1e945cb33f11e",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 28,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Osmose, so heißt der Vorgang"
+              }
+            ],
+            "id": "M6.02.C01",
+            "reasonCode": "OSMOSIS_CORRECT",
+            "status": "correct"
+          }
+        ],
+        "feedbackCode": "OSMOSIS_CORRECT",
+        "rubricVersion": "review-rubric-20261022",
+        "status": "correct",
+        "taskId": "M6.02",
+        "taskVersion": "review-task-20261022",
+        "unassessedRelevantText": false
+      }
+    },
+    {
+      "field": "osmosis",
+      "text": "Plasmolyse, so heißt der Vorgang.",
+      "expected": [
+        "incorrect"
+      ],
+      "id": "scope-process-3-3",
+      "group": "field-scope",
+      "rationale": "Process reference belongs exclusively to the osmosis profile.",
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:1861030d7b6e07740ef1cc96c30fa5fb3ffd50147e2592ae7de1e945cb33f11e",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 32,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Plasmolyse, so heißt der Vorgang"
+              }
+            ],
+            "id": "M6.02.C01",
+            "reasonCode": "OSMOSIS_WRONG_PLASMOLYSIS",
+            "status": "incorrect"
+          }
+        ],
+        "feedbackCode": "OSMOSIS_WRONG_PLASMOLYSIS",
+        "rubricVersion": "review-rubric-20261022",
+        "status": "incorrect",
+        "taskId": "M6.02",
+        "taskVersion": "review-task-20261022",
+        "unassessedRelevantText": false
+      }
+    },
+    {
+      "field": "osmosis",
+      "text": "Osmose oder Plasmolyse, so heißt der Vorgang.",
+      "expected": [
+        "clarify"
+      ],
+      "id": "scope-process-3-4",
+      "group": "field-scope",
+      "rationale": "Process reference belongs exclusively to the osmosis profile.",
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:1861030d7b6e07740ef1cc96c30fa5fb3ffd50147e2592ae7de1e945cb33f11e",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 44,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Osmose oder Plasmolyse, so heißt der Vorgang"
+              }
+            ],
+            "id": "M6.02.C01",
+            "reasonCode": "OSMOSIS_COMPETING",
+            "status": "clarify"
+          }
+        ],
+        "feedbackCode": "OSMOSIS_COMPETING",
+        "rubricVersion": "review-rubric-20261022",
+        "status": "clarify",
+        "taskId": "M6.02",
+        "taskVersion": "review-task-20261022",
+        "unassessedRelevantText": false
+      }
+    },
+    {
+      "field": "tonoplast",
+      "text": "Tonoplast, so würde ich den Vorgang nennen.",
+      "expected": [
+        "clarify"
+      ],
+      "id": "scope-process-4-1",
+      "group": "field-scope",
+      "rationale": "Process reference belongs exclusively to the osmosis profile.",
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:20a17448d54c40a183b43bf93e79b6b1cca97d59a26fcf71e36c4ee671e7e0ab",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 43,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Tonoplast, so würde ich den Vorgang nennen."
+              }
+            ],
+            "id": "Z1.02.C01",
+            "reasonCode": "TONOPLAST_UNASSESSED",
+            "status": "clarify"
+          }
+        ],
+        "feedbackCode": "TONOPLAST_UNASSESSED",
+        "rubricVersion": "review-rubric-20261022",
+        "status": "clarify",
+        "taskId": "Z1.02",
+        "taskVersion": "review-task-20261022",
+        "unassessedRelevantText": true
+      }
+    },
+    {
+      "field": "osmosis",
+      "text": "Osmose, so würde ich den Vorgang nennen.",
+      "expected": [
+        "correct"
+      ],
+      "id": "scope-process-4-2",
+      "group": "field-scope",
+      "rationale": "Process reference belongs exclusively to the osmosis profile.",
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:1861030d7b6e07740ef1cc96c30fa5fb3ffd50147e2592ae7de1e945cb33f11e",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 39,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Osmose, so würde ich den Vorgang nennen"
+              }
+            ],
+            "id": "M6.02.C01",
+            "reasonCode": "OSMOSIS_CORRECT",
+            "status": "correct"
+          }
+        ],
+        "feedbackCode": "OSMOSIS_CORRECT",
+        "rubricVersion": "review-rubric-20261022",
+        "status": "correct",
+        "taskId": "M6.02",
+        "taskVersion": "review-task-20261022",
+        "unassessedRelevantText": false
+      }
+    },
+    {
+      "field": "osmosis",
+      "text": "Plasmolyse, so würde ich den Vorgang nennen.",
+      "expected": [
+        "incorrect"
+      ],
+      "id": "scope-process-4-3",
+      "group": "field-scope",
+      "rationale": "Process reference belongs exclusively to the osmosis profile.",
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:1861030d7b6e07740ef1cc96c30fa5fb3ffd50147e2592ae7de1e945cb33f11e",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 43,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Plasmolyse, so würde ich den Vorgang nennen"
+              }
+            ],
+            "id": "M6.02.C01",
+            "reasonCode": "OSMOSIS_WRONG_PLASMOLYSIS",
+            "status": "incorrect"
+          }
+        ],
+        "feedbackCode": "OSMOSIS_WRONG_PLASMOLYSIS",
+        "rubricVersion": "review-rubric-20261022",
+        "status": "incorrect",
+        "taskId": "M6.02",
+        "taskVersion": "review-task-20261022",
+        "unassessedRelevantText": false
+      }
+    },
+    {
+      "field": "osmosis",
+      "text": "Osmose oder Plasmolyse, so würde ich den Vorgang nennen.",
+      "expected": [
+        "clarify"
+      ],
+      "id": "scope-process-4-4",
+      "group": "field-scope",
+      "rationale": "Process reference belongs exclusively to the osmosis profile.",
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:1861030d7b6e07740ef1cc96c30fa5fb3ffd50147e2592ae7de1e945cb33f11e",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 55,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Osmose oder Plasmolyse, so würde ich den Vorgang nennen"
+              }
+            ],
+            "id": "M6.02.C01",
+            "reasonCode": "OSMOSIS_COMPETING",
+            "status": "clarify"
+          }
+        ],
+        "feedbackCode": "OSMOSIS_COMPETING",
+        "rubricVersion": "review-rubric-20261022",
+        "status": "clarify",
+        "taskId": "M6.02",
+        "taskVersion": "review-task-20261022",
+        "unassessedRelevantText": false
+      }
+    },
+    {
+      "field": "osmosis",
+      "text": "Die Membran heißt Osmose.",
+      "expected": [
+        "clarify"
+      ],
+      "id": "scope-membrane-1-1",
+      "group": "field-scope",
+      "rationale": "Membrane reference belongs exclusively to the tonoplast profile.",
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:1861030d7b6e07740ef1cc96c30fa5fb3ffd50147e2592ae7de1e945cb33f11e",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 25,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Die Membran heißt Osmose."
+              }
+            ],
+            "id": "M6.02.C01",
+            "reasonCode": "OSMOSIS_UNASSESSED",
+            "status": "clarify"
+          }
+        ],
+        "feedbackCode": "OSMOSIS_UNASSESSED",
+        "rubricVersion": "review-rubric-20261022",
+        "status": "clarify",
+        "taskId": "M6.02",
+        "taskVersion": "review-task-20261022",
+        "unassessedRelevantText": true
+      }
+    },
+    {
+      "field": "tonoplast",
+      "text": "Die Membran heißt Tonoplast.",
+      "expected": [
+        "correct"
+      ],
+      "id": "scope-membrane-1-2",
+      "group": "field-scope",
+      "rationale": "Membrane reference belongs exclusively to the tonoplast profile.",
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:20a17448d54c40a183b43bf93e79b6b1cca97d59a26fcf71e36c4ee671e7e0ab",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 27,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Die Membran heißt Tonoplast"
+              }
+            ],
+            "id": "Z1.02.C01",
+            "reasonCode": "TONOPLAST_CORRECT",
+            "status": "correct"
+          }
+        ],
+        "feedbackCode": "TONOPLAST_CORRECT",
+        "rubricVersion": "review-rubric-20261022",
+        "status": "correct",
+        "taskId": "Z1.02",
+        "taskVersion": "review-task-20261022",
+        "unassessedRelevantText": false
+      }
+    },
+    {
+      "field": "osmosis",
+      "text": "Ich würde die Grenze Osmose nennen.",
+      "expected": [
+        "clarify"
+      ],
+      "id": "scope-membrane-2-1",
+      "group": "field-scope",
+      "rationale": "Membrane reference belongs exclusively to the tonoplast profile.",
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:1861030d7b6e07740ef1cc96c30fa5fb3ffd50147e2592ae7de1e945cb33f11e",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 35,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Ich würde die Grenze Osmose nennen."
+              }
+            ],
+            "id": "M6.02.C01",
+            "reasonCode": "OSMOSIS_UNASSESSED",
+            "status": "clarify"
+          }
+        ],
+        "feedbackCode": "OSMOSIS_UNASSESSED",
+        "rubricVersion": "review-rubric-20261022",
+        "status": "clarify",
+        "taskId": "M6.02",
+        "taskVersion": "review-task-20261022",
+        "unassessedRelevantText": true
+      }
+    },
+    {
+      "field": "tonoplast",
+      "text": "Ich würde die Grenze Tonoplast nennen.",
+      "expected": [
+        "correct"
+      ],
+      "id": "scope-membrane-2-2",
+      "group": "field-scope",
+      "rationale": "Membrane reference belongs exclusively to the tonoplast profile.",
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:20a17448d54c40a183b43bf93e79b6b1cca97d59a26fcf71e36c4ee671e7e0ab",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 37,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Ich würde die Grenze Tonoplast nennen"
+              }
+            ],
+            "id": "Z1.02.C01",
+            "reasonCode": "TONOPLAST_CORRECT",
+            "status": "correct"
+          }
+        ],
+        "feedbackCode": "TONOPLAST_CORRECT",
+        "rubricVersion": "review-rubric-20261022",
+        "status": "correct",
+        "taskId": "Z1.02",
+        "taskVersion": "review-task-20261022",
+        "unassessedRelevantText": false
       }
     }
   ]

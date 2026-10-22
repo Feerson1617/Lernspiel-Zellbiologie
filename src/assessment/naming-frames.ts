@@ -64,6 +64,12 @@ export function asNamingFrames(nouns: readonly string[]): NamingFrame[] {
     { words: ['als', noun, 'gebe', 'ich'], endings: [['an']] },
   ].map(frame => ({ ...frame, insertions: true as const })));
 }
+const CERTAINTY_PREFIXES = [['ich', 'denke'], ['ich', 'glaube'], ['ich', 'vermute'], ['ich', 'nehme', 'an']];
+export function subordinateNamingFrames(subjects: readonly (readonly string[])[]): NamingFrame[] {
+  return CERTAINTY_PREFIXES.flatMap(prefix => [[], [',']].flatMap(comma => subjects.map(subject => ({
+    words: [...prefix, ...comma, 'dass', ...subject], endings: [['ist'], ['heisst']], insertions: true as const,
+  }))));
+}
 const COMPOSED_FRAMES: readonly NamingFrame[] = [
   ...namingSubjectFrames(NAMING_SUBJECTS),
   ...['das', 'es'].flatMap(subject => namingSubjectFrames([[subject]]).filter(frame => frame.words.at(-1) !== ':')),
@@ -94,7 +100,7 @@ const NAMING_FRAMES: readonly NamingFrame[] = [
   ...[
     ['das', 'nennt', 'man'], ['nennt', 'man', 'das'], ['das', 'heisst'], ['ich', 'tippe', 'auf'], ['ich', 'denke', 'an'],
     ['fuer', 'mich', 'ist', 'das'], ['fuer', 'mich', 'ist', 'es'], ['ich', 'halte', 'das', 'fuer'],
-    ['als', 'fachbegriff', 'passt'], ['ich', 'nenne', 'als', 'vorgang'], ['man', 'nennt', 'das'],
+    ['als', 'fachbegriff', 'passt'], ['man', 'nennt', 'das'],
     ['meine', 'wahl', 'faellt', 'auf'], ['das', 'waere', 'dann'], ['ich', 'bin', 'fuer'],
     ['ich', 'komme', 'auf'], ['ich', 'waehle'], ['ich', 'tendiere', 'zu'], ['ich', 'sage'],
     ['ich', 'entscheide', 'mich', 'fuer'],
@@ -111,9 +117,9 @@ const NAMING_FRAMES: readonly NamingFrame[] = [
   { words: ['am', 'ehesten', 'wuerde', 'ich'], endings: [['sagen']] },
   { words: ['spontan', 'wuerde', 'ich'], endings: [['sagen']] },
   { words: ['es', 'duerfte'], endings: [['sein']] },
-  ...[['ich', 'denke'], ['ich', 'glaube'], ['ich', 'vermute'], ['ich', 'nehme', 'an']].flatMap(prefix =>
+  ...subordinateNamingFrames([['es'], ['das']]),
+  ...CERTAINTY_PREFIXES.flatMap(prefix =>
     [[], [',']].flatMap(comma => [
-      ...[['es'], ['das'], ['der', 'vorgang']].map(subject => ({ words: [...prefix, ...comma, 'dass', ...subject], endings: [['ist'], ['heisst']], insertions: true as const })),
       { words: [...prefix, ...comma, 'dass'], endings: [['gemeint', 'ist'], ['gesucht', 'ist']], insertions: true as const },
       { words: [...prefix, ...comma, 'dass', 'es', 'sich', 'um'], endings: [['handelt']], insertions: true as const },
     ])),
@@ -136,6 +142,5 @@ export const CERTAINTY_TAILS: readonly (readonly string[])[] = [
   ['wuerde', 'ich', 'sagen'], ['so', 'wuerde', 'ich', 'es', 'nennen'],
   ['wenn', 'ich', 'mich', 'nicht', 'irre'],
   ['wenn', 'ich', 'richtig', 'liege'], ['wenn', 'ich', 'mich', 'richtig', 'erinnere'],
-  ...['vorgang', 'prozess'].flatMap(noun => [['so', 'heisst', 'der', noun], ['so', 'wuerde', 'ich', 'den', noun, 'nennen']]),
   ['das', 'waere', 'mein', 'vorschlag'], ['das', 'ist', 'meine', 'antwort', 'dazu'],
 ];

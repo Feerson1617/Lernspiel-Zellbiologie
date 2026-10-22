@@ -3,7 +3,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { afterAll, expect, it } from 'vitest';
 import { COUNTERCHECK_CASES } from '../fixtures/p02b-countercheck-cases.ts';
 import { FRESH_SHORT } from '../fixtures/p02b-second-language.ts';
-import { REVIEW_OSMOSIS_CONTEXT, REVIEW_TONOPLAST_CONTEXT, SECOND_CASES, runSecondCase } from '../helpers/p02b-second.ts';
+import { FIELD_SCOPE_CASES, REVIEW_OSMOSIS_CONTEXT, REVIEW_TONOPLAST_CONTEXT, SECOND_CASES, runSecondCase } from '../helpers/p02b-second.ts';
 import { isResultForContext } from '../../src/domain/task-context.ts';
 import { getOsmosisFeedback } from '../../src/assessment/osmosis-feedback.ts';
 import { getTonoplastFeedback } from '../../src/assessment/feedback.ts';
@@ -98,5 +98,15 @@ it('keeps comma conjunctions between complete predicates, without guessing scope
   }
   for (const text of ['Osmose, aber keine Endocytose.', 'Osmose, und Plasmolyse.', 'Osmose ist passiver Transport, aber vielleicht.']) {
     expect(runSecondCase('osmosis', text).status, text).toBe('clarify');
+  }
+});
+
+it('never interprets process-specific naming subjects or tails as neutral tonoplast wording', () => {
+  expect(FIELD_SCOPE_CASES).toHaveLength(20);
+  for (const f of FIELD_SCOPE_CASES) {
+    const result = runSecondCase(f.field, f.text);
+    expect(f.expected, f.id).toContain(result.status);
+    // An unresolved list is fully parsed; only the foreign field reference is unassessed.
+    if (result.status === 'clarify' && !f.text.includes(' oder ')) expect(result.unassessedRelevantText).toBe(true);
   }
 });

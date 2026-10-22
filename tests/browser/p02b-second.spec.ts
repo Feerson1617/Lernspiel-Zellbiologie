@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 import { buildDomainModule } from '../helpers/domain-bundle.ts';
-import { REVIEW_OSMOSIS_CONTEXT, REVIEW_TONOPLAST_CONTEXT, REVIEW_VERSIONS, SECOND_CASES, runSecondCase } from '../helpers/p02b-second.ts';
+import { FIELD_SCOPE_CASES, REVIEW_OSMOSIS_CONTEXT, REVIEW_TONOPLAST_CONTEXT, REVIEW_VERSIONS, SECOND_CASES, runSecondCase } from '../helpers/p02b-second.ts';
 import type { TaskContext } from '../../src/domain/task-context.ts';
 
 type API = typeof import('../../src/assessment/osmosis.ts') & typeof import('../../src/assessment/tonoplast.ts')
@@ -15,6 +15,7 @@ test('runs the complete 156-case countercheck and 80 fresh cases through both re
   page.on('request', request => { if (!request.url().startsWith(baseURL!)) external.push(request.url()); });
   await page.route(`${baseURL}second-revision.mjs`, route => route.fulfill({ contentType: 'text/javascript', body: source }));
   await page.goto('./');
+  const fixtures = [...SECOND_CASES, ...FIELD_SCOPE_CASES];
   const actual = await page.evaluate(async ({ url, versions, osmosis, tonoplast, inputs }) => {
     const api = await import(/* @vite-ignore */ url) as API;
     const oe = api.createOsmosisEvaluator(versions), te = api.createTonoplastEvaluator(versions);
@@ -24,9 +25,9 @@ test('runs the complete 156-case countercheck and 80 fresh cases through both re
       return { result, bound: api.isResultForContext(result, context), presentation: api.STATUS_PRESENTATION[result.status],
         feedback: (f.field === 'osmosis' ? api.getOsmosisFeedback : api.getTonoplastFeedback)(result.feedbackCode) };
     });
-  }, { url: `${baseURL}second-revision.mjs`, versions: REVIEW_VERSIONS, osmosis: JSON.stringify(REVIEW_OSMOSIS_CONTEXT), tonoplast: JSON.stringify(REVIEW_TONOPLAST_CONTEXT), inputs: SECOND_CASES });
-  expect(actual).toHaveLength(236);
-  for (const [i, f] of SECOND_CASES.entries()) {
+  }, { url: `${baseURL}second-revision.mjs`, versions: REVIEW_VERSIONS, osmosis: JSON.stringify(REVIEW_OSMOSIS_CONTEXT), tonoplast: JSON.stringify(REVIEW_TONOPLAST_CONTEXT), inputs: fixtures });
+  expect(actual).toHaveLength(256);
+  for (const [i, f] of fixtures.entries()) {
     const value = actual[i]!;
     expect(value.result, f.id).toEqual(runSecondCase(f.field, f.text));
     expect(f.expected, f.id).toContain(value.result.status);

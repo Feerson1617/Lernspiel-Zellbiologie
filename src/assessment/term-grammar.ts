@@ -60,6 +60,7 @@ export interface TermGrammarProfile {
   readonly frames: readonly NamingFrameInput[];
   readonly contextAdverbs?: readonly string[];
   readonly postFrames?: readonly (readonly string[])[];
+  readonly certaintyTails?: readonly (readonly string[])[];
 }
 
 /** Finite T1 grammar. Complete consumption is mandatory; unknown text stays unknown. */
@@ -69,6 +70,7 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
   const at = (index: number) => tokens[index]?.word;
   const sequence = (index: number, words: readonly string[]) => words.every((word, offset) => at(index + offset) === word);
   const shortHedge = (index: number) => HEDGES.find((words) => words.length === 1 && sequence(index, words));
+  const certaintyTails = [...CERTAINTY_TAILS, ...(profile?.certaintyTails ?? [])];
   const skipContextAdverb = (index: number) => profile?.contextAdverbs?.includes(at(index) ?? '') ? index + 1 : index;
   const skipNamingModifiers = (start: number) => {
     let index = start;
@@ -188,7 +190,7 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
     if (frame) {
       index = skipNamingModifiers(index);
       if (at(index) === ',') {
-        const aside = CERTAINTY_TAILS.find(words => sequence(index + 1, words) && at(index + words.length + 1) === ',');
+        const aside = certaintyTails.find(words => sequence(index + 1, words) && at(index + words.length + 1) === ',');
         if (aside) index += aside.length + 2;
       }
       const hedge = HEDGES.filter((words) => words.length === 1 || words[0] === 'meiner').find((words) => sequence(index, words));
@@ -210,7 +212,7 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
       if (ending === undefined) return null;
       index = ending;
       if (at(index) === ',') {
-        const tail = CERTAINTY_TAILS.find(words => sequence(index + 1, words));
+        const tail = certaintyTails.find(words => sequence(index + 1, words));
         if (tail) index += tail.length + 1;
       }
       return { value: { ...value, end: tokens[index - 1]!.end }, next: index };

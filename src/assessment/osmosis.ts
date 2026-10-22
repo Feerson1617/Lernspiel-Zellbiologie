@@ -5,7 +5,7 @@ import type { OsmosisFeedbackCode } from './osmosis-feedback.ts';
 import { parseTermAnswer } from './term-grammar.ts';
 import type { TermClause, TermGrammarProfile, TermMeaning, TermRef } from './term-grammar.ts';
 import { tokenizeText } from './text.ts';
-import { asNamingFrames, namingObjectFrames, namingSubjectFrames } from './naming-frames.ts';
+import { asNamingFrames, namingObjectFrames, namingSubjectFrames, subordinateNamingFrames } from './naming-frames.ts';
 
 export const OSMOSIS_TASK_ID = 'M6.02';
 export const OSMOSIS_FIELD_ID = 'process';
@@ -26,6 +26,8 @@ const PROFILE: TermGrammarProfile = {
     ...namingSubjectFrames(SUBJECTS),
     ...namingObjectFrames([['den', 'vorgang'], ['diesen', 'vorgang'], ['den', 'prozess'], ['diesen', 'prozess'], ['den', 'transport'], ['den', 'wassertransport']]),
     ...asNamingFrames(['vorgang', 'prozess']),
+    ...subordinateNamingFrames([['der', 'vorgang']]),
+    ['ich', 'nenne', 'als', 'vorgang'],
     ...['vorgang', 'prozess'].flatMap(noun => [
       { words: ['bei', 'dem', noun, 'handelt', 'es', 'sich', 'um'], insertions: true as const },
       { words: ['bei', 'diesem', noun, 'handelt', 'es', 'sich', 'um'], insertions: true as const },
@@ -48,6 +50,7 @@ const PROFILE: TermGrammarProfile = {
     ['den', 'vorgang', 'nennt', 'man'], ['den', 'transport', 'nennt', 'man'],
   ], contextAdverbs: ['hier', 'dabei'],
   postFrames: [['ist', 'der', 'gesuchte', 'vorgang']],
+  certaintyTails: ['vorgang', 'prozess'].flatMap(noun => [['so', 'heisst', 'der', noun], ['so', 'wuerde', 'ich', 'den', noun, 'nennen']]),
 };
 const MEANINGS: readonly TermMeaning[] = [
   { id: 'osmosis', forms: [['osmose']], spellingVariants: ['osmosse', 'osmosee', 'ossmose', 'osmsoe'] },

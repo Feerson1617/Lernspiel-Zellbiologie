@@ -8,7 +8,7 @@ import { OSMOSIS_CASES, OSMOSIS_RECOGNITION_CASES, OSMOSIS_ADVERSARIAL_CASES } f
 import { OSMOSIS_REVISION_CASES } from '../fixtures/osmosis-revision-cases.ts';
 import { COUNTERCHECK_CASES } from '../fixtures/p02b-countercheck-cases.ts';
 import { FRESH_LONG, FRESH_SHORT } from '../fixtures/p02b-second-language.ts';
-import { SECOND_CASES, runSecondCase } from '../helpers/p02b-second.ts';
+import { FIELD_SCOPE_CASES, SECOND_CASES, runSecondCase } from '../helpers/p02b-second.ts';
 
 it('keeps all fresh language inputs distinct from every known own/supplied/editorial case, including case and punctuation variants', () => {
   const normalize = (text: string) => text.normalize('NFC').toLocaleLowerCase('de-DE').replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
@@ -33,8 +33,8 @@ it('retains yellow in both recognition denominators and requires at least 95 per
   expect(long).toHaveLength(20); // No filtering out correct biological explanations that clarified.
 });
 
-it('validates all 236 supplied and fresh actual result objects against the original JSON Schema', () => {
-  const results = SECOND_CASES.map(f => runSecondCase(f.field, f.text));
+it('validates all 256 supplied, fresh and field-scope actual result objects against the original JSON Schema', () => {
+  const results = [...SECOND_CASES, ...FIELD_SCOPE_CASES].map(f => runSecondCase(f.field, f.text));
   const venv = fileURLToPath(new URL('../../.venv/bin/python', import.meta.url));
   const validation = spawnSync(existsSync(venv) ? venv : 'python3', ['-c', [
     'import json,sys,jsonschema', 'data=json.load(sys.stdin)',
@@ -44,10 +44,11 @@ it('validates all 236 supplied and fresh actual result objects against the origi
     'sys.exit(1 if errors else 0)',
   ].join('\n')], { input: JSON.stringify({ schema: JSON.parse(readFileSync('spec/result.schema.json', 'utf8')) as unknown, results }), encoding: 'utf8', timeout: 20_000 });
   expect(validation.error).toBeUndefined(); expect(validation.stderr).toBe(''); expect(validation.status).toBe(0);
-  expect(validation.stdout.trim()).toBe('Validated 236 results; 0 schema errors');
+  expect(validation.stdout.trim()).toBe('Validated 256 results; 0 schema errors');
 });
 
 it('publishes the complete 236-case outcome without filtering yellow or changing supplied expectations', () => {
-  const report = JSON.parse(readFileSync('qa/p02b-second-results.json', 'utf8')) as { cases: unknown[] };
+  const report = JSON.parse(readFileSync('qa/p02b-second-results.json', 'utf8')) as { cases: unknown[]; fieldScopeCases: unknown[] };
   expect(report.cases).toEqual(SECOND_CASES.map(f => ({ ...f, result: runSecondCase(f.field, f.text) })));
+  expect(report.fieldScopeCases).toEqual(FIELD_SCOPE_CASES.map(f => ({ ...f, result: runSecondCase(f.field, f.text) })));
 });
