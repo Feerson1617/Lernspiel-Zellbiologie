@@ -85,3 +85,18 @@ it('handles explicit neutral-frame negation and corrective negation without gues
     ['Nicht Endocytose, sondern Osmose. Danke! Alle Organellen sind Bakterien.', 'clarify'],
   ] as const) expect(runSecondCase('osmosis', text).status, text).toBe(expected);
 });
+
+it('keeps comma conjunctions between complete predicates, without guessing scope across name fragments', () => {
+  for (const connector of [', aber ', ', und ']) {
+    for (const [field, first, positive, negative] of [
+      ['osmosis', 'Osmose ist passiver Transport', 'Osmose ist keine Endocytose.', 'Osmose ist aktiver Transport.'],
+      ['tonoplast', 'Tonoplast ist eine Membran', 'Tonoplast umschließt die Vakuole.', 'Tonoplast ist die Zellwand.'],
+    ] as const) {
+      expect(runSecondCase(field, first + connector + positive).status).toBe('correct');
+      expect(runSecondCase(field, first + connector + negative).status).toBe('incorrect');
+    }
+  }
+  for (const text of ['Osmose, aber keine Endocytose.', 'Osmose, und Plasmolyse.', 'Osmose ist passiver Transport, aber vielleicht.']) {
+    expect(runSecondCase('osmosis', text).status, text).toBe('clarify');
+  }
+});

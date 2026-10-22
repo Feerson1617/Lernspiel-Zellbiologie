@@ -379,13 +379,15 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
     if (index === tokens.length) break;
     if (['.', '!', '?', ';'].includes(at(index) ?? '')) {
       while (['.', '!', '?', ';'].includes(at(index) ?? '')) index++;
-    } else if (at(index) === 'und' || at(index) === 'aber') {
+    } else if (at(index) === 'und' || at(index) === 'aber'
+      || (at(index) === ',' && ['und', 'aber'].includes(at(index + 1) ?? ''))) {
       // No guessed negation scope across noun fragments. Only complete predicates
       // on BOTH sides may form a clause chain; name lists are handled above.
-      const following = clause(index + 1);
+      const followingStart = index + (at(index) === ',' ? 2 : 1);
+      const following = clause(followingStart);
       if (!following || !['identity', 'synonymy', 'encloses', 'separates'].includes(parsed.value.kind)
         || !['identity', 'synonymy', 'encloses', 'separates'].includes(following.value.kind)) return { clauses, complete: false };
-      index++;
+      index = followingStart;
       if (index === tokens.length) return { clauses, complete: false };
     }
     else return { clauses, complete: false };

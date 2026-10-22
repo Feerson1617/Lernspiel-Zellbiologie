@@ -3221,23 +3221,29 @@
           {
             "evidence": [
               {
-                "end": 65,
+                "end": 29,
                 "kind": "input_span",
                 "start": 0,
-                "value": "Osmose ist passiver Transport, aber Osmose ist aktiver Transport."
+                "value": "Osmose ist passiver Transport"
+              },
+              {
+                "end": 64,
+                "kind": "input_span",
+                "start": 36,
+                "value": "Osmose ist aktiver Transport"
               }
             ],
             "id": "M6.02.C01",
-            "reasonCode": "OSMOSIS_UNASSESSED",
-            "status": "clarify"
+            "reasonCode": "OSMOSIS_WRONG_ACTIVE",
+            "status": "incorrect"
           }
         ],
-        "feedbackCode": "OSMOSIS_UNASSESSED",
+        "feedbackCode": "OSMOSIS_WRONG_ACTIVE",
         "rubricVersion": "review-rubric-20261022",
-        "status": "clarify",
+        "status": "incorrect",
         "taskId": "M6.02",
         "taskVersion": "review-task-20261022",
-        "unassessedRelevantText": true
+        "unassessedRelevantText": false
       }
     },
     {
