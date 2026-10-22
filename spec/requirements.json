@@ -1,0 +1,245 @@
+{
+  "version": "1.0",
+  "requirements": [
+    {
+      "id": "R01",
+      "requirement": "Fachlichkeit vor Feedback, Offenheit und Grafik",
+      "specification": "A §1; AGENTS",
+      "phases": "P00–P13",
+      "verification": "Aufgabe/Modell mit Originalmaterial und eigenem Erwartungshorizont prüfen.",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "R02",
+      "requirement": "Progression und Curriculumgrenze",
+      "specification": "A §4–5; F",
+      "phases": "P01/P08–P13",
+      "verification": "Alle 79 Aufgaben IDs und Lerngelegenheiten zuordnen; Abschnitt4 nicht vorziehen.",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "R03",
+      "requirement": "Nur verlässlich bewertbare Aufgabenoffenheit",
+      "specification": "C §1–3",
+      "phases": "P02/P07/P13",
+      "verification": "Übliche richtige Antworten nicht routinemäßig gelb; ggf. Frage enger fassen.",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "R04",
+      "requirement": "Farben, Symbole, Text und kriterienspezifische Rückmeldung",
+      "specification": "C §2",
+      "phases": "P03/P07/P13",
+      "verification": "Tatsächliche Browserdarstellung jedes Status und Mischresultats prüfen.",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "R05",
+      "requirement": "Rechtschreibung nicht mit Fachfehler verwechseln",
+      "specification": "C §3; text-rubrics",
+      "phases": "P02/P07",
+      "verification": "Fachlexikon vor Fuzzy-Match; Gegensatzpaare, knappe und lange Antworten testen.",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "R06",
+      "requirement": "Negationen, Kausalrichtung, Selbstkorrektur und Synonyme",
+      "specification": "C §3–5; reference-fixtures",
+      "phases": "P02/P07",
+      "verification": "Neue Kontrastfälle aus Materialien ableiten; vorsichtige richtige Antwort bleibt richtig.",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "R07",
+      "requirement": "Kein Grün bei relevanten ungeprüften Resten",
+      "specification": "C §3; result.schema",
+      "phases": "P02/P07",
+      "verification": "Präfix plus falscher Zusatz, widersprüchliche Relation und abgeschnittener Text als Gegenfälle.",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "R08",
+      "requirement": "Unterstützungsart getrennt vom Inhalt",
+      "specification": "C §2; progress.schema",
+      "phases": "P01/P03",
+      "verification": "Auswahlklärung bestätigt alten Text nicht; neue eigenständige Versuche bleiben unterscheidbar.",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "R09",
+      "requirement": "Kontext und Version binden Bewertung",
+      "specification": "B §2–3; contracts",
+      "phases": "P01/P03/P06",
+      "verification": "Parameterwechsel invalidiert früheres Feedback, erhält aber Eingabe.",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "R10",
+      "requirement": "Mehrfachauswahl und alternative richtige Wege",
+      "specification": "C §6; tasks",
+      "phases": "P03/P12",
+      "verification": "Teilmenge/Fehloption, Teilordnung und mehrere valide Versuchsfamilien testen.",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "R11",
+      "requirement": "Zellprofile und eindeutige biologische Anker",
+      "specification": "B BM01; asset-briefs",
+      "phases": "P04/P06",
+      "verification": "Zellwand/Membran/Tonoplast getrennt; Zwiebel ohne Chloroplasten; alle Anker visuell prüfen.",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "R12",
+      "requirement": "Berechnung unabhängig von 2D/3D",
+      "specification": "B §2–4",
+      "phases": "P01/P05/P06",
+      "verification": "Beide Ansichten verwenden identischen serialisierbaren Zustand und Prüffunktion.",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "R13",
+      "requirement": "Wasser-/Solutbilanz, Druck und getrennte Räume",
+      "specification": "B BM04; model-vectors",
+      "phases": "P05/P06",
+      "verification": "Analytik plus Integration, Bilanz, Vorzeichen, Gleichgewicht, Schritte halbieren.",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "R14",
+      "requirement": "Diffusion zufällig und Gleichgewicht dynamisch",
+      "specification": "B BM03; M4/T.08",
+      "phases": "P09",
+      "verification": "Viele Wiederholungen; gleiche Konzentration bei ungleichen Volumina; kein Stopp der Bewegung.",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "R15",
+      "requirement": "ATP, Elektrochemie und Transportweg getrennt",
+      "specification": "B BM05; M7",
+      "phases": "P10",
+      "verification": "ATP-Systemabhängigkeit nicht als unmittelbare ATPase-Funktion bewerten.",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "R16",
+      "requirement": "Vesikel-Topologie erhalten",
+      "specification": "B BM06; M8",
+      "phases": "P10",
+      "verification": "Cargo-Lumen und Membranseiten in jedem Schlüsselzustand prüfen.",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "R17",
+      "requirement": "Regulation nur im definierten Funktionsmodell",
+      "specification": "B BM07; M9",
+      "phases": "P11",
+      "verification": "Sensor/Gegenreaktion/Rückweg, Blockade und Szenariogrenzen überprüfen.",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "R18",
+      "requirement": "Methodenwissen ersetzt keine reale Mikroskopie",
+      "specification": "A §4; Z4/M6",
+      "phases": "P08/P13",
+      "verification": "Keine praktische Kompetenz oder reale Messung aus virtueller Bearbeitung behaupten.",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "R19",
+      "requirement": "Klausurschutz vor erstem Commit und Veröffentlichung",
+      "specification": "B §14; E §10",
+      "phases": "P00/P12/P13",
+      "verification": "Privater Fallnäheabgleich; Allowlist plus Inhaltskontrolle von Git/Build/Logs/Artefakten.",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "R20",
+      "requirement": "Kostenfreie kontofreie Schülernutzung",
+      "specification": "B §1/14; AGENTS",
+      "phases": "P00/P13",
+      "verification": "Keine bezahlten Laufzeit-APIs, Tracker, Fremd-CDNs oder Schülerkonten.",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "R21",
+      "requirement": "Datensparsame robuste Fortschrittsspeicherung",
+      "specification": "B §14; progress.schema",
+      "phases": "P01/P03/P13",
+      "verification": "Keine Namen/Rohtexte standardmäßig; Speicherfehler, Export, Migration und Fremddaten prüfen.",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "R22",
+      "requirement": "Touch, Tastatur und 2D gleichwertig",
+      "specification": "B §13; C §8",
+      "phases": "P03/P04/P13",
+      "verification": "Jede Dragaktion per Tippfolge; echte Tastaturpfade; Modell sichtbar bei Bildschirmtastatur.",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "R23",
+      "requirement": "Eigene Prüfung jedes ausführenden Auftrags",
+      "specification": "C §8–11; D §6",
+      "phases": "alle",
+      "verification": "Originale/Sollwerte selbst prüfen, Tests ausführen, nicht Berichte nacherzählen.",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "R24",
+      "requirement": "Getrennte Gegenprüfung mit neuen Fällen",
+      "specification": "C §8; review-manifest",
+      "phases": "P07/P13",
+      "verification": "Neue Sollwerte vor Codeblick; tatsächlich ausgeführte Testfälle, nicht nur anderer Modellname.",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "R25",
+      "requirement": "Vollständige Regression bei gemeinsamer Änderung",
+      "specification": "C §9–11; AGENTS",
+      "phases": "P02–P13",
+      "verification": "Alle vorhandenen freigegebenen Aufgaben/Varianten erneut ausführen; Fehler nicht wegdefinieren.",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "R26",
+      "requirement": "Kritische Fehlwertungen blockieren Freigabe",
+      "specification": "C §9–11",
+      "phases": "P07/P13",
+      "verification": "Keine bekannten False-green/False-red-Fälle; 95%-Ziel separat auf repräsentativen richtigen Antworten.",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "R27",
+      "requirement": "Geräteprobe und realistische Leistungsangaben",
+      "specification": "B §12–13; D P13",
+      "phases": "P04/P13",
+      "verification": "Benanntes echtes iPad/Safari prüfen; Emulation nicht als Gerätetest ausgeben.",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "R28",
+      "requirement": "Lerngruppenpilot und schriftliche Trainingsgrenzen",
+      "specification": "A §7–8; D P13",
+      "phases": "P13",
+      "verification": "Erklärungsaufbau zusätzlich schriftlich üben; keine Note oder Klausurreife prognostizieren.",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "R29",
+      "requirement": "Keine automatische Komplettimplementierung",
+      "specification": "D/E",
+      "phases": "alle",
+      "verification": "Jeder Auftrag hat begrenzte Phase, Abnahme, Ausgangscommit und Schutzprüfung.",
+      "implementation_status": "not_implemented"
+    },
+    {
+      "id": "R30",
+      "requirement": "Prüfbelege statt behaupteter Fähigkeiten",
+      "specification": "QA; E §11–13",
+      "phases": "alle",
+      "verification": "Nicht ausgeführte Tests klar ausweisen; Selbstprüfung nicht als unabhängig bezeichnen.",
+      "implementation_status": "not_implemented"
+    }
+  ]
+}

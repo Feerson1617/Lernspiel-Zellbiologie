@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Progress envelope without raw pupil answers",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "contentVersion",
+    "attempts"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "contentVersion": {
+      "type": "string"
+    },
+    "attempts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "attemptId",
+          "taskId",
+          "instanceId",
+          "taskVersion",
+          "rubricVersion",
+          "modelVersion",
+          "status",
+          "assistance"
+        ],
+        "properties": {
+          "attemptId": {
+            "type": "string"
+          },
+          "taskId": {
+            "type": "string"
+          },
+          "instanceId": {
+            "type": "string"
+          },
+          "taskVersion": {
+            "type": "string"
+          },
+          "rubricVersion": {
+            "type": "string"
+          },
+          "modelVersion": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "correct",
+              "incorrect",
+              "partial",
+              "clarify",
+              "empty",
+              "technical"
+            ]
+          },
+          "assistance": {
+            "enum": [
+              "independent",
+              "hint",
+              "wordbank",
+              "clarified",
+              "solution_viewed"
+            ]
+          }
+        }
+      }
+    },
+    "recommendedMissionIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "selectedMissionId": {
+      "type": "string"
+    }
+  }
+}

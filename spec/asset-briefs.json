@@ -1,0 +1,90 @@
+{
+  "version": "1.0",
+  "status": "zu erstellende Assets, keine bereits ausgelieferten 3D-Modelle",
+  "assets": [
+    {
+      "id": "plant_leaf_cutaway",
+      "title": "Blattzelle",
+      "missions": "Z1/Z2",
+      "required_features": "Zellwand, Zellmembran, Vakuole/Tonoplast, Kern, Mitochondrien, Chloroplasten, ER, Golgi, Ribosomen; Ankerliste aus Z1.01",
+      "view_modes": [
+        "overview",
+        "section",
+        "isolated",
+        "answer_view"
+      ],
+      "equivalent_2d_required": true,
+      "review_status": "pending"
+    },
+    {
+      "id": "onion_epidermis_cutaway",
+      "title": "Rote Zwiebel-Epidermiszelle",
+      "missions": "M6",
+      "required_features": "ohne Chloroplasten; Vakuolenpigment; Außenlösung im Ablösungsspalt; variable Protoplastvolumina",
+      "view_modes": [
+        "overview",
+        "section",
+        "isolated",
+        "answer_view"
+      ],
+      "equivalent_2d_required": true,
+      "review_status": "pending"
+    },
+    {
+      "id": "animal_epithelial_cutaway",
+      "title": "Tierische Epithelzelle",
+      "missions": "Z1/M9",
+      "required_features": "keine Zellwand oder pflanzentypische Zentralvakuole; Dehnungsmodell, keine universelle Zellphysiologie",
+      "view_modes": [
+        "overview",
+        "section",
+        "isolated",
+        "answer_view"
+      ],
+      "equivalent_2d_required": true,
+      "review_status": "pending"
+    },
+    {
+      "id": "membrane_bilayer",
+      "title": "Membranausschnitt",
+      "missions": "M1–M3/M7",
+      "required_features": "zwei Lipidlagen, korrekte Kopf/Kettenorientierung; Kanal/Carrier/Pumpe; Außen-/Cytosolseite",
+      "view_modes": [
+        "overview",
+        "section",
+        "isolated",
+        "answer_view"
+      ],
+      "equivalent_2d_required": true,
+      "review_status": "pending"
+    },
+    {
+      "id": "vesicle_path",
+      "title": "ER–Golgi–Vesikel–Außenraum",
+      "missions": "M8",
+      "required_features": "luminale/cytosolische Seiten markiert und durchgehend topologisch korrekt",
+      "view_modes": [
+        "overview",
+        "section",
+        "isolated",
+        "answer_view"
+      ],
+      "equivalent_2d_required": true,
+      "review_status": "pending"
+    },
+    {
+      "id": "microscopy_diagrams",
+      "title": "Präparat und Zeichnungskritik",
+      "missions": "Z4",
+      "required_features": "eigene ausdrücklich schematische Darstellungen; echte Mikroaufnahmen nur separat nach Quelle/Lizenzprüfung",
+      "view_modes": [
+        "overview",
+        "section",
+        "isolated",
+        "answer_view"
+      ],
+      "equivalent_2d_required": true,
+      "review_status": "pending"
+    }
+  ]
+}

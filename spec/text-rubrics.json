@@ -1,0 +1,316 @@
+{
+  "version": "1.0",
+  "status": "Designverträge, kein allgemeiner Sprachparser",
+  "rules": [
+    {
+      "id": "TERM_TONOPLAST",
+      "target_concept": "Vakuolenmembran",
+      "profile": "T1",
+      "correct_aliases_or_relation_forms": [
+        "Tonoplast",
+        "Vakuolenmembran"
+      ],
+      "partial_forms": [
+        "Membran",
+        "Hülle",
+        "Vakuolenhülle"
+      ],
+      "known_wrong_forms": [
+        "Zellmembran",
+        "Zellwand",
+        "Vakuole",
+        "Kernhülle",
+        "Zellkern"
+      ],
+      "allowed_frame_examples": [
+        "Die Membran heißt X.",
+        "Das ist X.",
+        "X umschließt die Vakuole.",
+        "Nicht Zellwand, sondern X."
+      ],
+      "protected_semantics": [
+        "Negation",
+        "Richtung",
+        "Zeitbezug",
+        "netto vs Einzelbewegung",
+        "Quantifikation",
+        "vollständige relevante Eingabe"
+      ],
+      "unclear_policy": "Keine sichere Interpretation oder relevanter ungeprüfter Rest: clarify; keine Fehlerzählung.",
+      "spelling_policy": "Nur eindeutiger Fachbegriff gemäß C; keine fuzzy Bedeutungskorrektur bei Gegensatzpaaren.",
+      "feedback": {
+        "correct": "Richtig: Der Tonoplast grenzt den Vakuolenraum vom Cytosol ab.",
+        "partial": "Du benennst eine Grenze, aber noch nicht die gesuchte Vakuolenmembran. Ergänze den passenden Namen.",
+        "wrong_boundary": "Die genannte Struktur begrenzt nicht den Vakuolenraum. Vergleiche die äußere Zellgrenze mit der Vakuolengrenze.",
+        "wrong_lumen": "Die Vakuole ist der Raum. Gesucht ist der Name seiner Membran.",
+        "clarify": "Du nennst mehrere oder nicht eindeutig zuordenbare Strukturen. Entscheide dich für die Membran um die Vakuole."
+      },
+      "hedge_policy": "Ein bloßer Unsicherheitsmarker (etwa „vielleicht“ oder „ich denke“) macht eine einzelne eindeutig richtige Antwort nicht unklar. Echte konkurrierende Alternativen bleiben zu klären.",
+      "alias_coordination_policy": "Zwei über „oder“ verbundene bekannte gleichwertige Bezeichnungen desselben Konzepts sind keine inhaltliche Mehrdeutigkeit."
+    },
+    {
+      "id": "TERM_OSMOSIS",
+      "target_concept": "Osmose",
+      "profile": "T1",
+      "correct_aliases_or_relation_forms": [
+        "Osmose"
+      ],
+      "partial_forms": [
+        "Diffusion",
+        "Wasserbewegung",
+        "Wassertransport"
+      ],
+      "known_wrong_forms": [
+        "aktiver Transport",
+        "Endocytose",
+        "Exocytose",
+        "Plasmolyse"
+      ],
+      "allowed_frame_examples": [
+        "Der Vorgang heißt X.",
+        "Das ist X."
+      ],
+      "protected_semantics": [
+        "Negation",
+        "Richtung",
+        "Zeitbezug",
+        "netto vs Einzelbewegung",
+        "Quantifikation",
+        "vollständige relevante Eingabe"
+      ],
+      "unclear_policy": "Keine sichere Interpretation oder relevanter ungeprüfter Rest: clarify; keine Fehlerzählung.",
+      "spelling_policy": "Nur eindeutiger Fachbegriff gemäß C; keine fuzzy Bedeutungskorrektur bei Gegensatzpaaren.",
+      "feedback": {
+        "correct": "Der Wassertransport durch die selektive Grenze wird hier als Osmose beschrieben.",
+        "partial": "Du benennst den übergeordneten Zusammenhang. Gesucht ist der spezielle Wassertransport durch die selektive Membran.",
+        "incorrect": "Das ist nicht der gefragte Wassertransportvorgang. Unterscheide den Transport von seiner sichtbaren Zellfolge.",
+        "clarify": "Die Benennung ist nicht eindeutig. Gib nur den Namen des Wassertransportvorgangs an."
+      },
+      "hedge_policy": "Ein bloßer Unsicherheitsmarker (etwa „vielleicht“ oder „ich denke“) macht eine einzelne eindeutig richtige Antwort nicht unklar. Echte konkurrierende Alternativen bleiben zu klären.",
+      "alias_coordination_policy": "Zwei über „oder“ verbundene bekannte gleichwertige Bezeichnungen desselben Konzepts sind keine inhaltliche Mehrdeutigkeit."
+    },
+    {
+      "id": "REL_NET_WATER_OUT",
+      "target_concept": "Netto-Wasserstrom Cytosol → Außenraum",
+      "profile": "T2",
+      "correct_aliases_or_relation_forms": [
+        "nach außen",
+        "hinaus",
+        "raus",
+        "aus der Zelle",
+        "Wasser tritt netto aus der Zelle aus",
+        "vom Cytosol in die Umgebung"
+      ],
+      "partial_forms": [
+        "in beide Richtungen",
+        "Wasser bewegt sich",
+        "Osmose"
+      ],
+      "known_wrong_forms": [
+        "nach innen",
+        "hinein",
+        "rein",
+        "kein Wassertransport",
+        "Wasser steht still",
+        "Saccharose geht nach außen"
+      ],
+      "allowed_frame_examples": [
+        "Wasser bewegt sich in beide Richtungen, netto aber nach außen.",
+        "Nicht nach innen, sondern nach außen.",
+        "Es treten mehr Wassermoleküle aus als ein."
+      ],
+      "protected_semantics": [
+        "Negation",
+        "Richtung",
+        "Zeitbezug",
+        "netto vs Einzelbewegung",
+        "Quantifikation",
+        "vollständige relevante Eingabe"
+      ],
+      "unclear_policy": "Keine sichere Interpretation oder relevanter ungeprüfter Rest: clarify; keine Fehlerzählung.",
+      "spelling_policy": "Nur eindeutiger Fachbegriff gemäß C; keine fuzzy Bedeutungskorrektur bei Gegensatzpaaren.",
+      "feedback": {
+        "correct": "Die Nettorichtung stimmt: Wasser verlässt unter den angegebenen Bedingungen die Zelle.",
+        "partial": "Einzelbewegung und Nettorichtung sind zu unterscheiden. Ergänze die Nettorichtung über die Zellmembran.",
+        "incorrect": "Diese Aussage passt nicht zum angegebenen Wasserpotenzialgefälle oder zum gefragten Stoff. Vergleiche Außenraum und Cytosol.",
+        "contradiction": "Du gibst für denselben Zustand entgegengesetzte Nettorichtungen an. Das ist nicht als eine eindeutige Nettobilanz vereinbar.",
+        "clarify": "Die Richtung oder der Zeitpunkt ist nicht eindeutig zugeordnet. Antworte für die Anfangsphase nach dem Wechsel."
+      },
+      "hedge_policy": "Ein bloßer Unsicherheitsmarker (etwa „vielleicht“ oder „ich denke“) macht eine einzelne eindeutig richtige Antwort nicht unklar. Echte konkurrierende Alternativen bleiben zu klären.",
+      "alias_coordination_policy": "Zwei über „oder“ verbundene bekannte gleichwertige Bezeichnungen desselben Konzepts sind keine inhaltliche Mehrdeutigkeit.",
+      "explicit_self_correction_example": "Ich dachte zunächst hinein; jetzt meine ich hinaus. → correct, wenn die aktuelle Antwort eindeutig markiert ist."
+    },
+    {
+      "id": "REL_VACUOLE_SMALLER",
+      "target_concept": "Vakuolenvolumen nimmt ab",
+      "profile": "T2",
+      "correct_aliases_or_relation_forms": [
+        "kleiner",
+        "nimmt ab",
+        "schrumpft",
+        "verkleinert sich",
+        "Die Vakuole verliert Volumen",
+        "weniger"
+      ],
+      "partial_forms": [
+        "ändert sich",
+        "verändert sich",
+        "Wasserverlust"
+      ],
+      "known_wrong_forms": [
+        "größer",
+        "nimmt zu",
+        "wächst",
+        "bleibt gleich",
+        "Die Zellwand schrumpft"
+      ],
+      "allowed_frame_examples": [
+        "Das Volumen wird X.",
+        "Die Vakuole wird kleiner, weil sie Wasser verliert.",
+        "Nicht größer, sondern kleiner."
+      ],
+      "protected_semantics": [
+        "Negation",
+        "Richtung",
+        "Zeitbezug",
+        "netto vs Einzelbewegung",
+        "Quantifikation",
+        "vollständige relevante Eingabe"
+      ],
+      "unclear_policy": "Keine sichere Interpretation oder relevanter ungeprüfter Rest: clarify; keine Fehlerzählung.",
+      "spelling_policy": "Nur eindeutiger Fachbegriff gemäß C; keine fuzzy Bedeutungskorrektur bei Gegensatzpaaren.",
+      "feedback": {
+        "correct": "Das Vakuolenvolumen nimmt beim beschriebenen Wasserverlust ab.",
+        "partial": "Eine Veränderung ist benannt. Gib an, ob das Vakuolenvolumen zu- oder abnimmt.",
+        "incorrect": "Wasserverlust erklärt hier keine Volumenzunahme. Beziehe die Aussage ausdrücklich auf die Vakuole, nicht auf die Zellwand.",
+        "contradiction": "Für dasselbe Vakuolenvolumen stehen gleichzeitig entgegengesetzte Veränderungen in der Antwort.",
+        "clarify": "Die Aussage lässt sich nicht eindeutig auf das Vakuolenvolumen in der gefragten Phase beziehen."
+      },
+      "hedge_policy": "Ein bloßer Unsicherheitsmarker (etwa „vielleicht“ oder „ich denke“) macht eine einzelne eindeutig richtige Antwort nicht unklar. Echte konkurrierende Alternativen bleiben zu klären.",
+      "alias_coordination_policy": "Zwei über „oder“ verbundene bekannte gleichwertige Bezeichnungen desselben Konzepts sind keine inhaltliche Mehrdeutigkeit."
+    },
+    {
+      "id": "TERM_HYDROPHIL",
+      "target_concept": "hydrophil",
+      "profile": "T1",
+      "correct_aliases_or_relation_forms": [
+        "hydrophil",
+        "wasserfreundlich"
+      ],
+      "partial_forms": [
+        "polar",
+        "wasserlöslich"
+      ],
+      "known_wrong_forms": [
+        "hydrophob",
+        "unpolar",
+        "wassermeidend"
+      ],
+      "allowed_frame_examples": [
+        "Der Bereich ist X."
+      ],
+      "protected_semantics": [
+        "Negation",
+        "Richtung",
+        "Zeitbezug",
+        "netto vs Einzelbewegung",
+        "Quantifikation",
+        "vollständige relevante Eingabe"
+      ],
+      "unclear_policy": "Keine sichere Interpretation oder relevanter ungeprüfter Rest: clarify; keine Fehlerzählung.",
+      "spelling_policy": "Nur eindeutiger Fachbegriff gemäß C; keine fuzzy Bedeutungskorrektur bei Gegensatzpaaren.",
+      "feedback": {
+        "correct": "Hydrophil beschreibt günstige Wechselwirkungen des betrachteten Bereichs mit Wasser.",
+        "partial": "Du nennst einen verwandten Aspekt. Gesucht ist die Bezeichnung für das Verhalten des Bereichs gegenüber Wasser.",
+        "incorrect": "Der gewählte Begriff beschreibt nicht die gefragte günstige Wechselwirkung mit Wasser.",
+        "clarify": "Die Bezeichnung ist nicht eindeutig. Besonders hydrophil und hydrophob dürfen nicht ineinander korrigiert werden."
+      },
+      "hedge_policy": "Ein bloßer Unsicherheitsmarker (etwa „vielleicht“ oder „ich denke“) macht eine einzelne eindeutig richtige Antwort nicht unklar. Echte konkurrierende Alternativen bleiben zu klären.",
+      "alias_coordination_policy": "Zwei über „oder“ verbundene bekannte gleichwertige Bezeichnungen desselben Konzepts sind keine inhaltliche Mehrdeutigkeit."
+    },
+    {
+      "id": "REL_PARTICLES_MOVE",
+      "target_concept": "Einzelteilchen bleiben in Bewegung",
+      "profile": "T2",
+      "correct_aliases_or_relation_forms": [
+        "weiter",
+        "bewegen sich",
+        "bleiben in Bewegung",
+        "Die Teilchen bewegen sich weiter"
+      ],
+      "partial_forms": [
+        "dynamisches Gleichgewicht",
+        "kein Nettotransport"
+      ],
+      "known_wrong_forms": [
+        "stehen still",
+        "bewegen sich nicht",
+        "alle Bewegung endet"
+      ],
+      "allowed_frame_examples": [
+        "Kein Nettotransport, aber weiter Bewegung der Einzelteilchen.",
+        "Nicht still, sondern weiter in Bewegung."
+      ],
+      "protected_semantics": [
+        "Negation",
+        "Richtung",
+        "Zeitbezug",
+        "netto vs Einzelbewegung",
+        "Quantifikation",
+        "vollständige relevante Eingabe"
+      ],
+      "unclear_policy": "Keine sichere Interpretation oder relevanter ungeprüfter Rest: clarify; keine Fehlerzählung.",
+      "spelling_policy": "Nur eindeutiger Fachbegriff gemäß C; keine fuzzy Bedeutungskorrektur bei Gegensatzpaaren.",
+      "feedback": {
+        "correct": "Die Einzelteilchen bleiben in Bewegung; die mittleren entgegengesetzten Übergänge gleichen sich aus.",
+        "partial": "Die Nettobilanz ist benannt. Gefragt ist hier die Bewegung der einzelnen Teilchen.",
+        "incorrect": "Dynamisches Gleichgewicht bedeutet nicht Stillstand der Einzelteilchen.",
+        "clarify": "Unterscheide deine Aussage zur Nettobilanz von der Frage nach den einzelnen Teilchen."
+      },
+      "hedge_policy": "Ein bloßer Unsicherheitsmarker (etwa „vielleicht“ oder „ich denke“) macht eine einzelne eindeutig richtige Antwort nicht unklar. Echte konkurrierende Alternativen bleiben zu klären.",
+      "alias_coordination_policy": "Zwei über „oder“ verbundene bekannte gleichwertige Bezeichnungen desselben Konzepts sind keine inhaltliche Mehrdeutigkeit."
+    },
+    {
+      "id": "TERM_ATP_ROLE",
+      "target_concept": "Energieüberträger",
+      "profile": "T2",
+      "correct_aliases_or_relation_forms": [
+        "Energieträger",
+        "Energieüberträger",
+        "stellt nutzbare Energie für gekoppelte Prozesse bereit",
+        "liefert Energie für gekoppelte Prozesse",
+        "Energielieferant für Zellprozesse"
+      ],
+      "partial_forms": [
+        "Energie"
+      ],
+      "known_wrong_forms": [
+        "Enzym",
+        "Transportkanal",
+        "Erbinformationsträger"
+      ],
+      "allowed_frame_examples": [
+        "ATP ist ein X.",
+        "ATP überträgt Energie für gekoppelte Prozesse."
+      ],
+      "protected_semantics": [
+        "Negation",
+        "Richtung",
+        "Zeitbezug",
+        "netto vs Einzelbewegung",
+        "Quantifikation",
+        "vollständige relevante Eingabe"
+      ],
+      "unclear_policy": "Keine sichere Interpretation oder relevanter ungeprüfter Rest: clarify; keine Fehlerzählung.",
+      "spelling_policy": "Nur eindeutiger Fachbegriff gemäß C; keine fuzzy Bedeutungskorrektur bei Gegensatzpaaren.",
+      "feedback": {
+        "correct": "ATP dient hier als Energieüberträger für gekoppelte Zellprozesse.",
+        "partial": "Energie ist der passende Bezug. Ergänze die Rolle von ATP dabei.",
+        "incorrect": "Die genannte Funktion trifft die im Material gefragte Rolle von ATP nicht.",
+        "clarify": "Die Funktionsangabe lässt sich nicht eindeutig zuordnen. Benenne die Rolle von ATP in einem kurzen Ausdruck."
+      },
+      "hedge_policy": "Ein bloßer Unsicherheitsmarker (etwa „vielleicht“ oder „ich denke“) macht eine einzelne eindeutig richtige Antwort nicht unklar. Echte konkurrierende Alternativen bleiben zu klären.",
+      "alias_coordination_policy": "Zwei über „oder“ verbundene bekannte gleichwertige Bezeichnungen desselben Konzepts sind keine inhaltliche Mehrdeutigkeit."
+    }
+  ]
+}

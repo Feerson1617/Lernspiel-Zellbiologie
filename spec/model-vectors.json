@@ -1,0 +1,293 @@
+{
+  "version": "1.0",
+  "R_J_mol_K": 8.314462618,
+  "status": "Analytische bzw. arithmetische Referenzen; numerischer Integrator und Spiel noch nicht implementiert",
+  "vectors": [
+    {
+      "id": "BM04.initial_pressure",
+      "kind": "osmotic_pressure_difference",
+      "inputs": {
+        "temperature_K": 293.15,
+        "delta_concentration_mol_m3": 200
+      },
+      "expected": {
+        "pressure_Pa": 487476.94329334
+      }
+    },
+    {
+      "id": "BM04.initial_equal_potential",
+      "kind": "potential",
+      "inputs": {
+        "temperature_K": 293.15,
+        "inside_P_Pa": 487476.94329334,
+        "inside_C_mol_m3": 300,
+        "outside_P_Pa": 0,
+        "outside_C_mol_m3": 100
+      },
+      "expected": {
+        "inside_Psi_Pa": -243738.47164666996,
+        "outside_Psi_Pa": -243738.47164667,
+        "net": "zero"
+      }
+    },
+    {
+      "id": "BM04.hypertonic_change",
+      "kind": "potential",
+      "inputs": {
+        "temperature_K": 293.15,
+        "inside_P_Pa": 487476.94329334,
+        "inside_C_mol_m3": 300,
+        "outside_P_Pa": 0,
+        "outside_C_mol_m3": 500
+      },
+      "expected": {
+        "inside_Psi_Pa": -243738.47164666996,
+        "outside_Psi_Pa": -1218692.3582333499,
+        "net": "out"
+      }
+    },
+    {
+      "id": "BM04.relaxed_volume",
+      "kind": "wall_reference",
+      "inputs": {
+        "initial_volume_m3": 1e-13,
+        "initial_P_Pa": 487476.94329334,
+        "K_Pa": 50000000.0
+      },
+      "expected": {
+        "V_relaxed_m3": 9.9034459686229e-14
+      }
+    },
+    {
+      "id": "BM04.hypertonic_end",
+      "kind": "solute_volume_equilibrium",
+      "inputs": {
+        "cytosol_n_mol": 3e-12,
+        "vacuole_n_mol": 2.7e-11,
+        "C_external_mol_m3": 500
+      },
+      "expected": {
+        "cytosol_V_m3": 6e-15,
+        "vacuole_V_m3": 5.4e-14,
+        "total_V_m3": 6e-14
+      }
+    },
+    {
+      "id": "BM04.closed_balance",
+      "kind": "volume_derivative_balance",
+      "inputs": {
+        "Q_ec_m3_s": 1e-16,
+        "Q_cv_m3_s": -2e-16
+      },
+      "expected": {
+        "dVe_m3_s": -1e-16,
+        "dVc_m3_s": 3e-16,
+        "dVv_m3_s": -2e-16,
+        "sum": 0
+      }
+    },
+    {
+      "id": "M9.A",
+      "kind": "three_potentials",
+      "inputs": {
+        "e_MPa": -0.1,
+        "c_MPa": -0.3,
+        "v_MPa": -0.5
+      },
+      "expected": {
+        "plasma": "e_to_c",
+        "tonoplast": "c_to_v"
+      }
+    },
+    {
+      "id": "M9.B",
+      "kind": "three_potentials",
+      "inputs": {
+        "e_MPa": -0.7,
+        "c_MPa": -0.3,
+        "v_MPa": -0.5
+      },
+      "expected": {
+        "plasma": "c_to_e",
+        "tonoplast": "c_to_v"
+      }
+    },
+    {
+      "id": "M4.net",
+      "kind": "diffusion_counts",
+      "inputs": {
+        "left": 18,
+        "right": 6,
+        "lr": 7,
+        "rl": 3
+      },
+      "expected": {
+        "left": 14,
+        "right": 10,
+        "net_right": 4,
+        "total": 24
+      }
+    },
+    {
+      "id": "M4.expected",
+      "kind": "expected_net",
+      "inputs": {
+        "left": 18,
+        "right": 6,
+        "p": 0.25
+      },
+      "expected": {
+        "mean_net_right": 3
+      }
+    },
+    {
+      "id": "T8.unequal_volumes",
+      "kind": "concentration_ratio",
+      "inputs": {
+        "V_left": 2,
+        "V_right": 1,
+        "N_total": 24
+      },
+      "expected": {
+        "N_left": 16,
+        "N_right": 8
+      }
+    },
+    {
+      "id": "M10.mass",
+      "kind": "relative_mass",
+      "inputs": {
+        "m0_g": 3.0,
+        "mf_g": [
+          3.24,
+          3.09,
+          2.97,
+          2.85,
+          2.76
+        ]
+      },
+      "expected": {
+        "percent": [
+          8,
+          3,
+          -1,
+          -5,
+          -8
+        ]
+      }
+    },
+    {
+      "id": "M10.root",
+      "kind": "linear_root",
+      "inputs": {
+        "x1": 0.1,
+        "y1": 3,
+        "x2": 0.2,
+        "y2": -1
+      },
+      "expected": {
+        "x0_mol_L": 0.175
+      }
+    },
+    {
+      "id": "M9.percentpoints",
+      "kind": "deviation",
+      "inputs": {
+        "target": 100,
+        "upper": 105,
+        "current": 112
+      },
+      "expected": {
+        "target_difference": 12,
+        "upper_difference": 7
+      }
+    },
+    {
+      "id": "T5.mass",
+      "kind": "relative_mass",
+      "inputs": {
+        "m0_g": 5.0,
+        "mf_g": [
+          4.65
+        ]
+      },
+      "expected": {
+        "percent": [
+          -7
+        ]
+      }
+    },
+    {
+      "id": "E3.growth",
+      "kind": "binary_growth",
+      "inputs": {
+        "N0": 12,
+        "doubling_min": 20,
+        "duration_min": 60
+      },
+      "expected": {
+        "N": 96
+      }
+    },
+    {
+      "id": "BM05.passive_equal",
+      "kind": "neutral_rate",
+      "inputs": {
+        "P_m_s": 1e-06,
+        "A_m2": 1e-10,
+        "Cout": 10,
+        "Cin": 10,
+        "Km": 5,
+        "Jmax": 1e-15
+      },
+      "expected": {
+        "J_mol_s": 0
+      }
+    },
+    {
+      "id": "BM05.passive_in",
+      "kind": "neutral_rate",
+      "inputs": {
+        "P_m_s": 1e-06,
+        "A_m2": 1e-10,
+        "Cout": 10,
+        "Cin": 0,
+        "Km": 5,
+        "Jmax": 1e-15
+      },
+      "expected": {
+        "J_mol_s": 1.6666666666666668e-15
+      }
+    },
+    {
+      "id": "BM05.passive_out",
+      "kind": "neutral_rate",
+      "inputs": {
+        "P_m_s": 1e-06,
+        "A_m2": 1e-10,
+        "Cout": 0,
+        "Cin": 10,
+        "Km": 5,
+        "Jmax": 1e-15
+      },
+      "expected": {
+        "J_mol_s": -1.6666666666666668e-15
+      }
+    },
+    {
+      "id": "BM05.double_area",
+      "kind": "neutral_rate",
+      "inputs": {
+        "P_m_s": 1e-06,
+        "A_m2": 2e-10,
+        "Cout": 10,
+        "Cin": 0,
+        "Km": 5,
+        "Jmax": 2e-15
+      },
+      "expected": {
+        "J_mol_s": 3.3333333333333336e-15
+      }
+    }
+  ]
+}

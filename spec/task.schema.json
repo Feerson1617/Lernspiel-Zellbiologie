@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Zelllabor11 authoring task bank",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "publication_status",
+    "tasks"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "publication_status": {
+      "type": "string"
+    },
+    "tasks": {
+      "type": "array",
+      "minItems": 79,
+      "maxItems": 79,
+      "items": {
+        "$ref": "#/$defs/task"
+      }
+    }
+  },
+  "$defs": {
+    "task": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "mission_id",
+        "title",
+        "type",
+        "prompt",
+        "material",
+        "response_spec",
+        "expected",
+        "source_refs",
+        "demand",
+        "status",
+        "hints",
+        "misconception",
+        "evaluation_contract",
+        "acceptance",
+        "feedback",
+        "rubric_granularity",
+        "variation_policy",
+        "criteria",
+        "assessment_implementation_status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mission_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "prompt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "material": {
+          "type": "string",
+          "minLength": 1
+        },
+        "demand": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "misconception": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evaluation_contract": {
+          "type": "string",
+          "minLength": 1
+        },
+        "rubric_granularity": {
+          "type": "string",
+          "minLength": 1
+        },
+        "variation_policy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "assessment_implementation_status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "diagnostic_route": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "enum": [
+            "match",
+            "bounded_text",
+            "single",
+            "multi",
+            "order",
+            "causal_map",
+            "numeric",
+            "experiment",
+            "model_action",
+            "graph"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "hints": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "acceptance": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "response_spec": {
+          "type": "object"
+        },
+        "expected": {
+          "type": "object",
+          "minProperties": 1
+        },
+        "feedback": {
+          "type": "object"
+        },
+        "criteria": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "label",
+              "required"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              },
+              "required": {
+                "const": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

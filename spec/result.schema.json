@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EvaluationResult",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "taskId",
+    "taskVersion",
+    "rubricVersion",
+    "contextHash",
+    "status",
+    "criteria",
+    "unassessedRelevantText",
+    "assistance",
+    "feedbackCode"
+  ],
+  "properties": {
+    "taskId": {
+      "type": "string"
+    },
+    "taskVersion": {
+      "type": "string"
+    },
+    "rubricVersion": {
+      "type": "string"
+    },
+    "contextHash": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "correct",
+        "incorrect",
+        "partial",
+        "clarify",
+        "empty",
+        "technical"
+      ]
+    },
+    "criteria": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "status",
+          "evidence",
+          "reasonCode"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "correct",
+              "incorrect",
+              "partial",
+              "clarify",
+              "empty",
+              "technical"
+            ]
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "kind",
+                "value"
+              ],
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "input_span",
+                    "option_id",
+                    "state_value"
+                  ]
+                },
+                "value": {
+                  "type": "string"
+                },
+                "start": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "end": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            }
+          },
+          "reasonCode": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "incorrect"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "evidence": {
+                  "minItems": 1
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "unassessedRelevantText": {
+      "type": "boolean"
+    },
+    "assistance": {
+      "enum": [
+        "independent",
+        "hint",
+        "wordbank",
+        "clarified",
+        "solution_viewed"
+      ]
+    },
+    "feedbackCode": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "correct"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "unassessedRelevantText": {
+            "const": false
+          },
+          "criteria": {
+            "minItems": 1,
+            "items": {
+              "properties": {
+                "status": {
+                  "const": "correct"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "incorrect"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "criteria": {
+            "contains": {
+              "properties": {
+                "status": {
+                  "const": "incorrect"
+                }
+              },
+              "required": [
+                "status"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

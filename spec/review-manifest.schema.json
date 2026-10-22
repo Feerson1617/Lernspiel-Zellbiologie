@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Executed review manifest",
+  "type": "object",
+  "required": [
+    "reviewId",
+    "reviewKind",
+    "commitSha",
+    "sourceVersions",
+    "environment",
+    "executedCommands",
+    "caseCounts",
+    "newCases",
+    "blockedChecks",
+    "criticalFindings",
+    "releaseStatus"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "reviewId": {
+      "type": "string"
+    },
+    "reviewKind": {
+      "enum": [
+        "self_check",
+        "separate_countercheck",
+        "integration",
+        "device",
+        "learner_pilot",
+        "concept_only"
+      ]
+    },
+    "commitSha": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sourceVersions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "environment": {
+      "type": "object"
+    },
+    "executedCommands": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "caseCounts": {
+      "type": "object",
+      "required": [
+        "passed",
+        "failed",
+        "skipped"
+      ],
+      "properties": {
+        "passed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "failed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "skipped": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "newCases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "blockedChecks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "criticalFindings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "releaseStatus": {
+      "enum": [
+        "not_applicable_concept",
+        "blocked",
+        "development_only",
+        "countercheck_pending",
+        "ready_for_teacher_decision"
+      ]
+    }
+  }
+}

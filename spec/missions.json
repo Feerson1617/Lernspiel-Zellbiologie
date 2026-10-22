@@ -1,0 +1,601 @@
+{
+  "schema_version": "1.0",
+  "project": "Zelllabor11",
+  "version": "1.0.0-concept-2026-10-22",
+  "missions": [
+    {
+      "id": "Z1",
+      "title": "Zellatlas",
+      "area": "Zellen erforschen",
+      "source_refs": [
+        "SFC23 §2 SF2",
+        "SM AB01 S.3"
+      ],
+      "prerequisites": [],
+      "research_question": "Welche Strukturen ermöglichen die verschiedenen Leistungen einer Zelle?",
+      "learning_goal": "Acht Zellstrukturen lokalisieren; Funktionen unterscheiden; Blatt-, Zwiebel- und Tierzelle kriterienbezogen vergleichen.",
+      "representation": "Interaktives 3D-Strukturmodell einer chloroplastenhaltigen Blattzelle, einer Tierzelle und einer Zwiebel-Epidermiszelle; gleichwertige SVG-Schnitte. Keine Mikroaufnahmen.",
+      "learner_action": "Drehen, schneiden, Struktur isolieren, Beschriftung zuordnen, einen Fachbegriff eingeben.",
+      "misconception": "Zellwand = Zellmembran = Tonoplast; alle Pflanzenzellen besitzen Chloroplasten.",
+      "scaffold": "Grenze der ganzen Zelle und Grenze der Vakuole getrennt hervorheben, ohne den Namen einzublenden.",
+      "transfer": "Ein nicht fotosynthetisches Pflanzengewebe anhand seiner Merkmale zuordnen.",
+      "acceptance": "Jede Beschriftung hat einen geprüften semantischen Zielanker; kein Ziel ist in der Prüfansicht verdeckt; Zwiebelprofil ohne Chloroplasten.",
+      "estimated_minutes": [
+        10,
+        15
+      ],
+      "time_status": "Entwurfsschätzung, nicht mit einer Lerngruppe gemessen",
+      "tasks": [
+        "Z1.01",
+        "Z1.02",
+        "Z1.03",
+        "Z1.04"
+      ]
+    },
+    {
+      "id": "Z2",
+      "title": "Zellräume und Zusammenarbeit",
+      "area": "Zellen erforschen",
+      "source_refs": [
+        "SFC23 §1/§2 SF3/SF2/SF8",
+        "SM AB02 S.4"
+      ],
+      "prerequisites": [
+        "Z1"
+      ],
+      "research_question": "Warum reicht ein einziger ungeteilter Zellraum nicht aus?",
+      "learning_goal": "Struktur-Funktion, Organisationsebenen und abgegrenzte Reaktionsräume verknüpfen; Energieversorgung vom Weg eines Produkts unterscheiden.",
+      "representation": "3D-Schnitte plus geordnetes 2D-Funktionsnetz; molekulare Größen ausdrücklich andere Maßstabsebene.",
+      "learner_action": "Größenebenen ordnen, gerichtete Beziehungen legen, geeignete Kompartimentfunktionen auswählen.",
+      "misconception": "Ein Ribosom ist eine membranumhüllte Zelle; ein Sekretprotein muss durch ein Mitochondrium laufen.",
+      "scaffold": "Zwei Pfeilarten trennen: Weg des Proteins und Bereitstellung von ATP.",
+      "transfer": "Begründen, weshalb räumliche Trennung und kontrollierter Austausch gemeinsam erforderlich sind.",
+      "acceptance": "Erlaubte alternative Ordnungen und parallele Funktionsbeziehungen dürfen nicht als Fehler gelten.",
+      "estimated_minutes": [
+        10,
+        15
+      ],
+      "time_status": "Entwurfsschätzung, nicht mit einer Lerngruppe gemessen",
+      "tasks": [
+        "Z2.01",
+        "Z2.02",
+        "Z2.03",
+        "Z2.04"
+      ]
+    },
+    {
+      "id": "Z3",
+      "title": "Zellgeschichte begründen",
+      "area": "Zellen erforschen",
+      "source_refs": [
+        "SFC23 §2 E21",
+        "SM AB03–04 S.5–6"
+      ],
+      "prerequisites": [
+        "Z1",
+        "E2 bei Diagnosebedarf",
+        "E3 bei Diagnosebedarf"
+      ],
+      "research_question": "Welche Befunde sprechen für bakterielle Vorfahren bestimmter Organellen?",
+      "learning_goal": "Befund und historische Deutung unterscheiden; mitochondriale und plastidäre Endosymbiose sowie Grenzen des Modells erklären.",
+      "representation": "Befundkarten und verzweigtes Evolutionsschema; keine scheinbare historische Filmaufnahme.",
+      "learner_action": "Befunde zuordnen, Teilfolge rekonstruieren, Aussagen auf Reichweite prüfen.",
+      "misconception": "Alle Organellen entstanden durch Endosymbiose; jede Doppelmembran beweist deren genaue Geschichte.",
+      "scaffold": "Zuerst einen heutigen Befund markieren, dann die passende Erklärung suchen.",
+      "transfer": "Eine Erklärung beurteilen, die aus einem einzigen Hinweis zu viel folgert.",
+      "acceptance": "Keine moderne Tierzelle als gesichert ursprünglicher Wirt; Ribosomen nur bakterienähnlich, keine universelle 70S-Behauptung.",
+      "estimated_minutes": [
+        12,
+        18
+      ],
+      "time_status": "Entwurfsschätzung, nicht mit einer Lerngruppe gemessen",
+      "tasks": [
+        "Z3.01",
+        "Z3.02",
+        "Z3.03",
+        "Z3.04"
+      ]
+    },
+    {
+      "id": "Z4",
+      "title": "Beobachten statt hineinzeichnen",
+      "area": "Zellen erforschen",
+      "source_refs": [
+        "SFC23 fachliche Verfahren SF2",
+        "SM AB10–11 S.13–16"
+      ],
+      "prerequisites": [
+        "Z1"
+      ],
+      "research_question": "Was zeigt ein Mikroskop tatsächlich – und was ergänzen wir aus unserem Wissen?",
+      "learning_goal": "Präparation, Vergleichsfärbung, Vergrößerung und Kriterien einer Beobachtungszeichnung nachvollziehen; Erkenntnisgrenzen benennen.",
+      "representation": "Eigene gekennzeichnete Verfahrensschemata und Vergleichszeichnungen; echte Aufnahmen nur nach überprüfter Herkunft/Lizenz.",
+      "learner_action": "Arbeitsschritte ordnen, Vergrößerung berechnen, Zeichnungen und Vergleichsbedingungen prüfen.",
+      "misconception": "Größere Vergrößerung löst automatisch kleinere Strukturen auf; ein Zellmodell ist eine Beobachtungszeichnung.",
+      "scaffold": "Nur die ausdrücklich beobachteten Merkmale aus dem Befundprotokoll verwenden.",
+      "transfer": "Eine sorgfältige Zeichnung trotz nicht sichtbaren Zellkerns als sachgerecht erkennen.",
+      "acceptance": "Kein digitales Kompetenzabzeichen für praktisch ausgeführte Mikroskopie; reale Laborarbeit bleibt separat.",
+      "estimated_minutes": [
+        8,
+        12
+      ],
+      "time_status": "Entwurfsschätzung, nicht mit einer Lerngruppe gemessen",
+      "tasks": [
+        "Z4.01",
+        "Z4.02",
+        "Z4.03",
+        "Z4.04"
+      ]
+    },
+    {
+      "id": "M1",
+      "title": "Wasser und Ladung",
+      "area": "Biomembranen und Stofftransport",
+      "source_refs": [
+        "SFC23 §1 SF3",
+        "SM AB05 S.7"
+      ],
+      "prerequisites": [
+        "Z1"
+      ],
+      "research_question": "Warum verhalten sich Wasser, Ionen und lange Kohlenwasserstoffketten unterschiedlich?",
+      "learning_goal": "Gesamtladung von Teilladung unterscheiden und Wasserwechselwirkungen verständlich beschreiben.",
+      "representation": "Symbolische Molekülmodelle mit erklärten Zeichen O, H, δ+, δ− und Ionenladungen.",
+      "learner_action": "Teilladungen setzen, geladene und polare Teilchen vergleichen, kurze Begriffe abrufen.",
+      "misconception": "Ein polares Wassermolekül ist insgesamt negativ; hydrophob bedeutet absichtliches Wegstoßen.",
+      "scaffold": "Erst die Gesamtladung des Teilchens, dann die Verteilung innerhalb des Moleküls betrachten.",
+      "transfer": "Phasentrennung von der Frage unterscheiden, welche Flüssigkeit oben liegt.",
+      "acceptance": "Kein unscharfer Begriffsabgleich zwischen hydrophil/hydrophob oder polar/unpolar.",
+      "estimated_minutes": [
+        8,
+        12
+      ],
+      "time_status": "Entwurfsschätzung, nicht mit einer Lerngruppe gemessen",
+      "tasks": [
+        "M1.01",
+        "M1.02",
+        "M1.03",
+        "M1.04"
+      ]
+    },
+    {
+      "id": "M2",
+      "title": "Eine Membran aufbauen",
+      "area": "Biomembranen und Stofftransport",
+      "source_refs": [
+        "SFC23 §1/§3 SF3/SF5",
+        "SM AB06 S.8"
+      ],
+      "prerequisites": [
+        "M1"
+      ],
+      "research_question": "Wie entsteht aus amphiphilen Molekülen eine Grenze zwischen wässrigen Räumen?",
+      "learning_goal": "Speicherfett und typisches Phospholipid unterscheiden; Orientierung beider Lagen einer Doppelschicht begründen.",
+      "representation": "3D- und 2D-Bausteinmodell; Köpfe/Schwänze sind Symbole, keine Atome.",
+      "learner_action": "Molekülbausteine vergleichen, Phospholipide drehen und anordnen, Begründungsketten vervollständigen.",
+      "misconception": "Eine Doppelschicht sind zwei vollständige Membranen.",
+      "scaffold": "Beide Seiten des Membranausschnitts sind wässrig, nicht nur die obere.",
+      "transfer": "Eine fehlerhaft umgekehrte zweite Lage korrigieren.",
+      "acceptance": "Orientierung und nicht Pixelposition wird bewertet; gleichwertige Gesamtrotationen bleiben richtig.",
+      "estimated_minutes": [
+        8,
+        12
+      ],
+      "time_status": "Entwurfsschätzung, nicht mit einer Lerngruppe gemessen",
+      "tasks": [
+        "M2.01",
+        "M2.02",
+        "M2.03",
+        "M2.04"
+      ]
+    },
+    {
+      "id": "M3",
+      "title": "Die bewegliche Grenze",
+      "area": "Biomembranen und Stofftransport",
+      "source_refs": [
+        "SFC23 §3 SF5/SF6",
+        "SM AB07 S.9–10"
+      ],
+      "prerequisites": [
+        "M2"
+      ],
+      "research_question": "Wie kann eine Membran beweglich und zugleich selektiv durchlässig sein?",
+      "learning_goal": "Flüssig-Mosaik-Modell, Stoffeigenschaften und Daten zur lateralen Lipidbewegung verknüpfen.",
+      "representation": "Membran-3D-Ausschnitt und gekennzeichnetes FRAP-Datenschema; gebleichte Lipide, keine markierten Proteine.",
+      "learner_action": "Beschriften, Passage begründet zuordnen, Kurven beschreiben und Schlussfolgerungen begrenzen.",
+      "misconception": "Jedes kleine Teilchen passiert; Lipidbeweglichkeit beweist die freie Bewegung aller Proteine.",
+      "scaffold": "Prüfen, welcher Bestandteil im Material überhaupt markiert ist.",
+      "transfer": "Eine zu weit reichende Behauptung mit einem gezielten Gegenargument einschränken.",
+      "acceptance": "Die dargestellte Markierung stimmt mit Text, Kurve und Rückmeldung überein; keine falsche Flipflop-Aussage.",
+      "estimated_minutes": [
+        10,
+        15
+      ],
+      "time_status": "Entwurfsschätzung, nicht mit einer Lerngruppe gemessen",
+      "tasks": [
+        "M3.01",
+        "M3.02",
+        "M3.03",
+        "M3.04"
+      ]
+    },
+    {
+      "id": "M4",
+      "title": "Diffusion ohne Absicht",
+      "area": "Biomembranen und Stofftransport",
+      "source_refs": [
+        "SFC23 §3 SF6",
+        "SM AB08 S.11"
+      ],
+      "prerequisites": [
+        "M3"
+      ],
+      "research_question": "Wie entsteht aus ungeordneter Bewegung ein Nettotransport?",
+      "learning_goal": "Einzelbewegung, Nettobilanz und dynamisches Gleichgewicht unterscheiden; Volumen beim Konzentrationsvergleich berücksichtigen.",
+      "representation": "Seed-basiertes Zufallsmodell, keine Molekulardynamik; tabellarische Übergangszahlen und Konzentrationen.",
+      "learner_action": "Vorhersage abgeben, Schritte auslösen, beide Richtungen zählen, Gegenbeispiel ungleicher Volumina auswerten.",
+      "misconception": "Alle Teilchen laufen zielgerichtet; im Gleichgewicht stehen sie still; gleiche Anzahl bedeutet immer gleiche Konzentration.",
+      "scaffold": "Beide Richtungen zählen und erst danach die Differenz bilden.",
+      "transfer": "Bei doppeltem Raumvolumen eine passende Teilchenzahl für gleiche Konzentration bestimmen.",
+      "acceptance": "Massenerhaltung, synchrone Aktualisierung und korrekte Fluktuation; Vorhersagen nicht nach zufälligem Einzelereignis benoten.",
+      "estimated_minutes": [
+        8,
+        12
+      ],
+      "time_status": "Entwurfsschätzung, nicht mit einer Lerngruppe gemessen",
+      "tasks": [
+        "M4.01",
+        "M4.02",
+        "M4.03",
+        "M4.04"
+      ]
+    },
+    {
+      "id": "M5",
+      "title": "Wasserwege vorhersagen",
+      "area": "Biomembranen und Stofftransport",
+      "source_refs": [
+        "SFC23–24 §3 SF6/SR1",
+        "SM AB09 S.12"
+      ],
+      "prerequisites": [
+        "M4"
+      ],
+      "research_question": "Welche Richtung nimmt Wasser, wenn nur bestimmte Teilchen die Grenze passieren können?",
+      "learning_goal": "Membranannahme, Konzentration und Druck getrennt prüfen; Wasserpotenzial als Vergleichsgröße anwenden.",
+      "representation": "Berechnetes Zwei-Raum-Modell plus Zeichen für Druck; für die Lernenden zunächst qualitative Darstellung.",
+      "learner_action": "Permeabilität einstellen, Vorhersagen bei festgelegten Bedingungen vergleichen, Druckwirkung prüfen.",
+      "misconception": "Osmose ist Soluttransport; die Konzentration allein bestimmt unter allen Bedingungen die Richtung.",
+      "scaffold": "Dreischritt: Was passiert die Membran? Wie sind die Konzentrationen? Gibt es einen Druckunterschied?",
+      "transfer": "Bei verschiedenen Konzentrationen ein Gleichgewicht durch Druckausgleich erklären.",
+      "acceptance": "Vorzeichen und Einheiten geprüft; kein Wasserstillstand bei Nettofluss null; Tonizität nur relativ und unter benannten Annahmen.",
+      "estimated_minutes": [
+        10,
+        15
+      ],
+      "time_status": "Entwurfsschätzung, nicht mit einer Lerngruppe gemessen",
+      "tasks": [
+        "M5.01",
+        "M5.02",
+        "M5.03",
+        "M5.04"
+      ]
+    },
+    {
+      "id": "M6",
+      "title": "Plasmolyse untersuchen",
+      "area": "Biomembranen und Stofftransport",
+      "source_refs": [
+        "SFC23–24 plasmolytisch wirksame Reagenzien/SF6",
+        "SM AB12–13 S.17–19"
+      ],
+      "prerequisites": [
+        "Z1",
+        "Z4",
+        "M5"
+      ],
+      "research_question": "Warum verändert sich die Zwiebelzelle, obwohl ihre Zellwand fast gleich bleibt?",
+      "learning_goal": "Wasserbewegung, Vakuolenvolumen, Turgor und Protoplastlage kausal verbinden; Kontrolle und Rücktausch auswerten.",
+      "representation": "3D-Zwiebel-Epidermiszelle ohne Chloroplasten, drei getrennte Räume und entsprechende 2D-Schnittansicht; kein Mikroskopbild.",
+      "learner_action": "Vorhersagen, Konzentrationswechsel auslösen, Umrisse vergleichen, kurze Begriffe/Richtungen eingeben, Kontrollversuch auswählen.",
+      "misconception": "Die Zellwand schrumpft mit; Zucker drückt die Vakuole zusammen; fehlende Erholung beweist eine bestimmte Ursache.",
+      "scaffold": "Zuerst nur verfolgen, welche Grenze ihre Position ändert; danach Wasserverlust begründen.",
+      "transfer": "Einen Wasser-gegen-Wasser-Kontrollansatz begründen; fehlende Erholung ohne voreiligen Ursachenschluss benennen.",
+      "acceptance": "Zellwand/Zellmembran/Tonoplast eindeutig; eigenes Fachzustandsmodell und Korrektor getrennt geprüft; keine Original-Klausurtransferfrage.",
+      "estimated_minutes": [
+        12,
+        18
+      ],
+      "time_status": "Entwurfsschätzung, nicht mit einer Lerngruppe gemessen",
+      "tasks": [
+        "M6.01",
+        "M6.02",
+        "M6.03",
+        "M6.04"
+      ]
+    },
+    {
+      "id": "M7",
+      "title": "Transportwege unterscheiden",
+      "area": "Biomembranen und Stofftransport",
+      "source_refs": [
+        "SFC24 §3 SF6/SR1",
+        "SM AB14 S.20"
+      ],
+      "prerequisites": [
+        "M3",
+        "M4",
+        "M5"
+      ],
+      "research_question": "Wann genügt ein Gefälle, und wann ist ein gekoppelter Antrieb nötig?",
+      "learning_goal": "Einfache/erleichterte Diffusion, direkt und indirekt energiegekoppelten Transport unterscheiden; Ionen nur elektrochemisch beurteilen.",
+      "representation": "Kanal-, Carrier- und Pumpenmodelle mit getrenntem Energiekonto; qualitative Ionenfälle, keine freie unvalidierte Elektrophysiologie.",
+      "learner_action": "Transportfälle zuordnen, Datenargumente gewichten, ATP-Rolle benennen und Ionenfälle vergleichen.",
+      "misconception": "Jedes Transportprotein verbraucht unmittelbar ATP; eine hohe Rate beweist aktiven Transport.",
+      "scaffold": "Weg, Richtung und Energiequelle als drei verschiedene Fragen behandeln.",
+      "transfer": "Bei gegensätzlichem elektrischem und chemischem Antrieb eine unzureichende Information erkennen.",
+      "acceptance": "Kein aktiver Wasserkanal; direkte ATP-Spaltung nicht aus bloßer ATP-Abhängigkeit ableiten.",
+      "estimated_minutes": [
+        10,
+        16
+      ],
+      "time_status": "Entwurfsschätzung, nicht mit einer Lerngruppe gemessen",
+      "tasks": [
+        "M7.01",
+        "M7.02",
+        "M7.03",
+        "M7.04"
+      ]
+    },
+    {
+      "id": "M8",
+      "title": "Von Zellraum zu Zellraum",
+      "area": "Biomembranen und Stofftransport",
+      "source_refs": [
+        "SFC24 Vorentlastung Leben und Energie SF3/SF5/SF6",
+        "SM AB15.1 S.21"
+      ],
+      "prerequisites": [
+        "Z2",
+        "M3",
+        "M7"
+      ],
+      "research_question": "Wie gelangt ein Sekretprotein nach außen, ohne frei durch das Cytosol zu wandern?",
+      "learning_goal": "ER-Lumen, Vesikel, Golgi und Exocytose verbinden; Orientierung bei Membranfusion nachvollziehen.",
+      "representation": "Schnittmodell mit durchgehend markierter luminaler und cytosolischer Seite; vergrößerte Vesikel gekennzeichnet.",
+      "learner_action": "Weg ordnen, Membranseiten verfolgen, Vesikel- und Proteintransport vergleichen.",
+      "misconception": "Bei Fusion kehrt die Membran ihre Seiten um; Vesikelcargo diffundiert durch den hydrophoben Kern.",
+      "scaffold": "Der farbige luminale Marker bleibt bei der Abschnürung auf derselben Seite.",
+      "transfer": "Eine Markierung von der ER-Innenseite zur späteren Außenseite der Zellmembran verfolgen.",
+      "acceptance": "Topologie bleibt im vollständigen Animationsweg erhalten; kein falscher Mitochondrien-Zwischenschritt.",
+      "estimated_minutes": [
+        8,
+        12
+      ],
+      "time_status": "Entwurfsschätzung, nicht mit einer Lerngruppe gemessen",
+      "tasks": [
+        "M8.01",
+        "M8.02",
+        "M8.03",
+        "M8.04"
+      ]
+    },
+    {
+      "id": "M9",
+      "title": "Innere Bedingungen stabilisieren",
+      "area": "Biomembranen und Stofftransport",
+      "source_refs": [
+        "SFC24 SR1/SF6",
+        "SM AB15.2–15.3 S.21–22"
+      ],
+      "prerequisites": [
+        "M5",
+        "M7",
+        "M8"
+      ],
+      "research_question": "Wann führt eine Veränderung im Zellinneren zur Wasseraufnahme – und wann setzt eine Gegenreaktion ein?",
+      "learning_goal": "Drei Wasserpotenziale vergleichen; vereinfachte tierische Volumenregulation als negative Rückkopplung erklären und Grenzen benennen.",
+      "representation": "Berechnete Wasserwege plus ausdrücklich szenariobasierter Regelkreis einer Epithelzelle; keine universelle Zellphysiologie.",
+      "learner_action": "Flussrichtungen bestimmen, Sollbereich prüfen, Regelkreis legen, Kanalblockade vergleichen.",
+      "misconception": "Solutanreicherung in der Vakuole reicht immer für äußere Wasseraufnahme; ein Kanal ist eine aktive Wasserpumpe.",
+      "scaffold": "Außenraum–Cytosol und Cytosol–Vakuole einzeln prüfen; danach beim Regelkreis den Rückpfeil ergänzen.",
+      "transfer": "Die Gegenreaktion muss mit geringer werdender Abweichung nachlassen.",
+      "acceptance": "Sensor erfasst indirekt; K-/Cl-Auswärtsgradienten sind Voraussetzung; Prozentwerte didaktisch; keine unkalibrierte Vorhersage biologischer Zeit.",
+      "estimated_minutes": [
+        12,
+        18
+      ],
+      "time_status": "Entwurfsschätzung, nicht mit einer Lerngruppe gemessen",
+      "tasks": [
+        "M9.01",
+        "M9.02",
+        "M9.03",
+        "M9.04"
+      ]
+    },
+    {
+      "id": "M10",
+      "title": "Daten kritisch nutzen",
+      "area": "Biomembranen und Stofftransport",
+      "source_refs": [
+        "SFC22 Erkenntnisgewinnung/Kommunikation; SFC23–24 SF6",
+        "SM AB16–17 S.23–24"
+      ],
+      "prerequisites": [
+        "M5",
+        "M7",
+        "M9"
+      ],
+      "research_question": "Was erlauben Messwerte zu folgern – und was nicht?",
+      "learning_goal": "Relative Änderungen, Einheiten, Diagramme, Interpolation und kontrollierte Vergleiche sicher anwenden.",
+      "representation": "Neue didaktische Datensätze, Diagrammwerkzeug und strukturierte Versuchsplanung; keine Echtmessungen.",
+      "learner_action": "Rechnen, Achsen setzen, Punkte darstellen, Näherung erklären, Kontrollen und Messgrößen auswählen.",
+      "misconception": "Ein interpolierter Nullpunkt ist exakt gemessen; gleiche Proteindichte bedeutet gleiche gesamte Proteinzahl.",
+      "scaffold": "Anfangswert und Endwert auseinanderhalten; Gesamtgröße und normierte Größe getrennt betrachten.",
+      "transfer": "Einen Flächeneffekt bei konstant gehaltener Proteindichte richtig interpretieren.",
+      "acceptance": "Zahlen, Einheiten, zulässige Toleranzen und alternative valide Designs explizit getestet.",
+      "estimated_minutes": [
+        12,
+        18
+      ],
+      "time_status": "Entwurfsschätzung, nicht mit einer Lerngruppe gemessen",
+      "tasks": [
+        "M10.01",
+        "M10.02",
+        "M10.03",
+        "M10.04"
+      ]
+    },
+    {
+      "id": "E1",
+      "title": "Grundlagen: Ursprung des Lebens",
+      "area": "Grundlagen nach Diagnose",
+      "source_refs": [
+        "SFC23 Einstieg",
+        "SM E1 S.25"
+      ],
+      "prerequisites": [],
+      "research_question": "Was erklären Modelle zum Ursprung des Lebens jeweils?",
+      "learning_goal": "Bausteinbildung, Informationssysteme und Abgrenzung als Teilprobleme unterscheiden; Kriterien des Lebendigen anwenden.",
+      "representation": "Schematische Karten und begrenzte Aufgaben, kein Laborversuch.",
+      "learner_action": "Zuordnen, ordnen, gezielt rechnen.",
+      "misconception": "Ein Teilprozess wird mit der vollständigen Lebensentstehung oder Vermehrung gleichgesetzt.",
+      "scaffold": "Begriffskarten und ein ausgearbeitetes Beispiel.",
+      "transfer": "Bekannte Regel auf ein neues begrenztes Beispiel anwenden.",
+      "acceptance": "Nur nach Diagnose als Lernbedarf empfehlen; kein Vorziehen von Mitose/Meiose oder detaillierter Genetik.",
+      "estimated_minutes": [
+        8,
+        12
+      ],
+      "time_status": "Entwurfsschätzung, nicht mit einer Lerngruppe gemessen",
+      "tasks": [
+        "E1.01",
+        "E1.02",
+        "E1.03"
+      ]
+    },
+    {
+      "id": "E2",
+      "title": "Grundlagen: Nukleinsäuren",
+      "area": "Grundlagen nach Diagnose",
+      "source_refs": [
+        "SFC23 §1 SF3",
+        "SM E2 S.26"
+      ],
+      "prerequisites": [],
+      "research_question": "Wie hängen Bausteine und Aufgaben von Nukleinsäuren zusammen?",
+      "learning_goal": "Nukleotide, DNA/RNA, Basenpaarung und ATP auf grundlegendem Niveau unterscheiden.",
+      "representation": "Schematische Karten und begrenzte Aufgaben, kein Laborversuch.",
+      "learner_action": "Zuordnen, ordnen, gezielt rechnen.",
+      "misconception": "Ein Teilprozess wird mit der vollständigen Lebensentstehung oder Vermehrung gleichgesetzt.",
+      "scaffold": "Begriffskarten und ein ausgearbeitetes Beispiel.",
+      "transfer": "Bekannte Regel auf ein neues begrenztes Beispiel anwenden.",
+      "acceptance": "Nur nach Diagnose als Lernbedarf empfehlen; kein Vorziehen von Mitose/Meiose oder detaillierter Genetik.",
+      "estimated_minutes": [
+        8,
+        12
+      ],
+      "time_status": "Entwurfsschätzung, nicht mit einer Lerngruppe gemessen",
+      "tasks": [
+        "E2.01",
+        "E2.02",
+        "E2.03"
+      ]
+    },
+    {
+      "id": "E3",
+      "title": "Grundlagen: Bakterielle Information",
+      "area": "Grundlagen nach Diagnose",
+      "source_refs": [
+        "SFC23 §2 E1",
+        "SM E3 S.27"
+      ],
+      "prerequisites": [],
+      "research_question": "Wie vermehren Bakterien sich und wie kann Information übertragen werden?",
+      "learning_goal": "DNA-Verdopplung, Verteilung, Zweiteilung und horizontalen Transfer unterscheiden.",
+      "representation": "Schematische Karten und begrenzte Aufgaben, kein Laborversuch.",
+      "learner_action": "Zuordnen, ordnen, gezielt rechnen.",
+      "misconception": "Ein Teilprozess wird mit der vollständigen Lebensentstehung oder Vermehrung gleichgesetzt.",
+      "scaffold": "Begriffskarten und ein ausgearbeitetes Beispiel.",
+      "transfer": "Bekannte Regel auf ein neues begrenztes Beispiel anwenden.",
+      "acceptance": "Nur nach Diagnose als Lernbedarf empfehlen; kein Vorziehen von Mitose/Meiose oder detaillierter Genetik.",
+      "estimated_minutes": [
+        8,
+        12
+      ],
+      "time_status": "Entwurfsschätzung, nicht mit einer Lerngruppe gemessen",
+      "tasks": [
+        "E3.01",
+        "E3.02",
+        "E3.03"
+      ]
+    },
+    {
+      "id": "D0",
+      "title": "Standortbestimmung",
+      "area": "Diagnose",
+      "source_refs": [
+        "SFC23 Einstieg–§2",
+        "SM D0 S.2"
+      ],
+      "prerequisites": [],
+      "research_question": "Welche Grundlagen sind bereits abrufbar?",
+      "learning_goal": "Sechs kurze Bereiche prüfen; Empfehlungen statt Note und statt endgültiger Kompetenzdiagnose.",
+      "representation": "Kurze geschlossene Aufgaben und Selbsteinschätzung.",
+      "learner_action": "Antworten, Unsicherheit angeben, gezielt Grundlagen aufsuchen.",
+      "misconception": "Ein richtiges Kreuz belegt vollständige Beherrschung.",
+      "scaffold": "Alle Missionen bleiben zugänglich.",
+      "transfer": "Ergebnisse für die Reihenfolge der Wiederholung verwenden.",
+      "acceptance": "Kein Benotungs- oder Freischaltzwang; fachliche Unklarheit nicht als Softwarefehler umdeuten.",
+      "estimated_minutes": [
+        5,
+        8
+      ],
+      "time_status": "Entwurfsschätzung, nicht mit einer Lerngruppe gemessen",
+      "tasks": [
+        "D0.01",
+        "D0.02",
+        "D0.03",
+        "D0.04",
+        "D0.05",
+        "D0.06"
+      ]
+    },
+    {
+      "id": "T",
+      "title": "Klausurtraining",
+      "area": "Training",
+      "source_refs": [
+        "SFC22–24; FA46–47/79–80/84–85",
+        "SM AB01–17"
+      ],
+      "prerequisites": [
+        "Z1–Z4 und M1–M10 je Aufgabensatz"
+      ],
+      "research_question": "Kann ich neue, klar begrenzte Materialien selbstständig auswerten?",
+      "learning_goal": "Wissen, Anwendung und selbstständige Prüfung mit neuen Fällen verbinden; Grenzen der automatischen Rückmeldung offenhalten.",
+      "representation": "Neue Modelle, Tabellen und Problemlagen; keine Originalklausur.",
+      "learner_action": "Aufgaben in kurzen Sets bearbeiten, erst nach Abgabe auswerten; freiwilliges Schreiben mit Kriterienvergleich separat.",
+      "misconception": "Ein Trainingsscore ist eine prognostizierte Klausurnote; verdeckte Clientantworten sind technisch geheim.",
+      "scaffold": "Im Üben Hilfen; im Prüfen erst nach Abgabe, ohne echte Prüfungssicherheit zu behaupten.",
+      "transfer": "Neue Fehleranalyse und Versuchsplanung; Transferanforderung nach vorausgegangener Übung erneut prüfen.",
+      "acceptance": "Jeder Fall gegen geschützte Klausur auf strukturelle Nähe prüfen; geschlossene Form nicht automatisch als AFB I klassifizieren.",
+      "estimated_minutes": [
+        15,
+        25
+      ],
+      "time_status": "Entwurfsschätzung, nicht mit einer Lerngruppe gemessen",
+      "tasks": [
+        "T.01",
+        "T.02",
+        "T.03",
+        "T.04",
+        "T.05",
+        "T.06",
+        "T.07",
+        "T.08"
+      ]
+    }
+  ]
+}
