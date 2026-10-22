@@ -1,6 +1,7 @@
 {
   "scope": "P02b second revision; supplied known regressions and fresh self-check; no independent release",
   "baselineSha": "32cf4fcb1756ea41ab6d99abef725865151d7bd3",
+  "runtimeCodeCommit": "29d12d14d1ade8cdabdad50c67879234f0138482",
   "manifest": "p02b-second-review.json",
   "cases": [
     {
