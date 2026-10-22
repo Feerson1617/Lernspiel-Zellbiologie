@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import { fileURLToPath } from 'node:url';
 import { assertRuntimeModule } from './tools/publish-policy.ts';
-import policy from './publish.allowlist.json';
+import policy from './publish.allowlist.json' with { type: 'json' };
 
 const root = fileURLToPath(new URL('.', import.meta.url));
 
