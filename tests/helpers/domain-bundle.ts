@@ -18,6 +18,10 @@ export async function buildDomainModule(): Promise<string> {
           `export * from ${JSON.stringify(join(root, 'src/domain/units.ts'))};`,
           `export * from ${JSON.stringify(join(root, 'src/domain/progress.ts'))};`,
           `export * from ${JSON.stringify(join(root, 'src/persistence/progress-store.ts'))};`,
+          `export * from ${JSON.stringify(join(root, 'src/assessment/tonoplast.ts'))};`,
+          `export * from ${JSON.stringify(join(root, 'src/assessment/feedback.ts'))};`,
+          `export * from ${JSON.stringify(join(root, 'src/assessment/progress.ts'))};`,
+          `export * from ${JSON.stringify(join(root, 'src/ui/feedback-presentation.ts'))};`,
         ].join('\n');
       },
     }],

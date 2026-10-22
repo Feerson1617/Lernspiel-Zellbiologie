@@ -1,0 +1,260 @@
+{
+  "reviewId": "P02a-self-check-2026-10-22",
+  "reviewKind": "self_check",
+  "commitSha": "f05f1f31780e43511ffae63c94811ee5058545d3",
+  "sourceVersions": [
+    "Konzept 1.0 / 22.10.2026",
+    "main after PR #4: 6a28a245a13be2d0cb44de7d5b10412878dc9032",
+    "21 unchanged protected source files from qa/source-manifest.json",
+    "Only Z1.02 / term / TERM_TONOPLAST / Z1.02.C01; no other field evaluator",
+    "Caller-provided explicit task/rubric/content/model versions; test-only labels in tests/helpers/tonoplast.ts"
+  ],
+  "environment": {
+    "testedAtUTC": "2026-10-22T13:22:55.107592+00:00",
+    "os": "Linux-6.18.55-x86_64-with-glibc2.41",
+    "python": "3.12.14",
+    "node": "v24.19.0",
+    "npm": "11.9.0",
+    "browser": "Chromium 154.0.8037.57 built on Debian GNU/Linux 13 (trixie)",
+    "countsScope": "Final complete regression executed on the implementation commit. The subsequent documentation-only commit adds this report. Counts exclude preliminary runs and unexecuted device/counterchecks.",
+    "technicalSuites": {
+      "unit": 474,
+      "content": 155,
+      "build": 8,
+      "browser": 33
+    },
+    "newUnitCases": {
+      "tonoplast": 165,
+      "resultContract": 26,
+      "progressBridge": 12
+    },
+    "newContentChecks": 41,
+    "newBuildChecks": 2,
+    "newBrowserCases": 6,
+    "curatedImplementationCorpus": {
+      "total": 144,
+      "passed": 144,
+      "byExpectedStatus": {
+        "correct": 43,
+        "incorrect": 39,
+        "partial": 15,
+        "clarify": 33,
+        "technical": 11,
+        "empty": 3
+      },
+      "source": "tests/fixtures/tonoplast-cases.ts",
+      "independentHoldout": false
+    },
+    "editorialRuntimeReferences": {
+      "taskId": "Z1.02",
+      "total": 39,
+      "passed": 39,
+      "byExpectedStatus": {
+        "correct": 17,
+        "partial": 4,
+        "incorrect": 7,
+        "clarify": 8,
+        "empty": 2,
+        "technical": 1
+      },
+      "remainingFields": "Other six short-answer fields are out of scope and not runtime-evaluated."
+    },
+    "schemaValidation": {
+      "validator": "Python jsonschema, requirements-spec.txt",
+      "schema": "spec/result.schema.json unchanged",
+      "actualResultObjects": 183,
+      "errors": 0,
+      "scope": "Structural validation, not an independent biological truth judgment."
+    },
+    "conceptChecks": {
+      "passed": 694,
+      "failed": 0,
+      "typescriptDeclarationCheckExecuted": true,
+      "scope": "Separate original editorial schema/reference arithmetic check. Its runtime test count is zero by design; the actual P02a evaluator is tested separately above."
+    },
+    "protectedSourceFilesUnchanged": 21,
+    "identityCoverage": {
+      "unchangedTasks": 79,
+      "unchangedMissionModuleRecords": 19
+    },
+    "runtimeBoundary": "Start page unchanged and does not import the evaluator or save attempts. Test library is built in memory with the production import guard. All real production files are byte-identical to P01c/P00.",
+    "materialContract": "material.highlightedStructureId must equal tonoplast; this confirms the specified marker but does not prove an actual future model or anchor is correct.",
+    "versions": "Factory snapshots explicit versions and rejects mismatch against active context. Creating a new factory is an explicit authoring/integration decision, not a registry validation or migration.",
+    "limits": [
+      "Finite German T1 grammar only; unknown relevant extras, nested negation, unsupported clause forms/languages and temporal self-corrections require clarification.",
+      "No independent recognition-rate estimate, mastery certificate or classroom release.",
+      "Invalid context/assistance throws a sanitized contract error instead of inventing a bound result. Valid context with input/version/material issues receives technical.",
+      "Progress bridge checks result shape/binding and drops evidence; no browser writes or cryptographic result-origin authentication.",
+      "Browser tests exercise actual bundled functions and presentation descriptors, not a nonexistent graded task UI."
+    ],
+    "resolvedFindings": [
+      {
+        "id": "P02a-S01",
+        "severity": "P1",
+        "caseIds": [
+          "A04"
+        ],
+        "expected": "clarify",
+        "observedBeforeFix": "incorrect",
+        "input": "Tonoplast und vielleicht Zellwand.",
+        "cause": "Coordinated naming fragments were treated as separate asserted answers.",
+        "fix": "Explicit term coordination; competing names never receive an invented disambiguation.",
+        "fixCommit": "f05f1f31780e43511ffae63c94811ee5058545d3",
+        "status": "resolved_in_self_check"
+      },
+      {
+        "id": "P02a-S02",
+        "severity": "P1",
+        "caseIds": [
+          "A22",
+          "A23",
+          "A24",
+          "A25"
+        ],
+        "expected": "clarify",
+        "observedBeforeFix": {
+          "A22": "correct",
+          "A23": "incorrect",
+          "A24": "incorrect",
+          "A25": "correct"
+        },
+        "input": "Nicht Zellwand und Tonoplast.",
+        "cause": "Negation scope was guessed across noun fragments and conjunctions.",
+        "fix": "Only explicit name-list/contrast forms and complete relation predicates may join; unresolved scope stays clarify.",
+        "fixCommit": "f05f1f31780e43511ffae63c94811ee5058545d3",
+        "status": "resolved_in_self_check"
+      },
+      {
+        "id": "P02a-S03",
+        "severity": "P1",
+        "caseIds": [
+          "A29",
+          "A30",
+          "A31",
+          "A32",
+          "A33"
+        ],
+        "expected": "clarify",
+        "observedBeforeFix": {
+          "A29": "correct",
+          "A30": "correct",
+          "A31": "correct",
+          "A32": "incorrect",
+          "A33": "correct"
+        },
+        "input": "Die Zellwand ist nicht der Tonoplast.",
+        "cause": "Target word presence inside a true contrast was overread as positive identification; generic membrane subjects were overinterpreted.",
+        "fix": "Preserve subject/object roles and require clear identification; generic subject quantification is not guessed.",
+        "fixCommit": "f05f1f31780e43511ffae63c94811ee5058545d3",
+        "status": "resolved_in_self_check"
+      }
+    ],
+    "preliminaryAttempts": [
+      {
+        "command": "npm run check:types",
+        "exitCode": 1,
+        "diagnosticsInitially": 4,
+        "diagnosticsAfterTestAddition": 5,
+        "cause": "Narrowed typeof connector plus a mutable test configuration inferred as a string literal; corrected types without loosening strict mode."
+      },
+      {
+        "command": "npx vitest run tests/unit/tonoplast.test.ts --outputFile=qa/generated/tonoplast-preliminary.json",
+        "passed": 138,
+        "failed": 2,
+        "cause": "A04 competing-name classification and one manually miscounted evidence end offset. Scientific expected status unchanged; the literal span endpoint was corrected from 37 to 38 after counting the original UTF-16 string."
+      },
+      {
+        "command": "npx vitest run tests/unit/tonoplast.test.ts --outputFile=qa/generated/p02a-negation-preliminary.json --reporter=dot --reporter=json",
+        "passed": 152,
+        "failed": 4,
+        "findings": [
+          "P02a-S02"
+        ]
+      },
+      {
+        "command": "npx vitest run tests/unit/tonoplast.test.ts --outputFile=qa/generated/p02a-identity-preliminary.json --reporter=dot --reporter=json",
+        "passed": 160,
+        "failed": 5,
+        "findings": [
+          "P02a-S03"
+        ]
+      },
+      {
+        "command": "npx vitest run tests/unit/tonoplast.test.ts tests/unit/assessment-result.test.ts tests/unit/assessment-progress.test.ts tests/content/tonoplast-spec.test.ts --outputFile=qa/generated/p02a-identity-fix.json --reporter=dot --reporter=json",
+        "passed": 244,
+        "failed": 0
+      },
+      {
+        "command": "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:browser",
+        "passed": 33,
+        "failed": 0
+      }
+    ],
+    "distArtifacts": [
+      {
+        "file": "assets/favicon-BBsVGNz0.svg",
+        "bytes": 196,
+        "sha256": "aa985a2fdd116dc0dbecda5e953bc794ee0d8b57808ea234e8fce79bae75a37e"
+      },
+      {
+        "file": "assets/index-92g-guUY.js",
+        "bytes": 3752,
+        "sha256": "c8006380bebf1dd37080164407046abbce1af76b9264a3fdd12f7bec3e1f7515"
+      },
+      {
+        "file": "assets/index-D6JBs7Gr.css",
+        "bytes": 5803,
+        "sha256": "e8a3871aa7485d1b1d7dc1c5d5c99fe725e03cca96102b89a6dfd86848a3cc7e"
+      },
+      {
+        "file": "index.html",
+        "bytes": 962,
+        "sha256": "bfad6ec651669679ca18461711cb577f8ee6b7406456b9fa56f4981468b2d1fa"
+      }
+    ],
+    "productionArtifactsByteIdenticalToP01cAndP00": true,
+    "localReports": [
+      "qa/generated/unit.json",
+      "qa/generated/content.json",
+      "qa/generated/build.json",
+      "qa/generated/playwright.json",
+      "qa/generated/concept.json",
+      "qa/generated/tonoplast-preliminary.json",
+      "qa/generated/p02a-negation-preliminary.json",
+      "qa/generated/p02a-identity-preliminary.json"
+    ]
+  },
+  "executedCommands": [
+    "npm run check:types",
+    "Targeted Vitest runs listed under environment.preliminaryAttempts and local reports",
+    "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:browser",
+    "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run check",
+    "npm run check:publish",
+    "git diff --cached --check",
+    "SHA-256 comparison of 21 protected source files and all four dist files with previous manifest",
+    "JSON Schema validation of this review manifest"
+  ],
+  "caseCounts": {
+    "passed": 670,
+    "failed": 0,
+    "skipped": 0
+  },
+  "newCases": [
+    "144 curated, reasoned implementation cases covering all six statuses; 39 unchanged editorial Z1.02 references additionally executed.",
+    "Explicit eight requested failure classes: false green/red, unjustified unclear green, late contradiction, harmless frames, stale versions, help invariance and long-prefix truncation.",
+    "Negation scope across coordinated noun fragments and subject/object/quantification distinctions; all prototype regressions retained.",
+    "Independent literal UTF-16 span targets, decomposed Unicode, conservative edit operations, unknown HTML/instructions and full token coverage.",
+    "Result schema/invariants, malformed artificial successes, stale progress handoff, assistance separation and no raw answer persistence.",
+    "Actual in-memory Vite build/import of the prepared corrector and browser execution in three Chromium projects; start bundle excludes test corpus, prepared solutions and other rubrics."
+  ],
+  "blockedChecks": [
+    "Independent biological countercheck remains pending; these are only Codex self-checks, no independent 95-percent claim.",
+    "WebKit, real iPad/Safari, physical storage exhaustion and real private-browsing device policies not tested.",
+    "No graded student UI or model/target-anchor view exists; no visual graded-task or 3D verification claimed.",
+    "Private original exam/expectation horizons not supplied or accessed; no private case-proximity review.",
+    "Other six fields, number grading, models, full missions, AI grading and P02b not implemented; empty model/review suites not run or claimed passed.",
+    "GitHub Actions result is a separate PR check; feature branch does not deploy and no merge is performed."
+  ],
+  "criticalFindings": [],
+  "releaseStatus": "development_only"
+}

@@ -33,7 +33,8 @@ dokumentiert. Die Domain greift selbst auf keinen Browser-Speicher zu.
 | Aufgabenreferenz mit Versionsfeldern | Erweiterungspunkt `VersionedTaskReference`; keine konkreten Versionswerte vergeben |
 | `TaskContext` | In P01b umgesetzt, einschließlich explizitem Modellzustand, Snapshot und Kontext-Hash |
 | `AttemptRecord` | In P01c als strikt validierte datensparsame Versuchsmetadaten umgesetzt |
-| `Evaluate`, `EvaluationResult`, `BiologySnapshot` | Fachliche Implementierung bleibt späteren Phasen vorbehalten; P01b prüft ausschließlich Ergebnisbindungen |
+| `Evaluate`, `EvaluationResult` | P02a ergänzt den ersten begrenzten Korrektor für Z1.02 und strikt geprüfte Ergebnisdaten in `src/assessment/`; P01b selbst prüft nur Bindungen |
+| `BiologySnapshot` | Biologische Implementierung bleibt späteren Phasen vorbehalten |
 
 `TaskCatalog.schemaVersion = 1` versioniert ausschließlich die neue technische
 Metadatenform. Die redaktionelle Schemafassung `1.0` und die Konzeptfassung

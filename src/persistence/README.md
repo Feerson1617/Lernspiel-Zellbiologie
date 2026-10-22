@@ -58,6 +58,8 @@ JSON-Wiederherstellung stellen diese niemals her. Ein geladener Versuch bleibt
 mit seinen ursprünglichen Metadaten sichtbar, ist aber `context_unverified`.
 Ein bloß gespeichertes oder manipuliertes `correct` erhält keine aktuelle
 Erfolgsbestätigung. P02 muss ein neues kontextgebundenes Korrektorergebnis liefern.
+Für Z1.02 steht dafür seit P02a `src/assessment/progress.ts` mit
+`createEvaluatedAttempt` bereit; die Startseite ruft weder Korrektor noch Adapter auf.
 Kein Prüfungs- oder Manipulationsschutz gegenüber einem kontrollierten Client.
 
 Aufgaben-, Rubrik-, Modell- und Inhaltsversion müssen jeweils exakt zum aktiven

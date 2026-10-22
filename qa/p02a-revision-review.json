@@ -1,0 +1,298 @@
+{
+  "reviewId": "P02a-revision-self-check-2026-10-22",
+  "reviewKind": "self_check",
+  "commitSha": "6a319fe268098748fe07c95d2e0def4d51c792bd",
+  "sourceVersions": [
+    "Konzept 1.0 / 22.10.2026",
+    "P02a prior PR head: 32ac6f4264aff92a83a7fcd5868daf9c034a755f",
+    "21 unchanged protected files from qa/source-manifest.json",
+    "Z1.02 / term / TERM_TONOPLAST / Z1.02.C01 only",
+    "Explicit caller-provided task/rubric/content/model versions; test labels in tests/helpers/tonoplast.ts"
+  ],
+  "environment": {
+    "testedAtUTC": "2026-10-22T17:15:04.312Z",
+    "os": "Linux x86_64",
+    "node": "v24.19.0",
+    "npm": "11.9.0",
+    "python": "3.12.14",
+    "browser": "Chromium 154.0.8037.57",
+    "countsScope": "Complete regression on the stated correction commit; subsequent report-only commit adds this manifest and the Markdown report. Preliminary failures are separate, not subtracted from final counts.",
+    "technicalSuites": {
+      "unit": 643,
+      "content": 156,
+      "build": 8,
+      "browser": 36
+    },
+    "conceptChecks": {
+      "passed": 694,
+      "failed": 0,
+      "scope": "Unchanged editorial concepts, schemas and reference arithmetic; not runtime grading tests"
+    },
+    "recognition": {
+      "source": "tests/fixtures/tonoplast-revision-cases.ts: NEW_CORRECT_CASES",
+      "correctAnswers": 40,
+      "green": 40,
+      "yellow": 0,
+      "red": 0,
+      "recognitionRate": 1,
+      "minimum": 0.95,
+      "baselineGreen": 6,
+      "baselineCorrectAnswers": 40,
+      "independent": false,
+      "empiricalLearnerSample": false,
+      "novelty": "All 40 inputs differ from prior own/editorial/supplied review inputs. An exact duplicate initially included as case NC-D08 remains in the old regression and was excluded from the new corpus; no expected status changed."
+    },
+    "suppliedReviewCases": {
+      "correct": 16,
+      "incorrect": 4,
+      "passed": 20,
+      "source": "20 explicit user-provided examples only. All 20 were clarify on prior head."
+    },
+    "userReportedExternalReview": {
+      "attribution": "User reports ChatGPT separate execution; undisclosed full corpus not rerun or independently certified by Codex.",
+      "correct": {
+        "total": 52,
+        "green": 36,
+        "clarify": 16
+      },
+      "incorrect": {
+        "total": 30,
+        "incorrect": 25,
+        "clarify": 5
+      },
+      "partial": {
+        "total": 14,
+        "partial": 9,
+        "clarify": 5
+      },
+      "ambiguous": {
+        "total": 18,
+        "clarify": 18
+      },
+      "additionalContradictionCombinations": 180,
+      "reportedFalseGreen": 0
+    },
+    "newSafetyCases": {
+      "incorrect": 22,
+      "clarify": 20,
+      "partial": 6,
+      "passed": 48
+    },
+    "schemaValidation": {
+      "actualResults": 291,
+      "validator": "Python jsonschema with unchanged spec/result.schema.json",
+      "scope": "144 previous own + 39 editorial + 108 added results"
+    },
+    "crossChecks": {
+      "wrongNameSubstitutions": 80,
+      "relevantSuffixes": 120,
+      "activePassiveRelations": 24,
+      "aliasCompetingCombinations": 16,
+      "independent": false
+    },
+    "browserScope": "36 Chromium tests over desktop/tablet/mobile; added test executes all 108 cases per profile in production-guarded in-memory bundle and validates statuses, criterion, evidence, feedback, presentation data, context and assistance. No visible task UI, physical touch device or Safari claim.",
+    "publication": {
+      "protectedFilesUnchanged": 21,
+      "distFiles": 4,
+      "localAssetReferences": 3,
+      "base": "/Lernspiel-Zellbiologie/",
+      "distIdenticalToPrior": true,
+      "distHashes": {
+        "index.html": "bfad6ec651669679ca18461711cb577f8ee6b7406456b9fa56f4981468b2d1fa",
+        "assets/index-92g-guUY.js": "c8006380bebf1dd37080164407046abbce1af76b9264a3fdd12f7bec3e1f7515",
+        "assets/index-D6JBs7Gr.css": "e8a3871aa7485d1b1d7dc1c5d5c99fe725e03cca96102b89a6dfd86848a3cc7e",
+        "assets/favicon-BBsVGNz0.svg": "aa985a2fdd116dc0dbecda5e953bc794ee0d8b57808ea234e8fce79bae75a37e"
+      }
+    },
+    "preliminaryRuns": [
+      {
+        "file": "qa/generated/p02a-revision-before.json",
+        "passed": 27,
+        "failed": 83,
+        "note": "Original 41-case initial correct set still included one prior exact duplicate; denominator/rate assertion failed."
+      },
+      {
+        "file": "qa/generated/p02a-revision-first-fix.json",
+        "passed": 274,
+        "failed": 1,
+        "note": "Postposed ist es nicht was unclear instead of partial."
+      },
+      {
+        "file": "qa/generated/p02a-revision-adversarial.json",
+        "passed": 367,
+        "failed": 1,
+        "note": "Known contradiction after Danke! was unclear instead of incorrect."
+      },
+      {
+        "file": "qa/generated/p02a-revision-semantic-before.json",
+        "passed": 170,
+        "failed": 1,
+        "note": "One grouped test; both overly permissive inputs also individually reproduced with actual correct status before fix."
+      }
+    ],
+    "resolvedFindings": [
+      {
+        "id": "P02a-R01",
+        "severity": "P1",
+        "examples": [
+          "Tonoplast ist ein anderer Name für Membran.",
+          "Tonoplast umschließt ein anderer Name für Vakuole."
+        ],
+        "before": "correct",
+        "after": "clarify",
+        "cause": "Class property collapsed into synonymy; naming prefix incorrectly permitted inside enclosure relation.",
+        "resolution": "Separate synonymy clause kind; naming prefixes limited to identity; retained strict regression assertions.",
+        "fixedIn": "6a319fe268098748fe07c95d2e0def4d51c792bd"
+      }
+    ],
+    "localEvidenceHashes": {
+      "unit.json": "48f1edb8c5e53bace94ac2c701af091f171ef2be3c8d54a7e09f6a485b6152d3",
+      "content.json": "ad931d067b1f831c4c2bf058cb1071ad19e5b6866601c3a0b2e54312b527ae27",
+      "build.json": "4092e176fa9fdbff93f7be959c5b63bd5280a0ace57a191c35c64c8f469e0d1a",
+      "playwright.json": "7e758e2d85bfa8ec4c37fd41982dbfb2d54dc696624f8cabf3a6b9188f6e76d1",
+      "concept.json": "96b0fe40e0e93ae51647ce633c025f6a254edf2c73cac6e46660bdeef9fdbab4",
+      "p02a-revision-corpus.json": "b3c39fc61f9dba13aa618431d046f25cb0e82387254a840a291cd6b5c2b3587d"
+    },
+    "limitations": [
+      "Finite T1 naming grammar only, no P02b or other field assessment",
+      "Unknown relevant assertions, complex negation/temporal/quantifier scopes and nested syntax remain clarify",
+      "Self-check 100 percent is not an independent or empirical recognition guarantee",
+      "Private original exam/marking scheme unavailable and never copied"
+    ]
+  },
+  "executedCommands": [
+    "npx vitest run tests/unit/tonoplast-revision.test.ts --outputFile=qa/generated/p02a-revision-before.json",
+    "npx vitest run tests/unit/tonoplast*.test.ts --outputFile=qa/generated/p02a-revision-first-fix.json",
+    "npx vitest run tests/unit/tonoplast*.test.ts tests/content/tonoplast-spec.test.ts --outputFile=qa/generated/p02a-revision-adversarial.json",
+    "npx vitest run tests/unit/tonoplast-revision.test.ts --outputFile=qa/generated/p02a-revision-semantic-before.json",
+    "npm run check:types",
+    "npx vitest run tests/unit/tonoplast*.test.ts tests/content/tonoplast-spec.test.ts --outputFile=qa/generated/p02a-revision-targeted-final.json",
+    "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run check",
+    "Node direct execution of 108 fixture cases and SHA-256 comparison of the four dist files",
+    "git diff --check",
+    "Python jsonschema validation of qa/p02a-revision-review.json against spec/review-manifest.schema.json",
+    "npm run check:publish after adding both revision report files"
+  ],
+  "caseCounts": {
+    "passed": 843,
+    "failed": 0,
+    "skipped": 0
+  },
+  "newCases": [
+    "R-C01: correct — Vom Nutzer übermittelter Gegenprüffall: eindeutiger Zielname mit harmlosem Rahmen oder zutreffender Relation.",
+    "R-C02: correct — Vom Nutzer übermittelter Gegenprüffall: eindeutiger Zielname mit harmlosem Rahmen oder zutreffender Relation.",
+    "R-C03: correct — Vom Nutzer übermittelter Gegenprüffall: eindeutiger Zielname mit harmlosem Rahmen oder zutreffender Relation.",
+    "R-C04: correct — Vom Nutzer übermittelter Gegenprüffall: eindeutiger Zielname mit harmlosem Rahmen oder zutreffender Relation.",
+    "R-C05: correct — Vom Nutzer übermittelter Gegenprüffall: eindeutiger Zielname mit harmlosem Rahmen oder zutreffender Relation.",
+    "R-C06: correct — Vom Nutzer übermittelter Gegenprüffall: eindeutiger Zielname mit harmlosem Rahmen oder zutreffender Relation.",
+    "R-C07: correct — Vom Nutzer übermittelter Gegenprüffall: eindeutiger Zielname mit harmlosem Rahmen oder zutreffender Relation.",
+    "R-C08: correct — Vom Nutzer übermittelter Gegenprüffall: eindeutiger Zielname mit harmlosem Rahmen oder zutreffender Relation.",
+    "R-C09: correct — Vom Nutzer übermittelter Gegenprüffall: eindeutiger Zielname mit harmlosem Rahmen oder zutreffender Relation.",
+    "R-C10: correct — Vom Nutzer übermittelter Gegenprüffall: eindeutiger Zielname mit harmlosem Rahmen oder zutreffender Relation.",
+    "R-C11: correct — Vom Nutzer übermittelter Gegenprüffall: eindeutiger Zielname mit harmlosem Rahmen oder zutreffender Relation.",
+    "R-C12: correct — Vom Nutzer übermittelter Gegenprüffall: eindeutiger Zielname mit harmlosem Rahmen oder zutreffender Relation.",
+    "R-C13: correct — Vom Nutzer übermittelter Gegenprüffall: eindeutiger Zielname mit harmlosem Rahmen oder zutreffender Relation.",
+    "R-C14: correct — Vom Nutzer übermittelter Gegenprüffall: eindeutiger Zielname mit harmlosem Rahmen oder zutreffender Relation.",
+    "R-C15: correct — Vom Nutzer übermittelter Gegenprüffall: eindeutiger Zielname mit harmlosem Rahmen oder zutreffender Relation.",
+    "R-C16: correct — Vom Nutzer übermittelter Gegenprüffall: eindeutiger Zielname mit harmlosem Rahmen oder zutreffender Relation.",
+    "R-W01: incorrect — Vom Nutzer übermittelter Gegenprüffall: andere Membran oder falsche direkte Vakuolengrenze.",
+    "R-W02: incorrect — Vom Nutzer übermittelter Gegenprüffall: andere Membran oder falsche direkte Vakuolengrenze.",
+    "R-W03: incorrect — Vom Nutzer übermittelter Gegenprüffall: andere Membran oder falsche direkte Vakuolengrenze.",
+    "R-W04: incorrect — Vom Nutzer übermittelter Gegenprüffall: andere Membran oder falsche direkte Vakuolengrenze.",
+    "NC-N01: correct — Explizite Benennungsabsicht für die markierte Membran; alle Teile sind auf die Benennung begrenzt.",
+    "NC-N02: correct — Explizite Benennungsabsicht für die markierte Membran; alle Teile sind auf die Benennung begrenzt.",
+    "NC-N03: correct — Explizite Benennungsabsicht für die markierte Membran; alle Teile sind auf die Benennung begrenzt.",
+    "NC-N04: correct — Explizite Benennungsabsicht für die markierte Membran; alle Teile sind auf die Benennung begrenzt.",
+    "NC-N05: correct — Explizite Benennungsabsicht für die markierte Membran; alle Teile sind auf die Benennung begrenzt.",
+    "NC-N06: correct — Explizite Benennungsabsicht für die markierte Membran; alle Teile sind auf die Benennung begrenzt.",
+    "NC-N07: correct — Explizite Benennungsabsicht für die markierte Membran; alle Teile sind auf die Benennung begrenzt.",
+    "NC-N08: correct — Explizite Benennungsabsicht für die markierte Membran; alle Teile sind auf die Benennung begrenzt.",
+    "NC-N09: correct — Explizite Benennungsabsicht für die markierte Membran; alle Teile sind auf die Benennung begrenzt.",
+    "NC-N10: correct — Explizite Benennungsabsicht für die markierte Membran; alle Teile sind auf die Benennung begrenzt.",
+    "NC-D01: correct — Fachlich bestimmter Vakuolenbezug oder explizite bekannte räumliche Relation, mit eindeutiger Benennung.",
+    "NC-D02: correct — Fachlich bestimmter Vakuolenbezug oder explizite bekannte räumliche Relation, mit eindeutiger Benennung.",
+    "NC-D03: correct — Fachlich bestimmter Vakuolenbezug oder explizite bekannte räumliche Relation, mit eindeutiger Benennung.",
+    "NC-D04: correct — Fachlich bestimmter Vakuolenbezug oder explizite bekannte räumliche Relation, mit eindeutiger Benennung.",
+    "NC-D05: correct — Fachlich bestimmter Vakuolenbezug oder explizite bekannte räumliche Relation, mit eindeutiger Benennung.",
+    "NC-D06: correct — Fachlich bestimmter Vakuolenbezug oder explizite bekannte räumliche Relation, mit eindeutiger Benennung.",
+    "NC-D07: correct — Fachlich bestimmter Vakuolenbezug oder explizite bekannte räumliche Relation, mit eindeutiger Benennung.",
+    "NC-D08: correct — Fachlich bestimmter Vakuolenbezug oder explizite bekannte räumliche Relation, mit eindeutiger Benennung.",
+    "NC-D09: correct — Fachlich bestimmter Vakuolenbezug oder explizite bekannte räumliche Relation, mit eindeutiger Benennung.",
+    "NC-S01: correct — Explizite zutreffende Grenzbeziehung zwischen Vakuolenraum und Cytosol, ohne kausale Zusatzbewertung.",
+    "NC-S02: correct — Explizite zutreffende Grenzbeziehung zwischen Vakuolenraum und Cytosol, ohne kausale Zusatzbewertung.",
+    "NC-S03: correct — Explizite zutreffende Grenzbeziehung zwischen Vakuolenraum und Cytosol, ohne kausale Zusatzbewertung.",
+    "NC-S04: correct — Explizite zutreffende Grenzbeziehung zwischen Vakuolenraum und Cytosol, ohne kausale Zusatzbewertung.",
+    "NC-S05: correct — Explizite zutreffende Grenzbeziehung zwischen Vakuolenraum und Cytosol, ohne kausale Zusatzbewertung.",
+    "NC-S06: correct — Explizite zutreffende Grenzbeziehung zwischen Vakuolenraum und Cytosol, ohne kausale Zusatzbewertung.",
+    "NC-S07: correct — Explizite zutreffende Grenzbeziehung zwischen Vakuolenraum und Cytosol, ohne kausale Zusatzbewertung.",
+    "NC-S08: correct — Explizite zutreffende Grenzbeziehung zwischen Vakuolenraum und Cytosol, ohne kausale Zusatzbewertung.",
+    "NC-M01: correct — Mehrere vollständig verstandene Aussagen bestätigen Benennung, Abgrenzung oder Gleichbedeutung ohne Widerspruch.",
+    "NC-M02: correct — Mehrere vollständig verstandene Aussagen bestätigen Benennung, Abgrenzung oder Gleichbedeutung ohne Widerspruch.",
+    "NC-M03: correct — Mehrere vollständig verstandene Aussagen bestätigen Benennung, Abgrenzung oder Gleichbedeutung ohne Widerspruch.",
+    "NC-M04: correct — Mehrere vollständig verstandene Aussagen bestätigen Benennung, Abgrenzung oder Gleichbedeutung ohne Widerspruch.",
+    "NC-M05: correct — Mehrere vollständig verstandene Aussagen bestätigen Benennung, Abgrenzung oder Gleichbedeutung ohne Widerspruch.",
+    "NC-M06: correct — Mehrere vollständig verstandene Aussagen bestätigen Benennung, Abgrenzung oder Gleichbedeutung ohne Widerspruch.",
+    "NC-A01: correct — Eindeutige erklärende Apposition oder bekannte höfliche/unsichere Benennung ohne konkurrierenden Inhalt.",
+    "NC-A02: correct — Eindeutige erklärende Apposition oder bekannte höfliche/unsichere Benennung ohne konkurrierenden Inhalt.",
+    "NC-A03: correct — Eindeutige erklärende Apposition oder bekannte höfliche/unsichere Benennung ohne konkurrierenden Inhalt.",
+    "NC-A04: correct — Eindeutige erklärende Apposition oder bekannte höfliche/unsichere Benennung ohne konkurrierenden Inhalt.",
+    "NC-A05: correct — Eindeutige erklärende Apposition oder bekannte höfliche/unsichere Benennung ohne konkurrierenden Inhalt.",
+    "NC-A06: correct — Eindeutige erklärende Apposition oder bekannte höfliche/unsichere Benennung ohne konkurrierenden Inhalt.",
+    "NC-A07: correct — Eindeutige erklärende Apposition oder bekannte höfliche/unsichere Benennung ohne konkurrierenden Inhalt.",
+    "NW01: incorrect — Eindeutige falsche Benennung oder fachlich falsche vollständig interpretierte Grenz-/Gleichheitsbehauptung.",
+    "NW02: incorrect — Eindeutige falsche Benennung oder fachlich falsche vollständig interpretierte Grenz-/Gleichheitsbehauptung.",
+    "NW03: incorrect — Eindeutige falsche Benennung oder fachlich falsche vollständig interpretierte Grenz-/Gleichheitsbehauptung.",
+    "NW04: incorrect — Eindeutige falsche Benennung oder fachlich falsche vollständig interpretierte Grenz-/Gleichheitsbehauptung.",
+    "NW05: incorrect — Eindeutige falsche Benennung oder fachlich falsche vollständig interpretierte Grenz-/Gleichheitsbehauptung.",
+    "NW06: incorrect — Eindeutige falsche Benennung oder fachlich falsche vollständig interpretierte Grenz-/Gleichheitsbehauptung.",
+    "NW07: incorrect — Eindeutige falsche Benennung oder fachlich falsche vollständig interpretierte Grenz-/Gleichheitsbehauptung.",
+    "NW08: incorrect — Eindeutige falsche Benennung oder fachlich falsche vollständig interpretierte Grenz-/Gleichheitsbehauptung.",
+    "NW09: incorrect — Eindeutige falsche Benennung oder fachlich falsche vollständig interpretierte Grenz-/Gleichheitsbehauptung.",
+    "NW10: incorrect — Eindeutige falsche Benennung oder fachlich falsche vollständig interpretierte Grenz-/Gleichheitsbehauptung.",
+    "NW11: incorrect — Eindeutige falsche Benennung oder fachlich falsche vollständig interpretierte Grenz-/Gleichheitsbehauptung.",
+    "NW12: incorrect — Eindeutige falsche Benennung oder fachlich falsche vollständig interpretierte Grenz-/Gleichheitsbehauptung.",
+    "NW13: incorrect — Eindeutige falsche Benennung oder fachlich falsche vollständig interpretierte Grenz-/Gleichheitsbehauptung.",
+    "NW14: incorrect — Eindeutige falsche Benennung oder fachlich falsche vollständig interpretierte Grenz-/Gleichheitsbehauptung.",
+    "NX01: incorrect — Eine richtige Benennung hebt eine konkrete falsche zusätzliche Aussage oder Verneinung nicht auf.",
+    "NX02: incorrect — Eine richtige Benennung hebt eine konkrete falsche zusätzliche Aussage oder Verneinung nicht auf.",
+    "NX03: incorrect — Eine richtige Benennung hebt eine konkrete falsche zusätzliche Aussage oder Verneinung nicht auf.",
+    "NX04: incorrect — Eine richtige Benennung hebt eine konkrete falsche zusätzliche Aussage oder Verneinung nicht auf.",
+    "NX05: incorrect — Eine richtige Benennung hebt eine konkrete falsche zusätzliche Aussage oder Verneinung nicht auf.",
+    "NX06: incorrect — Eine richtige Benennung hebt eine konkrete falsche zusätzliche Aussage oder Verneinung nicht auf.",
+    "NX07: incorrect — Eine richtige Benennung hebt eine konkrete falsche zusätzliche Aussage oder Verneinung nicht auf.",
+    "NX08: incorrect — Eine richtige Benennung hebt eine konkrete falsche zusätzliche Aussage oder Verneinung nicht auf.",
+    "NA01: clarify — Konkurrierende Bedeutungen, unklarer Negationsbereich oder nicht vollständig verstandener relevanter Rest verhindern Grün.",
+    "NA02: clarify — Konkurrierende Bedeutungen, unklarer Negationsbereich oder nicht vollständig verstandener relevanter Rest verhindern Grün.",
+    "NA03: clarify — Konkurrierende Bedeutungen, unklarer Negationsbereich oder nicht vollständig verstandener relevanter Rest verhindern Grün.",
+    "NA04: clarify — Konkurrierende Bedeutungen, unklarer Negationsbereich oder nicht vollständig verstandener relevanter Rest verhindern Grün.",
+    "NA05: clarify — Konkurrierende Bedeutungen, unklarer Negationsbereich oder nicht vollständig verstandener relevanter Rest verhindern Grün.",
+    "NA06: clarify — Konkurrierende Bedeutungen, unklarer Negationsbereich oder nicht vollständig verstandener relevanter Rest verhindern Grün.",
+    "NA07: clarify — Konkurrierende Bedeutungen, unklarer Negationsbereich oder nicht vollständig verstandener relevanter Rest verhindern Grün.",
+    "NA08: clarify — Konkurrierende Bedeutungen, unklarer Negationsbereich oder nicht vollständig verstandener relevanter Rest verhindern Grün.",
+    "NA09: clarify — Konkurrierende Bedeutungen, unklarer Negationsbereich oder nicht vollständig verstandener relevanter Rest verhindern Grün.",
+    "NA10: clarify — Konkurrierende Bedeutungen, unklarer Negationsbereich oder nicht vollständig verstandener relevanter Rest verhindern Grün.",
+    "NA11: clarify — Konkurrierende Bedeutungen, unklarer Negationsbereich oder nicht vollständig verstandener relevanter Rest verhindern Grün.",
+    "NA12: clarify — Konkurrierende Bedeutungen, unklarer Negationsbereich oder nicht vollständig verstandener relevanter Rest verhindern Grün.",
+    "NA13: clarify — Konkurrierende Bedeutungen, unklarer Negationsbereich oder nicht vollständig verstandener relevanter Rest verhindern Grün.",
+    "NA14: clarify — Konkurrierende Bedeutungen, unklarer Negationsbereich oder nicht vollständig verstandener relevanter Rest verhindern Grün.",
+    "NA15: clarify — Konkurrierende Bedeutungen, unklarer Negationsbereich oder nicht vollständig verstandener relevanter Rest verhindern Grün.",
+    "NA16: clarify — Konkurrierende Bedeutungen, unklarer Negationsbereich oder nicht vollständig verstandener relevanter Rest verhindern Grün.",
+    "NA17: clarify — Konkurrierende Bedeutungen, unklarer Negationsbereich oder nicht vollständig verstandener relevanter Rest verhindern Grün.",
+    "NA18: clarify — Konkurrierende Bedeutungen, unklarer Negationsbereich oder nicht vollständig verstandener relevanter Rest verhindern Grün.",
+    "NA19: clarify — Konkurrierende Bedeutungen, unklarer Negationsbereich oder nicht vollständig verstandener relevanter Rest verhindern Grün.",
+    "NA20: clarify — Konkurrierende Bedeutungen, unklarer Negationsbereich oder nicht vollständig verstandener relevanter Rest verhindern Grün.",
+    "NP01: partial — Zutreffende allgemeine Membraneigenschaft oder Ausschluss ohne den verlangten spezifischen Namen.",
+    "NP02: partial — Zutreffende allgemeine Membraneigenschaft oder Ausschluss ohne den verlangten spezifischen Namen.",
+    "NP03: partial — Zutreffende allgemeine Membraneigenschaft oder Ausschluss ohne den verlangten spezifischen Namen.",
+    "NP04: partial — Zutreffende allgemeine Membraneigenschaft oder Ausschluss ohne den verlangten spezifischen Namen.",
+    "NP05: partial — Zutreffende allgemeine Membraneigenschaft oder Ausschluss ohne den verlangten spezifischen Namen.",
+    "NP06: partial — Zutreffende allgemeine Membraneigenschaft oder Ausschluss ohne den verlangten spezifischen Namen."
+  ],
+  "blockedChecks": [
+    "Renewed independent ChatGPT countercheck with further unseen inputs is pending; Codex self-check does not substitute for it.",
+    "Real iPad/Safari, WebKit and empirical learner sample not executed.",
+    "Private original exam proximity check unavailable; no private exam content in repository."
+  ],
+  "criticalFindings": [],
+  "releaseStatus": "countercheck_pending"
+}
