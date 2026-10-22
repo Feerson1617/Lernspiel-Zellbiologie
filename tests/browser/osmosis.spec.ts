@@ -2,6 +2,7 @@ import { expect, test } from '@playwright/test';
 import { buildDomainModule } from '../helpers/domain-bundle.ts';
 import { OSMOSIS_TEST_CONTEXT as CONTEXT, OSMOSIS_TEST_VERSIONS as VERSIONS } from '../helpers/osmosis.ts';
 import { OSMOSIS_ADVERSARIAL_CASES, OSMOSIS_CASES, OSMOSIS_RECOGNITION_CASES } from '../fixtures/osmosis-cases.ts';
+import { OSMOSIS_REVISION_CASES } from '../fixtures/osmosis-revision-cases.ts';
 import { TEST_CONTEXT as TONOPLAST_CONTEXT, TEST_VERSIONS as TONOPLAST_VERSIONS } from '../helpers/tonoplast.ts';
 import type { TaskContext } from '../../src/domain/task-context.ts';
 type API = typeof import('../../src/assessment/osmosis.ts') & typeof import('../../src/assessment/osmosis-feedback.ts')
@@ -19,6 +20,7 @@ test('runs all fixed osmosis cases with bound criteria, original evidence, feedb
   const fixtures = [
     ...OSMOSIS_CASES.filter(({ input }) => input !== undefined), ...OSMOSIS_ADVERSARIAL_CASES,
     ...OSMOSIS_RECOGNITION_CASES.map((fixture) => ({ ...fixture, expected: 'correct' as const })),
+    ...OSMOSIS_REVISION_CASES,
   ];
   const results = await page.evaluate(async ({ url, contextJson, versions, inputsJson }) => {
     const api = await import(/* @vite-ignore */ url) as API;
@@ -42,6 +44,31 @@ test('runs all fixed osmosis cases with bound criteria, original evidence, feedb
   expect(results.find(({ result }) => result.feedbackCode === 'OSMOSIS_WRONG_PLASMOLYSIS')?.feedback).toContain('Zellreaktion');
   expect(await page.evaluate(() => Object.keys(localStorage))).toEqual([]);
   await expect(page.getByText('Noch in Entwicklung.', { exact: true })).toBeVisible();
+});
+
+test('uses shared new naming frames with separate scientific meanings for both real runtime interfaces', async ({ page, baseURL }) => {
+  const results = await page.evaluate(async ({ url, osmosisJson, tonoplastJson, osmosisVersions, tonoplastVersions }) => {
+    const api = await import(/* @vite-ignore */ url) as API;
+    const osmosis = api.createOsmosisEvaluator(osmosisVersions);
+    const tonoplast = api.createTonoplastEvaluator(tonoplastVersions);
+    const cases = [
+      { evaluator: osmosis, context: JSON.parse(osmosisJson) as TaskContext, fieldId: 'process', good: 'Osmose', bad: 'Plasmolyse' },
+      { evaluator: tonoplast, context: JSON.parse(tonoplastJson) as TaskContext, fieldId: 'term', good: 'Tonoplast', bad: 'Zellwand' },
+    ];
+    return cases.flatMap(({ evaluator, context, fieldId, good, bad }) => [
+      'Die richtige Antwort lautet X.', 'Ich würde auf X tippen.', 'X wäre meine Antwort.',
+    ].flatMap(frame => [good, bad, `${good} oder ${bad}`].map(word => {
+      const text = frame.replace('X', word);
+      const result = evaluator.evaluate(context, { fieldId, text }, 'hint');
+      return { result, bound: api.isResultForContext(result, context), text, presentation: api.STATUS_PRESENTATION[result.status] };
+    })));
+  }, { url: `${baseURL}osmosis-under-test.mjs`, osmosisJson: JSON.stringify(CONTEXT), tonoplastJson: JSON.stringify(TONOPLAST_CONTEXT), osmosisVersions: VERSIONS, tonoplastVersions: TONOPLAST_VERSIONS });
+  expect(results.map(x => x.result.status)).toEqual(Array.from({ length: 6 }, () => ['correct', 'incorrect', 'clarify']).flat());
+  for (const { result, bound, text, presentation } of results) {
+    expect(bound).toBe(true); expect(result.assistance).toBe('hint');
+    expect(presentation.color).toBe(result.status === 'correct' ? 'green' : result.status === 'incorrect' ? 'red' : 'yellow');
+    for (const span of result.criteria[0]!.evidence) if (span.kind === 'input_span') expect(text.slice(span.start, span.end)).toBe(span.value);
+  }
 });
 test('retains version/context/help guards and prevents cross-field confusion without writing raw text or executing markup', async ({ page, baseURL }) => {
   const result = await page.evaluate(async ({ url, contextJson, versions, tonoplastJson, tonoplastVersions }) => {

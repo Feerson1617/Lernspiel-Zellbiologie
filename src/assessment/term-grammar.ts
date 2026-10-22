@@ -1,5 +1,7 @@
 import { editDistance, isLimitedTypo } from './text.ts';
 import type { TextToken } from './text.ts';
+import { CERTAINTY_TAILS, COMMON_NAMING_FRAMES, POST_NAMING_FRAMES } from './naming-frames.ts';
+import type { NamingFrame, NamingFrameInput } from './naming-frames.ts';
 
 export interface TermMeaning {
   readonly id: string;
@@ -29,6 +31,7 @@ const HEDGES = [
   ['ich', 'bin', 'mir', 'nicht', 'sicher', ',', 'aber'],
   ['meiner', 'meinung', 'nach'], ['ich', 'wuerde', 'sagen'],
   ['meines', 'wissens'],
+  ['ich', 'nehme', 'an'], ['ich', 'glaube', 'mal'],
   ['ich', 'denke'], ['ich', 'glaube'], ['ich', 'vermute'],
   ['vielleicht'], ['wahrscheinlich'], ['vermutlich'], ['eventuell'],
 ] as const;
@@ -49,12 +52,11 @@ const FRAMES = [
   ['das', 'ist'], ['es', 'ist'], ['ist', 'es'],
   ['gemeint', 'ist'], ['gesucht', 'ist'], ['ich', 'meine'], ['sie', 'heisst'], ['die', 'heisst'],
 ] as const;
-const TAIL_HEDGES = [['denke', 'ich'], ['glaube', 'ich'], ['vermute', 'ich']] as const;
 interface ReadTerm { readonly term: TermRef; readonly next: number }
 type Connector = 'single' | 'or' | 'and' | 'alias' | 'explanation';
 export interface TermGrammarProfile {
   /** Replaces the default membrane naming frames; never silently appends them. */
-  readonly frames: readonly (readonly string[])[];
+  readonly frames: readonly NamingFrameInput[];
   readonly contextAdverbs?: readonly string[];
 }
 
@@ -66,6 +68,15 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
   const sequence = (index: number, words: readonly string[]) => words.every((word, offset) => at(index + offset) === word);
   const shortHedge = (index: number) => HEDGES.find((words) => words.length === 1 && sequence(index, words));
   const skipContextAdverb = (index: number) => profile?.contextAdverbs?.includes(at(index) ?? '') ? index + 1 : index;
+  const frames: readonly NamingFrame[] = [...COMMON_NAMING_FRAMES, ...(profile?.frames ?? FRAMES).map(input => {
+    if (!Array.isArray(input)) return input as NamingFrame;
+    const words = input as readonly string[];
+    const ending = words[1] === 'muesste' || words[1] === 'koennte' ? 'sein'
+      : words.at(-1) === 'wird' && words[0] !== 'gesucht' ? 'genannt'
+        : words[0] === 'ich' && words[1] === 'wuerde' ? 'nennen' : null;
+    return { words, endings: ending ? [[ending]] : [[]] };
+  })].sort((a, b) => b.words.length - a.words.length);
+  const frameAt = (index: number) => frames.find(frame => sequence(index, frame.words));
 
   function term(index: number): ReadTerm | null {
     if (ARTICLES.has(at(index) ?? '')) index++;
@@ -111,6 +122,8 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
     // At most two explicit harmless hedges; never strip arbitrary introductory text.
     for (let count = 0; count < 2; count++) {
       const hedge = HEDGES.find((words) => sequence(index, words));
+      const naming = frameAt(index);
+      if (naming && (!hedge || naming.words.length >= hedge.length)) break;
       if (!hedge) break;
       index += hedge.length;
       if (at(index) === ',' || at(index) === ':') index++;
@@ -124,20 +137,23 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
       if (at(index) !== 'um') return null;
       index++; existential = true;
     }
-    const frame = (profile?.frames ?? FRAMES).find((words) => sequence(index, words));
-    if (frame) index += frame.length;
+    const frame = frameAt(index);
+    if (frame) index += frame.words.length;
     const framed = !!frame || existential;
-    const needsSein = frame?.[1] === 'muesste' || frame?.[1] === 'koennte';
-    const needsGenannt = frame?.at(-1) === 'wird' && frame?.[0] !== 'gesucht';
-    const needsNennen = frame?.[0] === 'ich' && frame?.[1] === 'wuerde';
     if (frame) {
       index = skipContextAdverb(index);
-      if (at(index) === 'doch') index++;
+      if (at(index) === 'doch' || at(index) === 'wohl') index++;
+      if (at(index) === ',') {
+        const aside = CERTAINTY_TAILS.find(words => sequence(index + 1, words) && at(index + words.length + 1) === ',');
+        if (aside) index += aside.length + 2;
+      }
       const hedge = HEDGES.filter((words) => words.length === 1 || words[0] === 'meiner').find((words) => sequence(index, words));
       if (hedge) index += hedge.length;
     }
-    const negated = NEGATIONS.has(at(index) ?? '');
-    if (negated) index++;
+    const explicitNegation = NEGATIONS.has(at(index) ?? '');
+    if (frame?.negated && explicitNegation) return null; // No guessed double-negation cancellation.
+    const negated = !!frame?.negated || explicitNegation;
+    if (explicitNegation) index++;
     const metaname = at(index) === 'mit';
     if (metaname) { if (framed || negated) return null; index++; }
     const first = term(index);
@@ -145,13 +161,32 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
     index = skipContextAdverb(first.next);
     let value: TermClause;
     const span = () => ({ start: tokens[start]!.start, end: tokens[index - 1]!.end });
+    function finish(value: TermClause): Readonly<{ value: TermClause; next: number }> | null {
+      const ending = (frame?.endings ?? [[]]).find(words => sequence(index, words));
+      if (!ending) return null;
+      index += ending.length;
+      if (at(index) === ',') {
+        const tail = CERTAINTY_TAILS.find(words => sequence(index + 1, words));
+        if (tail) index += tail.length + 1;
+      }
+      return { value: { ...value, end: tokens[index - 1]!.end }, next: index };
+    }
+    // In a subordinate naming frame the final "ist" closes the frame; it does
+    // not open a second biological identity assertion after the selected name.
+    if (frame?.endings?.some(words => words.length > 0 && sequence(index, words))) {
+      return finish({ kind: 'name', terms: [first.term], connector: 'single', negated, ...span() });
+    }
+    if (!framed && !negated) {
+      const post = POST_NAMING_FRAMES.find(words => sequence(index, words));
+      if (post) { index += post.length; return finish({ kind: 'name', terms: [first.term], connector: 'single', negated: false, ...span() }); }
+    }
     // A boundary is explicitly named by its owner, not inferred from occurrence of a target word.
     if (at(index) === 'besitzt' && !framed && !negated && !metaname) {
       if (!sequence(index + 1, ['eine', 'membran', 'namens'])) return null;
       const names = clause(index + 4);
       if (!names || names.value.kind !== 'name' || names.value.negated) return null;
       index = names.next;
-      return { value: { kind: 'has_named_boundary', owner: first.term, terms: names.value.terms, ...span() }, next: index };
+      return finish({ kind: 'has_named_boundary', owner: first.term, terms: names.value.terms, ...span() });
     }
     if (metaname) {
       if (!sequence(index, ['meine', 'ich'])) return null;
@@ -159,7 +194,7 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
       if (!other) return null;
       index = other.next;
       value = { kind: 'identity', subject: first.term, object: other.term, negated: false, ...span() };
-      return { value, next: index };
+      return finish(value);
     }
     if (at(index) === 'trennt' || at(index) === 'grenzt') {
       if (framed || negated) return null;
@@ -176,25 +211,27 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
       if (!other) return null;
       index = other.next;
       if (needsAb) { if (at(index) !== 'ab') return null; index++; }
-      return { value: { kind: 'separates', subject: first.term, first: side.term, second: other.term, negated: relationNegated, ...span() }, next: index };
+      return finish({ kind: 'separates', subject: first.term, first: side.term, second: other.term, negated: relationNegated, ...span() });
     }
     if (!negated && !framed && sequence(index, ['ist', 'es', 'nicht'])) {
       index += 3;
-      return { value: { kind: 'name', terms: [first.term], connector: 'single', negated: true, ...span() }, next: index };
+      return finish({ kind: 'name', terms: [first.term], connector: 'single', negated: true, ...span() });
     }
     let contrastIndex = index;
     if (at(contrastIndex) === ',') contrastIndex++;
     if (negated && at(contrastIndex) === 'sondern') {
-      const chosen = term(contrastIndex + 1);
+      let chosenIndex = contrastIndex + 1;
+      if (frame?.contrastPreposition && at(chosenIndex) === frame.contrastPreposition) chosenIndex++;
+      const chosen = term(chosenIndex);
       if (!chosen) return null;
       value = { kind: 'contrast', excluded: first.term, chosen: chosen.term, start: tokens[start]!.start, end: tokens[chosen.next - 1]!.end };
       index = chosen.next;
-    } else if (negated && at(index) === ',' && (sequence(index + 1, ['es', 'ist']) || sequence(index + 1, ['das', 'ist']))) {
+    } else if (negated && at(index) === ',' && frameAt(index + 1)) {
       const chosen = clause(index + 1);
       // A competing list on the chosen side must not be collapsed into its first name.
       if (!chosen || chosen.value.kind !== 'name' || chosen.value.negated || chosen.value.terms.length !== 1) return null;
       index = chosen.next;
-      return { value: { kind: 'contrast', excluded: first.term, chosen: chosen.value.terms[0]!, ...span() }, next: index };
+      return finish({ kind: 'contrast', excluded: first.term, chosen: chosen.value.terms[0]!, ...span() });
     } else if (['ist', 'heisst', '=', 'umschliesst', 'begrenzt', 'umgibt', 'nennt'].includes(at(index) ?? '')
       && !(at(index) === 'ist' && (['vom', 'von', 'durch', 'es'].includes(at(index + 1) ?? '')
         || (at(index + 1) === 'nicht' && ['vom', 'von', 'durch'].includes(at(index + 2) ?? ''))))) {
@@ -209,6 +246,11 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
       // Names for the boundary, rather than generic identity of the word "Name".
       if (kind === 'identity' && sequence(index, ['der', 'name', 'der'])) index += 3;
       else if (kind === 'identity' && sequence(index, ['ein', 'anderer', 'name', 'fuer'])) { index += 4; kind = 'synonymy'; }
+      else if (kind === 'identity' && verb === 'ist') {
+        const classification = [['eine', 'form', 'des'], ['eine', 'form', 'der'], ['form', 'des'], ['form', 'der'], ['eine', 'art', 'von'], ['art', 'von']]
+          .find(words => sequence(index, words));
+        if (classification) index += classification.length;
+      }
       const object = term(index);
       if (!object) return null;
       value = { kind, subject: first.term, object: object.term, negated: relationNegated, relation: verb === 'ist' && kind === 'identity' ? 'property' : 'equivalence',
@@ -261,23 +303,16 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
         if (!excluded && at(next) === 'genannt') next++;
         if (at(next) !== ')' || terms.length !== 1) return null;
         index = next + 1;
-        if (excluded) return { value: { kind: 'conjoined_negation', positive: first.term, negative: other.term, ...span() }, next: index };
+        if (excluded) return finish({ kind: 'conjoined_negation', positive: first.term, negative: other.term, ...span() });
         terms.push(other.term); connector = 'alias';
       }
       if (!negated && sequence(index, ['sind', 'dieselbe', 'membran']) && terms.length === 2) {
         index += 3;
-        return { value: { kind: 'identity', subject: terms[0]!, object: terms[1]!, negated: false, ...span() }, next: index };
+        return finish({ kind: 'identity', subject: terms[0]!, object: terms[1]!, negated: false, ...span() });
       }
       value = { kind: 'name', terms, connector, negated, start: tokens[start]!.start, end: tokens[index - 1]!.end };
     }
-    if (needsSein) { if (at(index) !== 'sein') return null; index++; }
-    if (needsGenannt) { if (at(index) !== 'genannt') return null; index++; }
-    if (needsNennen) { if (at(index) !== 'nennen') return null; index++; }
-    if (at(index) === ',') {
-      const tail = TAIL_HEDGES.find((words) => sequence(index + 1, words));
-      if (tail) index += tail.length + 1;
-    }
-    return { value: { ...value, end: tokens[index - 1]!.end }, next: index };
+    return finish(value);
   }
 
   const clauses: TermClause[] = [];

@@ -56,6 +56,7 @@ können ausdrücklich neu geprüft werden.
 | --- | --- |
 | `text.ts` | Gemeinsame unveränderte Normalisierung/Tokenisierung und Originalpositionen |
 | `term-grammar.ts` | Ein Parser mit austauschbarem Feldprofil; ganze Eingabe, Benennung, Negation, Subjekt/Objekt |
+| `naming-frames.ts` | Gemeinsame bedeutungsneutrale Antwort-/Begriffsrahmen mit ausdrücklich gebundenen Satzendungen |
 | `term-evaluator.ts` | Gemeinsame Versions-, Kontext-, Eingabe- und Ergebnishülle, keine Biologie |
 | `osmosis-context.ts` | Typ und reine Prüfung ausdrücklich gegebener Voraussetzungen |
 | `osmosis.ts` | TERM_OSMOSIS-Lexikon, eigenes Benennungsprofil, Kontraste, Kriterienprüfung C01 |
@@ -66,6 +67,31 @@ Das Osmoseprofil ersetzt die Standardrahmen für Membranen. Keine Tonoplast-
 Bedeutung oder anatomische Beziehung wird als Osmose-Fachregel übernommen.
 Tonoplast verwendet die gemeinsame Hülle mit seiner bisherigen Fachlogik.
 Alle alten Regressionen laufen mit; keine Runtimeimporte aus Redaktion/Tests.
+
+### Nachbesserung nach Gegenprüfung von PR #6
+
+Gemeinsame Antwort-, Begriffs- und Bezeichnungsrahmen werden aus begrenzten
+Subjekten und Prädikaten zusammengesetzt. Persönliche Vermutung/Entscheidung,
+„ich tippe/denke an …“, „das nennt man …“, „… wäre meine Antwort“ und bekannte
+Unsicherheitsnachträge sind ausdrücklich modelliert. Diese Fragmente enthalten
+keine biologischen Antwortwörter. Fachbegriffe kommen erst aus dem jeweiligen
+Lexikon; dieselben Rahmen führen mit falschen Begriffen zu konkreten Fehlern
+und mit unentschiedenen Alternativen zu Klärung.
+
+Satzendungen wie „ein“, „sagen“, „tippen“ oder das abschließende „ist“ einer
+untergeordneten Benennung sind obligatorisch. Die längere passende Struktur
+hat Vorrang vor einem kürzeren Unsicherheitspräfix. „Ich tippe nicht auf A,
+sondern auf B“ bindet Verneinung und parallele Präposition ausdrücklich;
+doppelte Verneinung wird nicht geraten. Ein eingeschobenes „glaube ich“ wird
+nur mit genau bekannten Grenzen interpretiert, kein beliebiger Einschub gelöscht.
+
+Begrenzte Kategorieaussagen „Osmose ist eine Form des …“ behandeln die bekannte
+Transportklasse; die ausdrückliche Verneinung bleibt erhalten. ATP-Pumpe ist
+eine geprüfte aktive Pumpe, kein Schreibfehler für Osmose. Neue Kasusformen
+„aktiven/passiven Transports“ ergänzen diese vorhandenen Konzepte. Unbekannte
+Zusätze verhindern unverändert Grün; es gibt keine allgemeine Erklärungskorrektur.
+Nachweise und getrennte Erkennungsquoten stehen in `qa/P02b-Nachbesserung.md`
+und `qa/p02b-revision-review.json`.
 
 ## Kontrolliert überführte Fachregel
 

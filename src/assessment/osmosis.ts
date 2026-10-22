@@ -16,6 +16,7 @@ const SUBJECTS = [
   ['der', 'gesuchte', 'vorgang'], ['der', 'wassertransport'], ['dieser', 'wassertransport'],
   ['der', 'wassertransportvorgang'], ['der', 'transportvorgang'], ['der', 'prozess'],
   ['dieser', 'prozess'], ['die', 'transportart'],
+  ['der', 'transport'], ['die', 'gesuchte', 'transportart'],
 ];
 /** Field-specific naming subjects; none of the membrane frames are inherited. */
 const PROFILE: TermGrammarProfile = {
@@ -30,6 +31,7 @@ const PROFILE: TermGrammarProfile = {
     ['man', 'nennt', 'das'], ['man', 'nennt', 'diesen', 'vorgang'],
     ['dabei', 'handelt', 'es', 'sich', 'um'], ['hier', 'handelt', 'es', 'sich', 'um'],
     ['wir', 'sprechen', 'hier', 'von'],
+    ['den', 'vorgang', 'nennt', 'man'], ['den', 'transport', 'nennt', 'man'],
   ], contextAdverbs: ['hier', 'dabei'],
 };
 const MEANINGS: readonly TermMeaning[] = [
@@ -37,8 +39,8 @@ const MEANINGS: readonly TermMeaning[] = [
   { id: 'diffusion', forms: [['diffusion'], ['diffusion', 'von', 'wasser'], ['diffusion', 'des', 'wassers']] },
   { id: 'movement', forms: [['wasserbewegung'], ['bewegung', 'von', 'wasser']] },
   { id: 'transport', forms: [['wassertransport'], ['transport', 'von', 'wasser']] },
-  { id: 'passive', forms: [['passiver', 'transport'], ['passiven', 'transport'], ['passiver', 'wassertransport'], ['passive', 'wasserbewegung']] },
-  { id: 'active', forms: [['aktiver', 'transport'], ['aktiven', 'transport'], ['aktiver', 'wassertransport'], ['aktive', 'pumpe']] },
+  { id: 'passive', forms: [['passiver', 'transport'], ['passiven', 'transport'], ['passiven', 'transports'], ['passiver', 'wassertransport'], ['passive', 'wasserbewegung']] },
+  { id: 'active', forms: [['aktiver', 'transport'], ['aktiven', 'transport'], ['aktiven', 'transports'], ['aktiver', 'wassertransport'], ['aktive', 'pumpe'], ['atp', '-', 'pumpe'], ['atp', 'pumpe'], ['atppumpe']] },
   { id: 'endocytosis', forms: [['endocytose'], ['endozytose']] },
   { id: 'exocytosis', forms: [['exocytose'], ['exozytose']] },
   { id: 'plasmolysis', forms: [['plasmolyse']] },

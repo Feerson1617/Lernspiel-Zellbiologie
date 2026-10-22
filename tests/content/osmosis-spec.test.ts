@@ -7,6 +7,7 @@ import { OSMOSIS_CRITERION_ID, OSMOSIS_FIELD_ID, OSMOSIS_RUBRIC_ID } from '../..
 import { MAX_ANSWER_LENGTH } from '../../src/assessment/text.ts';
 import { OSMOSIS_TEST_CONTEXT as CONTEXT, OSMOSIS_TEST_EVALUATOR as EVALUATOR } from '../helpers/osmosis.ts';
 import { OSMOSIS_ADVERSARIAL_CASES, OSMOSIS_CASES, OSMOSIS_RECOGNITION_CASES } from '../fixtures/osmosis-cases.ts';
+import { OSMOSIS_NEW_SHORT, OSMOSIS_REVISION_CASES } from '../fixtures/osmosis-revision-cases.ts';
 const read = (name: string) => JSON.parse(readFileSync(new URL(`../../spec/${name}`, import.meta.url), 'utf8')) as unknown;
 interface Reference { id: string; task_id: string; field_id: string; input: string; expected_status: Status; reason: string }
 const references = (read('reference-fixtures.json') as { cases: Reference[] }).cases.filter(({ task_id, field_id }) => task_id === 'M6.02' && field_id === 'process');
@@ -32,8 +33,15 @@ it('keeps all 40 recognition inputs distinct from the implementation/editorial c
   expect(new Set(OSMOSIS_RECOGNITION_CASES.map(({ input }) => input)).size).toBe(40);
   expect(OSMOSIS_RECOGNITION_CASES.filter(({ input }) => used.has(input))).toEqual([]);
 });
+it('counts 40 new short revision answers beyond every previous own/editorial/supplied example', () => {
+  const used = new Set([...OSMOSIS_CASES, ...OSMOSIS_RECOGNITION_CASES, ...OSMOSIS_ADVERSARIAL_CASES, ...references,
+    ...OSMOSIS_REVISION_CASES.filter(f => f.id.startsWith('RV-'))].map(f => f.input));
+  expect(OSMOSIS_NEW_SHORT).toHaveLength(40);
+  expect(new Set(OSMOSIS_NEW_SHORT.map(f => f.input)).size).toBe(40);
+  expect(OSMOSIS_NEW_SHORT.filter(f => used.has(f.input))).toEqual([]);
+});
 it('validates every actual osmosis corpus/reference result against the unchanged result schema', () => {
-  const inputs = [...OSMOSIS_CASES, ...references, ...OSMOSIS_ADVERSARIAL_CASES, ...OSMOSIS_RECOGNITION_CASES];
+  const inputs = [...OSMOSIS_CASES, ...references, ...OSMOSIS_ADVERSARIAL_CASES, ...OSMOSIS_RECOGNITION_CASES, ...OSMOSIS_REVISION_CASES];
   const results = inputs.map(({ input }) => EVALUATOR.evaluate(CONTEXT, { fieldId: 'process', text: input }, 'independent'));
   const venv = fileURLToPath(new URL('../../.venv/bin/python', import.meta.url));
   const validation = spawnSync(existsSync(venv) ? venv : 'python3', ['-c', [
