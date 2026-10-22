@@ -1,17 +1,17 @@
 # Zelllabor 11 – Die Zelle erforschen
 
-P00 bis P01c: technisches Fundament, stabile Identitäten, typisierte Metadaten,
+P00 bis P02a: technisches Fundament, stabile Identitäten, typisierte Metadaten,
 unveränderliche Aufgabenkontexte, explizite SI-Einheitenumrechnungen und lokale
-Fortschrittsverträge.
+Fortschrittsverträge und der erste begrenzte Fachkorrektor für Z1.02.
 **Entwicklungsfassung, noch kein für den Unterricht freigegebenes Lernspiel.**
-Die Startseite informiert über den Projektstand. Es gibt noch keine Missionen,
-Bewertung, Simulationen oder Zellmodelle. Die vorbereitete Fortschrittsspeicherung
-ist noch nicht an die Startseite angebunden.
+Die Startseite informiert über den Projektstand. Sie enthält keine Missionen,
+Antwortbewertung, Simulationen oder Zellmodelle. Korrektor und Fortschrittsadapter
+sind separat getestet und noch nicht an die Startseite angebunden.
 
 ## Lokal starten
 
 Voraussetzungen: Node.js **24.19.0** (siehe `.nvmrc`), npm **11.x** und für die
-separate Konzeptprüfung Python ≥3.10 mit `requirements-spec.txt`.
+Konzept-/Ergebnisschemaprüfung Python ≥3.10 mit `requirements-spec.txt`.
 Die Pakete sind exakt versioniert; `package-lock.json` wird eingecheckt.
 
 ```sh
@@ -86,13 +86,13 @@ nachfolgenden Phasen vorbereitet. Solange keine passenden Tests existieren,
 Sie gehören noch nicht zur erforderlichen Prüfkette. `test:content` ist seit
 P01a mit echten Identitäts-/Metadatentests gefüllt und Bestandteil von `check`.
 
-## Architektur und Grenze nach P01c
+## Architektur und Grenze nach P02a
 
 | Bereich | Verantwortung |
 | --- | --- |
 | `src/domain/` | Stabile IDs, Metadaten, unveränderliche Kontexte, Hash-/Versionsbindung und SI-Mengen |
 | `src/biology/` | Künftige reine biologische Modelle, ohne DOM/Three.js |
-| `src/assessment/` | Künftige Antwortprüfung und fachliche Feedbackdaten |
+| `src/assessment/` | Begrenzter T1-Kern, Fachregel Z1.02, strukturierte Ergebnisse/Feedback und ausdrückliche P01c-Übergabe |
 | `src/content/` | Ausschließlich erlaubte öffentliche Metadaten; keine Runtime-Aufgaben/Antwortschlüssel |
 | `src/application/` | Start der Oberfläche; später Koordination und Navigation |
 | `src/ui/` | Semantische DOM-Startseite, CSS und zugängliche Navigation |
@@ -131,8 +131,19 @@ unbekannte/beschädigte Daten und andere Inhaltsfassungen werden bis zum
 ausdrücklichen Zurücksetzen erhalten. Details, Export und Grenzen stehen in
 `src/persistence/README.md`; der Testbericht in `qa/P01c.md` und `qa/p01c-review.json`.
 
-Keine konkreten fachlichen Modellversionen werden vergeben. Antwortbewertung,
-Fachmodelle und Lernmissionen bleiben unimplementiert. P02 wurde nicht begonnen.
+**P02a:** `createTonoplastEvaluator(versions)` prüft ausschließlich die Benennung
+der Vakuolenmembran in Z1.02. Bekannte Begriffe, Satzrahmen, Verneinung und
+Identität werden vollständig ausgewertet; unsichere Zusätze verhindern Grün.
+Status, Feedback, Präsentationsdaten und Hilfe sind getrennt. Der Adapter
+`createEvaluatedAttempt` bindet Ergebnisse ausdrücklich an den aktuellen Kontext,
+ohne etwas automatisch zu speichern. API, fachliche Annahmen und Grenzen stehen
+in `src/assessment/README.md`; Selbstprüfungen in `qa/P02a.md`/`qa/p02a-review.json`.
+`test:content` benötigt seit P02a für die tatsächlichen Ergebnisschematests Python
+mit den oben dokumentierten Abhängigkeiten.
+
+Keine konkreten fachlichen Modellversionen werden vergeben. Weitere Textfelder,
+Zahlenkorrektur, Fachmodelle und Lernmissionen bleiben unimplementiert.
+P02b wurde nicht begonnen; unabhängige Gegenprüfung/Unterrichtsfreigabe stehen aus.
 Maßgeblich bleiben `AGENTS.md`, A–F und `spec/`;
 Erwartungen und Modellwerte bleiben unverändert.
 
