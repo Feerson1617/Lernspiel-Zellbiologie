@@ -138,6 +138,8 @@ Status, Feedback, Präsentationsdaten und Hilfe sind getrennt. Der Adapter
 `createEvaluatedAttempt` bindet Ergebnisse ausdrücklich an den aktuellen Kontext,
 ohne etwas automatisch zu speichern. API, fachliche Annahmen und Grenzen stehen
 in `src/assessment/README.md`; Selbstprüfungen in `qa/P02a.md`/`qa/p02a-review.json`.
+Die Nachbesserung nach der extern berichteten Gegenprüfung von PR #5 ist in
+`qa/P02a-Nachbesserung.md` und `qa/p02a-revision-review.json` dokumentiert.
 `test:content` benötigt seit P02a für die tatsächlichen Ergebnisschematests Python
 mit den oben dokumentierten Abhängigkeiten.
 

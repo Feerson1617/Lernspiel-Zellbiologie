@@ -58,6 +58,43 @@ sowie die fünf bekannten anderen Strukturen. Alle bekannten Formen werden
 Eingabe und erzeugt Aussagen mit Subjekt, Objekt, Negation und Originalspanne.
 Keine beliebige Schlüsselwortsuche und keine vollständige Antwort-Positivliste.
 
+### Nachbesserung nach Gegenprüfung von PR #5
+
+Die Grammatik unterscheidet nun auch `synonymy`, `separates` und
+`has_named_boundary`. Zusätzliche Namensrahmen bleiben endliche Satzmuster mit
+frei eingesetzten bekannten Konzepten. Unsicherheit mit Doppelpunkt, „doch“,
+„meines Wissens“, „es handelt sich um …“ und „könnte/müsste … sein“ verändert
+nicht die fachliche Bedeutung. Eine allgemeine Membraneigenschaft ist jedoch
+keine strikte Gleichbedeutung mit dem Wort „Membran“.
+
+Kontrollierte Konzeptergänzungen: Plasmamembran/Plasmalemma = Zellmembran,
+Kernmembran bzw. Membran um den Zellkern = Kernhülle; Vakuolenraum/Vakuoleninnere
+bezeichnen den umschlossenen Raum. Beschreibungen wie „Membran der Vakuole“
+oder „Membran zwischen Vakuole und Cytosol“ bleiben allein `partial`; erst
+die gefragte Benennung ergänzt das Pflichtkriterium. Allgemeine Membransubjekte
+werden weiterhin nicht automatisch als die markierte Struktur aufgefasst.
+
+Aktive/passive Formen von umschließen, begrenzen und umgeben bewahren Richtung,
+Objekte und Verneinung. In dieser konkreten Benennungsfrage beziehen sich diese
+Muster auf die direkte markierte Vakuolengrenze; eine Zellmembran als diese
+Grenze ist falsch. Aussagen über indirekte räumliche Verschachtelung werden
+nicht allgemein ausgewertet. „Trennt … von …“ / „grenzt … von … ab“ wird nur
+für den Tonoplasten zwischen Vakuolenraum und Cytosol geprüft. Es entsteht
+keine allgemeine Relationsbewertung für andere Organellen oder Textfelder.
+
+Einfache Klammer-Appositionen, Schrägstrich und „– also …“ bewerten alle
+beteiligten Namen: gleichwertige Benennungen richtig, konkurrierende Strukturen
+unklar. Explizite falsche Gleichsetzung oder Negation bleibt falsch. Ein
+bekanntes „Danke!“ beendet nicht die Prüfung späterer Textteile. Originalspannen
+umfassen auch konsumierte Klammern und Modalendungen; Text wird nicht umgeschrieben.
+
+Die 20 übermittelten Fälle, 40 neue richtige und 48 weitere Fälle stehen in
+`tests/fixtures/tonoplast-revision-cases.ts`. Zusätzliche Kreuzprüfungen tauschen
+Fachbegriffe in zehn neuen Rahmen aus und hängen an jede neue richtige Antwort
+unbekannte bzw. widersprüchliche Aussagen an. Bericht und Grenzen:
+`qa/P02a-Nachbesserung.md` / `qa/p02a-revision-review.json`. Diese Fälle sind
+Codex-Selbstprüfungen; die erneute unabhängige Gegenprüfung bleibt ausstehend.
+
 Unterstützt sind insbesondere:
 
 - Einzelne Namen mit Artikel/Anführungszeichen; genaue Namensrahmen wie

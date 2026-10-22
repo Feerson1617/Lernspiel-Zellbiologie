@@ -1,5 +1,6 @@
 import { expect, test } from '@playwright/test';
 import { buildDomainModule } from '../helpers/domain-bundle.ts';
+import { NEW_CORRECT_CASES, NEW_SAFETY_CASES, REVIEW_REGRESSIONS } from '../fixtures/tonoplast-revision-cases.ts';
 
 type API = typeof import('../../src/domain/task-context.ts') & typeof import('../../src/domain/progress.ts')
   & typeof import('../../src/assessment/tonoplast.ts') & typeof import('../../src/assessment/feedback.ts')
@@ -64,4 +65,28 @@ test('blocks stale result handoff after version/material changes and keeps help 
   expect(result.outcome).toMatchObject({ successful: false, independent: false, assistance: 'solution_viewed' });
   expect(result.stored).not.toMatch(/Zellwand|Tonoplast|evidence|contextHash/);
   expect(result.keys).toEqual([]);
+});
+
+test('executes all review/new cases through the real browser bundle with original evidence and explicit feedback', async ({ page, baseURL }) => {
+  const fixtures = [...REVIEW_REGRESSIONS, ...NEW_CORRECT_CASES, ...NEW_SAFETY_CASES];
+  const values = await page.evaluate(async ({ url, inputs }) => {
+    const api = await import(/* @vite-ignore */ url) as API;
+    const versions = { taskVersion: 'test-task', rubricVersion: 'test-rubric', contentVersion: 'test-content', modelVersion: 'test-no-simulation' };
+    const context = api.createTaskContext({ ...versions, taskId: 'Z1.02', instanceId: 'revision', seed: 's', phase: 'explain', material: { highlightedStructureId: 'tonoplast' }, modelState: {} });
+    const evaluator = api.createTonoplastEvaluator(versions);
+    return inputs.map((text) => {
+      const result = evaluator.evaluate(context, { fieldId: 'term', text }, 'wordbank');
+      return { result, feedback: api.getTonoplastFeedback(result.feedbackCode), presentation: api.STATUS_PRESENTATION[result.status], valid: api.isResultForContext(result, context) };
+    });
+  }, { url: `${baseURL}assessment-under-test.mjs`, inputs: fixtures.map(({ input }) => input) });
+  for (const [index, fixture] of fixtures.entries()) {
+    const { result, feedback, presentation, valid } = values[index]!;
+    expect(result.status, fixture.id).toBe(fixture.expected);
+    expect(result.criteria[0]?.status).toBe(fixture.expected);
+    expect(result.assistance).toBe('wordbank'); expect(valid).toBe(true);
+    expect(feedback.length).toBeGreaterThan(20); expect(presentation.symbol).toBeTruthy(); expect(presentation.label).toBeTruthy();
+    expect(presentation.color).toBe(fixture.expected === 'correct' ? 'green' : fixture.expected === 'incorrect' ? 'red' : 'yellow');
+    for (const span of result.criteria[0]!.evidence) if (span.kind === 'input_span') expect(fixture.input.slice(span.start, span.end)).toBe(span.value);
+  }
+  expect(await page.evaluate(() => Object.keys(localStorage))).toEqual([]);
 });

@@ -13,6 +13,8 @@ export const TONOPLAST_FEEDBACK = Object.freeze({
   TONOPLAST_FALSE_SYNONYMY: 'Tonoplast und Vakuolenmembran bezeichnen hier dieselbe Membran. Ihre Gleichbedeutung zu verneinen ist fachlich falsch.',
   TONOPLAST_NOT_BOUNDARY: 'Der Tonoplast ist die Membran um die Vakuole. Er ist damit eine Membrangrenze; diese Eigenschaft wird in deiner Aussage verneint.',
   TONOPLAST_FALSE_ENCLOSURE: 'Der Tonoplast umschließt den Vakuolenraum. Die Aussage, dass er die Vakuole nicht umschließt, widerspricht dieser Zuordnung.',
+  TONOPLAST_WRONG_ENCLOSURE: 'Die Zuordnung der direkten Grenze ist falsch: Der Tonoplast umschließt die Vakuole; die Kernhülle umschließt den Zellkern. Die äußere Zellmembran ist nicht die direkte Vakuolengrenze.',
+  TONOPLAST_FALSE_SEPARATION: 'Der Tonoplast trennt Vakuolenraum und Cytosol. Diese Grenzbeziehung zu verneinen ist fachlich falsch.',
   TONOPLAST_FALSE_IDENTITY: 'Die gleichgesetzten Strukturen sind nicht dieselbe Grenze. Tonoplast bezeichnet die Vakuolenmembran, nicht eine andere Zellstruktur.',
   TONOPLAST_CONTRADICTION: 'Du bestätigst und verneinst dieselbe Benennung beziehungsweise dieselbe Membranbeziehung. Gib eine widerspruchsfreie Antwort für die markierte Grenze.',
   TONOPLAST_COMPETING: 'Du nennst verschiedene Strukturen ohne eindeutige Zuordnung. Entscheide dich für die Membran um die Vakuole.',

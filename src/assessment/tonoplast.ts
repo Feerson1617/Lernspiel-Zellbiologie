@@ -14,14 +14,30 @@ export const TONOPLAST_FIELD_ID = 'term';
 export const TONOPLAST_RUBRIC_ID = 'TERM_TONOPLAST';
 export const TONOPLAST_CRITERION_ID = 'Z1.02.C01';
 
-/** Explicit controlled projection of the one authorized rubric, never fixture texts. */
+// Anatomy phrases are concept descriptions, not complete accepted answer strings.
+const VACUOLE_BOUNDARY_FORMS: readonly (readonly string[])[] = [
+  ...['membran', 'huelle', 'grenze'].flatMap((boundary) => [
+    [boundary, 'der', 'vakuole'], [boundary, 'um', 'die', 'vakuole'],
+    [boundary, 'um', 'das', 'vakuoleninnere'], [boundary, 'des', 'vakuolenraums'],
+    [boundary, 'um', 'den', 'vakuolenraum'],
+    ...['vakuole', 'vakuolenraum'].flatMap((room) => [
+      [boundary, 'zwischen', room, 'und', 'cytosol'],
+      [boundary, 'zwischen', 'cytosol', 'und', room],
+    ]),
+  ]),
+  ...['die', 'welche'].flatMap((relative) => ['umschliesst', 'umgibt', 'begrenzt'].map((verb) =>
+    ['membran', ',', relative, 'die', 'vakuole', verb, ','])),
+];
+/** Controlled vocabulary for the authorized rubric plus reviewed synonyms/relations; never fixture texts. */
 const MEANINGS: readonly TermMeaning[] = [
   { id: 'tonoplast', forms: [['tonoplast'], ['tonoplasten'], ['vakuolenmembran']], spellingTargets: ['tonoplast', 'vakuolenmembran'] },
   { id: 'boundary', forms: [['membran'], ['huelle'], ['vakuolenhuelle'], ['innere', 'grenze']] },
+  { id: 'vacuole_boundary', forms: VACUOLE_BOUNDARY_FORMS },
   { id: 'cell_wall', forms: [['zellwand']] },
-  { id: 'cell_membrane', forms: [['zellmembran']] },
-  { id: 'vacuole', forms: [['vakuole']] },
-  { id: 'nuclear_envelope', forms: [['kernhuelle']] },
+  { id: 'cell_membrane', forms: [['zellmembran'], ['plasmamembran'], ['plasmalemma']] },
+  { id: 'vacuole', forms: [['vakuole'], ['vakuolenraum'], ['vakuoleninnere']] },
+  { id: 'cytosol', forms: [['cytosol'], ['zytosol']] },
+  { id: 'nuclear_envelope', forms: [['kernhuelle'], ['kernmembran'], ['membran', 'um', 'den', 'zellkern'], ['membran', 'des', 'zellkerns']] },
   { id: 'nucleus', forms: [['zellkern']] },
 ];
 const WRONG_CODES: Readonly<Record<string, TonoplastFeedbackCode>> = Object.freeze({
@@ -35,7 +51,7 @@ const correct = () => decision('correct', 'TONOPLAST_CORRECT');
 const contradiction = () => decision('incorrect', 'TONOPLAST_CONTRADICTION');
 function name(ref: TermRef): Decision {
   if (ref.id === 'tonoplast') return decision('correct', ref.typo ? 'TONOPLAST_TYPO' : 'TONOPLAST_CORRECT');
-  if (ref.id === 'boundary') return decision('partial', 'TONOPLAST_PARTIAL');
+  if (ref.id === 'boundary' || ref.id === 'vacuole_boundary') return decision('partial', 'TONOPLAST_PARTIAL');
   const code = WRONG_CODES[ref.id];
   return code ? decision('incorrect', code) : unknown();
 }
@@ -48,7 +64,11 @@ function assessClause(clause: TermClause): Decision {
       if (first.id === 'tonoplast') return decision('incorrect', 'TONOPLAST_NEGATED');
       return WRONG_CODES[first.id] ? decision('partial', 'TONOPLAST_EXCLUDED_OTHER') : unknown();
     }
-    if (ids.size > 1) return decision('clarify', 'TONOPLAST_COMPETING');
+    if (ids.size > 1) {
+      // An explicit vacuole-boundary description is compatible with its proper name.
+      if ([...ids].every((id) => id === 'tonoplast' || id === 'vacuole_boundary')) return correct();
+      return decision('clarify', 'TONOPLAST_COMPETING');
+    }
     if (clause.terms.some((term) => term.typo) && first.id === 'tonoplast') return decision('correct', 'TONOPLAST_TYPO');
     return name(first);
   }
@@ -64,18 +84,41 @@ function assessClause(clause: TermClause): Decision {
     if (clause.negative.id === 'tonoplast') return decision('incorrect', 'TONOPLAST_NEGATED');
     return WRONG_CODES[clause.negative.id] ? name(clause.positive) : unknown();
   }
+  if (clause.kind === 'has_named_boundary') {
+    if (clause.owner.id !== 'vacuole') return unknown();
+    return assessClause({ ...clause, kind: 'name', negated: false, connector: 'single' });
+  }
+  if (clause.kind === 'separates') {
+    const sides = new Set([clause.first.id, clause.second.id]);
+    if (clause.subject.id !== 'tonoplast' || sides.size !== 2 || !sides.has('vacuole') || !sides.has('cytosol')) return unknown();
+    return clause.negated ? decision('incorrect', 'TONOPLAST_FALSE_SEPARATION') : name(clause.subject);
+  }
   if (clause.kind === 'encloses') {
-    if (clause.subject.id !== 'tonoplast' || clause.object.id !== 'vacuole') return unknown();
-    return clause.negated ? decision('incorrect', 'TONOPLAST_FALSE_ENCLOSURE') : name(clause.subject);
+    if (clause.subject.id === 'tonoplast' && clause.object.id === 'vacuole') {
+      return clause.negated ? decision('incorrect', 'TONOPLAST_FALSE_ENCLOSURE') : name(clause.subject);
+    }
+    if ((clause.subject.id === 'cell_membrane' || clause.subject.id === 'cell_wall' || clause.subject.id === 'nuclear_envelope') && clause.object.id === 'vacuole') {
+      return clause.negated ? decision('partial', 'TONOPLAST_EXCLUDED_OTHER') : decision('incorrect', 'TONOPLAST_WRONG_ENCLOSURE');
+    }
+    if (clause.subject.id === 'tonoplast' && clause.object.id === 'nucleus') {
+      return clause.negated ? name(clause.subject) : decision('incorrect', 'TONOPLAST_WRONG_ENCLOSURE');
+    }
+    return unknown();
   }
   // Identity statements are interpreted only when they actually involve the target.
   const ids = [clause.subject.id, clause.object.id];
-  if (!ids.includes('tonoplast')) return unknown();
-  const sameBoundary = ids.every((id) => id === 'tonoplast' || id === 'boundary');
+  // Being a membrane is a true property; "another name for membrane" claims a
+  // broader synonymy. Never erase that distinction to manufacture green.
+  if (clause.kind === 'synonymy' && ids.includes('boundary')) return unknown();
+  if (!ids.includes('tonoplast') && !ids.includes('vacuole_boundary')) return unknown();
+  const sameBoundary = ids.every((id) => id === 'tonoplast' || id === 'boundary' || id === 'vacuole_boundary');
   // A generic membrane as subject is not an identification of THIS marked membrane.
   // In particular, never turn "eine Membran" into a universal identity assertion.
   if (clause.subject.id === 'boundary') return decision('clarify', 'TONOPLAST_NO_POSITIVE_NAME', true);
-  if (sameBoundary) return clause.negated ? decision('incorrect', ids.every((id) => id === 'tonoplast') ? 'TONOPLAST_FALSE_SYNONYMY' : 'TONOPLAST_NOT_BOUNDARY') : correct();
+  if (sameBoundary) {
+    if (clause.negated) return decision('incorrect', ids.every((id) => id === 'tonoplast') ? 'TONOPLAST_FALSE_SYNONYMY' : 'TONOPLAST_NOT_BOUNDARY');
+    return ids.includes('tonoplast') ? correct() : decision('partial', 'TONOPLAST_PARTIAL');
+  }
   if (ids.some((id) => WRONG_CODES[id])) {
     if (!clause.negated) return decision('incorrect', 'TONOPLAST_FALSE_IDENTITY');
     return clause.subject.id === 'tonoplast' ? correct() : decision('clarify', 'TONOPLAST_NO_POSITIVE_NAME');
@@ -86,7 +129,7 @@ function assessClause(clause: TermClause): Decision {
 function combine(decisions: readonly Decision[]): Decision {
   const incorrect = decisions.find((value) => value.status === 'incorrect');
   if (incorrect) {
-    const code = decisions.some((value) => value.status === 'correct') && ['TONOPLAST_NEGATED', 'TONOPLAST_FALSE_SYNONYMY', 'TONOPLAST_NOT_BOUNDARY', 'TONOPLAST_FALSE_ENCLOSURE'].includes(incorrect.code)
+    const code = decisions.some((value) => value.status === 'correct') && ['TONOPLAST_NEGATED', 'TONOPLAST_FALSE_SYNONYMY', 'TONOPLAST_NOT_BOUNDARY', 'TONOPLAST_FALSE_ENCLOSURE', 'TONOPLAST_FALSE_SEPARATION'].includes(incorrect.code)
       ? 'TONOPLAST_CONTRADICTION' : incorrect.code;
     return decision('incorrect', code, decisions.some((value) => value.unassessed));
   }
@@ -135,7 +178,7 @@ export function createTonoplastEvaluator(versions: VersionInfo) {
     const parsed = parseTermAnswer(tokenizeText(text), MEANINGS);
     if (!parsed.complete) return result(unknown(), text, [{ start: 0, end: text.length }]);
     if (parsed.clauses.every((clause) => clause.kind === 'name' && !clause.negated)) {
-      const ids = new Set(parsed.clauses.flatMap((clause) => clause.kind === 'name' ? clause.terms.map((term) => term.id) : []).filter((id) => id !== 'boundary'));
+      const ids = new Set(parsed.clauses.flatMap((clause) => clause.kind === 'name' ? clause.terms.map((term) => term.id) : []).filter((id) => id !== 'boundary' && id !== 'vacuole_boundary'));
       if (ids.size > 1) return result(decision('clarify', 'TONOPLAST_COMPETING'), text, parsed.clauses);
     }
     return result(combine(parsed.clauses.map(assessClause)), text, parsed.clauses);

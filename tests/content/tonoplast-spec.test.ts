@@ -7,6 +7,7 @@ import { MAX_ANSWER_LENGTH } from '../../src/assessment/text.ts';
 import { TONOPLAST_CRITERION_ID, TONOPLAST_FIELD_ID, TONOPLAST_RUBRIC_ID } from '../../src/assessment/tonoplast.ts';
 import { TEST_CONTEXT, TEST_EVALUATOR } from '../helpers/tonoplast.ts';
 import { TONOPLAST_CASES } from '../fixtures/tonoplast-cases.ts';
+import { NEW_CORRECT_CASES, NEW_SAFETY_CASES, REVIEW_REGRESSIONS } from '../fixtures/tonoplast-revision-cases.ts';
 
 const read = (file: string): string => readFileSync(new URL(`../../spec/${file}`, import.meta.url), 'utf8');
 interface Reference { id: string; task_id: string; field_id: string; input: string; expected_status: Status; reason: string }
@@ -28,8 +29,14 @@ it('projects only the authorized task/field/criterion/rubric and all specified v
   expect(references).toHaveLength(39);
 });
 
+it('counts only genuinely new complete correct inputs in the revision recognition denominator', () => {
+  const used = new Set([...references, ...TONOPLAST_CASES, ...REVIEW_REGRESSIONS].map(({ input }) => input));
+  expect(NEW_CORRECT_CASES.length).toBeGreaterThanOrEqual(40);
+  expect(NEW_CORRECT_CASES.filter(({ input }) => used.has(input))).toEqual([]);
+});
+
 it('validates every actual corpus/reference result against the unchanged JSON Schema with Python jsonschema', () => {
-  const results = [...references, ...TONOPLAST_CASES].map((item) => TEST_EVALUATOR.evaluate(TEST_CONTEXT, { fieldId: 'term', text: item.input }, 'independent'));
+  const results = [...references, ...TONOPLAST_CASES, ...REVIEW_REGRESSIONS, ...NEW_CORRECT_CASES, ...NEW_SAFETY_CASES].map((item) => TEST_EVALUATOR.evaluate(TEST_CONTEXT, { fieldId: 'term', text: item.input }, 'independent'));
   const venv = fileURLToPath(new URL('../../.venv/bin/python', import.meta.url));
   const python = existsSync(venv) ? venv : 'python3';
   const validation = spawnSync(python, ['-c', [
