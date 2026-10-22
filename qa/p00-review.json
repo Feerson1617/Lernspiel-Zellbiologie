@@ -1,0 +1,105 @@
+{
+  "reviewId": "P00-self-check-2026-10-22",
+  "reviewKind": "self_check",
+  "commitSha": "99fc23e15640778c0ff2710f0fcf703ab4df6489",
+  "sourceVersions": [
+    "Konzept 1.0 / 22.10.2026",
+    "Ausgangscommit 49fe4936cf0250ef5bc0b36f369085b0c36fd082",
+    "21 unchanged protected files: qa/source-manifest.json"
+  ],
+  "environment": {
+    "testedAtUTC": "2026-10-22T08:11:58.074105+00:00",
+    "os": "Linux-6.18.55-x86_64-with-glibc2.41",
+    "python": "3.12.14",
+    "node": "v24.19.0",
+    "npm": "11.9.0",
+    "browser": "Chromium 154.0.8037.57 built on Debian GNU/Linux 13 (trixie)",
+    "scope": "P00 application foundation only; code commit above. The following documentation commit adds this report without application changes.",
+    "reports": {
+      "unit": "qa/generated/unit.json",
+      "build": "qa/generated/build.json",
+      "browser": "qa/generated/playwright.json",
+      "concept": "qa/generated/concept.json"
+    },
+    "technicalSuites": {
+      "unit": 21,
+      "build": 2,
+      "browser": 9
+    },
+    "conceptChecks": {
+      "passed": 694,
+      "failed": 0,
+      "scope": "Separate editorial schema/content/reference arithmetic check, not an evaluator or simulation test.",
+      "typescriptDeclarationCheckExecuted": true
+    },
+    "skippedFutureSuites": [
+      "test:models (no biological model implemented)",
+      "test:content (no runtime tasks approved)",
+      "test:review (no separate countercheck performed)"
+    ],
+    "distArtifacts": [
+      {
+        "file": "assets/favicon-BBsVGNz0.svg",
+        "bytes": 196,
+        "sha256": "aa985a2fdd116dc0dbecda5e953bc794ee0d8b57808ea234e8fce79bae75a37e"
+      },
+      {
+        "file": "assets/index-92g-guUY.js",
+        "bytes": 3752,
+        "sha256": "c8006380bebf1dd37080164407046abbce1af76b9264a3fdd12f7bec3e1f7515"
+      },
+      {
+        "file": "assets/index-D6JBs7Gr.css",
+        "bytes": 5803,
+        "sha256": "e8a3871aa7485d1b1d7dc1c5d5c99fe725e03cca96102b89a6dfd86848a3cc7e"
+      },
+      {
+        "file": "index.html",
+        "bytes": 962,
+        "sha256": "bfad6ec651669679ca18461711cb577f8ee6b7406456b9fa56f4981468b2d1fa"
+      }
+    ],
+    "visualEvidence": [
+      "test-results/start-offers-working-keybo-9f553--readable-responsive-layout-desktop-chromium/startpage.png",
+      "test-results/start-offers-working-keybo-9f553--readable-responsive-layout-tablet-chromium/startpage.png",
+      "test-results/start-offers-working-keybo-9f553--readable-responsive-layout-mobile-chromium/startpage.png"
+    ],
+    "visualInspection": "All three generated start-page images inspected; CSS navigation arrow renders correctly; no overlaps or horizontal overflow observed.",
+    "githubPagesSetting": "Read via GitHub API: build_type=workflow; new production deployment intentionally awaits reviewed merge/push to main.",
+    "npmAudit": "0 known vulnerabilities at execution time, including dev dependencies."
+  },
+  "executedCommands": [
+    "npm ci --no-fund --no-audit",
+    "python3 -m venv .venv",
+    ".venv/bin/python -m pip install --disable-pip-version-check -r requirements-spec.txt",
+    ".venv/bin/python -m pip check",
+    "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run check",
+    "npm audit --audit-level=high",
+    "npm run dev -- --host 127.0.0.1 --port 5173 --strictPort",
+    "Python urllib HTTP checks of development index, src/main.ts and src/ui/styles.css",
+    "git diff --cached --check",
+    "git diff 49fe4936cf0250ef5bc0b36f369085b0c36fd082 --exit-code -- AGENTS.md 00_START_HIER.md A_Fach_Didaktik.md B_Technik_Modelle.md C_Feedback_Pruefung.md D_Entwicklungsroadmap.md E_Codex_Masterauftrag.md F_Aufgabenkatalog.md spec tools/check_spec.py"
+  ],
+  "caseCounts": {
+    "passed": 32,
+    "failed": 0,
+    "skipped": 0
+  },
+  "newCases": [
+    "Private/unapproved repository paths rejected; explicit approved inventory accepted.",
+    "Dist rejects editorial JSON, maps, unapproved text, missing index and symlinks.",
+    "Runtime graph rejects editorial/raw/test imports and unapproved src files, including ignored files.",
+    "Asset references reject wrong base, external/protocol-relative URLs and traversal.",
+    "Production entry page and all three local assets load; initial gzip budget checked.",
+    "Three Chromium viewports exercise visible development status, keyboard/focus/navigation, layout and request/privacy behavior."
+  ],
+  "blockedChecks": [
+    "WebKit and real iPad/Safari device checks not executed; Chromium viewport/touch emulation is not device certification.",
+    "Private teaching/exam originals not supplied; no private transfer-case proximity review claimed.",
+    "Independent countercheck and teacher release remain pending; this is a self-check only.",
+    "Biology/content/review runtime suites are not implemented in P00 and were not run; their scripts fail on zero tests.",
+    "GitHub Actions run and production deployment are separate from this local report; Pages deployment requires a reviewed main push."
+  ],
+  "criticalFindings": [],
+  "releaseStatus": "development_only"
+}
