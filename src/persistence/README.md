@@ -1,5 +1,12 @@
 # Lokaler Lernstand (P01c)
 
+P02b ergänzt einen begrenzten Teilfeld-Korrektor für M6.02/process. Dessen
+`correct` ist kein Gesamterfolg der Aufgabe mit drei Pflichtfeldern. Der
+Assessment-Adapter `createEvaluatedAttempt` weist solche Teilfeldergebnisse mit
+`IncompleteTaskAssessmentError` ab; nur die vollständig implementierte Z1.02
+kann derzeit über ihn übergeben werden. Diese P01c-Speicherverträge ändern sich
+nicht; Details in [../assessment/OSMOSIS.md](../assessment/OSMOSIS.md).
+
 `progress-store.ts` ist ein vorbereiteter, separat testbarer Adapter. Die
 Startseite erzeugt noch keinen Store und liest/schreibt weiterhin keine
 Browserdaten. Kein Korrektor, keine Mission und keine Schülerfreigabe.

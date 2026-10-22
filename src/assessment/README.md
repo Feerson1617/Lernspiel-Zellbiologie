@@ -1,5 +1,11 @@
 # Bewertungskern P02a – ausschließlich Z1.02
 
+P02b ergänzt [M6.02/process](OSMOSIS.md) mit eigenem Feldprofil und eigener
+Fachregel. `term-evaluator.ts` ist die gemeinsame Eingabe-/Kontexthülle;
+`term-grammar.ts` bleibt der gemeinsame Parser. Hier stehen die unverändert
+geltenden Tonoplast-Regeln. Die gemeinsame Fortschrittsübergabe akzeptiert nur
+die vollständig implementierte Z1.02; ein Osmose-Teilfeld ist keine Gesamtaufgabe.
+
 **Codex-Selbstprüfung, keine unabhängige Gegenprüfung und keine Unterrichtsfreigabe.**
 Die öffentliche Startseite lädt/benutzt den Korrektor nicht. Keine Bewertung
 der anderen sechs Textfelder, längerer Erklärungen oder ganzer Missionen.
@@ -188,4 +194,4 @@ Satzkonstruktionen benötigen Klärung. Andere biologische Behauptungen werden
 nicht mitbestätigt. Die Tests einschließlich Fehlerregister stehen in
 `qa/P02a.md` und `qa/p02a-review.json`. Keine unabhängige 95-%-Erkennungsrate oder
 reale Lerngruppenpassung behauptet. Gegenprüfung und echte Geräteprobe stehen
-aus. **P02b ist nicht Bestandteil dieser Phase.**
+aus. Der zusätzliche P02b-Vertrag steht separat in `OSMOSIS.md`.

@@ -5,6 +5,8 @@ export interface TermMeaning {
   readonly id: string;
   readonly forms: readonly (readonly string[])[];
   readonly spellingTargets?: readonly string[];
+  /** Explicit field-reviewed spellings; known scientific concepts still take precedence. */
+  readonly spellingVariants?: readonly string[];
 }
 export interface TermRef {
   readonly id: string;
@@ -13,9 +15,9 @@ export interface TermRef {
   readonly typo: boolean;
 }
 export type TermClause =
-  | Readonly<{ kind: 'name'; terms: readonly TermRef[]; negated: boolean; connector: 'single' | 'or' | 'and' | 'alias'; start: number; end: number }>
+  | Readonly<{ kind: 'name'; terms: readonly TermRef[]; negated: boolean; connector: 'single' | 'or' | 'and' | 'alias' | 'explanation'; start: number; end: number }>
   | Readonly<{ kind: 'contrast'; excluded: TermRef; chosen: TermRef; start: number; end: number }>
-  | Readonly<{ kind: 'identity' | 'synonymy' | 'encloses'; subject: TermRef; object: TermRef; negated: boolean; start: number; end: number }>
+  | Readonly<{ kind: 'identity' | 'synonymy' | 'encloses'; subject: TermRef; object: TermRef; negated: boolean; relation?: 'property' | 'equivalence'; start: number; end: number }>
   | Readonly<{ kind: 'separates'; subject: TermRef; first: TermRef; second: TermRef; negated: boolean; start: number; end: number }>
   | Readonly<{ kind: 'has_named_boundary'; owner: TermRef; terms: readonly TermRef[]; start: number; end: number }>
   | Readonly<{ kind: 'conjoined_negation'; positive: TermRef; negative: TermRef; start: number; end: number }>;
@@ -49,15 +51,21 @@ const FRAMES = [
 ] as const;
 const TAIL_HEDGES = [['denke', 'ich'], ['glaube', 'ich'], ['vermute', 'ich']] as const;
 interface ReadTerm { readonly term: TermRef; readonly next: number }
-type Connector = 'single' | 'or' | 'and' | 'alias';
+type Connector = 'single' | 'or' | 'and' | 'alias' | 'explanation';
+export interface TermGrammarProfile {
+  /** Replaces the default membrane naming frames; never silently appends them. */
+  readonly frames: readonly (readonly string[])[];
+  readonly contextAdverbs?: readonly string[];
+}
 
 /** Finite T1 grammar. Complete consumption is mandatory; unknown text stays unknown. */
-export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly TermMeaning[]): Readonly<{
+export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly TermMeaning[], profile?: TermGrammarProfile): Readonly<{
   clauses: readonly TermClause[]; complete: boolean;
 }> {
   const at = (index: number) => tokens[index]?.word;
   const sequence = (index: number, words: readonly string[]) => words.every((word, offset) => at(index + offset) === word);
   const shortHedge = (index: number) => HEDGES.find((words) => words.length === 1 && sequence(index, words));
+  const skipContextAdverb = (index: number) => profile?.contextAdverbs?.includes(at(index) ?? '') ? index + 1 : index;
 
   function term(index: number): ReadTerm | null {
     if (ARTICLES.has(at(index) ?? '')) index++;
@@ -73,6 +81,12 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
         next = index + form.length;
         ref = { id: meaning.id, start: first.start, end: tokens[next - 1]!.end, typo: false };
       }
+    }
+    if (!ref) for (const meaning of meanings) {
+      if (!meaning.spellingVariants?.includes(first.word)) continue;
+      if (ref && ref.id !== meaning.id) return null;
+      ref = { id: meaning.id, start: first.start, end: first.end, typo: true };
+      next = index + 1;
     }
     if (!ref && /^[a-z]+$/.test(first.word) && first.word.length >= 8) {
       for (const meaning of meanings) for (const target of meaning.spellingTargets ?? []) {
@@ -110,13 +124,14 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
       if (at(index) !== 'um') return null;
       index++; existential = true;
     }
-    const frame = FRAMES.find((words) => sequence(index, words));
+    const frame = (profile?.frames ?? FRAMES).find((words) => sequence(index, words));
     if (frame) index += frame.length;
     const framed = !!frame || existential;
     const needsSein = frame?.[1] === 'muesste' || frame?.[1] === 'koennte';
     const needsGenannt = frame?.at(-1) === 'wird' && frame?.[0] !== 'gesucht';
     const needsNennen = frame?.[0] === 'ich' && frame?.[1] === 'wuerde';
     if (frame) {
+      index = skipContextAdverb(index);
       if (at(index) === 'doch') index++;
       const hedge = HEDGES.filter((words) => words.length === 1 || words[0] === 'meiner').find((words) => sequence(index, words));
       if (hedge) index += hedge.length;
@@ -127,7 +142,7 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
     if (metaname) { if (framed || negated) return null; index++; }
     const first = term(index);
     if (!first) return null;
-    index = first.next;
+    index = skipContextAdverb(first.next);
     let value: TermClause;
     const span = () => ({ start: tokens[start]!.start, end: tokens[index - 1]!.end });
     // A boundary is explicitly named by its owner, not inferred from occurrence of a target word.
@@ -188,6 +203,7 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
       let kind: 'encloses' | 'identity' | 'synonymy' = ['umschliesst', 'begrenzt', 'umgibt'].includes(verb!) ? 'encloses' : 'identity';
       index++;
       if (verb === 'nennt') { if (at(index) !== 'man') return null; index++; }
+      index = skipContextAdverb(index);
       const relationNegated = NEGATIONS.has(at(index) ?? '');
       if (relationNegated) index++;
       // Names for the boundary, rather than generic identity of the word "Name".
@@ -195,7 +211,7 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
       else if (kind === 'identity' && sequence(index, ['ein', 'anderer', 'name', 'fuer'])) { index += 4; kind = 'synonymy'; }
       const object = term(index);
       if (!object) return null;
-      value = { kind, subject: first.term, object: object.term, negated: relationNegated,
+      value = { kind, subject: first.term, object: object.term, negated: relationNegated, relation: verb === 'ist' && kind === 'identity' ? 'property' : 'equivalence',
         start: tokens[start]!.start, end: tokens[object.next - 1]!.end };
       index = object.next;
     } else if ((at(index) === 'wird' || at(index) === 'ist') && !negated && !framed) {
@@ -223,11 +239,12 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
         else if (at(next) === 'und') { current = 'and'; next++; }
         else if (at(next) === 'beziehungsweise' || at(next) === 'bzw') {
           current = 'alias'; next++; if (at(next) === '.') next++;
-        } else if (at(next) === ',' && at(next + 1) === 'also') { current = 'alias'; next += 2; }
-        else if (sequence(next, [',', 'das', 'heisst'])) { current = 'alias'; next += 3; }
+        } else if (at(next) === ',' && at(next + 1) === 'also') { current = 'explanation'; next += 2; }
+        else if (sequence(next, [',', 'das', 'heisst'])) { current = 'explanation'; next += 3; }
         else if (at(next) === '/' || at(next) === ':') { current = 'alias'; next++; }
-        else if (['–', '—', '-'].includes(at(next) ?? '') && ['also', 'beziehungsweise'].includes(at(next + 1) ?? '')) { current = 'alias'; next += 2; }
+        else if (['–', '—', '-'].includes(at(next) ?? '') && ['also', 'beziehungsweise'].includes(at(next + 1) ?? '')) { current = at(next + 1) === 'also' ? 'explanation' : 'alias'; next += 2; }
         else break;
+        next = skipContextAdverb(next);
         const hedge = HEDGES.find((words) => words.length === 1 && sequence(next, words));
         if (hedge) next += hedge.length;
         const other = term(next);

@@ -1,8 +1,8 @@
 # Zelllabor 11 – Die Zelle erforschen
 
-P00 bis P02a: technisches Fundament, stabile Identitäten, typisierte Metadaten,
+P00 bis P02b: technisches Fundament, stabile Identitäten, typisierte Metadaten,
 unveränderliche Aufgabenkontexte, explizite SI-Einheitenumrechnungen und lokale
-Fortschrittsverträge und der erste begrenzte Fachkorrektor für Z1.02.
+Fortschrittsverträge und begrenzte Fachkorrektoren für Z1.02 und M6.02/process.
 **Entwicklungsfassung, noch kein für den Unterricht freigegebenes Lernspiel.**
 Die Startseite informiert über den Projektstand. Sie enthält keine Missionen,
 Antwortbewertung, Simulationen oder Zellmodelle. Korrektor und Fortschrittsadapter
@@ -86,13 +86,13 @@ nachfolgenden Phasen vorbereitet. Solange keine passenden Tests existieren,
 Sie gehören noch nicht zur erforderlichen Prüfkette. `test:content` ist seit
 P01a mit echten Identitäts-/Metadatentests gefüllt und Bestandteil von `check`.
 
-## Architektur und Grenze nach P02a
+## Architektur und Grenze nach P02b
 
 | Bereich | Verantwortung |
 | --- | --- |
 | `src/domain/` | Stabile IDs, Metadaten, unveränderliche Kontexte, Hash-/Versionsbindung und SI-Mengen |
 | `src/biology/` | Künftige reine biologische Modelle, ohne DOM/Three.js |
-| `src/assessment/` | Begrenzter T1-Kern, Fachregel Z1.02, strukturierte Ergebnisse/Feedback und ausdrückliche P01c-Übergabe |
+| `src/assessment/` | Gemeinsamer T1-Kern, getrennte Fachregeln Z1.02 und M6.02/process, gebundene Ergebnisse und geschützte P01c-Übergabe |
 | `src/content/` | Ausschließlich erlaubte öffentliche Metadaten; keine Runtime-Aufgaben/Antwortschlüssel |
 | `src/application/` | Start der Oberfläche; später Koordination und Navigation |
 | `src/ui/` | Semantische DOM-Startseite, CSS und zugängliche Navigation |
@@ -143,9 +143,18 @@ Die Nachbesserung nach der extern berichteten Gegenprüfung von PR #5 ist in
 `test:content` benötigt seit P02a für die tatsächlichen Ergebnisschematests Python
 mit den oben dokumentierten Abhängigkeiten.
 
+**P02b:** `createOsmosisEvaluator(versions)` bewertet nur `M6.02/process` mit
+`M6.02.C01`. Zellprofil, Beobachtungsphase, Wasserpotenziale in Pa und
+Membranbedingungen müssen ausdrücklich im Material stehen. Keine Ableitung
+aus bloßer Konzentration. Der gemeinsame Parser verwendet ein eigenes Profil;
+Fachregeln und Feedback bleiben getrennt. Richtungs-/Volumenfelder werden nicht
+mitbewertet; der Fortschrittsadapter lehnt das Teilfeldergebnis als unvollständige
+Gesamtaufgabe ab. API/Grenzen: `src/assessment/OSMOSIS.md`; Selbstprüfung und
+Fehlerregister: `qa/P02b.md` / `qa/p02b-review.json`.
+
 Keine konkreten fachlichen Modellversionen werden vergeben. Weitere Textfelder,
 Zahlenkorrektur, Fachmodelle und Lernmissionen bleiben unimplementiert.
-P02b wurde nicht begonnen; unabhängige Gegenprüfung/Unterrichtsfreigabe stehen aus.
+P02c wurde nicht begonnen; erneute unabhängige Gegenprüfung/Unterrichtsfreigabe stehen aus.
 Maßgeblich bleiben `AGENTS.md`, A–F und `spec/`;
 Erwartungen und Modellwerte bleiben unverändert.
 

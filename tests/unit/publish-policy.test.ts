@@ -27,7 +27,7 @@ describe('publication boundaries', () => {
   });
 
   it('blocks editorial/test imports in the runtime, including raw imports', () => {
-    for (const path of ['spec/reference-fixtures.json?raw', 'spec/tasks.json', 'tests/unit/config.test.ts', '../private/data.ts', 'src/private-original.pdf?raw', '../private/node_modules/data.ts']) {
+    for (const path of ['spec/reference-fixtures.json?raw', 'spec/tasks.json', 'spec/text-rubrics.json?raw', 'tests/fixtures/osmosis-cases.ts', 'qa/p02b-review.json', 'tests/unit/config.test.ts', '../private/data.ts', 'src/private-original.pdf?raw', '../private/node_modules/data.ts']) {
       expect(() => assertRuntimeModule(`/project/${path}`, '/project/', policy.repositoryFiles)).toThrow('Runtime import outside src');
     }
     expect(() => assertRuntimeModule('/project/src/main.ts', '/project/', policy.repositoryFiles)).not.toThrow();

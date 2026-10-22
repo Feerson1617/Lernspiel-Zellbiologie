@@ -6,7 +6,7 @@ import { TEST_CONTEXT, TEST_VERSIONS } from '../helpers/tonoplast.ts';
 
 it('builds/imports the actual prepared corrector with the production guard and no editorial fixtures or other field solutions', async () => {
   const code = await buildDomainModule();
-  expect(code).not.toMatch(/reference-fixtures|tonoplast-cases|Alle Organellen sind frei lebende Bakterien|historischen Vorgang|TERM_OSMOSIS|REL_NET_WATER_OUT|TERM_HYDROPHIL|TERM_ATP_ROLE/);
+  expect(code).not.toMatch(/reference-fixtures|tonoplast-cases|Alle Organellen sind frei lebende Bakterien|historischen Vorgang|REL_NET_WATER_OUT|TERM_HYDROPHIL|TERM_ATP_ROLE/);
   const api = await import(/* @vite-ignore */ `data:text/javascript;base64,${Buffer.from(code).toString('base64')}`) as typeof import('../../src/assessment/tonoplast.ts');
   expect(api.createTonoplastEvaluator(TEST_VERSIONS).evaluate(TEST_CONTEXT, { fieldId: 'term', text: 'Tonoplast' }, 'independent').status).toBe('correct');
 });
