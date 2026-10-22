@@ -1,0 +1,327 @@
+{
+  "reviewId": "P02b-revision-self-check-2026-10-22",
+  "reviewKind": "self_check",
+  "commitSha": "bbf3e9e37927bb7eec31767e00e8212aedfd5fc7",
+  "sourceVersions": [
+    "Konzept 1.0 / 22.10.2026",
+    "Prior PR #6 head: 374af12552da9a572840e0fe9b60bcf739716ca7",
+    "Main base after PR #5: b155936443745d98c8133788872c9c5ff44d7fb2",
+    "21 unchanged protected sources from qa/source-manifest.json",
+    "M6.02/process only; TERM_OSMOSIS / M6.02.C01; explicit caller task/rubric/content/model labels unchanged"
+  ],
+  "environment": {
+    "testedAtLocal": "2026-10-22 21:19:59",
+    "reportTimeZone": "Europe/Berlin",
+    "os": "Linux x86_64",
+    "node": "v24.19.0",
+    "npm": "11.9.0",
+    "python": "3.12.14",
+    "browser": {
+      "tests": 45,
+      "profiles": [
+        "desktop-chromium",
+        "tablet-chromium",
+        "mobile-chromium"
+      ],
+      "fixedOsmosisInputsPerProfile": 395,
+      "extraCommonFrameCasesPerProfile": 18,
+      "undefined": "Unit only, not serialized to browser",
+      "scope": "Actual guarded Vite bundle and both runtime interfaces; criteria/evidence/feedback and presentation descriptors, field/context/versions/help and incomplete-task guard. No visible task UI or real touch/Safari claim."
+    },
+    "countsScope": "Full regression on stated correction commit; subsequent report-only commit adds this manifest and Markdown report. Preliminary failures are distinct.",
+    "technicalSuites": {
+      "unit": 1188,
+      "content": 173,
+      "build": 10,
+      "browser": 45
+    },
+    "conceptChecks": {
+      "passed": 694,
+      "failed": 0,
+      "scope": "Unchanged editorial concept/schema/reference arithmetic and declaration check, not runtime grading"
+    },
+    "providedExternalFindings": {
+      "attribution": "User reports separate ChatGPT direct execution. Full external corpus unavailable; not reconstructed or claimed rerun by Codex.",
+      "shortCorrect": {
+        "total": 55,
+        "correct": 22,
+        "clarify": 33
+      },
+      "longCorrect": {
+        "total": 30,
+        "correct": 0,
+        "clarify": 30
+      },
+      "incorrect": {
+        "total": 30,
+        "incorrect": 15,
+        "clarify": 15
+      },
+      "partial": {
+        "total": 14,
+        "partial": 6,
+        "clarify": 8
+      },
+      "ambiguous": {
+        "total": 14,
+        "clarify": 14
+      },
+      "additionalContradictions": 192,
+      "reportedFalseGreen": 0,
+      "reportedEditorialPassed": {
+        "osmosis": 13,
+        "tonoplast": 39
+      },
+      "reportedContextChecks": 10
+    },
+    "suppliedReproduction": {
+      "cases": 19,
+      "baseline": {
+        "clarify": 18,
+        "incorrect": 1
+      },
+      "alreadyCorrectlyRed": "RV-W05: Osmose ist ein anderer Name für Plasmolyse.",
+      "finalPassed": 19
+    },
+    "recognition": {
+      "newShort": {
+        "total": 40,
+        "green": 40,
+        "clarify": 0,
+        "incorrect": 0,
+        "rate": 1,
+        "minimum": 0.95,
+        "baseline": {
+          "green": 2,
+          "clarify": 38
+        }
+      },
+      "newBroaderCorrect": {
+        "total": 10,
+        "green": 6,
+        "clarify": 4,
+        "incorrect": 0,
+        "rate": 0.6,
+        "allYellowKeptInDenominator": true,
+        "unassessedRelevantIds": [
+          "SB01",
+          "SB02",
+          "SB03",
+          "SB04"
+        ]
+      },
+      "independent": false,
+      "empiricalLearnerSample": false,
+      "scope": "Short natural naming and broader correct statements measured separately. Broad causal/direction/volume/material additions are not certified by this finite process naming parser."
+    },
+    "fixedCaseGroups": {
+      "supplied": {
+        "total": 19,
+        "passed": 19,
+        "expected": {
+          "correct": 14,
+          "incorrect": 5
+        }
+      },
+      "short": {
+        "total": 40,
+        "passed": 40,
+        "expected": {
+          "correct": 40
+        }
+      },
+      "wrong": {
+        "total": 40,
+        "passed": 40,
+        "expected": {
+          "incorrect": 40
+        }
+      },
+      "partialAmbiguous": {
+        "total": 16,
+        "passed": 16,
+        "expected": {
+          "partial": 6,
+          "clarify": 10
+        }
+      },
+      "negation": {
+        "total": 20,
+        "passed": 20,
+        "expected": {
+          "correct": 10,
+          "incorrect": 6,
+          "clarify": 4
+        }
+      },
+      "stress": {
+        "total": 10,
+        "passed": 10,
+        "expected": {
+          "correct": 6,
+          "clarify": 4
+        }
+      },
+      "contradictions": {
+        "total": 100,
+        "passed": 100,
+        "expected": {
+          "incorrect": 100
+        }
+      }
+    },
+    "additionalChecks": {
+      "knownWrongSubstitutions": 216,
+      "competingAlternatives": 54,
+      "unassessedAdditions": 54,
+      "subordinateVariants": 32,
+      "subordinateRelevantAdditions": 8,
+      "prepositionNegationCases": 6,
+      "note": "Calls include overlaps with the fixed corpus; do not claim every call is a unique input"
+    },
+    "schema": {
+      "osmosisActualResults": 409,
+      "tonoplastActualResults": 291,
+      "validator": "Python jsonschema with unchanged spec/result.schema.json"
+    },
+    "publication": {
+      "protectedFilesUnchanged": 21,
+      "tasksUnchanged": 79,
+      "missionRecordsUnchanged": 19,
+      "base": "/Lernspiel-Zellbiologie/",
+      "distFiles": 4,
+      "localAssetReferences": 3,
+      "distIdenticalToPrior": true,
+      "distHashes": {
+        "index.html": "bfad6ec651669679ca18461711cb577f8ee6b7406456b9fa56f4981468b2d1fa",
+        "assets/index-92g-guUY.js": "c8006380bebf1dd37080164407046abbce1af76b9264a3fdd12f7bec3e1f7515",
+        "assets/index-D6JBs7Gr.css": "e8a3871aa7485d1b1d7dc1c5d5c99fe725e03cca96102b89a6dfd86848a3cc7e",
+        "assets/favicon-BBsVGNz0.svg": "aa985a2fdd116dc0dbecda5e953bc794ee0d8b57808ea234e8fce79bae75a37e"
+      },
+      "newExactAllowlistPaths": 5,
+      "privateOriginalUnavailableAndNotCopied": true
+    },
+    "preliminaryRuns": [
+      {
+        "file": "qa/generated/p02b-revision-before.json",
+        "passed": 21,
+        "failed": 225
+      },
+      {
+        "file": "qa/generated/p02b-revision-first-fix.json",
+        "passed": 865,
+        "failed": 14
+      },
+      {
+        "file": "qa/generated/p02b-revision-second-fix.json",
+        "passed": 879,
+        "failed": 0
+      },
+      {
+        "file": "qa/generated/p02b-revision-safety.json",
+        "passed": 319,
+        "failed": 0
+      },
+      {
+        "file": "qa/generated/p02b-revision-targeted-final.json",
+        "passed": 655,
+        "failed": 0
+      }
+    ],
+    "priorCompleteRun": {
+      "file": "qa/generated/p02b-revision-first-check.log",
+      "technicalPassed": 1414,
+      "failed": 0,
+      "note": "Before the two additional scope tests and compositional pronoun variants"
+    },
+    "resolvedFindings": [
+      {
+        "id": "P02b-R01",
+        "severity": "P2",
+        "cause": "Missing common naming/uncertainty frames and reviewed active-pump/category forms",
+        "baseline": "18/19 supplied status mismatches; new short recognition 2/40",
+        "resolution": "Shared bounded fragments, mandatory endings and field-specific known forms; no scientific expected status changed",
+        "fixedIn": "bbf3e9e37927bb7eec31767e00e8212aedfd5fc7"
+      },
+      {
+        "id": "P02b-R02",
+        "severity": "P2",
+        "inputs": [
+          "Ich vermute, dass es Osmose ist.",
+          "Vermutlich nennt man das Osmose."
+        ],
+        "before": "clarify",
+        "expected": "correct",
+        "resolution": "Prioritize required closing ist and inverted naming frame; wrong-name and suffix cases retained",
+        "fixedIn": "bbf3e9e37927bb7eec31767e00e8212aedfd5fc7"
+      }
+    ],
+    "localEvidenceHashes": {
+      "unit.json": "29432950ee360cd1b02577631da4b918ce010c7b490cdab158c2657411a6b9df",
+      "content.json": "7283c444a89c1a93603ea024013cd67a2da2ec341ff32ebcb52f73ba24b5cb7f",
+      "build.json": "2ce6cf223c42b5e926d5a1a07eeb84faaabe69b572bc2ec6c673a39d2a84174e",
+      "playwright.json": "aa24f85e1597bd533a35214ded99a5524b58d2f4a22fce5520019e03be59ee0f",
+      "concept.json": "96b0fe40e0e93ae51647ce633c025f6a254edf2c73cac6e46660bdeef9fdbab4",
+      "p02b-revision-corpus.json": "c71351c39985428ad1edb9d83a028b28e42cbf0429b3a42de1d23b9a6d228321",
+      "p02b-revision-before.json": "70f896ed853e456d13e26ce20c10a5e5e562512a66a170f141f8e367d8097e65",
+      "p02b-revision-before-corpus.json": "805838c9d56f3ee2eadf2832c0c9a2f88e0b6be6d122cb1110ce35098875c06f"
+    },
+    "fixtureHash": "04b7cc160f900cd0406510b9cd7e722c880ab066cd5577eb8442f20e6f254a48",
+    "changedCorrectionFiles": [
+      "README.md",
+      "publish.allowlist.json",
+      "qa/P02b.md",
+      "src/assessment/OSMOSIS.md",
+      "src/assessment/naming-frames.ts",
+      "src/assessment/osmosis.ts",
+      "src/assessment/term-grammar.ts",
+      "tests/browser/osmosis.spec.ts",
+      "tests/content/osmosis-spec.test.ts",
+      "tests/fixtures/osmosis-revision-cases.ts",
+      "tests/unit/osmosis-revision.test.ts"
+    ],
+    "limits": [
+      "No general biological essay grading or direction/volume assessment",
+      "Known scientific words cause red only at explicit understood semantic positions",
+      "Broader correct answers may stay clarify and remain in their measured denominator",
+      "No complete M6.02 success from process-only assessment",
+      "No independent/empirical recognition guarantee or classroom release"
+    ]
+  },
+  "executedCommands": [
+    "npx vitest run tests/unit/osmosis-revision.test.ts --outputFile=qa/generated/p02b-revision-before.json",
+    "Node direct reproduction of all 245 revision cases on the prior implementation",
+    "npm run check:types",
+    "npx vitest run tests/unit/osmosis*.test.ts tests/unit/tonoplast*.test.ts tests/content/osmosis-spec.test.ts tests/content/tonoplast-spec.test.ts --outputFile=qa/generated/p02b-revision-first-fix.json",
+    "npx vitest run tests/unit/osmosis*.test.ts tests/unit/tonoplast*.test.ts tests/content/osmosis-spec.test.ts tests/content/tonoplast-spec.test.ts --outputFile=qa/generated/p02b-revision-second-fix.json",
+    "npx vitest run tests/unit/osmosis-revision.test.ts tests/content/osmosis-spec.test.ts --outputFile=qa/generated/p02b-revision-safety.json",
+    "npx vitest run tests/unit/osmosis-revision.test.ts tests/unit/tonoplast*.test.ts tests/content/osmosis-spec.test.ts --outputFile=qa/generated/p02b-revision-targeted-final.json",
+    "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run check",
+    "Node actual evaluation of 245 revision cases and SHA-256 comparison of four dist files",
+    "git diff --check",
+    "Python jsonschema validation of qa/p02b-revision-review.json against spec/review-manifest.schema.json",
+    "npm run check:publish after adding both revision reports"
+  ],
+  "caseCounts": {
+    "passed": 1416,
+    "failed": 0,
+    "skipped": 0
+  },
+  "newCases": [
+    "supplied: 19 fixed reasoned cases; exported group in tests/fixtures/osmosis-revision-cases.ts, IDs RV-C01 through RV-W05",
+    "short: 40 fixed reasoned cases; exported group in tests/fixtures/osmosis-revision-cases.ts, IDs NS01 through NS40",
+    "wrong: 40 fixed reasoned cases; exported group in tests/fixtures/osmosis-revision-cases.ts, IDs NW1-1 through NW10-4",
+    "partialAmbiguous: 16 fixed reasoned cases; exported group in tests/fixtures/osmosis-revision-cases.ts, IDs NP01 through NA10",
+    "negation: 20 fixed reasoned cases; exported group in tests/fixtures/osmosis-revision-cases.ts, IDs NC01 through NU04",
+    "stress: 10 fixed reasoned cases; exported group in tests/fixtures/osmosis-revision-cases.ts, IDs SC01 through SB04",
+    "contradictions: 100 fixed reasoned cases; exported group in tests/fixtures/osmosis-revision-cases.ts, IDs CX1-1 through CX25-4"
+  ],
+  "blockedChecks": [
+    "Renewed independent ChatGPT countercheck with further unseen answers pending",
+    "WebKit, real Safari/iPad and empirical learner sample not executed; available configured suite is Chromium",
+    "Visible task/feedback UI not implemented; descriptors and real evaluator functions tested",
+    "Private exam/marking scheme unavailable; never copied"
+  ],
+  "criticalFindings": [],
+  "releaseStatus": "countercheck_pending"
+}
