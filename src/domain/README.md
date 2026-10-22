@@ -1,7 +1,13 @@
-# Domain-Verträge (P01a/P01b)
+# Domain-Verträge (P01a/P01b/P01c)
 
 Keine DOM-, Three.js-, Speicher- oder `spec/`-Imports. Hier liegen reine Typen,
 Identitäten, Kontexte, Einheiten und die Validierung öffentlich zulässiger Daten.
+
+P01c ergänzt `progress.ts`: strikt validierte, unveränderliche Versuchsmetadaten,
+orthogonale Status-/Hilfeauswertung und ausschließlich sitzungsgebundene
+Kontextnachweise. Vertrag, API, Versionswechsel und konservative Grenzen der
+Wiederherstellung sind in [../persistence/README.md](../persistence/README.md)
+dokumentiert. Die Domain greift selbst auf keinen Browser-Speicher zu.
 
 - `identities.ts`: feste, ausdrücklich aufgelistete 79 Aufgaben-IDs und 19
   Missions-/Modul-IDs. `TaskId`, `MissionId`, `TaskIdFor<M>` und exakte Type Guards.
@@ -26,7 +32,8 @@ Identitäten, Kontexte, Einheiten und die Validierung öffentlich zulässiger Da
 | `taskVersion`, `rubricVersion`, `contentVersion`, `modelVersion` | Getrennte readonly-Strings; in P01b ausdrücklich übergeben, validiert und gehasht |
 | Aufgabenreferenz mit Versionsfeldern | Erweiterungspunkt `VersionedTaskReference`; keine konkreten Versionswerte vergeben |
 | `TaskContext` | In P01b umgesetzt, einschließlich explizitem Modellzustand, Snapshot und Kontext-Hash |
-| `Evaluate`, `EvaluationResult`, `AttemptRecord`, `BiologySnapshot` | Fachliche Implementierung bleibt späteren Phasen vorbehalten; P01b prüft ausschließlich Ergebnisbindungen |
+| `AttemptRecord` | In P01c als strikt validierte datensparsame Versuchsmetadaten umgesetzt |
+| `Evaluate`, `EvaluationResult`, `BiologySnapshot` | Fachliche Implementierung bleibt späteren Phasen vorbehalten; P01b prüft ausschließlich Ergebnisbindungen |
 
 `TaskCatalog.schemaVersion = 1` versioniert ausschließlich die neue technische
 Metadatenform. Die redaktionelle Schemafassung `1.0` und die Konzeptfassung

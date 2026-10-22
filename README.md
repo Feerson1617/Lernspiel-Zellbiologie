@@ -1,10 +1,12 @@
 # Zelllabor 11 – Die Zelle erforschen
 
-P00 bis P01b: technisches Fundament, stabile Identitäten, typisierte Metadaten,
-unveränderliche Aufgabenkontexte und explizite SI-Einheitenumrechnungen.
+P00 bis P01c: technisches Fundament, stabile Identitäten, typisierte Metadaten,
+unveränderliche Aufgabenkontexte, explizite SI-Einheitenumrechnungen und lokale
+Fortschrittsverträge.
 **Entwicklungsfassung, noch kein für den Unterricht freigegebenes Lernspiel.**
 Die Startseite informiert über den Projektstand. Es gibt noch keine Missionen,
-Bewertung, Simulationen, Zellmodelle oder Fortschrittsspeicherung.
+Bewertung, Simulationen oder Zellmodelle. Die vorbereitete Fortschrittsspeicherung
+ist noch nicht an die Startseite angebunden.
 
 ## Lokal starten
 
@@ -84,7 +86,7 @@ nachfolgenden Phasen vorbereitet. Solange keine passenden Tests existieren,
 Sie gehören noch nicht zur erforderlichen Prüfkette. `test:content` ist seit
 P01a mit echten Identitäts-/Metadatentests gefüllt und Bestandteil von `check`.
 
-## Architektur und Grenze nach P01b
+## Architektur und Grenze nach P01c
 
 | Bereich | Verantwortung |
 | --- | --- |
@@ -96,7 +98,7 @@ P01a mit echten Identitäts-/Metadatentests gefüllt und Bestandteil von `check`
 | `src/ui/` | Semantische DOM-Startseite, CSS und zugängliche Navigation |
 | `src/render3d/` | Vorbereiteter Three.js-Adapter mit leerer Scene-Factory |
 | `src/render2d/` | Künftige gleichwertige SVG-Darstellung |
-| `src/persistence/` | Künftige versionierte, datensparsame Speicherung |
+| `src/persistence/` | Lokaler Fortschrittsadapter, Sitzungsmodus, gezieltes Zurücksetzen und Metadatenexport |
 | `src/assets/` | Eigenes lokales Favicon und Asset-Inventar |
 | `tests/` | Konfiguration, Schutzgrenzen, Build und Browserabläufe |
 | `spec/` | Unveränderte redaktionelle Arbeitsgrundlagen, keine Runtime-Daten |
@@ -121,9 +123,17 @@ Instanz, Seed, Phase, Material und Modellzustand an eine reproduzierbare Identit
 werden nicht geraten. APIs, Zahlenkonventionen und Grenzen stehen in
 `src/domain/README.md`. Die Startseite lädt diese vorbereiteten Funktionen nicht.
 
+**P01c:** `src/domain/progress.ts` validiert den unveränderten Fortschrittsvertrag,
+trennt Status und Hilfe und verhindert aktuelle Erfolgsmarkierungen ohne gültige
+Sitzungskontextbindung. `createProgressStore` speichert ausschließlich erlaubte
+Metadaten unter `zelllabor11.progress.v1`. Speicherfehler führen zum Sitzungsmodus;
+unbekannte/beschädigte Daten und andere Inhaltsfassungen werden bis zum
+ausdrücklichen Zurücksetzen erhalten. Details, Export und Grenzen stehen in
+`src/persistence/README.md`; der Testbericht in `qa/P01c.md` und `qa/p01c-review.json`.
+
 Keine konkreten fachlichen Modellversionen werden vergeben. Antwortbewertung,
-Speicherung, Fachmodelle und Lernmissionen bleiben unimplementiert. P01c/P02
-wurden nicht begonnen. Maßgeblich bleiben `AGENTS.md`, A–F und `spec/`;
+Fachmodelle und Lernmissionen bleiben unimplementiert. P02 wurde nicht begonnen.
+Maßgeblich bleiben `AGENTS.md`, A–F und `spec/`;
 Erwartungen und Modellwerte bleiben unverändert.
 
 ## Veröffentlichung und Prüfungsschutz
