@@ -1,0 +1,33 @@
+{
+  "name": "zelllabor-11",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24.19.0 <25", "npm": ">=11 <12" },
+  "packageManager": "npm@11.9.0",
+  "scripts": {
+    "dev": "vite",
+    "preview": "vite preview",
+    "check:spec": "node tools/check-spec.ts",
+    "check:types": "tsc --noEmit",
+    "test": "npm run test:unit && npm run test:build && playwright test",
+    "test:unit": "vitest run tests/unit --outputFile=qa/generated/unit.json",
+    "test:models": "vitest run tests/models",
+    "test:content": "vitest run tests/content",
+    "test:review": "vitest run review",
+    "test:build": "npm run build && vitest run tests/build --outputFile=qa/generated/build.json",
+    "test:browser": "npm run build && playwright test",
+    "build": "npm run check:types && vite build && npm run check:publish",
+    "check:publish": "node tools/check-publish.ts",
+    "check": "npm run check:spec && npm run test"
+  },
+  "dependencies": { "three": "0.186.1" },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "@types/node": "24.19.2",
+    "@types/three": "0.186.0",
+    "typescript": "7.0.2",
+    "vite": "8.3.5",
+    "vitest": "5.0.5"
+  }
+}
