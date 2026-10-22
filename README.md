@@ -1,7 +1,7 @@
 # Zelllabor 11 – Die Zelle erforschen
 
-P00 und P01a: technisches Fundament sowie stabile Identitäten und typisierte
-Metadaten für eine statische Browseranwendung für Jahrgang 11.
+P00 bis P01b: technisches Fundament, stabile Identitäten, typisierte Metadaten,
+unveränderliche Aufgabenkontexte und explizite SI-Einheitenumrechnungen.
 **Entwicklungsfassung, noch kein für den Unterricht freigegebenes Lernspiel.**
 Die Startseite informiert über den Projektstand. Es gibt noch keine Missionen,
 Bewertung, Simulationen, Zellmodelle oder Fortschrittsspeicherung.
@@ -76,6 +76,7 @@ unter `test-results/`. Diese Verzeichnisse sind weder versioniert noch Teil des
 Pages-Artefakts. Den tatsächlich ausgeführten P00-Lauf dokumentiert
 `qa/p00-review.json`, Grenzen und Befunde stehen in `qa/P00.md`.
 Der separate P01a-Lauf steht in `qa/p01a-review.json` und `qa/P01a.md`.
+P01b dokumentiert seine Regression separat in `qa/p01b-review.json` und `qa/P01b.md`.
 
 Die Scripts `test:models` und `test:review` sind für die
 nachfolgenden Phasen vorbereitet. Solange keine passenden Tests existieren,
@@ -83,11 +84,11 @@ nachfolgenden Phasen vorbereitet. Solange keine passenden Tests existieren,
 Sie gehören noch nicht zur erforderlichen Prüfkette. `test:content` ist seit
 P01a mit echten Identitäts-/Metadatentests gefüllt und Bestandteil von `check`.
 
-## Architektur und Grenze zu P01b
+## Architektur und Grenze nach P01b
 
 | Bereich | Verantwortung |
 | --- | --- |
-| `src/domain/` | Stabile IDs, Metadatenverträge und Validierung; Einheiten/Kontexte folgen |
+| `src/domain/` | Stabile IDs, Metadaten, unveränderliche Kontexte, Hash-/Versionsbindung und SI-Mengen |
 | `src/biology/` | Künftige reine biologische Modelle, ohne DOM/Three.js |
 | `src/assessment/` | Künftige Antwortprüfung und fachliche Feedbackdaten |
 | `src/content/` | Ausschließlich erlaubte öffentliche Metadaten; keine Runtime-Aufgaben/Antwortschlüssel |
@@ -112,12 +113,18 @@ Imports aus `spec/`. Details zur Feld-Allowlist und reproduzierbaren Erzeugung
 stehen in `src/content/README.md`, Verträge und Versionsgrenzen in
 `src/domain/README.md`. Die Startseite lädt den vorbereiteten Katalog noch nicht.
 
-**P01b wurde nicht begonnen:** `TaskContext`, Einheiten und inhaltliche
-Versionsbindung bleiben einem eigenen Auftrag vorbehalten. `VersionInfo`
-definiert nur die strukturellen Felder aus dem Designvertrag; keine konkreten
-Aufgaben-/Rubrik-/Modellversionen werden erfunden. Bewertung, Speicherung und
-Fachmodelle sind weiterhin nicht implementiert. Maßgeblich bleiben `AGENTS.md`,
-A–F und `spec/`; Erwartungen und Modellwerte bleiben unverändert.
+**P01b:** `createTaskContext`, `capturePredictionContext`, `parseTaskContext`,
+`createContextBinding` und `isResultForContext` erfassen/prüfen ausschließlich
+Aufgabenkontexte. SHA-256 bindet sämtliche ausdrücklich übergebenen Versionen,
+Instanz, Seed, Phase, Material und Modellzustand an eine reproduzierbare Identität.
+`toSI`/`fromSI` trennen die sechs zentralen SI-Dimensionen; erforderliche Einheiten
+werden nicht geraten. APIs, Zahlenkonventionen und Grenzen stehen in
+`src/domain/README.md`. Die Startseite lädt diese vorbereiteten Funktionen nicht.
+
+Keine konkreten fachlichen Modellversionen werden vergeben. Antwortbewertung,
+Speicherung, Fachmodelle und Lernmissionen bleiben unimplementiert. P01c/P02
+wurden nicht begonnen. Maßgeblich bleiben `AGENTS.md`, A–F und `spec/`;
+Erwartungen und Modellwerte bleiben unverändert.
 
 ## Veröffentlichung und Prüfungsschutz
 
