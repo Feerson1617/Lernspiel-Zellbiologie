@@ -31,13 +31,14 @@ describe('P00 project configuration', () => {
     expect(pkg.engines.node).toBe('>=24.19.0 <25');
   });
 
-  it('runs empty later-phase suites as failures and keeps them outside the P00 check', () => {
+  it('never permits empty suites to pass and includes implemented content checks', () => {
     const scripts = JSON.parse(read('package.json')).scripts;
     for (const key of ['test:models', 'test:content', 'test:review']) {
       expect(scripts[key]).toMatch(/^vitest run /);
       expect(scripts[key]).not.toContain('passWithNoTests');
     }
     expect(scripts.check).toBe('npm run check:spec && npm run test');
+    expect(scripts.test).toContain('npm run test:content');
   });
 
   it('deploys only the checked dist artifact from main after required checks', () => {

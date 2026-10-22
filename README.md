@@ -1,6 +1,7 @@
 # Zelllabor 11 – Die Zelle erforschen
 
-P00: technisches Fundament einer statischen Browseranwendung für Jahrgang 11.
+P00 und P01a: technisches Fundament sowie stabile Identitäten und typisierte
+Metadaten für eine statische Browseranwendung für Jahrgang 11.
 **Entwicklungsfassung, noch kein für den Unterricht freigegebenes Lernspiel.**
 Die Startseite informiert über den Projektstand. Es gibt noch keine Missionen,
 Bewertung, Simulationen, Zellmodelle oder Fortschrittsspeicherung.
@@ -34,15 +35,18 @@ npx playwright install chromium
 
 npm run check:spec
 npm run check:types
+npm run check:catalog
 npm run test:unit
+npm run test:content
 npm run test:build
 npm run test:browser
 
-# Gesamte für P00 erforderliche Kette, ohne doppelte Builds:
+# Gesamte für den aktuellen Stand erforderliche Kette, ohne doppelte Builds:
 npm run check
 ```
 
-`npm run build` prüft TypeScript, baut mit Vite und prüft anschließend die
+`npm run build` prüft TypeScript und die unveränderte Metadatenprojektion,
+baut mit Vite und prüft anschließend die
 Veröffentlichungs- und Quellen-Allowlist. `test:build` führt einen neuen Build
 aus und testet das erzeugte Artefakt. `test:browser` baut ebenfalls neu und
 startet dann den Produktions-Preview automatisch. `npm run preview` startet
@@ -71,20 +75,22 @@ Automatische JSON-Ergebnisse liegen lokal unter `qa/generated/`, Browserbilder
 unter `test-results/`. Diese Verzeichnisse sind weder versioniert noch Teil des
 Pages-Artefakts. Den tatsächlich ausgeführten P00-Lauf dokumentiert
 `qa/p00-review.json`, Grenzen und Befunde stehen in `qa/P00.md`.
+Der separate P01a-Lauf steht in `qa/p01a-review.json` und `qa/P01a.md`.
 
-Die Scripts `test:models`, `test:content` und `test:review` sind für die
+Die Scripts `test:models` und `test:review` sind für die
 nachfolgenden Phasen vorbereitet. Solange keine passenden Tests existieren,
 **beenden sie sich mit Fehler**, statt leere Suiten als bestanden zu melden.
-Sie gehören noch nicht zur P00-Prüfkette.
+Sie gehören noch nicht zur erforderlichen Prüfkette. `test:content` ist seit
+P01a mit echten Identitäts-/Metadatentests gefüllt und Bestandteil von `check`.
 
-## Architektur und Grenze zu P01
+## Architektur und Grenze zu P01b
 
 | Bereich | Verantwortung |
 | --- | --- |
-| `src/domain/` | Künftige Typen, Einheiten und unveränderliche Fachkontexte |
+| `src/domain/` | Stabile IDs, Metadatenverträge und Validierung; Einheiten/Kontexte folgen |
 | `src/biology/` | Künftige reine biologische Modelle, ohne DOM/Three.js |
 | `src/assessment/` | Künftige Antwortprüfung und fachliche Feedbackdaten |
-| `src/content/` | Ausschließlich später freigegebene Runtime-Aufgaben/Rubriken |
+| `src/content/` | Ausschließlich erlaubte öffentliche Metadaten; keine Runtime-Aufgaben/Antwortschlüssel |
 | `src/application/` | Start der Oberfläche; später Koordination und Navigation |
 | `src/ui/` | Semantische DOM-Startseite, CSS und zugängliche Navigation |
 | `src/render3d/` | Vorbereiteter Three.js-Adapter mit leerer Scene-Factory |
@@ -95,15 +101,23 @@ Sie gehören noch nicht zur P00-Prüfkette.
 | `spec/` | Unveränderte redaktionelle Arbeitsgrundlagen, keine Runtime-Daten |
 | `qa/`, `review/` | Eigene Prüfnachweise bzw. spätere getrennte Gegenprüfung |
 
-In P00 existieren für spätere Fachbereiche bewusst nur Verantwortungsnotizen.
-Es wird kein unvollständiger Runtime-Vertrag vorweggenommen. Die Scene-Factory
+Für spätere Fachbereiche existieren weiterhin nur Verantwortungsnotizen.
+Die Scene-Factory
 ist technisch getestet, aber nicht in die Startseite eingebunden: kein
 WebGL-Kontext, Renderloop, 3D-Download oder scheinbares Zellmodell.
 
-**P01 ist ein eigener Auftrag:** kontrollierte Schemaüberführung, unveränderte
-Aufgaben-IDs, `TaskContext`, Einheiten und Fortschrittsvertrag. P00 implementiert
-keine dieser Fachfunktionen und verändert keine Erwartungen oder Modellwerte.
-Maßgeblich bleiben `AGENTS.md`, A–F und `spec/`.
+**P01a:** Alle 79 Aufgaben sind mit unveränderten IDs, Titeln, Formaten und
+Missionsbezügen über `taskRegistry` referenzierbar. Die Runtime enthält keine
+Imports aus `spec/`. Details zur Feld-Allowlist und reproduzierbaren Erzeugung
+stehen in `src/content/README.md`, Verträge und Versionsgrenzen in
+`src/domain/README.md`. Die Startseite lädt den vorbereiteten Katalog noch nicht.
+
+**P01b wurde nicht begonnen:** `TaskContext`, Einheiten und inhaltliche
+Versionsbindung bleiben einem eigenen Auftrag vorbehalten. `VersionInfo`
+definiert nur die strukturellen Felder aus dem Designvertrag; keine konkreten
+Aufgaben-/Rubrik-/Modellversionen werden erfunden. Bewertung, Speicherung und
+Fachmodelle sind weiterhin nicht implementiert. Maßgeblich bleiben `AGENTS.md`,
+A–F und `spec/`; Erwartungen und Modellwerte bleiben unverändert.
 
 ## Veröffentlichung und Prüfungsschutz
 

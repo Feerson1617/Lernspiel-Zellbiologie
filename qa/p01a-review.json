@@ -1,0 +1,141 @@
+{
+  "reviewId": "P01a-self-check-2026-10-22",
+  "reviewKind": "self_check",
+  "commitSha": "7593012aa60c5f5e452d5e9c93fbae14310233c7",
+  "sourceVersions": [
+    "Konzept 1.0 / 22.10.2026",
+    "main after merge of PR #1: 927e2e13d0e4560fc3f9b6d656f4c76db99c2768",
+    "21 byte-identical protected files: qa/source-manifest.json",
+    "Public metadata schemaVersion 1; no content/rubric/model versions assigned"
+  ],
+  "environment": {
+    "testedAtUTC": "2026-10-22T09:58:55.363256+00:00",
+    "os": "Linux-6.18.55-x86_64-with-glibc2.41",
+    "node": "v24.19.0",
+    "npm": "11.9.0",
+    "python": "3.12.14",
+    "browser": "Chromium 154.0.8037.57 built on Debian GNU/Linux 13 (trixie)",
+    "countsScope": "Final regression on the code commit above; the following commit adds only this review manifest. Preliminary attempts are reported separately, not added to final counts.",
+    "technicalSuites": {
+      "unit": 39,
+      "contentMetadata": 114,
+      "build": 6,
+      "browser": 9
+    },
+    "conceptChecks": {
+      "passed": 694,
+      "failed": 0,
+      "typescriptDeclarationCheckExecuted": true,
+      "scope": "Editorial schema, content and mathematical reference arithmetic only; no runtime evaluation or biological simulation."
+    },
+    "identityCoverage": {
+      "tasks": 79,
+      "missionModuleRecords": 19,
+      "sourceTaskIdsUnchanged": true,
+      "sourceMissionIdsUnchanged": true,
+      "sourceTitlesAndFormatsUnchanged": true,
+      "bidirectionalReferencesChecked": true
+    },
+    "protectedSourceFiles": 21,
+    "dependencyOrLockfileChanges": false,
+    "publicMetadataFields": {
+      "task": [
+        "id",
+        "missionId",
+        "title",
+        "type",
+        "publicationStatus"
+      ],
+      "mission": [
+        "id",
+        "title",
+        "taskIds"
+      ],
+      "root": [
+        "schemaVersion",
+        "tasks",
+        "missions"
+      ]
+    },
+    "runtimeEditorialDataPolicy": "No expected/response_spec/criteria/rubrics/feedback/material/prompts/reference fixtures. Public metadata is built and imported in a temporary bundle test, not loaded by the current start page.",
+    "distArtifacts": [
+      {
+        "file": "assets/favicon-BBsVGNz0.svg",
+        "bytes": 196,
+        "sha256": "aa985a2fdd116dc0dbecda5e953bc794ee0d8b57808ea234e8fce79bae75a37e"
+      },
+      {
+        "file": "assets/index-92g-guUY.js",
+        "bytes": 3752,
+        "sha256": "c8006380bebf1dd37080164407046abbce1af76b9264a3fdd12f7bec3e1f7515"
+      },
+      {
+        "file": "assets/index-D6JBs7Gr.css",
+        "bytes": 5803,
+        "sha256": "e8a3871aa7485d1b1d7dc1c5d5c99fe725e03cca96102b89a6dfd86848a3cc7e"
+      },
+      {
+        "file": "index.html",
+        "bytes": 962,
+        "sha256": "bfad6ec651669679ca18461711cb577f8ee6b7406456b9fa56f4981468b2d1fa"
+      }
+    ],
+    "productionArtifactsByteIdenticalToP00": true,
+    "localReports": [
+      "qa/generated/unit.json",
+      "qa/generated/content.json",
+      "qa/generated/build.json",
+      "qa/generated/playwright.json",
+      "qa/generated/concept.json"
+    ],
+    "preliminaryAttempts": [
+      {
+        "command": "npm run test:build",
+        "passed": 3,
+        "failed": 3,
+        "diagnosis": "The synthetic negative-test entry was resolved to an absolute path by Vite. The test resolver initially recognized only the relative name (UNRESOLVED_ENTRY); the import guard was not reached. Fixed the test resolver, kept the required guard error assertion."
+      },
+      {
+        "command": "npx vitest run tests/build/catalog-bundle.test.ts --outputFile=qa/generated/catalog-build-diagnosis.json",
+        "passed": 4,
+        "failed": 0,
+        "result": "Real authoring/reference/rubric imports rejected by the runtime-source-boundary guard before output is written."
+      }
+    ]
+  },
+  "executedCommands": [
+    "node tools/sync-task-catalog.ts --write",
+    "npm run check:types",
+    "npm run test:unit",
+    "npm run test:content",
+    "npm run test:build",
+    "npx vitest run tests/build/catalog-bundle.test.ts --outputFile=qa/generated/catalog-build-diagnosis.json",
+    "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run check",
+    "npm run check:publish",
+    "git diff --cached --check",
+    "SHA-256 comparison of all 21 protected source files and of the four dist artifacts against the P00 manifest",
+    "JSON Schema validation of this self-check manifest"
+  ],
+  "caseCounts": {
+    "passed": 168,
+    "failed": 0,
+    "skipped": 0
+  },
+  "newCases": [
+    "Exact positive lookup and unchanged public metadata for each of the 79 tasks, plus all 19 inverse mission lists and readable F identity comparison.",
+    "Duplicate/missing/replaced IDs, contradictory known identities, unknown mission references and missing/duplicate/inconsistent reverse references.",
+    "Unknown/root/editorial fields, unsupported metadata schema, invalid format/title and premature released status rejected without input-content logging.",
+    "Projection whitelist and source-schema drift checks, deep immutability and independence from input mutations.",
+    "Type-level parity with design statuses/version fields; unknown task IDs, contradictory mission pairs, answer keys and readonly mutations must fail tsc.",
+    "Actual Vite build/import of safe public metadata; actual Vite builds reject spec/tasks.json, spec/reference-fixtures.json?raw and spec/text-rubrics.json?raw."
+  ],
+  "blockedChecks": [
+    "No independent countercheck performed or claimed; self-check only.",
+    "Private original exam/teacher materials not available or accessed; no private case-proximity review.",
+    "WebKit and real iPad/Safari were not tested; Chromium viewport/touch emulation is not a real-device check.",
+    "Biology/model and separate-review suites have no implementation and were not run; they do not return success for zero tests.",
+    "GitHub Actions result is separate from this local report; Pages deployment is intentionally restricted to reviewed main pushes."
+  ],
+  "criticalFindings": [],
+  "releaseStatus": "development_only"
+}
