@@ -1,0 +1,458 @@
+{
+  "reviewId": "P02b-self-check-2026-10-22",
+  "reviewKind": "self_check",
+  "commitSha": "3a775be97c1073c0c074fb78d347d3204067f5be",
+  "sourceVersions": [
+    "Konzept 1.0 / 22.10.2026",
+    "main after PR #5: b155936443745d98c8133788872c9c5ff44d7fb2",
+    "21 unchanged protected files from qa/source-manifest.json",
+    "M6.02/process / TERM_OSMOSIS / M6.02.C01 only; existing Z1.02 retained",
+    "Explicit caller versions; technical test labels only in tests/helpers/osmosis.ts"
+  ],
+  "environment": {
+    "testedAtUTC": "2026-10-22T18:27:39.075Z",
+    "os": "Linux x86_64",
+    "node": "v24.19.0",
+    "npm": "11.9.0",
+    "python": "3.12.14",
+    "browser": "Chromium 154.0.8037.57",
+    "countsScope": "Complete local regression on the stated implementation/correction commit. Subsequent report-only commit adds this manifest and qa/P02b.md. Preliminary failures are separate.",
+    "technicalSuites": {
+      "unit": 884,
+      "content": 172,
+      "build": 10,
+      "browser": 42
+    },
+    "concept": {
+      "passed": 694,
+      "failed": 0,
+      "scope": "Editorial concepts, schemas, original reference arithmetic and declaration check; not biological runtime grading"
+    },
+    "implementationCorpus": {
+      "total": 91,
+      "byExpectedStatus": {
+        "correct": 28,
+        "incorrect": 24,
+        "partial": 12,
+        "clarify": 16,
+        "technical": 8,
+        "empty": 3
+      },
+      "passed": 91
+    },
+    "recognition": {
+      "source": "tests/fixtures/osmosis-cases.ts: OSMOSIS_RECOGNITION_CASES",
+      "total": 40,
+      "green": 40,
+      "clarify": 0,
+      "incorrect": 0,
+      "recognitionRate": 1,
+      "minimum": 0.95,
+      "byGroup": {
+        "short_naming": {
+          "total": 16,
+          "green": 16,
+          "rate": 1
+        },
+        "language_stress": {
+          "total": 24,
+          "green": 24,
+          "rate": 1
+        }
+      },
+      "initial": {
+        "total": 40,
+        "green": 39,
+        "clarify": 1,
+        "incorrect": 0,
+        "byGroup": {
+          "short_naming": {
+            "total": 16,
+            "green": 16
+          },
+          "language_stress": {
+            "total": 24,
+            "green": 23
+          }
+        }
+      },
+      "independent": false,
+      "empiricalLearnerSample": false,
+      "novelty": "40 distinct inputs checked against implementation/editorial corpus; developed during this same implementation task, not an independent holdout"
+    },
+    "broaderBoundaryCases": {
+      "ids": [
+        "OX01",
+        "OX02",
+        "OX03"
+      ],
+      "green": 0,
+      "clarify": 3,
+      "meaning": "Plausible causal/direction/volume assertions stay unassessed outside process naming; not counted as green or claimed understood. The 40-case rate is not a general language recognition guarantee."
+    },
+    "extraAdversarial": {
+      "total": 20,
+      "passed": 20,
+      "byExpectedStatus": {
+        "clarify": 16,
+        "incorrect": 4
+      }
+    },
+    "editorialReferences": {
+      "taskId": "M6.02",
+      "fieldId": "process",
+      "total": 13,
+      "passed": 13,
+      "unchanged": true
+    },
+    "schema": {
+      "osmosisActualResults": 164,
+      "tonoplastRegressionActualResults": 291,
+      "validator": "Python jsonschema via requirements-spec.txt",
+      "source": "spec/result.schema.json unchanged"
+    },
+    "crossChecks": {
+      "wrongNameSubstitutions": 56,
+      "laterRelevantSuffixes": 120,
+      "materialPrerequisites": "All seven required fields, profile/integrity/phase, both permeabilities, potential ordering/tags/types, excluded transport, retention and explicit empty model state",
+      "versions": [
+        "taskVersion",
+        "rubricVersion",
+        "contentVersion",
+        "modelVersion"
+      ],
+      "taskAndFieldIsolation": true,
+      "wholeTaskHandoff": "Reject field-only results regardless of status/help; only complete Z1.02/C01 through assessment bridge"
+    },
+    "browserScope": {
+      "tests": 42,
+      "projects": [
+        "desktop-chromium",
+        "tablet-chromium",
+        "mobile-chromium"
+      ],
+      "fixedOsmosisInputsPerProfile": 150,
+      "undefinedInput": "Tested by unit runner only; deliberately not serialized to browser",
+      "assertions": [
+        "Real guarded Vite bundle",
+        "Correct/incorrect/partial/clarify/empty/technical",
+        "Criterion/evidence/feedback and color/symbol/text descriptors",
+        "Versions/material/task/field separation",
+        "Help retained, no whole-task completion for process alone",
+        "No raw-text storage or markup execution"
+      ],
+      "notClaimed": [
+        "Visible finished task UI",
+        "Physical touch device",
+        "Safari/WebKit"
+      ]
+    },
+    "publication": {
+      "protectedFilesUnchanged": 21,
+      "tasksUnchanged": 79,
+      "missionRecordsUnchanged": 19,
+      "distFiles": 4,
+      "localAssetReferences": 3,
+      "base": "/Lernspiel-Zellbiologie/",
+      "distIdenticalToMain": true,
+      "distHashes": {
+        "index.html": "bfad6ec651669679ca18461711cb577f8ee6b7406456b9fa56f4981468b2d1fa",
+        "assets/index-92g-guUY.js": "c8006380bebf1dd37080164407046abbce1af76b9264a3fdd12f7bec3e1f7515",
+        "assets/index-D6JBs7Gr.css": "e8a3871aa7485d1b1d7dc1c5d5c99fe725e03cca96102b89a6dfd86848a3cc7e",
+        "assets/favicon-BBsVGNz0.svg": "aa985a2fdd116dc0dbecda5e953bc794ee0d8b57808ea234e8fce79bae75a37e"
+      },
+      "runtimeFixturesAbsent": true,
+      "privateExamUnavailableAndNotCopied": true,
+      "newExactAllowlistPaths": 13
+    },
+    "preliminary": [
+      {
+        "file": "qa/generated/p02b-first.json",
+        "passed": 189,
+        "failed": 2,
+        "causes": [
+          "OS8 unknown adverb after explanatory connector",
+          "Manually miscounted evidence end offset 35 instead of 36; 19 original characters starting at 17"
+        ]
+      },
+      {
+        "file": "qa/generated/p02b-second.json",
+        "passed": 616,
+        "failed": 0
+      },
+      {
+        "file": "qa/generated/p02b-content-first.json",
+        "passed": 256,
+        "failed": 0,
+        "note": "Run after fixing prior TS2589 in Playwright recursive argument type; JSON snapshots, no weakening of strict options"
+      },
+      {
+        "file": "qa/generated/p02b-first-check.log",
+        "technicalPassed": 1107,
+        "failed": 0,
+        "note": "Before adding the new whole-task scope regression"
+      },
+      {
+        "file": "qa/generated/p02b-field-handoff-before.json",
+        "passed": 240,
+        "failed": 1
+      },
+      {
+        "file": "qa/generated/p02b-handoff-fix.json",
+        "passed": 279,
+        "failed": 0
+      }
+    ],
+    "resolvedFindings": [
+      {
+        "id": "P02b-S01",
+        "severity": "P2",
+        "input": "Osmose, das heißt hier Wassertransport.",
+        "expected": "correct",
+        "before": "clarify",
+        "resolution": "Explicit field-profile adverb after explanatory connector, preserving the whole input",
+        "fixedIn": "3a775be97c1073c0c074fb78d347d3204067f5be"
+      },
+      {
+        "id": "P02b-S02",
+        "severity": "P1",
+        "input": "M6.02/process: Osmose, independent",
+        "expected": "Field correct; reject complete-task handoff",
+        "before": {
+          "criteria": [
+            "M6.02.C01"
+          ],
+          "wholeTaskOutcome": {
+            "successful": true,
+            "independent": true
+          }
+        },
+        "resolution": "Assessment bridge only accepts complete implemented Z1.02/C01; all M6.02 field status/help cases and browser covered",
+        "fixedIn": "3a775be97c1073c0c074fb78d347d3204067f5be"
+      }
+    ],
+    "diagnosisLimitations": [
+      "Direct Node reproduction initially blocked by parameter properties in existing TypeScript progress module; actually rerun successfully with --experimental-transform-types. Standard project verification uses Vitest."
+    ],
+    "localEvidenceHashes": {
+      "unit.json": "3c27692001f02824af74d6b042e0f9449e6c78db27695cd0a44c214c53906c5f",
+      "content.json": "cfa3bc5f4cace1737a96e91961ee60ea15a678e89fb82233116035dd73be8313",
+      "build.json": "e66434cf29a1544baedbf30c53e6c38d4ef96bfcb8212f6ddbb6e78692fb227d",
+      "playwright.json": "1e0cc760d8f8127b7dc8ec18c96362cef9743da921e17cd77f45af2f0d182c3b",
+      "concept.json": "96b0fe40e0e93ae51647ce633c025f6a254edf2c73cac6e46660bdeef9fdbab4",
+      "p02b-corpus.json": "3bf5cd9a56115eaf656f9da2e4464e7788c5fea2af21737169c625cbe375b379"
+    },
+    "changedImplementationFiles": [
+      "README.md",
+      "publish.allowlist.json",
+      "src/assessment/OSMOSIS.md",
+      "src/assessment/README.md",
+      "src/assessment/osmosis-context.ts",
+      "src/assessment/osmosis-feedback.ts",
+      "src/assessment/osmosis.ts",
+      "src/assessment/progress.ts",
+      "src/assessment/term-evaluator.ts",
+      "src/assessment/term-grammar.ts",
+      "src/assessment/tonoplast.ts",
+      "src/persistence/README.md",
+      "tests/browser/osmosis.spec.ts",
+      "tests/build/assessment-bundle.test.ts",
+      "tests/build/osmosis-bundle.test.ts",
+      "tests/content/README.md",
+      "tests/content/osmosis-spec.test.ts",
+      "tests/fixtures/osmosis-cases.ts",
+      "tests/helpers/domain-bundle.ts",
+      "tests/helpers/osmosis.ts",
+      "tests/unit/osmosis.test.ts",
+      "tests/unit/publish-policy.test.ts"
+    ],
+    "limits": [
+      "No direction/volume or other fields",
+      "No general causal/numeric assessment, simulation, mission, UI or 3D model",
+      "Complex negation, temporal changes, quantification, unknown additions and unconfigured languages may stay clarify",
+      "Field status is not complete M6.02 task status",
+      "No independent/empirical recognition claim or classroom release"
+    ]
+  },
+  "executedCommands": [
+    "npm run check:types",
+    "npx vitest run tests/unit/tonoplast*.test.ts tests/unit/assessment-*.test.ts tests/content/tonoplast-spec.test.ts --outputFile=qa/generated/p02b-shared-regression.json",
+    "npx vitest run tests/unit/osmosis.test.ts --outputFile=qa/generated/p02b-first.json",
+    "npx vitest run tests/unit/osmosis.test.ts tests/unit/tonoplast*.test.ts tests/content/tonoplast-spec.test.ts --outputFile=qa/generated/p02b-second.json",
+    "npx vitest run tests/unit/osmosis.test.ts tests/content/osmosis-spec.test.ts --outputFile=qa/generated/p02b-content-first.json",
+    "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run check",
+    "npx vitest run tests/unit/osmosis.test.ts --outputFile=qa/generated/p02b-field-handoff-before.json",
+    "Node direct handoff reproduction with --experimental-transform-types after strip-only failure",
+    "npx vitest run tests/unit/osmosis.test.ts tests/unit/assessment-*.test.ts --outputFile=qa/generated/p02b-handoff-fix.json",
+    "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run check on 3a775be97c1073c0c074fb78d347d3204067f5be",
+    "Node actual evaluation of all 164 osmosis corpus/reference result objects and SHA-256 comparison of four dist files",
+    "git diff --check",
+    "Python jsonschema validation of qa/p02b-review.json against spec/review-manifest.schema.json",
+    "npm run check:publish after adding both P02b report files"
+  ],
+  "caseCounts": {
+    "passed": 1108,
+    "failed": 0,
+    "skipped": 0
+  },
+  "newCases": [
+    "OC01: correct — Eindeutige Benennung Osmose mit geprüftem harmlosen Rahmen, Schreibvariante oder ausdrücklicher richtiger Abgrenzung.",
+    "OC02: correct — Eindeutige Benennung Osmose mit geprüftem harmlosen Rahmen, Schreibvariante oder ausdrücklicher richtiger Abgrenzung.",
+    "OC03: correct — Eindeutige Benennung Osmose mit geprüftem harmlosen Rahmen, Schreibvariante oder ausdrücklicher richtiger Abgrenzung.",
+    "OC04: correct — Eindeutige Benennung Osmose mit geprüftem harmlosen Rahmen, Schreibvariante oder ausdrücklicher richtiger Abgrenzung.",
+    "OC05: correct — Eindeutige Benennung Osmose mit geprüftem harmlosen Rahmen, Schreibvariante oder ausdrücklicher richtiger Abgrenzung.",
+    "OC06: correct — Eindeutige Benennung Osmose mit geprüftem harmlosen Rahmen, Schreibvariante oder ausdrücklicher richtiger Abgrenzung.",
+    "OC07: correct — Eindeutige Benennung Osmose mit geprüftem harmlosen Rahmen, Schreibvariante oder ausdrücklicher richtiger Abgrenzung.",
+    "OC08: correct — Eindeutige Benennung Osmose mit geprüftem harmlosen Rahmen, Schreibvariante oder ausdrücklicher richtiger Abgrenzung.",
+    "OC09: correct — Eindeutige Benennung Osmose mit geprüftem harmlosen Rahmen, Schreibvariante oder ausdrücklicher richtiger Abgrenzung.",
+    "OC10: correct — Eindeutige Benennung Osmose mit geprüftem harmlosen Rahmen, Schreibvariante oder ausdrücklicher richtiger Abgrenzung.",
+    "OC11: correct — Eindeutige Benennung Osmose mit geprüftem harmlosen Rahmen, Schreibvariante oder ausdrücklicher richtiger Abgrenzung.",
+    "OC12: correct — Eindeutige Benennung Osmose mit geprüftem harmlosen Rahmen, Schreibvariante oder ausdrücklicher richtiger Abgrenzung.",
+    "OC13: correct — Eindeutige Benennung Osmose mit geprüftem harmlosen Rahmen, Schreibvariante oder ausdrücklicher richtiger Abgrenzung.",
+    "OC14: correct — Eindeutige Benennung Osmose mit geprüftem harmlosen Rahmen, Schreibvariante oder ausdrücklicher richtiger Abgrenzung.",
+    "OC15: correct — Eindeutige Benennung Osmose mit geprüftem harmlosen Rahmen, Schreibvariante oder ausdrücklicher richtiger Abgrenzung.",
+    "OC16: correct — Eindeutige Benennung Osmose mit geprüftem harmlosen Rahmen, Schreibvariante oder ausdrücklicher richtiger Abgrenzung.",
+    "OC17: correct — Eindeutige Benennung Osmose mit geprüftem harmlosen Rahmen, Schreibvariante oder ausdrücklicher richtiger Abgrenzung.",
+    "OC18: correct — Eindeutige Benennung Osmose mit geprüftem harmlosen Rahmen, Schreibvariante oder ausdrücklicher richtiger Abgrenzung.",
+    "OC19: correct — Eindeutige Benennung Osmose mit geprüftem harmlosen Rahmen, Schreibvariante oder ausdrücklicher richtiger Abgrenzung.",
+    "OC20: correct — Eindeutige Benennung Osmose mit geprüftem harmlosen Rahmen, Schreibvariante oder ausdrücklicher richtiger Abgrenzung.",
+    "OC21: correct — Eindeutige Benennung Osmose mit geprüftem harmlosen Rahmen, Schreibvariante oder ausdrücklicher richtiger Abgrenzung.",
+    "OC22: correct — Eindeutige Benennung Osmose mit geprüftem harmlosen Rahmen, Schreibvariante oder ausdrücklicher richtiger Abgrenzung.",
+    "OC23: correct — Eindeutige Benennung Osmose mit geprüftem harmlosen Rahmen, Schreibvariante oder ausdrücklicher richtiger Abgrenzung.",
+    "OC24: correct — Eindeutige Benennung Osmose mit geprüftem harmlosen Rahmen, Schreibvariante oder ausdrücklicher richtiger Abgrenzung.",
+    "OC25: correct — Eindeutige Benennung Osmose mit geprüftem harmlosen Rahmen, Schreibvariante oder ausdrücklicher richtiger Abgrenzung.",
+    "OC26: correct — Eindeutige Benennung Osmose mit geprüftem harmlosen Rahmen, Schreibvariante oder ausdrücklicher richtiger Abgrenzung.",
+    "OC27: correct — Eindeutige Benennung Osmose mit geprüftem harmlosen Rahmen, Schreibvariante oder ausdrücklicher richtiger Abgrenzung.",
+    "OC28: correct — Eindeutige Benennung Osmose mit geprüftem harmlosen Rahmen, Schreibvariante oder ausdrücklicher richtiger Abgrenzung.",
+    "OW01: incorrect — Falscher Vorgangsname, sichere Verneinung oder falsche Identitäts-/Eigenschaftsbehauptung im ausdrücklich gebundenen Fall.",
+    "OW02: incorrect — Falscher Vorgangsname, sichere Verneinung oder falsche Identitäts-/Eigenschaftsbehauptung im ausdrücklich gebundenen Fall.",
+    "OW03: incorrect — Falscher Vorgangsname, sichere Verneinung oder falsche Identitäts-/Eigenschaftsbehauptung im ausdrücklich gebundenen Fall.",
+    "OW04: incorrect — Falscher Vorgangsname, sichere Verneinung oder falsche Identitäts-/Eigenschaftsbehauptung im ausdrücklich gebundenen Fall.",
+    "OW05: incorrect — Falscher Vorgangsname, sichere Verneinung oder falsche Identitäts-/Eigenschaftsbehauptung im ausdrücklich gebundenen Fall.",
+    "OW06: incorrect — Falscher Vorgangsname, sichere Verneinung oder falsche Identitäts-/Eigenschaftsbehauptung im ausdrücklich gebundenen Fall.",
+    "OW07: incorrect — Falscher Vorgangsname, sichere Verneinung oder falsche Identitäts-/Eigenschaftsbehauptung im ausdrücklich gebundenen Fall.",
+    "OW08: incorrect — Falscher Vorgangsname, sichere Verneinung oder falsche Identitäts-/Eigenschaftsbehauptung im ausdrücklich gebundenen Fall.",
+    "OW09: incorrect — Falscher Vorgangsname, sichere Verneinung oder falsche Identitäts-/Eigenschaftsbehauptung im ausdrücklich gebundenen Fall.",
+    "OW10: incorrect — Falscher Vorgangsname, sichere Verneinung oder falsche Identitäts-/Eigenschaftsbehauptung im ausdrücklich gebundenen Fall.",
+    "OW11: incorrect — Falscher Vorgangsname, sichere Verneinung oder falsche Identitäts-/Eigenschaftsbehauptung im ausdrücklich gebundenen Fall.",
+    "OW12: incorrect — Falscher Vorgangsname, sichere Verneinung oder falsche Identitäts-/Eigenschaftsbehauptung im ausdrücklich gebundenen Fall.",
+    "OW13: incorrect — Falscher Vorgangsname, sichere Verneinung oder falsche Identitäts-/Eigenschaftsbehauptung im ausdrücklich gebundenen Fall.",
+    "OW14: incorrect — Falscher Vorgangsname, sichere Verneinung oder falsche Identitäts-/Eigenschaftsbehauptung im ausdrücklich gebundenen Fall.",
+    "OW15: incorrect — Falscher Vorgangsname, sichere Verneinung oder falsche Identitäts-/Eigenschaftsbehauptung im ausdrücklich gebundenen Fall.",
+    "OW16: incorrect — Falscher Vorgangsname, sichere Verneinung oder falsche Identitäts-/Eigenschaftsbehauptung im ausdrücklich gebundenen Fall.",
+    "OW17: incorrect — Falscher Vorgangsname, sichere Verneinung oder falsche Identitäts-/Eigenschaftsbehauptung im ausdrücklich gebundenen Fall.",
+    "OW18: incorrect — Falscher Vorgangsname, sichere Verneinung oder falsche Identitäts-/Eigenschaftsbehauptung im ausdrücklich gebundenen Fall.",
+    "OW19: incorrect — Falscher Vorgangsname, sichere Verneinung oder falsche Identitäts-/Eigenschaftsbehauptung im ausdrücklich gebundenen Fall.",
+    "OW20: incorrect — Falscher Vorgangsname, sichere Verneinung oder falsche Identitäts-/Eigenschaftsbehauptung im ausdrücklich gebundenen Fall.",
+    "OW21: incorrect — Falscher Vorgangsname, sichere Verneinung oder falsche Identitäts-/Eigenschaftsbehauptung im ausdrücklich gebundenen Fall.",
+    "OW22: incorrect — Falscher Vorgangsname, sichere Verneinung oder falsche Identitäts-/Eigenschaftsbehauptung im ausdrücklich gebundenen Fall.",
+    "OW23: incorrect — Falscher Vorgangsname, sichere Verneinung oder falsche Identitäts-/Eigenschaftsbehauptung im ausdrücklich gebundenen Fall.",
+    "OW24: incorrect — Falscher Vorgangsname, sichere Verneinung oder falsche Identitäts-/Eigenschaftsbehauptung im ausdrücklich gebundenen Fall.",
+    "OP01: partial — Dokumentierter Teilansatz Diffusion, Wasserbewegung oder Wassertransport ohne gesuchte spezifische Benennung.",
+    "OP02: partial — Dokumentierter Teilansatz Diffusion, Wasserbewegung oder Wassertransport ohne gesuchte spezifische Benennung.",
+    "OP03: partial — Dokumentierter Teilansatz Diffusion, Wasserbewegung oder Wassertransport ohne gesuchte spezifische Benennung.",
+    "OP04: partial — Dokumentierter Teilansatz Diffusion, Wasserbewegung oder Wassertransport ohne gesuchte spezifische Benennung.",
+    "OP05: partial — Dokumentierter Teilansatz Diffusion, Wasserbewegung oder Wassertransport ohne gesuchte spezifische Benennung.",
+    "OP06: partial — Dokumentierter Teilansatz Diffusion, Wasserbewegung oder Wassertransport ohne gesuchte spezifische Benennung.",
+    "OP07: partial — Dokumentierter Teilansatz Diffusion, Wasserbewegung oder Wassertransport ohne gesuchte spezifische Benennung.",
+    "OP08: partial — Dokumentierter Teilansatz Diffusion, Wasserbewegung oder Wassertransport ohne gesuchte spezifische Benennung.",
+    "OP09: partial — Dokumentierter Teilansatz Diffusion, Wasserbewegung oder Wassertransport ohne gesuchte spezifische Benennung.",
+    "OP10: partial — Dokumentierter Teilansatz Diffusion, Wasserbewegung oder Wassertransport ohne gesuchte spezifische Benennung.",
+    "OP11: partial — Dokumentierter Teilansatz Diffusion, Wasserbewegung oder Wassertransport ohne gesuchte spezifische Benennung.",
+    "OP12: partial — Dokumentierter Teilansatz Diffusion, Wasserbewegung oder Wassertransport ohne gesuchte spezifische Benennung.",
+    "OA01: clarify — Konkurrierende Benennungen, unklarer Bezug oder fachlicher Rest ohne ausreichend sichere vollständige Interpretation.",
+    "OA02: clarify — Konkurrierende Benennungen, unklarer Bezug oder fachlicher Rest ohne ausreichend sichere vollständige Interpretation.",
+    "OA03: clarify — Konkurrierende Benennungen, unklarer Bezug oder fachlicher Rest ohne ausreichend sichere vollständige Interpretation.",
+    "OA04: clarify — Konkurrierende Benennungen, unklarer Bezug oder fachlicher Rest ohne ausreichend sichere vollständige Interpretation.",
+    "OA05: clarify — Konkurrierende Benennungen, unklarer Bezug oder fachlicher Rest ohne ausreichend sichere vollständige Interpretation.",
+    "OA06: clarify — Konkurrierende Benennungen, unklarer Bezug oder fachlicher Rest ohne ausreichend sichere vollständige Interpretation.",
+    "OA07: clarify — Konkurrierende Benennungen, unklarer Bezug oder fachlicher Rest ohne ausreichend sichere vollständige Interpretation.",
+    "OA08: clarify — Konkurrierende Benennungen, unklarer Bezug oder fachlicher Rest ohne ausreichend sichere vollständige Interpretation.",
+    "OA09: clarify — Konkurrierende Benennungen, unklarer Bezug oder fachlicher Rest ohne ausreichend sichere vollständige Interpretation.",
+    "OA10: clarify — Konkurrierende Benennungen, unklarer Bezug oder fachlicher Rest ohne ausreichend sichere vollständige Interpretation.",
+    "OA11: clarify — Konkurrierende Benennungen, unklarer Bezug oder fachlicher Rest ohne ausreichend sichere vollständige Interpretation.",
+    "OA12: clarify — Konkurrierende Benennungen, unklarer Bezug oder fachlicher Rest ohne ausreichend sichere vollständige Interpretation.",
+    "OA13: clarify — Konkurrierende Benennungen, unklarer Bezug oder fachlicher Rest ohne ausreichend sichere vollständige Interpretation.",
+    "OA14: clarify — Konkurrierende Benennungen, unklarer Bezug oder fachlicher Rest ohne ausreichend sichere vollständige Interpretation.",
+    "OA15: clarify — Konkurrierende Benennungen, unklarer Bezug oder fachlicher Rest ohne ausreichend sichere vollständige Interpretation.",
+    "OA16: clarify — Konkurrierende Benennungen, unklarer Bezug oder fachlicher Rest ohne ausreichend sichere vollständige Interpretation.",
+    "OT01: technical — Ungültiges Textformat, technische Zeichensicherheit oder vollständige Überlänge; kein fachliches Urteil.",
+    "OT02: technical — Ungültiges Textformat, technische Zeichensicherheit oder vollständige Überlänge; kein fachliches Urteil.",
+    "OT03: technical — Ungültiges Textformat, technische Zeichensicherheit oder vollständige Überlänge; kein fachliches Urteil.",
+    "OT04: technical — Ungültiges Textformat, technische Zeichensicherheit oder vollständige Überlänge; kein fachliches Urteil.",
+    "OT05: technical — Ungültiges Textformat, technische Zeichensicherheit oder vollständige Überlänge; kein fachliches Urteil.",
+    "OT06: technical — Ungültiges Textformat, technische Zeichensicherheit oder vollständige Überlänge; kein fachliches Urteil.",
+    "OT07: technical — Ungültiges Textformat, technische Zeichensicherheit oder vollständige Überlänge; kein fachliches Urteil.",
+    "OT08: technical — Ungültiges Textformat, technische Zeichensicherheit oder vollständige Überlänge; kein fachliches Urteil.",
+    "OE01: empty — Keine bewertbare Eingabe; neutral.",
+    "OE02: empty — Keine bewertbare Eingabe; neutral.",
+    "OE03: empty — Keine bewertbare Eingabe; neutral.",
+    "OX01: clarify — Relevante unbekannte Behauptung, unklarer Negationsbereich oder fremdes Aufgabenfeld darf nicht grün werden.",
+    "OX02: clarify — Relevante unbekannte Behauptung, unklarer Negationsbereich oder fremdes Aufgabenfeld darf nicht grün werden.",
+    "OX03: clarify — Relevante unbekannte Behauptung, unklarer Negationsbereich oder fremdes Aufgabenfeld darf nicht grün werden.",
+    "OX04: clarify — Relevante unbekannte Behauptung, unklarer Negationsbereich oder fremdes Aufgabenfeld darf nicht grün werden.",
+    "OX05: clarify — Relevante unbekannte Behauptung, unklarer Negationsbereich oder fremdes Aufgabenfeld darf nicht grün werden.",
+    "OX06: clarify — Relevante unbekannte Behauptung, unklarer Negationsbereich oder fremdes Aufgabenfeld darf nicht grün werden.",
+    "OX07: clarify — Relevante unbekannte Behauptung, unklarer Negationsbereich oder fremdes Aufgabenfeld darf nicht grün werden.",
+    "OX08: clarify — Relevante unbekannte Behauptung, unklarer Negationsbereich oder fremdes Aufgabenfeld darf nicht grün werden.",
+    "OX09: clarify — Relevante unbekannte Behauptung, unklarer Negationsbereich oder fremdes Aufgabenfeld darf nicht grün werden.",
+    "OX10: clarify — Relevante unbekannte Behauptung, unklarer Negationsbereich oder fremdes Aufgabenfeld darf nicht grün werden.",
+    "OX11: clarify — Relevante unbekannte Behauptung, unklarer Negationsbereich oder fremdes Aufgabenfeld darf nicht grün werden.",
+    "OX12: clarify — Relevante unbekannte Behauptung, unklarer Negationsbereich oder fremdes Aufgabenfeld darf nicht grün werden.",
+    "OX13: clarify — Relevante unbekannte Behauptung, unklarer Negationsbereich oder fremdes Aufgabenfeld darf nicht grün werden.",
+    "OX14: clarify — Relevante unbekannte Behauptung, unklarer Negationsbereich oder fremdes Aufgabenfeld darf nicht grün werden.",
+    "OX15: clarify — Relevante unbekannte Behauptung, unklarer Negationsbereich oder fremdes Aufgabenfeld darf nicht grün werden.",
+    "OX16: clarify — Relevante unbekannte Behauptung, unklarer Negationsbereich oder fremdes Aufgabenfeld darf nicht grün werden.",
+    "OY01: incorrect — Sicher verstandener Widerspruch oder falscher Fachbegriff im späteren Satz bleibt sichtbar falsch.",
+    "OY02: incorrect — Sicher verstandener Widerspruch oder falscher Fachbegriff im späteren Satz bleibt sichtbar falsch.",
+    "OY03: incorrect — Sicher verstandener Widerspruch oder falscher Fachbegriff im späteren Satz bleibt sichtbar falsch.",
+    "OY04: incorrect — Sicher verstandener Widerspruch oder falscher Fachbegriff im späteren Satz bleibt sichtbar falsch.",
+    "ON1: correct — Natürliche eindeutige Benennung mit harmlosem Vorsichts- oder Bezugsausdruck.",
+    "ON2: correct — Natürliche eindeutige Benennung mit harmlosem Vorsichts- oder Bezugsausdruck.",
+    "ON3: correct — Natürliche eindeutige Benennung mit harmlosem Vorsichts- oder Bezugsausdruck.",
+    "ON4: correct — Natürliche eindeutige Benennung mit harmlosem Vorsichts- oder Bezugsausdruck.",
+    "ON5: correct — Natürliche eindeutige Benennung mit harmlosem Vorsichts- oder Bezugsausdruck.",
+    "ON6: correct — Natürliche eindeutige Benennung mit harmlosem Vorsichts- oder Bezugsausdruck.",
+    "ON7: correct — Natürliche eindeutige Benennung mit harmlosem Vorsichts- oder Bezugsausdruck.",
+    "ON8: correct — Natürliche eindeutige Benennung mit harmlosem Vorsichts- oder Bezugsausdruck.",
+    "ON9: correct — Natürliche eindeutige Benennung mit harmlosem Vorsichts- oder Bezugsausdruck.",
+    "ON10: correct — Natürliche eindeutige Benennung mit harmlosem Vorsichts- oder Bezugsausdruck.",
+    "ON11: correct — Natürliche eindeutige Benennung mit harmlosem Vorsichts- oder Bezugsausdruck.",
+    "ON12: correct — Natürliche eindeutige Benennung mit harmlosem Vorsichts- oder Bezugsausdruck.",
+    "ON13: correct — Natürliche eindeutige Benennung mit harmlosem Vorsichts- oder Bezugsausdruck.",
+    "ON14: correct — Natürliche eindeutige Benennung mit harmlosem Vorsichts- oder Bezugsausdruck.",
+    "ON15: correct — Natürliche eindeutige Benennung mit harmlosem Vorsichts- oder Bezugsausdruck.",
+    "ON16: correct — Natürliche eindeutige Benennung mit harmlosem Vorsichts- oder Bezugsausdruck.",
+    "OS1: correct — Vollständige Benennung mit zusätzlicher richtiger Eigenschaft, Abgrenzung, vorsichtigem Rahmen oder mehreren gebundenen Aussagen.",
+    "OS2: correct — Vollständige Benennung mit zusätzlicher richtiger Eigenschaft, Abgrenzung, vorsichtigem Rahmen oder mehreren gebundenen Aussagen.",
+    "OS3: correct — Vollständige Benennung mit zusätzlicher richtiger Eigenschaft, Abgrenzung, vorsichtigem Rahmen oder mehreren gebundenen Aussagen.",
+    "OS4: correct — Vollständige Benennung mit zusätzlicher richtiger Eigenschaft, Abgrenzung, vorsichtigem Rahmen oder mehreren gebundenen Aussagen.",
+    "OS5: correct — Vollständige Benennung mit zusätzlicher richtiger Eigenschaft, Abgrenzung, vorsichtigem Rahmen oder mehreren gebundenen Aussagen.",
+    "OS6: correct — Vollständige Benennung mit zusätzlicher richtiger Eigenschaft, Abgrenzung, vorsichtigem Rahmen oder mehreren gebundenen Aussagen.",
+    "OS7: correct — Vollständige Benennung mit zusätzlicher richtiger Eigenschaft, Abgrenzung, vorsichtigem Rahmen oder mehreren gebundenen Aussagen.",
+    "OS8: correct — Vollständige Benennung mit zusätzlicher richtiger Eigenschaft, Abgrenzung, vorsichtigem Rahmen oder mehreren gebundenen Aussagen.",
+    "OS9: correct — Vollständige Benennung mit zusätzlicher richtiger Eigenschaft, Abgrenzung, vorsichtigem Rahmen oder mehreren gebundenen Aussagen.",
+    "OS10: correct — Vollständige Benennung mit zusätzlicher richtiger Eigenschaft, Abgrenzung, vorsichtigem Rahmen oder mehreren gebundenen Aussagen.",
+    "OS11: correct — Vollständige Benennung mit zusätzlicher richtiger Eigenschaft, Abgrenzung, vorsichtigem Rahmen oder mehreren gebundenen Aussagen.",
+    "OS12: correct — Vollständige Benennung mit zusätzlicher richtiger Eigenschaft, Abgrenzung, vorsichtigem Rahmen oder mehreren gebundenen Aussagen.",
+    "OS13: correct — Vollständige Benennung mit zusätzlicher richtiger Eigenschaft, Abgrenzung, vorsichtigem Rahmen oder mehreren gebundenen Aussagen.",
+    "OS14: correct — Vollständige Benennung mit zusätzlicher richtiger Eigenschaft, Abgrenzung, vorsichtigem Rahmen oder mehreren gebundenen Aussagen.",
+    "OS15: correct — Vollständige Benennung mit zusätzlicher richtiger Eigenschaft, Abgrenzung, vorsichtigem Rahmen oder mehreren gebundenen Aussagen.",
+    "OS16: correct — Vollständige Benennung mit zusätzlicher richtiger Eigenschaft, Abgrenzung, vorsichtigem Rahmen oder mehreren gebundenen Aussagen.",
+    "OS17: correct — Vollständige Benennung mit zusätzlicher richtiger Eigenschaft, Abgrenzung, vorsichtigem Rahmen oder mehreren gebundenen Aussagen.",
+    "OS18: correct — Vollständige Benennung mit zusätzlicher richtiger Eigenschaft, Abgrenzung, vorsichtigem Rahmen oder mehreren gebundenen Aussagen.",
+    "OS19: correct — Vollständige Benennung mit zusätzlicher richtiger Eigenschaft, Abgrenzung, vorsichtigem Rahmen oder mehreren gebundenen Aussagen.",
+    "OS20: correct — Vollständige Benennung mit zusätzlicher richtiger Eigenschaft, Abgrenzung, vorsichtigem Rahmen oder mehreren gebundenen Aussagen.",
+    "OS21: correct — Vollständige Benennung mit zusätzlicher richtiger Eigenschaft, Abgrenzung, vorsichtigem Rahmen oder mehreren gebundenen Aussagen.",
+    "OS22: correct — Vollständige Benennung mit zusätzlicher richtiger Eigenschaft, Abgrenzung, vorsichtigem Rahmen oder mehreren gebundenen Aussagen.",
+    "OS23: correct — Vollständige Benennung mit zusätzlicher richtiger Eigenschaft, Abgrenzung, vorsichtigem Rahmen oder mehreren gebundenen Aussagen.",
+    "OS24: correct — Vollständige Benennung mit zusätzlicher richtiger Eigenschaft, Abgrenzung, vorsichtigem Rahmen oder mehreren gebundenen Aussagen."
+  ],
+  "blockedChecks": [
+    "Independent ChatGPT countercheck with further unseen inputs pending; self-check does not substitute for it",
+    "WebKit, real Safari/iPad and empirical learner sample not executed; configured browser profiles are Chromium",
+    "Private original exam/marking scheme inaccessible; no private content copied"
+  ],
+  "criticalFindings": [],
+  "releaseStatus": "countercheck_pending"
+}
