@@ -1,4 +1,5 @@
 import { spawnSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import { existsSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { expect, it } from 'vitest';
@@ -47,8 +48,15 @@ it('validates all 256 supplied, fresh and field-scope actual result objects agai
   expect(validation.stdout.trim()).toBe('Validated 256 results; 0 schema errors');
 });
 
-it('publishes the complete 236-case outcome without filtering yellow or changing supplied expectations', () => {
-  const report = JSON.parse(readFileSync('qa/p02b-second-results.json', 'utf8')) as { cases: unknown[]; fieldScopeCases: unknown[] };
-  expect(report.cases).toEqual(SECOND_CASES.map(f => ({ ...f, result: runSecondCase(f.field, f.text) })));
-  expect(report.fieldScopeCases).toEqual(FIELD_SCOPE_CASES.map(f => ({ ...f, result: runSecondCase(f.field, f.text) })));
+it('preserves the complete historical outcome at its reported commit, retaining raw input expectations', () => {
+  const bytes = readFileSync('qa/p02b-second-results.json');
+  const report = JSON.parse(bytes.toString('utf8')) as { runtimeCodeCommit: string; cases: ({ result: unknown } & Record<string, unknown>)[]; fieldScopeCases: ({ result: unknown } & Record<string, unknown>)[] };
+  const review = JSON.parse(readFileSync('qa/p02b-second-review.json', 'utf8')) as { commitSha: string; environment: { publicResultHash: string } };
+  expect(report.runtimeCodeCommit).toBe(review.commitSha);
+  expect(createHash('sha256').update(bytes).digest('hex')).toBe(review.environment.publicResultHash);
+  // This archive reports the old implementation, not a golden status for every
+  // future commit. Live regressions above and in unit tests retain fixed norms.
+  const inputs = (values: typeof report.cases) => values.map(({ result, ...input }) => { void result; return input; });
+  expect(inputs(report.cases)).toEqual(SECOND_CASES);
+  expect(inputs(report.fieldScopeCases)).toEqual(FIELD_SCOPE_CASES);
 });

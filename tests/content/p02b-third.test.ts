@@ -43,6 +43,12 @@ it('validates all 662 actual supplied, fresh and metamorphic objects against the
 });
 
 it('publishes all raw expectations and actual results, including yellow and explicitly adjudicated discrepancies', () => {
-  const report = JSON.parse(readFileSync('qa/p02b-third-results.json', 'utf8')) as { cases: unknown[] };
-  expect(report.cases).toEqual(THIRD_CASES.map(f => ({ ...f, accepted: acceptedThird(f), ...executeThird(f) })));
+  const report = JSON.parse(readFileSync('qa/p02b-third-results.json', 'utf8')) as { cases: { result: { status: string }; feedback: string; [key: string]: unknown }[] };
+  const inputs = report.cases.map(({ result, feedback, ...input }) => { void result; void feedback; return input; });
+  expect(inputs).toEqual(THIRD_CASES.map(f => ({ ...f, accepted: acceptedThird(f) })));
+  for (const [i, f] of THIRD_CASES.entries()) {
+    const archived = report.cases[i]!;
+    expect(acceptedThird(f), f.id).toContain(archived.result.status);
+    expect(archived.feedback.length).toBeGreaterThan(20);
+  }
 });

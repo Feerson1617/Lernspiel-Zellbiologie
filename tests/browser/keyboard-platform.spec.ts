@@ -5,7 +5,7 @@ test('records standard and platform link navigation separately and activates exp
   for (const key of ['Tab', 'Alt+Tab']) {
     await page.goto('./');
     await page.keyboard.press(key);
-    observed.push({ key, active: await page.evaluate(() => ({ tag: document.activeElement?.tagName, text: document.activeElement?.textContent?.trim() })) });
+    observed.push({ key, active: await page.evaluate(() => ({ tag: document.activeElement?.tagName, text: document.activeElement?.tagName === 'A' ? document.activeElement.textContent?.trim() : null })) });
   }
   const key = browserName === 'webkit' && process.platform === 'darwin' ? 'Alt+Tab' : 'Tab';
   await info.attach('keyboard-platform.json', { body: JSON.stringify({ engine: browserName, version: browser.version(), hostPlatform: process.platform, selectedKey: key, observed }), contentType: 'application/json' });
