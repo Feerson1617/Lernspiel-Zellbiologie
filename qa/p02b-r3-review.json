@@ -1852,6 +1852,22 @@
       "qa/generated/build.json": "4227e41376a637ada0699f8eb7f1e68728dcc5497c0ef4f4bcb9f4f69dc6d1c0",
       "qa/generated/playwright.json": "8e11ddd61bf3a21fce7537dce624a2b0c9158e74710c6de2a8e34a7e57ea1340",
       "qa/generated/p02b-r3-dist-hashes.json": "302bb391c47d7a3014b7bd442945354f1dce5b64228906a0517efbe9c4ecd32f"
+    },
+    "postReportValidation": {
+      "first": {
+        "passed": 188,
+        "failed": 1,
+        "reason": "Existing 968-result schema batch exceeded 5 seconds under concurrent execution."
+      },
+      "fix": "Only its timeout now matches the new 1501-result batch: 30 seconds, including existing bounded 20-second schema child. No cases/expectations/thresholds changed.",
+      "final": {
+        "passed": 189,
+        "failed": 0,
+        "skipped": 0,
+        "evidence": "qa/generated/p02b-r3-final-content.json",
+        "sha256": "9b122b3f2ab5db86ad45ee0a48eacb8d9025b55df7dadf2f86f11a9c947c0056"
+      },
+      "finalHeadCI": "Recorded separately in PR description; no runtime changes after c004121."
     }
   },
   "executedCommands": [

@@ -40,7 +40,7 @@ it('validates all 956 corpus and 12 retraction diagnostic results against the pr
   ].join('\n')], { input: JSON.stringify({ schema: JSON.parse(readFileSync('spec/result.schema.json', 'utf8')), results }), encoding: 'utf8', timeout: 20_000 });
   expect(r.error).toBeUndefined(); expect(r.stderr).toBe(''); expect(r.status).toBe(0);
   expect(r.stdout.trim()).toBe('Validated 968 results; 0 schema errors');
-});
+}, 30_000); // Full runtime corpus plus the existing 20-second Python subprocess.
 
 it('publishes all raw expectations and actual results, including yellow and explicitly adjudicated discrepancies', () => {
   const report = JSON.parse(readFileSync('qa/p02b-fourth-results.json', 'utf8')) as { cases: { result: { status: string }; feedback: string; [key: string]: unknown }[] };

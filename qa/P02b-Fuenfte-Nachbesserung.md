@@ -5,7 +5,8 @@
 Geprüfte Code-/Testfassung: `c00412198235919ad146e9f285a09af8670bd780`. Ausgang `3174574a714461627e7f831d94b70f682afab636`;
 [PR #6](https://github.com/Feerson1617/Lernspiel-Zellbiologie/pull/6) gegen main
 `b155936443745d98c8133788872c9c5ff44d7fb2`. Der anschließende Abgabecommit ergänzt
-Berichte/Provenienz und Dokumentationsverweise. Finaler Head und sein CI-Status
+Berichte/Provenienz, Dokumentationsverweise und das unten begründete Zeitbudget
+eines älteren Schemabatches. Finaler Head und sein CI-Status
 stehen in der PR-Beschreibung. Berichtszeit 2026-10-23T10:25:19+02:00, Europe/Berlin.
 
 ## Änderung und Grenzen
@@ -236,6 +237,16 @@ jetzt 30 Sekunden für 1501 Runtimeauswertungen plus den auf 20 Sekunden begrenz
 Schema-Unterprozess. Browserparität hat 90 Sekunden für die neue vollständige
 Sammlung; der erste Lauf benötigte 28–42 Sekunden pro Profil. Kein Fall wurde
 übersprungen, kein fachlicher Sollwert oder Bestehensmaßstab gelockert.
+
+Die nachträgliche Inhaltsprüfung nach Erstellung der Berichte hatte 188 bestandene
+Prüfungen und eine weitere Zeitüberschreitung: der bestehende 968-Ergebnis-Schemabatch
+überschritt unter paralleler Ausführung fünf Sekunden. Der bereits erfolgreiche
+vollständige Lauf und CI-Build am Codecommit werden dadurch nicht rückwirkend
+ungültig; der zusätzliche Lauf wird ausdrücklich nicht als bestanden ausgegeben.
+Auch dieser Batch erhält nun 30 Sekunden für seine vollständigen Auswertungen und
+den bereits bestehenden, auf 20 Sekunden begrenzten Schema-Unterprozess. Danach
+bestehen alle 189 Inhaltsprüfungen erneut. Keine Runtime-, Fall-, Sollwert- oder
+Fachlogikänderung; der finale CI-Lauf prüft auch diese Testkonfiguration.
 
 [CI-Lauf 39924012946](https://github.com/Feerson1617/Lernspiel-Zellbiologie/actions/runs/39924012946)
 auf `c00412198235919ad146e9f285a09af8670bd780`: build success, webkit failure, deploy skipped;
