@@ -1,8 +1,8 @@
 {
 "metadata":{
   "reviewKind": "self_check",
-  "runtimeCodeCommit": "8db3eba0998173ede146feedefcf7babf417c6c9",
-  "createdAtBerlin": "2026-10-23T09:14:02+02:00",
+  "runtimeCodeCommit": "435843b1a44282199bd8eda01523eb3e7cbadf65",
+  "createdAtBerlin": "2026-10-23T09:30:20+02:00",
   "versions": {
     "taskVersion": "review3-task-20261023",
     "rubricVersion": "review3-rubric-20261023",
@@ -33,7 +33,7 @@
   "sourceHashes": {
     "src/assessment/naming-frames.ts": "f45f9f40802f8e1aaaec890646214f3455454321d0ac5fe9772b62e6e35f3e6d",
     "src/assessment/naming-syntax.ts": "ea396f93dee39585980ad4f6c553fb53ab5404956e27e8c631fb50a098832045",
-    "src/assessment/term-grammar.ts": "9b9e43dccd3748efbcd85aa7afbab629f8ea9ab24028ffc11cda2b87b0ae54e8"
+    "src/assessment/term-grammar.ts": "cfd23d3c86586066b2fed6e3b7f3bbe9c953230dda825988b187b43c0841968c"
   },
   "summary": {
     "short-correct": {
@@ -1485,6 +1485,452 @@
       "id": "non-string",
       "passed": true,
       "detail": true
+    }
+  ],
+  "additionalRetractionDiagnostics": [
+    {
+      "id": "retraction-osmosis-1",
+      "group": "repeated-retraction",
+      "field": "osmosis",
+      "text": "Endocytose. Es ist in Wirklichkeit Exocytose. Es ist in Wirklichkeit Osmose.",
+      "expected": [
+        "clarify"
+      ],
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:569175103500a74583f5031e56091189fcb1414327da588d5877ef39cc171945",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 76,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Endocytose. Es ist in Wirklichkeit Exocytose. Es ist in Wirklichkeit Osmose."
+              }
+            ],
+            "id": "M6.02.C01",
+            "reasonCode": "OSMOSIS_UNASSESSED",
+            "status": "clarify"
+          }
+        ],
+        "feedbackCode": "OSMOSIS_UNASSESSED",
+        "rubricVersion": "review3-rubric-20261023",
+        "status": "clarify",
+        "taskId": "M6.02",
+        "taskVersion": "review3-task-20261023",
+        "unassessedRelevantText": true
+      },
+      "feedback": "Die Formulierung oder ein relevanter Zusatz lässt sich in diesem Benennungsfeld nicht vollständig prüfen. Präzisiere die Benennung; ungeprüfte Aussagen werden nicht bestätigt."
+    },
+    {
+      "id": "retraction-osmosis-2",
+      "group": "repeated-retraction",
+      "field": "osmosis",
+      "text": "Endocytose. Es ist in Wirklichkeit Exocytose. Es ist in Wirklichkeit Exocytose. Es ist in Wirklichkeit Osmose.",
+      "expected": [
+        "clarify"
+      ],
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:569175103500a74583f5031e56091189fcb1414327da588d5877ef39cc171945",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 110,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Endocytose. Es ist in Wirklichkeit Exocytose. Es ist in Wirklichkeit Exocytose. Es ist in Wirklichkeit Osmose."
+              }
+            ],
+            "id": "M6.02.C01",
+            "reasonCode": "OSMOSIS_UNASSESSED",
+            "status": "clarify"
+          }
+        ],
+        "feedbackCode": "OSMOSIS_UNASSESSED",
+        "rubricVersion": "review3-rubric-20261023",
+        "status": "clarify",
+        "taskId": "M6.02",
+        "taskVersion": "review3-task-20261023",
+        "unassessedRelevantText": true
+      },
+      "feedback": "Die Formulierung oder ein relevanter Zusatz lässt sich in diesem Benennungsfeld nicht vollständig prüfen. Präzisiere die Benennung; ungeprüfte Aussagen werden nicht bestätigt."
+    },
+    {
+      "id": "retraction-osmosis-3",
+      "group": "repeated-retraction",
+      "field": "osmosis",
+      "text": "Nicht Endocytose, sondern Exocytose. Es ist in Wirklichkeit Osmose.",
+      "expected": [
+        "clarify"
+      ],
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:569175103500a74583f5031e56091189fcb1414327da588d5877ef39cc171945",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 67,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Nicht Endocytose, sondern Exocytose. Es ist in Wirklichkeit Osmose."
+              }
+            ],
+            "id": "M6.02.C01",
+            "reasonCode": "OSMOSIS_UNASSESSED",
+            "status": "clarify"
+          }
+        ],
+        "feedbackCode": "OSMOSIS_UNASSESSED",
+        "rubricVersion": "review3-rubric-20261023",
+        "status": "clarify",
+        "taskId": "M6.02",
+        "taskVersion": "review3-task-20261023",
+        "unassessedRelevantText": true
+      },
+      "feedback": "Die Formulierung oder ein relevanter Zusatz lässt sich in diesem Benennungsfeld nicht vollständig prüfen. Präzisiere die Benennung; ungeprüfte Aussagen werden nicht bestätigt."
+    },
+    {
+      "id": "retraction-osmosis-4",
+      "group": "repeated-retraction",
+      "field": "osmosis",
+      "text": "Osmose. Es ist in Wirklichkeit Endocytose. Es ist in Wirklichkeit Osmose.",
+      "expected": [
+        "clarify"
+      ],
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:569175103500a74583f5031e56091189fcb1414327da588d5877ef39cc171945",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 73,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Osmose. Es ist in Wirklichkeit Endocytose. Es ist in Wirklichkeit Osmose."
+              }
+            ],
+            "id": "M6.02.C01",
+            "reasonCode": "OSMOSIS_UNASSESSED",
+            "status": "clarify"
+          }
+        ],
+        "feedbackCode": "OSMOSIS_UNASSESSED",
+        "rubricVersion": "review3-rubric-20261023",
+        "status": "clarify",
+        "taskId": "M6.02",
+        "taskVersion": "review3-task-20261023",
+        "unassessedRelevantText": true
+      },
+      "feedback": "Die Formulierung oder ein relevanter Zusatz lässt sich in diesem Benennungsfeld nicht vollständig prüfen. Präzisiere die Benennung; ungeprüfte Aussagen werden nicht bestätigt."
+    },
+    {
+      "id": "retraction-osmosis-confirmation",
+      "group": "retraction-control",
+      "field": "osmosis",
+      "text": "Endocytose. Es ist in Wirklichkeit Osmose. Es ist in Wirklichkeit Osmose.",
+      "expected": [
+        "correct"
+      ],
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:569175103500a74583f5031e56091189fcb1414327da588d5877ef39cc171945",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 41,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Endocytose. Es ist in Wirklichkeit Osmose"
+              },
+              {
+                "end": 72,
+                "kind": "input_span",
+                "start": 43,
+                "value": "Es ist in Wirklichkeit Osmose"
+              }
+            ],
+            "id": "M6.02.C01",
+            "reasonCode": "OSMOSIS_CORRECT",
+            "status": "correct"
+          }
+        ],
+        "feedbackCode": "OSMOSIS_CORRECT",
+        "rubricVersion": "review3-rubric-20261023",
+        "status": "correct",
+        "taskId": "M6.02",
+        "taskVersion": "review3-task-20261023",
+        "unassessedRelevantText": false
+      },
+      "feedback": "Der Wassertransport durch die selektive Grenze heißt hier Osmose. Das bestätigt die Benennung, nicht die übrigen Teilantworten."
+    },
+    {
+      "id": "retraction-osmosis-exclusion",
+      "group": "retraction-control",
+      "field": "osmosis",
+      "text": "Nicht Osmose, sondern Osmose. Es ist in Wirklichkeit Osmose.",
+      "expected": [
+        "incorrect"
+      ],
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:569175103500a74583f5031e56091189fcb1414327da588d5877ef39cc171945",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 28,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Nicht Osmose, sondern Osmose"
+              },
+              {
+                "end": 59,
+                "kind": "input_span",
+                "start": 30,
+                "value": "Es ist in Wirklichkeit Osmose"
+              }
+            ],
+            "id": "M6.02.C01",
+            "reasonCode": "OSMOSIS_CONTRADICTION",
+            "status": "incorrect"
+          }
+        ],
+        "feedbackCode": "OSMOSIS_CONTRADICTION",
+        "rubricVersion": "review3-rubric-20261023",
+        "status": "incorrect",
+        "taskId": "M6.02",
+        "taskVersion": "review3-task-20261023",
+        "unassessedRelevantText": false
+      },
+      "feedback": "Deine Aussagen bestätigen und verneinen denselben Vorgang oder eine seiner geprüften Eigenschaften. Gib eine widerspruchsfreie Benennung an."
+    },
+    {
+      "id": "retraction-tonoplast-1",
+      "group": "repeated-retraction",
+      "field": "tonoplast",
+      "text": "Zellwand. Es ist in Wirklichkeit Zellmembran. Es ist in Wirklichkeit Tonoplast.",
+      "expected": [
+        "clarify"
+      ],
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:f3f33cf58329df714e30ba64015a61f7714800968956db1cef07b46a79101362",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 79,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Zellwand. Es ist in Wirklichkeit Zellmembran. Es ist in Wirklichkeit Tonoplast."
+              }
+            ],
+            "id": "Z1.02.C01",
+            "reasonCode": "TONOPLAST_UNASSESSED",
+            "status": "clarify"
+          }
+        ],
+        "feedbackCode": "TONOPLAST_UNASSESSED",
+        "rubricVersion": "review3-rubric-20261023",
+        "status": "clarify",
+        "taskId": "Z1.02",
+        "taskVersion": "review3-task-20261023",
+        "unassessedRelevantText": true
+      },
+      "feedback": "Diese Formulierung oder ihr Zusatz lässt sich in diesem Benennungsfeld nicht vollständig prüfen. Nenne die Membran kurz; der ungeprüfte Teil erhält keine fachliche Zustimmung."
+    },
+    {
+      "id": "retraction-tonoplast-2",
+      "group": "repeated-retraction",
+      "field": "tonoplast",
+      "text": "Zellwand. Es ist in Wirklichkeit Zellmembran. Es ist in Wirklichkeit Zellmembran. Es ist in Wirklichkeit Tonoplast.",
+      "expected": [
+        "clarify"
+      ],
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:f3f33cf58329df714e30ba64015a61f7714800968956db1cef07b46a79101362",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 115,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Zellwand. Es ist in Wirklichkeit Zellmembran. Es ist in Wirklichkeit Zellmembran. Es ist in Wirklichkeit Tonoplast."
+              }
+            ],
+            "id": "Z1.02.C01",
+            "reasonCode": "TONOPLAST_UNASSESSED",
+            "status": "clarify"
+          }
+        ],
+        "feedbackCode": "TONOPLAST_UNASSESSED",
+        "rubricVersion": "review3-rubric-20261023",
+        "status": "clarify",
+        "taskId": "Z1.02",
+        "taskVersion": "review3-task-20261023",
+        "unassessedRelevantText": true
+      },
+      "feedback": "Diese Formulierung oder ihr Zusatz lässt sich in diesem Benennungsfeld nicht vollständig prüfen. Nenne die Membran kurz; der ungeprüfte Teil erhält keine fachliche Zustimmung."
+    },
+    {
+      "id": "retraction-tonoplast-3",
+      "group": "repeated-retraction",
+      "field": "tonoplast",
+      "text": "Nicht Zellwand, sondern Zellmembran. Es ist in Wirklichkeit Tonoplast.",
+      "expected": [
+        "clarify"
+      ],
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:f3f33cf58329df714e30ba64015a61f7714800968956db1cef07b46a79101362",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 70,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Nicht Zellwand, sondern Zellmembran. Es ist in Wirklichkeit Tonoplast."
+              }
+            ],
+            "id": "Z1.02.C01",
+            "reasonCode": "TONOPLAST_UNASSESSED",
+            "status": "clarify"
+          }
+        ],
+        "feedbackCode": "TONOPLAST_UNASSESSED",
+        "rubricVersion": "review3-rubric-20261023",
+        "status": "clarify",
+        "taskId": "Z1.02",
+        "taskVersion": "review3-task-20261023",
+        "unassessedRelevantText": true
+      },
+      "feedback": "Diese Formulierung oder ihr Zusatz lässt sich in diesem Benennungsfeld nicht vollständig prüfen. Nenne die Membran kurz; der ungeprüfte Teil erhält keine fachliche Zustimmung."
+    },
+    {
+      "id": "retraction-tonoplast-4",
+      "group": "repeated-retraction",
+      "field": "tonoplast",
+      "text": "Tonoplast. Es ist in Wirklichkeit Zellwand. Es ist in Wirklichkeit Tonoplast.",
+      "expected": [
+        "clarify"
+      ],
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:f3f33cf58329df714e30ba64015a61f7714800968956db1cef07b46a79101362",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 77,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Tonoplast. Es ist in Wirklichkeit Zellwand. Es ist in Wirklichkeit Tonoplast."
+              }
+            ],
+            "id": "Z1.02.C01",
+            "reasonCode": "TONOPLAST_UNASSESSED",
+            "status": "clarify"
+          }
+        ],
+        "feedbackCode": "TONOPLAST_UNASSESSED",
+        "rubricVersion": "review3-rubric-20261023",
+        "status": "clarify",
+        "taskId": "Z1.02",
+        "taskVersion": "review3-task-20261023",
+        "unassessedRelevantText": true
+      },
+      "feedback": "Diese Formulierung oder ihr Zusatz lässt sich in diesem Benennungsfeld nicht vollständig prüfen. Nenne die Membran kurz; der ungeprüfte Teil erhält keine fachliche Zustimmung."
+    },
+    {
+      "id": "retraction-tonoplast-confirmation",
+      "group": "retraction-control",
+      "field": "tonoplast",
+      "text": "Zellwand. Es ist in Wirklichkeit Tonoplast. Es ist in Wirklichkeit Tonoplast.",
+      "expected": [
+        "correct"
+      ],
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:f3f33cf58329df714e30ba64015a61f7714800968956db1cef07b46a79101362",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 42,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Zellwand. Es ist in Wirklichkeit Tonoplast"
+              },
+              {
+                "end": 76,
+                "kind": "input_span",
+                "start": 44,
+                "value": "Es ist in Wirklichkeit Tonoplast"
+              }
+            ],
+            "id": "Z1.02.C01",
+            "reasonCode": "TONOPLAST_CORRECT",
+            "status": "correct"
+          }
+        ],
+        "feedbackCode": "TONOPLAST_CORRECT",
+        "rubricVersion": "review3-rubric-20261023",
+        "status": "correct",
+        "taskId": "Z1.02",
+        "taskVersion": "review3-task-20261023",
+        "unassessedRelevantText": false
+      },
+      "feedback": "Richtig: Der Tonoplast grenzt den Vakuolenraum vom Cytosol ab."
+    },
+    {
+      "id": "retraction-tonoplast-exclusion",
+      "group": "retraction-control",
+      "field": "tonoplast",
+      "text": "Nicht Tonoplast, sondern Tonoplast. Es ist in Wirklichkeit Tonoplast.",
+      "expected": [
+        "incorrect"
+      ],
+      "result": {
+        "assistance": "independent",
+        "contextHash": "sha256-v1:f3f33cf58329df714e30ba64015a61f7714800968956db1cef07b46a79101362",
+        "criteria": [
+          {
+            "evidence": [
+              {
+                "end": 34,
+                "kind": "input_span",
+                "start": 0,
+                "value": "Nicht Tonoplast, sondern Tonoplast"
+              },
+              {
+                "end": 68,
+                "kind": "input_span",
+                "start": 36,
+                "value": "Es ist in Wirklichkeit Tonoplast"
+              }
+            ],
+            "id": "Z1.02.C01",
+            "reasonCode": "TONOPLAST_CONTRADICTION",
+            "status": "incorrect"
+          }
+        ],
+        "feedbackCode": "TONOPLAST_CONTRADICTION",
+        "rubricVersion": "review3-rubric-20261023",
+        "status": "incorrect",
+        "taskId": "Z1.02",
+        "taskVersion": "review3-task-20261023",
+        "unassessedRelevantText": false
+      },
+      "feedback": "Du bestätigst und verneinst dieselbe Benennung beziehungsweise dieselbe Membranbeziehung. Gib eine widerspruchsfreie Antwort für die markierte Grenze."
     }
   ]
 },

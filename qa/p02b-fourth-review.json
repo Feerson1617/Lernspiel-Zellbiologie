@@ -1,7 +1,7 @@
 {
   "reviewId": "P02b-fourth-revision-self-check-2026-10-23-R2",
   "reviewKind": "self_check",
-  "commitSha": "8db3eba0998173ede146feedefcf7babf417c6c9",
+  "commitSha": "435843b1a44282199bd8eda01523eb3e7cbadf65",
   "sourceVersions": [
     "Konzept 1.0 / 22.10.2026; AGENTS, C 3–5/9–11, D, F M6.02, tasks/text-rubrics/contracts/result schema",
     "PR #6 baseline 7393548c885cfe467b284808f873c90c43997fb8",
@@ -9,7 +9,7 @@
     "Supplied PR6_Gegenpruefung_2026-10-23_R2; 47 SHA256 entries checked; all 578 raw inputs/IDs/expectations preserved"
   ],
   "environment": {
-    "testedAtBerlin": "2026-10-23T09:14:02+02:00",
+    "testedAtBerlin": "2026-10-23T09:30:20+02:00",
     "os": "Linux x86_64",
     "node": "24.19.0",
     "npm": "11.9.0",
@@ -25,10 +25,10 @@
     "runtimeSourceHashes": {
       "src/assessment/naming-frames.ts": "f45f9f40802f8e1aaaec890646214f3455454321d0ac5fe9772b62e6e35f3e6d",
       "src/assessment/naming-syntax.ts": "ea396f93dee39585980ad4f6c553fb53ab5404956e27e8c631fb50a098832045",
-      "src/assessment/term-grammar.ts": "9b9e43dccd3748efbcd85aa7afbab629f8ea9ab24028ffc11cda2b87b0ae54e8"
+      "src/assessment/term-grammar.ts": "cfd23d3c86586066b2fed6e3b7f3bbe9c953230dda825988b187b43c0841968c"
     },
     "localTechnicalSuites": {
-      "unit": 3403,
+      "unit": 3405,
       "content": 185,
       "build": 19,
       "chromium": 57
@@ -40,22 +40,20 @@
       "notAddedTwice": true
     },
     "ci": {
-      "run": 39915710808,
-      "url": "https://github.com/Feerson1617/Lernspiel-Zellbiologie/actions/runs/39915710808",
-      "head": "8db3eba0998173ede146feedefcf7babf417c6c9",
-      "conclusion": "failure",
+      "run": 39917331953,
+      "url": "https://github.com/Feerson1617/Lernspiel-Zellbiologie/actions/runs/39917331953",
+      "head": "435843b1a44282199bd8eda01523eb3e7cbadf65",
+      "conclusion": "in_progress",
       "jobs": [
         {
-          "name": "webkit",
-          "conclusion": "failure"
-        },
-        {
           "name": "build",
-          "conclusion": "success"
+          "status": "in_progress",
+          "conclusion": ""
         },
         {
-          "name": "deploy",
-          "conclusion": "skipped"
+          "name": "webkit",
+          "status": "completed",
+          "conclusion": "failure"
         }
       ],
       "webkit": [
@@ -64,8 +62,8 @@
           "arch": "arm64",
           "node": "v24.19.0",
           "suite": "additional",
-          "startTime": "2026-10-23T07:08:24.325Z",
-          "duration": 62928.808,
+          "startTime": "2026-10-23T07:24:26.881Z",
+          "duration": 76786.144,
           "expected": 9,
           "skipped": 0,
           "unexpected": 0,
@@ -145,8 +143,8 @@
           "arch": "arm64",
           "node": "v24.19.0",
           "suite": "baseline",
-          "startTime": "2026-10-23T07:07:30.316Z",
-          "duration": 52638.816,
+          "startTime": "2026-10-23T07:23:32.319Z",
+          "duration": 52268.892,
           "expected": 45,
           "skipped": 0,
           "unexpected": 3,
@@ -1066,6 +1064,452 @@
         "actual": "clarify"
       }
     ],
+    "additionalRetractionDiagnostics": [
+      {
+        "id": "retraction-osmosis-1",
+        "group": "repeated-retraction",
+        "field": "osmosis",
+        "text": "Endocytose. Es ist in Wirklichkeit Exocytose. Es ist in Wirklichkeit Osmose.",
+        "expected": [
+          "clarify"
+        ],
+        "result": {
+          "assistance": "independent",
+          "contextHash": "sha256-v1:569175103500a74583f5031e56091189fcb1414327da588d5877ef39cc171945",
+          "criteria": [
+            {
+              "evidence": [
+                {
+                  "end": 76,
+                  "kind": "input_span",
+                  "start": 0,
+                  "value": "Endocytose. Es ist in Wirklichkeit Exocytose. Es ist in Wirklichkeit Osmose."
+                }
+              ],
+              "id": "M6.02.C01",
+              "reasonCode": "OSMOSIS_UNASSESSED",
+              "status": "clarify"
+            }
+          ],
+          "feedbackCode": "OSMOSIS_UNASSESSED",
+          "rubricVersion": "review3-rubric-20261023",
+          "status": "clarify",
+          "taskId": "M6.02",
+          "taskVersion": "review3-task-20261023",
+          "unassessedRelevantText": true
+        },
+        "feedback": "Die Formulierung oder ein relevanter Zusatz lässt sich in diesem Benennungsfeld nicht vollständig prüfen. Präzisiere die Benennung; ungeprüfte Aussagen werden nicht bestätigt."
+      },
+      {
+        "id": "retraction-osmosis-2",
+        "group": "repeated-retraction",
+        "field": "osmosis",
+        "text": "Endocytose. Es ist in Wirklichkeit Exocytose. Es ist in Wirklichkeit Exocytose. Es ist in Wirklichkeit Osmose.",
+        "expected": [
+          "clarify"
+        ],
+        "result": {
+          "assistance": "independent",
+          "contextHash": "sha256-v1:569175103500a74583f5031e56091189fcb1414327da588d5877ef39cc171945",
+          "criteria": [
+            {
+              "evidence": [
+                {
+                  "end": 110,
+                  "kind": "input_span",
+                  "start": 0,
+                  "value": "Endocytose. Es ist in Wirklichkeit Exocytose. Es ist in Wirklichkeit Exocytose. Es ist in Wirklichkeit Osmose."
+                }
+              ],
+              "id": "M6.02.C01",
+              "reasonCode": "OSMOSIS_UNASSESSED",
+              "status": "clarify"
+            }
+          ],
+          "feedbackCode": "OSMOSIS_UNASSESSED",
+          "rubricVersion": "review3-rubric-20261023",
+          "status": "clarify",
+          "taskId": "M6.02",
+          "taskVersion": "review3-task-20261023",
+          "unassessedRelevantText": true
+        },
+        "feedback": "Die Formulierung oder ein relevanter Zusatz lässt sich in diesem Benennungsfeld nicht vollständig prüfen. Präzisiere die Benennung; ungeprüfte Aussagen werden nicht bestätigt."
+      },
+      {
+        "id": "retraction-osmosis-3",
+        "group": "repeated-retraction",
+        "field": "osmosis",
+        "text": "Nicht Endocytose, sondern Exocytose. Es ist in Wirklichkeit Osmose.",
+        "expected": [
+          "clarify"
+        ],
+        "result": {
+          "assistance": "independent",
+          "contextHash": "sha256-v1:569175103500a74583f5031e56091189fcb1414327da588d5877ef39cc171945",
+          "criteria": [
+            {
+              "evidence": [
+                {
+                  "end": 67,
+                  "kind": "input_span",
+                  "start": 0,
+                  "value": "Nicht Endocytose, sondern Exocytose. Es ist in Wirklichkeit Osmose."
+                }
+              ],
+              "id": "M6.02.C01",
+              "reasonCode": "OSMOSIS_UNASSESSED",
+              "status": "clarify"
+            }
+          ],
+          "feedbackCode": "OSMOSIS_UNASSESSED",
+          "rubricVersion": "review3-rubric-20261023",
+          "status": "clarify",
+          "taskId": "M6.02",
+          "taskVersion": "review3-task-20261023",
+          "unassessedRelevantText": true
+        },
+        "feedback": "Die Formulierung oder ein relevanter Zusatz lässt sich in diesem Benennungsfeld nicht vollständig prüfen. Präzisiere die Benennung; ungeprüfte Aussagen werden nicht bestätigt."
+      },
+      {
+        "id": "retraction-osmosis-4",
+        "group": "repeated-retraction",
+        "field": "osmosis",
+        "text": "Osmose. Es ist in Wirklichkeit Endocytose. Es ist in Wirklichkeit Osmose.",
+        "expected": [
+          "clarify"
+        ],
+        "result": {
+          "assistance": "independent",
+          "contextHash": "sha256-v1:569175103500a74583f5031e56091189fcb1414327da588d5877ef39cc171945",
+          "criteria": [
+            {
+              "evidence": [
+                {
+                  "end": 73,
+                  "kind": "input_span",
+                  "start": 0,
+                  "value": "Osmose. Es ist in Wirklichkeit Endocytose. Es ist in Wirklichkeit Osmose."
+                }
+              ],
+              "id": "M6.02.C01",
+              "reasonCode": "OSMOSIS_UNASSESSED",
+              "status": "clarify"
+            }
+          ],
+          "feedbackCode": "OSMOSIS_UNASSESSED",
+          "rubricVersion": "review3-rubric-20261023",
+          "status": "clarify",
+          "taskId": "M6.02",
+          "taskVersion": "review3-task-20261023",
+          "unassessedRelevantText": true
+        },
+        "feedback": "Die Formulierung oder ein relevanter Zusatz lässt sich in diesem Benennungsfeld nicht vollständig prüfen. Präzisiere die Benennung; ungeprüfte Aussagen werden nicht bestätigt."
+      },
+      {
+        "id": "retraction-osmosis-confirmation",
+        "group": "retraction-control",
+        "field": "osmosis",
+        "text": "Endocytose. Es ist in Wirklichkeit Osmose. Es ist in Wirklichkeit Osmose.",
+        "expected": [
+          "correct"
+        ],
+        "result": {
+          "assistance": "independent",
+          "contextHash": "sha256-v1:569175103500a74583f5031e56091189fcb1414327da588d5877ef39cc171945",
+          "criteria": [
+            {
+              "evidence": [
+                {
+                  "end": 41,
+                  "kind": "input_span",
+                  "start": 0,
+                  "value": "Endocytose. Es ist in Wirklichkeit Osmose"
+                },
+                {
+                  "end": 72,
+                  "kind": "input_span",
+                  "start": 43,
+                  "value": "Es ist in Wirklichkeit Osmose"
+                }
+              ],
+              "id": "M6.02.C01",
+              "reasonCode": "OSMOSIS_CORRECT",
+              "status": "correct"
+            }
+          ],
+          "feedbackCode": "OSMOSIS_CORRECT",
+          "rubricVersion": "review3-rubric-20261023",
+          "status": "correct",
+          "taskId": "M6.02",
+          "taskVersion": "review3-task-20261023",
+          "unassessedRelevantText": false
+        },
+        "feedback": "Der Wassertransport durch die selektive Grenze heißt hier Osmose. Das bestätigt die Benennung, nicht die übrigen Teilantworten."
+      },
+      {
+        "id": "retraction-osmosis-exclusion",
+        "group": "retraction-control",
+        "field": "osmosis",
+        "text": "Nicht Osmose, sondern Osmose. Es ist in Wirklichkeit Osmose.",
+        "expected": [
+          "incorrect"
+        ],
+        "result": {
+          "assistance": "independent",
+          "contextHash": "sha256-v1:569175103500a74583f5031e56091189fcb1414327da588d5877ef39cc171945",
+          "criteria": [
+            {
+              "evidence": [
+                {
+                  "end": 28,
+                  "kind": "input_span",
+                  "start": 0,
+                  "value": "Nicht Osmose, sondern Osmose"
+                },
+                {
+                  "end": 59,
+                  "kind": "input_span",
+                  "start": 30,
+                  "value": "Es ist in Wirklichkeit Osmose"
+                }
+              ],
+              "id": "M6.02.C01",
+              "reasonCode": "OSMOSIS_CONTRADICTION",
+              "status": "incorrect"
+            }
+          ],
+          "feedbackCode": "OSMOSIS_CONTRADICTION",
+          "rubricVersion": "review3-rubric-20261023",
+          "status": "incorrect",
+          "taskId": "M6.02",
+          "taskVersion": "review3-task-20261023",
+          "unassessedRelevantText": false
+        },
+        "feedback": "Deine Aussagen bestätigen und verneinen denselben Vorgang oder eine seiner geprüften Eigenschaften. Gib eine widerspruchsfreie Benennung an."
+      },
+      {
+        "id": "retraction-tonoplast-1",
+        "group": "repeated-retraction",
+        "field": "tonoplast",
+        "text": "Zellwand. Es ist in Wirklichkeit Zellmembran. Es ist in Wirklichkeit Tonoplast.",
+        "expected": [
+          "clarify"
+        ],
+        "result": {
+          "assistance": "independent",
+          "contextHash": "sha256-v1:f3f33cf58329df714e30ba64015a61f7714800968956db1cef07b46a79101362",
+          "criteria": [
+            {
+              "evidence": [
+                {
+                  "end": 79,
+                  "kind": "input_span",
+                  "start": 0,
+                  "value": "Zellwand. Es ist in Wirklichkeit Zellmembran. Es ist in Wirklichkeit Tonoplast."
+                }
+              ],
+              "id": "Z1.02.C01",
+              "reasonCode": "TONOPLAST_UNASSESSED",
+              "status": "clarify"
+            }
+          ],
+          "feedbackCode": "TONOPLAST_UNASSESSED",
+          "rubricVersion": "review3-rubric-20261023",
+          "status": "clarify",
+          "taskId": "Z1.02",
+          "taskVersion": "review3-task-20261023",
+          "unassessedRelevantText": true
+        },
+        "feedback": "Diese Formulierung oder ihr Zusatz lässt sich in diesem Benennungsfeld nicht vollständig prüfen. Nenne die Membran kurz; der ungeprüfte Teil erhält keine fachliche Zustimmung."
+      },
+      {
+        "id": "retraction-tonoplast-2",
+        "group": "repeated-retraction",
+        "field": "tonoplast",
+        "text": "Zellwand. Es ist in Wirklichkeit Zellmembran. Es ist in Wirklichkeit Zellmembran. Es ist in Wirklichkeit Tonoplast.",
+        "expected": [
+          "clarify"
+        ],
+        "result": {
+          "assistance": "independent",
+          "contextHash": "sha256-v1:f3f33cf58329df714e30ba64015a61f7714800968956db1cef07b46a79101362",
+          "criteria": [
+            {
+              "evidence": [
+                {
+                  "end": 115,
+                  "kind": "input_span",
+                  "start": 0,
+                  "value": "Zellwand. Es ist in Wirklichkeit Zellmembran. Es ist in Wirklichkeit Zellmembran. Es ist in Wirklichkeit Tonoplast."
+                }
+              ],
+              "id": "Z1.02.C01",
+              "reasonCode": "TONOPLAST_UNASSESSED",
+              "status": "clarify"
+            }
+          ],
+          "feedbackCode": "TONOPLAST_UNASSESSED",
+          "rubricVersion": "review3-rubric-20261023",
+          "status": "clarify",
+          "taskId": "Z1.02",
+          "taskVersion": "review3-task-20261023",
+          "unassessedRelevantText": true
+        },
+        "feedback": "Diese Formulierung oder ihr Zusatz lässt sich in diesem Benennungsfeld nicht vollständig prüfen. Nenne die Membran kurz; der ungeprüfte Teil erhält keine fachliche Zustimmung."
+      },
+      {
+        "id": "retraction-tonoplast-3",
+        "group": "repeated-retraction",
+        "field": "tonoplast",
+        "text": "Nicht Zellwand, sondern Zellmembran. Es ist in Wirklichkeit Tonoplast.",
+        "expected": [
+          "clarify"
+        ],
+        "result": {
+          "assistance": "independent",
+          "contextHash": "sha256-v1:f3f33cf58329df714e30ba64015a61f7714800968956db1cef07b46a79101362",
+          "criteria": [
+            {
+              "evidence": [
+                {
+                  "end": 70,
+                  "kind": "input_span",
+                  "start": 0,
+                  "value": "Nicht Zellwand, sondern Zellmembran. Es ist in Wirklichkeit Tonoplast."
+                }
+              ],
+              "id": "Z1.02.C01",
+              "reasonCode": "TONOPLAST_UNASSESSED",
+              "status": "clarify"
+            }
+          ],
+          "feedbackCode": "TONOPLAST_UNASSESSED",
+          "rubricVersion": "review3-rubric-20261023",
+          "status": "clarify",
+          "taskId": "Z1.02",
+          "taskVersion": "review3-task-20261023",
+          "unassessedRelevantText": true
+        },
+        "feedback": "Diese Formulierung oder ihr Zusatz lässt sich in diesem Benennungsfeld nicht vollständig prüfen. Nenne die Membran kurz; der ungeprüfte Teil erhält keine fachliche Zustimmung."
+      },
+      {
+        "id": "retraction-tonoplast-4",
+        "group": "repeated-retraction",
+        "field": "tonoplast",
+        "text": "Tonoplast. Es ist in Wirklichkeit Zellwand. Es ist in Wirklichkeit Tonoplast.",
+        "expected": [
+          "clarify"
+        ],
+        "result": {
+          "assistance": "independent",
+          "contextHash": "sha256-v1:f3f33cf58329df714e30ba64015a61f7714800968956db1cef07b46a79101362",
+          "criteria": [
+            {
+              "evidence": [
+                {
+                  "end": 77,
+                  "kind": "input_span",
+                  "start": 0,
+                  "value": "Tonoplast. Es ist in Wirklichkeit Zellwand. Es ist in Wirklichkeit Tonoplast."
+                }
+              ],
+              "id": "Z1.02.C01",
+              "reasonCode": "TONOPLAST_UNASSESSED",
+              "status": "clarify"
+            }
+          ],
+          "feedbackCode": "TONOPLAST_UNASSESSED",
+          "rubricVersion": "review3-rubric-20261023",
+          "status": "clarify",
+          "taskId": "Z1.02",
+          "taskVersion": "review3-task-20261023",
+          "unassessedRelevantText": true
+        },
+        "feedback": "Diese Formulierung oder ihr Zusatz lässt sich in diesem Benennungsfeld nicht vollständig prüfen. Nenne die Membran kurz; der ungeprüfte Teil erhält keine fachliche Zustimmung."
+      },
+      {
+        "id": "retraction-tonoplast-confirmation",
+        "group": "retraction-control",
+        "field": "tonoplast",
+        "text": "Zellwand. Es ist in Wirklichkeit Tonoplast. Es ist in Wirklichkeit Tonoplast.",
+        "expected": [
+          "correct"
+        ],
+        "result": {
+          "assistance": "independent",
+          "contextHash": "sha256-v1:f3f33cf58329df714e30ba64015a61f7714800968956db1cef07b46a79101362",
+          "criteria": [
+            {
+              "evidence": [
+                {
+                  "end": 42,
+                  "kind": "input_span",
+                  "start": 0,
+                  "value": "Zellwand. Es ist in Wirklichkeit Tonoplast"
+                },
+                {
+                  "end": 76,
+                  "kind": "input_span",
+                  "start": 44,
+                  "value": "Es ist in Wirklichkeit Tonoplast"
+                }
+              ],
+              "id": "Z1.02.C01",
+              "reasonCode": "TONOPLAST_CORRECT",
+              "status": "correct"
+            }
+          ],
+          "feedbackCode": "TONOPLAST_CORRECT",
+          "rubricVersion": "review3-rubric-20261023",
+          "status": "correct",
+          "taskId": "Z1.02",
+          "taskVersion": "review3-task-20261023",
+          "unassessedRelevantText": false
+        },
+        "feedback": "Richtig: Der Tonoplast grenzt den Vakuolenraum vom Cytosol ab."
+      },
+      {
+        "id": "retraction-tonoplast-exclusion",
+        "group": "retraction-control",
+        "field": "tonoplast",
+        "text": "Nicht Tonoplast, sondern Tonoplast. Es ist in Wirklichkeit Tonoplast.",
+        "expected": [
+          "incorrect"
+        ],
+        "result": {
+          "assistance": "independent",
+          "contextHash": "sha256-v1:f3f33cf58329df714e30ba64015a61f7714800968956db1cef07b46a79101362",
+          "criteria": [
+            {
+              "evidence": [
+                {
+                  "end": 34,
+                  "kind": "input_span",
+                  "start": 0,
+                  "value": "Nicht Tonoplast, sondern Tonoplast"
+                },
+                {
+                  "end": 68,
+                  "kind": "input_span",
+                  "start": 36,
+                  "value": "Es ist in Wirklichkeit Tonoplast"
+                }
+              ],
+              "id": "Z1.02.C01",
+              "reasonCode": "TONOPLAST_CONTRADICTION",
+              "status": "incorrect"
+            }
+          ],
+          "feedbackCode": "TONOPLAST_CONTRADICTION",
+          "rubricVersion": "review3-rubric-20261023",
+          "status": "incorrect",
+          "taskId": "Z1.02",
+          "taskVersion": "review3-task-20261023",
+          "unassessedRelevantText": false
+        },
+        "feedback": "Du bestätigst und verneinst dieselbe Benennung beziehungsweise dieselbe Membranbeziehung. Gib eine widerspruchsfreie Antwort für die markierte Grenze."
+      }
+    ],
     "novelty": {
       "knownStrings": 6749,
       "fresh": 40,
@@ -1080,26 +1524,28 @@
       "index.html": "bfad6ec651669679ca18461711cb577f8ee6b7406456b9fa56f4981468b2d1fa"
     },
     "protectedFilesUnchanged": 21,
-    "publicResultHash": "85c2315de93d878df6d2f84d0d19cedd302cf27a707bf19f13be91c525b66f28",
+    "publicResultHash": "3f6a8f11715734fa8aad07776e65dd1cbfb8b6b798328194a965306107f2dbc3",
     "localEvidenceSHA256": {
+      "qa/generated/p02b-fourth-retraction-results.json": "c2eab864a7978c0b533ee07a14f33172d8c32742c0953ec4751a685a462db1b9",
+      "qa/generated/p02b-fourth-retraction-check.json": "6c3ad39ff1ebd769242ce0427d8ccceb2aa4d765373a82a4bdec26ee2414552f",
       "qa/generated/p02b-fourth-before-complete.json": "9e41c130f23ea2f0e6c3b2ff8c81bc3d46c84374294a3592e17afa4e56b13859",
       "qa/generated/p02b-fourth-confirmation-fix.json": "9834ed3178347f132bba12e1a42887d3bd1cf4092e725acf9536e7af1f452791",
       "qa/generated/p02b-fourth-existing-unit.json": "82637258b14f8686b26202d2a324a43592c56640cbf89ae3e0af28ec766ba5b0",
       "qa/generated/p02b-fourth-syntax-first.json": "abfc7f67788c14f284767a1582e1aaef6c82adb604c3b161d3be263d6fe8867f",
       "qa/generated/p02b-fourth-syntax-second.json": "25d4f40fb8772ec3a325393af1e3235751a26457048a4432d3ef5c04d853733f",
       "qa/generated/p02b-fourth-syntax-third.json": "5306d7d9c7bad3c98a4f674f13d1028795397a488becba53b165218141bb7f88",
-      "qa/generated/p02b-fourth-final-check.log": "e4df86dfd100fcf9790baae780006a60665d7a7398ce2b9fe8f04d175290e81f",
-      "qa/generated/unit.json": "7e6c7a4c79bcc8c5ef38fd10b073e49250bd8a6f9fdd04069d189a934d3e205d",
-      "qa/generated/content.json": "28b86466dc250ff9be225a679cbf092a6f4831ba6db989316a06a5bc2b7b16f8",
-      "qa/generated/build.json": "1d9940df4d184dd9cb7187374c04b6bb43eb2a67b8692e5fc8c2e79984dbb4b2",
-      "qa/generated/playwright.json": "9aa87bb9d15b8ec230286d096f8535298fbaa958cfd593c6ad015498abc21581",
-      "qa/generated/p02b-fourth-final-guards.json": "b856f33aa474b9516a61e1653c120cce0d4bf8693c254ae91b389c408cc18bd5",
-      "qa/generated/p02b-fourth-ci-annotations.json": "ff9abb55223a9763143f3e75ad815b3cffdc881ca3234c819c4254510376372b",
+      "qa/generated/p02b-fourth-final-retraction-check.log": "9ee1fd825103eb838e659b204a4c4189bc4372b90594e7e043c1687fd7d10e9c",
+      "qa/generated/unit.json": "57daa0cfd41276b9af95655b687e3647583074f7a5854fc430845676ed0f7ff0",
+      "qa/generated/content.json": "56bd061a65f6ee3bf4e103a0cd35b49e2cda66074daab5bf10d8598133213b55",
+      "qa/generated/build.json": "f731da4bc6b5efe96ed5b3efcf73ce5faa585aa390618eeafc87416771cba08c",
+      "qa/generated/playwright.json": "674a4cb65c48d45e8b6eca3aaefb9931e78de8857567c1ceaeab292bc88d3794",
+      "qa/generated/p02b-fourth-final-guards.json": "2d1a79d5d5494d04339fab7f7be07e8d3f295729c06bd7ae739f8d93f651b40c",
+      "qa/generated/p02b-fourth-ci-annotations.json": "ae37625c464a3868dfd24d54e1574df29b5d98797c5e284b85bee0d0953ba331",
       "qa/generated/p02b-fourth-dist-hashes.json": "302bb391c47d7a3014b7bd442945354f1dce5b64228906a0517efbe9c4ecd32f",
       "qa/generated/p02b-fourth-novelty.json": "f100a7d465d16ee3707360a2248516ae9afee100a7a7d9278d23d0755e64e454",
       "qa/generated/p02b-fourth-novelty-final.json": "fe273a77b7103168d04252a717ed3837187bb9622b76115f9afa6f7c442526b7"
     },
-    "publication": "162 working/historical files at runtime commit; two final report files added on existing exact allowlist. Four dist files and three local asset URLs unchanged."
+    "publication": "164 working/historical files at runtime commit; existing exact allowlist unchanged. Four dist files and three local asset URLs unchanged."
   },
   "executedCommands": [
     "npm run check:types",
@@ -1109,21 +1555,22 @@
     "node --experimental-transform-types <external-review-package>/run-review.mjs <repository> qa/generated/p02b-fourth-final-guards.json",
     "CI: WEBKIT_SUITE=baseline npx playwright test --config=playwright.webkit.config.ts",
     "CI: WEBKIT_SUITE=additional npx playwright test --config=playwright.webkit.config.ts",
-    "gh run view 39915710808; Actions jobs and check-run annotations read",
+    "gh run view 39917331953; Actions jobs and check-run annotations read",
     "npm run check:publish; git diff --check"
   ],
   "caseCounts": {
-    "passed": 3718,
+    "passed": 3720,
     "failed": 3,
     "skipped": 0
   },
   "newCases": [
     "tests/fixtures/p02b-20261023-r2-cases.ts: 176 main +34 targeted +368 known; now regression, not new independent recognition",
     "tests/fixtures/p02b-20261023-r2-fresh.ts and -additions.ts: 40 genuinely new short sentences, 2 retained known overlaps, 336 derived contrasts; self-check",
-    "tests/unit/p02b-fourth.test.ts: 1042 tests including 956 raw evaluations, source identity, repeated/contradictory evidence and cross-field metamorphisms"
+    "tests/unit/p02b-fourth.test.ts: 1044 tests including 956 raw evaluations and repeated-retraction boundaries, source identity, repeated/contradictory evidence and cross-field metamorphisms"
   ],
   "blockedChecks": [
     "Fresh independent countercheck on new unknown cases after this fix",
+    "Runtime-commit Linux CI build still at browser dependency installation at report time; local full check and current WebKit completed. Final-head CI status is recorded separately in the PR.",
     "Real Safari/named iPad device and keyboard/background/orientation checks; no device attached",
     "Local WebKit executable unavailable; actual current WebKit run executed on macOS CI instead",
     "Firefox and real learner language/pilot sample",
@@ -1132,8 +1579,8 @@
     "main unprotected; proposal only requires build; administrator must decide required checks/review and deployment gate"
   ],
   "criticalFindings": [
-    "Three standard-Tab WebKit focus checks remain failed; overall Actions run failure. Option-Tab and focused activation pass separately. No UI change authorised.",
-    "Reported P1 false-red confirmation bug fixed in all 12 supplied confirmations and both fields; fresh independent reassessment remains required."
+    "Three standard-Tab WebKit focus checks remain failed; WebKit job failure; the overall run is not green. Option-Tab and focused activation pass separately. No UI change authorised.",
+    "Reported P1 false-red confirmation bug fixed in all 12 supplied confirmations and both fields; fresh independent reassessment remains required. Additional withdrawn-intermediate-name bug found at 9478d56 and bounded to clarify with 12 extra executed diagnostics."
   ],
   "releaseStatus": "blocked"
 }

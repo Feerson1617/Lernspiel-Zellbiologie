@@ -154,6 +154,11 @@ Benennungsaussagen mit beiden Originalspannen. „Es/Das ist in Wirklichkeit …
 erzeugt nur bei einem anderen vorherigen Einzelbegriff einen Kontrast. Die
 Widerspruchsprüfung gleicher IDs in echten Ausschlüssen bleibt bestehen.
 Fachliche Aussagen, Alternativen und ungeprüfte Reste werden nicht zurückgenommen.
+Eine weitere Änderung einer schon korrigierten Einzelbenennung oder einer
+Kontrastauswahl überschreitet den hier unterstützten T1-Umfang: `clarify` mit
+vollständiger Originalevidenz. Dadurch wird eine zurückgenommene Zwischenbenennung
+nicht als weiterhin aktiver Fachfehler gewertet. Eine bloße Bestätigung der
+bereits gewählten Benennung bleibt auswertbar; echte Ausschlüsse bleiben erhalten.
 
 Zusätzliche Satzkonstruktionen kombinieren nominale Wortwahl, Teilfragenbezug,
 Benennungsverben und notwendige Schlussverben. Referenzen haben eine begrenzte
@@ -165,6 +170,7 @@ Nachweis: `qa/P02b-Vierte-Nachbesserung.md`, `qa/p02b-fourth-review.json` und
 `qa/p02b-fourth-results.json`. 176 Haupt-, 34 Diagnose- und 368 bekannte Fälle
 sind Regression; 40 zusätzliche neue Kurzbenennungen sind Selbstprüfung.
 Längere richtige Erklärungen bleiben mit allen gelben Ergebnissen im Nenner.
+Zwölf zusätzliche Rücknahme-Diagnosen werden getrennt von der Sprachquote berichtet.
 WebKit-Standard-Tab-Fehler bleiben offen; weitere Gegenprüfung muss neue Fälle nutzen.
 
 Grundlagen: C, M6.02 in F/`spec/tasks.json`, `TERM_OSMOSIS`, `M6.02.C01`,

@@ -2,12 +2,12 @@
 
 **Selbstprüfung. Kein Merge, kein P02c, keine Unterrichtsfreigabe.**
 
-Anwendungs-/Testfassung: `8db3eba0998173ede146feedefcf7babf417c6c9`. Ausgang: `7393548c885cfe467b284808f873c90c43997fb8`.
+Anwendungs-/Testfassung: `435843b1a44282199bd8eda01523eb3e7cbadf65`. Ausgang: `7393548c885cfe467b284808f873c90c43997fb8`.
 [PR #6](https://github.com/Feerson1617/Lernspiel-Zellbiologie/pull/6) gegen `main`
 (`b155936443745d98c8133788872c9c5ff44d7fb2`). Ein folgender Abgabecommit ergänzt
 Berichte/Provenienz und Dokumentationsverweise, keine Runtime-/Testlogik.
 Endgültiger Head und dessen CI-Lauf stehen in der PR-Beschreibung.
-Berichtszeit: 2026-10-23T09:14:02+02:00, Europe/Berlin.
+Berichtszeit: 2026-10-23T09:30:20+02:00, Europe/Berlin.
 
 ## Befund und Änderung
 
@@ -21,6 +21,19 @@ Die Gleichheitsprüfung in echten Kontrasten bleibt unverändert: „Nicht Osmos
 sondern Osmose“ ist weiterhin widersprüchlich. Fachliche Gegenbehauptungen,
 konkurrierende Alternativen und unbekannte Reste werden nicht zurückgenommen.
 Alle 34 gezielten Diagnosefälle bestehen, darunter alle zwölf Bestätigungen.
+
+Eine zusätzliche eigene Abschlussprobe auf `9478d56` fand einen weiteren Randfall:
+„Endocytose. Es ist in Wirklichkeit Exocytose. Es ist in Wirklichkeit Osmose.“
+wurde wegen der bereits zurückgenommenen Zwischenbenennung falsch rot;
+analog „Zellwand … Zellmembran … Tonoplast“. Dieser Befund wurde vor Abschluss
+korrigiert und nicht als bestandener Zwischenstand ausgegeben. T1 unterstützt
+hier eine geänderte Einzelbenennung; ein weiterer Wechsel oder eine Änderung
+einer Kontrastauswahl führt ausdrücklich zu `clarify` mit vollständiger
+Originalevidenz. Bestätigung der bereits gewählten Benennung bleibt gültig;
+echte widersprüchliche Ausschlüsse bleiben rot. Keine pauschale spätere
+Satzdominanz. Zwölf weitere quellgeleitete Diagnosefälle (acht `clarify`, zwei
+`correct`, zwei `incorrect`) sind separat mit allen Rohresultaten enthalten und
+im Browser sowie gegen das Ergebnisschema ausgeführt; keine neue Sprachquote.
 
 `naming-syntax.ts` ergänzt begrenzte Verb-/Nominalgruppenkomposition: vor- und
 nachgestelltes „als Bezeichnung“, Antwortverben, Modalverben mit zwingendem
@@ -166,11 +179,11 @@ am genannten Commit, Exit 0:
 
 | Prüfung | Bestanden | Fehlgeschlagen | Übersprungen |
 |---|---:|---:|---:|
-| Unit | 3403 | 0 | 0 |
+| Unit | 3405 | 0 | 0 |
 | Inhalt/Schema | 185 | 0 | 0 |
 | Build | 19 | 0 | 0 |
 | Chromium Desktop/Tablet/Mobile | 57 | 0 | 0 |
-| Technisch lokal gesamt | 3664 | 0 | 0 |
+| Technisch lokal gesamt | 3666 | 0 | 0 |
 | Konzeptprüfung, separat | 694 | 0 | 0 |
 
 TypeScript strict, Katalog, Produktionsbuild und Veröffentlichungsschutz bestanden.
@@ -192,29 +205,35 @@ Die historische Neuheitsprüfung der dritten Revision vergleicht ihren damaligen
 Bestand; später wiederholte Sätze können damalige Neuheit nicht rückwirkend ändern.
 Ihre Fall-/Hash-/Live-Statusprüfungen bleiben erhalten.
 
-Alle 956 aktuellen Ergebnisobjekte zusätzlich gegen das unveränderte JSON Schema
-validiert; zusammen mit den bestehenden Beständen 2574 Schemaobjekte. Die 694
+Alle 956 aktuellen Korpusobjekte sowie zwölf zusätzliche Rücknahme-Diagnosen gegen das
+unveränderte JSON Schema validiert; zusammen mit bestehenden Beständen 2586 Schemaobjekte. Die 694
 Konzeptchecks sind deklarative/redaktionelle Prüfungen, keine zusätzlichen
 biologischen Runtimefälle.
 
 ## Browser und CI
 
-[Eigener CI-Lauf 39915710808](https://github.com/Feerson1617/Lernspiel-Zellbiologie/actions/runs/39915710808)
-auf `8db3eba0998173ede146feedefcf7babf417c6c9`: Build **success**, WebKit **failure**,
-Gesamtlauf **failure**, Pages-Upload/Deployment im PR übersprungen.
+[Eigener CI-Lauf 39917331953](https://github.com/Feerson1617/Lernspiel-Zellbiologie/actions/runs/39917331953)
+auf `435843b1a44282199bd8eda01523eb3e7cbadf65`: Build **in_progress**, WebKit **failure**,
+Gesamtlauf **in_progress** zum Berichtszeitpunkt. Der Linux-Job verbleibt
+bei der Chromium-/Systemabhängigkeitsinstallation; sein Anwendungscheck wird
+nicht als durchgeführt behauptet. Lokaler vollständiger Check und WebKit sind
+oben tatsächlich abgeschlossen. Ein folgender Dokumentations-Push kann den
+noch laufenden Vorgängerlauf gemäß bestehender Workflow-Konfiguration abbrechen.
+Der finale Head/CI-Status wird separat in der PR-Beschreibung ausgewiesen.
+Pages-Upload/Deployment sind im PR nicht freigeschaltet.
 Job-/Schrittergebnisse und vollständige kompakte WebKit-Check-Annotations selbst
 abgerufen; kein Lesen nicht zugänglicher Vollprotokolle behauptet.
 
 WebKit: **54/57 bestanden, 3 fehlgeschlagen**, 0 skipped/flaky.
 Standardbestand **45/48**, Zusatzbestand **9/9** (einschließlich drei neuer
-956-Fälle-Prüfungen). Dieselben drei `start.spec.ts`-Standard-Tab-Prüfungen
+968-Fälle-Prüfungen). Dieselben drei `start.spec.ts`-Standard-Tab-Prüfungen
 scheitern auf macOS für Desktop/Tablet/Mobile: Tab → BODY, Option-/Alt-Tab →
 Sprunglink. Explizit fokussierte Links aktivieren korrekt. Kein stilles Umstellen
 oder Überspringen der Standardtests und kein grüner Gesamtlauf. Ursache nicht
 pauschal als behobener Produktfehler ausgegeben. WebKit 27.2, macOS arm64;
 lokal kein WebKit-Executable vorhanden. Echter Safari/iPad bleibt offen.
 
-Neue Browserauswertung: 956 ×3 Profile ×2 Engines = **5736** tatsächliche
+Neue Browserauswertung: (956 +12) ×3 Profile ×2 Engines = **5808** tatsächliche
 Runtimeauswertungen. Vollständige Node-Parität, UTF-16-Originalspannen, Kontext,
 Feedback und Statusdeskriptoren geprüft, keine externen Anfragen/Browserfehler,
 keine Markupausführung, fremder Storage-Sentinel erhalten. Der Harness bündelt
@@ -230,10 +249,9 @@ Vier `dist`-Dateien byte-/SHA256-identisch mit dem Ausgang; drei lokale
 Assetverweise unter `/Lernspiel-Zellbiologie/`. Keine neuen externen Requests,
 Abhängigkeiten, Paket-/Lockfileänderungen oder Runtimeimporte redaktioneller Daten.
 Zwölf echte negative Vite-Importbuilds einschließlich aller neuen Fixtures/`?raw`
-werden blockiert. Der lokale vollständige Lauf prüfte 162 exakt freigegebene
-Arbeitsbaum- und historische Pfade; die zwei finalen Berichte wurden ebenfalls
-explizit freigegeben und erneut geprüft (164 Arbeitsbaumpfade, vor dem
-Abgabecommit noch 162 historische Pfade). Keine ZIP-/Originalquellen in Git/dist.
+werden blockiert. Der lokale vollständige Lauf prüfte 164 exakt freigegebene
+Arbeitsbaum- und historische Pfade einschließlich der Berichte;
+die Abschlussdokumentation wird erneut geprüft. Keine ZIP-/Originalquellen in Git/dist.
 Eigener privater Originalvergleich nicht möglich; die fremden Hash-/Textscans
 werden nicht als selbst wiederholt ausgegeben.
 
@@ -248,7 +266,8 @@ Deployment-Abhängigkeit festlegen. Kein Einstellungswechsel oder Merge ausgefü
 
 - `qa/p02b-fourth-results.json`: alle 956 vollständigen tatsächlichen Ergebnisse,
   Originaltexte/IDs/Sollwerte, separate akzeptierte Mengen, Feedback, Ausgangs-
-  und Endverteilungen, 41 Roh-Soll-Abweichungen sowie alle 69 Schutzprüfungen.
+  und Endverteilungen, 41 Roh-Soll-Abweichungen, zwölf zusätzliche Rücknahme-
+  Diagnosen sowie alle 69 Schutzprüfungen.
 - `qa/p02b-fourth-review.json`: schemafähiges Selbstprüfmanifest, SHA/Versionen,
   Befehle, Zahlen, aktuelle CI-Belege, Quellen-/Dateihashes und Restliste.
 - Lokale Vollprotokolle/JSON/Screenshots bleiben in ignorierten `qa/generated/`

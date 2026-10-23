@@ -166,7 +166,8 @@ einschließlich ursprünglicher Sollwerte in `qa/p02b-third-results.json`.
 Die vierte Nachbesserung trennt bestätigende Wiederholung/Synonyme von echter
 Korrektur und erweitert kurze Benennungsrahmen. Aktueller Selbstprüfbericht:
 `qa/P02b-Vierte-Nachbesserung.md` / `qa/p02b-fourth-review.json`, vollständige
-956 Rohresultate in `qa/p02b-fourth-results.json`. Drei Standard-Tab-Fokusprüfungen
+956 Korpusresultate und zwölf zusätzliche Rücknahme-Diagnosen in
+`qa/p02b-fourth-results.json`. Drei Standard-Tab-Fokusprüfungen
 in WebKit bleiben fehlgeschlagen; keine Merge- oder Unterrichtsfreigabe.
 
 Keine konkreten fachlichen Modellversionen werden vergeben. Weitere Textfelder,
