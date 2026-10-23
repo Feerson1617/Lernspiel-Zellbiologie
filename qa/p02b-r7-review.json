@@ -1,36 +1,157 @@
 {
   "reviewId": "P02b-ninth-revision-self-check-2026-10-23-R7",
   "reviewKind": "self_check",
-  "commitSha": null,
+  "commitSha": "0145ac2268428422ea82fd90b4838b41e2d8543e",
   "sourceVersions": [
-    "Unchanged product runtime at 8258b6dc3c8f1724a9fb1e7c72746100dc542f2b; R7 fixtures copied with original IDs/texts/Soll/metadata"
+    "AGENTS and protected C/D/F/tasks/rubrics/context/result/progress contracts unchanged",
+    "Current product runtime unchanged from 8258b6dc3c8f1724a9fb1e7c72746100dc542f2b; runtime implementation 3194330eb0d92f3edea5b8c3915087d9667bf6b5",
+    "R7 explicit review8 task/rubric-20261023, concept-1.0-20261023, review-no-simulation test bindings; no invented product model version",
+    "74 archive hashes verified; all original IDs/texts/Soll/optional metadata and three old adjudications preserved"
   ],
   "environment": {
-    "status": "draft, complete final suites pending"
+    "node": "24.19.0",
+    "npm": "11.9.0",
+    "python": "3.12.14",
+    "jsonschema": "4.26.0",
+    "chromium": "154.0.8037.57",
+    "os": "Linux x86_64",
+    "testedAtBerlin": "2026-10-23T18:35:36.937708+02:00",
+    "sourceHashes": {
+      "src/main.ts": "7fbb4dbf716451a2dc95106696b530ff69f9f0c7e1d96636e6a8eb0f9ff62da5",
+      "src/biology/README.md": "2efccf26621991b7d955e26fbdfdd5511e1228e8e1fc4dae98efd1a654e358a3",
+      "src/ui/styles.css": "8c4d5f98276328b366f4311e669383ff0453bde5bd7ed1402fa52973ea37d7c9",
+      "src/ui/start-page.ts": "0c21ffd5cba3170eea4a6abf8a8feeb1d14997537c4f6c89766e0a7f95d75d11",
+      "src/ui/README.md": "9468d9ad2aae6632619cf8a4953741cf9144184323f1236d4615a296077e470f",
+      "src/ui/feedback-presentation.ts": "f3e022c3a871cd1415a050110934f2b972b9ab751858ff01aa7683c8dc6eea55",
+      "src/assets/README.md": "9cdf01c230c92c0044df3187b81b5a787aaeefc4cf9fad0f8b8ac92b79b88f2a",
+      "src/assets/favicon.svg": "aa985a2fdd116dc0dbecda5e953bc794ee0d8b57808ea234e8fce79bae75a37e",
+      "src/render2d/README.md": "19d8ee27d670e09e3ca0cbcedba3b135689ed6d9a2de21e132118cedf890ec91",
+      "src/domain/context-data.ts": "b9fcb6a9a30e0c222fd26a1b7e4cf2d04c449cecae8281e75ae42a39600797f5",
+      "src/domain/task-context.ts": "12defb994a612253ea8c2fded96b547ddce0d91526f47f6c3409fe79ce5c86b9",
+      "src/domain/units.ts": "ba2088e4a82ff207a787f060b1010342a56e936504f84c2e23d2eb91782d7539",
+      "src/domain/contracts.ts": "16afa9c87c9f618acd8d32d29203e27adef4f713957170722a14aa648d0ca432",
+      "src/domain/README.md": "065261cd9d0c4cfa7da2a000dde64ddc299ab79021c96008c1963d8e8a00a896",
+      "src/domain/identities.ts": "d2faf02fb314b82a61133b92adc9641eee524f4dfa3476f2a276bae75517001a",
+      "src/domain/catalog.ts": "f7ceac0ce6b2019f27dc0003caa86a91c9502fa9433647f45fe72e4b960d7b0f",
+      "src/domain/progress.ts": "8c4f3b15bc61b95094369e0b9ed08180f1e2fefecc3590d34292387ca66a1256",
+      "src/persistence/progress-store.ts": "e695ba986aef3881f09383ea8697c539e4f1fa48438535c7e890f1492b687553",
+      "src/persistence/README.md": "941b14bfe813b7c1218195f3f68085ac1c3a8f6df3d31305449b3bf852605b8d",
+      "src/application/README.md": "904ee601afb688bfa18ea9d8fbbc5c43c1d7ffbaa979bfee939f455f61d3408f",
+      "src/application/start.ts": "b723ece56a9e429762528fde2e8575b0c8f65706ed8969b16ec8b6692b82faf7",
+      "src/assessment/osmosis-context.ts": "d160484f69f672a89f0b47bb77bd4b5abb4f9b90310a1475f8b8e5536b9f9b57",
+      "src/assessment/osmosis.ts": "e88efee8e942ed2f5f4a0c42fc05678cb3bf1fb91e7e844090d1cf562b6604c3",
+      "src/assessment/text.ts": "b4336758144aba5b9d89691afc5232d41ee35e52eb0ddf79401113ad55f2d9f1",
+      "src/assessment/naming-choice.ts": "a27e4503483a61432d403e8f75258ce56ca2625d968ad05d439f25450e868143",
+      "src/assessment/osmosis-feedback.ts": "3851a5ae9196db598e9d28ce017e79c06976fc4caf5caade8b598615a5006586",
+      "src/assessment/term-evaluator.ts": "2eef7058f818d807d30701c5cb6c7984bb4040bd0b2591bc9eb4061eef42be6d",
+      "src/assessment/tonoplast.ts": "ac9c0b2506dd0181cdf0628840ad036df2f515f5041d37930159d46fd2fd31d7",
+      "src/assessment/result.ts": "2eb628017bb481923584c2d8028ca9c08ca733d5ee5bc96f61f96593045240f6",
+      "src/assessment/README.md": "6ec6dd07aa64cace968f0b3947771cfd74aec46850f709f7d0fb6737634125bc",
+      "src/assessment/term-grammar.ts": "8c2de083f416a80852b20c569e4e2e4b5ab36a258000f77474968a9921c81922",
+      "src/assessment/naming-syntax.ts": "7c4f4c226d0d17094ec6aa914106c15321684d96065ed2085b83307c614c736c",
+      "src/assessment/progress.ts": "1aa7749ecd5d841f91540867484d2368cebcceb72463c7bafce1ca35a283ff50",
+      "src/assessment/naming-frames.ts": "26f40ee6b16e47e53ed4656516f642e50276bbc20f832c125f6cf782ae76722d",
+      "src/assessment/feedback.ts": "78e9e63db1e391e2649142c2d4a70f0303201dea0f464a0e824ea484a1d82683",
+      "src/assessment/OSMOSIS.md": "e091f4b96aabb8a6e2c9ece86687bf5d19a1a5c31dbf871de1968883963227f1",
+      "src/content/task-catalog.ts": "5113dd526cac53189841967948b62d0e1f9d725f6ad18baed98edebaf054f7c0",
+      "src/content/catalog-data.ts": "4372e58b2a729dfb5f554f1526c7410668e04ad66bef18d729e3571b47642490",
+      "src/content/README.md": "84170fb686b12ae41b0d52939d1fc9cb293c7970231582707840a409c9d8ae61",
+      "src/render3d/README.md": "33a7d68c9640f7e06d35403719d6ddf6189744cf8b2fd4b81b34e9abcc502b3d",
+      "src/render3d/create-scene.ts": "0ed1ec96108f280b126d998e0889de9a6d427e76a77a228142191205c8a8d470"
+    },
+    "localSuites": {
+      "unit": {
+        "passed": 16945,
+        "failed": 0,
+        "total": 16945,
+        "skipped": 0
+      },
+      "content": {
+        "passed": 202,
+        "failed": 2,
+        "total": 204,
+        "skipped": 0
+      },
+      "build": {
+        "passed": 39,
+        "failed": 0,
+        "total": 39,
+        "skipped": 0
+      },
+      "chromium": {
+        "passed": 90,
+        "failed": 0,
+        "total": 90,
+        "skipped": 0,
+        "durationMs": 301172.553
+      }
+    },
+    "conceptChecksSeparately": 694,
+    "guardChecksSeparately": 69,
+    "schemaEvaluations": 15909,
+    "rawResults": "qa/p02b-r7-results.json",
+    "rawDiscrepancies": {
+      "main": 63,
+      "systematic": 50,
+      "diagnoses": 0,
+      "known": 205
+    },
+    "ciAtReportCommit": {
+      "statusAtReportCommit": "not_yet_executed_for_final_documentation_head",
+      "actualFinalEvidence": "https://github.com/Feerson1617/Lernspiel-Zellbiologie/pull/6 (exact-head CI outcome added after push)",
+      "previousRun": 39979382162,
+      "previousHead": "8258b6dc3c8f1724a9fb1e7c72746100dc542f2b",
+      "previousConclusion": "failure",
+      "previousBuild": "failure",
+      "previousWebkit": "failure",
+      "previousWebkitCounts": {
+        "passed": 75,
+        "failed": 3,
+        "skipped": 0,
+        "flaky": 0
+      },
+      "previousDeploy": "skipped"
+    }
   },
   "executedCommands": [
+    "Initial importer identity check and subsequent missing-fixture import failed; corrected to preserve optional rationale/basis, no original data changed",
+    "node --experimental-transform-types /tmp/p02b-r7-import.mjs (all four inputs and complete-result digests verified)",
     "npm run check:types (passed)",
-    "npx vitest run tests/unit/p02b-r7.test.ts (3022 passed; full original-result hashes reproduced)"
+    "npx vitest run tests/unit/p02b-r7.test.ts (3022 passed)",
+    "git apply --check review/pages-gates-proposal.patch (read-only validation within unit test, not applied)",
+    "node --experimental-transform-types ATTACHMENT/run-review.mjs ROOT qa/generated/p02b-r7-guards.json (69 supplied guards rerun as self-check)",
+    "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run check (694 concept, 16945 unit pass; 202 content pass, two 95-percent gates fail; stops before build/browser)",
+    "npm run test:build (separate after failed overall check: TypeScript, catalog, build, publication and 39 tests pass)",
+    "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npx playwright test (90 pass, no skips/flaky)",
+    "node --input-type=module (local WebKit executable absent)",
+    "gh api PR6, check-run app, main, rulesets (head8258b6d open, github-actions15368, main unprotected, rulesets empty)"
   ],
   "caseCounts": {
-    "passed": 0,
-    "failed": 0,
+    "passed": 17276,
+    "failed": 2,
     "skipped": 0
   },
   "newCases": [
-    "R7 183 main, 290 systematic, 24 diagnoses and 2520 known; no new independent sample claimed"
+    "No new authored natural-language sample and no new independent countercheck",
+    "183 supplied R7 main, 290 systematic (13 overlaps, 277 additional unique), 24 diagnoses, 2520 known now regression",
+    "Three original red adjudications retained beside original clarify Soll; original 12 reaffirmation and 24 courtesy diagnoses pass",
+    "Added technical import/proposal/full-result-hash controls; no product grammar change"
   ],
   "blockedChecks": [
-    "R6 self-check 56/60 and R7 41/60 fail the unchanged 95-percent requirement",
-    "Explicit input-format decision and subsequent implementation authorization not provided",
-    "Complete final regression and exact-head CI pending draft",
-    "Real named Safari/iPad and learner pilot not executed",
-    "No private originals available for own private scans"
+    "Existing own R6 56/60 and R7 41/60 both fail unchanged 95-percent target; no skipped/xfail gate or reduced denominator",
+    "Explicit fachliche decision a/b not received; b recommended only, no implementation authorization",
+    "Exact final-head CI result is recorded in PR description after push; local WebKit binary absent",
+    "Three prior macOS WebKit standard-Tab failures; real named Safari/iPad tests and learner pilot absent",
+    "318 original-Soll discrepancies retained; no biological release from technical snapshots",
+    "No private originals available for own hash/text-window/OCR scan; delivered privacy findings not claimed as own",
+    "Main protection/deployment proposals inactive; no admin activation, merge, deployment or P02c"
   ],
   "criticalFindings": [
-    "No runtime changes or additional sentence patterns",
-    "Option b recommended, not approved or implemented; no retroactive changes to old raw Soll or denominators",
-    "Main protection and workflow dependencies prepared only as inactive proposals"
+    "Decision B (not released) does not approve input option b. Current original questions/rubrics/contracts/denominators remain binding.",
+    "Future progress adapter must inspect full term_only/not_assessed envelope including additional claims, also for Z1.02; no isolated green termResult may complete the task.",
+    "Both quality gates fail; no runtime or further sentence-pattern changes made to turn known cases green.",
+    "No false green or red on unambiguously correct answers found in these reruns. Three biologically warranted old red adjudications remain raw discrepancies.",
+    "No new visible assessment UI, complete missions, model, progress feature or scientific correction claim implemented."
   ],
   "releaseStatus": "blocked"
 }
