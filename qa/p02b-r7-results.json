@@ -128399,6 +128399,17 @@
       },
       "previousDeploy": "skipped"
     },
-    "qualification": "3017 repeated records with 318 original-Soll discrepancies (63 main, 50 systematic, 205 known); no runtime repair or new linguistic corpus. Technical expectedRuntime/result-hash snapshots are not biological acceptance. Both unchanged-threshold 95-percent gates remain failed."
+    "qualification": "3017 repeated records with 318 original-Soll discrepancies (63 main, 50 systematic, 205 known); no runtime repair or new linguistic corpus. Technical expectedRuntime/result-hash snapshots are not biological acceptance. Both unchanged-threshold 95-percent gates remain failed.",
+    "ciObservedBeforeFinalDocumentation": {
+      "run": 39988069880,
+      "head": "ea9375ff75d793d9946a674499e34e8fc4a9d438",
+      "observedAtBerlin": "2026-10-23T18:49:25.492178+02:00",
+      "build": "failure at npm run check",
+      "webkit": "queued, no runner assigned, not executed",
+      "deploy": "skipped",
+      "overallStatus": "queued, no final conclusion",
+      "fullJobLogs": "download denied, not read; actual job steps and annotations inspected",
+      "qualification": "Observed before the final documentation-only correction; never a completed WebKit result for the final head."
+    }
   }
 }

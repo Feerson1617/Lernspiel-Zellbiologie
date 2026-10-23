@@ -158,6 +158,8 @@ Für einen späteren ausdrücklich autorisierten Schutzauftrag konkret:
 - Deployment erst nach `needs: [build, webkit]`; nie einen übersprungenen oder
   roten WebKit-Job als Freigabe lesen.
 
-Der aktuelle main-Zustand ist ungeschützt, Rulesets leer; der vorhandene JSON-
-Vorschlag verlangt nur build und ist nicht aktiv. Eine Schutzkonfiguration
-behebt weder Sprachlücken noch die drei offenen Standard-Tab-Fokusfehler.
+Der aktuelle main-Zustand ist ungeschützt, Rulesets leer. Seit R7 verlangt der
+JSON-Vorschlag beide Checks build und webkit; der getrennte Workflow-Patch
+passt Ausführung auf main und Deployment-Abhängigkeiten dazu an. Beide sind
+nicht aktiviert. Eine Schutzkonfiguration behebt weder Sprachlücken noch die
+drei offenen Standard-Tab-Fokusfehler.

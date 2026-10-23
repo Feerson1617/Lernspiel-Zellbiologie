@@ -177,6 +177,16 @@ dieser neue Lauf noch nicht ausgeführt. Vorheriger Lauf 39979382162 auf 8258b6d
 build failure, WebKit 75/78 (45/48 Standard plus 30/30 zusätzlich), deploy skipped,
 Gesamtworkflow failure. Der alte Lauf ist kein neuer Head-Nachweis.
 
+Tatsächlich gelesener CI-Zwischenstand 39988069880 auf ea9375f: build beim
+Schritt npm run check fehlgeschlagen, WebKit weiter queued ohne zugeteilten
+Runner, deploy skipped, kein abschließendes Gesamturteil. Vollständiger
+Joblog-Download hier gesperrt; Job-/Schrittzustände und verfügbare Annotationen
+ausgewertet. Dieser Zwischenstand wird nicht als bestandene WebKitprüfung
+ausgegeben. Eine abschließende reine Dokumentationskorrektur gleicht den
+älteren 0.2-Entwurf an den jetzt zwei Checks verlangenden JSON-Vorschlag an;
+Runtime und Tests bleiben unverändert. Der endgültige Head und sein tatsächlich
+beobachteter CI-Zustand stehen in der PR-Beschreibung.
+
 Standard-Tab-Fokusfehler und Option-Tab-/Enter-Erfolge bleiben getrennt. Der
 strenge WebKit-JSON-Endcheck wird nicht gelockert. Nur die neue R7-Testdatei wird
 in die zusätzliche Suite aufgenommen. Echte benannte Safari-/iPad-Geräte mit

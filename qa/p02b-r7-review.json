@@ -111,6 +111,17 @@
         "flaky": 0
       },
       "previousDeploy": "skipped"
+    },
+    "ciObservedBeforeFinalDocumentation": {
+      "run": 39988069880,
+      "head": "ea9375ff75d793d9946a674499e34e8fc4a9d438",
+      "observedAtBerlin": "2026-10-23T18:49:25.492178+02:00",
+      "build": "failure at npm run check",
+      "webkit": "queued, no runner assigned, not executed",
+      "deploy": "skipped",
+      "overallStatus": "queued, no final conclusion",
+      "fullJobLogs": "download denied, not read; actual job steps and annotations inspected",
+      "qualification": "Observed before the final documentation-only correction; never a completed WebKit result for the final head."
     }
   },
   "executedCommands": [
@@ -144,7 +155,8 @@
     "Three prior macOS WebKit standard-Tab failures; real named Safari/iPad tests and learner pilot absent",
     "318 original-Soll discrepancies retained; no biological release from technical snapshots",
     "No private originals available for own hash/text-window/OCR scan; delivered privacy findings not claimed as own",
-    "Main protection/deployment proposals inactive; no admin activation, merge, deployment or P02c"
+    "Main protection/deployment proposals inactive; no admin activation, merge, deployment or P02c",
+    "Current WebKit job was still queued without a runner after prolonged waiting; no WebKit pass for the new head claimed."
   ],
   "criticalFindings": [
     "Decision B (not released) does not approve input option b. Current original questions/rubrics/contracts/denominators remain binding.",
