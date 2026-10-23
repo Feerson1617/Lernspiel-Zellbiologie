@@ -173,6 +173,30 @@ Längere richtige Erklärungen bleiben mit allen gelben Ergebnissen im Nenner.
 Zwölf zusätzliche Rücknahme-Diagnosen werden getrennt von der Sprachquote berichtet.
 WebKit-Standard-Tab-Fehler bleiben offen; weitere Gegenprüfung muss neue Fälle nutzen.
 
+### Fünfte Nachbesserung / R3
+
+`resolveNamingChoices` trennt aktive Benennungen von allen Originalbelegen.
+Wiederholungen und Bestätigungen derselben positiven Begriffs-ID zählen zu einer
+Wahl. Eine ausdrückliche Korrektur nimmt alle zugehörigen Namensaussagen zurück;
+wissenschaftliche Prädikate, Ausschlüsse und konkurrierende Alternativen bleiben
+aktiv. Ein weiterer tatsächlicher Wechsel bleibt `clarify`. Beide Fachadapter
+reichen die vollständige, getrennt erfasste Originalevidenz weiter; biologische
+Bewertungsregeln und öffentliche Evaluator-APIs bleiben unverändert.
+
+Weitere endliche Nominal-/Verbkonstruktionen behandeln unter anderem deiktische
+Fragebezüge, Modal-/Perfektformen und Wortwahl mit notwendigen Schlussverben.
+Negative Präfixe und gleichbedeutende wiederholte Ausschlüsse bleiben erhalten.
+Keine freie Erklärungskorrektur: sieben längere wissenschaftliche Aussagen des
+neuen Hauptbestands bleiben mangels implementierter Fachlogik ungeklärt; Roh-Soll
+und tatsächliches Ergebnis werden nebeneinander berichtet. Ein engerer versionierter
+Eingabevertrag ist als Entscheidungsvorlage dokumentiert, nicht implementiert.
+
+Bericht und Grenzen: `qa/P02b-Fuenfte-Nachbesserung.md`, Manifest:
+`qa/p02b-r3-review.json`, alle 1501 tatsächlichen Resultate:
+`qa/p02b-r3-results.json`. Die 183/240/20 gelieferten und 578 bekannten Fälle
+sind nach Reparatur Regression; vier Haupt-/Systematiküberschneidungen bleiben
+sichtbar. Die 60 neuen eigenen kurzen Antworten sind Selbstprüfung.
+
 Grundlagen: C, M6.02 in F/`spec/tasks.json`, `TERM_OSMOSIS`, `M6.02.C01`,
 alle 13 unveränderten Redaktionsfälle. Keine vollständige Antwort-Whitelist.
 

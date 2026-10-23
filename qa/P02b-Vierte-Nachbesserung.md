@@ -1,5 +1,9 @@
 # P02b – vierte Nachbesserung / R2, 23.10.2026
 
+Historischer Bericht. Die folgende R3-Prüfung fand zurückgenommene Wiederholungen
+als weitere Fehlerfamilie; aktuelle Korrektur und Messung stehen in
+[P02b-Fuenfte-Nachbesserung.md](P02b-Fuenfte-Nachbesserung.md).
+
 **Selbstprüfung. Kein Merge, kein P02c, keine Unterrichtsfreigabe.**
 
 Anwendungs-/Testfassung: `435843b1a44282199bd8eda01523eb3e7cbadf65`. Ausgang: `7393548c885cfe467b284808f873c90c43997fb8`.

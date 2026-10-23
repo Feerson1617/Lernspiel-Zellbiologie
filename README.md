@@ -169,6 +169,10 @@ Korrektur und erweitert kurze Benennungsrahmen. Aktueller Selbstprüfbericht:
 956 Korpusresultate und zwölf zusätzliche Rücknahme-Diagnosen in
 `qa/p02b-fourth-results.json`. Drei Standard-Tab-Fokusprüfungen
 in WebKit bleiben fehlgeschlagen; keine Merge- oder Unterrichtsfreigabe.
+Die fünfte Nachbesserung trennt aktive Namenswahl und Originalevidenz, nimmt
+gleichlautende Wiederholungen gemeinsam zurück und erweitert Benennungskonstruktionen.
+Aktueller Bericht: `qa/P02b-Fuenfte-Nachbesserung.md`; alle 1501 Ergebnisse und
+unveränderten Roh-Sollwerte: `qa/p02b-r3-results.json`; Manifest: `qa/p02b-r3-review.json`.
 
 Keine konkreten fachlichen Modellversionen werden vergeben. Weitere Textfelder,
 Zahlenkorrektur, Fachmodelle und Lernmissionen bleiben unimplementiert.
