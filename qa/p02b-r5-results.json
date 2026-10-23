@@ -113312,9 +113312,11 @@
     }
   ],
   "metadata": {
+    "commitSha": "ae093b4ae56474aa412c1beec8e0206d9e22cb58",
     "reviewKind": "self_check",
     "releaseStatus": "blocked",
-    "baseline": "dcb81232297de5755a660bff8119c2c6a75e1a15",
+    "testedAtBerlin": "2026-10-23T14:57:06.953213+02:00",
+    "sourceVersions": "Konzept 1.0 / 22.10.2026; review6-task-20261023 / review6-rubric-20261023 / concept-1.0-20261023 / review-no-simulation (explicit synthetic test bindings, no simulation version claim)",
     "frozen": {
       "frozenAt": "2026-10-23T12:39:05.275Z",
       "freshSha": "7a18b4357986ffb6b786f06f4feea9d8c01e96ef5f1e91e460c6c9612355f197",
@@ -113341,6 +113343,5238 @@
         }
       ]
     },
-    "qualification": "Original Soll retained; explicit technical locks of unresolved clarify are not biological acceptance."
+    "environment": {
+      "node": "24.19.0",
+      "npm": "11.9.0",
+      "python": "3.12.14",
+      "jsonschema": "4.26.0",
+      "chromium": "154.0.8037.57",
+      "os": "Linux x86_64"
+    },
+    "sourceHashes": {
+      "src/assessment/osmosis-context.ts": "d160484f69f672a89f0b47bb77bd4b5abb4f9b90310a1475f8b8e5536b9f9b57",
+      "src/assessment/osmosis.ts": "bdf49a80a1772a0dea4a5424a993a1f681fbf869f86a2812c7d15ec3ba9385cd",
+      "src/assessment/text.ts": "b4336758144aba5b9d89691afc5232d41ee35e52eb0ddf79401113ad55f2d9f1",
+      "src/assessment/naming-choice.ts": "a27e4503483a61432d403e8f75258ce56ca2625d968ad05d439f25450e868143",
+      "src/assessment/osmosis-feedback.ts": "3851a5ae9196db598e9d28ce017e79c06976fc4caf5caade8b598615a5006586",
+      "src/assessment/term-evaluator.ts": "2eef7058f818d807d30701c5cb6c7984bb4040bd0b2591bc9eb4061eef42be6d",
+      "src/assessment/tonoplast.ts": "fac9620adb1ace9e02293def1aaddc09f5c1fd45eb1d7331ef200de801e19186",
+      "src/assessment/result.ts": "2eb628017bb481923584c2d8028ca9c08ca733d5ee5bc96f61f96593045240f6",
+      "src/assessment/term-grammar.ts": "ed620aafab25760c432d67e647d9c4664b70f005d6dbb8508128a9cee83a3a35",
+      "src/assessment/naming-syntax.ts": "ae097f782d3d034732381ed0e67e655b5be4ab5958bf6df09365c7e4b3bbadb3",
+      "src/assessment/progress.ts": "1aa7749ecd5d841f91540867484d2368cebcceb72463c7bafce1ca35a283ff50",
+      "src/assessment/naming-frames.ts": "e109abc96c890f54b98fb780c1a62750f33c375c6bbda593884757f9e5b6ae1a",
+      "src/assessment/feedback.ts": "78e9e63db1e391e2649142c2d4a70f0303201dea0f464a0e824ea484a1d82683"
+    },
+    "baseline": {
+      "commitSha": "dcb81232297de5755a660bff8119c2c6a75e1a15",
+      "groups": {
+        "short-correct": {
+          "count": 60,
+          "rawMatched": 29,
+          "statuses": {
+            "clarify": 31,
+            "correct": 29
+          }
+        },
+        "long-correct": {
+          "count": 15,
+          "rawMatched": 0,
+          "statuses": {
+            "clarify": 15
+          }
+        },
+        "wrong-name": {
+          "count": 20,
+          "rawMatched": 8,
+          "statuses": {
+            "clarify": 12,
+            "incorrect": 8
+          }
+        },
+        "partial": {
+          "count": 12,
+          "rawMatched": 3,
+          "statuses": {
+            "partial": 3,
+            "clarify": 9
+          }
+        },
+        "ambiguous": {
+          "count": 12,
+          "rawMatched": 12,
+          "statuses": {
+            "clarify": 12
+          }
+        },
+        "negation-correction": {
+          "count": 20,
+          "rawMatched": 6,
+          "statuses": {
+            "clarify": 18,
+            "incorrect": 2
+          }
+        },
+        "relevant-false-extra": {
+          "count": 10,
+          "rawMatched": 10,
+          "statuses": {
+            "clarify": 10
+          }
+        },
+        "relevant-true-extra": {
+          "count": 10,
+          "rawMatched": 0,
+          "statuses": {
+            "clarify": 10
+          }
+        },
+        "tonoplast-correct": {
+          "count": 10,
+          "rawMatched": 2,
+          "statuses": {
+            "clarify": 8,
+            "correct": 2
+          }
+        },
+        "tonoplast-wrong": {
+          "count": 6,
+          "rawMatched": 2,
+          "statuses": {
+            "clarify": 4,
+            "incorrect": 2
+          }
+        },
+        "tonoplast-partial": {
+          "count": 4,
+          "rawMatched": 1,
+          "statuses": {
+            "clarify": 3,
+            "partial": 1
+          }
+        },
+        "tonoplast-ambiguous": {
+          "count": 4,
+          "rawMatched": 4,
+          "statuses": {
+            "clarify": 4
+          }
+        },
+        "sys-reaffirm": {
+          "count": 50,
+          "rawMatched": 24,
+          "statuses": {
+            "clarify": 26,
+            "correct": 24
+          }
+        },
+        "sys-contradiction": {
+          "count": 30,
+          "rawMatched": 13,
+          "statuses": {
+            "clarify": 17,
+            "incorrect": 13
+          }
+        },
+        "sys-extra": {
+          "count": 30,
+          "rawMatched": 30,
+          "statuses": {
+            "clarify": 30
+          }
+        },
+        "sys-correction": {
+          "count": 30,
+          "rawMatched": 13,
+          "statuses": {
+            "clarify": 17,
+            "correct": 13
+          }
+        },
+        "sys-alternative": {
+          "count": 30,
+          "rawMatched": 30,
+          "statuses": {
+            "clarify": 30
+          }
+        },
+        "sys-negated-name": {
+          "count": 30,
+          "rawMatched": 13,
+          "statuses": {
+            "clarify": 17,
+            "incorrect": 13
+          }
+        },
+        "sys-property": {
+          "count": 30,
+          "rawMatched": 13,
+          "statuses": {
+            "clarify": 17,
+            "correct": 13
+          }
+        },
+        "sys-synonym": {
+          "count": 10,
+          "rawMatched": 2,
+          "statuses": {
+            "clarify": 8,
+            "correct": 2
+          }
+        },
+        "sys-scope-exclusion": {
+          "count": 10,
+          "rawMatched": 4,
+          "statuses": {
+            "clarify": 6,
+            "incorrect": 4
+          }
+        },
+        "sys-scope-double": {
+          "count": 10,
+          "rawMatched": 10,
+          "statuses": {
+            "clarify": 10
+          }
+        },
+        "sys-scope-designation": {
+          "count": 10,
+          "rawMatched": 10,
+          "statuses": {
+            "clarify": 10
+          }
+        },
+        "sys-scope-alternative": {
+          "count": 10,
+          "rawMatched": 10,
+          "statuses": {
+            "clarify": 10
+          }
+        },
+        "sys-repeated-wrong-correction": {
+          "count": 10,
+          "rawMatched": 4,
+          "statuses": {
+            "clarify": 6,
+            "correct": 4
+          }
+        },
+        "tentative-distinct-order": {
+          "count": 2,
+          "rawMatched": 2,
+          "statuses": {
+            "clarify": 2
+          }
+        },
+        "tentative-distinct-reversed": {
+          "count": 2,
+          "rawMatched": 0,
+          "statuses": {
+            "incorrect": 2
+          }
+        },
+        "tentative-same-concept": {
+          "count": 2,
+          "rawMatched": 0,
+          "statuses": {
+            "incorrect": 2
+          }
+        },
+        "tentative-same-concept-reversed": {
+          "count": 2,
+          "rawMatched": 0,
+          "statuses": {
+            "incorrect": 2
+          }
+        },
+        "single-false-question": {
+          "count": 2,
+          "rawMatched": 2,
+          "statuses": {
+            "incorrect": 2
+          }
+        },
+        "single-false-negative-question": {
+          "count": 2,
+          "rawMatched": 2,
+          "statuses": {
+            "incorrect": 2
+          }
+        },
+        "negative-post-frame": {
+          "count": 4,
+          "rawMatched": 4,
+          "statuses": {
+            "incorrect": 4
+          }
+        },
+        "preserve-false-property": {
+          "count": 2,
+          "rawMatched": 2,
+          "statuses": {
+            "incorrect": 2
+          }
+        },
+        "preserve-unknown-rest": {
+          "count": 2,
+          "rawMatched": 2,
+          "statuses": {
+            "clarify": 2
+          }
+        },
+        "unicode-prefix": {
+          "count": 2,
+          "rawMatched": 2,
+          "statuses": {
+            "clarify": 2
+          }
+        },
+        "cross-profile": {
+          "count": 2,
+          "rawMatched": 2,
+          "statuses": {
+            "clarify": 2
+          }
+        },
+        "fresh-short": {
+          "count": 60,
+          "rawMatched": 13,
+          "statuses": {
+            "clarify": 47,
+            "correct": 13
+          }
+        },
+        "fresh-wrong": {
+          "count": 180,
+          "rawMatched": 39,
+          "statuses": {
+            "clarify": 141,
+            "incorrect": 39
+          }
+        },
+        "fresh-partial": {
+          "count": 60,
+          "rawMatched": 13,
+          "statuses": {
+            "clarify": 47,
+            "partial": 13
+          }
+        },
+        "fresh-alternative": {
+          "count": 60,
+          "rawMatched": 60,
+          "statuses": {
+            "clarify": 60
+          }
+        },
+        "fresh-negative": {
+          "count": 60,
+          "rawMatched": 13,
+          "statuses": {
+            "clarify": 47,
+            "incorrect": 13
+          }
+        },
+        "fresh-contradiction": {
+          "count": 60,
+          "rawMatched": 13,
+          "statuses": {
+            "clarify": 47,
+            "incorrect": 13
+          }
+        },
+        "fresh-extra": {
+          "count": 60,
+          "rawMatched": 60,
+          "statuses": {
+            "clarify": 60
+          }
+        },
+        "previous0-previous0-previous0-known0-short-correct": {
+          "count": 50,
+          "rawMatched": 50,
+          "statuses": {
+            "correct": 50
+          }
+        },
+        "previous0-previous0-previous0-known0-long-correct": {
+          "count": 20,
+          "rawMatched": 20,
+          "statuses": {
+            "clarify": 18,
+            "correct": 2
+          }
+        },
+        "previous0-previous0-previous0-known0-wrong-name": {
+          "count": 10,
+          "rawMatched": 10,
+          "statuses": {
+            "incorrect": 10
+          }
+        },
+        "previous0-previous0-previous0-known0-contradiction": {
+          "count": 15,
+          "rawMatched": 15,
+          "statuses": {
+            "incorrect": 15
+          }
+        },
+        "previous0-previous0-previous0-known0-correct-negation": {
+          "count": 10,
+          "rawMatched": 10,
+          "statuses": {
+            "correct": 10
+          }
+        },
+        "previous0-previous0-previous0-known0-unassessed": {
+          "count": 10,
+          "rawMatched": 10,
+          "statuses": {
+            "clarify": 10
+          }
+        },
+        "previous0-previous0-previous0-known0-partial": {
+          "count": 5,
+          "rawMatched": 5,
+          "statuses": {
+            "partial": 5
+          }
+        },
+        "previous0-previous0-previous0-known0-ambiguous": {
+          "count": 6,
+          "rawMatched": 6,
+          "statuses": {
+            "clarify": 6
+          }
+        },
+        "previous0-previous0-previous0-known0-tonoplast-correct": {
+          "count": 15,
+          "rawMatched": 15,
+          "statuses": {
+            "correct": 15
+          }
+        },
+        "previous0-previous0-previous0-known0-tonoplast-wrong": {
+          "count": 10,
+          "rawMatched": 10,
+          "statuses": {
+            "incorrect": 10
+          }
+        },
+        "previous0-previous0-previous0-known0-tonoplast-unassessed": {
+          "count": 5,
+          "rawMatched": 5,
+          "statuses": {
+            "clarify": 5
+          }
+        },
+        "previous0-previous0-previous0-known1-short-correct": {
+          "count": 60,
+          "rawMatched": 60,
+          "statuses": {
+            "correct": 60
+          }
+        },
+        "previous0-previous0-previous0-known1-long-correct": {
+          "count": 20,
+          "rawMatched": 0,
+          "statuses": {
+            "clarify": 20
+          }
+        },
+        "previous0-previous0-previous0-known1-wrong-name": {
+          "count": 12,
+          "rawMatched": 12,
+          "statuses": {
+            "incorrect": 12
+          }
+        },
+        "previous0-previous0-previous0-known1-partial": {
+          "count": 8,
+          "rawMatched": 8,
+          "statuses": {
+            "partial": 8
+          }
+        },
+        "previous0-previous0-previous0-known1-ambiguous": {
+          "count": 12,
+          "rawMatched": 12,
+          "statuses": {
+            "clarify": 12
+          }
+        },
+        "previous0-previous0-previous0-known1-contradiction": {
+          "count": 12,
+          "rawMatched": 12,
+          "statuses": {
+            "incorrect": 12
+          }
+        },
+        "previous0-previous0-previous0-known1-unsafe-extra": {
+          "count": 12,
+          "rawMatched": 12,
+          "statuses": {
+            "clarify": 12
+          }
+        },
+        "previous0-previous0-previous0-known1-correct-distinction": {
+          "count": 8,
+          "rawMatched": 8,
+          "statuses": {
+            "correct": 8
+          }
+        },
+        "previous0-previous0-previous0-known1-semantic-trap": {
+          "count": 8,
+          "rawMatched": 8,
+          "statuses": {
+            "clarify": 8
+          }
+        },
+        "previous0-previous0-previous0-known1-tonoplast-correct": {
+          "count": 12,
+          "rawMatched": 12,
+          "statuses": {
+            "correct": 12
+          }
+        },
+        "previous0-previous0-previous0-known1-tonoplast-wrong": {
+          "count": 8,
+          "rawMatched": 8,
+          "statuses": {
+            "incorrect": 8
+          }
+        },
+        "previous0-previous0-previous0-known1-tonoplast-boundary": {
+          "count": 8,
+          "rawMatched": 8,
+          "statuses": {
+            "clarify": 8
+          }
+        },
+        "previous0-previous0-previous0-known2-not-generic-name": {
+          "count": 4,
+          "rawMatched": 0,
+          "statuses": {
+            "clarify": 4
+          }
+        },
+        "previous0-previous0-previous0-known2-generic-name": {
+          "count": 4,
+          "rawMatched": 4,
+          "statuses": {
+            "clarify": 4
+          }
+        },
+        "previous0-previous0-previous0-known2-explicit-negation": {
+          "count": 4,
+          "rawMatched": 4,
+          "statuses": {
+            "incorrect": 4
+          }
+        },
+        "previous0-previous0-previous0-known2-evidence": {
+          "count": 4,
+          "rawMatched": 4,
+          "statuses": {
+            "correct": 4
+          }
+        },
+        "previous0-previous0-previous0-known2-unassessed-unicode": {
+          "count": 4,
+          "rawMatched": 4,
+          "statuses": {
+            "clarify": 4
+          }
+        },
+        "previous0-previous0-previous0-known2-tonoplast-property": {
+          "count": 4,
+          "rawMatched": 2,
+          "statuses": {
+            "clarify": 2,
+            "incorrect": 2
+          }
+        },
+        "previous0-previous0-previous0-known3-explicit-name-not-alias": {
+          "count": 3,
+          "rawMatched": 0,
+          "statuses": {
+            "clarify": 3
+          }
+        },
+        "previous0-previous0-previous0-known3-explicit-name-alias": {
+          "count": 2,
+          "rawMatched": 2,
+          "statuses": {
+            "clarify": 2
+          }
+        },
+        "previous0-previous0-previous0-known3-explicit-name-equivalence": {
+          "count": 1,
+          "rawMatched": 1,
+          "statuses": {
+            "clarify": 1
+          }
+        },
+        "previous0-previous0-previous0-known3-membrane-no-synonym": {
+          "count": 1,
+          "rawMatched": 1,
+          "statuses": {
+            "clarify": 1
+          }
+        },
+        "previous0-previous0-previous0-known3-membrane-not-membrane": {
+          "count": 1,
+          "rawMatched": 1,
+          "statuses": {
+            "incorrect": 1
+          }
+        },
+        "previous0-previous0-previous1-short-correct": {
+          "count": 60,
+          "rawMatched": 60,
+          "statuses": {
+            "correct": 60
+          }
+        },
+        "previous0-previous0-previous1-long-correct": {
+          "count": 12,
+          "rawMatched": 0,
+          "statuses": {
+            "clarify": 12
+          }
+        },
+        "previous0-previous0-previous1-wrong-name": {
+          "count": 12,
+          "rawMatched": 12,
+          "statuses": {
+            "incorrect": 12
+          }
+        },
+        "previous0-previous0-previous1-partial": {
+          "count": 8,
+          "rawMatched": 8,
+          "statuses": {
+            "partial": 8
+          }
+        },
+        "previous0-previous0-previous1-ambiguous": {
+          "count": 12,
+          "rawMatched": 12,
+          "statuses": {
+            "clarify": 12
+          }
+        },
+        "previous0-previous0-previous1-contradiction": {
+          "count": 12,
+          "rawMatched": 12,
+          "statuses": {
+            "incorrect": 12
+          }
+        },
+        "previous0-previous0-previous1-unsafe-extra": {
+          "count": 12,
+          "rawMatched": 12,
+          "statuses": {
+            "clarify": 12
+          }
+        },
+        "previous0-previous0-previous1-correct-distinction": {
+          "count": 8,
+          "rawMatched": 8,
+          "statuses": {
+            "correct": 8
+          }
+        },
+        "previous0-previous0-previous1-semantic-boundary": {
+          "count": 16,
+          "rawMatched": 16,
+          "statuses": {
+            "clarify": 16
+          }
+        },
+        "previous0-previous0-previous1-tonoplast-correct": {
+          "count": 12,
+          "rawMatched": 12,
+          "statuses": {
+            "correct": 12
+          }
+        },
+        "previous0-previous0-previous1-tonoplast-wrong": {
+          "count": 6,
+          "rawMatched": 6,
+          "statuses": {
+            "incorrect": 6
+          }
+        },
+        "previous0-previous0-previous1-tonoplast-boundary": {
+          "count": 6,
+          "rawMatched": 6,
+          "statuses": {
+            "clarify": 6
+          }
+        },
+        "previous0-previous0-previous2-reaffirm-osmosis": {
+          "count": 6,
+          "rawMatched": 6,
+          "statuses": {
+            "correct": 6
+          }
+        },
+        "previous0-previous0-previous2-reaffirm-tonoplast": {
+          "count": 6,
+          "rawMatched": 6,
+          "statuses": {
+            "correct": 6
+          }
+        },
+        "previous0-previous0-previous2-genuine-correction-osmosis": {
+          "count": 4,
+          "rawMatched": 4,
+          "statuses": {
+            "correct": 4
+          }
+        },
+        "previous0-previous0-previous2-genuine-correction-tonoplast": {
+          "count": 4,
+          "rawMatched": 4,
+          "statuses": {
+            "correct": 4
+          }
+        },
+        "previous0-previous0-previous2-property-and-reaffirmation": {
+          "count": 2,
+          "rawMatched": 2,
+          "statuses": {
+            "correct": 2
+          }
+        },
+        "previous0-previous0-previous2-property-and-reaffirmation-tonoplast": {
+          "count": 2,
+          "rawMatched": 2,
+          "statuses": {
+            "correct": 2
+          }
+        },
+        "previous0-previous0-previous2-correction-contradiction": {
+          "count": 2,
+          "rawMatched": 2,
+          "statuses": {
+            "incorrect": 2
+          }
+        },
+        "previous0-previous0-previous2-correction-contradiction-tonoplast": {
+          "count": 2,
+          "rawMatched": 2,
+          "statuses": {
+            "incorrect": 2
+          }
+        },
+        "previous0-previous0-previous2-unresolved-correction": {
+          "count": 3,
+          "rawMatched": 3,
+          "statuses": {
+            "clarify": 3
+          }
+        },
+        "previous0-previous0-previous2-unresolved-correction-tonoplast": {
+          "count": 3,
+          "rawMatched": 3,
+          "statuses": {
+            "clarify": 3
+          }
+        },
+        "previous0-previous1-short-correct": {
+          "count": 60,
+          "rawMatched": 60,
+          "statuses": {
+            "correct": 60
+          }
+        },
+        "previous0-previous1-long-correct": {
+          "count": 15,
+          "rawMatched": 0,
+          "statuses": {
+            "clarify": 15
+          }
+        },
+        "previous0-previous1-wrong-name": {
+          "count": 20,
+          "rawMatched": 13,
+          "statuses": {
+            "incorrect": 13,
+            "clarify": 7
+          }
+        },
+        "previous0-previous1-partial": {
+          "count": 12,
+          "rawMatched": 12,
+          "statuses": {
+            "partial": 12
+          }
+        },
+        "previous0-previous1-ambiguous": {
+          "count": 12,
+          "rawMatched": 12,
+          "statuses": {
+            "clarify": 12
+          }
+        },
+        "previous0-previous1-negation-correction": {
+          "count": 20,
+          "rawMatched": 20,
+          "statuses": {
+            "correct": 8,
+            "incorrect": 8,
+            "clarify": 4
+          }
+        },
+        "previous0-previous1-relevant-extra": {
+          "count": 20,
+          "rawMatched": 20,
+          "statuses": {
+            "clarify": 20
+          }
+        },
+        "previous0-previous1-tonoplast-correct": {
+          "count": 10,
+          "rawMatched": 10,
+          "statuses": {
+            "correct": 10
+          }
+        },
+        "previous0-previous1-tonoplast-wrong": {
+          "count": 6,
+          "rawMatched": 6,
+          "statuses": {
+            "incorrect": 6
+          }
+        },
+        "previous0-previous1-tonoplast-partial": {
+          "count": 4,
+          "rawMatched": 4,
+          "statuses": {
+            "partial": 4
+          }
+        },
+        "previous0-previous1-tonoplast-ambiguous": {
+          "count": 4,
+          "rawMatched": 4,
+          "statuses": {
+            "clarify": 4
+          }
+        },
+        "previous0-previous2-sys-reaffirm": {
+          "count": 40,
+          "rawMatched": 40,
+          "statuses": {
+            "correct": 40
+          }
+        },
+        "previous0-previous2-sys-contradiction": {
+          "count": 25,
+          "rawMatched": 25,
+          "statuses": {
+            "incorrect": 25
+          }
+        },
+        "previous0-previous2-sys-extra": {
+          "count": 25,
+          "rawMatched": 25,
+          "statuses": {
+            "clarify": 25
+          }
+        },
+        "previous0-previous2-sys-correction": {
+          "count": 25,
+          "rawMatched": 25,
+          "statuses": {
+            "correct": 25
+          }
+        },
+        "previous0-previous2-sys-alternative": {
+          "count": 25,
+          "rawMatched": 25,
+          "statuses": {
+            "clarify": 25
+          }
+        },
+        "previous0-previous2-sys-negated-name": {
+          "count": 25,
+          "rawMatched": 25,
+          "statuses": {
+            "incorrect": 25
+          }
+        },
+        "previous0-previous2-sys-property": {
+          "count": 25,
+          "rawMatched": 25,
+          "statuses": {
+            "correct": 25
+          }
+        },
+        "previous0-previous2-sys-synonym": {
+          "count": 10,
+          "rawMatched": 10,
+          "statuses": {
+            "correct": 10
+          }
+        },
+        "previous0-previous2-sys-scope-contradiction": {
+          "count": 10,
+          "rawMatched": 10,
+          "statuses": {
+            "incorrect": 10
+          }
+        },
+        "previous0-previous2-sys-scope-double": {
+          "count": 10,
+          "rawMatched": 10,
+          "statuses": {
+            "clarify": 10
+          }
+        },
+        "previous0-previous2-sys-scope-designation": {
+          "count": 10,
+          "rawMatched": 10,
+          "statuses": {
+            "clarify": 10
+          }
+        },
+        "previous0-previous2-sys-scope-alternative": {
+          "count": 10,
+          "rawMatched": 10,
+          "statuses": {
+            "clarify": 10
+          }
+        },
+        "previous0-previous3-repeated-wrong-then-correct": {
+          "count": 6,
+          "rawMatched": 6,
+          "statuses": {
+            "correct": 6
+          }
+        },
+        "previous0-previous3-reaffirmed-wrong-then-correct": {
+          "count": 6,
+          "rawMatched": 6,
+          "statuses": {
+            "correct": 6
+          }
+        },
+        "previous0-previous3-preserve-scientific-error": {
+          "count": 4,
+          "rawMatched": 4,
+          "statuses": {
+            "incorrect": 4
+          }
+        },
+        "previous0-previous3-preserve-exclusion": {
+          "count": 2,
+          "rawMatched": 2,
+          "statuses": {
+            "incorrect": 2
+          }
+        },
+        "previous0-previous3-preserve-unresolved": {
+          "count": 2,
+          "rawMatched": 2,
+          "statuses": {
+            "clarify": 2
+          }
+        },
+        "previous1-short-correct": {
+          "count": 60,
+          "rawMatched": 60,
+          "statuses": {
+            "correct": 60
+          }
+        },
+        "previous1-long-correct": {
+          "count": 15,
+          "rawMatched": 0,
+          "statuses": {
+            "clarify": 15
+          }
+        },
+        "previous1-wrong-name": {
+          "count": 20,
+          "rawMatched": 20,
+          "statuses": {
+            "incorrect": 20
+          }
+        },
+        "previous1-partial": {
+          "count": 12,
+          "rawMatched": 5,
+          "statuses": {
+            "partial": 5,
+            "clarify": 7
+          }
+        },
+        "previous1-ambiguous": {
+          "count": 12,
+          "rawMatched": 12,
+          "statuses": {
+            "clarify": 12
+          }
+        },
+        "previous1-negation-correction": {
+          "count": 20,
+          "rawMatched": 6,
+          "statuses": {
+            "clarify": 18,
+            "incorrect": 2
+          }
+        },
+        "previous1-relevant-false-extra": {
+          "count": 10,
+          "rawMatched": 10,
+          "statuses": {
+            "clarify": 10
+          }
+        },
+        "previous1-relevant-true-extra": {
+          "count": 10,
+          "rawMatched": 0,
+          "statuses": {
+            "clarify": 10
+          }
+        },
+        "previous1-tonoplast-correct": {
+          "count": 10,
+          "rawMatched": 10,
+          "statuses": {
+            "correct": 10
+          }
+        },
+        "previous1-tonoplast-wrong": {
+          "count": 6,
+          "rawMatched": 3,
+          "statuses": {
+            "incorrect": 3,
+            "clarify": 3
+          }
+        },
+        "previous1-tonoplast-partial": {
+          "count": 4,
+          "rawMatched": 2,
+          "statuses": {
+            "partial": 2,
+            "clarify": 2
+          }
+        },
+        "previous1-tonoplast-ambiguous": {
+          "count": 4,
+          "rawMatched": 4,
+          "statuses": {
+            "clarify": 4
+          }
+        },
+        "previous2-sys-reaffirm": {
+          "count": 50,
+          "rawMatched": 50,
+          "statuses": {
+            "correct": 50
+          }
+        },
+        "previous2-sys-contradiction": {
+          "count": 30,
+          "rawMatched": 30,
+          "statuses": {
+            "incorrect": 30
+          }
+        },
+        "previous2-sys-extra": {
+          "count": 30,
+          "rawMatched": 30,
+          "statuses": {
+            "clarify": 30
+          }
+        },
+        "previous2-sys-correction": {
+          "count": 30,
+          "rawMatched": 30,
+          "statuses": {
+            "correct": 30
+          }
+        },
+        "previous2-sys-alternative": {
+          "count": 30,
+          "rawMatched": 30,
+          "statuses": {
+            "clarify": 30
+          }
+        },
+        "previous2-sys-negated-name": {
+          "count": 30,
+          "rawMatched": 30,
+          "statuses": {
+            "incorrect": 30
+          }
+        },
+        "previous2-sys-property": {
+          "count": 30,
+          "rawMatched": 30,
+          "statuses": {
+            "correct": 30
+          }
+        },
+        "previous2-sys-synonym": {
+          "count": 10,
+          "rawMatched": 10,
+          "statuses": {
+            "correct": 10
+          }
+        },
+        "previous2-sys-scope-exclusion": {
+          "count": 10,
+          "rawMatched": 10,
+          "statuses": {
+            "incorrect": 10
+          }
+        },
+        "previous2-sys-scope-double": {
+          "count": 10,
+          "rawMatched": 10,
+          "statuses": {
+            "clarify": 10
+          }
+        },
+        "previous2-sys-scope-designation": {
+          "count": 10,
+          "rawMatched": 10,
+          "statuses": {
+            "clarify": 10
+          }
+        },
+        "previous2-sys-scope-alternative": {
+          "count": 10,
+          "rawMatched": 10,
+          "statuses": {
+            "clarify": 10
+          }
+        },
+        "previous2-sys-repeated-wrong-correction": {
+          "count": 10,
+          "rawMatched": 10,
+          "statuses": {
+            "correct": 10
+          }
+        },
+        "previous3-choice-through-true-predicate": {
+          "count": 6,
+          "rawMatched": 6,
+          "statuses": {
+            "correct": 6
+          }
+        },
+        "previous3-preserve-false-predicate": {
+          "count": 6,
+          "rawMatched": 6,
+          "statuses": {
+            "incorrect": 6
+          }
+        },
+        "previous3-choice-repeated-three": {
+          "count": 6,
+          "rawMatched": 6,
+          "statuses": {
+            "correct": 6
+          }
+        },
+        "previous3-preserve-negated-name": {
+          "count": 6,
+          "rawMatched": 6,
+          "statuses": {
+            "incorrect": 6
+          }
+        },
+        "previous3-multiple-changes": {
+          "count": 2,
+          "rawMatched": 2,
+          "statuses": {
+            "clarify": 2
+          }
+        },
+        "previous3-unassessed-rest": {
+          "count": 2,
+          "rawMatched": 2,
+          "statuses": {
+            "clarify": 2
+          }
+        },
+        "previous3-negative-synonyms": {
+          "count": 2,
+          "rawMatched": 2,
+          "statuses": {
+            "incorrect": 2
+          }
+        },
+        "previous3-utf16-astral": {
+          "count": 1,
+          "rawMatched": 1,
+          "statuses": {
+            "clarify": 1
+          }
+        },
+        "previous3-utf16-combining": {
+          "count": 1,
+          "rawMatched": 1,
+          "statuses": {
+            "clarify": 1
+          }
+        }
+      }
+    },
+    "groups": {
+      "short-correct": {
+        "total": 60,
+        "rawMatched": 60,
+        "statuses": {
+          "correct": 60
+        }
+      },
+      "long-correct": {
+        "total": 15,
+        "rawMatched": 0,
+        "statuses": {
+          "clarify": 15
+        }
+      },
+      "wrong-name": {
+        "total": 20,
+        "rawMatched": 20,
+        "statuses": {
+          "incorrect": 20
+        }
+      },
+      "partial": {
+        "total": 12,
+        "rawMatched": 3,
+        "statuses": {
+          "partial": 3,
+          "clarify": 9
+        }
+      },
+      "ambiguous": {
+        "total": 12,
+        "rawMatched": 12,
+        "statuses": {
+          "clarify": 12
+        }
+      },
+      "negation-correction": {
+        "total": 20,
+        "rawMatched": 8,
+        "statuses": {
+          "clarify": 16,
+          "incorrect": 4
+        }
+      },
+      "relevant-false-extra": {
+        "total": 10,
+        "rawMatched": 10,
+        "statuses": {
+          "clarify": 10
+        }
+      },
+      "relevant-true-extra": {
+        "total": 10,
+        "rawMatched": 0,
+        "statuses": {
+          "clarify": 10
+        }
+      },
+      "tonoplast-correct": {
+        "total": 10,
+        "rawMatched": 10,
+        "statuses": {
+          "correct": 10
+        }
+      },
+      "tonoplast-wrong": {
+        "total": 6,
+        "rawMatched": 6,
+        "statuses": {
+          "incorrect": 6
+        }
+      },
+      "tonoplast-partial": {
+        "total": 4,
+        "rawMatched": 2,
+        "statuses": {
+          "partial": 2,
+          "clarify": 2
+        }
+      },
+      "tonoplast-ambiguous": {
+        "total": 4,
+        "rawMatched": 4,
+        "statuses": {
+          "clarify": 4
+        }
+      },
+      "sys-reaffirm": {
+        "total": 50,
+        "rawMatched": 50,
+        "statuses": {
+          "correct": 50
+        }
+      },
+      "sys-contradiction": {
+        "total": 30,
+        "rawMatched": 30,
+        "statuses": {
+          "incorrect": 30
+        }
+      },
+      "sys-extra": {
+        "total": 30,
+        "rawMatched": 30,
+        "statuses": {
+          "clarify": 30
+        }
+      },
+      "sys-correction": {
+        "total": 30,
+        "rawMatched": 30,
+        "statuses": {
+          "correct": 30
+        }
+      },
+      "sys-alternative": {
+        "total": 30,
+        "rawMatched": 30,
+        "statuses": {
+          "clarify": 30
+        }
+      },
+      "sys-negated-name": {
+        "total": 30,
+        "rawMatched": 30,
+        "statuses": {
+          "incorrect": 30
+        }
+      },
+      "sys-property": {
+        "total": 30,
+        "rawMatched": 30,
+        "statuses": {
+          "correct": 30
+        }
+      },
+      "sys-synonym": {
+        "total": 10,
+        "rawMatched": 10,
+        "statuses": {
+          "correct": 10
+        }
+      },
+      "sys-scope-exclusion": {
+        "total": 10,
+        "rawMatched": 10,
+        "statuses": {
+          "incorrect": 10
+        }
+      },
+      "sys-scope-double": {
+        "total": 10,
+        "rawMatched": 10,
+        "statuses": {
+          "clarify": 10
+        }
+      },
+      "sys-scope-designation": {
+        "total": 10,
+        "rawMatched": 10,
+        "statuses": {
+          "clarify": 10
+        }
+      },
+      "sys-scope-alternative": {
+        "total": 10,
+        "rawMatched": 10,
+        "statuses": {
+          "clarify": 10
+        }
+      },
+      "sys-repeated-wrong-correction": {
+        "total": 10,
+        "rawMatched": 10,
+        "statuses": {
+          "correct": 10
+        }
+      },
+      "tentative-distinct-order": {
+        "total": 2,
+        "rawMatched": 2,
+        "statuses": {
+          "clarify": 2
+        }
+      },
+      "tentative-distinct-reversed": {
+        "total": 2,
+        "rawMatched": 2,
+        "statuses": {
+          "clarify": 2
+        }
+      },
+      "tentative-same-concept": {
+        "total": 2,
+        "rawMatched": 2,
+        "statuses": {
+          "clarify": 2
+        }
+      },
+      "tentative-same-concept-reversed": {
+        "total": 2,
+        "rawMatched": 2,
+        "statuses": {
+          "clarify": 2
+        }
+      },
+      "single-false-question": {
+        "total": 2,
+        "rawMatched": 2,
+        "statuses": {
+          "incorrect": 2
+        }
+      },
+      "single-false-negative-question": {
+        "total": 2,
+        "rawMatched": 2,
+        "statuses": {
+          "incorrect": 2
+        }
+      },
+      "negative-post-frame": {
+        "total": 4,
+        "rawMatched": 4,
+        "statuses": {
+          "incorrect": 4
+        }
+      },
+      "preserve-false-property": {
+        "total": 2,
+        "rawMatched": 2,
+        "statuses": {
+          "incorrect": 2
+        }
+      },
+      "preserve-unknown-rest": {
+        "total": 2,
+        "rawMatched": 2,
+        "statuses": {
+          "clarify": 2
+        }
+      },
+      "unicode-prefix": {
+        "total": 2,
+        "rawMatched": 2,
+        "statuses": {
+          "clarify": 2
+        }
+      },
+      "cross-profile": {
+        "total": 2,
+        "rawMatched": 2,
+        "statuses": {
+          "clarify": 2
+        }
+      },
+      "fresh-short": {
+        "total": 60,
+        "rawMatched": 60,
+        "statuses": {
+          "correct": 60
+        }
+      },
+      "fresh-wrong": {
+        "total": 180,
+        "rawMatched": 180,
+        "statuses": {
+          "incorrect": 180
+        }
+      },
+      "fresh-partial": {
+        "total": 60,
+        "rawMatched": 60,
+        "statuses": {
+          "partial": 60
+        }
+      },
+      "fresh-alternative": {
+        "total": 60,
+        "rawMatched": 60,
+        "statuses": {
+          "clarify": 60
+        }
+      },
+      "fresh-negative": {
+        "total": 60,
+        "rawMatched": 60,
+        "statuses": {
+          "incorrect": 60
+        }
+      },
+      "fresh-contradiction": {
+        "total": 60,
+        "rawMatched": 60,
+        "statuses": {
+          "incorrect": 60
+        }
+      },
+      "fresh-extra": {
+        "total": 60,
+        "rawMatched": 60,
+        "statuses": {
+          "clarify": 60
+        }
+      },
+      "tone-correct": {
+        "total": 32,
+        "rawMatched": 32,
+        "statuses": {
+          "correct": 32
+        }
+      },
+      "tone-incorrect": {
+        "total": 64,
+        "rawMatched": 64,
+        "statuses": {
+          "incorrect": 64
+        }
+      },
+      "tone-partial": {
+        "total": 32,
+        "rawMatched": 32,
+        "statuses": {
+          "partial": 32
+        }
+      },
+      "tone-clarify": {
+        "total": 32,
+        "rawMatched": 32,
+        "statuses": {
+          "clarify": 32
+        }
+      },
+      "tone-contradiction": {
+        "total": 32,
+        "rawMatched": 32,
+        "statuses": {
+          "incorrect": 32
+        }
+      },
+      "tone-extra": {
+        "total": 32,
+        "rawMatched": 32,
+        "statuses": {
+          "clarify": 32
+        }
+      },
+      "question-pair": {
+        "total": 18,
+        "rawMatched": 18,
+        "statuses": {
+          "clarify": 12,
+          "correct": 2,
+          "incorrect": 4
+        }
+      },
+      "question-predicate": {
+        "total": 18,
+        "rawMatched": 18,
+        "statuses": {
+          "incorrect": 18
+        }
+      }
+    },
+    "knownGroups": {
+      "previous0-previous0-previous0-known0-short-correct": {
+        "total": 50,
+        "rawMatched": 50,
+        "statuses": {
+          "correct": 50
+        }
+      },
+      "previous0-previous0-previous0-known0-long-correct": {
+        "total": 20,
+        "rawMatched": 20,
+        "statuses": {
+          "clarify": 18,
+          "correct": 2
+        }
+      },
+      "previous0-previous0-previous0-known0-wrong-name": {
+        "total": 10,
+        "rawMatched": 10,
+        "statuses": {
+          "incorrect": 10
+        }
+      },
+      "previous0-previous0-previous0-known0-contradiction": {
+        "total": 15,
+        "rawMatched": 15,
+        "statuses": {
+          "incorrect": 15
+        }
+      },
+      "previous0-previous0-previous0-known0-correct-negation": {
+        "total": 10,
+        "rawMatched": 10,
+        "statuses": {
+          "correct": 10
+        }
+      },
+      "previous0-previous0-previous0-known0-unassessed": {
+        "total": 10,
+        "rawMatched": 10,
+        "statuses": {
+          "clarify": 10
+        }
+      },
+      "previous0-previous0-previous0-known0-partial": {
+        "total": 5,
+        "rawMatched": 5,
+        "statuses": {
+          "partial": 5
+        }
+      },
+      "previous0-previous0-previous0-known0-ambiguous": {
+        "total": 6,
+        "rawMatched": 6,
+        "statuses": {
+          "clarify": 6
+        }
+      },
+      "previous0-previous0-previous0-known0-tonoplast-correct": {
+        "total": 15,
+        "rawMatched": 15,
+        "statuses": {
+          "correct": 15
+        }
+      },
+      "previous0-previous0-previous0-known0-tonoplast-wrong": {
+        "total": 10,
+        "rawMatched": 10,
+        "statuses": {
+          "incorrect": 10
+        }
+      },
+      "previous0-previous0-previous0-known0-tonoplast-unassessed": {
+        "total": 5,
+        "rawMatched": 5,
+        "statuses": {
+          "clarify": 5
+        }
+      },
+      "previous0-previous0-previous0-known1-short-correct": {
+        "total": 60,
+        "rawMatched": 60,
+        "statuses": {
+          "correct": 60
+        }
+      },
+      "previous0-previous0-previous0-known1-long-correct": {
+        "total": 20,
+        "rawMatched": 0,
+        "statuses": {
+          "clarify": 20
+        }
+      },
+      "previous0-previous0-previous0-known1-wrong-name": {
+        "total": 12,
+        "rawMatched": 12,
+        "statuses": {
+          "incorrect": 12
+        }
+      },
+      "previous0-previous0-previous0-known1-partial": {
+        "total": 8,
+        "rawMatched": 8,
+        "statuses": {
+          "partial": 8
+        }
+      },
+      "previous0-previous0-previous0-known1-ambiguous": {
+        "total": 12,
+        "rawMatched": 12,
+        "statuses": {
+          "clarify": 12
+        }
+      },
+      "previous0-previous0-previous0-known1-contradiction": {
+        "total": 12,
+        "rawMatched": 12,
+        "statuses": {
+          "incorrect": 12
+        }
+      },
+      "previous0-previous0-previous0-known1-unsafe-extra": {
+        "total": 12,
+        "rawMatched": 12,
+        "statuses": {
+          "clarify": 12
+        }
+      },
+      "previous0-previous0-previous0-known1-correct-distinction": {
+        "total": 8,
+        "rawMatched": 8,
+        "statuses": {
+          "correct": 8
+        }
+      },
+      "previous0-previous0-previous0-known1-semantic-trap": {
+        "total": 8,
+        "rawMatched": 8,
+        "statuses": {
+          "clarify": 8
+        }
+      },
+      "previous0-previous0-previous0-known1-tonoplast-correct": {
+        "total": 12,
+        "rawMatched": 12,
+        "statuses": {
+          "correct": 12
+        }
+      },
+      "previous0-previous0-previous0-known1-tonoplast-wrong": {
+        "total": 8,
+        "rawMatched": 8,
+        "statuses": {
+          "incorrect": 8
+        }
+      },
+      "previous0-previous0-previous0-known1-tonoplast-boundary": {
+        "total": 8,
+        "rawMatched": 8,
+        "statuses": {
+          "clarify": 8
+        }
+      },
+      "previous0-previous0-previous0-known2-not-generic-name": {
+        "total": 4,
+        "rawMatched": 0,
+        "statuses": {
+          "clarify": 4
+        }
+      },
+      "previous0-previous0-previous0-known2-generic-name": {
+        "total": 4,
+        "rawMatched": 4,
+        "statuses": {
+          "clarify": 4
+        }
+      },
+      "previous0-previous0-previous0-known2-explicit-negation": {
+        "total": 4,
+        "rawMatched": 4,
+        "statuses": {
+          "incorrect": 4
+        }
+      },
+      "previous0-previous0-previous0-known2-evidence": {
+        "total": 4,
+        "rawMatched": 4,
+        "statuses": {
+          "correct": 4
+        }
+      },
+      "previous0-previous0-previous0-known2-unassessed-unicode": {
+        "total": 4,
+        "rawMatched": 4,
+        "statuses": {
+          "clarify": 4
+        }
+      },
+      "previous0-previous0-previous0-known2-tonoplast-property": {
+        "total": 4,
+        "rawMatched": 2,
+        "statuses": {
+          "clarify": 2,
+          "incorrect": 2
+        }
+      },
+      "previous0-previous0-previous0-known3-explicit-name-not-alias": {
+        "total": 3,
+        "rawMatched": 0,
+        "statuses": {
+          "clarify": 3
+        }
+      },
+      "previous0-previous0-previous0-known3-explicit-name-alias": {
+        "total": 2,
+        "rawMatched": 2,
+        "statuses": {
+          "clarify": 2
+        }
+      },
+      "previous0-previous0-previous0-known3-explicit-name-equivalence": {
+        "total": 1,
+        "rawMatched": 1,
+        "statuses": {
+          "clarify": 1
+        }
+      },
+      "previous0-previous0-previous0-known3-membrane-no-synonym": {
+        "total": 1,
+        "rawMatched": 1,
+        "statuses": {
+          "clarify": 1
+        }
+      },
+      "previous0-previous0-previous0-known3-membrane-not-membrane": {
+        "total": 1,
+        "rawMatched": 1,
+        "statuses": {
+          "incorrect": 1
+        }
+      },
+      "previous0-previous0-previous1-short-correct": {
+        "total": 60,
+        "rawMatched": 60,
+        "statuses": {
+          "correct": 60
+        }
+      },
+      "previous0-previous0-previous1-long-correct": {
+        "total": 12,
+        "rawMatched": 0,
+        "statuses": {
+          "clarify": 12
+        }
+      },
+      "previous0-previous0-previous1-wrong-name": {
+        "total": 12,
+        "rawMatched": 12,
+        "statuses": {
+          "incorrect": 12
+        }
+      },
+      "previous0-previous0-previous1-partial": {
+        "total": 8,
+        "rawMatched": 8,
+        "statuses": {
+          "partial": 8
+        }
+      },
+      "previous0-previous0-previous1-ambiguous": {
+        "total": 12,
+        "rawMatched": 12,
+        "statuses": {
+          "clarify": 12
+        }
+      },
+      "previous0-previous0-previous1-contradiction": {
+        "total": 12,
+        "rawMatched": 12,
+        "statuses": {
+          "incorrect": 12
+        }
+      },
+      "previous0-previous0-previous1-unsafe-extra": {
+        "total": 12,
+        "rawMatched": 12,
+        "statuses": {
+          "clarify": 12
+        }
+      },
+      "previous0-previous0-previous1-correct-distinction": {
+        "total": 8,
+        "rawMatched": 8,
+        "statuses": {
+          "correct": 8
+        }
+      },
+      "previous0-previous0-previous1-semantic-boundary": {
+        "total": 16,
+        "rawMatched": 16,
+        "statuses": {
+          "clarify": 16
+        }
+      },
+      "previous0-previous0-previous1-tonoplast-correct": {
+        "total": 12,
+        "rawMatched": 12,
+        "statuses": {
+          "correct": 12
+        }
+      },
+      "previous0-previous0-previous1-tonoplast-wrong": {
+        "total": 6,
+        "rawMatched": 6,
+        "statuses": {
+          "incorrect": 6
+        }
+      },
+      "previous0-previous0-previous1-tonoplast-boundary": {
+        "total": 6,
+        "rawMatched": 6,
+        "statuses": {
+          "clarify": 6
+        }
+      },
+      "previous0-previous0-previous2-reaffirm-osmosis": {
+        "total": 6,
+        "rawMatched": 6,
+        "statuses": {
+          "correct": 6
+        }
+      },
+      "previous0-previous0-previous2-reaffirm-tonoplast": {
+        "total": 6,
+        "rawMatched": 6,
+        "statuses": {
+          "correct": 6
+        }
+      },
+      "previous0-previous0-previous2-genuine-correction-osmosis": {
+        "total": 4,
+        "rawMatched": 4,
+        "statuses": {
+          "correct": 4
+        }
+      },
+      "previous0-previous0-previous2-genuine-correction-tonoplast": {
+        "total": 4,
+        "rawMatched": 4,
+        "statuses": {
+          "correct": 4
+        }
+      },
+      "previous0-previous0-previous2-property-and-reaffirmation": {
+        "total": 2,
+        "rawMatched": 2,
+        "statuses": {
+          "correct": 2
+        }
+      },
+      "previous0-previous0-previous2-property-and-reaffirmation-tonoplast": {
+        "total": 2,
+        "rawMatched": 2,
+        "statuses": {
+          "correct": 2
+        }
+      },
+      "previous0-previous0-previous2-correction-contradiction": {
+        "total": 2,
+        "rawMatched": 2,
+        "statuses": {
+          "incorrect": 2
+        }
+      },
+      "previous0-previous0-previous2-correction-contradiction-tonoplast": {
+        "total": 2,
+        "rawMatched": 2,
+        "statuses": {
+          "incorrect": 2
+        }
+      },
+      "previous0-previous0-previous2-unresolved-correction": {
+        "total": 3,
+        "rawMatched": 3,
+        "statuses": {
+          "clarify": 3
+        }
+      },
+      "previous0-previous0-previous2-unresolved-correction-tonoplast": {
+        "total": 3,
+        "rawMatched": 3,
+        "statuses": {
+          "clarify": 3
+        }
+      },
+      "previous0-previous1-short-correct": {
+        "total": 60,
+        "rawMatched": 60,
+        "statuses": {
+          "correct": 60
+        }
+      },
+      "previous0-previous1-long-correct": {
+        "total": 15,
+        "rawMatched": 0,
+        "statuses": {
+          "clarify": 15
+        }
+      },
+      "previous0-previous1-wrong-name": {
+        "total": 20,
+        "rawMatched": 13,
+        "statuses": {
+          "incorrect": 13,
+          "clarify": 7
+        }
+      },
+      "previous0-previous1-partial": {
+        "total": 12,
+        "rawMatched": 12,
+        "statuses": {
+          "partial": 12
+        }
+      },
+      "previous0-previous1-ambiguous": {
+        "total": 12,
+        "rawMatched": 12,
+        "statuses": {
+          "clarify": 12
+        }
+      },
+      "previous0-previous1-negation-correction": {
+        "total": 20,
+        "rawMatched": 20,
+        "statuses": {
+          "correct": 8,
+          "incorrect": 8,
+          "clarify": 4
+        }
+      },
+      "previous0-previous1-relevant-extra": {
+        "total": 20,
+        "rawMatched": 20,
+        "statuses": {
+          "clarify": 20
+        }
+      },
+      "previous0-previous1-tonoplast-correct": {
+        "total": 10,
+        "rawMatched": 10,
+        "statuses": {
+          "correct": 10
+        }
+      },
+      "previous0-previous1-tonoplast-wrong": {
+        "total": 6,
+        "rawMatched": 6,
+        "statuses": {
+          "incorrect": 6
+        }
+      },
+      "previous0-previous1-tonoplast-partial": {
+        "total": 4,
+        "rawMatched": 4,
+        "statuses": {
+          "partial": 4
+        }
+      },
+      "previous0-previous1-tonoplast-ambiguous": {
+        "total": 4,
+        "rawMatched": 4,
+        "statuses": {
+          "clarify": 4
+        }
+      },
+      "previous0-previous2-sys-reaffirm": {
+        "total": 40,
+        "rawMatched": 40,
+        "statuses": {
+          "correct": 40
+        }
+      },
+      "previous0-previous2-sys-contradiction": {
+        "total": 25,
+        "rawMatched": 25,
+        "statuses": {
+          "incorrect": 25
+        }
+      },
+      "previous0-previous2-sys-extra": {
+        "total": 25,
+        "rawMatched": 25,
+        "statuses": {
+          "clarify": 25
+        }
+      },
+      "previous0-previous2-sys-correction": {
+        "total": 25,
+        "rawMatched": 25,
+        "statuses": {
+          "correct": 25
+        }
+      },
+      "previous0-previous2-sys-alternative": {
+        "total": 25,
+        "rawMatched": 25,
+        "statuses": {
+          "clarify": 25
+        }
+      },
+      "previous0-previous2-sys-negated-name": {
+        "total": 25,
+        "rawMatched": 25,
+        "statuses": {
+          "incorrect": 25
+        }
+      },
+      "previous0-previous2-sys-property": {
+        "total": 25,
+        "rawMatched": 25,
+        "statuses": {
+          "correct": 25
+        }
+      },
+      "previous0-previous2-sys-synonym": {
+        "total": 10,
+        "rawMatched": 10,
+        "statuses": {
+          "correct": 10
+        }
+      },
+      "previous0-previous2-sys-scope-contradiction": {
+        "total": 10,
+        "rawMatched": 10,
+        "statuses": {
+          "incorrect": 10
+        }
+      },
+      "previous0-previous2-sys-scope-double": {
+        "total": 10,
+        "rawMatched": 10,
+        "statuses": {
+          "clarify": 10
+        }
+      },
+      "previous0-previous2-sys-scope-designation": {
+        "total": 10,
+        "rawMatched": 10,
+        "statuses": {
+          "clarify": 10
+        }
+      },
+      "previous0-previous2-sys-scope-alternative": {
+        "total": 10,
+        "rawMatched": 10,
+        "statuses": {
+          "clarify": 10
+        }
+      },
+      "previous0-previous3-repeated-wrong-then-correct": {
+        "total": 6,
+        "rawMatched": 6,
+        "statuses": {
+          "correct": 6
+        }
+      },
+      "previous0-previous3-reaffirmed-wrong-then-correct": {
+        "total": 6,
+        "rawMatched": 6,
+        "statuses": {
+          "correct": 6
+        }
+      },
+      "previous0-previous3-preserve-scientific-error": {
+        "total": 4,
+        "rawMatched": 4,
+        "statuses": {
+          "incorrect": 4
+        }
+      },
+      "previous0-previous3-preserve-exclusion": {
+        "total": 2,
+        "rawMatched": 2,
+        "statuses": {
+          "incorrect": 2
+        }
+      },
+      "previous0-previous3-preserve-unresolved": {
+        "total": 2,
+        "rawMatched": 2,
+        "statuses": {
+          "clarify": 2
+        }
+      },
+      "previous1-short-correct": {
+        "total": 60,
+        "rawMatched": 60,
+        "statuses": {
+          "correct": 60
+        }
+      },
+      "previous1-long-correct": {
+        "total": 15,
+        "rawMatched": 0,
+        "statuses": {
+          "clarify": 15
+        }
+      },
+      "previous1-wrong-name": {
+        "total": 20,
+        "rawMatched": 20,
+        "statuses": {
+          "incorrect": 20
+        }
+      },
+      "previous1-partial": {
+        "total": 12,
+        "rawMatched": 5,
+        "statuses": {
+          "partial": 5,
+          "clarify": 7
+        }
+      },
+      "previous1-ambiguous": {
+        "total": 12,
+        "rawMatched": 12,
+        "statuses": {
+          "clarify": 12
+        }
+      },
+      "previous1-negation-correction": {
+        "total": 20,
+        "rawMatched": 6,
+        "statuses": {
+          "clarify": 18,
+          "incorrect": 2
+        }
+      },
+      "previous1-relevant-false-extra": {
+        "total": 10,
+        "rawMatched": 10,
+        "statuses": {
+          "clarify": 10
+        }
+      },
+      "previous1-relevant-true-extra": {
+        "total": 10,
+        "rawMatched": 0,
+        "statuses": {
+          "clarify": 10
+        }
+      },
+      "previous1-tonoplast-correct": {
+        "total": 10,
+        "rawMatched": 10,
+        "statuses": {
+          "correct": 10
+        }
+      },
+      "previous1-tonoplast-wrong": {
+        "total": 6,
+        "rawMatched": 3,
+        "statuses": {
+          "incorrect": 3,
+          "clarify": 3
+        }
+      },
+      "previous1-tonoplast-partial": {
+        "total": 4,
+        "rawMatched": 2,
+        "statuses": {
+          "partial": 2,
+          "clarify": 2
+        }
+      },
+      "previous1-tonoplast-ambiguous": {
+        "total": 4,
+        "rawMatched": 4,
+        "statuses": {
+          "clarify": 4
+        }
+      },
+      "previous2-sys-reaffirm": {
+        "total": 50,
+        "rawMatched": 50,
+        "statuses": {
+          "correct": 50
+        }
+      },
+      "previous2-sys-contradiction": {
+        "total": 30,
+        "rawMatched": 30,
+        "statuses": {
+          "incorrect": 30
+        }
+      },
+      "previous2-sys-extra": {
+        "total": 30,
+        "rawMatched": 30,
+        "statuses": {
+          "clarify": 30
+        }
+      },
+      "previous2-sys-correction": {
+        "total": 30,
+        "rawMatched": 30,
+        "statuses": {
+          "correct": 30
+        }
+      },
+      "previous2-sys-alternative": {
+        "total": 30,
+        "rawMatched": 30,
+        "statuses": {
+          "clarify": 30
+        }
+      },
+      "previous2-sys-negated-name": {
+        "total": 30,
+        "rawMatched": 30,
+        "statuses": {
+          "incorrect": 30
+        }
+      },
+      "previous2-sys-property": {
+        "total": 30,
+        "rawMatched": 30,
+        "statuses": {
+          "correct": 30
+        }
+      },
+      "previous2-sys-synonym": {
+        "total": 10,
+        "rawMatched": 10,
+        "statuses": {
+          "correct": 10
+        }
+      },
+      "previous2-sys-scope-exclusion": {
+        "total": 10,
+        "rawMatched": 10,
+        "statuses": {
+          "incorrect": 10
+        }
+      },
+      "previous2-sys-scope-double": {
+        "total": 10,
+        "rawMatched": 10,
+        "statuses": {
+          "clarify": 10
+        }
+      },
+      "previous2-sys-scope-designation": {
+        "total": 10,
+        "rawMatched": 10,
+        "statuses": {
+          "clarify": 10
+        }
+      },
+      "previous2-sys-scope-alternative": {
+        "total": 10,
+        "rawMatched": 10,
+        "statuses": {
+          "clarify": 10
+        }
+      },
+      "previous2-sys-repeated-wrong-correction": {
+        "total": 10,
+        "rawMatched": 10,
+        "statuses": {
+          "correct": 10
+        }
+      },
+      "previous3-choice-through-true-predicate": {
+        "total": 6,
+        "rawMatched": 6,
+        "statuses": {
+          "correct": 6
+        }
+      },
+      "previous3-preserve-false-predicate": {
+        "total": 6,
+        "rawMatched": 6,
+        "statuses": {
+          "incorrect": 6
+        }
+      },
+      "previous3-choice-repeated-three": {
+        "total": 6,
+        "rawMatched": 6,
+        "statuses": {
+          "correct": 6
+        }
+      },
+      "previous3-preserve-negated-name": {
+        "total": 6,
+        "rawMatched": 6,
+        "statuses": {
+          "incorrect": 6
+        }
+      },
+      "previous3-multiple-changes": {
+        "total": 2,
+        "rawMatched": 2,
+        "statuses": {
+          "clarify": 2
+        }
+      },
+      "previous3-unassessed-rest": {
+        "total": 2,
+        "rawMatched": 2,
+        "statuses": {
+          "clarify": 2
+        }
+      },
+      "previous3-negative-synonyms": {
+        "total": 2,
+        "rawMatched": 2,
+        "statuses": {
+          "incorrect": 2
+        }
+      },
+      "previous3-utf16-astral": {
+        "total": 1,
+        "rawMatched": 1,
+        "statuses": {
+          "clarify": 1
+        }
+      },
+      "previous3-utf16-combining": {
+        "total": 1,
+        "rawMatched": 1,
+        "statuses": {
+          "clarify": 1
+        }
+      }
+    },
+    "rawMismatches": [
+      {
+        "id": "R5-061",
+        "field": "osmosis",
+        "group": "long-correct",
+        "text": "Den Vorgang würde ich Osmose nennen, da Wasser passiv durch eine selektiv durchlässige Membran geht.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-062",
+        "field": "osmosis",
+        "group": "long-correct",
+        "text": "Hier ist der Fachausdruck Osmose passend. Die Nettobewegung des Wassers folgt dem angegebenen Wasserpotenzialgefälle.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-063",
+        "field": "osmosis",
+        "group": "long-correct",
+        "text": "Ich wähle die Bezeichnung Osmose. Für den vorgegebenen Zustand ist die Nettoabgabe von Wasser aus der Zelle festgelegt.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-064",
+        "field": "osmosis",
+        "group": "long-correct",
+        "text": "Osmose wäre meine Lösung für den Vorgang, bei dem Wasser die selektive Grenze passiert.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-065",
+        "field": "osmosis",
+        "group": "long-correct",
+        "text": "Ich verwende den Namen Osmose, weil hier der passive Transport von Wasser betrachtet wird.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-066",
+        "field": "osmosis",
+        "group": "long-correct",
+        "text": "Der Name dieses Wassertransports ist Osmose; das Vakuolenvolumen nimmt dabei im betrachteten Zustand ab.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-067",
+        "field": "osmosis",
+        "group": "long-correct",
+        "text": "Für mich lautet die Benennung Osmose. Das Außenmedium hat das niedrigste der drei vorgegebenen Wasserpotenziale.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-068",
+        "field": "osmosis",
+        "group": "long-correct",
+        "text": "Ich gebe den Vorgang als Osmose an. Die Zellwand bleibt dabei annähernd formstabil.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-069",
+        "field": "osmosis",
+        "group": "long-correct",
+        "text": "Meine Bezeichnung ist Osmose, wobei der Druckanteil des Wasserpotenzials berücksichtigt werden muss.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-070",
+        "field": "osmosis",
+        "group": "long-correct",
+        "text": "Ich würde hier Osmose schreiben. Wasser kann auf der Ebene einzelner Moleküle in beide Richtungen die Membran passieren.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-071",
+        "field": "osmosis",
+        "group": "long-correct",
+        "text": "Beim Fachwort lege ich mich auf Osmose fest. Die Nettoflüsse unterscheiden sich von den einzelnen zufälligen Übertritten.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-072",
+        "field": "osmosis",
+        "group": "long-correct",
+        "text": "Ich bezeichne es als Osmose. Das Wasserpotenzial im Cytosol liegt hier unter dem der Vakuole und über dem der Außenlösung.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-073",
+        "field": "osmosis",
+        "group": "long-correct",
+        "text": "Osmose würde ich den Vorgang nennen; es geht nicht um einen aktiven Wassertransport.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-074",
+        "field": "osmosis",
+        "group": "long-correct",
+        "text": "Meine Antwort zum Vorgang ist Osmose. Die weitgehende Rückhaltung von Saccharose ist eine ausdrücklich gesetzte Modellbedingung.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-075",
+        "field": "osmosis",
+        "group": "long-correct",
+        "text": "Die gesuchte Wasserbewegung heißt Osmose. Im Material ist eine frühe Phase nach dem Lösungswechsel vorgegeben.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-097",
+        "field": "osmosis",
+        "group": "partial",
+        "text": "Ich benenne den Vorgang vorläufig nur als Wassertransport.",
+        "expected": [
+          "partial"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-099",
+        "field": "osmosis",
+        "group": "partial",
+        "text": "Für den Vorgang fällt mir lediglich Wasserbewegung ein.",
+        "expected": [
+          "partial"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-100",
+        "field": "osmosis",
+        "group": "partial",
+        "text": "Die Antwort wäre für mich nur Diffusion, genauer weiß ich es nicht.",
+        "expected": [
+          "partial"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-101",
+        "field": "osmosis",
+        "group": "partial",
+        "text": "Ich erkenne den Transport von Wasser, weiß aber das besondere Fachwort nicht.",
+        "expected": [
+          "partial"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-102",
+        "field": "osmosis",
+        "group": "partial",
+        "text": "Ich würde im ersten Feld passiver Transport eintragen.",
+        "expected": [
+          "partial"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_NO_NAME",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-103",
+        "field": "osmosis",
+        "group": "partial",
+        "text": "Als allgemeine Bezeichnung habe ich Diffusion im Sinn.",
+        "expected": [
+          "partial"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-104",
+        "field": "osmosis",
+        "group": "partial",
+        "text": "Ich weiß nur, dass Wasser durch die Membran transportiert wird.",
+        "expected": [
+          "partial"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-105",
+        "field": "osmosis",
+        "group": "partial",
+        "text": "Mir fällt dazu Wassertransport ein, der genaue Name fehlt mir.",
+        "expected": [
+          "partial"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-106",
+        "field": "osmosis",
+        "group": "partial",
+        "text": "Mein Ansatz ist eine Bewegung von Wasser durch die Membran.",
+        "expected": [
+          "partial"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-120",
+        "field": "osmosis",
+        "group": "negation-correction",
+        "text": "Ich hatte Endocytose als Namen gewählt, ändere meine Antwort aber ausdrücklich in Osmose.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-121",
+        "field": "osmosis",
+        "group": "negation-correction",
+        "text": "Erst hatte ich Exocytose im Kopf; als endgültige Benennung nehme ich Osmose.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-122",
+        "field": "osmosis",
+        "group": "negation-correction",
+        "text": "Den Vorschlag Plasmolyse nehme ich zurück. Der Name des Wassertransports lautet Osmose.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-123",
+        "field": "osmosis",
+        "group": "negation-correction",
+        "text": "Ich korrigiere meine vorherige Antwort aktiver Transport zu Osmose.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-124",
+        "field": "osmosis",
+        "group": "negation-correction",
+        "text": "Meine Antwort bleibt beim Namen Osmose, also bei derselben Bezeichnung.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-125",
+        "field": "osmosis",
+        "group": "negation-correction",
+        "text": "Ich bestätige Osmose als meinen gewählten Namen für den Vorgang.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-126",
+        "field": "osmosis",
+        "group": "negation-correction",
+        "text": "Osmose. Das ist in Wirklichkeit Osmose. Ich bleibe bei diesem Namen.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-127",
+        "field": "osmosis",
+        "group": "negation-correction",
+        "text": "Ich nenne den Vorgang nicht Endocytose, sondern ganz ausdrücklich Osmose.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-132",
+        "field": "osmosis",
+        "group": "negation-correction",
+        "text": "Ich wähle Osmose als Namen. Osmose ist keine passive Wasserbewegung.",
+        "expected": [
+          "incorrect"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-133",
+        "field": "osmosis",
+        "group": "negation-correction",
+        "text": "Für den Namen nehme ich Osmose. Nicht Osmose ist aber meine Antwort.",
+        "expected": [
+          "incorrect"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-134",
+        "field": "osmosis",
+        "group": "negation-correction",
+        "text": "Nicht Endocytose, sondern Exocytose ist hier meine Benennung.",
+        "expected": [
+          "incorrect"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-135",
+        "field": "osmosis",
+        "group": "negation-correction",
+        "text": "Osmose ist meine Benennung für diesen Transport. Osmose ist keine Wasserbewegung.",
+        "expected": [
+          "incorrect"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-150",
+        "field": "osmosis",
+        "group": "relevant-true-extra",
+        "text": "Der biologische Name lautet Osmose. Die Außenlösung hat hier das niedrigste Wasserpotenzial.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-151",
+        "field": "osmosis",
+        "group": "relevant-true-extra",
+        "text": "Ich nehme das Fachwort Osmose. Der Zellinhalt verliert unter den genannten Bedingungen netto Wasser.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-152",
+        "field": "osmosis",
+        "group": "relevant-true-extra",
+        "text": "Meine Benennung für den Vorgang ist Osmose. Das Wasserpotenzial des Cytosols ist hier höher als das des Außenraums.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-153",
+        "field": "osmosis",
+        "group": "relevant-true-extra",
+        "text": "Ich würde den Transport Osmose nennen. Die Membran um die Vakuole ist ebenfalls für Wasser durchlässig.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-154",
+        "field": "osmosis",
+        "group": "relevant-true-extra",
+        "text": "Ich wähle als Namen Osmose. Saccharose bleibt im betrachteten Zeitraum weitgehend zurückgehalten.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-155",
+        "field": "osmosis",
+        "group": "relevant-true-extra",
+        "text": "Osmose ist meine Lösung. Ohne die vorgegebenen Druckbedingungen wäre eine reine Konzentrationsangabe nicht hinreichend.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-156",
+        "field": "osmosis",
+        "group": "relevant-true-extra",
+        "text": "Den Vorgang nenne ich Osmose. Die Potenziale sind im Material in Pa angegeben.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-157",
+        "field": "osmosis",
+        "group": "relevant-true-extra",
+        "text": "Ich gebe als Begriff Osmose an. Die Zelle ist im betrachteten Modell intakt.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-158",
+        "field": "osmosis",
+        "group": "relevant-true-extra",
+        "text": "Hier wäre meine Benennung Osmose. Weitere Stofftransporte werden für diesen Fall ausgeblendet.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-159",
+        "field": "osmosis",
+        "group": "relevant-true-extra",
+        "text": "Ich würde als Namen Osmose nehmen. Das Vakuolenvolumen sinkt in der angegebenen Phase durch Netto-Wasserverlust.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-177",
+        "field": "tonoplast",
+        "group": "tonoplast-partial",
+        "text": "Ich hätte als Namen nur Hülle hingeschrieben.",
+        "expected": [
+          "partial"
+        ],
+        "actual": "clarify",
+        "code": "TONOPLAST_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "R5-179",
+        "field": "tonoplast",
+        "group": "tonoplast-partial",
+        "text": "Ich würde die Grenze vorläufig einfach Membran nennen.",
+        "expected": [
+          "partial"
+        ],
+        "actual": "clarify",
+        "code": "TONOPLAST_UNASSESSED",
+        "qualification": "unresolved implementation gap; not a revised biological Soll"
+      },
+      {
+        "id": "previous0-previous0-previous0-known1-long-correct-01",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous0-known1-long-correct",
+        "text": "Der Vorgang ist Osmose, also die passive Bewegung von Wasser durch eine selektiv permeable Membran.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous0-known1-long-correct-02",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous0-known1-long-correct",
+        "text": "Osmose ist der Fachbegriff; dabei folgt Wasser dem Wasserpotenzialgefälle.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous0-known1-long-correct-03",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous0-known1-long-correct",
+        "text": "Hier liegt Osmose vor, denn Wasser kann die Membranen passieren.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous0-known1-long-correct-04",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous0-known1-long-correct",
+        "text": "Ich nenne den Vorgang Osmose: Wasser bewegt sich netto zum niedrigeren Wasserpotenzial.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous0-known1-long-correct-05",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous0-known1-long-correct",
+        "text": "Osmose führt hier zum Wasserverlust der Zelle, weil das Wasserpotenzial außen niedriger liegt.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous0-known1-long-correct-06",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous0-known1-long-correct",
+        "text": "Der passive Wassertransport heißt Osmose und benötigt keine direkte ATP-Spaltung für den Wasserfluss.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous0-known1-long-correct-07",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous0-known1-long-correct",
+        "text": "Bei diesem Fall strömt Wasser osmotisch aus dem Cytosol in den Außenraum; der Vorgang heißt Osmose.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous0-known1-long-correct-08",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous0-known1-long-correct",
+        "text": "Das ist Osmose. Das angegebene Gefälle besteht über Zellmembran und Tonoplast.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous0-known1-long-correct-09",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous0-known1-long-correct",
+        "text": "Osmose beschreibt hier den Wassertransport; die Plasmolyse bezeichnet die nachfolgende Zellreaktion.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous0-known1-long-correct-10",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous0-known1-long-correct",
+        "text": "Ich würde Osmose sagen, weil Wasser die selektiven Membranen durchquert.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous0-known1-long-correct-11",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous0-known1-long-correct",
+        "text": "Osmose ist passiver Wassertransport; einzelne Wassermoleküle bewegen sich dabei in beide Richtungen.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous0-known1-long-correct-12",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous0-known1-long-correct",
+        "text": "Der Wassertransport erfolgt durch Osmose. Die Nettobilanz richtet sich nach dem gesamten Wasserpotenzial.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous0-known1-long-correct-13",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous0-known1-long-correct",
+        "text": "Ich meine Osmose, also eine Form der Diffusion von Wasser durch eine selektive Membran.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous0-known1-long-correct-14",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous0-known1-long-correct",
+        "text": "Das nennt sich Osmose, wobei Saccharose im betrachteten Zeitraum weitgehend außen bleibt.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous0-known1-long-correct-15",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous0-known1-long-correct",
+        "text": "Osmose findet hier statt; aus dem höheren Wasserpotenzial der Vakuole ergibt sich netto Wasserabgabe an das Cytosol.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous0-known1-long-correct-16",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous0-known1-long-correct",
+        "text": "Es handelt sich um Osmose. Das Vakuolenvolumen nimmt in dieser Phase durch Wasserverlust ab.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous0-known1-long-correct-17",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous0-known1-long-correct",
+        "text": "Osmose ist hier der Transportprozess; die annähernd formstabile Zellwand schrumpft dabei nicht mit.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous0-known1-long-correct-18",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous0-known1-long-correct",
+        "text": "Mein Fachbegriff ist Osmose. Der Druckanteil gehört dabei zum Wasserpotenzial.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous0-known1-long-correct-19",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous0-known1-long-correct",
+        "text": "Ich würde den Vorgang Osmose nennen; eine hohe Zuckerkonzentration allein legt ohne Druckangabe nicht jede Flussrichtung fest.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous0-known1-long-correct-20",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous0-known1-long-correct",
+        "text": "Osmose bedeutet hier passive Wasserbewegung, während der Name Plasmolyse die Ablösung des Protoplasten von der Wand bezeichnet.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous0-known2-not-generic-name-1",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous0-known2-not-generic-name",
+        "text": "Osmose ist nicht der Name der Diffusion.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous0-known2-not-generic-name-2",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous0-known2-not-generic-name",
+        "text": "Osmose ist nicht der Name der Wasserbewegung.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous0-known2-not-generic-name-3",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous0-known2-not-generic-name",
+        "text": "Osmose ist nicht ein anderer Name für Diffusion.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous0-known2-not-generic-name-4",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous0-known2-not-generic-name",
+        "text": "Osmose ist nicht ein anderer Name für passiven Transport.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous0-known2-tonoplast-property-2",
+        "field": "tonoplast",
+        "group": "previous0-previous0-previous0-known2-tonoplast-property",
+        "text": "Tonoplast ist eine Form der Zellmembran.",
+        "expected": [
+          "clarify"
+        ],
+        "actual": "incorrect",
+        "code": "TONOPLAST_FALSE_IDENTITY",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous0-known2-tonoplast-property-3",
+        "field": "tonoplast",
+        "group": "previous0-previous0-previous0-known2-tonoplast-property",
+        "text": "Tonoplast ist eine Art von Zellwand.",
+        "expected": [
+          "clarify"
+        ],
+        "actual": "incorrect",
+        "code": "TONOPLAST_FALSE_IDENTITY",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous0-known3-explicit-name-not-alias-1",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous0-known3-explicit-name-not-alias",
+        "text": "Osmose. Osmose ist nicht der Name der Diffusion.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous0-known3-explicit-name-not-alias-2",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous0-known3-explicit-name-not-alias",
+        "text": "Osmose. Osmose ist nicht der Name der Wasserbewegung.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous0-known3-explicit-name-not-alias-3",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous0-known3-explicit-name-not-alias",
+        "text": "Osmose. Osmose ist nicht ein anderer Name für Diffusion.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous1-long-correct-01",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous1-long-correct",
+        "text": "Der Name des Vorgangs ist Osmose; Wasser passiert dabei selektiv permeable Membranen.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous1-long-correct-02",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous1-long-correct",
+        "text": "Osmose ist hier der richtige Begriff, denn der Wassertransport erfolgt passiv.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous1-long-correct-03",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous1-long-correct",
+        "text": "Ich nenne den Transport Osmose. Die Wasserpotenzialdifferenz bestimmt die Nettobilanz.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous1-long-correct-04",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous1-long-correct",
+        "text": "Ich meine Osmose: In diesem Fall liegt das Wasserpotenzial außerhalb der Zelle niedriger.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous1-long-correct-05",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous1-long-correct",
+        "text": "Das ist ein Fall von Osmose, bei dem Wasser netto den Protoplasten verlässt.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous1-long-correct-06",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous1-long-correct",
+        "text": "Hier handelt es sich um Osmose; der Tonoplast lässt Wasser passieren.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous1-long-correct-07",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous1-long-correct",
+        "text": "Der Fachname lautet Osmose. Der Druckanteil darf beim Wasserpotenzial nicht weggelassen werden.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous1-long-correct-08",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous1-long-correct",
+        "text": "Osmose beschreibt den Wassertransport, während Plasmolyse die Zellreaktion auf hinreichenden Wasserverlust bezeichnet.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous1-long-correct-09",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous1-long-correct",
+        "text": "Meine Antwort wäre Osmose, also passiver Wassertransport durch eine selektive Grenze.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous1-long-correct-10",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous1-long-correct",
+        "text": "Für mich ist das Osmose. Einzelne Wassermoleküle können trotzdem in beide Richtungen übertreten.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous1-long-correct-11",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous1-long-correct",
+        "text": "Ich würde Osmose nennen; die Saccharose wird im angenommenen Zeitraum weitgehend zurückgehalten.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous0-previous1-long-correct-12",
+        "field": "osmosis",
+        "group": "previous0-previous0-previous1-long-correct",
+        "text": "Der Vorgang heißt Osmose. Wasser wird hier nicht durch eine aktive Pumpe befördert.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous1-long-correct-01",
+        "field": "osmosis",
+        "group": "previous0-previous1-long-correct",
+        "text": "Ich würde das Osmose nennen, weil Wasser durch selektiv permeable Membranen wandert.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous1-long-correct-02",
+        "field": "osmosis",
+        "group": "previous0-previous1-long-correct",
+        "text": "Der Transportprozess heißt Osmose; dabei folgt der Nettofluss dem Wasserpotenzialgefälle.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous1-long-correct-03",
+        "field": "osmosis",
+        "group": "previous0-previous1-long-correct",
+        "text": "Für mich ist es Osmose. Das Wasserpotenzial ist hier im Cytosol höher als im Außenraum.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous1-long-correct-04",
+        "field": "osmosis",
+        "group": "previous0-previous1-long-correct",
+        "text": "Ich meine den Vorgang Osmose, bei dem Wasser passiv die Zellmembran durchquert.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous1-long-correct-05",
+        "field": "osmosis",
+        "group": "previous0-previous1-long-correct",
+        "text": "Ich würde Osmose antworten. Der Wasserfluss selbst wird hier nicht durch eine ATP-Pumpe angetrieben.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous1-long-correct-06",
+        "field": "osmosis",
+        "group": "previous0-previous1-long-correct",
+        "text": "Die Wasserabgabe erfolgt hier durch Osmose, während Saccharose weitgehend zurückgehalten wird.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous1-long-correct-07",
+        "field": "osmosis",
+        "group": "previous0-previous1-long-correct",
+        "text": "Osmose ist mein Begriff dafür. Die Betrachtung gilt für die frühe Phase und nicht für den Austauschzeitpunkt.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous1-long-correct-08",
+        "field": "osmosis",
+        "group": "previous0-previous1-long-correct",
+        "text": "Ich nenne den Wassertransport Osmose; unter den angegebenen Bedingungen verliert die Vakuole Wasser.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous1-long-correct-09",
+        "field": "osmosis",
+        "group": "previous0-previous1-long-correct",
+        "text": "Ich würde sagen, es handelt sich um Osmose. Die feste Zellwand schrumpft dabei nicht wie der Protoplast.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous1-long-correct-10",
+        "field": "osmosis",
+        "group": "previous0-previous1-long-correct",
+        "text": "Der passende Name ist Osmose, eine Form passiver Wasserbewegung durch eine selektive Grenze.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous1-long-correct-11",
+        "field": "osmosis",
+        "group": "previous0-previous1-long-correct",
+        "text": "Meine Antwort lautet hier Osmose. Die Richtung ergibt sich aus dem gesamten Wasserpotenzial einschließlich Druck.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous1-long-correct-12",
+        "field": "osmosis",
+        "group": "previous0-previous1-long-correct",
+        "text": "Hier ist Osmose gemeint: Einzelne Wassermoleküle können die Grenze in beide Richtungen überqueren.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous1-long-correct-13",
+        "field": "osmosis",
+        "group": "previous0-previous1-long-correct",
+        "text": "Das heißt Osmose, und das Vakuolenvolumen nimmt im beschriebenen Zustand durch Wasserverlust ab.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous1-long-correct-14",
+        "field": "osmosis",
+        "group": "previous0-previous1-long-correct",
+        "text": "Ich würde es Osmose nennen. Plasmolyse ist die dadurch mögliche Zellreaktion und nicht der Transportname.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous1-long-correct-15",
+        "field": "osmosis",
+        "group": "previous0-previous1-long-correct",
+        "text": "Als Vorgang nenne ich Osmose, weil sowohl Tonoplast als auch Zellmembran Wasser passieren lassen.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous1-wrong-name-13",
+        "field": "osmosis",
+        "group": "previous0-previous1-wrong-name",
+        "text": "Der Wassertransport wird hier aktiv durch ATP-Spaltung angetrieben.",
+        "expected": [
+          "incorrect"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous1-wrong-name-14",
+        "field": "osmosis",
+        "group": "previous0-previous1-wrong-name",
+        "text": "Wasser fließt hier netto vom niedrigeren zum höheren gesamten Wasserpotenzial.",
+        "expected": [
+          "incorrect"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous1-wrong-name-15",
+        "field": "osmosis",
+        "group": "previous0-previous1-wrong-name",
+        "text": "Bei diesem Fall nimmt die Vakuole durch ihren Wasserverlust an Volumen zu.",
+        "expected": [
+          "incorrect"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous1-wrong-name-17",
+        "field": "osmosis",
+        "group": "previous0-previous1-wrong-name",
+        "text": "Osmose bedeutet hier vesikuläre Wasserabgabe durch Exocytose.",
+        "expected": [
+          "incorrect"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous1-wrong-name-18",
+        "field": "osmosis",
+        "group": "previous0-previous1-wrong-name",
+        "text": "Bei Osmose wird die Zellwand zum eigentlichen Tonoplasten umgebaut.",
+        "expected": [
+          "incorrect"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous1-wrong-name-19",
+        "field": "osmosis",
+        "group": "previous0-previous1-wrong-name",
+        "text": "Hier bezeichnet Osmose die Aufnahme von Wasser durch Endocytose.",
+        "expected": [
+          "incorrect"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous0-previous1-wrong-name-20",
+        "field": "osmosis",
+        "group": "previous0-previous1-wrong-name",
+        "text": "Osmose ist grundsätzlich keine passive Bewegung von Wasser.",
+        "expected": [
+          "incorrect"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-061",
+        "field": "osmosis",
+        "group": "previous1-long-correct",
+        "text": "Meine Antwort ist Osmose, denn es geht um den passiven Wassertransport durch eine selektiv durchlässige Membran.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-062",
+        "field": "osmosis",
+        "group": "previous1-long-correct",
+        "text": "Ich nenne den Vorgang Osmose; das Wasser bewegt sich dabei entsprechend dem Wasserpotenzialgefälle.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-063",
+        "field": "osmosis",
+        "group": "previous1-long-correct",
+        "text": "Der Wassertransport heißt Osmose. Im vorgegebenen Fall verliert die Zelle dabei netto Wasser.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-064",
+        "field": "osmosis",
+        "group": "previous1-long-correct",
+        "text": "Als Namen würde ich Osmose eintragen. Der vorgegebene Zustand legt die Nettorichtung nach außen fest.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-065",
+        "field": "osmosis",
+        "group": "previous1-long-correct",
+        "text": "Osmose wäre die Bezeichnung dafür, weil Wasser durch die für Wasser durchlässigen Membranen transportiert wird.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-066",
+        "field": "osmosis",
+        "group": "previous1-long-correct",
+        "text": "Ich würde mit Osmose antworten. Für diese Wasserbewegung ist kein aktiver Transport von Wasser nötig.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-067",
+        "field": "osmosis",
+        "group": "previous1-long-correct",
+        "text": "Der Fachbegriff lautet Osmose, wobei die angegebenen Wasserpotenziale den Nettotransport bestimmen.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-068",
+        "field": "osmosis",
+        "group": "previous1-long-correct",
+        "text": "Ich entscheide mich für Osmose. Die Vakuole gibt im beschriebenen Zustand netto Wasser an das Cytosol ab.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-069",
+        "field": "osmosis",
+        "group": "previous1-long-correct",
+        "text": "Ich glaube, der Name ist Osmose. Vom Cytosol geht netto Wasser weiter in den Außenraum.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-070",
+        "field": "osmosis",
+        "group": "previous1-long-correct",
+        "text": "Osmose ist die gesuchte Benennung. Einzelne Wassermoleküle können sich trotzdem in beide Richtungen bewegen.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-071",
+        "field": "osmosis",
+        "group": "previous1-long-correct",
+        "text": "Ich würde den Vorgang Osmose nennen. Das niedrigere Wasserpotenzial außen erklärt hier die Nettoabgabe von Wasser.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-072",
+        "field": "osmosis",
+        "group": "previous1-long-correct",
+        "text": "Als Lösung habe ich Osmose. Die Saccharose bleibt laut Material im betrachteten Zeitraum weitgehend außen.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-073",
+        "field": "osmosis",
+        "group": "previous1-long-correct",
+        "text": "Der Vorgang ist als Osmose zu bezeichnen. Für die Richtung zählt das gesamte Wasserpotenzial einschließlich des Druckanteils.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-074",
+        "field": "osmosis",
+        "group": "previous1-long-correct",
+        "text": "Meine Bezeichnung wäre Osmose, eine besondere Form der Diffusion von Wasser über eine selektive Grenze.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-075",
+        "field": "osmosis",
+        "group": "previous1-long-correct",
+        "text": "Den gesuchten Wassertransport würde ich Osmose nennen. Die feste Zellwand wird dabei nicht zusammen mit dem Protoplasten kleiner.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-097",
+        "field": "osmosis",
+        "group": "previous1-partial",
+        "text": "Meine Antwort wäre passive Teilchenbewegung.",
+        "expected": [
+          "partial"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-099",
+        "field": "osmosis",
+        "group": "previous1-partial",
+        "text": "Als Ansatz habe ich einen passiven Transport.",
+        "expected": [
+          "partial"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_NO_NAME",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-100",
+        "field": "osmosis",
+        "group": "previous1-partial",
+        "text": "Für mich geht es um die Bewegung von Wasser.",
+        "expected": [
+          "partial"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-102",
+        "field": "osmosis",
+        "group": "previous1-partial",
+        "text": "Das Fachwort ist mir nicht klar, aber Wassertransport passt.",
+        "expected": [
+          "partial"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-104",
+        "field": "osmosis",
+        "group": "previous1-partial",
+        "text": "Mein Vorschlag lautet passiver Stofftransport.",
+        "expected": [
+          "partial"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-106",
+        "field": "osmosis",
+        "group": "previous1-partial",
+        "text": "Es ist eine Bewegung von Teilchen.",
+        "expected": [
+          "partial"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-107",
+        "field": "osmosis",
+        "group": "previous1-partial",
+        "text": "Ich habe als Begriff nur Membrantransport.",
+        "expected": [
+          "partial"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-120",
+        "field": "osmosis",
+        "group": "previous1-negation-correction",
+        "text": "Ich nehme Endocytose zurück; meine endgültige Antwort ist Osmose.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-121",
+        "field": "osmosis",
+        "group": "previous1-negation-correction",
+        "text": "Zuerst dachte ich an Exocytose, aber ich korrigiere das zu Osmose.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-122",
+        "field": "osmosis",
+        "group": "previous1-negation-correction",
+        "text": "Plasmolyse war mein erster Vorschlag. Richtig heißt der Wassertransport Osmose.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-123",
+        "field": "osmosis",
+        "group": "previous1-negation-correction",
+        "text": "Ich hatte aktiven Transport hingeschrieben; stattdessen nehme ich Osmose.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-124",
+        "field": "osmosis",
+        "group": "previous1-negation-correction",
+        "text": "Nicht Exocytose ist gemeint. Meine Antwort ist Osmose.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-125",
+        "field": "osmosis",
+        "group": "previous1-negation-correction",
+        "text": "Den Namen Endocytose streiche ich. Ich entscheide mich für Osmose.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-126",
+        "field": "osmosis",
+        "group": "previous1-negation-correction",
+        "text": "Ich bleibe bei meiner Antwort Osmose und bestätige diesen Namen.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-127",
+        "field": "osmosis",
+        "group": "previous1-negation-correction",
+        "text": "Osmose ist mein Name dafür; mit Osmose meine ich denselben Vorgang.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-128",
+        "field": "osmosis",
+        "group": "previous1-negation-correction",
+        "text": "Meine Antwort ist Osmose, aber der Vorgang heißt nicht Osmose.",
+        "expected": [
+          "incorrect"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-131",
+        "field": "osmosis",
+        "group": "previous1-negation-correction",
+        "text": "Der Name wäre Osmose. Osmose ist nicht passiv.",
+        "expected": [
+          "incorrect"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-132",
+        "field": "osmosis",
+        "group": "previous1-negation-correction",
+        "text": "Als Namen wähle ich Osmose. Osmose braucht ATP.",
+        "expected": [
+          "incorrect"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-133",
+        "field": "osmosis",
+        "group": "previous1-negation-correction",
+        "text": "Der Wassertransport heißt gerade nicht Osmose.",
+        "expected": [
+          "incorrect"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-134",
+        "field": "osmosis",
+        "group": "previous1-negation-correction",
+        "text": "Ich verneine die Benennung Osmose für diesen Vorgang.",
+        "expected": [
+          "incorrect"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-135",
+        "field": "osmosis",
+        "group": "previous1-negation-correction",
+        "text": "Nicht Osmose, sondern Exocytose ist mein endgültiger Name.",
+        "expected": [
+          "incorrect"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-150",
+        "field": "osmosis",
+        "group": "previous1-relevant-true-extra",
+        "text": "Osmose wäre mein Name. Die Zellwand bleibt hier annähernd formstabil.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-151",
+        "field": "osmosis",
+        "group": "previous1-relevant-true-extra",
+        "text": "Als Benennung nehme ich Osmose. Wasserpotenzial und Konzentration sind nicht dasselbe.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-152",
+        "field": "osmosis",
+        "group": "previous1-relevant-true-extra",
+        "text": "Ich würde Osmose eintragen. Die angegebenen Druckbedingungen gehören zum Wasserpotenzial.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-153",
+        "field": "osmosis",
+        "group": "previous1-relevant-true-extra",
+        "text": "Mein Fachwort ist Osmose. Die Nettobewegung geht hier zum niedrigeren Wasserpotenzial.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-154",
+        "field": "osmosis",
+        "group": "previous1-relevant-true-extra",
+        "text": "Ich entscheide mich für Osmose. Zellmembran und Tonoplast sind für Wasser durchlässig.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-155",
+        "field": "osmosis",
+        "group": "previous1-relevant-true-extra",
+        "text": "Den Wassertransport nenne ich Osmose. Die Vakuole verliert hier netto Wasser.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-156",
+        "field": "osmosis",
+        "group": "previous1-relevant-true-extra",
+        "text": "Osmose ist meine Antwort. Der betrachtete Fall schließt weitere Transporte aus.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-157",
+        "field": "osmosis",
+        "group": "previous1-relevant-true-extra",
+        "text": "Für mich heißt es Osmose. Die frühe Phase nach dem Wechsel der Lösung ist vorgegeben.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-158",
+        "field": "osmosis",
+        "group": "previous1-relevant-true-extra",
+        "text": "Die Antwort zum Vorgang lautet Osmose. Das Wasserpotenzial der Vakuole liegt über dem des Cytosols.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-159",
+        "field": "osmosis",
+        "group": "previous1-relevant-true-extra",
+        "text": "Ich trage Osmose ein. Der Außenraum hat im Material das niedrigste Wasserpotenzial.",
+        "expected": [
+          "correct"
+        ],
+        "actual": "clarify",
+        "code": "OSMOSIS_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-173",
+        "field": "tonoplast",
+        "group": "previous1-tonoplast-wrong",
+        "text": "Ich entscheide mich für Vakuole als Membrannamen.",
+        "expected": [
+          "incorrect"
+        ],
+        "actual": "clarify",
+        "code": "TONOPLAST_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-174",
+        "field": "tonoplast",
+        "group": "previous1-tonoplast-wrong",
+        "text": "Die Vakuolengrenze würde ich Ribosom nennen.",
+        "expected": [
+          "incorrect"
+        ],
+        "actual": "clarify",
+        "code": "TONOPLAST_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-175",
+        "field": "tonoplast",
+        "group": "previous1-tonoplast-wrong",
+        "text": "Mein Begriff für die Membran um die Vakuole ist Cytosol.",
+        "expected": [
+          "incorrect"
+        ],
+        "actual": "clarify",
+        "code": "TONOPLAST_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-178",
+        "field": "tonoplast",
+        "group": "previous1-tonoplast-partial",
+        "text": "Für mich ist das eine innere Membran.",
+        "expected": [
+          "partial"
+        ],
+        "actual": "clarify",
+        "code": "TONOPLAST_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      },
+      {
+        "id": "previous1-R4-179",
+        "field": "tonoplast",
+        "group": "previous1-tonoplast-partial",
+        "text": "Mein Vorschlag lautet Vakuolenhülle, den Fachnamen weiß ich noch nicht.",
+        "expected": [
+          "partial"
+        ],
+        "actual": "clarify",
+        "code": "TONOPLAST_UNASSESSED",
+        "qualification": "previously documented raw discrepancy"
+      }
+    ],
+    "guardChecks": [
+      {
+        "id": "missing-cellProfile",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "missing-cellIntegrity",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "missing-observationPhase",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "missing-waterPotential",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "missing-waterPermeability",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "missing-sucroseRetention",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "missing-otherTransport",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "bad-cellProfile",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "bad-cellIntegrity",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "bad-observationPhase",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "bad-sucroseRetention",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "bad-otherTransport",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "impermeable-cellMembrane",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "impermeable-tonoplast",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "potential-equal",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "potential-reverse",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "potential-mixedOrder",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "potential-wrongUnit",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "potential-extra",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "nonfinite-NaN",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "nonfinite-Infinity",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "nonfinite--Infinity",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "extra-material",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "nonempty-model",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "version-taskVersion",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "label-taskVersion-\"\"",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "label-taskVersion-\" bad\"",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "label-taskVersion-\"bad\\u0000\"",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "label-taskVersion-\"aaaaaaaaaaaaaaaaa",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "version-rubricVersion",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "label-rubricVersion-\"\"",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "label-rubricVersion-\" bad\"",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "label-rubricVersion-\"bad\\u0000\"",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "label-rubricVersion-\"aaaaaaaaaaaaaaaaa",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "version-contentVersion",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "label-contentVersion-\"\"",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "label-contentVersion-\" bad\"",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "label-contentVersion-\"bad\\u0000\"",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "label-contentVersion-\"aaaaaaaaaaaaaaaaa",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "version-modelVersion",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "label-modelVersion-\"\"",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "label-modelVersion-\" bad\"",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "label-modelVersion-\"bad\\u0000\"",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "label-modelVersion-\"aaaaaaaaaaaaaaaaa",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "stale-seed",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "stale-phase",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "stale-instance",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "stale-material",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "forged-hash",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "mutated-material-with-old-hash",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "wrong-field-direction",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "wrong-field-volume",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "wrong-field-term",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "cross-task-osmosis",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "cross-task-tonoplast",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "incomplete-attempt",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "complete-tonoplast-attempt",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "help-independent",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "help-hint",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "help-wordbank",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "help-clarified",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "help-solution_viewed",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "unknown-help",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "length-full",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "control-character",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "empty",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "markup",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "extra-response-key",
+        "passed": true,
+        "detail": true
+      },
+      {
+        "id": "non-string",
+        "passed": true,
+        "detail": true
+      }
+    ],
+    "chromiumTimings": [
+      {
+        "file": "p02b-fourth.spec.ts",
+        "profile": "desktop-chromium",
+        "engine": "154.0.8037.57",
+        "cases": 968,
+        "browserMs": 4451.845555999999,
+        "nodeAndAssertionsMs": 7280.765692000001
+      },
+      {
+        "file": "p02b-fourth.spec.ts",
+        "profile": "tablet-chromium",
+        "engine": "154.0.8037.57",
+        "cases": 968,
+        "browserMs": 3214.9421159999993,
+        "nodeAndAssertionsMs": 7406.717726000001
+      },
+      {
+        "file": "p02b-fourth.spec.ts",
+        "profile": "mobile-chromium",
+        "engine": "154.0.8037.57",
+        "cases": 968,
+        "browserMs": 3385.479732,
+        "nodeAndAssertionsMs": 6593.847927000001
+      },
+      {
+        "file": "p02b-r3.spec.ts",
+        "profile": "desktop-chromium",
+        "engine": "154.0.8037.57",
+        "cases": 1501,
+        "browserMs": 4104.502893000001,
+        "nodeAndAssertionsMs": 13038.16917
+      },
+      {
+        "file": "p02b-r3.spec.ts",
+        "profile": "tablet-chromium",
+        "engine": "154.0.8037.57",
+        "cases": 1501,
+        "browserMs": 3878.1078180000004,
+        "nodeAndAssertionsMs": 11692.551538
+      },
+      {
+        "file": "p02b-r3.spec.ts",
+        "profile": "mobile-chromium",
+        "engine": "154.0.8037.57",
+        "cases": 1501,
+        "browserMs": 3711.0890359999994,
+        "nodeAndAssertionsMs": 11317.540959000002
+      },
+      {
+        "file": "p02b-r4.spec.ts",
+        "profile": "desktop-chromium",
+        "engine": "154.0.8037.57",
+        "cases": 2402,
+        "browserMs": 7095.477487,
+        "nodeAndAssertionsMs": 20514.015715999998
+      },
+      {
+        "file": "p02b-r4.spec.ts",
+        "profile": "tablet-chromium",
+        "engine": "154.0.8037.57",
+        "cases": 2402,
+        "browserMs": 5840.093467999999,
+        "nodeAndAssertionsMs": 19708.036955999996
+      },
+      {
+        "file": "p02b-r4.spec.ts",
+        "profile": "mobile-chromium",
+        "engine": "154.0.8037.57",
+        "cases": 2402,
+        "browserMs": 5772.4711400000015,
+        "nodeAndAssertionsMs": 18857.373165
+      },
+      {
+        "file": "p02b-r5.spec.ts",
+        "profile": "desktop-chromium",
+        "engine": "154.0.8037.57",
+        "cases": 2823,
+        "browserMs": 7702.864962999996,
+        "nodeAndAssertionsMs": 28884.426385
+      },
+      {
+        "file": "p02b-r5.spec.ts",
+        "profile": "tablet-chromium",
+        "engine": "154.0.8037.57",
+        "cases": 2823,
+        "browserMs": 8225.079020000005,
+        "nodeAndAssertionsMs": 32287.776775000006
+      },
+      {
+        "file": "p02b-r5.spec.ts",
+        "profile": "mobile-chromium",
+        "engine": "154.0.8037.57",
+        "cases": 2823,
+        "browserMs": 7033.3359850000015,
+        "nodeAndAssertionsMs": 27125.066445999997
+      }
+    ],
+    "localTechnicalSuites": {
+      "unit": 10341,
+      "content": 197,
+      "build": 29,
+      "chromium": 66,
+      "total": 10633,
+      "failed": 0,
+      "skipped": 0
+    },
+    "conceptChecksSeparately": 694,
+    "schemaEvaluations": 9312,
+    "questionReadingAdjudications": [
+      {
+        "field": "osmosis",
+        "text": "Vielleicht doch keine Osmose? Vielleicht Osmosse?",
+        "originalOwnExpected": [
+          "incorrect"
+        ],
+        "decidedExpected": [
+          "clarify"
+        ],
+        "rationale": "Explicitly tentative questions with opposing polarity remain open in both orders, including synonyms. Prior own literal exclusion reading retained, not a claim of a biologically correct answer."
+      },
+      {
+        "field": "tonoplast",
+        "text": "Vielleicht doch keine Tonoplast? Vielleicht Vakuolenmembran?",
+        "originalOwnExpected": [
+          "incorrect"
+        ],
+        "decidedExpected": [
+          "clarify"
+        ],
+        "rationale": "Explicitly tentative questions with opposing polarity remain open in both orders, including synonyms. Prior own literal exclusion reading retained, not a claim of a biologically correct answer."
+      }
+    ],
+    "qualification": "2823 recorded evaluations, not unique inputs or independent proof. 48 new and 114 older original-Soll discrepancies remain; technical clarify locks do not pass biological acceptance.",
+    "ci": {
+      "conclusion": "failure",
+      "headSha": "ae093b4ae56474aa412c1beec8e0206d9e22cb58",
+      "jobs": [
+        {
+          "completedAt": "2026-10-23T12:58:00Z",
+          "conclusion": "success",
+          "databaseId": 120424643838,
+          "name": "build",
+          "startedAt": "2026-10-23T12:54:01Z",
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-node@v4",
+              "number": 3,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 4,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run npm ci",
+              "number": 5,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run python -m pip install -r requirements-spec.txt",
+              "number": 6,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run npx playwright install --with-deps chromium",
+              "number": 7,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run npm run check",
+              "number": 8,
+              "status": "completed"
+            },
+            {
+              "conclusion": "skipped",
+              "name": "Upload only the inspected production artifact",
+              "number": 9,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 16,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/setup-node@v4",
+              "number": 17,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 18,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 19,
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/Feerson1617/Lernspiel-Zellbiologie/actions/runs/39956832616/job/120424643838"
+        },
+        {
+          "completedAt": "2026-10-23T13:00:42Z",
+          "conclusion": "failure",
+          "databaseId": 120424644271,
+          "name": "webkit",
+          "startedAt": "2026-10-23T12:54:03Z",
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-node@v4",
+              "number": 3,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 4,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run npm ci",
+              "number": 5,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run python -m pip install -r requirements-spec.txt",
+              "number": 6,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run npx playwright install webkit",
+              "number": 7,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run npm run build",
+              "number": 8,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Unchanged WebKit baseline (standard Tab)",
+              "number": 9,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Additional actual-runtime and platform-keyboard checks",
+              "number": 10,
+              "status": "completed"
+            },
+            {
+              "conclusion": "failure",
+              "name": "Report actual WebKit counts and retain a failed gate for any failed tests",
+              "number": 11,
+              "status": "completed"
+            },
+            {
+              "conclusion": "skipped",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 20,
+              "status": "completed"
+            },
+            {
+              "conclusion": "skipped",
+              "name": "Post Run actions/setup-node@v4",
+              "number": 21,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 22,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 23,
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/Feerson1617/Lernspiel-Zellbiologie/actions/runs/39956832616/job/120424644271"
+        },
+        {
+          "completedAt": "2026-10-23T12:58:01Z",
+          "conclusion": "skipped",
+          "databaseId": 120426396478,
+          "name": "deploy",
+          "startedAt": "2026-10-23T12:58:01Z",
+          "status": "completed",
+          "steps": [],
+          "url": "https://github.com/Feerson1617/Lernspiel-Zellbiologie/actions/runs/39956832616/job/120426396478"
+        }
+      ],
+      "status": "completed",
+      "url": "https://github.com/Feerson1617/Lernspiel-Zellbiologie/actions/runs/39956832616",
+      "webkit": [
+        {
+          "platform": "darwin",
+          "arch": "arm64",
+          "node": "v24.19.0",
+          "suite": "additional",
+          "startTime": "2026-10-23T12:55:34.018Z",
+          "duration": 296127.67600000004,
+          "expected": 18,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0,
+          "keyboard": [
+            {
+              "engine": "webkit",
+              "version": "27.2",
+              "hostPlatform": "darwin",
+              "selectedKey": "Alt+Tab",
+              "observed": [
+                {
+                  "key": "Tab",
+                  "active": {
+                    "tag": "BODY",
+                    "text": null
+                  }
+                },
+                {
+                  "key": "Alt+Tab",
+                  "active": {
+                    "tag": "A",
+                    "text": "Zum Inhalt"
+                  }
+                }
+              ]
+            },
+            {
+              "engine": "webkit",
+              "version": "27.2",
+              "hostPlatform": "darwin",
+              "selectedKey": "Alt+Tab",
+              "observed": [
+                {
+                  "key": "Tab",
+                  "active": {
+                    "tag": "BODY",
+                    "text": null
+                  }
+                },
+                {
+                  "key": "Alt+Tab",
+                  "active": {
+                    "tag": "A",
+                    "text": "Zum Inhalt"
+                  }
+                }
+              ]
+            },
+            {
+              "engine": "webkit",
+              "version": "27.2",
+              "hostPlatform": "darwin",
+              "selectedKey": "Alt+Tab",
+              "observed": [
+                {
+                  "key": "Tab",
+                  "active": {
+                    "tag": "BODY",
+                    "text": null
+                  }
+                },
+                {
+                  "key": "Alt+Tab",
+                  "active": {
+                    "tag": "A",
+                    "text": "Zum Inhalt"
+                  }
+                }
+              ]
+            }
+          ],
+          "timings": [
+            {
+              "file": "p02b-fourth.spec.ts",
+              "profile": "desktop-webkit",
+              "engine": "27.2",
+              "cases": 968,
+              "browserMs": 4888.89525,
+              "nodeAndAssertionsMs": 9094.19225
+            },
+            {
+              "file": "p02b-fourth.spec.ts",
+              "profile": "tablet-webkit",
+              "engine": "27.2",
+              "cases": 968,
+              "browserMs": 4284.137625,
+              "nodeAndAssertionsMs": 12555.536083
+            },
+            {
+              "file": "p02b-fourth.spec.ts",
+              "profile": "mobile-webkit",
+              "engine": "27.2",
+              "cases": 968,
+              "browserMs": 5583.91775,
+              "nodeAndAssertionsMs": 11420.054667000002
+            },
+            {
+              "file": "p02b-r3.spec.ts",
+              "profile": "desktop-webkit",
+              "engine": "27.2",
+              "cases": 1501,
+              "browserMs": 7134.002916000001,
+              "nodeAndAssertionsMs": 12249.085375
+            },
+            {
+              "file": "p02b-r3.spec.ts",
+              "profile": "tablet-webkit",
+              "engine": "27.2",
+              "cases": 1501,
+              "browserMs": 8140.896542,
+              "nodeAndAssertionsMs": 17425.73125
+            },
+            {
+              "file": "p02b-r3.spec.ts",
+              "profile": "mobile-webkit",
+              "engine": "27.2",
+              "cases": 1501,
+              "browserMs": 8671.265458000002,
+              "nodeAndAssertionsMs": 20245.999959
+            },
+            {
+              "file": "p02b-r4.spec.ts",
+              "profile": "desktop-webkit",
+              "engine": "27.2",
+              "cases": 2402,
+              "browserMs": 8961.465333,
+              "nodeAndAssertionsMs": 34395.877875
+            },
+            {
+              "file": "p02b-r4.spec.ts",
+              "profile": "tablet-webkit",
+              "engine": "27.2",
+              "cases": 2402,
+              "browserMs": 11939.486874999995,
+              "nodeAndAssertionsMs": 38851.620124999994
+            },
+            {
+              "file": "p02b-r4.spec.ts",
+              "profile": "mobile-webkit",
+              "engine": "27.2",
+              "cases": 2402,
+              "browserMs": 14745.403999999999,
+              "nodeAndAssertionsMs": 40682.083125
+            },
+            {
+              "file": "p02b-r5.spec.ts",
+              "profile": "desktop-webkit",
+              "engine": "27.2",
+              "cases": 2823,
+              "browserMs": 10949.514292,
+              "nodeAndAssertionsMs": 55260.979083
+            },
+            {
+              "file": "p02b-r5.spec.ts",
+              "profile": "tablet-webkit",
+              "engine": "27.2",
+              "cases": 2823,
+              "browserMs": 15910.536333999997,
+              "nodeAndAssertionsMs": 61029.323583
+            },
+            {
+              "file": "p02b-r5.spec.ts",
+              "profile": "mobile-webkit",
+              "engine": "27.2",
+              "cases": 2823,
+              "browserMs": 14804.47466700001,
+              "nodeAndAssertionsMs": 59461.564459
+            }
+          ],
+          "failedTests": []
+        },
+        {
+          "platform": "darwin",
+          "arch": "arm64",
+          "node": "v24.19.0",
+          "suite": "baseline",
+          "startTime": "2026-10-23T12:54:40.058Z",
+          "duration": 52635.712,
+          "expected": 45,
+          "skipped": 0,
+          "unexpected": 3,
+          "flaky": 0,
+          "keyboard": [],
+          "timings": [],
+          "failedTests": [
+            {
+              "title": "offers working keyboard navigation and a readable responsive layout",
+              "file": "start.spec.ts",
+              "project": "desktop-webkit"
+            },
+            {
+              "title": "offers working keyboard navigation and a readable responsive layout",
+              "file": "start.spec.ts",
+              "project": "tablet-webkit"
+            },
+            {
+              "title": "offers working keyboard navigation and a readable responsive layout",
+              "file": "start.spec.ts",
+              "project": "mobile-webkit"
+            }
+          ]
+        }
+      ],
+      "evidenceRead": "Actual job/step outcomes and all check-run annotations; unavailable full job logs not claimed."
+    }
   }
 }

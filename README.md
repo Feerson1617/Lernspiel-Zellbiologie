@@ -211,9 +211,19 @@ für dieses Projekt erstellt; sie stellen kein biologisches Modell dar.
 
 Die sechste Nachbesserung nach R4 erweitert ausschließlich begrenzte Benennungs-
 syntax und bewahrt negative Synonymbereiche sowie aktive Wahl/Originalevidenz.
-Aktueller Nachweis: `qa/P02b-Sechste-Nachbesserung.md`, vollständige 2.402
+Historischer R4-Nachweis: `qa/P02b-Sechste-Nachbesserung.md`, vollständige 2.402
 Auswertungen in `qa/p02b-r4-results.json`. 60/60 bekannte R4- und 60/60 eigene
 neue Kurzantworten sind eine Selbstprüfung; 51 neue und 63 ältere ursprüngliche
 Sollabweichungen bleiben offen dokumentiert. WebKit-/Geräteabnahme und eine
 frische unabhängige Gegenprüfung bleiben Freigabevoraussetzungen. Kein Merge,
 keine P02c-Implementierung und keine Unterrichtsfreigabe.
+
+Die siebte Nachbesserung nach R5 erweitert endliche Rollen und Feldbezüge der
+Benennungssyntax und behandelt genau zwei tentative Fragen symmetrisch nach
+Konzept und Polarität. Zwei frühere eigene Frage-Erwartungen sind mit Original-
+Soll ausdrücklich revidiert; geschützte Rubriken unverändert. Aktueller Bericht:
+`qa/P02b-Siebte-Nachbesserung.md`, vollständige 2.823 Auswertungen:
+`qa/p02b-r5-results.json`. Die konkretere Entscheidungsvorlage
+`review/naming-input-0.2-decision.md` ist nicht umgesetzt oder freigegeben.
+48 neue und 114 ältere ursprüngliche Sollabweichungen sowie die unabhängige
+Gegenprüfung und Browser-/Geräteabnahme bleiben offen. NICHT MERGE, keine P02c.

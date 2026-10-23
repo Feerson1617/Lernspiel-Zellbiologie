@@ -275,3 +275,18 @@ Keine weitere biologische Fachentscheidung oder Erklärungskorrektur wurde
 implementiert. 51 neue ursprüngliche Sollabweichungen bleiben ausdrücklich
 Implementierungslücken. Nachweis: `qa/P02b-Sechste-Nachbesserung.md`, vollständige
 Rohwerte in `qa/p02b-r4-results.json`. Keine unabhängige Freigabe.
+
+### R5: Benennungsrollen und tentative Fragepaare
+
+Finite Dativzuweisung, Benennungsverben, Namensnomen/-adjektive und Wortstellungen
+werden feldbezogen zusammengesetzt. Ein Index fester Starttokens ändert weder
+Slots noch längstes Präfix oder Pflichtendungen. Zwei vollständig gelesene
+„Vielleicht …?“-Benennungsfragen mit unterschiedlichen Konzepten oder Polaritäten
+bleiben in beiden Reihenfolgen clarify. Einzelne falsche Fragen, bestimmte
+Ausschlüsse und zusätzliche falsche wissenschaftliche Prädikate bleiben getrennt.
+Zwei ursprüngliche eigene R4-Frage-Sollwerte stehen ausdrücklich neben der
+revidierten Lesart; alle gelieferten Rohtexte/IDs/Sollwerte bleiben unverändert.
+Begrenzter Ausnahmeumfang, keine allgemeine Interpretation von Fragefolgen.
+Bericht: `qa/P02b-Siebte-Nachbesserung.md`; alle offenen ursprünglichen Sollwerte
+in `qa/p02b-r5-results.json`. Keine unabhängige Freigabe. Der reviewbare engere
+Vertrag in `review/naming-input-0.2-decision.md` bleibt ein Entwurf.
