@@ -137,9 +137,9 @@ export function createOsmosisEvaluator(versions: VersionInfo) {
       if (!parsed.complete) return { ...unknown(), spans: [{ start: 0, end: text.length }] };
       if (parsed.clauses.every((clause) => clause.kind === 'name' && !clause.negated)
         && parsed.clauses.length > 1 && new Set(parsed.clauses.flatMap((clause) => clause.kind === 'name' ? clause.terms.map(({ id }) => id) : [])).size > 1) {
-        return { ...decision('clarify', 'OSMOSIS_COMPETING'), spans: parsed.clauses };
+        return { ...decision('clarify', 'OSMOSIS_COMPETING'), spans: parsed.evidence };
       }
-      return { ...combine(parsed.clauses.map(assess)), spans: parsed.clauses };
+      return { ...combine(parsed.clauses.map(assess)), spans: parsed.evidence };
     },
   });
   return Object.freeze({ taskId: OSMOSIS_TASK_ID, fieldId: OSMOSIS_FIELD_ID, rubricId: OSMOSIS_RUBRIC_ID, ...evaluator });

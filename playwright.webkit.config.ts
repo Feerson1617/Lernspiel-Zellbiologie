@@ -5,7 +5,7 @@ import original from './playwright.config.ts';
  * skipped to manufacture success. The additional profile tests Option-Tab on
  * macOS WebKit and Tab on other platforms, and records both raw behaviours. */
 const suite = process.env['WEBKIT_SUITE'] ?? 'all';
-const additional = ['**/p02b-third.spec.ts', '**/keyboard-platform.spec.ts', '**/p02b-fourth.spec.ts'];
+const additional = ['**/p02b-third.spec.ts', '**/keyboard-platform.spec.ts', '**/p02b-fourth.spec.ts', '**/p02b-r3.spec.ts'];
 const projects = original.projects;
 if (!projects?.length) throw new Error('The standard browser profiles must be present.');
 export default defineConfig({

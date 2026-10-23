@@ -151,9 +151,9 @@ export function createTonoplastEvaluator(versions: VersionInfo) {
       if (!parsed.complete) return { ...unknown(), spans: [{ start: 0, end: text.length }] };
       if (parsed.clauses.every((clause) => clause.kind === 'name' && !clause.negated)) {
         const ids = new Set(parsed.clauses.flatMap((clause) => clause.kind === 'name' ? clause.terms.map((term) => term.id) : []).filter((id) => id !== 'boundary' && id !== 'vacuole_boundary'));
-        if (ids.size > 1) return { ...decision('clarify', 'TONOPLAST_COMPETING'), spans: parsed.clauses };
+        if (ids.size > 1) return { ...decision('clarify', 'TONOPLAST_COMPETING'), spans: parsed.evidence };
       }
-      return { ...combine(parsed.clauses.map(assessClause)), spans: parsed.clauses };
+      return { ...combine(parsed.clauses.map(assessClause)), spans: parsed.evidence };
     },
   });
   return Object.freeze({ taskId: TONOPLAST_TASK_ID, fieldId: TONOPLAST_FIELD_ID, rubricId: TONOPLAST_RUBRIC_ID, ...evaluator });

@@ -1,3 +1,4 @@
+import { resolveNamingChoices } from './naming-choice.ts';
 import { editDistance, isLimitedTypo } from './text.ts';
 import type { TextToken } from './text.ts';
 import { CERTAINTY_TAILS, COMMON_NAMING_FRAMES, NAMING_MODIFIERS, POST_NAMING_FRAMES } from './naming-frames.ts';
@@ -20,7 +21,7 @@ export interface TermRef {
 }
 export type TermClause =
   | Readonly<{ kind: 'name'; terms: readonly TermRef[]; negated: boolean; connector: 'single' | 'or' | 'and' | 'alias' | 'explanation'; correctsPrevious?: true; start: number; end: number }>
-  | Readonly<{ kind: 'contrast'; excluded: TermRef; chosen: TermRef; correctsPrevious?: true; start: number; end: number }>
+  | Readonly<{ kind: 'contrast'; excluded: TermRef; chosen: TermRef; start: number; end: number }>
   | Readonly<{ kind: 'identity' | 'synonymy' | 'encloses'; subject: TermRef; object: TermRef; negated: boolean; relation?: 'property' | 'classification' | 'equivalence' | 'designation'; start: number; end: number }>
   | Readonly<{ kind: 'separates'; subject: TermRef; first: TermRef; second: TermRef; negated: boolean; start: number; end: number }>
   | Readonly<{ kind: 'has_named_boundary'; owner: TermRef; terms: readonly TermRef[]; start: number; end: number }>
@@ -30,6 +31,8 @@ const ARTICLES = new Set(['der', 'die', 'das', 'den', 'dem', 'ein', 'eine', 'ein
 const NEGATIONS = new Set(['nicht', 'kein', 'keine', 'keinen']);
 const QUOTES: Readonly<Record<string, string>> = Object.freeze({ '„': '“', '‚': '‘', '«': '»', '"': '"', "'": "'", '“': '”' });
 const HEDGES = [
+  ['ich', 'bin', 'mir', 'nicht', 'ganz', 'sicher', ',', 'aber'],
+  ['ich', 'glaub'], ['ich', 'denke', 'mal'], ['ich', 'finde'],
   ['ich', 'bin', 'mir', 'nicht', 'sicher', ',', 'aber'],
   ['meiner', 'meinung', 'nach'], ['ich', 'wuerde', 'sagen'],
   ['meines', 'wissens'], ['meiner', 'ansicht', 'nach'], ['aus', 'meiner', 'sicht'],
@@ -69,7 +72,7 @@ export interface TermGrammarProfile {
 
 /** Finite T1 grammar. Complete consumption is mandatory; unknown text stays unknown. */
 export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly TermMeaning[], profile?: TermGrammarProfile): Readonly<{
-  clauses: readonly TermClause[]; complete: boolean;
+  clauses: readonly TermClause[]; complete: boolean; evidence: readonly Readonly<{ start: number; end: number }>[];
 }> {
   const at = (index: number) => tokens[index]?.word;
   const syntax = createNamingSyntax(tokens, profile?.namingReferences ?? { nouns: [] });
@@ -371,6 +374,14 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
     } else {
       const terms = [first.term];
       let connector: Connector = 'single';
+      // Repeating an exclusion through synonymous alternatives does not create
+      // a positive name. Mixed concepts and mixed negation scopes stay unknown.
+      while (negated && ['oder', 'und'].includes(at(index) ?? '') && NEGATIONS.has(at(index + 1) ?? '')) {
+        const other = term(index + 2);
+        if (!other || other.term.id !== first.term.id) return null;
+        connector = at(index) === 'oder' ? 'or' : 'and';
+        terms.push(other.term); index = other.next;
+      }
       while (!negated) {
         let next = index;
         let current: Connector;
@@ -413,36 +424,22 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
   }
 
   const clauses: TermClause[] = [];
+  const finishParsing = (complete: boolean) => ({
+    ...(complete ? resolveNamingChoices(clauses) : { clauses, complete: false }),
+    evidence: clauses.map(({ start, end }) => ({ start, end })),
+  });
   let index = 0;
   while (index < tokens.length) {
     if (clauses.length > 0 && at(index) === 'danke') {
       index++;
-      if (index < tokens.length && !['.', '!', '?'].includes(at(index) ?? '')) return { clauses, complete: false };
+      if (index < tokens.length && !['.', '!', '?'].includes(at(index) ?? '')) return finishParsing(false);
       while (['.', '!', '?'].includes(at(index) ?? '')) index++;
-      if (index === tokens.length) return { clauses, complete: true };
+      if (index === tokens.length) return finishParsing(true);
       continue; // Harmless courtesy never hides a later assertion or contradiction.
     }
     const parsed = clause(index);
-    if (!parsed) return { clauses, complete: false };
-    const previous = clauses.at(-1), current = parsed.value;
-    // T1 supports one changed naming choice. A further change would require
-    // resolving a history of retractions; never grade a withdrawn intermediate
-    // name as an active scientific error. Reaffirming the chosen name is safe.
-    const earlierCorrection = clauses.find(c => c.kind === 'contrast' && c.correctsPrevious);
-    if (current.kind === 'name' && current.correctsPrevious && !current.negated && current.terms.length === 1
-      && ((previous?.kind === 'contrast' && previous.chosen.id !== current.terms[0]!.id)
-        || (earlierCorrection?.kind === 'contrast' && earlierCorrection.chosen.id !== current.terms[0]!.id))) {
-      return { clauses, complete: false };
-    }
-    // Equal concept IDs (including synonyms/recognised spellings) reaffirm the
-    // earlier positive name. Keep both original clauses and their evidence.
-    // Only a different, explicitly corrected single name creates an exclusion.
-    // Scientific predicates, alternatives and unknown rests are never erased.
-    if (current.kind === 'name' && current.correctsPrevious && !current.negated && current.terms.length === 1
-      && previous?.kind === 'name' && !previous.negated && previous.terms.length === 1
-      && previous.terms[0]!.id !== current.terms[0]!.id) {
-      clauses[clauses.length - 1] = { kind: 'contrast', correctsPrevious: true, excluded: previous.terms[0]!, chosen: current.terms[0]!, start: previous.start, end: current.end };
-    } else clauses.push(current);
+    if (!parsed) return finishParsing(false);
+    clauses.push(parsed.value);
     index = parsed.next;
     if (index === tokens.length) break;
     if (['.', '!', '?', ';'].includes(at(index) ?? '')) {
@@ -454,11 +451,11 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
       const followingStart = index + (at(index) === ',' ? 2 : 1);
       const following = clause(followingStart);
       if (!following || !['identity', 'synonymy', 'encloses', 'separates'].includes(parsed.value.kind)
-        || !['identity', 'synonymy', 'encloses', 'separates'].includes(following.value.kind)) return { clauses, complete: false };
+        || !['identity', 'synonymy', 'encloses', 'separates'].includes(following.value.kind)) return finishParsing(false);
       index = followingStart;
-      if (index === tokens.length) return { clauses, complete: false };
+      if (index === tokens.length) return finishParsing(false);
     }
-    else return { clauses, complete: false };
+    else return finishParsing(false);
   }
-  return { clauses, complete: clauses.length > 0 };
+  return finishParsing(true);
 }
