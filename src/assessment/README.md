@@ -195,3 +195,15 @@ nicht mitbestätigt. Die Tests einschließlich Fehlerregister stehen in
 `qa/P02a.md` und `qa/p02a-review.json`. Keine unabhängige 95-%-Erkennungsrate oder
 reale Lerngruppenpassung behauptet. Gegenprüfung und echte Geräteprobe stehen
 aus. Der zusätzliche P02b-Vertrag steht separat in `OSMOSIS.md`.
+
+### R4: begrenzte Satzbezüge und Negationsbereich
+
+Gemeinsame Syntax ergänzt Feld-/Namensgruppen, ausdrückliche Zweifel an der
+Benennung, Verbendstellungen und vorangestellte Begriffe. Fachprofilgebundene
+Namensnomen werden über `NamingReferences.names` getrennt übergeben; das ist
+keine zusätzliche fachliche Lösung. Bereits negative Synonyme erreichen auch
+bei „und nicht“ die Ausschlussschleife. Genau zwei ausdrücklich tentative
+Fragen mit verschiedenen Vorschlägen bleiben offen, ohne einzelne falsche
+Fragen zu neutralisieren. Aktive Wahl/Originalevidenz in naming-choice bleibt
+unverändert. Bericht und sämtliche offenen ursprünglichen Sollabweichungen:
+`qa/P02b-Sechste-Nachbesserung.md` / `qa/p02b-r4-results.json`.

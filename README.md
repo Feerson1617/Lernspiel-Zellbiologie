@@ -171,7 +171,7 @@ Korrektur und erweitert kurze Benennungsrahmen. Aktueller Selbstprüfbericht:
 in WebKit bleiben fehlgeschlagen; keine Merge- oder Unterrichtsfreigabe.
 Die fünfte Nachbesserung trennt aktive Namenswahl und Originalevidenz, nimmt
 gleichlautende Wiederholungen gemeinsam zurück und erweitert Benennungskonstruktionen.
-Aktueller Bericht: `qa/P02b-Fuenfte-Nachbesserung.md`; alle 1501 Ergebnisse und
+Historischer R3-Bericht: `qa/P02b-Fuenfte-Nachbesserung.md`; alle 1501 Ergebnisse und
 unveränderten Roh-Sollwerte: `qa/p02b-r3-results.json`; Manifest: `qa/p02b-r3-review.json`.
 
 Keine konkreten fachlichen Modellversionen werden vergeben. Weitere Textfelder,
@@ -208,3 +208,12 @@ Die App benötigt keine Secrets. Three.js, Vite, TypeScript, Vitest und Playwrig
 sind frei verfügbare Bibliotheken; ihre mitgelieferten Lizenzen bleiben in den
 installierten Paketen erhalten. Das Favicon und die abstrakte CSS-Grafik sind
 für dieses Projekt erstellt; sie stellen kein biologisches Modell dar.
+
+Die sechste Nachbesserung nach R4 erweitert ausschließlich begrenzte Benennungs-
+syntax und bewahrt negative Synonymbereiche sowie aktive Wahl/Originalevidenz.
+Aktueller Nachweis: `qa/P02b-Sechste-Nachbesserung.md`, vollständige 2.402
+Auswertungen in `qa/p02b-r4-results.json`. 60/60 bekannte R4- und 60/60 eigene
+neue Kurzantworten sind eine Selbstprüfung; 51 neue und 63 ältere ursprüngliche
+Sollabweichungen bleiben offen dokumentiert. WebKit-/Geräteabnahme und eine
+frische unabhängige Gegenprüfung bleiben Freigabevoraussetzungen. Kein Merge,
+keine P02c-Implementierung und keine Unterrichtsfreigabe.

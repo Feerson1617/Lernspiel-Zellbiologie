@@ -262,3 +262,16 @@ wechselnde Zeitbezüge, Quantifikation und weitere Sprachen bleiben begrenzt.
 Tatsächliche Quoten, Fehlversuche und Fehlerregister: `qa/P02b.md` /
 `qa/p02b-review.json`. Alle Codex-Prüfungen sind Selbstprüfungen. Neue unabhängige
 Gegenprüfung sowie echtes Safari/iPad stehen aus. **Kein P02c.**
+
+### Sechste Nachbesserung / R4
+
+Begrenzte Syntax für Feldbezüge, Benennungsverben, Namensgruppen und Zweifel
+wird von beiden Fachprofilen genutzt. Negative Nachstellungen bleiben negativ;
+„Vielleicht keine …? Vielleicht …?“ mit zwei verschiedenen ausdrücklich
+vorläufigen Vorschlägen bleibt als Fragepaar offen. Einzelne falsche Vorschläge,
+bestimmte Ausschlüsse und wissenschaftliche Prädikate werden nicht pauschal
+neutralisiert. Die frühere Bindung und die aktive Namenswahl bleiben erhalten.
+Keine weitere biologische Fachentscheidung oder Erklärungskorrektur wurde
+implementiert. 51 neue ursprüngliche Sollabweichungen bleiben ausdrücklich
+Implementierungslücken. Nachweis: `qa/P02b-Sechste-Nachbesserung.md`, vollständige
+Rohwerte in `qa/p02b-r4-results.json`. Keine unabhängige Freigabe.
