@@ -1,6 +1,32 @@
 {
   "baselineSha": "b9eddd757e4b7cffe04e86006ad4cc3de02682c4",
-  "scope": "Raw supplied expectations preserved; accepted allowances explicitly adjudicated; own self-check only.",
+  "runtimeSourceCommit": "afe8d99e4f379733f2a630f995fce02333b0d2d2",
+  "reviewDateBerlin": "2026-10-23",
+  "generatedAtBerlin": "2026-10-23T08:26:04+02:00",
+  "scope": "212 supplied known regressions, 50 own short correct and 400 metamorphic cases; original expected values preserved, adjudicated allowances separate; self-check only",
+  "versions": {
+    "taskVersion": "review-task-20261023",
+    "rubricVersion": "review-rubric-20261023",
+    "contentVersion": "concept-1.0-20261023",
+    "modelVersion": "review-no-simulation"
+  },
+  "material": {
+    "cellProfile": "onion_epidermis",
+    "cellIntegrity": "intact",
+    "observationPhase": "early_water_loss_after_solution_change",
+    "waterPotential": {
+      "unit": "Pa",
+      "vacuole": -120000,
+      "cytosol": -350000,
+      "external": -810000
+    },
+    "waterPermeability": {
+      "cellMembrane": true,
+      "tonoplast": true
+    },
+    "sucroseRetention": "largely_retained",
+    "otherTransport": "excluded"
+  },
   "cases": [
     {"id":"short-correct-01","group":"short-correct","field":"osmosis","expected":["correct"],"text":"Ich würde hier den Wassertransport als Osmose bezeichnen.","accepted":["correct"],"result":{"assistance":"independent","contextHash":"sha256-v1:b051f78b8c43b1a82b6a5e697454ba636ab65a5d20242492c7306fa9520411a6","criteria":[{"evidence":[{"end":56,"kind":"input_span","start":0,"value":"Ich würde hier den Wassertransport als Osmose bezeichnen"}],"id":"M6.02.C01","reasonCode":"OSMOSIS_CORRECT","status":"correct"}],"feedbackCode":"OSMOSIS_CORRECT","rubricVersion":"review-rubric-20261023","status":"correct","taskId":"M6.02","taskVersion":"review-task-20261023","unassessedRelevantText":false},"feedback":"Der Wassertransport durch die selektive Grenze heißt hier Osmose. Das bestätigt die Benennung, nicht die übrigen Teilantworten."},
     {"id":"short-correct-02","group":"short-correct","field":"osmosis","expected":["correct"],"text":"Die richtige Bezeichnung dafür lautet Osmose.","accepted":["correct"],"result":{"assistance":"independent","contextHash":"sha256-v1:b051f78b8c43b1a82b6a5e697454ba636ab65a5d20242492c7306fa9520411a6","criteria":[{"evidence":[{"end":44,"kind":"input_span","start":0,"value":"Die richtige Bezeichnung dafür lautet Osmose"}],"id":"M6.02.C01","reasonCode":"OSMOSIS_CORRECT","status":"correct"}],"feedbackCode":"OSMOSIS_CORRECT","rubricVersion":"review-rubric-20261023","status":"correct","taskId":"M6.02","taskVersion":"review-task-20261023","unassessedRelevantText":false},"feedback":"Der Wassertransport durch die selektive Grenze heißt hier Osmose. Das bestätigt die Benennung, nicht die übrigen Teilantworten."},

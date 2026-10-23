@@ -1,0 +1,959 @@
+{
+  "reviewId": "P02b-third-revision-self-check-2026-10-23",
+  "reviewKind": "self_check",
+  "commitSha": "afe8d99e4f379733f2a630f995fce02333b0d2d2",
+  "sourceVersions": [
+    "Konzept 1.0 / 22.10.2026; protected concept/spec files unchanged",
+    "PR #6 baseline b9eddd757e4b7cffe04e86006ad4cc3de02682c4",
+    "main b155936443745d98c8133788872c9c5ff44d7fb2",
+    "AGENTS; C 3–5/9–11; D; F M6.02; tasks/text-rubrics/contracts/result schema",
+    "Runtime APIs unchanged; process/C01 only; four explicitly supplied technical version labels, no invented model release"
+  ],
+  "environment": {
+    "testedAtBerlin": "2026-10-23T08:26:04+02:00",
+    "reportTimeZone": "Europe/Berlin",
+    "os": "Linux x86_64",
+    "node": "v24.19.0",
+    "npm": "11.9.0",
+    "python": "3.12.14",
+    "jsonschema": "4.26.0",
+    "chromium": "154.0.8037.57",
+    "localTechnicalSuites": {
+      "unit": 2361,
+      "content": 181,
+      "build": 16,
+      "chromium": 54
+    },
+    "localTechnicalPassed": 2612,
+    "localTechnicalFailed": 0,
+    "localTechnicalSkipped": 0,
+    "concept": {
+      "passed": 694,
+      "failed": 0,
+      "scope": "Editorial concept/schema/arithmetic/declaration checks, separate from runtime grading"
+    },
+    "countsScope": "caseCounts combines one local complete Chromium regression with one own CI macOS WebKit baseline/additional run. Repeated CI/build and direct-guard executions not added again. Concept checks separate.",
+    "webKit": {
+      "localAttempt": "Blocked: no default browser cache, then 403 Domain forbidden from configured browser download hosts; no local WebKit pass claimed",
+      "executedAt": "GitHub Actions macos-latest, darwin arm64, own authored workflow/test configuration",
+      "engine": "WebKit 27.2",
+      "baseline": {
+        "passed": 45,
+        "failed": 3,
+        "skipped": 0,
+        "flaky": 0,
+        "tests": 48,
+        "unchangedStandardTab": true
+      },
+      "additional": {
+        "passed": 6,
+        "failed": 0,
+        "skipped": 0,
+        "flaky": 0
+      },
+      "keyboardProfile": "Alt+Tab for macOS WebKit, standard Tab otherwise; both raw behaviours recorded; no source UI or standard test changed",
+      "observed": "Tab leaves BODY focused, Alt+Tab focuses Zum Inhalt; explicitly focused link+Enter works. Platform behaviour is not proof of a product cause or real Safari/iPad result.",
+      "ciCodeRun": "https://github.com/Feerson1617/Lernspiel-Zellbiologie/actions/runs/39909989678",
+      "ciCodeHead": "b94a03adae594a6fc80530d64a0c19f4dc52bce9",
+      "jobConclusion": "failure",
+      "gateDoesNotMaskFailures": true,
+      "finalHeadEvidence": "Final-head run and per-job results supplied in the PR completion; no final-head success assumed here."
+    },
+    "browserCorpus": {
+      "inputsPerProfile": 662,
+      "newChromiumProfiles": 3,
+      "newWebKitProfiles": 3,
+      "actualAdditionalEvaluations": 3972,
+      "parity": "Full result objects/feedback/status descriptors and original UTF-16 spans compared with Node",
+      "data": "212 supplied, 50 own short, 400 metamorphic",
+      "scope": "Actual Vite bundle with production guard; no visible task/feedback UI"
+    },
+    "versions": {
+      "taskVersion": "review-task-20261023",
+      "rubricVersion": "review-rubric-20261023",
+      "contentVersion": "concept-1.0-20261023",
+      "modelVersion": "review-no-simulation"
+    },
+    "illustrativeMaterial": {
+      "cellProfile": "onion_epidermis",
+      "cellIntegrity": "intact",
+      "observationPhase": "early_water_loss_after_solution_change",
+      "waterPotential": {
+        "unit": "Pa",
+        "vacuole": -120000,
+        "cytosol": -350000,
+        "external": -810000
+      },
+      "waterPermeability": {
+        "cellMembrane": true,
+        "tonoplast": true
+      },
+      "sucroseRetention": "largely_retained",
+      "otherTransport": "excluded"
+    },
+    "recognition": {
+      "knownShort": {
+        "total": 60,
+        "beforeGreen": 11,
+        "green": 60,
+        "clarify": 0,
+        "incorrect": 0,
+        "rate": 1
+      },
+      "ownFreshShort": {
+        "total": 50,
+        "beforeGreen": 0,
+        "green": 50,
+        "clarify": 0,
+        "incorrect": 0,
+        "rate": 1,
+        "minimum": 0.95
+      },
+      "knownLongCorrect": {
+        "total": 20,
+        "green": 0,
+        "clarify": 20,
+        "incorrect": 0,
+        "rate": 0,
+        "allYellowKeptInDenominator": true
+      },
+      "knownTonoplastCorrect": {
+        "total": 12,
+        "beforeGreen": 7,
+        "green": 12,
+        "clarify": 0,
+        "incorrect": 0
+      },
+      "ownSelfCheck": true,
+      "independentCountercheckOfFix": false,
+      "empiricalLearnerSample": false
+    },
+    "fixedGroups": {
+      "short-correct": {
+        "total": 60,
+        "statuses": {
+          "correct": 60
+        },
+        "rawExpectedMismatches": 0,
+        "adjudicatedMismatches": 0
+      },
+      "long-correct": {
+        "total": 20,
+        "statuses": {
+          "clarify": 20
+        },
+        "rawExpectedMismatches": 20,
+        "adjudicatedMismatches": 0
+      },
+      "wrong-name": {
+        "total": 12,
+        "statuses": {
+          "incorrect": 12
+        },
+        "rawExpectedMismatches": 0,
+        "adjudicatedMismatches": 0
+      },
+      "partial": {
+        "total": 8,
+        "statuses": {
+          "partial": 8
+        },
+        "rawExpectedMismatches": 0,
+        "adjudicatedMismatches": 0
+      },
+      "ambiguous": {
+        "total": 12,
+        "statuses": {
+          "clarify": 12
+        },
+        "rawExpectedMismatches": 0,
+        "adjudicatedMismatches": 0
+      },
+      "contradiction": {
+        "total": 12,
+        "statuses": {
+          "incorrect": 12
+        },
+        "rawExpectedMismatches": 0,
+        "adjudicatedMismatches": 0
+      },
+      "unsafe-extra": {
+        "total": 12,
+        "statuses": {
+          "clarify": 12
+        },
+        "rawExpectedMismatches": 0,
+        "adjudicatedMismatches": 0
+      },
+      "correct-distinction": {
+        "total": 8,
+        "statuses": {
+          "correct": 8
+        },
+        "rawExpectedMismatches": 0,
+        "adjudicatedMismatches": 0
+      },
+      "semantic-trap": {
+        "total": 8,
+        "statuses": {
+          "clarify": 8
+        },
+        "rawExpectedMismatches": 0,
+        "adjudicatedMismatches": 0
+      },
+      "tonoplast-correct": {
+        "total": 12,
+        "statuses": {
+          "correct": 12
+        },
+        "rawExpectedMismatches": 0,
+        "adjudicatedMismatches": 0
+      },
+      "tonoplast-wrong": {
+        "total": 8,
+        "statuses": {
+          "incorrect": 8
+        },
+        "rawExpectedMismatches": 0,
+        "adjudicatedMismatches": 0
+      },
+      "tonoplast-boundary": {
+        "total": 8,
+        "statuses": {
+          "clarify": 8
+        },
+        "rawExpectedMismatches": 0,
+        "adjudicatedMismatches": 0
+      },
+      "not-generic-name": {
+        "total": 4,
+        "statuses": {
+          "clarify": 4
+        },
+        "rawExpectedMismatches": 4,
+        "adjudicatedMismatches": 0
+      },
+      "generic-name": {
+        "total": 4,
+        "statuses": {
+          "clarify": 4
+        },
+        "rawExpectedMismatches": 0,
+        "adjudicatedMismatches": 0
+      },
+      "explicit-negation": {
+        "total": 4,
+        "statuses": {
+          "incorrect": 4
+        },
+        "rawExpectedMismatches": 0,
+        "adjudicatedMismatches": 0
+      },
+      "evidence": {
+        "total": 4,
+        "statuses": {
+          "correct": 4
+        },
+        "rawExpectedMismatches": 0,
+        "adjudicatedMismatches": 0
+      },
+      "unassessed-unicode": {
+        "total": 4,
+        "statuses": {
+          "clarify": 4
+        },
+        "rawExpectedMismatches": 0,
+        "adjudicatedMismatches": 0
+      },
+      "tonoplast-property": {
+        "total": 4,
+        "statuses": {
+          "clarify": 2,
+          "incorrect": 2
+        },
+        "rawExpectedMismatches": 2,
+        "adjudicatedMismatches": 0
+      },
+      "explicit-name-not-alias": {
+        "total": 3,
+        "statuses": {
+          "clarify": 3
+        },
+        "rawExpectedMismatches": 3,
+        "adjudicatedMismatches": 0
+      },
+      "explicit-name-alias": {
+        "total": 2,
+        "statuses": {
+          "clarify": 2
+        },
+        "rawExpectedMismatches": 0,
+        "adjudicatedMismatches": 0
+      },
+      "explicit-name-equivalence": {
+        "total": 1,
+        "statuses": {
+          "clarify": 1
+        },
+        "rawExpectedMismatches": 0,
+        "adjudicatedMismatches": 0
+      },
+      "membrane-no-synonym": {
+        "total": 1,
+        "statuses": {
+          "clarify": 1
+        },
+        "rawExpectedMismatches": 0,
+        "adjudicatedMismatches": 0
+      },
+      "membrane-not-membrane": {
+        "total": 1,
+        "statuses": {
+          "incorrect": 1
+        },
+        "rawExpectedMismatches": 0,
+        "adjudicatedMismatches": 0
+      },
+      "fresh-short": {
+        "total": 50,
+        "statuses": {
+          "correct": 50
+        },
+        "rawExpectedMismatches": 0,
+        "adjudicatedMismatches": 0
+      },
+      "fresh-wrong": {
+        "total": 200,
+        "statuses": {
+          "incorrect": 200
+        },
+        "rawExpectedMismatches": 0,
+        "adjudicatedMismatches": 0
+      },
+      "fresh-partial": {
+        "total": 50,
+        "statuses": {
+          "partial": 50
+        },
+        "rawExpectedMismatches": 0,
+        "adjudicatedMismatches": 0
+      },
+      "fresh-alternative": {
+        "total": 50,
+        "statuses": {
+          "clarify": 50
+        },
+        "rawExpectedMismatches": 0,
+        "adjudicatedMismatches": 0
+      },
+      "fresh-contradiction": {
+        "total": 50,
+        "statuses": {
+          "incorrect": 50
+        },
+        "rawExpectedMismatches": 0,
+        "adjudicatedMismatches": 0
+      },
+      "fresh-unassessed": {
+        "total": 50,
+        "statuses": {
+          "clarify": 50
+        },
+        "rawExpectedMismatches": 0,
+        "adjudicatedMismatches": 0
+      }
+    },
+    "rawExpectedMismatches": [
+      {
+        "id": "long-correct-01",
+        "text": "Der Vorgang ist Osmose, also die passive Bewegung von Wasser durch eine selektiv permeable Membran.",
+        "rawExpected": [
+          "correct"
+        ],
+        "accepted": [
+          "correct",
+          "clarify"
+        ],
+        "actual": "clarify"
+      },
+      {
+        "id": "long-correct-02",
+        "text": "Osmose ist der Fachbegriff; dabei folgt Wasser dem Wasserpotenzialgefälle.",
+        "rawExpected": [
+          "correct"
+        ],
+        "accepted": [
+          "correct",
+          "clarify"
+        ],
+        "actual": "clarify"
+      },
+      {
+        "id": "long-correct-03",
+        "text": "Hier liegt Osmose vor, denn Wasser kann die Membranen passieren.",
+        "rawExpected": [
+          "correct"
+        ],
+        "accepted": [
+          "correct",
+          "clarify"
+        ],
+        "actual": "clarify"
+      },
+      {
+        "id": "long-correct-04",
+        "text": "Ich nenne den Vorgang Osmose: Wasser bewegt sich netto zum niedrigeren Wasserpotenzial.",
+        "rawExpected": [
+          "correct"
+        ],
+        "accepted": [
+          "correct",
+          "clarify"
+        ],
+        "actual": "clarify"
+      },
+      {
+        "id": "long-correct-05",
+        "text": "Osmose führt hier zum Wasserverlust der Zelle, weil das Wasserpotenzial außen niedriger liegt.",
+        "rawExpected": [
+          "correct"
+        ],
+        "accepted": [
+          "correct",
+          "clarify"
+        ],
+        "actual": "clarify"
+      },
+      {
+        "id": "long-correct-06",
+        "text": "Der passive Wassertransport heißt Osmose und benötigt keine direkte ATP-Spaltung für den Wasserfluss.",
+        "rawExpected": [
+          "correct"
+        ],
+        "accepted": [
+          "correct",
+          "clarify"
+        ],
+        "actual": "clarify"
+      },
+      {
+        "id": "long-correct-07",
+        "text": "Bei diesem Fall strömt Wasser osmotisch aus dem Cytosol in den Außenraum; der Vorgang heißt Osmose.",
+        "rawExpected": [
+          "correct"
+        ],
+        "accepted": [
+          "correct",
+          "clarify"
+        ],
+        "actual": "clarify"
+      },
+      {
+        "id": "long-correct-08",
+        "text": "Das ist Osmose. Das angegebene Gefälle besteht über Zellmembran und Tonoplast.",
+        "rawExpected": [
+          "correct"
+        ],
+        "accepted": [
+          "correct",
+          "clarify"
+        ],
+        "actual": "clarify"
+      },
+      {
+        "id": "long-correct-09",
+        "text": "Osmose beschreibt hier den Wassertransport; die Plasmolyse bezeichnet die nachfolgende Zellreaktion.",
+        "rawExpected": [
+          "correct"
+        ],
+        "accepted": [
+          "correct",
+          "clarify"
+        ],
+        "actual": "clarify"
+      },
+      {
+        "id": "long-correct-10",
+        "text": "Ich würde Osmose sagen, weil Wasser die selektiven Membranen durchquert.",
+        "rawExpected": [
+          "correct"
+        ],
+        "accepted": [
+          "correct",
+          "clarify"
+        ],
+        "actual": "clarify"
+      },
+      {
+        "id": "long-correct-11",
+        "text": "Osmose ist passiver Wassertransport; einzelne Wassermoleküle bewegen sich dabei in beide Richtungen.",
+        "rawExpected": [
+          "correct"
+        ],
+        "accepted": [
+          "correct",
+          "clarify"
+        ],
+        "actual": "clarify"
+      },
+      {
+        "id": "long-correct-12",
+        "text": "Der Wassertransport erfolgt durch Osmose. Die Nettobilanz richtet sich nach dem gesamten Wasserpotenzial.",
+        "rawExpected": [
+          "correct"
+        ],
+        "accepted": [
+          "correct",
+          "clarify"
+        ],
+        "actual": "clarify"
+      },
+      {
+        "id": "long-correct-13",
+        "text": "Ich meine Osmose, also eine Form der Diffusion von Wasser durch eine selektive Membran.",
+        "rawExpected": [
+          "correct"
+        ],
+        "accepted": [
+          "correct",
+          "clarify"
+        ],
+        "actual": "clarify"
+      },
+      {
+        "id": "long-correct-14",
+        "text": "Das nennt sich Osmose, wobei Saccharose im betrachteten Zeitraum weitgehend außen bleibt.",
+        "rawExpected": [
+          "correct"
+        ],
+        "accepted": [
+          "correct",
+          "clarify"
+        ],
+        "actual": "clarify"
+      },
+      {
+        "id": "long-correct-15",
+        "text": "Osmose findet hier statt; aus dem höheren Wasserpotenzial der Vakuole ergibt sich netto Wasserabgabe an das Cytosol.",
+        "rawExpected": [
+          "correct"
+        ],
+        "accepted": [
+          "correct",
+          "clarify"
+        ],
+        "actual": "clarify"
+      },
+      {
+        "id": "long-correct-16",
+        "text": "Es handelt sich um Osmose. Das Vakuolenvolumen nimmt in dieser Phase durch Wasserverlust ab.",
+        "rawExpected": [
+          "correct"
+        ],
+        "accepted": [
+          "correct",
+          "clarify"
+        ],
+        "actual": "clarify"
+      },
+      {
+        "id": "long-correct-17",
+        "text": "Osmose ist hier der Transportprozess; die annähernd formstabile Zellwand schrumpft dabei nicht mit.",
+        "rawExpected": [
+          "correct"
+        ],
+        "accepted": [
+          "correct",
+          "clarify"
+        ],
+        "actual": "clarify"
+      },
+      {
+        "id": "long-correct-18",
+        "text": "Mein Fachbegriff ist Osmose. Der Druckanteil gehört dabei zum Wasserpotenzial.",
+        "rawExpected": [
+          "correct"
+        ],
+        "accepted": [
+          "correct",
+          "clarify"
+        ],
+        "actual": "clarify"
+      },
+      {
+        "id": "long-correct-19",
+        "text": "Ich würde den Vorgang Osmose nennen; eine hohe Zuckerkonzentration allein legt ohne Druckangabe nicht jede Flussrichtung fest.",
+        "rawExpected": [
+          "correct"
+        ],
+        "accepted": [
+          "correct",
+          "clarify"
+        ],
+        "actual": "clarify"
+      },
+      {
+        "id": "long-correct-20",
+        "text": "Osmose bedeutet hier passive Wasserbewegung, während der Name Plasmolyse die Ablösung des Protoplasten von der Wand bezeichnet.",
+        "rawExpected": [
+          "correct"
+        ],
+        "accepted": [
+          "correct",
+          "clarify"
+        ],
+        "actual": "clarify"
+      },
+      {
+        "id": "not-generic-name-1",
+        "text": "Osmose ist nicht der Name der Diffusion.",
+        "rawExpected": [
+          "correct"
+        ],
+        "accepted": [
+          "correct",
+          "clarify"
+        ],
+        "actual": "clarify"
+      },
+      {
+        "id": "not-generic-name-2",
+        "text": "Osmose ist nicht der Name der Wasserbewegung.",
+        "rawExpected": [
+          "correct"
+        ],
+        "accepted": [
+          "correct",
+          "clarify"
+        ],
+        "actual": "clarify"
+      },
+      {
+        "id": "not-generic-name-3",
+        "text": "Osmose ist nicht ein anderer Name für Diffusion.",
+        "rawExpected": [
+          "correct"
+        ],
+        "accepted": [
+          "correct",
+          "clarify"
+        ],
+        "actual": "clarify"
+      },
+      {
+        "id": "not-generic-name-4",
+        "text": "Osmose ist nicht ein anderer Name für passiven Transport.",
+        "rawExpected": [
+          "correct"
+        ],
+        "accepted": [
+          "correct",
+          "clarify"
+        ],
+        "actual": "clarify"
+      },
+      {
+        "id": "tonoplast-property-2",
+        "text": "Tonoplast ist eine Form der Zellmembran.",
+        "rawExpected": [
+          "clarify"
+        ],
+        "accepted": [
+          "incorrect"
+        ],
+        "actual": "incorrect"
+      },
+      {
+        "id": "tonoplast-property-3",
+        "text": "Tonoplast ist eine Art von Zellwand.",
+        "rawExpected": [
+          "clarify"
+        ],
+        "accepted": [
+          "incorrect"
+        ],
+        "actual": "incorrect"
+      },
+      {
+        "id": "explicit-name-not-alias-1",
+        "text": "Osmose. Osmose ist nicht der Name der Diffusion.",
+        "rawExpected": [
+          "correct"
+        ],
+        "accepted": [
+          "correct",
+          "clarify"
+        ],
+        "actual": "clarify"
+      },
+      {
+        "id": "explicit-name-not-alias-2",
+        "text": "Osmose. Osmose ist nicht der Name der Wasserbewegung.",
+        "rawExpected": [
+          "correct"
+        ],
+        "accepted": [
+          "correct",
+          "clarify"
+        ],
+        "actual": "clarify"
+      },
+      {
+        "id": "explicit-name-not-alias-3",
+        "text": "Osmose. Osmose ist nicht ein anderer Name für Diffusion.",
+        "rawExpected": [
+          "correct"
+        ],
+        "accepted": [
+          "correct",
+          "clarify"
+        ],
+        "actual": "clarify"
+      }
+    ],
+    "adjudication": {
+      "rawTextsIdsAndExpectedUnchanged": true,
+      "source": "Supplied report/adjudication.json, plus explicitly authorised process/C01 explanation scope",
+      "longCorrect": "20 raw correct remain clarify because explanatory scope is unassessed; all stay in the denominator",
+      "negativeGenericName": "4 standalone and 3 explicitly named raw correct allow correct|clarify per report; all clarify, never false-property/contradiction red",
+      "tonoplast-property-2/3": "Raw clarify preserved; incorrect is justified by the report for form of Zellmembran / kind of Zellwand",
+      "tonoplast-property-1": "Raw clarify preserved; contextual correct|clarify allowed; currently clarify",
+      "globalRawHitRate": "Not calculated: heterogeneous diagnostic expectations include explicitly adjudicated values"
+    },
+    "suppliedSourceHashes": {
+      "cases.mjs": "a38315bc8358b70ef69281841eeb16dc5b942ab697390acefbf62ab0c6050554",
+      "supplement-cases.mjs": "c36f59c02efa46985dbc4af98c01389c09f60e9f60d48b56514154fd3ecf7376",
+      "supplement2-cases.mjs": "c3c6ea6530e531bc254d60867700f82ba56fc670c7381c7559557473c0d78232",
+      "adjudication.json": "15e8adb83564552b0e54fba6a9291492003bd476a8f1e10a03c4a07e41b32a47",
+      "run-review.mjs": "724602123d2da4e4542c9727d99ba869366364605795f988f1b7cbb0656977e3",
+      "run-supplement.mjs": "8dadc66c9e3fb0eebf3d7d0f665bdc103709d3c9ad8bb76f83e973d8f9f0488c",
+      "run-supplement2.mjs": "bc6e57acc13ad9f7dbbaa17a2ba853f72838cdbd649565b1844e88dfac38fde5"
+    },
+    "archiveHashChecks": 55,
+    "fixtureHashes": {
+      "p02b-20261023-cases.ts": "ca76183b2b15873fcf036a3af42378979470eda2d798720ced29767fe393e1e6",
+      "p02b-20261023-fresh.ts": "1a5da4bab4eaee97d4bc4664e771614b58e38cbfbbcd0d306bf4538ed63a38e2"
+    },
+    "frozenFreshHash": "1a5da4bab4eaee97d4bc4664e771614b58e38cbfbbcd0d306bf4538ed63a38e2",
+    "directGuards": {
+      "distinct": 69,
+      "allPassed": true,
+      "rawRunnerRepeats": 3,
+      "not207NewGuards": true,
+      "head": "afe8d99e4f379733f2a630f995fce02333b0d2d2"
+    },
+    "schema": {
+      "existingActualObjects": 956,
+      "additionalActualObjects": 662,
+      "total": 1618,
+      "validator": "Unchanged protected JSON schema, jsonschema 4.26.0"
+    },
+    "publication": {
+      "protectedFiles": 21,
+      "tasks": 79,
+      "missionRecords": 19,
+      "approvedFinalPaths": 154,
+      "newExactPaths": 12,
+      "negativeViteImports": 9,
+      "base": "/Lernspiel-Zellbiologie/",
+      "distFiles": 4,
+      "assetReferences": 3,
+      "unchangedDistHashes": {
+        "assets/favicon-BBsVGNz0.svg": "aa985a2fdd116dc0dbecda5e953bc794ee0d8b57808ea234e8fce79bae75a37e",
+        "assets/index-92g-guUY.js": "c8006380bebf1dd37080164407046abbce1af76b9264a3fdd12f7bec3e1f7515",
+        "assets/index-D6JBs7Gr.css": "e8a3871aa7485d1b1d7dc1c5d5c99fe725e03cca96102b89a6dfd86848a3cc7e",
+        "index.html": "bfad6ec651669679ca18461711cb577f8ee6b7406456b9fa56f4981468b2d1fa"
+      },
+      "publicResultHash": "c94daf08b761b7aa5f7048b6abcb43d5a9220da2f3d1fa046b3466339cde97e7",
+      "privateOriginals": "Unavailable, not accessed or added. No independent reproduction of the supplied private hash/14-word-window scan claimed."
+    },
+    "branchProtection": {
+      "protected": false,
+      "enforcementLevel": "off",
+      "rulesets": [],
+      "checkedOnBerlin": "2026-10-23",
+      "proposal": "review/main-ruleset-proposal.json",
+      "applied": false,
+      "settingsChanged": false
+    },
+    "preliminaryRuns": [
+      {
+        "file": "qa/generated/p02b-third-before-tests.json",
+        "passed": 226,
+        "failed": 437,
+        "skipped": 0
+      },
+      {
+        "file": "qa/generated/p02b-third-relations.json",
+        "passed": 1119,
+        "failed": 424,
+        "skipped": 0
+      },
+      {
+        "file": "qa/generated/p02b-third-syntax-first.json",
+        "passed": 1912,
+        "failed": 67,
+        "skipped": 0
+      },
+      {
+        "file": "qa/generated/p02b-third-syntax-second.json",
+        "passed": 1979,
+        "failed": 0,
+        "skipped": 0
+      },
+      {
+        "file": "qa/generated/p02b-third-safety.json",
+        "passed": 1985,
+        "failed": 0,
+        "skipped": 0
+      },
+      {
+        "file": "qa/generated/p02b-third-compositions.json",
+        "passed": 737,
+        "failed": 0,
+        "skipped": 0
+      },
+      {
+        "file": "qa/generated/p02b-third-designation-verified.json",
+        "passed": 737,
+        "failed": 0,
+        "skipped": 0
+      },
+      {
+        "file": "qa/generated/p02b-third-designation-final.json",
+        "passed": 740,
+        "failed": 0,
+        "skipped": 0
+      },
+      {
+        "file": "qa/generated/p02b-third-history-verified.json",
+        "passed": 8,
+        "failed": 0,
+        "skipped": 0
+      }
+    ],
+    "initialCompleteRun": {
+      "file": "qa/generated/p02b-third-full-check.log",
+      "conceptPassed": 694,
+      "unitPassed": 2361,
+      "contentPassed": 180,
+      "contentFailed": 1,
+      "buildAndBrowserNotReached": true
+    },
+    "historicalSnapshotFix": {
+      "oldArchiveUnchanged": true,
+      "oldArchiveCode": "29d12d14d1ade8cdabdad50c67879234f0138482",
+      "inputId": "L2-05",
+      "text": "Ich nenne den Vorgang Osmose. Osmose ist Wassertransport.",
+      "fixedNorm": [
+        "correct",
+        "clarify"
+      ],
+      "archivedActual": "clarify",
+      "currentActual": "correct",
+      "fix": "Archive test binds hash/inputs to its original execution; live fixed norms remain unchanged. New report tests also keep raw norms separate from execution snapshots."
+    },
+    "resolvedFindings": [
+      {
+        "id": "P02b-R3-01",
+        "severity": "P1",
+        "before": "Name-of Diffusion/Wasserbewegung green, their negation falsely red with false passive-property feedback",
+        "fix": "Preserve designation/synonymy/property/classification and negation. Broad name equivalence remains clarify; no passive-property inference."
+      },
+      {
+        "id": "P02b-R3-02",
+        "severity": "P1",
+        "before": "Known short naming 11/60; own short 0/50",
+        "fix": "Finite noun/reference constituents, field-specific references, naming verbs and mandatory closers; no fixture import/whole-answer whitelist."
+      },
+      {
+        "id": "P02b-R3-03",
+        "severity": "P1",
+        "before": "During construction two new reverse name-of genitives could become green: Name des Wassertransports / des Transports von Wasser",
+        "fix": "Guard nominal designation heads, inflected genitives and insertions before reverse naming; preserve the typed scientific relation or clarify."
+      },
+      {
+        "id": "P02b-R3-04",
+        "severity": "P2",
+        "before": "Broad Tonoplast name equivalence could be treated as a membrane property",
+        "fix": "Unknown generic name equivalence/negation differs from true property or a qualified vacuole-boundary name."
+      }
+    ],
+    "localEvidenceHashes": {
+      "unit.json": "0e986c1e3120c66fd8c216e53e493c9de4ff9863159ebd4beea1f7c26bf43a45",
+      "content.json": "97efa904b13ceed9820027276bf6e244ecf00fbf82c0d7a9c8e8fd0900028b13",
+      "build.json": "6d3197dc3a2b95e9d023a8606407f75a93d23020ea32621f1924026203e23a3a",
+      "playwright.json": "8682ec513c2a5bde9e2a934709467ab4bdb1bfc262724f9616a5733b19ccdb97",
+      "concept.json": "96b0fe40e0e93ae51647ce633c025f6a254edf2c73cac6e46660bdeef9fdbab4",
+      "p02b-third-before-tests.json": "fbc5566c94a23e04d45b306a51cdf31a3816dc67c3a56f6e745199556cb64201",
+      "p02b-third-relations.json": "a34d06be15d31efc674757a0bdcebda28ed4327a1c9c5d9eedef284c9b4944ab",
+      "p02b-third-syntax-first.json": "42fbeb11af1ccdaca7463254bf5595d141f275ed6b40b6ebaf7fe835b7651bff",
+      "p02b-third-syntax-second.json": "2250026c7189d189a7294fe0a2ff53b465b29eab7fe700aa7f85c9ce25d57b2b",
+      "p02b-third-safety.json": "374e836e65c5b391abe9588cfa1745abac6bca1d5f2969f6a399d83150e9d417",
+      "p02b-third-compositions.json": "e562b802db91abc7f7aef62f013541acf249220e078a9e859c7bd19bab0de3c1",
+      "p02b-third-designation-verified.json": "d0e09e33cfbc58192de23c0b5876a92e6a1cb05eac70d3f67f56a916dbd92f7a",
+      "p02b-third-designation-final.json": "c1ca3f1a138e04a202eac0187b2695f3ea0a99284e7a6068c824f74ef2af91af",
+      "p02b-third-history-verified.json": "01c1d955ac17f9cf7298feedf631fa92b1f100b7db5af1c82fa12fa9fb8b1fc2",
+      "p02b-third-main-before.json": "becd08f89d48f7afbfa7a8e9eff379f680254a6861cc8d10dd0a5235d9cdf317",
+      "p02b-third-diagnostic-before.json": "a4280734312c0a35758d70727d61be4791da925cdcdb9f814fe5cfba8649fdd0",
+      "p02b-third-diagnostic2-before.json": "775a00d97d65c96b5bcd01e01ca9d63aa044baf6cc4f718900f757b141e1690e",
+      "p02b-third-main-final.json": "8c7805711fa4114f914e0b678af09d13e49c8d621f1e1d8d5ae002fc862cfc7a",
+      "p02b-third-diagnostic-final.json": "c0775646196e05c016b229befdc4bc8610f1ff80bf61400615ca60cef623e349",
+      "p02b-third-diagnostic2-final.json": "af869e72f3f9d68f537c369f5d586611d235e660ce5925eb475eae3fe50ee857",
+      "p02b-third-full-check.log": "8e163d3ff20c36db0dc770b11e7fb348390b57a933a38fb015025858422c35be",
+      "p02b-third-final-check.log": "b696929dcda773ffb8185c9feae61c8f755deb7a110e71d07bf4a4ce90fee938",
+      "p02b-third-novelty.json": "08a1a06c108690bc25202d3953107074ae5ad80d096250064afa68588312609f",
+      "p02b-third-designation-probe.json": "f8c46c04e02e356f36fae34806fbc320dc54f7bcd3858cd2bedf9566479aa9ab",
+      "p02b-third-historical-outcome-diff.json": "70e87e9452f0025d2940f32ef68c3adb9bb9edc2bc8e306b93c51776296aa83c",
+      "p02b-third-webkit-code-annotations.json": "9c2e725f005117d7030ebabfafd6709d9356cc98a52e07c90f2e78b8bfcdceef"
+    }
+  },
+  "executedCommands": [
+    "node --experimental-transform-types /workspace/attachments/pr6-20261023/PR6_Gegenpruefung_2026-10-23/run-review.mjs /workspace/Lernspiel-Zellbiologie /workspace/Lernspiel-Zellbiologie/qa/generated/p02b-third-main-before.json",
+    "node --experimental-transform-types with run-supplement.mjs and run-supplement2.mjs, corresponding diagnostic-before.json outputs",
+    "npx vitest run tests/unit/p02b-third.test.ts --outputFile=qa/generated/p02b-third-before-tests.json",
+    "npm run check:types",
+    "npm run build",
+    "npx vitest run tests/unit/p02b-third.test.ts tests/unit/osmosis*.test.ts tests/unit/tonoplast*.test.ts --outputFile=qa/generated/p02b-third-relations.json",
+    "Targeted actual-runtime unit/content runs listed with exact JSON output paths in environment.preliminaryRuns",
+    "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npx playwright test tests/browser/p02b-third.spec.ts tests/browser/keyboard-platform.spec.ts",
+    "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run check > qa/generated/p02b-third-full-check.log 2>&1",
+    "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run check > qa/generated/p02b-third-final-check.log 2>&1",
+    "npx playwright install webkit (failed default cache path)",
+    "PLAYWRIGHT_BROWSERS_PATH=/workspace/.cache/ms-playwright npx playwright install webkit (blocked 403 Domain forbidden)",
+    "CI macos-latest: npm ci; python -m pip install -r requirements-spec.txt; npx playwright install webkit; npm run build",
+    "CI: WEBKIT_SUITE=baseline npx playwright test --config=playwright.webkit.config.ts",
+    "CI: WEBKIT_SUITE=additional npx playwright test --config=playwright.webkit.config.ts",
+    "All three supplied runners on current source, p02b-third-{main,diagnostic,diagnostic2}-final.json",
+    "gh api repos/Feerson1617/Lernspiel-Zellbiologie/branches/main",
+    "gh api repos/Feerson1617/Lernspiel-Zellbiologie/rulesets",
+    "gh api repos/Feerson1617/Lernspiel-Zellbiologie/check-runs/120270501544/annotations",
+    "git diff --check",
+    "npm run check:publish",
+    ".venv/bin/python -c 'import json,jsonschema; jsonschema.validate(json.load(open(\"qa/p02b-third-review.json\")),json.load(open(\"spec/review-manifest.schema.json\")))'"
+  ],
+  "caseCounts": {
+    "passed": 2663,
+    "failed": 3,
+    "skipped": 0
+  },
+  "newCases": [
+    "212 supplied raw cases unchanged: 180 main + 24 + 8 diagnosis; now known regressions",
+    "50 new short correct self-check inputs N3-01..N3-50 fixed before runtime edits/first evaluation; normalised novelty checked",
+    "400 corresponding wrong/partial/alternative/contradictory/unassessed cases fixed before first evaluation",
+    "Additional substitutions in 60 supplied short and 10 supplied simple Tonoplast frames; explicit correction, name-of, negation and mandatory-ending safety checks"
+  ],
+  "blockedChecks": [
+    "macOS WebKit unchanged standard Tab: 3 failed focus tests, separately preserved; 6 additional tests passed",
+    "Local WebKit binary download blocked by network policy; remote execution is explicitly CI macOS",
+    "Real Safari/iPad, Firefox and empirical learner sample not executed",
+    "Fresh independent countercheck of this correction pending; own data and reused supplied cases do not grant release",
+    "Private originals unavailable; no new private semantic/hash comparison",
+    "main has no enforced protection/check gate; administration proposal not activated",
+    "direction/volume, full M6.02 completion, simulations and student task UI remain unimplemented"
+  ],
+  "criticalFindings": [
+    "Three mandatory WebKit standard-focus checks still fail; product cause not established, platform Option-Tab works. No merge/classroom approval."
+  ],
+  "releaseStatus": "blocked"
+}
