@@ -80,11 +80,15 @@ jobs:
               const r = JSON.parse(readFileSync(`qa/generated/webkit-${suite}.json`, 'utf8'));
               const s = r.stats;
               const keyboard = [];
+              const timings = [];
               const failedTests = [];
               function collect(value) {
                 if (!value || typeof value !== 'object') return;
                 if (value.name === 'keyboard-platform.json' && typeof value.body === 'string') {
                   keyboard.push(JSON.parse(Buffer.from(value.body, 'base64').toString('utf8')));
+                }
+                if (value.name === 'runtime-parity-timing.json' && typeof value.body === 'string') {
+                  timings.push(JSON.parse(Buffer.from(value.body, 'base64').toString('utf8')));
                 }
                 if (typeof value.title === 'string' && Array.isArray(value.tests)) {
                   for (const test of value.tests) {
@@ -96,7 +100,7 @@ jobs:
                 Object.values(value).forEach(collect);
               }
               collect(r.suites);
-              const result = { platform: process.platform, arch: process.arch, node: process.version, suite, ...s, keyboard, failedTests };
+              const result = { platform: process.platform, arch: process.arch, node: process.version, suite, ...s, keyboard, timings, failedTests };
               console.log(`::notice title=WebKit ${suite} actual results::${JSON.stringify(result)}`);
               if (s.unexpected || s.skipped || s.flaky || r.errors?.length) failed = true;
             } catch (error) {

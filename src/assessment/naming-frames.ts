@@ -30,7 +30,7 @@ export const NAMING_MODIFIERS: readonly (readonly string[])[] = [
   ['bei', 'der', 'benennung'], ['in', 'der', 'biologie'], ['in', 'wirklichkeit'],
   ['damit'], ['einfach'], ['fachsprachlich'], ['fachlich'], ['begrifflich'],
   ['ganz', 'einfach'], ['an', 'dieser', 'stelle'], ['an', 'der', 'stelle'],
-  ['bei', 'mir'], ['da'], ['jetzt'], ['mal'],
+  ['bei', 'mir'], ['da'], ['jetzt'], ['mal'], ['schlicht'], ['erst', 'einmal'],
 ];
 const FRONTINGS = [
   ['hier'], ['dabei'], ['fuer', 'mich'], ['meiner', 'ansicht', 'nach'],

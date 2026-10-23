@@ -22,7 +22,7 @@ const SUBJECTS = [
 ];
 /** Field-specific naming subjects; none of the membrane frames are inherited. */
 const PROFILE: TermGrammarProfile = {
-  namingReferences: { nouns: [
+  namingReferences: { names: [['m', 'vorgangsname', 'vorgangsnamens']], nouns: [
     ['m', 'vorgang', 'vorgangs'], ['m', 'prozess', 'prozesses'], ['m', 'transport', 'transports'],
     ['m', 'wassertransport', 'wassertransports'], ['m', 'wassertransportvorgang', 'wassertransportvorgangs'],
     ['m', 'transportvorgang', 'transportvorgangs'], ['m', 'transport von wasser', 'transports von wasser'],

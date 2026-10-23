@@ -20,7 +20,7 @@ export interface TermRef {
   readonly typo: boolean;
 }
 export type TermClause =
-  | Readonly<{ kind: 'name'; terms: readonly TermRef[]; negated: boolean; connector: 'single' | 'or' | 'and' | 'alias' | 'explanation'; correctsPrevious?: true; start: number; end: number }>
+  | Readonly<{ kind: 'name'; terms: readonly TermRef[]; negated: boolean; connector: 'single' | 'or' | 'and' | 'alias' | 'explanation'; correctsPrevious?: true; tentativeQuestion?: true; start: number; end: number }>
   | Readonly<{ kind: 'contrast'; excluded: TermRef; chosen: TermRef; start: number; end: number }>
   | Readonly<{ kind: 'identity' | 'synonymy' | 'encloses'; subject: TermRef; object: TermRef; negated: boolean; relation?: 'property' | 'classification' | 'equivalence' | 'designation'; start: number; end: number }>
   | Readonly<{ kind: 'separates'; subject: TermRef; first: TermRef; second: TermRef; negated: boolean; start: number; end: number }>
@@ -31,6 +31,8 @@ const ARTICLES = new Set(['der', 'die', 'das', 'den', 'dem', 'ein', 'eine', 'ein
 const NEGATIONS = new Set(['nicht', 'kein', 'keine', 'keinen']);
 const QUOTES: Readonly<Record<string, string>> = Object.freeze({ '„': '“', '‚': '‘', '«': '»', '"': '"', "'": "'", '“': '”' });
 const HEDGES = [
+  ['soweit', 'ich', 'mich', 'erinnere'], ['soweit', 'ich', 'weiss'],
+  ['also', 'ich', 'wuerde', 'sagen'],
   ['ich', 'bin', 'mir', 'nicht', 'ganz', 'sicher', ',', 'aber'],
   ['ich', 'glaub'], ['ich', 'denke', 'mal'], ['ich', 'finde'],
   ['ich', 'bin', 'mir', 'nicht', 'sicher', ',', 'aber'],
@@ -266,14 +268,14 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
       || (frame?.close && (frame.close(index) ?? index) > index)) {
       return finish({ kind: 'name', terms: [first.term], connector: 'single', negated, ...span() });
     }
-    if (!framed && !negated) {
+    if (!framed) {
       const oldPost = [...POST_NAMING_FRAMES, ...(profile?.postFrames ?? [])].map(words => matchNaming(index, words)).filter(next => next !== null).sort((a, b) => b - a)[0];
       const composedPost = syntax.post(index);
       const post = Math.max(oldPost ?? -1, composedPost ?? -1);
       const namingRelation = syntax.designationAt(index);
       if (post >= 0 && !namingRelation) {
         index = skipNamingModifiers(post);
-        return finish({ kind: 'name', terms: [first.term], connector: 'single', negated: false, ...span() });
+        return finish({ kind: 'name', terms: [first.term], connector: 'single', negated, ...span() });
       }
     }
     // A boundary is explicitly named by its owner, not inferred from occurrence of a target word.
@@ -366,9 +368,9 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
       index = subject.next + 1;
       value = { kind: 'encloses', subject: subject.term, object: first.term, negated: relationNegated,
         start: tokens[start]!.start, end: tokens[index - 1]!.end };
-    } else if (at(index) === 'und' && at(index + 1) === 'nicht') {
+    } else if (!negated && at(index) === 'und' && at(index + 1) === 'nicht') {
       const negative = term(index + 2);
-      if (!negative || negated) return null;
+      if (!negative) return null;
       value = { kind: 'conjoined_negation', positive: first.term, negative: negative.term, start: tokens[start]!.start, end: tokens[negative.next - 1]!.end };
       index = negative.next;
     } else {
@@ -425,7 +427,14 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
 
   const clauses: TermClause[] = [];
   const finishParsing = (complete: boolean) => ({
-    ...(complete ? resolveNamingChoices(clauses) : { clauses, complete: false }),
+    // Two explicitly tentative questions proposing distinct names leave the
+    // choice open. A single question, a definite exclusion, a scientific
+    // predicate or an unconsumed suffix does not get this exception.
+    ...(complete && !(clauses.length === 2 && clauses.every(c => c.kind === 'name' && c.tentativeQuestion)
+      && clauses[0]?.kind === 'name' && clauses[0].negated
+      && clauses[1]?.kind === 'name' && !clauses[1].negated
+      && new Set(clauses.flatMap(c => c.kind === 'name' ? c.terms.map(t => t.id) : [])).size > 1)
+      ? resolveNamingChoices(clauses) : { clauses, complete: false }),
     evidence: clauses.map(({ start, end }) => ({ start, end })),
   });
   let index = 0;
@@ -439,7 +448,8 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
     }
     const parsed = clause(index);
     if (!parsed) return finishParsing(false);
-    clauses.push(parsed.value);
+    clauses.push(parsed.value.kind === 'name' && at(index) === 'vielleicht' && at(parsed.next) === '?'
+      ? { ...parsed.value, tentativeQuestion: true } : parsed.value);
     index = parsed.next;
     if (index === tokens.length) break;
     if (['.', '!', '?', ';'].includes(at(index) ?? '')) {

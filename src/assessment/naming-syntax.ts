@@ -4,9 +4,9 @@ import { NAMING_MODIFIERS } from './naming-frames.ts';
 /** Nouns refer to the question's object, never to an accepted biological answer.
  * Profiles own these references; a process cannot become a membrane reference. */
 export type NamingNoun = readonly [gender: 'm' | 'f' | 'n', nominative: string, genitive: string];
-export interface NamingReferences { readonly nouns: readonly NamingNoun[] }
+export interface NamingReferences { readonly nouns: readonly NamingNoun[]; readonly names?: readonly NamingNoun[] }
 type Case = 'nom' | 'acc' | 'dat' | 'gen';
-type Slot = 'subject' | 'fieldNom' | 'fieldAcc' | 'fieldDat' | 'metaNom' | 'metaAcc' | 'metaDat' | 'questionAcc' | 'namingObject' | 'asMeta' | 'asField' | 'reference' | 'optionalReference' | 'front';
+type Slot = 'subject' | 'fieldNom' | 'fieldAcc' | 'fieldDat' | 'metaNom' | 'metaAcc' | 'metaDat' | 'questionAcc' | 'namingObject' | 'asMeta' | 'asField' | 'reference' | 'optionalReference' | 'front' | 'uncertain';
 type Part = string | Readonly<{ slot: Slot }>;
 interface Pattern { readonly before: readonly Part[]; readonly after: readonly (readonly Part[])[]; readonly negated?: true }
 export interface SyntaxFrame {
@@ -18,25 +18,27 @@ export interface SyntaxFrame {
 const s = (slot: Slot): Part => ({ slot });
 const META: readonly NamingNoun[] = [
   ['m', 'begriff', 'begriffs'], ['m', 'fachbegriff', 'fachbegriffs'], ['m', 'fachausdruck', 'fachausdrucks'],
+  ['m', 'oberbegriff', 'oberbegriffs'], ['m', 'ansatz', 'ansatzes'],
   ['m', 'ausdruck', 'ausdrucks'], ['m', 'name', 'namens'], ['m', 'fachname', 'fachnamens'], ['m', 'vorschlag', 'vorschlags'],
   ['m', 'loesungsvorschlag', 'loesungsvorschlags'], ['m', 'antwortvorschlag', 'antwortvorschlags'], ['m', 'tipp', 'tipps'],
   ['f', 'antwort', 'antwort'], ['f', 'bezeichnung', 'bezeichnung'], ['f', 'benennung', 'benennung'],
   ['f', 'vermutung', 'vermutung'], ['f', 'loesung', 'loesung'], ['f', 'wahl', 'wahl'],
   ['f', 'fachbezeichnung', 'fachbezeichnung'],
+  ['f', 'angabe', 'angabe'],
   ['n', 'wort', 'wortes'], ['n', 'fachwort', 'fachwortes'], ['n', 'ergebnis', 'ergebnisses'],
 ];
-const QUESTIONS: readonly NamingNoun[] = [['f', 'frage', 'frage'], ['f', 'teilfrage', 'teilfrage'], ['f', 'namensfrage', 'namensfrage'], ['f', 'benennungsfrage', 'benennungsfrage'], ['f', 'benennung', 'benennung'], ['f', 'antwort', 'antwort'], ['n', 'antwortfeld', 'antwortfelds']];
+const QUESTIONS: readonly NamingNoun[] = [['f', 'frage', 'frage'], ['f', 'teilfrage', 'teilfrage'], ['f', 'namensfrage', 'namensfrage'], ['f', 'benennungsfrage', 'benennungsfrage'], ['f', 'benennung', 'benennung'], ['f', 'antwort', 'antwort'], ['n', 'antwortfeld', 'antwortfelds'], ['n', 'feld', 'felds'], ['n', 'namensfeld', 'namensfelds']];
 const ARTICLES: Readonly<Record<Case, Readonly<Record<NamingNoun[0], readonly string[]>>>> = {
   nom: { m: ['der', 'dieser', 'mein'], f: ['die', 'diese', 'meine'], n: ['das', 'dieses', 'mein'] },
   acc: { m: ['den', 'diesen', 'meinen'], f: ['die', 'diese', 'meine'], n: ['das', 'dieses', 'mein'] },
   dat: { m: ['dem', 'diesem', 'meinem'], f: ['der', 'dieser', 'meiner'], n: ['dem', 'diesem', 'meinem'] },
   gen: { m: ['des', 'dieses', 'meines'], f: ['der', 'dieser', 'meiner'], n: ['des', 'dieses', 'meines'] },
 };
-const META_ADJECTIVES = ['richtig', 'gesucht', 'passend', 'korrekt', 'fachlich', 'endgueltig', 'aktuell', 'vorgeschlagen', 'kurz'];
+const META_ADJECTIVES = ['richtig', 'gesucht', 'passend', 'korrekt', 'fachlich', 'endgueltig', 'aktuell', 'vorgeschlagen', 'kurz', 'erst'];
 const FIELD_ADJECTIVES = ['gesucht', 'beschrieben', 'gezeigt', 'dargestellt', 'genannt', 'gemeint', 'markiert', 'hervorgehoben'];
 const isAdjective = (word: string | undefined, stems: readonly string[]) => stems.some(stem => ['', 'e', 'en', 'er', 'es', 'em'].some(end => word === stem + end));
 const pattern = (before: readonly Part[], ...after: readonly Part[][]): Pattern => ({ before, after: after.length ? after : [[]] });
-const WRITING_VERBS = ['sagen', 'nennen', 'schreiben', 'hinschreiben', 'eintragen', 'angeben', 'notieren', 'einsetzen', 'nehmen', 'waehlen', 'verwenden', 'benutzen', 'antworten'];
+const WRITING_VERBS = ['sagen', 'nennen', 'schreiben', 'hinschreiben', 'eintragen', 'angeben', 'notieren', 'einsetzen', 'setzen', 'nehmen', 'waehlen', 'verwenden', 'benutzen', 'antworten'];
 const PARTICIPLES = ['gesagt', 'genannt', 'geschrieben', 'hingeschrieben', 'eingetragen', 'angegeben', 'notiert', 'eingesetzt', 'genommen', 'gewaehlt', 'verwendet', 'benutzt'];
 const ACTION_COMPLEMENTS: readonly (readonly Part[])[] = [
   [], [s('reference')], [s('asMeta')], [s('metaAcc')],
@@ -47,6 +49,47 @@ const ACTION_COMPLEMENTS: readonly (readonly Part[])[] = [
 /** Finite constituent grammar. Slots match explicit noun phrases/references,
  * not arbitrary text. Required closing verbs are never optional filler. */
 const PATTERNS: readonly Pattern[] = [
+  // Word choice and explicit uncertainty about naming only. Negations in
+  // these frames belong to the speaker's certainty, never to the answer.
+  pattern(['ich', 'bin', s('reference'), s('uncertain'), ':']),
+  pattern(['ich', 'bin', 'mir', s('reference'), s('uncertain'), ':']),
+  pattern(['ich', 'habe', s('asMeta')], ['im', 'kopf'], [s('asMeta')]),
+  pattern(['ich', 'habe', s('reference')], ['im', 'kopf'], [s('asMeta')]),
+  pattern(['ich', 'habe', s('metaAcc')], ['im', 'kopf'], [s('reference'), 'gewaehlt']),
+  pattern(['ich', 'habe', s('metaAcc')], [s('asMeta')]),
+  pattern(['ich', 'habe', s('asMeta'), s('metaAcc')], ['im', 'kopf']),
+  ...['denke', 'vermute', 'meine'].map(verb => pattern(['ich', verb, s('reference'), s('metaAcc')])),
+  pattern(['ich', 'denke', 'an'], [s('asMeta')]),
+  pattern(['ich', 'vermute', s('reference')]),
+  pattern(['ich', 'lege', 'mich', s('optionalReference'), 'auf'], ['fest']),
+  pattern(['ich', 'bleibe', s('optionalReference'), 'bei']),
+  pattern([s('metaNom'), 'bleibt']),
+  pattern(['mit'], ['bestaetige', 'ich', s('metaAcc')]),
+  pattern(['mit'], ['ist', s('subject'), 'richtig', 'benannt'], ['ist', s('subject'), 'passend', 'benannt']),
+  pattern([s('namingObject'), 'ist', 'mit'], ['richtig', 'benannt'], ['passend', 'benannt']),
+  pattern([s('namingObject'), 'nennt', 'sich', 'in', 'der', 'biologie']),
+  pattern(['hier', 'soll', 'man'], ['eintragen']),
+  pattern(['ich', 'nenne', s('namingObject'), 'mit', s('metaDat')]),
+  pattern([s('fieldNom'), 'wird', 'mit'], ['bezeichnet'], ['benannt']),
+  pattern([s('fieldNom'), 'wird', 'mit', s('metaDat')], ['bezeichnet'], ['benannt']),
+  pattern([s('fieldNom'), 'laesst', 'sich', 'mit'], ['bezeichnen'], ['benennen']),
+  pattern(['ich', 'haette', s('namingObject'), 'mit'], ['bezeichnet'], ['benannt']),
+  ...['muesste', 'sollte', 'koennte'].map(modal => pattern([s('subject'), modal], [s('asMeta'), 'passen'])),
+  pattern([s('front'), 'kaeme', s('metaNom')]),
+  pattern(['ich', 'schreibe', s('optionalReference')], ['hin'], ['in', s('questionAcc')]),
+  ...ACTION_COMPLEMENTS.map(parts => pattern(['ich', 'schreibe', ...parts], ['hin'], [s('reference')])),
+  pattern(['ich', 'setze', s('optionalReference')], ['ein'], []),
+  pattern(['ich', 'setze', s('reference'), s('metaAcc')]),
+  pattern(['ich', 'setze', s('metaAcc')], [s('reference')]),
+  pattern(['ich', 'setze', s('asMeta')], ['ein']),
+  pattern(['ich', 'nenne', s('namingObject')], ['mit', s('metaDat')]),
+  pattern([s('reference'), 'habe', 'ich'], [s('asMeta')], ['im', 'kopf']),
+  pattern([s('reference'), 'faellt', 'mir'], ['ein']),
+  pattern([s('asMeta'), 'faellt', 'mir', s('reference')], ['ein']),
+  ...['heisst', 'lautet'].map(verb => pattern([verb, s('subject')])),
+  pattern(['nennt', 'man', s('namingObject')]),
+  pattern(['mit', s('metaDat')], ['wuerde', 'ich', s('questionAcc'), 'beantworten']),
+  pattern(['ich', 'kenne', 'nur', s('metaAcc')]),
   pattern([s('front'), 'kommt', s('metaNom')], ['infrage']),
   pattern([s('front'), 'wuerde', s('metaNom')], ['lauten'], ['heissen'], ['sein']),
   pattern([s('asMeta'), 'haette', 'ich'], ...PARTICIPLES.map(v => [v])),
@@ -69,7 +112,7 @@ const PATTERNS: readonly Pattern[] = [
     ]);
   }),
   pattern(['ich', 'wuerde', 'mich', s('optionalReference'), 'fuer'], ['entscheiden']),
-  pattern(['ich', 'wuerde', 'mich', s('reference'), 'auf'], ['festlegen']),
+  pattern(['ich', 'wuerde', 'mich', s('optionalReference'), 'auf'], ['festlegen']),
   pattern(['ich', 'wuerde', s('metaAcc'), 'mit', s('metaDat')], ['geben']),
   pattern(['ich', 'wuerde', 'mit', s('metaDat')], ['antworten']),
   pattern(['ich', 'haette', s('questionAcc'), 'mit', s('metaDat')], ['beantwortet']),
@@ -198,7 +241,7 @@ const PATTERNS: readonly Pattern[] = [
     pattern([s('fieldAcc'), modal, 'ich'], ['nennen'], ['benennen']),
     pattern([s('fieldAcc'), modal, 'ich', 'als'], ['bezeichnen'], ['benennen']),
     pattern([s('metaAcc'), modal, 'ich', 'mit'], ['angeben']),
-    pattern([s('asMeta'), modal, 'ich', s('optionalReference')], ['nennen'], ['angeben'], ['waehlen'], ['nehmen'], ['verwenden']),
+    pattern([s('asMeta'), modal, 'ich', s('optionalReference')], ...WRITING_VERBS.map(v => [v])),
     pattern([s('asField'), modal, 'ich'], ['nennen'], ['angeben']),
     pattern(['ich', modal, s('reference'), 'mit'], ['antworten']),
     pattern(['ich', modal, 'bei', s('fieldDat'), 'von'], ['sprechen']),
@@ -219,16 +262,19 @@ const SUBORDINATE: readonly Pattern[] = ['denke', 'glaube', 'vermute', 'meine'].
 const CONSTRUCTIONS = [...PATTERNS, ...INVERTED, ...SUBORDINATE];
 
 export function createNamingSyntax(tokens: readonly TextToken[], references: NamingReferences) {
+  const namingNouns = [...META, ...(references.names ?? [])];
   const at = (index: number) => tokens[index]?.word;
   const exact = (index: number, words: readonly string[]) => words.every((word, offset) => at(index + offset) === word);
+  const modifierMemo = new Map<number, number>();
   const modifiers = (start: number) => {
+    if (modifierMemo.has(start)) return modifierMemo.get(start)!;
     let index = start;
     for (let count = 0; count < 3; count++) {
       const found = NAMING_MODIFIERS.find(words => exact(index, words));
       if (!found) break;
       index += found.length;
     }
-    return index;
+    modifierMemo.set(start, index); return index;
   };
   function noun(start: number, nouns: readonly NamingNoun[], grammaticalCase: Case, bare = false, adjectives = nouns === META ? META_ADJECTIVES : FIELD_ADJECTIVES): number | null {
     let best: number | null = null;
@@ -251,25 +297,31 @@ export function createNamingSyntax(tokens: readonly TextToken[], references: Nam
     const kind = noun(index, [['f', 'art', 'art']], grammaticalCase, bare);
     return kind !== null && at(kind) === 'von' ? field(kind + 1, 'dat', true, depth + 1) : null;
   }
+  function question(index: number, grammaticalCase: Case, bare = false): number | null {
+    const end = noun(index, QUESTIONS, grammaticalCase, bare, [...FIELD_ADJECTIVES, 'erst']);
+    if (end === null) return null;
+    return at(end) === 'nach' ? field(end + 1, 'dat') ?? meta(end + 1, 'dat') ?? end : end;
+  }
   function reference(start: number, depth = 0): number | null {
     if (depth > 3) return null;
     let index = start;
     const prep = at(index);
-    const contraction = prep === 'zur' || prep === 'zum';
+    const contraction = ['zur', 'zum', 'beim', 'im'].includes(prep ?? '');
     const grammaticalCase = prep === 'fuer' || prep === 'auf' || prep === 'in' ? 'acc' : contraction || prep === 'zu' || prep === 'nach' || prep === 'bei' ? 'dat' : null;
     if (!grammaticalCase) return null;
     index++;
-    const named = field(index, grammaticalCase, contraction);
-    const question = noun(index, QUESTIONS, grammaticalCase, contraction, [...FIELD_ADJECTIVES, 'erst']);
+    const named = field(index, grammaticalCase, contraction) ?? (prep === 'in' ? field(index, 'dat') : null);
+    const asked = question(index, grammaticalCase, contraction) ?? (prep === 'in' ? question(index, 'dat') : null);
     const wordChoice = meta(index, grammaticalCase, contraction, depth + 1);
-    let end = Math.max(named ?? 0, question ?? 0, wordChoice ?? 0) || null;
+    let end = Math.max(named ?? 0, asked ?? 0, wordChoice ?? 0) || null;
     if (end !== null) end = field(end, 'gen') ?? end;
     if (end !== null && at(end) === 'nach') end = field(end + 1, 'dat') ?? meta(end + 1, 'dat', false, depth + 1) ?? end;
+    if (end !== null && asked === end && at(end) === 'fuer') end = reference(end, depth + 1) ?? end;
     return end;
   }
   function meta(index: number, grammaticalCase: Case, bare = false, depth = 0): number | null {
     if (depth > 3) return null;
-    const end = noun(index, META, grammaticalCase, bare);
+    const end = noun(index, namingNouns, grammaticalCase, bare, META_ADJECTIVES);
     if (end === null) return null;
     const asWord = at(end) === 'als' ? noun(end + 1, META, 'acc', true) : null;
     return field(end, 'gen') ?? reference(end, depth + 1) ?? asWord ?? end;
@@ -290,7 +342,7 @@ export function createNamingSyntax(tokens: readonly TextToken[], references: Nam
       case 'fieldNom': return field(index, 'nom');
       case 'fieldAcc': return field(index, 'acc');
       case 'fieldDat': return field(index, 'dat');
-      case 'questionAcc': return noun(index, QUESTIONS, 'acc', false, [...FIELD_ADJECTIVES, 'erst']);
+      case 'questionAcc': return question(index, 'acc');
       case 'namingObject': return longest(field(index, 'acc'), meta(index, 'acc'), deictic(index));
       case 'subject': return longest(meta(index, 'nom'), field(index, 'nom'), deictic(index), ['er', 'sie', 'die'].includes(at(index) ?? '') ? index + 1 : null);
       case 'asMeta': return at(index) === 'als' ? meta(index + 1, 'acc', true) : null;
@@ -302,6 +354,9 @@ export function createNamingSyntax(tokens: readonly TextToken[], references: Nam
         reference(index),
         exact(index, ['bei', 'meiner', 'antwort']) ? index + 3 : null,
       );
+      case 'uncertain': return longest(...[
+        ['nicht', 'ganz', 'sicher'], ['nicht', 'sicher'], ['noch', 'unsicher'], ['unsicher'],
+      ].map(words => exact(index, words) ? index + words.length : null));
     }
   }
   function match(start: number, parts: readonly Part[]): number | null {
@@ -316,6 +371,9 @@ export function createNamingSyntax(tokens: readonly TextToken[], references: Nam
     return index;
   }
   const post = (index: number) => longest(...[
+    ...['muesste', 'sollte', 'koennte'].map(modal => [modal, s('asMeta'), 'passen']),
+    ['nehme', 'ich', s('optionalReference'), s('asMeta')],
+    ['passt', s('asMeta'), s('optionalReference')],
     ...WRITING_VERBS.flatMap(verb => [
       ['wuerde', 'ich', s('optionalReference'), verb],
       ['wuerde', 'ich', s('optionalReference'), s('asMeta'), verb],
@@ -331,6 +389,7 @@ export function createNamingSyntax(tokens: readonly TextToken[], references: Nam
     ['das', 'ist', s('metaNom')], ['das', 'waere', s('metaNom')], ['so', 'lautet', s('metaNom')],
     ['so', 'nennt', 'man', s('fieldAcc')], ['so', 'heisst', s('fieldNom')],
   ].map(parts => { const end = match(index, parts); return end === null ? null : modifiers(end); }));
+  const frameMemo = new Map<number, SyntaxFrame | undefined>();
   return {
     post, tail,
     designationAt(index: number): boolean {
@@ -345,6 +404,7 @@ export function createNamingSyntax(tokens: readonly TextToken[], references: Nam
       return false;
     },
     frameAt(start: number): SyntaxFrame | undefined {
+      if (frameMemo.has(start)) return frameMemo.get(start);
       const found = CONSTRUCTIONS.flatMap(p => {
         const next = match(start, p.before);
         if (next === null) return [];
@@ -352,13 +412,14 @@ export function createNamingSyntax(tokens: readonly TextToken[], references: Nam
         const label = longest(meta(labelAt, 'nom'), meta(labelAt, 'acc'), meta(labelAt, 'dat'));
         return [{ p, next: Math.max(next, label ?? next) }];
       });
-      if (!found.length) return undefined;
+      if (!found.length) { frameMemo.set(start, undefined); return undefined; }
       const next = Math.max(...found.map(f => f.next));
       const selected = found.filter(f => f.next === next);
       const endings = selected.flatMap(f => f.p.after);
-      return { words: tokens.slice(start, next).map(t => t.word), next,
+      const frame: SyntaxFrame = { words: tokens.slice(start, next).map(t => t.word), next,
         ...(selected.some(f => f.p.negated) ? { negated: true as const } : {}),
         close: index => longest(...endings.map(parts => match(index, parts))) };
+      frameMemo.set(start, frame); return frame;
     },
   };
 }

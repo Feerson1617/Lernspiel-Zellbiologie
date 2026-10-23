@@ -8,7 +8,7 @@ type API = typeof import('../../src/assessment/osmosis.ts') & typeof import('../
 let source: string;
 const cases = [...R3_CASES.map(f => ({ ...f, source: 'new' })), ...R3_KNOWN.map(f => ({ ...f, source: 'known' }))];
 test.beforeAll(async () => { source = await buildDomainModule(); });
-test('checks all 1501 supplied, known and self-check records against Node in the actual guarded bundle', async ({ page, baseURL }) => {
+test('checks all 1501 supplied, known and self-check records against Node in the actual guarded bundle', async ({ page, baseURL, browser }, info) => {
   test.setTimeout(90_000); // Full browser + Node parity for 1501 actual evaluations.
   const errors: string[] = [], external: string[] = [];
   page.on('pageerror', error => errors.push(error.message));
@@ -16,6 +16,7 @@ test('checks all 1501 supplied, known and self-check records against Node in the
   await page.route(`${baseURL}r3-revision.mjs`, route => route.fulfill({ contentType: 'text/javascript', body: source }));
   await page.goto('./');
   await page.evaluate(() => { localStorage.setItem('foreign-test-sentinel', 'preserve'); });
+  const browserStart = performance.now();
   const results = await page.evaluate(async ({ url, versions, osmosis, tonoplast, cases }) => {
     const api = await import(/* @vite-ignore */ url) as API;
     const oe = api.createOsmosisEvaluator(versions), te = api.createTonoplastEvaluator(versions);
@@ -26,16 +27,20 @@ test('checks all 1501 supplied, known and self-check records against Node in the
     });
   }, { url: `${baseURL}r3-revision.mjs`, versions: R3_VERSIONS, osmosis: JSON.stringify(R3_OSMOSIS_CONTEXT), tonoplast: JSON.stringify(R3_TONOPLAST_CONTEXT), cases });
   expect(results).toHaveLength(1501);
+  const browserMs = performance.now() - browserStart;
+  const nodeStart = performance.now();
   for (const [i, f] of cases.entries()) {
     const actual = results[i]!;
-    expect(actual.result, f.id).toEqual(executeR3(f).result);
+    const node = executeR3(f);
+    expect(actual.result, f.id).toEqual(node.result);
     expect((f.source === 'new' ? acceptedR3(f) : acceptedKnown(f)), f.id).toContain(actual.result.status);
     expect(actual.bound).toBe(true);
-    expect(actual.feedback, f.id).toBe(executeR3(f).feedback);
+    expect(actual.feedback, f.id).toBe(node.feedback);
     expect(actual.display.color).toBe(actual.result.status === 'correct' ? 'green' : actual.result.status === 'incorrect' ? 'red' : 'yellow');
     expect(actual.display.symbol).toBeTruthy(); expect(actual.display.label).toBeTruthy();
     for (const e of actual.result.criteria[0]!.evidence) if (e.kind === 'input_span') expect(f.text.slice(e.start, e.end)).toBe(e.value);
   }
+  await info.attach('runtime-parity-timing.json', { body: JSON.stringify({ file: info.file.split('/').at(-1), profile: info.project.name, engine: browser.version(), cases: cases.length, browserMs, nodeAndAssertionsMs: performance.now() - nodeStart }), contentType: 'application/json' });
   expect(errors).toEqual([]); expect(external).toEqual([]);
   expect(await page.evaluate(() => ({ ...localStorage }))).toEqual({ 'foreign-test-sentinel': 'preserve' });
   expect(await page.evaluate(() => Object.hasOwn(window, 'auditLeak'))).toBe(false);
