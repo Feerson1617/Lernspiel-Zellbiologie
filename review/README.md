@@ -17,7 +17,8 @@ Merge-Gate. Diese Codeänderung verändert keine GitHub-Einstellungen.
 `/repos/Feerson1617/Lernspiel-Zellbiologie/rulesets`, **kein eingerichteter Schutz**:
 genau `refs/heads/main`, aktive Durchsetzung, keine Bypass-Akteure, PR-Pflicht,
 eine Zustimmung, veraltete Zustimmungen verwerfen, Zustimmung nach dem letzten
-Push und erledigte Reviewdiskussionen. Der erfolgreiche Check `build` muss vom
+Push und erledigte Reviewdiskussionen. Die erfolgreichen Checks `build` und
+`webkit` müssen vom
 tatsächlich gelesenen App-Anbieter `github-actions` (Integration-ID 15368) kommen;
 der Branch muss aktuell sein. Force-Push und Löschen sind untersagt.
 
@@ -26,6 +27,20 @@ und danach die effektiven Regeln für `main` samt Check-Zuordnung erneut lesen.
 Die Integration hat hier keine Kontoeinstellungen geändert. Verfügbarkeit und
 Durchsetzung des vorbereiteten Regelwerks sind erst nach dieser Aktivierung
 nachgewiesen; dessen JSON-Datei allein erzwingt nichts.
+
+Nach R7 enthält der JSON-Vorschlag beide Checks. Der getrennte, mit
+`git apply --check review/pages-gates-proposal.patch` nur lesend prüfbare
+Workflowvorschlag lässt WebKit auf PR und main-Push laufen und setzt
+`deploy.needs: [build, webkit]`. Der aktive Workflow ist unverändert;
+keine Regel oder Veröffentlichung wurde aktiviert. Die Integration-ID und
+Checknamen sind vor einer späteren autorisierten Aktivierung erneut abzugleichen.
+
+## Aktuelle Entscheidung nach R7
+
+[Kurze Entscheidungsvorlage a/b](P02b-Eingabeentscheidung.md): Option b wird
+begründet empfohlen. Die Prüfentscheidung „B: nicht freigegeben“ ist kein
+Formatbeschluss. Kein Formatwechsel und keine weitere Satzmusterergänzung.
+
 ## Aktuelle Entscheidung nach R6
 
 [R6-Eingabeempfehlung](R6-Eingabeempfehlung.md): Die unabhängige 95-%-Grenze ist

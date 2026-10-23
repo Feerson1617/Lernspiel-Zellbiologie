@@ -4,6 +4,11 @@
 im R4-Bericht. Originalaufgaben, Rubriken und heutiger Runtimevertrag bleiben
 bis zu einer ausdrücklichen fachlichen Entscheidung unverändert verbindlich.
 
+Aktuelle kurze [Entscheidungsvorlage nach R7](P02b-Eingabeentscheidung.md):
+Option b wird empfohlen, ist aber nicht beschlossen. Der Fortschrittsadapter
+muss vor jeder Übernahme den gesamten Ergebnisumschlag einschließlich Zusätzen
+prüfen, auch bei Z1.02. Ein grünes `termResult` allein genügt nicht.
+
 ## Anlass und Entscheidung
 
 **Aktualisierung nach R6:** Die Entscheidungsgrenze ist mit unabhängig 43/60
@@ -101,7 +106,9 @@ Benötigte Invarianten vor einer Umsetzung:
   Aussagen overallStatus clarify; bei einem sicher falschen Teil kein grünes
   Gesamtbanner. Ergebnis und Unterstützung bleiben unabhängig.
 - M6.02/process wird auch im neuen Format niemals als fertige M6.02 gespeichert.
-  Z1.02 benötigt weiterhin seine vollständige gebundene Bewertung.
+  Z1.02 benötigt weiterhin seine vollständige gebundene Bewertung einschließlich
+  des vollständigen Umschlags; ungeprüfte relevante Zusätze verhindern auch hier
+  einen vollständigen Erfolg. Kein isoliertes termResult an den alten Adapter.
 - Rohtexte und Korrekturverknüpfungen zunächst ausschließlich im Sitzungsspeicher;
   keine Telemetrie, keine externe Bewertung, keine stillschweigende Erweiterung
   des heutigen Acht-Metadatenfelder-Speichervertrags.

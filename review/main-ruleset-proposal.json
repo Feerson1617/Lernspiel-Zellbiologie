@@ -1,12 +1,23 @@
 {
-  "name": "main: PR, review and build required",
+  "name": "main: PR, review, build and webkit required",
   "target": "branch",
   "enforcement": "active",
   "bypass_actors": [],
-  "conditions": { "ref_name": { "include": ["refs/heads/main"], "exclude": [] } },
+  "conditions": {
+    "ref_name": {
+      "include": [
+        "refs/heads/main"
+      ],
+      "exclude": []
+    }
+  },
   "rules": [
-    { "type": "deletion" },
-    { "type": "non_fast_forward" },
+    {
+      "type": "deletion"
+    },
+    {
+      "type": "non_fast_forward"
+    },
     {
       "type": "pull_request",
       "parameters": {
@@ -22,7 +33,16 @@
       "parameters": {
         "strict_required_status_checks_policy": true,
         "do_not_enforce_on_create": false,
-        "required_status_checks": [{ "context": "build", "integration_id": 15368 }]
+        "required_status_checks": [
+          {
+            "context": "build",
+            "integration_id": 15368
+          },
+          {
+            "context": "webkit",
+            "integration_id": 15368
+          }
+        ]
       }
     }
   ]

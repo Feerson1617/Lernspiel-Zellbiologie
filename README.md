@@ -228,7 +228,7 @@ Soll ausdrücklich revidiert; geschützte Rubriken unverändert. Historischer Be
 48 neue und 114 ältere ursprüngliche Sollabweichungen sowie die unabhängige
 Gegenprüfung und Browser-/Geräteabnahme bleiben offen. NICHT MERGE, keine P02c.
 
-Aktuell: achte Nachbesserung/R6, `qa/P02b-Achte-Nachbesserung.md` und alle 3.580
+Historisch: achte Nachbesserung/R6, `qa/P02b-Achte-Nachbesserung.md` und alle 3.580
 gemessenen Ergebnisse in `qa/p02b-r6-results.json`. Die übernommenen R6-Kurzantworten
 erreichen nach begrenzter Reparatur 60/60; die vor dem ersten Lauf eingefrorene
 eigene Stichprobe erreicht 56/60 (93,33 %, vier gelbe im Nenner). Das 95-%-Gate
@@ -237,3 +237,15 @@ bleibt ausdrücklich rot. Keine weitere Musterschleife für diese vier Sätze.
 Fachbegriff-Vertrag mit optionaler Klärung und vergleicht die didaktischen und
 technischen Folgen. Der Formatwechsel bleibt unbeschlossen und unimplementiert.
 Originalaufgaben, Rubriken und historische Sollwerte bleiben erhalten. NICHT MERGE.
+
+Aktuell: neunte Nachbesserung/R7, `qa/P02b-Neunte-Nachbesserung.md` und alle 3.017
+erneut ausgeführten R7-Ergebnisse in `qa/p02b-r7-results.json`. Hauptprobe 183,
+Systematik 290 (13 Überschneidungen, 277 zusätzliche Formulierungen), Diagnosen 24
+und bekannte Fälle 2.520 bleiben getrennt. R7 ist nach Übernahme Regression;
+41/60 kurze richtige Antworten verfehlen weiterhin 95 %. Das bestehende eigene
+56/60-Gate bleibt unverändert rot; der gleiche Maßstab wird auch auf R7 geprüft.
+Produktcode, Aufgaben, Rubriken und Satzmuster werden nicht geändert.
+`review/P02b-Eingabeentscheidung.md` stellt a/b zur fachlichen Entscheidung und
+empfiehlt b. Die JSON-Regelvorlage und der getrennte Workflow-Patch schlagen
+konsistent build+webkit als Freigabebedingung vor; nichts davon ist aktiviert.
+Keine Formatumstellung, kein Merge, kein Deployment oder P02c.

@@ -1,0 +1,36 @@
+{
+  "reviewId": "P02b-ninth-revision-self-check-2026-10-23-R7",
+  "reviewKind": "self_check",
+  "commitSha": null,
+  "sourceVersions": [
+    "Unchanged product runtime at 8258b6dc3c8f1724a9fb1e7c72746100dc542f2b; R7 fixtures copied with original IDs/texts/Soll/metadata"
+  ],
+  "environment": {
+    "status": "draft, complete final suites pending"
+  },
+  "executedCommands": [
+    "npm run check:types (passed)",
+    "npx vitest run tests/unit/p02b-r7.test.ts (3022 passed; full original-result hashes reproduced)"
+  ],
+  "caseCounts": {
+    "passed": 0,
+    "failed": 0,
+    "skipped": 0
+  },
+  "newCases": [
+    "R7 183 main, 290 systematic, 24 diagnoses and 2520 known; no new independent sample claimed"
+  ],
+  "blockedChecks": [
+    "R6 self-check 56/60 and R7 41/60 fail the unchanged 95-percent requirement",
+    "Explicit input-format decision and subsequent implementation authorization not provided",
+    "Complete final regression and exact-head CI pending draft",
+    "Real named Safari/iPad and learner pilot not executed",
+    "No private originals available for own private scans"
+  ],
+  "criticalFindings": [
+    "No runtime changes or additional sentence patterns",
+    "Option b recommended, not approved or implemented; no retroactive changes to old raw Soll or denominators",
+    "Main protection and workflow dependencies prepared only as inactive proposals"
+  ],
+  "releaseStatus": "blocked"
+}

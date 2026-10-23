@@ -4,6 +4,12 @@
 Stand: 23.10.2026. Keine Unterrichtsfreigabe, kein Merge von PR #6.
 Originalaufgaben, Rubriken, Bewertungshöhe und aktuelle Verträge bleiben verbindlich.
 
+**Stand nach R7:** Auf dem Head `8258b6d` erreicht die neue unabhängige Probe
+41/60 (68,33 %); auf exakt denselben Fällen zuvor 38/60. Dies sind andere
+Antworten als der R6-Nenner. Die [kurze Entscheidungsvorlage a/b](P02b-Eingabeentscheidung.md)
+konkretisiert jetzt die empfohlene Option b. Kein fachlicher Beschluss liegt vor;
+19 R7- und vier eigene R6-Lücken werden nicht durch zusätzliche Satzmuster ergänzt.
+
 ## Die Entscheidungsgrenze ist erreicht
 
 Die unabhängige R6-Prüfung auf `7ca29bdf96b7128969abee663675bda0b480b073`
@@ -103,6 +109,9 @@ missbraucht werden. Der Entwurf ergänzt einen **gesonderten** Ergebnisumschlag
 mit `assessedScope: term_only`, dem gebundenen `termResult`, sichtbarem
 `additionalStatements: not_assessed` und einem konservativen Gesamtstatus.
 Ein grüner Begriff bestätigt weder ungeprüfte Zusätze noch die gesamte M6.02.
+Ein künftiger Fortschrittsadapter muss den gesamten Umschlag einschließlich
+ungeprüfter Zusätze prüfen, ausdrücklich auch für Z1.02. Ein isoliertes grünes
+`termResult` darf niemals einen vollständigen Aufgabenabschluss auslösen.
 
 Vorgeschlagene Zusammenführung: technische Ungültigkeit bleibt `technical`,
 eine sicher falsche Benennung bleibt als `incorrect` mit konkretem Gegenbeleg
