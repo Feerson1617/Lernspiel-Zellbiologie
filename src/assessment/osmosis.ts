@@ -26,6 +26,7 @@ const PROFILE: TermGrammarProfile = {
     ['m', 'vorgang', 'vorgangs'], ['m', 'prozess', 'prozesses'], ['m', 'transport', 'transports'],
     ['m', 'wassertransport', 'wassertransports'], ['m', 'wassertransportvorgang', 'wassertransportvorgangs'],
     ['m', 'transportvorgang', 'transportvorgangs'], ['m', 'transport von wasser', 'transports von wasser'],
+    ['f', 'wasserbewegung', 'wasserbewegung'],
     ['m', 'transport des wassers', 'transports des wassers'], ['f', 'transportart', 'transportart'],
   ] },
   frames: [

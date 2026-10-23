@@ -31,6 +31,9 @@ const ARTICLES = new Set(['der', 'die', 'das', 'den', 'dem', 'ein', 'eine', 'ein
 const NEGATIONS = new Set(['nicht', 'kein', 'keine', 'keinen']);
 const QUOTES: Readonly<Record<string, string>> = Object.freeze({ '„': '“', '‚': '‘', '«': '»', '"': '"', "'": "'", '“': '”' });
 const HEDGES = [
+  ['ich', 'bin', 'nicht', 'ganz', 'sicher', ',', 'aber'],
+  ['ich', 'bin', 'nicht', 'sicher', ',', 'aber'],
+  ['nach', 'meinem', 'wissen'],
   ['soweit', 'ich', 'mich', 'erinnere'], ['soweit', 'ich', 'weiss'],
   ['also', 'ich', 'wuerde', 'sagen'],
   ['ich', 'bin', 'mir', 'nicht', 'ganz', 'sicher', ',', 'aber'],
@@ -197,7 +200,7 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
       const hedge = HEDGES.find((words) => sequence(index, words));
       const naming = frameAt(index);
       if (naming && (!hedge || naming.words.length > hedge.length
-        || (naming.words.length === hedge.length && ![',', 'dass'].includes(at(index + hedge.length) ?? '')))) break;
+        || (naming.words.length === hedge.length && ![',', ':', 'dass'].includes(at(index + hedge.length) ?? '')))) break;
       if (!hedge) break;
       index += hedge.length;
       if (at(index) === ',' || at(index) === ':') index++;
@@ -427,13 +430,13 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
 
   const clauses: TermClause[] = [];
   const finishParsing = (complete: boolean) => ({
-    // Two explicitly tentative questions proposing distinct names leave the
-    // choice open. A single question, a definite exclusion, a scientific
-    // predicate or an unconsumed suffix does not get this exception.
+    // Two tentative questions leave contradictory/competing proposals open,
+    // irrespective of their order or whether the names are synonymous.
+    // Single questions, definite exclusions, scientific predicates and
+    // unconsumed suffixes do not get this exception.
     ...(complete && !(clauses.length === 2 && clauses.every(c => c.kind === 'name' && c.tentativeQuestion)
-      && clauses[0]?.kind === 'name' && clauses[0].negated
-      && clauses[1]?.kind === 'name' && !clauses[1].negated
-      && new Set(clauses.flatMap(c => c.kind === 'name' ? c.terms.map(t => t.id) : [])).size > 1)
+      && (new Set(clauses.flatMap(c => c.kind === 'name' ? c.terms.map(t => t.id) : [])).size > 1
+        || new Set(clauses.flatMap(c => c.kind === 'name' ? [c.negated] : [])).size > 1))
       ? resolveNamingChoices(clauses) : { clauses, complete: false }),
     evidence: clauses.map(({ start, end }) => ({ start, end })),
   });

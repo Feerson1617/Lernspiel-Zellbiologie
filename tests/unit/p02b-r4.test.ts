@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { afterAll, expect, it } from 'vitest';
 import { R4_CASES, R4_KNOWN, executeR4, expectedRuntimeR4, acceptedKnownR4, R4_OSMOSIS_CONTEXT, R4_TONOPLAST_CONTEXT, R4_UNRESOLVED } from '../helpers/p02b-r4.ts';
+import { R5_QUESTION_READINGS } from '../fixtures/p02b-r5-boundaries.ts';
 import { R4_MAIN, R4_SYSTEMATIC, R4_TARGETED } from '../fixtures/p02b-r4-cases.ts';
 import { R3_MAIN, R3_SYSTEMATIC, R3_TARGETED, R3_KNOWN } from '../fixtures/p02b-r3-cases.ts';
 import { isResultForContext } from '../../src/domain/task-context.ts';
@@ -50,7 +51,12 @@ for (const [field, target, synonym, wrong, predicate] of [
   expect(evaluate(`Nicht ${target} und nicht ${synonym}. ${predicate}`)).toBe('incorrect');
   expect(evaluate(`Nicht ${target} und nicht ${wrong}. ${predicate}`)).toBe('clarify');
   expect(evaluate(`Vielleicht doch keine ${target}? Vielleicht ${wrong}?`)).toBe('clarify');
-  expect(evaluate(`Vielleicht doch keine ${target}? Vielleicht ${synonym}?`)).toBe('incorrect');
+  // R5 explicitly revises the prior literal-exclusion reading; preserve its
+  // original own Soll beside the symmetric tentative-question decision.
+  const reading = R5_QUESTION_READINGS.find(r => r.field === field)!;
+  expect(reading.text).toBe(`Vielleicht doch keine ${target}? Vielleicht ${synonym}?`);
+  expect(reading.originalExpected).toEqual(['incorrect']);
+  expect(evaluate(reading.text)).toBe(reading.decidedExpected[0]);
   expect(evaluate(`Vielleicht doch keine ${target}. Vielleicht ${wrong}?`)).toBe('incorrect');
   expect(evaluate(`Nicht ${target}? Vielleicht ${wrong}?`)).toBe('incorrect');
   expect(evaluate(`Vielleicht ${wrong}?`)).toBe('incorrect');
