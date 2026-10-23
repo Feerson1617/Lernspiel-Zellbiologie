@@ -57,6 +57,7 @@ können ausdrücklich neu geprüft werden.
 | `text.ts` | Gemeinsame unveränderte Normalisierung/Tokenisierung und Originalpositionen |
 | `term-grammar.ts` | Ein Parser mit austauschbarem Feldprofil; ganze Eingabe, Benennung, Negation, Subjekt/Objekt |
 | `naming-frames.ts` | Gemeinsame bedeutungsneutrale Antwort-/Begriffsrahmen mit ausdrücklich gebundenen Satzendungen |
+| `naming-syntax.ts` | Zusammensetzbare Nominalgruppen, feldgebundene Referenzen, Benennungsverben und verpflichtende Endungen; keine biologischen Antwortwörter |
 | `term-evaluator.ts` | Gemeinsame Versions-, Kontext-, Eingabe- und Ergebnishülle, keine Biologie |
 | `osmosis-context.ts` | Typ und reine Prüfung ausdrücklich gegebener Voraussetzungen |
 | `osmosis.ts` | TERM_OSMOSIS-Lexikon, eigenes Benennungsprofil, Kontraste, Kriterienprüfung C01 |
@@ -121,6 +122,30 @@ unabhängige Gegenprüfung. Alle Ergebnisse einschließlich Klärungen und
 `qa/p02b-second-results.json`; Nachweis: `qa/P02b-Zweite-Nachbesserung.md`.
 
 ## Kontrolliert überführte Fachregel
+
+### Nachbesserung vom 23.10.2026
+
+Der Parser erhält den Unterschied zwischen Eigenschaft, Klassifikation,
+Namensgleichsetzung und Gleichbedeutung einschließlich der Negation.
+„Osmose ist der Name der Diffusion“ ist eine ungeprüfte Gleichsetzung;
+ihre Verneinung ist keine Verneinung passiver Diffusion. Beides bleibt hier
+konservativ `clarify`. Umgekehrt bleibt „Osmose ist keine Diffusion“ ein
+konkreter fachlicher Fehler. Auch Tonoplast unterscheidet eine Membran-
+Eigenschaft von einer unqualifizierten Namensgleichsetzung mit „Membran“.
+
+Die neue Satzsyntax kombiniert explizite Nominalgruppen und Verweise mit
+Benennungsverben. Prozessreferenzen werden ausschließlich aus dem Osmoseprofil,
+Membranreferenzen aus dem Tonoplastprofil gelesen. Genitivische Namensrelationen
+dürfen auch mit Einschüben nicht in eine umgekehrte Antwortbenennung fallen.
+Unbekannte Reste, biologische Qualifikatoren und Verneinungen werden nie als
+Füllwörter gelöscht. „Es ist in Wirklichkeit …“ darf nur eine frühere einzelne
+Benennung ausdrücklich korrigieren; wissenschaftliche Aussagen bleiben erhalten.
+
+Neue vollständige Rohresultate und dokumentierte Nachbeurteilungen des
+übermittelten Bestands: `qa/p02b-third-results.json`.
+Nachweise/Grenzen: `qa/P02b-Dritte-Nachbesserung.md` und
+`qa/p02b-third-review.json`. WebKit läuft getrennt mit unveränderten Standard-
+Tab-Prüfungen und ausgewiesenem Plattformprofil; eine echte iPad-Probe fehlt.
 
 Grundlagen: C, M6.02 in F/`spec/tasks.json`, `TERM_OSMOSIS`, `M6.02.C01`,
 alle 13 unveränderten Redaktionsfälle. Keine vollständige Antwort-Whitelist.

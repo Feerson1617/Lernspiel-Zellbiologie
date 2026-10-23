@@ -22,6 +22,12 @@ const SUBJECTS = [
 ];
 /** Field-specific naming subjects; none of the membrane frames are inherited. */
 const PROFILE: TermGrammarProfile = {
+  namingReferences: { nouns: [
+    ['m', 'vorgang', 'vorgangs'], ['m', 'prozess', 'prozesses'], ['m', 'transport', 'transports'],
+    ['m', 'wassertransport', 'wassertransports'], ['m', 'wassertransportvorgang', 'wassertransportvorgangs'],
+    ['m', 'transportvorgang', 'transportvorgangs'], ['m', 'transport von wasser', 'transports von wasser'],
+    ['m', 'transport des wassers', 'transports des wassers'], ['f', 'transportart', 'transportart'],
+  ] },
   frames: [
     ...namingSubjectFrames(SUBJECTS),
     ...namingObjectFrames([['den', 'vorgang'], ['diesen', 'vorgang'], ['den', 'prozess'], ['diesen', 'prozess'], ['den', 'transport'], ['den', 'wassertransport']]),
@@ -57,8 +63,8 @@ const MEANINGS: readonly TermMeaning[] = [
   { id: 'diffusion', forms: [['diffusion'], ['diffusion', 'von', 'wasser'], ['diffusion', 'des', 'wassers']] },
   { id: 'movement', forms: [['wasserbewegung'], ['bewegung', 'von', 'wasser']] },
   { id: 'transport', forms: [['wassertransport'], ['transport', 'von', 'wasser']] },
-  { id: 'passive', forms: [['passiver', 'transport'], ['passiven', 'transport'], ['passiven', 'transports'], ['passiver', 'wassertransport'], ['passive', 'wasserbewegung']] },
-  { id: 'active', forms: [['aktiver', 'transport'], ['aktiven', 'transport'], ['aktiven', 'transports'], ['aktiver', 'wassertransport'], ['aktive', 'pumpe'], ['atp', '-', 'pumpe'], ['atp', 'pumpe'], ['atppumpe']] },
+  { id: 'passive', forms: [['passiver', 'transport'], ['passiven', 'transport'], ['passivem', 'transport'], ['passiven', 'transports'], ['passiver', 'wassertransport'], ['passive', 'wasserbewegung']] },
+  { id: 'active', forms: [['aktiver', 'transport'], ['aktiven', 'transport'], ['aktiven', 'transports'], ['aktiver', 'wassertransport'], ['aktiven', 'wassertransport'], ['aktive', 'pumpe'], ['atp', '-', 'pumpe'], ['atp', 'pumpe'], ['atppumpe']] },
   { id: 'endocytosis', forms: [['endocytose'], ['endozytose']] },
   { id: 'exocytosis', forms: [['exocytose'], ['exozytose']] },
   { id: 'plasmolysis', forms: [['plasmolyse']] },
@@ -106,7 +112,7 @@ function assess(clause: TermClause): Decision {
   }
   if (clause.object.id === 'osmosis') return clause.negated ? contradiction() : correct(clause.subject.typo || clause.object.typo);
   if (WRONG[clause.object.id]) return clause.negated ? correct() : decision('incorrect', WRONG[clause.object.id]!);
-  if (PROPERTIES.has(clause.object.id) && clause.relation === 'property') return clause.negated ? decision('incorrect', 'OSMOSIS_FALSE_PROPERTY') : correct();
+  if (PROPERTIES.has(clause.object.id) && (clause.relation === 'property' || clause.relation === 'classification')) return clause.negated ? decision('incorrect', 'OSMOSIS_FALSE_PROPERTY') : correct();
   return unknown();
 }
 function combine(values: readonly Decision[]): Decision {

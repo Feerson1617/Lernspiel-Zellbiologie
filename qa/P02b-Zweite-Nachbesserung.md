@@ -1,5 +1,9 @@
 # P02b – zweite Nachbesserung von PR #6
 
+**Historischer Prüfstand.** Die Gegenprüfung vom 23.10.2026 fand einen weiterhin
+offenen P1-Relationsfehler und neue Erkennungslücken. Aktuelle Korrektur und
+Nachweise: [P02b-Dritte-Nachbesserung.md](P02b-Dritte-Nachbesserung.md).
+
 **Codex-Selbstprüfung. Keine Merge- oder Unterrichtsfreigabe. Kein P02c.**
 
 - Ausgang: `32cf4fcb1756ea41ab6d99abef725865151d7bd3`, unverändert offener PR [#6](https://github.com/Feerson1617/Lernspiel-Zellbiologie/pull/6).

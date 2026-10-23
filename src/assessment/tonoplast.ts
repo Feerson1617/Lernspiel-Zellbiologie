@@ -1,7 +1,7 @@
 import type { Status, VersionInfo } from '../domain/contracts.ts';
 import type { TonoplastFeedbackCode } from './feedback.ts';
 import { parseTermAnswer } from './term-grammar.ts';
-import type { TermClause, TermMeaning, TermRef } from './term-grammar.ts';
+import type { TermClause, TermGrammarProfile, TermMeaning, TermRef } from './term-grammar.ts';
 import { tokenizeText } from './text.ts';
 import { createBoundTermEvaluator } from './term-evaluator.ts';
 
@@ -9,6 +9,9 @@ export const TONOPLAST_TASK_ID = 'Z1.02';
 export const TONOPLAST_FIELD_ID = 'term';
 export const TONOPLAST_RUBRIC_ID = 'TERM_TONOPLAST';
 export const TONOPLAST_CRITERION_ID = 'Z1.02.C01';
+const PROFILE: TermGrammarProfile = { namingReferences: { nouns: [
+  ['f', 'membran', 'membran'], ['f', 'grenze', 'grenze'], ['f', 'struktur', 'struktur'],
+] } };
 
 // Anatomy phrases are concept descriptions, not complete accepted answer strings.
 const VACUOLE_BOUNDARY_FORMS: readonly (readonly string[])[] = [
@@ -105,7 +108,7 @@ function assessClause(clause: TermClause): Decision {
   const ids = [clause.subject.id, clause.object.id];
   // Being a membrane is a true property; "another name for membrane" claims a
   // broader synonymy. Never erase that distinction to manufacture green.
-  if (clause.kind === 'synonymy' && ids.includes('boundary')) return unknown();
+  if (ids.includes('boundary') && (clause.kind === 'synonymy' || clause.relation === 'equivalence' || clause.relation === 'designation')) return unknown();
   if (!ids.includes('tonoplast') && !ids.includes('vacuole_boundary')) return unknown();
   const sameBoundary = ids.every((id) => id === 'tonoplast' || id === 'boundary' || id === 'vacuole_boundary');
   // A generic membrane as subject is not an identification of THIS marked membrane.
@@ -144,7 +147,7 @@ export function createTonoplastEvaluator(versions: VersionInfo) {
     codes: { wrongField: 'TONOPLAST_WRONG_FIELD', version: 'TONOPLAST_VERSION', context: 'TONOPLAST_CONTEXT',
       input: 'TONOPLAST_TECHNICAL_INPUT', tooLong: 'TONOPLAST_TOO_LONG', empty: 'TONOPLAST_EMPTY' },
     assessText(text) {
-      const parsed = parseTermAnswer(tokenizeText(text), MEANINGS);
+      const parsed = parseTermAnswer(tokenizeText(text), MEANINGS, PROFILE);
       if (!parsed.complete) return { ...unknown(), spans: [{ start: 0, end: text.length }] };
       if (parsed.clauses.every((clause) => clause.kind === 'name' && !clause.negated)) {
         const ids = new Set(parsed.clauses.flatMap((clause) => clause.kind === 'name' ? clause.terms.map((term) => term.id) : []).filter((id) => id !== 'boundary' && id !== 'vacuole_boundary'));

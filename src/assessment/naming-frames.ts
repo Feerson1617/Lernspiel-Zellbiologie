@@ -6,6 +6,7 @@ export interface NamingFrame {
   readonly contrastPreposition?: string;
   /** Only these explicitly lexicalised naming modifiers may occupy word gaps. */
   readonly insertions?: true;
+  readonly correctsPrevious?: true;
 }
 export type NamingFrameInput = readonly string[] | NamingFrame;
 
@@ -24,6 +25,10 @@ export const NAMING_MODIFIERS: readonly (readonly string[])[] = [
   ['meiner', 'meinung', 'nach'], ['meiner', 'ansicht', 'nach'], ['aus', 'meiner', 'sicht'],
   ['fuer', 'mich'], ['hier'], ['dabei'], ['dafuer'], ['dazu'], ['also'], ['wohl'], ['doch'],
   ['vermutlich'], ['wahrscheinlich'], ['vielleicht'], ['eventuell'], ['dann'],
+  ['meiner', 'auffassung', 'nach'], ['meiner', 'einschaetzung', 'nach'],
+  ['meines', 'wissens'], ['meines', 'erachtens'], ['in', 'diesem', 'fall'],
+  ['bei', 'der', 'benennung'], ['in', 'der', 'biologie'], ['in', 'wirklichkeit'],
+  ['damit'], ['einfach'],
 ];
 const FRONTINGS = [
   ['hier'], ['dabei'], ['fuer', 'mich'], ['meiner', 'ansicht', 'nach'],
@@ -64,7 +69,7 @@ export function asNamingFrames(nouns: readonly string[]): NamingFrame[] {
     { words: ['als', noun, 'gebe', 'ich'], endings: [['an']] },
   ].map(frame => ({ ...frame, insertions: true as const })));
 }
-const CERTAINTY_PREFIXES = [['ich', 'denke'], ['ich', 'glaube'], ['ich', 'vermute'], ['ich', 'nehme', 'an']];
+const CERTAINTY_PREFIXES = [['ich', 'denke'], ['ich', 'glaube'], ['ich', 'vermute'], ['ich', 'nehme', 'an'], ['ich', 'bin', 'der', 'meinung']];
 export function subordinateNamingFrames(subjects: readonly (readonly string[])[]): NamingFrame[] {
   return CERTAINTY_PREFIXES.flatMap(prefix => [[], [',']].flatMap(comma => subjects.map(subject => ({
     words: [...prefix, ...comma, 'dass', ...subject], endings: [['ist'], ['heisst']], insertions: true as const,
@@ -95,6 +100,7 @@ const COMPOSED_FRAMES: readonly NamingFrame[] = [
 ];
 
 const NAMING_FRAMES: readonly NamingFrame[] = [
+  ...['das', 'es'].map(pronoun => ({ words: [pronoun, 'ist', 'in', 'wirklichkeit'], correctsPrevious: true as const })),
   ...COMPOSED_FRAMES.map(frame => ({ ...frame, insertions: true as const })),
   ...SUBJECTS.flatMap(words => ['ist', 'lautet', 'heisst', 'waere', ':'].map(verb => ({ words: [...words, verb] }))),
   ...[

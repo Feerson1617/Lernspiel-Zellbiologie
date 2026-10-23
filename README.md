@@ -158,6 +158,11 @@ steht in `qa/P02b-Zweite-Nachbesserung.md` / `qa/p02b-second-review.json`;
 vollständige tatsächliche Fallergebnisse: `qa/p02b-second-results.json`.
 Der unveränderte fehlende GitHub-Branchschutz und ein noch nicht aktivierter
 konkreter Regelvorschlag stehen in `review/README.md`.
+Die weitere Korrektur vom 23.10.2026 mit erhaltener Relationssemantik,
+zusammensetzbarer Benennungssyntax und getrenntem WebKit-Nachweis steht in
+`qa/P02b-Dritte-Nachbesserung.md` / `qa/p02b-third-review.json`.
+Alle 212 übermittelten und 450 eigenen/metamorphischen Rohresultate stehen
+einschließlich ursprünglicher Sollwerte in `qa/p02b-third-results.json`.
 
 Keine konkreten fachlichen Modellversionen werden vergeben. Weitere Textfelder,
 Zahlenkorrektur, Fachmodelle und Lernmissionen bleiben unimplementiert.

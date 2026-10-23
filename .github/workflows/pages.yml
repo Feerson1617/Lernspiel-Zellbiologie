@@ -39,6 +39,66 @@ jobs:
         with:
           path: dist
 
+  webkit:
+    if: github.event_name == 'pull_request'
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - run: python -m pip install -r requirements-spec.txt
+      - run: npx playwright install webkit
+      - run: npm run build
+      - name: Unchanged WebKit baseline (standard Tab)
+        id: webkit_baseline
+        continue-on-error: true
+        env:
+          WEBKIT_SUITE: baseline
+        run: npx playwright test --config=playwright.webkit.config.ts
+      - name: Additional actual-runtime and platform-keyboard checks
+        id: webkit_additional
+        continue-on-error: true
+        env:
+          WEBKIT_SUITE: additional
+        run: npx playwright test --config=playwright.webkit.config.ts
+      - name: Report actual WebKit counts and retain a failed gate for any failed tests
+        if: always()
+        run: |
+          node --input-type=module <<'JS'
+          import { readFileSync } from 'node:fs';
+          let failed = false;
+          for (const suite of ['baseline', 'additional']) {
+            try {
+              const r = JSON.parse(readFileSync(`qa/generated/webkit-${suite}.json`, 'utf8'));
+              const s = r.stats;
+              const keyboard = [];
+              function collect(value) {
+                if (!value || typeof value !== 'object') return;
+                if (value.name === 'keyboard-platform.json' && typeof value.body === 'string') {
+                  keyboard.push(JSON.parse(Buffer.from(value.body, 'base64').toString('utf8')));
+                }
+                Object.values(value).forEach(collect);
+              }
+              collect(r.suites);
+              const result = { platform: process.platform, arch: process.arch, node: process.version, suite, ...s, keyboard };
+              console.log(`::notice title=WebKit ${suite} actual results::${JSON.stringify(result)}`);
+              if (s.unexpected || s.skipped || s.flaky || r.errors?.length) failed = true;
+            } catch (error) {
+              failed = true;
+              console.log(`::error title=WebKit ${suite} unavailable::${String(error)}`);
+            }
+          }
+          if (failed) process.exit(1);
+          JS
+
   deploy:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: build

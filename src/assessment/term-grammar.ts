@@ -2,6 +2,8 @@ import { editDistance, isLimitedTypo } from './text.ts';
 import type { TextToken } from './text.ts';
 import { CERTAINTY_TAILS, COMMON_NAMING_FRAMES, NAMING_MODIFIERS, POST_NAMING_FRAMES } from './naming-frames.ts';
 import type { NamingFrame, NamingFrameInput } from './naming-frames.ts';
+import { createNamingSyntax } from './naming-syntax.ts';
+import type { NamingReferences } from './naming-syntax.ts';
 
 export interface TermMeaning {
   readonly id: string;
@@ -17,9 +19,9 @@ export interface TermRef {
   readonly typo: boolean;
 }
 export type TermClause =
-  | Readonly<{ kind: 'name'; terms: readonly TermRef[]; negated: boolean; connector: 'single' | 'or' | 'and' | 'alias' | 'explanation'; start: number; end: number }>
+  | Readonly<{ kind: 'name'; terms: readonly TermRef[]; negated: boolean; connector: 'single' | 'or' | 'and' | 'alias' | 'explanation'; correctsPrevious?: true; start: number; end: number }>
   | Readonly<{ kind: 'contrast'; excluded: TermRef; chosen: TermRef; start: number; end: number }>
-  | Readonly<{ kind: 'identity' | 'synonymy' | 'encloses'; subject: TermRef; object: TermRef; negated: boolean; relation?: 'property' | 'equivalence'; start: number; end: number }>
+  | Readonly<{ kind: 'identity' | 'synonymy' | 'encloses'; subject: TermRef; object: TermRef; negated: boolean; relation?: 'property' | 'classification' | 'equivalence' | 'designation'; start: number; end: number }>
   | Readonly<{ kind: 'separates'; subject: TermRef; first: TermRef; second: TermRef; negated: boolean; start: number; end: number }>
   | Readonly<{ kind: 'has_named_boundary'; owner: TermRef; terms: readonly TermRef[]; start: number; end: number }>
   | Readonly<{ kind: 'conjoined_negation'; positive: TermRef; negative: TermRef; start: number; end: number }>;
@@ -56,8 +58,9 @@ const FRAMES = [
 interface ReadTerm { readonly term: TermRef; readonly next: number }
 type Connector = 'single' | 'or' | 'and' | 'alias' | 'explanation';
 export interface TermGrammarProfile {
-  /** Replaces the default membrane naming frames; never silently appends them. */
-  readonly frames: readonly NamingFrameInput[];
+  /** When supplied, replaces the default membrane frames; never appends them. */
+  readonly frames?: readonly NamingFrameInput[];
+  readonly namingReferences?: NamingReferences;
   readonly contextAdverbs?: readonly string[];
   readonly postFrames?: readonly (readonly string[])[];
   readonly certaintyTails?: readonly (readonly string[])[];
@@ -68,6 +71,7 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
   clauses: readonly TermClause[]; complete: boolean;
 }> {
   const at = (index: number) => tokens[index]?.word;
+  const syntax = createNamingSyntax(tokens, profile?.namingReferences ?? { nouns: [] });
   const sequence = (index: number, words: readonly string[]) => words.every((word, offset) => at(index + offset) === word);
   const shortHedge = (index: number) => HEDGES.find((words) => words.length === 1 && sequence(index, words));
   const certaintyTails = [...CERTAINTY_TAILS, ...(profile?.certaintyTails ?? [])];
@@ -104,12 +108,14 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
   // instead of selecting the first prefix and silently losing another ending.
   const unique = new Map<string, NamingFrame>();
   for (const frame of inputs) {
-    const key = JSON.stringify([frame.words, frame.negated, frame.contrastPreposition, frame.insertions]);
+    const key = JSON.stringify([frame.words, frame.negated, frame.contrastPreposition, frame.insertions, frame.correctsPrevious]);
     const previous = unique.get(key);
     unique.set(key, previous ? { ...frame, endings: [...(previous.endings ?? [[]]), ...(frame.endings ?? [[]])] } : frame);
   }
   const frames = [...unique.values()].sort((a, b) => b.words.length - a.words.length);
-  const frameAt = (index: number) => {
+  type MatchedFrame = NamingFrame & { readonly next: number; readonly close?: (index: number) => number | null };
+  const frameAt = (index: number): MatchedFrame | undefined => {
+    let legacy: MatchedFrame | undefined;
     for (const frame of frames) {
       const next = matchNaming(index, frame.words, frame.insertions === true);
       if (next === null) continue;
@@ -119,9 +125,24 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
         const named = term(next);
         if (named && sequence(named.next, ['meine', 'ich'])) continue;
       }
-      return { ...frame, next };
+      legacy = { ...frame, next }; break;
     }
-    return undefined;
+    const composed = syntax.frameAt(index);
+    if (composed && (!legacy || composed.next > legacy.next)) {
+      if (composed.words.length === 1 && composed.words[0] === 'mit') {
+        const named = term(composed.next);
+        if (named && sequence(named.next, ['meine', 'ich'])) return legacy;
+      }
+      return composed;
+    }
+    if (composed && legacy && composed.next === legacy.next) {
+      return { ...legacy, close: at => {
+        const old = (legacy.endings ?? [[]]).map(words => matchNaming(at, words)).filter(n => n !== null);
+        const next = composed.close(at);
+        return Math.max(...old, next ?? -1) < 0 ? null : Math.max(...old, next ?? -1);
+      } };
+    }
+    return legacy;
   };
 
   function term(index: number): ReadTerm | null {
@@ -208,23 +229,30 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
     let value: TermClause;
     const span = () => ({ start: tokens[start]!.start, end: tokens[index - 1]!.end });
     function finish(value: TermClause): Readonly<{ value: TermClause; next: number }> | null {
-      const ending = (frame?.endings ?? [[]]).map(words => matchNaming(index, words)).find(next => next !== null);
-      if (ending === undefined) return null;
+      const ending = frame?.close ? frame.close(index) : (frame?.endings ?? [[]]).map(words => matchNaming(index, words)).find(next => next !== null);
+      if (ending === undefined || ending === null) return null;
       index = ending;
-      if (at(index) === ',') {
+      if ([',', '–', '—', '-'].includes(at(index) ?? '')) {
         const tail = certaintyTails.find(words => sequence(index + 1, words));
+        const composed = syntax.tail(index + 1);
         if (tail) index += tail.length + 1;
+        else if (composed !== null) index = composed;
       }
-      return { value: { ...value, end: tokens[index - 1]!.end }, next: index };
+      const named = frame?.correctsPrevious && value.kind === 'name' ? { ...value, correctsPrevious: true as const } : value;
+      return { value: { ...named, end: tokens[index - 1]!.end }, next: index };
     }
     // In a subordinate naming frame the final "ist" closes the frame; it does
     // not open a second biological identity assertion after the selected name.
-    if (frame?.endings?.some(words => words.length > 0 && matchNaming(index, words) !== null)) {
+    if (frame?.endings?.some(words => words.length > 0 && matchNaming(index, words) !== null)
+      || (frame?.close && (frame.close(index) ?? index) > index)) {
       return finish({ kind: 'name', terms: [first.term], connector: 'single', negated, ...span() });
     }
     if (!framed && !negated) {
-      const post = [...POST_NAMING_FRAMES, ...(profile?.postFrames ?? [])].map(words => matchNaming(index, words)).filter(next => next !== null).sort((a, b) => b - a)[0];
-      if (post !== undefined && !sequence(index, ['ist', 'der', 'name', 'der'])) {
+      const oldPost = [...POST_NAMING_FRAMES, ...(profile?.postFrames ?? [])].map(words => matchNaming(index, words)).filter(next => next !== null).sort((a, b) => b - a)[0];
+      const composedPost = syntax.post(index);
+      const post = Math.max(oldPost ?? -1, composedPost ?? -1);
+      const namingRelation = syntax.designationAt(index);
+      if (post >= 0 && !namingRelation) {
         index = skipNamingModifiers(post);
         return finish({ kind: 'name', terms: [first.term], connector: 'single', negated: false, ...span() });
       }
@@ -242,7 +270,7 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
       const other = term(index + 2);
       if (!other) return null;
       index = other.next;
-      value = { kind: 'identity', subject: first.term, object: other.term, negated: false, ...span() };
+      value = { kind: 'identity', subject: first.term, object: other.term, negated: false, relation: 'designation', ...span() };
       return finish(value);
     }
     if (at(index) === 'trennt' || at(index) === 'grenzt') {
@@ -286,6 +314,7 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
         || (at(index + 1) === 'nicht' && ['vom', 'von', 'durch'].includes(at(index + 2) ?? ''))))) {
       if (negated || framed) return null;
       const verb = at(index);
+      let relation: 'property' | 'classification' | 'equivalence' | 'designation' = verb === 'ist' ? 'property' : 'equivalence';
       let kind: 'encloses' | 'identity' | 'synonymy' = ['umschliesst', 'begrenzt', 'umgibt'].includes(verb!) ? 'encloses' : 'identity';
       index++;
       if (verb === 'nennt') { if (at(index) !== 'man') return null; index++; }
@@ -293,16 +322,19 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
       const relationNegated = NEGATIONS.has(at(index) ?? '');
       if (relationNegated) index++;
       // Names for the boundary, rather than generic identity of the word "Name".
-      if (kind === 'identity' && sequence(index, ['der', 'name', 'der'])) index += 3;
+      if (kind === 'identity' && sequence(index, ['der', 'name']) && ['der', 'des', 'von', 'fuer'].includes(at(index + 2) ?? '')) {
+        index += 3; kind = 'synonymy'; relation = 'designation';
+      }
       else if (kind === 'identity' && sequence(index, ['ein', 'anderer', 'name', 'fuer'])) { index += 4; kind = 'synonymy'; }
       else if (kind === 'identity' && verb === 'ist') {
         const classification = [['eine', 'form', 'des'], ['eine', 'form', 'der'], ['form', 'des'], ['form', 'der'], ['eine', 'art', 'von'], ['art', 'von']]
           .find(words => sequence(index, words));
-        if (classification) index += classification.length;
+        if (classification) { index += classification.length; relation = 'classification'; }
       }
       const object = term(index);
       if (!object) return null;
-      value = { kind, subject: first.term, object: object.term, negated: relationNegated, relation: verb === 'ist' && kind === 'identity' ? 'property' : 'equivalence',
+      value = { kind, subject: first.term, object: object.term, negated: relationNegated,
+        ...(kind === 'encloses' ? {} : { relation: kind === 'synonymy' && relation !== 'designation' ? 'equivalence' as const : relation }),
         start: tokens[start]!.start, end: tokens[object.next - 1]!.end };
       index = object.next;
     } else if ((at(index) === 'wird' || at(index) === 'ist') && !negated && !framed) {
@@ -357,7 +389,7 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
       }
       if (!negated && sequence(index, ['sind', 'dieselbe', 'membran']) && terms.length === 2) {
         index += 3;
-        return finish({ kind: 'identity', subject: terms[0]!, object: terms[1]!, negated: false, ...span() });
+        return finish({ kind: 'identity', subject: terms[0]!, object: terms[1]!, negated: false, relation: 'equivalence', ...span() });
       }
       value = { kind: 'name', terms, connector, negated, start: tokens[start]!.start, end: tokens[index - 1]!.end };
     }
@@ -376,7 +408,13 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
     }
     const parsed = clause(index);
     if (!parsed) return { clauses, complete: false };
-    clauses.push(parsed.value);
+    const previous = clauses.at(-1), current = parsed.value;
+    // Only an explicit naming correction can retract a prior single name.
+    // Scientific predicates, alternatives and unknown rests are never erased.
+    if (current.kind === 'name' && current.correctsPrevious && !current.negated && current.terms.length === 1
+      && previous?.kind === 'name' && !previous.negated && previous.terms.length === 1) {
+      clauses[clauses.length - 1] = { kind: 'contrast', excluded: previous.terms[0]!, chosen: current.terms[0]!, start: previous.start, end: current.end };
+    } else clauses.push(current);
     index = parsed.next;
     if (index === tokens.length) break;
     if (['.', '!', '?', ';'].includes(at(index) ?? '')) {
