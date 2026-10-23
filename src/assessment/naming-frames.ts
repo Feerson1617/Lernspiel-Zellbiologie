@@ -28,7 +28,7 @@ export const NAMING_MODIFIERS: readonly (readonly string[])[] = [
   ['meiner', 'auffassung', 'nach'], ['meiner', 'einschaetzung', 'nach'],
   ['meines', 'wissens'], ['meines', 'erachtens'], ['in', 'diesem', 'fall'],
   ['bei', 'der', 'benennung'], ['in', 'der', 'biologie'], ['in', 'wirklichkeit'],
-  ['damit'], ['einfach'],
+  ['damit'], ['einfach'], ['fachsprachlich'], ['fachlich'], ['begrifflich'],
 ];
 const FRONTINGS = [
   ['hier'], ['dabei'], ['fuer', 'mich'], ['meiner', 'ansicht', 'nach'],

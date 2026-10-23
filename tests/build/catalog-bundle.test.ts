@@ -34,6 +34,8 @@ it.each(['spec/tasks.json', 'spec/reference-fixtures.json?raw', 'spec/text-rubri
   'tests/fixtures/p02b-countercheck-cases.ts?raw', 'tests/fixtures/p02b-second-language.ts?raw',
   'review/main-ruleset-proposal.json?raw', 'qa/P02b-Nachbesserung.md?raw',
   'tests/fixtures/p02b-20261023-cases.ts?raw', 'tests/fixtures/p02b-20261023-fresh.ts?raw',
+  'tests/fixtures/p02b-20261023-r2-cases.ts?raw', 'tests/fixtures/p02b-20261023-r2-fresh.ts?raw',
+  'tests/fixtures/p02b-20261023-r2-additions.ts?raw',
 ])('rejects a real Vite runtime import from %s before writing output', async (file) => {
   const entry = 'p01a-negative-runtime-entry';
   await expect(build({

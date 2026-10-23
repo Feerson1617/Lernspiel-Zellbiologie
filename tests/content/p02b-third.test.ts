@@ -6,16 +6,18 @@ import { expect, it } from 'vitest';
 import { FRESH_SHORT_20261023 } from '../fixtures/p02b-20261023-fresh.ts';
 import { THIRD_CASES, executeThird, acceptedThird } from '../helpers/p02b-third.ts';
 
-it('checks fresh short wording against every known fixture, QA and editorial string after case/punctuation normalisation', async () => {
+it('checks short wording against the corpus known when the third revision was written', async () => {
   const normalize = (s: string) => s.normalize('NFC').toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+  // Later regression corpora may repeat these once-new sentences. They cannot
+  // retroactively change novelty at the third revision; its input hash is fixed.
   const known = new Set<string>();
   const collect = (v: unknown): void => {
     if (typeof v === 'string') known.add(normalize(v));
     else if (v && typeof v === 'object') Object.values(v).forEach(collect);
   };
   const directory = fileURLToPath(new URL('../fixtures/', import.meta.url));
-  for (const n of readdirSync(directory).filter(n => n.endsWith('.ts') && n !== 'p02b-20261023-fresh.ts')) collect(await import(/* @vite-ignore */ pathToFileURL(`${directory}/${n}`).href));
-  for (const n of readdirSync('qa').filter(n => n.endsWith('.json') && !n.startsWith('p02b-third-'))) collect(JSON.parse(readFileSync(`qa/${n}`, 'utf8')));
+  for (const n of readdirSync(directory).filter(n => n.endsWith('.ts') && n !== 'p02b-20261023-fresh.ts' && !n.startsWith('p02b-20261023-r2-'))) collect(await import(/* @vite-ignore */ pathToFileURL(`${directory}/${n}`).href));
+  for (const n of readdirSync('qa').filter(n => n.endsWith('.json') && !n.startsWith('p02b-third-') && !n.startsWith('p02b-fourth-'))) collect(JSON.parse(readFileSync(`qa/${n}`, 'utf8')));
   collect(JSON.parse(readFileSync('spec/reference-fixtures.json', 'utf8')));
   expect(FRESH_SHORT_20261023).toHaveLength(50);
   expect(new Set(FRESH_SHORT_20261023.map(f => normalize(f.text))).size).toBe(50);

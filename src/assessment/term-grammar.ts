@@ -35,6 +35,7 @@ const HEDGES = [
   ['meines', 'wissens'], ['meiner', 'ansicht', 'nach'], ['aus', 'meiner', 'sicht'],
   ['ich', 'nehme', 'an'], ['ich', 'glaube', 'mal'],
   ['ich', 'denke'], ['ich', 'glaube'], ['ich', 'vermute'],
+  ['ich', 'meine'], ['ich', 'bin', 'der', 'ansicht'],
   ['vielleicht'], ['wahrscheinlich'], ['vermutlich'], ['eventuell'],
 ] as const;
 const FRAMES = [
@@ -190,7 +191,8 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
     for (let count = 0; count < 2; count++) {
       const hedge = HEDGES.find((words) => sequence(index, words));
       const naming = frameAt(index);
-      if (naming && (!hedge || naming.words.length >= hedge.length)) break;
+      if (naming && (!hedge || naming.words.length > hedge.length
+        || (naming.words.length === hedge.length && ![',', 'dass'].includes(at(index + hedge.length) ?? '')))) break;
       if (!hedge) break;
       index += hedge.length;
       if (at(index) === ',' || at(index) === ':') index++;
@@ -204,6 +206,20 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
       if (hedge) index += hedge.length;
       if (at(index) !== 'um') return null;
       index++; existential = true;
+    }
+    // A named subject is a scientific relation, not expendable naming filler.
+    // Preserve both concepts for the field evaluator (also for wrong synonyms).
+    const renamePrefix = ['wuerde', 'moechte'].find(modal => sequence(index, ['ich', modal]));
+    if (renamePrefix && (frameAt(index)?.next ?? index) <= index + 2) {
+      const subject = term(skipNamingModifiers(index + 2));
+      if (subject && at(skipNamingModifiers(subject.next)) === 'als') {
+        const object = term(skipNamingModifiers(subject.next) + 1);
+        const end = object ? skipNamingModifiers(object.next) : -1;
+        if (object && ['bezeichnen', 'benennen'].includes(at(end) ?? '')) {
+          return { value: { kind: 'identity', subject: subject.term, object: object.term, negated: false,
+            relation: 'equivalence', start: tokens[start]!.start, end: tokens[end]!.end }, next: end + 1 };
+        }
+      }
     }
     const frame = frameAt(index);
     if (frame) index = frame.next;
@@ -409,10 +425,13 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
     const parsed = clause(index);
     if (!parsed) return { clauses, complete: false };
     const previous = clauses.at(-1), current = parsed.value;
-    // Only an explicit naming correction can retract a prior single name.
+    // Equal concept IDs (including synonyms/recognised spellings) reaffirm the
+    // earlier positive name. Keep both original clauses and their evidence.
+    // Only a different, explicitly corrected single name creates an exclusion.
     // Scientific predicates, alternatives and unknown rests are never erased.
     if (current.kind === 'name' && current.correctsPrevious && !current.negated && current.terms.length === 1
-      && previous?.kind === 'name' && !previous.negated && previous.terms.length === 1) {
+      && previous?.kind === 'name' && !previous.negated && previous.terms.length === 1
+      && previous.terms[0]!.id !== current.terms[0]!.id) {
       clauses[clauses.length - 1] = { kind: 'contrast', excluded: previous.terms[0]!, chosen: current.terms[0]!, start: previous.start, end: current.end };
     } else clauses.push(current);
     index = parsed.next;
