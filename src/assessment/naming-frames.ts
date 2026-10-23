@@ -23,7 +23,7 @@ const SUBJECTS = [
  * from the answer or from scientific predicates. */
 export const NAMING_MODIFIERS: readonly (readonly string[])[] = [
   ['meiner', 'meinung', 'nach'], ['meiner', 'ansicht', 'nach'], ['aus', 'meiner', 'sicht'],
-  ['fuer', 'mich'], ['hier'], ['dabei'], ['dafuer'], ['dazu'], ['also'], ['wohl'], ['doch'],
+  ['fuer', 'mich'], ['hier'], ['hierbei'], ['dabei'], ['dafuer'], ['dazu'], ['also'], ['wohl'], ['doch'],
   ['vermutlich'], ['wahrscheinlich'], ['vielleicht'], ['eventuell'], ['dann'],
   ['meiner', 'auffassung', 'nach'], ['meiner', 'einschaetzung', 'nach'],
   ['meines', 'wissens'], ['meines', 'erachtens'], ['in', 'diesem', 'fall'],

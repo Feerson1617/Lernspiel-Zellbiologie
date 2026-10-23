@@ -37,6 +37,7 @@ const HEDGES = [
   ['soweit', 'ich', 'mich', 'erinnere'], ['soweit', 'ich', 'weiss'],
   ['also', 'ich', 'wuerde', 'sagen'],
   ['ich', 'bin', 'mir', 'nicht', 'ganz', 'sicher', ',', 'aber'],
+  ['ich', 'bin', 'mir', 'nicht', 'ganz', 'sicher'],
   ['ich', 'glaub'], ['ich', 'denke', 'mal'], ['ich', 'finde'],
   ['ich', 'bin', 'mir', 'nicht', 'sicher', ',', 'aber'],
   ['meiner', 'meinung', 'nach'], ['ich', 'wuerde', 'sagen'],
@@ -256,6 +257,10 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
       const ending = frame?.close ? frame.close(index) : (frame?.endings ?? [[]]).map(words => matchNaming(index, words)).find(next => next !== null);
       if (ending === undefined || ending === null) return null;
       index = ending;
+      // Courtesy is local and delimited; subsequent claims remain in the root
+      // parser. Never strip a suffix or reinterpret it as scientific evidence.
+      if (at(index) === ',' && at(index + 1) === 'danke'
+        && (at(index + 2) === undefined || ['.', '!', '?', ';'].includes(at(index + 2)!))) index += 2;
       if ([',', '–', '—', '-'].includes(at(index) ?? '')) {
         const tail = certaintyTails.find(words => sequence(index + 1, words));
         const composed = syntax.tail(index + 1);

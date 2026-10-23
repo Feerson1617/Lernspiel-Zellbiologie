@@ -6,6 +6,12 @@ bis zu einer ausdrücklichen fachlichen Entscheidung unverändert verbindlich.
 
 ## Anlass und Entscheidung
 
+**Aktualisierung nach R6:** Die Entscheidungsgrenze ist mit unabhängig 43/60
+(71,67 %) erneut deutlich unterschritten. Der Entwurf wird jetzt ausdrücklich
+als künftiger Eingabevertrag empfohlen. Der [R6-Vergleich und Entscheidungsvorschlag](R6-Eingabeempfehlung.md)
+begründet den begrenzten Lernwert zusätzlicher Metasätze und den Stopp weiterer
+unbegrenzter Musterergänzung. Er bleibt unbeschlossen und nicht implementiert.
+
 Die frische R5-Gegenprüfung erkennt 29/60 kurze richtige Osmosebenennungen,
 obwohl die bekannten R4-Kurzantworten bereits 60/60 erreichen. Weitere bekannte
 Rahmen oder eigene grüne Tests belegen keine allgemeine Spracherkennung.

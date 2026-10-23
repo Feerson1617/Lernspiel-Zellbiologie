@@ -9,7 +9,7 @@ export const TONOPLAST_TASK_ID = 'Z1.02';
 export const TONOPLAST_FIELD_ID = 'term';
 export const TONOPLAST_RUBRIC_ID = 'TERM_TONOPLAST';
 export const TONOPLAST_CRITERION_ID = 'Z1.02.C01';
-const PROFILE: TermGrammarProfile = { namingReferences: { names: [['m', 'membranname', 'membrannamens'], ['f', 'membranbezeichnung', 'membranbezeichnung']], qualifiers: [['um', 'die', 'vakuole'], ['um', 'den', 'vakuolenraum']], nouns: [
+const PROFILE: TermGrammarProfile = { namingReferences: { names: [['m', 'membranname', 'membrannamens'], ['f', 'membranbezeichnung', 'membranbezeichnung'], ['f', 'membranbenennung', 'membranbenennung']], qualifiers: [['um', 'die', 'vakuole'], ['um', 'den', 'vakuolenraum']], nouns: [
   ['f', 'membran', 'membran'], ['f', 'grenze', 'grenze'], ['f', 'struktur', 'struktur'],
   ['f', 'vakuolengrenze', 'vakuolengrenze'], ['f', 'membran um die vakuole', 'membran um die vakuole'],
 ] } };

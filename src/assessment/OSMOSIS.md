@@ -290,3 +290,17 @@ Begrenzter Ausnahmeumfang, keine allgemeine Interpretation von Fragefolgen.
 Bericht: `qa/P02b-Siebte-Nachbesserung.md`; alle offenen ursprünglichen Sollwerte
 in `qa/p02b-r5-results.json`. Keine unabhängige Freigabe. Der reviewbare engere
 Vertrag in `review/naming-input-0.2-decision.md` bleibt ein Entwurf.
+
+### R6: begrenzte Reparatur und erreichte Entscheidungsgrenze
+
+Neue endliche Benennungsrollen und Genitivbezüge behalten Pflichtverben und
+Originalspannen. Höflichkeit wird nur als abgegrenztes „, danke“ nach einer
+Benennung gelesen; weitere Aussagen bleiben prüfpflichtig. Kein anderer
+biologischer Begriff wird dadurch richtig. `naming-choice.ts`, Kontext,
+Material, Kriteriengrenze C01 und Metadatenspeicherung bleiben unverändert.
+R6-Kurzantworten jetzt 60/60; neue eingefrorene eigene Kurzantworten nur 56/60.
+Die vier gelben bleiben im Nenner und das 95-%-Gate bleibt rot. Keine weitere
+Musterschleife für diese Sätze. Bericht: `qa/P02b-Achte-Nachbesserung.md`;
+Original-Soll/IST: `qa/p02b-r6-results.json`. Der didaktische Vergleich in
+`review/R6-Eingabeempfehlung.md` empfiehlt einen Fachbegriff-Vertrag zur
+fachlichen Entscheidung. Dieser ist nicht beschlossen oder implementiert.

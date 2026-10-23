@@ -26,7 +26,7 @@ const META: readonly NamingNoun[] = [
   ['f', 'fachbezeichnung', 'fachbezeichnung'],
   ['f', 'angabe', 'angabe'],
   ['n', 'wort', 'wortes'], ['n', 'fachwort', 'fachwortes'], ['n', 'ergebnis', 'ergebnisses'],
-  ['n', 'loesungswort', 'loesungswortes'],
+  ['n', 'loesungswort', 'loesungswortes'], ['n', 'antwortwort', 'antwortwortes'],
 ];
 const QUESTIONS: readonly NamingNoun[] = [['f', 'frage', 'frage'], ['f', 'teilfrage', 'teilfrage'], ['f', 'namensfrage', 'namensfrage'], ['f', 'benennungsfrage', 'benennungsfrage'], ['f', 'benennung', 'benennung'], ['f', 'antwort', 'antwort'], ['n', 'antwortfeld', 'antwortfelds'], ['n', 'feld', 'felds'], ['n', 'namensfeld', 'namensfelds']];
 const ARTICLES: Readonly<Record<Case, Readonly<Record<NamingNoun[0], readonly string[]>>>> = {
@@ -35,7 +35,7 @@ const ARTICLES: Readonly<Record<Case, Readonly<Record<NamingNoun[0], readonly st
   dat: { m: ['dem', 'diesem', 'meinem'], f: ['der', 'dieser', 'meiner'], n: ['dem', 'diesem', 'meinem'] },
   gen: { m: ['des', 'dieses', 'meines'], f: ['der', 'dieser', 'meiner'], n: ['des', 'dieses', 'meines'] },
 };
-const META_ADJECTIVES = ['richtig', 'gesucht', 'passend', 'korrekt', 'fachlich', 'endgueltig', 'aktuell', 'vorgeschlagen', 'kurz', 'erst', 'biologisch', 'allgemein'];
+const META_ADJECTIVES = ['richtig', 'gesucht', 'passend', 'korrekt', 'fachlich', 'endgueltig', 'aktuell', 'vorgeschlagen', 'gewaehlt', 'kurz', 'erst', 'biologisch', 'allgemein'];
 const FIELD_ADJECTIVES = ['gesucht', 'beschrieben', 'gezeigt', 'dargestellt', 'genannt', 'gemeint', 'markiert', 'hervorgehoben', 'biologisch'];
 const isAdjective = (word: string | undefined, stems: readonly string[]) => stems.some(stem => ['', 'e', 'en', 'er', 'es', 'em'].some(end => word === stem + end));
 const pattern = (before: readonly Part[], ...after: readonly Part[][]): Pattern => ({ before, after: after.length ? after : [[]] });
@@ -50,6 +50,17 @@ const ACTION_COMPLEMENTS: readonly (readonly Part[])[] = [
 /** Finite constituent grammar. Slots match explicit noun phrases/references,
  * not arbitrary text. Required closing verbs are never optional filler. */
 const PATTERNS: readonly Pattern[] = [
+  // R6: a bounded naming action with typed noun roles and required closers.
+  // These frames neither contain answer terms nor consume scientific clauses.
+  pattern([s('fieldNom'), 'ist', 'unter', s('metaDat')], ['bekannt']),
+  pattern([s('metaAcc'), 'gebe', 'ich', 'mit'], ['an']),
+  pattern(['ich', 'gebe', s('optionalReference'), s('metaAcc')], ['an']),
+  ...['muesste', 'sollte', 'koennte', 'wuerde'].map(modal => pattern([s('front'), modal, s('metaNom')], ['lauten'], ['heissen'])),
+  pattern([s('asMeta'), 'ist'], ['richtig']),
+  pattern(['ist', s('metaNom')], ['gemeint']),
+  pattern([s('front'), 'ist', s('metaNom')], ['gemeint']),
+  pattern(['ich', 'wuerde', 'von'], ['sprechen']),
+  pattern([s('fieldAcc'), 'habe', 'ich', 'mit', s('metaDat')], ['benannt']),
   pattern([s('namingObject'), 'wuerde', 'ich', 'unter'], ['einordnen']),
   pattern([s('metaAcc')], ...WRITING_VERBS.map(verb => ['wuerde', 'ich', s('optionalReference'), verb])),
   pattern([s('subject'), 'wuerde'], ['lauten'], ['heissen']),
@@ -67,7 +78,7 @@ const PATTERNS: readonly Pattern[] = [
   pattern([s('reference'), 'passt']),
   pattern([s('reference'), 'kenne', 'ich'], [s('asMeta')]),
   ...['nehme', 'verwende', 'nenne'].map(verb => pattern([s('asMeta'), verb, 'ich'])),
-  ...['benutze', 'verwende', 'nehme', 'kenne'].map(verb => pattern([s('metaNom'), ',', 'den', 'ich', s('optionalReference'), verb, ',', 'ist'])),
+  ...['den', 'die', 'das'].flatMap(relative => ['benutze', 'verwende', 'nehme', 'kenne'].map(verb => pattern([s('metaNom'), ',', relative, 'ich', s('optionalReference'), verb, ',', 'ist']))),
   ...['benutzen', 'verwenden', 'nehmen', 'waehlen'].flatMap(verb => ['ist', 'heisst', 'lautet'].map(end =>
     pattern([s('metaNom'), ',', 'den', 'ich', s('optionalReference'), verb, 'wuerde', ',', end]))),
   pattern([s('subject'), 'wuerde', s('reference')], ['lauten']),
@@ -366,7 +377,7 @@ export function createNamingSyntax(tokens: readonly TextToken[], references: Nam
       return direct + (qualifier?.length ?? 0);
     }
     const kind = noun(index, [['f', 'art', 'art']], grammaticalCase, bare);
-    return kind !== null && at(kind) === 'von' ? field(kind + 1, 'dat', true, depth + 1) : null;
+    return kind === null ? null : at(kind) === 'von' ? field(kind + 1, 'dat', true, depth + 1) : field(kind, 'gen', false, depth + 1);
   }
   function question(index: number, grammaticalCase: Case, bare = false): number | null {
     const end = noun(index, QUESTIONS, grammaticalCase, bare, [...FIELD_ADJECTIVES, 'erst']);
@@ -442,6 +453,8 @@ export function createNamingSyntax(tokens: readonly TextToken[], references: Nam
     return index;
   }
   const post = (index: number) => longest(...[
+    ...['den', 'die', 'das'].flatMap(relative => ['verwende', 'nehme', 'benutze'].map(verb => ['ist', s('metaNom'), ',', relative, 'ich', s('optionalReference'), verb])),
+    ['ist', s('metaNom'), ',', 'der', 'hier', 'gesucht', 'wird'],
     ...['heisst', 'waere'].map(verb => [verb, s('fieldNom')]),
     ...['ist', 'waere'].flatMap(verb => [
       [verb, s('metaNom'), ',', 'die', 'ich', s('optionalReference'), 'waehlen', 'wuerde'],

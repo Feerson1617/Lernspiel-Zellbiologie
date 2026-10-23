@@ -1,0 +1,39 @@
+{
+  "reviewId": "P02b-eighth-revision-self-check-2026-10-23-R6",
+  "reviewKind": "self_check",
+  "commitSha": null,
+  "sourceVersions": [
+    "Konzept 1.0 / 22.10.2026; AGENTS; C/D/F; unchanged protected tasks/rubrics/context/result/progress contracts",
+    "Baseline dcb81232297de5755a660bff8119c2c6a75e1a15; main b155936443745d98c8133788872c9c5ff44d7fb2",
+    "Supplied R5: 71 archive hashes verified; 183+290+24+1526 original raw records; 60 own short answers frozen before first evaluation"
+  ],
+  "environment": {
+    "status": "initial report, actual final commands pending"
+  },
+  "executedCommands": [
+    "npm run check:types (passed)",
+    "npx vitest run tests/unit (10341 passed before adding R6 tests)",
+    "npx vitest run tests/unit/p02b-r6.test.ts (3582 passed)"
+  ],
+  "caseCounts": {
+    "passed": 0,
+    "failed": 0,
+    "skipped": 0
+  },
+  "newCases": [
+    "60 own short answers and 480 variants frozen before first evaluation; not independent",
+    "520 supplied-frame and courtesy boundary controls; not 520 independently novel sentences"
+  ],
+  "blockedChecks": [
+    "Fresh separate independent countercheck after bounded R6 repair",
+    "Final full suites and actual CI pending draft",
+    "Real named Safari/iPad tests",
+    "Private originals unavailable for local hash/text-window/OCR checks",
+    "Administrative main protection not activated"
+  ],
+  "criticalFindings": [
+    "Own fresh 56/60, four clarify: 95 percent quality gate remains blocked. No further patterns added for these sentences.",
+    "Independent R6 43/60 on preceding head: decision threshold triggered, recommend term field; no format change implemented."
+  ],
+  "releaseStatus": "blocked"
+}

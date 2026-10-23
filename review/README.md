@@ -26,3 +26,9 @@ und danach die effektiven Regeln für `main` samt Check-Zuordnung erneut lesen.
 Die Integration hat hier keine Kontoeinstellungen geändert. Verfügbarkeit und
 Durchsetzung des vorbereiteten Regelwerks sind erst nach dieser Aktivierung
 nachgewiesen; dessen JSON-Datei allein erzwingt nichts.
+## Aktuelle Entscheidung nach R6
+
+[R6-Eingabeempfehlung](R6-Eingabeempfehlung.md): Die unabhängige 95-%-Grenze ist
+erneut deutlich verfehlt. Konkrete Empfehlung eines Fachbegriff-Vertrags mit
+optionaler Klärung, Vergleich und Auswirkungen auf bestehende Verträge.
+Keine eigenmächtige Umsetzung oder Freigabe.

@@ -221,9 +221,19 @@ keine P02c-Implementierung und keine Unterrichtsfreigabe.
 Die siebte Nachbesserung nach R5 erweitert endliche Rollen und Feldbezüge der
 Benennungssyntax und behandelt genau zwei tentative Fragen symmetrisch nach
 Konzept und Polarität. Zwei frühere eigene Frage-Erwartungen sind mit Original-
-Soll ausdrücklich revidiert; geschützte Rubriken unverändert. Aktueller Bericht:
+Soll ausdrücklich revidiert; geschützte Rubriken unverändert. Historischer Bericht:
 `qa/P02b-Siebte-Nachbesserung.md`, vollständige 2.823 Auswertungen:
 `qa/p02b-r5-results.json`. Die konkretere Entscheidungsvorlage
 `review/naming-input-0.2-decision.md` ist nicht umgesetzt oder freigegeben.
 48 neue und 114 ältere ursprüngliche Sollabweichungen sowie die unabhängige
 Gegenprüfung und Browser-/Geräteabnahme bleiben offen. NICHT MERGE, keine P02c.
+
+Aktuell: achte Nachbesserung/R6, `qa/P02b-Achte-Nachbesserung.md` und alle 3.580
+gemessenen Ergebnisse in `qa/p02b-r6-results.json`. Die übernommenen R6-Kurzantworten
+erreichen nach begrenzter Reparatur 60/60; die vor dem ersten Lauf eingefrorene
+eigene Stichprobe erreicht 56/60 (93,33 %, vier gelbe im Nenner). Das 95-%-Gate
+bleibt ausdrücklich rot. Keine weitere Musterschleife für diese vier Sätze.
+`review/R6-Eingabeempfehlung.md` empfiehlt jetzt einen klar kommunizierten
+Fachbegriff-Vertrag mit optionaler Klärung und vergleicht die didaktischen und
+technischen Folgen. Der Formatwechsel bleibt unbeschlossen und unimplementiert.
+Originalaufgaben, Rubriken und historische Sollwerte bleiben erhalten. NICHT MERGE.

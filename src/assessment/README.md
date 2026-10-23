@@ -222,3 +222,17 @@ Begrenzter Ausnahmeumfang, keine allgemeine Interpretation von Fragefolgen.
 Bericht: `qa/P02b-Siebte-Nachbesserung.md`; alle offenen ursprünglichen Sollwerte
 in `qa/p02b-r5-results.json`. Keine unabhängige Freigabe. Der reviewbare engere
 Vertrag in `review/naming-input-0.2-decision.md` bleibt ein Entwurf.
+
+### R6: begrenzte Reparatur und erreichte Entscheidungsgrenze
+
+Feldgebundene Benennungsrollen, Genitivbezüge („Art des Wassertransports“),
+abgeschlossene Wortwahl-Relativsätze und lokale Höflichkeit „, danke“ ergänzen
+den bestehenden Vertrag. Originaltokens, Negation und sämtliche Folgesätze
+bleiben erhalten. `naming-choice.ts` und die Fragepaar-Regeln sind unverändert.
+Die 60 übernommenen R6-Kurzantworten bestehen; die vorher eingefrorenen eigenen
+60 erreichen nur 56/60. Das 95-%-Gate bleibt rot, ohne weitere Musterergänzung
+für die vier gelben Sätze. Alle 3.580 tatsächlich gemessenen Objekte samt
+Original-Soll und ausdrücklich technischen Lückensperren stehen in
+`qa/p02b-r6-results.json`, Grenzen in `qa/P02b-Achte-Nachbesserung.md`.
+`review/R6-Eingabeempfehlung.md` empfiehlt einen Fachbegriff-Vertrag mit optionaler
+Klärung zur Entscheidung. Kein Formatwechsel, keine fachliche Abnahme.
