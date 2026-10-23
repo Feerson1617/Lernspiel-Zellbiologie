@@ -32,3 +32,18 @@ export function acceptedFourth(f: FourthCase): readonly Status[] {
   if (/^known[123]-/u.test(f.id)) return acceptedThird({ ...f, id: f.id.replace(/^known[123]-/u, ''), group: f.group.replace(/^known[123]-/u, '') });
   return f.expected;
 }
+
+/** Source-motivated boundary diagnostics, not a fresh recognition sample. */
+export const FOURTH_RETRACTION_CASES: readonly FourthCase[] = ([
+  ['osmosis', 'Endocytose', 'Exocytose', 'Osmose'],
+  ['tonoplast', 'Zellwand', 'Zellmembran', 'Tonoplast'],
+] as const).flatMap(([field, first, second, target]) => [
+  ...[
+    `${first}. Es ist in Wirklichkeit ${second}. Es ist in Wirklichkeit ${target}.`,
+    `${first}. Es ist in Wirklichkeit ${second}. Es ist in Wirklichkeit ${second}. Es ist in Wirklichkeit ${target}.`,
+    `Nicht ${first}, sondern ${second}. Es ist in Wirklichkeit ${target}.`,
+    `${target}. Es ist in Wirklichkeit ${first}. Es ist in Wirklichkeit ${target}.`,
+  ].map((text, i): FourthCase => ({ id: `retraction-${field}-${i + 1}`, group: 'repeated-retraction', field, text, expected: ['clarify'] })),
+  { id: `retraction-${field}-confirmation`, group: 'retraction-control', field, text: `${first}. Es ist in Wirklichkeit ${target}. Es ist in Wirklichkeit ${target}.`, expected: ['correct'] },
+  { id: `retraction-${field}-exclusion`, group: 'retraction-control', field, text: `Nicht ${target}, sondern ${target}. Es ist in Wirklichkeit ${target}.`, expected: ['incorrect'] },
+]);

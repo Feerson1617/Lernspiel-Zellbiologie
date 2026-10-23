@@ -20,7 +20,7 @@ export interface TermRef {
 }
 export type TermClause =
   | Readonly<{ kind: 'name'; terms: readonly TermRef[]; negated: boolean; connector: 'single' | 'or' | 'and' | 'alias' | 'explanation'; correctsPrevious?: true; start: number; end: number }>
-  | Readonly<{ kind: 'contrast'; excluded: TermRef; chosen: TermRef; start: number; end: number }>
+  | Readonly<{ kind: 'contrast'; excluded: TermRef; chosen: TermRef; correctsPrevious?: true; start: number; end: number }>
   | Readonly<{ kind: 'identity' | 'synonymy' | 'encloses'; subject: TermRef; object: TermRef; negated: boolean; relation?: 'property' | 'classification' | 'equivalence' | 'designation'; start: number; end: number }>
   | Readonly<{ kind: 'separates'; subject: TermRef; first: TermRef; second: TermRef; negated: boolean; start: number; end: number }>
   | Readonly<{ kind: 'has_named_boundary'; owner: TermRef; terms: readonly TermRef[]; start: number; end: number }>
@@ -425,6 +425,15 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
     const parsed = clause(index);
     if (!parsed) return { clauses, complete: false };
     const previous = clauses.at(-1), current = parsed.value;
+    // T1 supports one changed naming choice. A further change would require
+    // resolving a history of retractions; never grade a withdrawn intermediate
+    // name as an active scientific error. Reaffirming the chosen name is safe.
+    const earlierCorrection = clauses.find(c => c.kind === 'contrast' && c.correctsPrevious);
+    if (current.kind === 'name' && current.correctsPrevious && !current.negated && current.terms.length === 1
+      && ((previous?.kind === 'contrast' && previous.chosen.id !== current.terms[0]!.id)
+        || (earlierCorrection?.kind === 'contrast' && earlierCorrection.chosen.id !== current.terms[0]!.id))) {
+      return { clauses, complete: false };
+    }
     // Equal concept IDs (including synonyms/recognised spellings) reaffirm the
     // earlier positive name. Keep both original clauses and their evidence.
     // Only a different, explicitly corrected single name creates an exclusion.
@@ -432,7 +441,7 @@ export function parseTermAnswer(tokens: readonly TextToken[], meanings: readonly
     if (current.kind === 'name' && current.correctsPrevious && !current.negated && current.terms.length === 1
       && previous?.kind === 'name' && !previous.negated && previous.terms.length === 1
       && previous.terms[0]!.id !== current.terms[0]!.id) {
-      clauses[clauses.length - 1] = { kind: 'contrast', excluded: previous.terms[0]!, chosen: current.terms[0]!, start: previous.start, end: current.end };
+      clauses[clauses.length - 1] = { kind: 'contrast', correctsPrevious: true, excluded: previous.terms[0]!, chosen: current.terms[0]!, start: previous.start, end: current.end };
     } else clauses.push(current);
     index = parsed.next;
     if (index === tokens.length) break;

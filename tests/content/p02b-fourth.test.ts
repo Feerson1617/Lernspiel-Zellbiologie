@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { pathToFileURL } from 'node:url';
 import { expect, it } from 'vitest';
 import { FOURTH_NOVEL } from '../helpers/p02b-fourth.ts';
-import { FOURTH_CASES, executeFourth, acceptedFourth } from '../helpers/p02b-fourth.ts';
+import { FOURTH_CASES, FOURTH_RETRACTION_CASES, executeFourth, acceptedFourth } from '../helpers/p02b-fourth.ts';
 
 it('checks all 40 novel short sentences against known fixtures, QA and editorial strings', async () => {
   const normalize = (s: string) => s.normalize('NFC').toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
@@ -28,8 +28,8 @@ it('requires the chosen 95 percent short naming target without dropping yellow a
   expect(r.some(f => f.status === 'incorrect')).toBe(false);
 });
 
-it('validates all 956 actual supplied, fresh and metamorphic objects against the protected result schema', () => {
-  const results = FOURTH_CASES.map(f => executeFourth(f).result);
+it('validates all 956 corpus and 12 retraction diagnostic results against the protected result schema', () => {
+  const results = [...FOURTH_CASES, ...FOURTH_RETRACTION_CASES].map(f => executeFourth(f).result);
   const venv = fileURLToPath(new URL('../../.venv/bin/python', import.meta.url));
   const r = spawnSync(existsSync(venv) ? venv : 'python3', ['-c', [
     'import json,sys,jsonschema', 'd=json.load(sys.stdin)',
@@ -39,7 +39,7 @@ it('validates all 956 actual supplied, fresh and metamorphic objects against the
     'sys.exit(1 if errors else 0)',
   ].join('\n')], { input: JSON.stringify({ schema: JSON.parse(readFileSync('spec/result.schema.json', 'utf8')), results }), encoding: 'utf8', timeout: 20_000 });
   expect(r.error).toBeUndefined(); expect(r.stderr).toBe(''); expect(r.status).toBe(0);
-  expect(r.stdout.trim()).toBe('Validated 956 results; 0 schema errors');
+  expect(r.stdout.trim()).toBe('Validated 968 results; 0 schema errors');
 });
 
 it('publishes all raw expectations and actual results, including yellow and explicitly adjudicated discrepancies', () => {

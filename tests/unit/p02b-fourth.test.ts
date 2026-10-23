@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { afterAll, expect, it } from 'vitest';
-import { FOURTH_CASES, executeFourth, acceptedFourth, FOURTH_OSMOSIS_CONTEXT, FOURTH_TONOPLAST_CONTEXT } from '../helpers/p02b-fourth.ts';
+import { FOURTH_CASES, FOURTH_RETRACTION_CASES, executeFourth, acceptedFourth, FOURTH_OSMOSIS_CONTEXT, FOURTH_TONOPLAST_CONTEXT } from '../helpers/p02b-fourth.ts';
 import { FOURTH_MAIN, FOURTH_TARGETED, FOURTH_KNOWN } from '../fixtures/p02b-20261023-r2-cases.ts';
 import { isResultForContext } from '../../src/domain/task-context.ts';
 import { parseTermAnswer } from '../../src/assessment/term-grammar.ts';
@@ -11,6 +11,7 @@ import { SUPPLIED_MAIN, SUPPLIED_DIAGNOSTIC, SUPPLIED_DIAGNOSTIC2 } from '../fix
 
 const actual = FOURTH_CASES.map(f => ({ ...f, accepted: acceptedFourth(f), ...executeFourth(f) }));
 afterAll(() => writeFileSync('qa/generated/p02b-fourth-results.json', JSON.stringify(actual, null, 2) + '\n'));
+afterAll(() => writeFileSync('qa/generated/p02b-fourth-retraction-results.json', JSON.stringify(FOURTH_RETRACTION_CASES.map(f => ({ ...f, ...executeFourth(f) })), null, 2) + '\n'));
 for (const f of actual) it(`${f.id}: ${f.accepted.join('|')} — ${f.text}`, () => {
   expect(f.accepted, f.text).toContain(f.result.status);
   expect(isResultForContext(f.result, f.field === 'osmosis' ? FOURTH_OSMOSIS_CONTEXT : FOURTH_TONOPLAST_CONTEXT)).toBe(true);
@@ -94,4 +95,23 @@ it('keeps word choice separate from scientific equivalence and never drops a neg
   ]) expect(executeFourth({ field: 'osmosis', text }).result.status, text).toBe('clarify');
   expect(executeFourth({ field: 'tonoplast', text: 'Ich würde den Tonoplasten als Zellwand bezeichnen.' }).result.status).toBe('incorrect');
   expect(executeFourth({ field: 'tonoplast', text: 'Ich würde den Tonoplasten als Membran bezeichnen.' }).result.status).toBe('clarify');
+});
+
+for (const [field, first, second, target] of [
+  ['osmosis', 'Endocytose', 'Exocytose', 'Osmose'],
+  ['tonoplast', 'Zellwand', 'Zellmembran', 'Tonoplast'],
+] as const) it(`${field}: repeated changes request clarification instead of diagnosing a withdrawn intermediate name`, () => {
+  for (const text of [
+    `${first}. Es ist in Wirklichkeit ${second}. Es ist in Wirklichkeit ${target}.`,
+    `${first}. Es ist in Wirklichkeit ${second}. Es ist in Wirklichkeit ${second}. Es ist in Wirklichkeit ${target}.`,
+    `Nicht ${first}, sondern ${second}. Es ist in Wirklichkeit ${target}.`,
+    `${target}. Es ist in Wirklichkeit ${first}. Es ist in Wirklichkeit ${target}.`,
+  ]) {
+    const { result, feedback } = executeFourth({ field, text });
+    expect(result).toMatchObject({ status: 'clarify', unassessedRelevantText: true });
+    expect(result.criteria[0]!.evidence).toEqual([{ kind: 'input_span', start: 0, end: text.length, value: text }]);
+    expect(feedback).not.toMatch(/vernein|widerspr/iu);
+  }
+  expect(executeFourth({ field, text: `${first}. Es ist in Wirklichkeit ${target}. Es ist in Wirklichkeit ${target}.` }).result.status).toBe('correct');
+  expect(executeFourth({ field, text: `Nicht ${target}, sondern ${target}. Es ist in Wirklichkeit ${target}.` }).result.status).toBe('incorrect');
 });
