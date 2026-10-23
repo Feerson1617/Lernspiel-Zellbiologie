@@ -1,5 +1,1493 @@
 {
-"metadata":{"reviewKind":"self_check","runtimeSourceBase":"7393548c885cfe467b284808f873c90c43997fb8","uncommittedRuntimeHashes":{"src/assessment/naming-syntax.ts":"ea396f93dee39585980ad4f6c553fb53ab5404956e27e8c631fb50a098832045","src/assessment/naming-frames.ts":"f45f9f40802f8e1aaaec890646214f3455454321d0ac5fe9772b62e6e35f3e6d","src/assessment/term-grammar.ts":"9b9e43dccd3748efbcd85aa7afbab629f8ea9ab24028ffc11cda2b87b0ae54e8"},"note":"Initial measured working-tree run; replaced with tested commit binding in final report."},
+"metadata":{
+  "reviewKind": "self_check",
+  "runtimeCodeCommit": "8db3eba0998173ede146feedefcf7babf417c6c9",
+  "createdAtBerlin": "2026-10-23T09:14:02+02:00",
+  "versions": {
+    "taskVersion": "review3-task-20261023",
+    "rubricVersion": "review3-rubric-20261023",
+    "contentVersion": "concept-1.0-20261023",
+    "modelVersion": "review-no-simulation"
+  },
+  "material": {
+    "cellProfile": "onion_epidermis",
+    "cellIntegrity": "intact",
+    "observationPhase": "early_water_loss_after_solution_change",
+    "waterPotential": {
+      "unit": "Pa",
+      "vacuole": -120000,
+      "cytosol": -350000,
+      "external": -810000
+    },
+    "waterPermeability": {
+      "cellMembrane": true,
+      "tonoplast": true
+    },
+    "sucroseRetention": "largely_retained",
+    "otherTransport": "excluded"
+  },
+  "modelState": {},
+  "instanceId": "independent-review3-PR6",
+  "seed": "fixed-independent-review",
+  "phase": "explain",
+  "sourceHashes": {
+    "src/assessment/naming-frames.ts": "f45f9f40802f8e1aaaec890646214f3455454321d0ac5fe9772b62e6e35f3e6d",
+    "src/assessment/naming-syntax.ts": "ea396f93dee39585980ad4f6c553fb53ab5404956e27e8c631fb50a098832045",
+    "src/assessment/term-grammar.ts": "9b9e43dccd3748efbcd85aa7afbab629f8ea9ab24028ffc11cda2b87b0ae54e8"
+  },
+  "summary": {
+    "short-correct": {
+      "total": 60,
+      "correct": 60,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 0
+    },
+    "long-correct": {
+      "total": 12,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 12
+    },
+    "wrong-name": {
+      "total": 12,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 12,
+      "clarify": 0
+    },
+    "partial": {
+      "total": 8,
+      "correct": 0,
+      "partial": 8,
+      "incorrect": 0,
+      "clarify": 0
+    },
+    "ambiguous": {
+      "total": 12,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 12
+    },
+    "contradiction": {
+      "total": 12,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 12,
+      "clarify": 0
+    },
+    "unsafe-extra": {
+      "total": 12,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 12
+    },
+    "correct-distinction": {
+      "total": 8,
+      "correct": 8,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 0
+    },
+    "semantic-boundary": {
+      "total": 16,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 16
+    },
+    "tonoplast-correct": {
+      "total": 12,
+      "correct": 12,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 0
+    },
+    "tonoplast-wrong": {
+      "total": 6,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 6,
+      "clarify": 0
+    },
+    "tonoplast-boundary": {
+      "total": 6,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 6
+    },
+    "reaffirm-osmosis": {
+      "total": 6,
+      "correct": 6,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 0
+    },
+    "reaffirm-tonoplast": {
+      "total": 6,
+      "correct": 6,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 0
+    },
+    "genuine-correction-osmosis": {
+      "total": 4,
+      "correct": 4,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 0
+    },
+    "genuine-correction-tonoplast": {
+      "total": 4,
+      "correct": 4,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 0
+    },
+    "property-and-reaffirmation": {
+      "total": 2,
+      "correct": 2,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 0
+    },
+    "property-and-reaffirmation-tonoplast": {
+      "total": 2,
+      "correct": 2,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 0
+    },
+    "correction-contradiction": {
+      "total": 2,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 2,
+      "clarify": 0
+    },
+    "correction-contradiction-tonoplast": {
+      "total": 2,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 2,
+      "clarify": 0
+    },
+    "unresolved-correction": {
+      "total": 3,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 3
+    },
+    "unresolved-correction-tonoplast": {
+      "total": 3,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 3
+    },
+    "known0-short-correct": {
+      "total": 50,
+      "correct": 50,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 0
+    },
+    "known0-long-correct": {
+      "total": 20,
+      "correct": 2,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 18
+    },
+    "known0-wrong-name": {
+      "total": 10,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 10,
+      "clarify": 0
+    },
+    "known0-contradiction": {
+      "total": 15,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 15,
+      "clarify": 0
+    },
+    "known0-correct-negation": {
+      "total": 10,
+      "correct": 10,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 0
+    },
+    "known0-unassessed": {
+      "total": 10,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 10
+    },
+    "known0-partial": {
+      "total": 5,
+      "correct": 0,
+      "partial": 5,
+      "incorrect": 0,
+      "clarify": 0
+    },
+    "known0-ambiguous": {
+      "total": 6,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 6
+    },
+    "known0-tonoplast-correct": {
+      "total": 15,
+      "correct": 15,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 0
+    },
+    "known0-tonoplast-wrong": {
+      "total": 10,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 10,
+      "clarify": 0
+    },
+    "known0-tonoplast-unassessed": {
+      "total": 5,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 5
+    },
+    "known1-short-correct": {
+      "total": 60,
+      "correct": 60,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 0
+    },
+    "known1-long-correct": {
+      "total": 20,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 20
+    },
+    "known1-wrong-name": {
+      "total": 12,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 12,
+      "clarify": 0
+    },
+    "known1-partial": {
+      "total": 8,
+      "correct": 0,
+      "partial": 8,
+      "incorrect": 0,
+      "clarify": 0
+    },
+    "known1-ambiguous": {
+      "total": 12,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 12
+    },
+    "known1-contradiction": {
+      "total": 12,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 12,
+      "clarify": 0
+    },
+    "known1-unsafe-extra": {
+      "total": 12,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 12
+    },
+    "known1-correct-distinction": {
+      "total": 8,
+      "correct": 8,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 0
+    },
+    "known1-semantic-trap": {
+      "total": 8,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 8
+    },
+    "known1-tonoplast-correct": {
+      "total": 12,
+      "correct": 12,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 0
+    },
+    "known1-tonoplast-wrong": {
+      "total": 8,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 8,
+      "clarify": 0
+    },
+    "known1-tonoplast-boundary": {
+      "total": 8,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 8
+    },
+    "known2-not-generic-name": {
+      "total": 4,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 4
+    },
+    "known2-generic-name": {
+      "total": 4,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 4
+    },
+    "known2-explicit-negation": {
+      "total": 4,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 4,
+      "clarify": 0
+    },
+    "known2-evidence": {
+      "total": 4,
+      "correct": 4,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 0
+    },
+    "known2-unassessed-unicode": {
+      "total": 4,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 4
+    },
+    "known2-tonoplast-property": {
+      "total": 4,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 2,
+      "clarify": 2
+    },
+    "known3-explicit-name-not-alias": {
+      "total": 3,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 3
+    },
+    "known3-explicit-name-alias": {
+      "total": 2,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 2
+    },
+    "known3-explicit-name-equivalence": {
+      "total": 1,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 1
+    },
+    "known3-membrane-no-synonym": {
+      "total": 1,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 1
+    },
+    "known3-membrane-not-membrane": {
+      "total": 1,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 1,
+      "clarify": 0
+    },
+    "fresh-short": {
+      "total": 40,
+      "correct": 40,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 0
+    },
+    "known-overlap": {
+      "total": 2,
+      "correct": 2,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 0
+    },
+    "fresh-wrong": {
+      "total": 168,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 168,
+      "clarify": 0
+    },
+    "fresh-partial": {
+      "total": 42,
+      "correct": 0,
+      "partial": 42,
+      "incorrect": 0,
+      "clarify": 0
+    },
+    "fresh-alternative": {
+      "total": 42,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 42
+    },
+    "fresh-contradiction": {
+      "total": 42,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 42,
+      "clarify": 0
+    },
+    "fresh-unassessed": {
+      "total": 42,
+      "correct": 0,
+      "partial": 0,
+      "incorrect": 0,
+      "clarify": 42
+    }
+  },
+  "baselineSummary": {
+    "short-correct": {
+      "clarify": 37,
+      "correct": 23
+    },
+    "long-correct": {
+      "clarify": 12
+    },
+    "wrong-name": {
+      "incorrect": 5,
+      "clarify": 7
+    },
+    "partial": {
+      "clarify": 4,
+      "partial": 4
+    },
+    "ambiguous": {
+      "clarify": 12
+    },
+    "contradiction": {
+      "clarify": 2,
+      "incorrect": 10
+    },
+    "unsafe-extra": {
+      "clarify": 12
+    },
+    "correct-distinction": {
+      "clarify": 3,
+      "correct": 5
+    },
+    "semantic-boundary": {
+      "clarify": 16
+    },
+    "tonoplast-correct": {
+      "clarify": 6,
+      "correct": 6
+    },
+    "tonoplast-wrong": {
+      "clarify": 3,
+      "incorrect": 3
+    },
+    "tonoplast-boundary": {
+      "clarify": 6
+    },
+    "reaffirm-osmosis": {
+      "incorrect": 6
+    },
+    "reaffirm-tonoplast": {
+      "incorrect": 6
+    },
+    "genuine-correction-osmosis": {
+      "correct": 4
+    },
+    "genuine-correction-tonoplast": {
+      "correct": 4
+    },
+    "property-and-reaffirmation": {
+      "correct": 2
+    },
+    "property-and-reaffirmation-tonoplast": {
+      "correct": 2
+    },
+    "correction-contradiction": {
+      "incorrect": 2
+    },
+    "correction-contradiction-tonoplast": {
+      "incorrect": 2
+    },
+    "unresolved-correction": {
+      "clarify": 3
+    },
+    "unresolved-correction-tonoplast": {
+      "clarify": 3
+    },
+    "known0-short-correct": {
+      "correct": 50
+    },
+    "known0-long-correct": {
+      "clarify": 18,
+      "correct": 2
+    },
+    "known0-wrong-name": {
+      "incorrect": 10
+    },
+    "known0-contradiction": {
+      "incorrect": 15
+    },
+    "known0-correct-negation": {
+      "correct": 10
+    },
+    "known0-unassessed": {
+      "clarify": 10
+    },
+    "known0-partial": {
+      "partial": 5
+    },
+    "known0-ambiguous": {
+      "clarify": 6
+    },
+    "known0-tonoplast-correct": {
+      "correct": 15
+    },
+    "known0-tonoplast-wrong": {
+      "incorrect": 10
+    },
+    "known0-tonoplast-unassessed": {
+      "clarify": 5
+    },
+    "known1-short-correct": {
+      "correct": 60
+    },
+    "known1-long-correct": {
+      "clarify": 20
+    },
+    "known1-wrong-name": {
+      "incorrect": 12
+    },
+    "known1-partial": {
+      "partial": 8
+    },
+    "known1-ambiguous": {
+      "clarify": 12
+    },
+    "known1-contradiction": {
+      "incorrect": 12
+    },
+    "known1-unsafe-extra": {
+      "clarify": 12
+    },
+    "known1-correct-distinction": {
+      "correct": 8
+    },
+    "known1-semantic-trap": {
+      "clarify": 8
+    },
+    "known1-tonoplast-correct": {
+      "correct": 12
+    },
+    "known1-tonoplast-wrong": {
+      "incorrect": 8
+    },
+    "known1-tonoplast-boundary": {
+      "clarify": 8
+    },
+    "known2-not-generic-name": {
+      "clarify": 4
+    },
+    "known2-generic-name": {
+      "clarify": 4
+    },
+    "known2-explicit-negation": {
+      "incorrect": 4
+    },
+    "known2-evidence": {
+      "correct": 4
+    },
+    "known2-unassessed-unicode": {
+      "clarify": 4
+    },
+    "known2-tonoplast-property": {
+      "clarify": 2,
+      "incorrect": 2
+    },
+    "known3-explicit-name-not-alias": {
+      "clarify": 3
+    },
+    "known3-explicit-name-alias": {
+      "clarify": 2
+    },
+    "known3-explicit-name-equivalence": {
+      "clarify": 1
+    },
+    "known3-membrane-no-synonym": {
+      "clarify": 1
+    },
+    "known3-membrane-not-membrane": {
+      "incorrect": 1
+    },
+    "fresh-short": {
+      "clarify": 30,
+      "correct": 10
+    },
+    "known-overlap": {
+      "correct": 2
+    },
+    "fresh-wrong": {
+      "clarify": 120,
+      "incorrect": 48
+    },
+    "fresh-partial": {
+      "clarify": 30,
+      "partial": 12
+    },
+    "fresh-alternative": {
+      "clarify": 42
+    },
+    "fresh-contradiction": {
+      "clarify": 30,
+      "incorrect": 12
+    },
+    "fresh-unassessed": {
+      "clarify": 42
+    }
+  },
+  "rawExpectationDifferences": [
+    {
+      "id": "long-correct-01",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "long-correct-02",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "long-correct-03",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "long-correct-04",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "long-correct-05",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "long-correct-06",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "long-correct-07",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "long-correct-08",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "long-correct-09",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "long-correct-10",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "long-correct-11",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "long-correct-12",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "known1-long-correct-01",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "known1-long-correct-02",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "known1-long-correct-03",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "known1-long-correct-04",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "known1-long-correct-05",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "known1-long-correct-06",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "known1-long-correct-07",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "known1-long-correct-08",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "known1-long-correct-09",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "known1-long-correct-10",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "known1-long-correct-11",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "known1-long-correct-12",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "known1-long-correct-13",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "known1-long-correct-14",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "known1-long-correct-15",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "known1-long-correct-16",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "known1-long-correct-17",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "known1-long-correct-18",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "known1-long-correct-19",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "known1-long-correct-20",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "known2-not-generic-name-1",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "known2-not-generic-name-2",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "known2-not-generic-name-3",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "known2-not-generic-name-4",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "known2-tonoplast-property-2",
+      "expected": [
+        "clarify"
+      ],
+      "accepted": [
+        "incorrect"
+      ],
+      "actual": "incorrect"
+    },
+    {
+      "id": "known2-tonoplast-property-3",
+      "expected": [
+        "clarify"
+      ],
+      "accepted": [
+        "incorrect"
+      ],
+      "actual": "incorrect"
+    },
+    {
+      "id": "known3-explicit-name-not-alias-1",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "known3-explicit-name-not-alias-2",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    },
+    {
+      "id": "known3-explicit-name-not-alias-3",
+      "expected": [
+        "correct"
+      ],
+      "accepted": [
+        "correct",
+        "clarify"
+      ],
+      "actual": "clarify"
+    }
+  ],
+  "scope": "process/C01 only; historical raw expectations retained; allowances separate in acceptedFourth",
+  "novelty": {
+    "knownStrings": 6749,
+    "fresh": 40,
+    "unique": 40,
+    "overlaps": []
+  },
+  "guardChecks": [
+    {
+      "id": "missing-cellProfile",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "missing-cellIntegrity",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "missing-observationPhase",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "missing-waterPotential",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "missing-waterPermeability",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "missing-sucroseRetention",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "missing-otherTransport",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "bad-cellProfile",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "bad-cellIntegrity",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "bad-observationPhase",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "bad-sucroseRetention",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "bad-otherTransport",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "impermeable-cellMembrane",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "impermeable-tonoplast",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "potential-equal",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "potential-reverse",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "potential-mixedOrder",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "potential-wrongUnit",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "potential-extra",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "nonfinite-NaN",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "nonfinite-Infinity",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "nonfinite--Infinity",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "extra-material",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "nonempty-model",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "version-taskVersion",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "label-taskVersion-\"\"",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "label-taskVersion-\" bad\"",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "label-taskVersion-\"bad\\u0000\"",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "label-taskVersion-\"aaaaaaaaaaaaaaaaa",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "version-rubricVersion",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "label-rubricVersion-\"\"",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "label-rubricVersion-\" bad\"",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "label-rubricVersion-\"bad\\u0000\"",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "label-rubricVersion-\"aaaaaaaaaaaaaaaaa",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "version-contentVersion",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "label-contentVersion-\"\"",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "label-contentVersion-\" bad\"",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "label-contentVersion-\"bad\\u0000\"",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "label-contentVersion-\"aaaaaaaaaaaaaaaaa",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "version-modelVersion",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "label-modelVersion-\"\"",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "label-modelVersion-\" bad\"",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "label-modelVersion-\"bad\\u0000\"",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "label-modelVersion-\"aaaaaaaaaaaaaaaaa",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "stale-seed",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "stale-phase",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "stale-instance",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "stale-material",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "forged-hash",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "mutated-material-with-old-hash",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "wrong-field-direction",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "wrong-field-volume",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "wrong-field-term",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "cross-task-osmosis",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "cross-task-tonoplast",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "incomplete-attempt",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "complete-tonoplast-attempt",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "help-independent",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "help-hint",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "help-wordbank",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "help-clarified",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "help-solution_viewed",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "unknown-help",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "length-full",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "control-character",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "empty",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "markup",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "extra-response-key",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "non-string",
+      "passed": true,
+      "detail": true
+    }
+  ]
+},
 "cases":[
 {"id":"short-correct-01","group":"short-correct","field":"osmosis","expected":["correct"],"text":"Dieser Vorgang lässt sich mit dem Wort Osmose benennen.","accepted":["correct"],"result":{"assistance":"independent","contextHash":"sha256-v1:569175103500a74583f5031e56091189fcb1414327da588d5877ef39cc171945","criteria":[{"evidence":[{"end":54,"kind":"input_span","start":0,"value":"Dieser Vorgang lässt sich mit dem Wort Osmose benennen"}],"id":"M6.02.C01","reasonCode":"OSMOSIS_CORRECT","status":"correct"}],"feedbackCode":"OSMOSIS_CORRECT","rubricVersion":"review3-rubric-20261023","status":"correct","taskId":"M6.02","taskVersion":"review3-task-20261023","unassessedRelevantText":false},"feedback":"Der Wassertransport durch die selektive Grenze heißt hier Osmose. Das bestätigt die Benennung, nicht die übrigen Teilantworten."},
 {"id":"short-correct-02","group":"short-correct","field":"osmosis","expected":["correct"],"text":"Den Wassertransport würde ich fachsprachlich Osmose nennen.","accepted":["correct"],"result":{"assistance":"independent","contextHash":"sha256-v1:569175103500a74583f5031e56091189fcb1414327da588d5877ef39cc171945","criteria":[{"evidence":[{"end":58,"kind":"input_span","start":0,"value":"Den Wassertransport würde ich fachsprachlich Osmose nennen"}],"id":"M6.02.C01","reasonCode":"OSMOSIS_CORRECT","status":"correct"}],"feedbackCode":"OSMOSIS_CORRECT","rubricVersion":"review3-rubric-20261023","status":"correct","taskId":"M6.02","taskVersion":"review3-task-20261023","unassessedRelevantText":false},"feedback":"Der Wassertransport durch die selektive Grenze heißt hier Osmose. Das bestätigt die Benennung, nicht die übrigen Teilantworten."},

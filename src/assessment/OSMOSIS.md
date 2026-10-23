@@ -147,6 +147,26 @@ Nachweise/Grenzen: `qa/P02b-Dritte-Nachbesserung.md` und
 `qa/p02b-third-review.json`. WebKit läuft getrennt mit unveränderten Standard-
 Tab-Prüfungen und ausgewiesenem Plattformprofil; eine echte iPad-Probe fehlt.
 
+### Vierte Nachbesserung / R2 vom 23.10.2026
+
+Bestätigende Wiederholung und synonyme Wiederbenennung bleiben zwei positive
+Benennungsaussagen mit beiden Originalspannen. „Es/Das ist in Wirklichkeit …“
+erzeugt nur bei einem anderen vorherigen Einzelbegriff einen Kontrast. Die
+Widerspruchsprüfung gleicher IDs in echten Ausschlüssen bleibt bestehen.
+Fachliche Aussagen, Alternativen und ungeprüfte Reste werden nicht zurückgenommen.
+
+Zusätzliche Satzkonstruktionen kombinieren nominale Wortwahl, Teilfragenbezug,
+Benennungsverben und notwendige Schlussverben. Referenzen haben eine begrenzte
+Verschachtelung. Feldobjekte haben Vorrang vor der Interpretation als biologische
+Wiederbenennung; bei expliziten biologischen Begriffen bleiben beide Seiten als
+Gleichsetzungsrelation erhalten. Keine neuen Fachkriterien oder Textfelder.
+
+Nachweis: `qa/P02b-Vierte-Nachbesserung.md`, `qa/p02b-fourth-review.json` und
+`qa/p02b-fourth-results.json`. 176 Haupt-, 34 Diagnose- und 368 bekannte Fälle
+sind Regression; 40 zusätzliche neue Kurzbenennungen sind Selbstprüfung.
+Längere richtige Erklärungen bleiben mit allen gelben Ergebnissen im Nenner.
+WebKit-Standard-Tab-Fehler bleiben offen; weitere Gegenprüfung muss neue Fälle nutzen.
+
 Grundlagen: C, M6.02 in F/`spec/tasks.json`, `TERM_OSMOSIS`, `M6.02.C01`,
 alle 13 unveränderten Redaktionsfälle. Keine vollständige Antwort-Whitelist.
 

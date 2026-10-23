@@ -1,5 +1,8 @@
 # P02b – dritte Nachbesserung, 23.10.2026
 
+Historischer Bericht. Die folgende R2-Gegenprüfung fand eine neue Bestätigungsregression;
+deren Korrektur und aktuelle Ergebnisse stehen in [P02b-Vierte-Nachbesserung.md](P02b-Vierte-Nachbesserung.md).
+
 **Selbstprüfung; keine unabhängige Gegenprüfung, kein Merge, kein P02c und keine Unterrichtsfreigabe.**
 
 Geprüfte Anwendungs-/Testfassung: `afe8d99e4f379733f2a630f995fce02333b0d2d2`. Ausgang war `b9eddd757e4b7cffe04e86006ad4cc3de02682c4`,
