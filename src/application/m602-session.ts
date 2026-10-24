@@ -69,7 +69,11 @@ export function createM602Session(initial: TaskContext, configuration: NamingSes
       namingRequire(seen.every(s => s.seed !== c.seed && snapshotContextData(s.material).json !== snapshotContextData(c.material).json), 'RELABELLED_CASE');
       instances.set(c.instanceId, freshEvents());
     }
-    seen.push(c); context = c; latest = null; for (const f of M602_FIELDS) origins[f] = 'typed'; revision++;
+    // Same-instance material changes retain the visible draft, including its
+    // actual selection origin. A fresh/returned draft starts with typed input.
+    seen.push(c); context = c; latest = null;
+    if (mode !== 'same_instance') for (const f of M602_FIELDS) origins[f] = 'typed';
+    revision++;
   }
   function record(outcome: M602Outcome): AttemptRecord {
     namingRequire(issued.get(outcome.submission.attemptId) === outcome && latest === outcome, 'UNISSUED_M602');

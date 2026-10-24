@@ -80,7 +80,9 @@ it('keeps actual field-specific help and whole-instance assistance, including co
   s.help('direction', 'solution_viewed'); s.edit('direction'); o = s.submit(s.makeSubmission(m602Input().answers, [])); expect(o.support.assistance).toBe('solution_viewed');
   const receipt = s.record(o), progress = appendAttempt(parseProgress({ schemaVersion: 1, contentVersion: o.submission.context.contentVersion, attempts: [] }), receipt);
   expect(getAttemptOutcome(progress, receipt.attemptId, o.submission.context).independent).toBe(false); expect(getAttemptOutcome(progress, receipt.attemptId, o.submission.context).successful).toBe(false);
-  s.activate(m602Context({ seed: 'state-changed' }), 'same_instance'); expect(s.submit(s.makeSubmission(m602Input().answers, [])).support.assistance).toBe('solution_viewed');
+  s.activate(m602Context({ seed: 'state-changed' }), 'same_instance');
+  const changed = s.submit(s.makeSubmission(m602Input().answers, []));
+  expect(changed.support.assistance).toBe('solution_viewed'); expect(changed.fieldSupport.volume.origin).toBe('wordbank_selection');
 });
 it('inherits the repaired R9 boundary: a repeated B after unsaved help and reload never restores trust', () => {
   const a = m602Context(), b = m602Context({ instanceId: 'B', seed: 'B', material: { ...a.material, waterPotential: { unit: 'Pa', vacuole: -100000, cytosol: -300000, external: -701000 } } });

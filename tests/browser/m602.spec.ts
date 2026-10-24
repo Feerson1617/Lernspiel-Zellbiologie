@@ -108,6 +108,14 @@ test('actual keyboard and touch help chain, field provenance, copied solution, d
   await page.getByRole('button', { name: 'Materialzustand wechseln', exact: true }).click(); await expect(result(page)).toHaveAttribute('data-status', 'technical');
   await expect(page.getByRole('region', { name: 'Versuchsverlauf', exact: true })).toContainText('Veraltet');
   await check(page).click(); await expect(result(page)).toContainText('Lösung angesehen');
+  // Select again, retain that draft through a material change, then actually type.
+  await page.getByRole('button', { name: 'Hinweis: Vakuolenvolumen', exact: true }).click();
+  await page.getByRole('button', { name: 'Wortbank: Vakuolenvolumen', exact: true }).click();
+  await page.getByRole('button', { name: 'Übernehmen Vakuolenvolumen: nimmt ab', exact: true }).click();
+  await page.getByRole('button', { name: 'Materialzustand wechseln', exact: true }).click(); await check(page).click();
+  expect(await page.evaluate(() => (window as unknown as LabWindow).lab.session.getState().latest?.fieldSupport.volume.origin)).toBe('wordbank_selection');
+  await page.locator('#m602-volume').fill('kleiner'); await check(page).click();
+  expect(await page.evaluate(() => (window as unknown as LabWindow).lab.session.getState().latest?.fieldSupport.volume.origin)).toBe('typed');
   await page.screenshot({ path: info.outputPath('m602-help-stale.png'), fullPage: true });
 });
 for (const navigation of ['reload', 'back']) for (const fault of ['', 'quota', 'denied']) test(`R9 unsubmitted B after ${navigation}, storage ${fault || 'normal'}: no restored independence`, async ({ page, baseURL }) => {
