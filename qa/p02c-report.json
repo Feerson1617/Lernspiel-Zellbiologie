@@ -1,0 +1,120 @@
+{
+  "kind": "Own self-check, not independent acceptance",
+  "implementationCommit": "443eb669a7fe1ac4fae8ac14ab0b66bcd0ecb3b5",
+  "phaseABaseFrozen": "09d2cd18e50cad22b035b2fe5e23e9bcfa94ed72",
+  "createdAtUTC": "2026-10-24T13:20:01.636590+00:00",
+  "environment": {
+    "node": "24.19.0",
+    "npm": "11.9.0",
+    "python": "3.12.14",
+    "jsonschema": "4.26.0",
+    "systemChromium": "154.0.8037.57",
+    "profiles": [
+      "1440x1000 desktop",
+      "820x1180 touch emulation",
+      "390x844 touch emulation"
+    ]
+  },
+  "counts": {
+    "unit": {
+      "numTotalTests": 17462,
+      "numPassedTests": 17462,
+      "numFailedTests": 0,
+      "numPendingTests": 0
+    },
+    "content": {
+      "numTotalTests": 263,
+      "numPassedTests": 263,
+      "numFailedTests": 0,
+      "numPendingTests": 0
+    },
+    "build": {
+      "numTotalTests": 53,
+      "numPassedTests": 53,
+      "numFailedTests": 0,
+      "numPendingTests": 0
+    },
+    "legacy": {
+      "numTotalTests": 4,
+      "numPassedTests": 0,
+      "numFailedTests": 4,
+      "numPendingTests": 0
+    }
+  },
+  "localP02cBrowser": {
+    "startTime": "2026-10-24T13:16:30.710Z",
+    "duration": 32096.303,
+    "expected": 36,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "concept": {
+    "passed": 694,
+    "failed": 0,
+    "gameRuntimeTests": false
+  },
+  "ownCases": {
+    "direction": {
+      "total": 106,
+      "completeDenominator": 63,
+      "completeCorrect": 63,
+      "rate": 1,
+      "semanticCompleteDenominator": 27,
+      "mismatches": [],
+      "falseGreen": [],
+      "falseRed": []
+    },
+    "volume": {
+      "total": 98,
+      "completeDenominator": 60,
+      "completeCorrect": 60,
+      "rate": 1,
+      "semanticCompleteDenominator": 24,
+      "mismatches": [],
+      "falseGreen": [],
+      "falseRed": []
+    }
+  },
+  "editorial": {
+    "count": 50,
+    "mismatches": []
+  },
+  "publication": {
+    "protectedFilesUnchanged": 21,
+    "distFiles": 4,
+    "localReferences": 3,
+    "base": "/Lernspiel-Zellbiologie/",
+    "distByteIdenticalToFrozenP02b": true
+  },
+  "commands": {
+    "typecheck": "npm run check:types; also repeated during build",
+    "localComponents": [
+      "npm run check:spec",
+      "npm run test:unit",
+      "npm run test:content",
+      "npm run test:build",
+      "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npx playwright test tests/browser/m602.spec.ts",
+      "npm run report:naming",
+      "npm run report:m602"
+    ],
+    "legacy": "npm run test:legacy: exit 1, four original failures unchanged",
+    "fullChromium": "Final complete run and its exact-head CI evidence linked in PR; not inferred from the 36-case targeted run.",
+    "fullWebkit": "No local binary. WEBKIT_SUITE=all in actual macOS CI; final counts linked to exact head in PR."
+  },
+  "preparationFailures": [
+    "Initial relations: 2 of 264 tests failed; code fixed without changing frozen Soll.",
+    "Initial DOM run: 6 failed, 27 passed, due case-sensitive wording and missing hint before wordbank in the test.",
+    "One local full command without Chromium path aborted; one subsequent command aborted to preserve actual selection origin before completion. Neither is a pass."
+  ],
+  "finalReports": "qa/generated (ignored); immutable evidence archive outside repository and exact CI head/run URLs in PR",
+  "open": [
+    "Independent expert countercheck with new Soll/cases",
+    "Real Safari/iPad, OSK/rotation, learner and teaching trial",
+    "Unknown language outside bounded T2 requires clarification",
+    "Four deliberately red historical sentence-contract gates"
+  ],
+  "independentAcceptance": false,
+  "merge": false,
+  "deployment": false
+}

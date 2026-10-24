@@ -2,7 +2,7 @@ name: Build and publish GitHub Pages
 
 on:
   pull_request:
-    branches: [main]
+    branches: [main, feature/p02b-osmose-korrektor]
   push:
     branches: [main]
 
@@ -37,6 +37,7 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: npm run check
       - run: npm run report:naming
+      - run: npm run report:m602
       - name: Report actual build-gate counts
         if: always()
         run: |

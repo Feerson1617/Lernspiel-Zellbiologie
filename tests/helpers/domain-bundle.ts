@@ -28,6 +28,11 @@ export async function buildDomainModule(): Promise<string> {
           `export * from ${JSON.stringify(join(root, 'src/assessment/naming-v1.ts'))};`,
           `export * from ${JSON.stringify(join(root, 'src/application/naming-session.ts'))};`,
           `export * from ${JSON.stringify(join(root, 'src/ui/naming-lab.ts'))};`,
+          `export * from ${JSON.stringify(join(root, 'src/domain/m602-contract.ts'))};`,
+          `export * from ${JSON.stringify(join(root, 'src/assessment/m602-relations.ts'))};`,
+          `export * from ${JSON.stringify(join(root, 'src/assessment/m602.ts'))};`,
+          `export * from ${JSON.stringify(join(root, 'src/application/m602-session.ts'))};`,
+          `export * from ${JSON.stringify(join(root, 'src/ui/m602-lab.ts'))};`,
         ].join('\n');
       },
     }],
