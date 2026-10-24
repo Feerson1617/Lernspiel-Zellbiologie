@@ -1,0 +1,16 @@
+[
+  {
+    "from": "tests/content/p02b-r6.test.ts",
+    "to": "tests/legacy/p02b-r6-quality.test.ts",
+    "testBodySHA256": "d897d376f45803a1dd96288ce4b5329c9ee0f709789c93312a91b88d45238116",
+    "sourceCommit": "f67e86f096d5cb47386c50f934e43f519ff80cb6",
+    "reason": "Approved versioned supersession. Assertion body unchanged; actual failing separate test:legacy required."
+  },
+  {
+    "from": "tests/content/p02b-r7.test.ts",
+    "to": "tests/legacy/p02b-r7-quality.test.ts",
+    "testBodySHA256": "71e6e33173609022d07fb080e0c455912b1b3611fa3509a2c817693ab0b0723e",
+    "sourceCommit": "f67e86f096d5cb47386c50f934e43f519ff80cb6",
+    "reason": "Approved versioned supersession. Assertion body unchanged; actual failing separate test:legacy required."
+  }
+]

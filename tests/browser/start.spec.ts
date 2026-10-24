@@ -19,14 +19,18 @@ test('loads the built start page without external requests, broken assets or bro
   expect(await page.locator('canvas, iframe, input, textarea').count()).toBe(0);
 });
 
-test('offers working keyboard navigation and a readable responsive layout', async ({ page }, testInfo) => {
+test('offers working keyboard navigation and a readable responsive layout', async ({ page, browserName }, testInfo) => {
   await page.goto('./');
-  await page.keyboard.press('Tab');
+  // R8: macOS WebKit uses Option-Tab for links with default platform preferences.
+  // Assert real keyboard focus and Enter, never replace navigation with .focus().
+  const key = browserName === 'webkit' && process.platform === 'darwin' ? 'Alt+Tab' : 'Tab';
+  await testInfo.attach('start-navigation-platform.json', { body: JSON.stringify({ host: process.platform, engine: browserName, selectedKey: key }), contentType: 'application/json' });
+  await page.keyboard.press(key);
   await expect(page.getByRole('link', { name: 'Zum Inhalt', exact: true })).toBeFocused();
   await page.keyboard.press('Enter');
   await expect(page.getByRole('main')).toBeFocused();
   const link = page.getByRole('link', { name: 'Zum Entwicklungsstand' });
-  await link.focus();
+  await page.keyboard.press(key);
   await expect(link).toBeFocused();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL(/#entwicklungsstand$/);

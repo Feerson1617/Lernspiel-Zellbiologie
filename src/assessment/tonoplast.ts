@@ -1,18 +1,18 @@
-import type { Assistance, Status, VersionInfo } from '../domain/contracts.ts';
-import { ContextContractError, readDataRecord } from '../domain/context-data.ts';
-import { createContextBinding, parseTaskContext } from '../domain/task-context.ts';
-import type { TaskContext } from '../domain/task-context.ts';
-import { AssessmentContractError, parseEvaluationResult, requireAssistance, requireAssessmentLabel } from './result.ts';
-import type { EvaluationResult } from './result.ts';
+import type { Status, VersionInfo } from '../domain/contracts.ts';
 import type { TonoplastFeedbackCode } from './feedback.ts';
 import { parseTermAnswer } from './term-grammar.ts';
-import type { TermClause, TermMeaning, TermRef } from './term-grammar.ts';
-import { isSupportedText, MAX_ANSWER_LENGTH, tokenizeText } from './text.ts';
+import type { TermClause, TermGrammarProfile, TermMeaning, TermRef } from './term-grammar.ts';
+import { tokenizeText } from './text.ts';
+import { createBoundTermEvaluator } from './term-evaluator.ts';
 
 export const TONOPLAST_TASK_ID = 'Z1.02';
 export const TONOPLAST_FIELD_ID = 'term';
 export const TONOPLAST_RUBRIC_ID = 'TERM_TONOPLAST';
 export const TONOPLAST_CRITERION_ID = 'Z1.02.C01';
+const PROFILE: TermGrammarProfile = { namingReferences: { names: [['m', 'membranname', 'membrannamens'], ['f', 'membranbezeichnung', 'membranbezeichnung'], ['f', 'membranbenennung', 'membranbenennung']], qualifiers: [['um', 'die', 'vakuole'], ['um', 'den', 'vakuolenraum']], nouns: [
+  ['f', 'membran', 'membran'], ['f', 'grenze', 'grenze'], ['f', 'struktur', 'struktur'],
+  ['f', 'vakuolengrenze', 'vakuolengrenze'], ['f', 'membran um die vakuole', 'membran um die vakuole'],
+] } };
 
 // Anatomy phrases are concept descriptions, not complete accepted answer strings.
 const VACUOLE_BOUNDARY_FORMS: readonly (readonly string[])[] = [
@@ -109,7 +109,7 @@ function assessClause(clause: TermClause): Decision {
   const ids = [clause.subject.id, clause.object.id];
   // Being a membrane is a true property; "another name for membrane" claims a
   // broader synonymy. Never erase that distinction to manufacture green.
-  if (clause.kind === 'synonymy' && ids.includes('boundary')) return unknown();
+  if (ids.includes('boundary') && (clause.kind === 'synonymy' || clause.relation === 'equivalence' || clause.relation === 'designation')) return unknown();
   if (!ids.includes('tonoplast') && !ids.includes('vacuole_boundary')) return unknown();
   const sameBoundary = ids.every((id) => id === 'tonoplast' || id === 'boundary' || id === 'vacuole_boundary');
   // A generic membrane as subject is not an identification of THIS marked membrane.
@@ -142,46 +142,20 @@ function combine(decisions: readonly Decision[]): Decision {
 
 /** Caller binds this implementation to explicit versions; none are silently invented. */
 export function createTonoplastEvaluator(versions: VersionInfo) {
-  const record = readDataRecord(versions);
-  const fields = ['taskVersion', 'rubricVersion', 'contentVersion', 'modelVersion'] as const;
-  if (Object.keys(record).length !== fields.length || !fields.every((key) => Object.hasOwn(record, key))) throw new AssessmentContractError();
-  const expected: Record<string, string> = {};
-  for (const field of fields) { requireAssessmentLabel(record[field]); expected[field] = record[field]; }
-  const boundVersions = Object.freeze(expected) as unknown as VersionInfo;
-
-  function evaluate(context: TaskContext, response: unknown, assistance: Assistance): EvaluationResult {
-    // Invalid context/assistance cannot yield an honest bound result: explicit contract error.
-    const active = parseTaskContext(context);
-    requireAssistance(assistance);
-    function result(value: Decision, text = '', spans: readonly Readonly<{ start: number; end: number }>[] = []): EvaluationResult {
-      return parseEvaluationResult({ ...createContextBinding(active), status: value.status,
-        criteria: [{ id: TONOPLAST_CRITERION_ID, status: value.status, reasonCode: value.code,
-          evidence: spans.map(({ start, end }) => ({ kind: 'input_span', start, end, value: text.slice(start, end) })) }],
-        unassessedRelevantText: value.unassessed, assistance, feedbackCode: value.code });
-    }
-    if (active.taskId !== TONOPLAST_TASK_ID) return result(decision('technical', 'TONOPLAST_WRONG_FIELD'));
-    if (fields.some((field) => active[field] !== boundVersions[field])) return result(decision('technical', 'TONOPLAST_VERSION'));
-    if (active.material['highlightedStructureId'] !== 'tonoplast') return result(decision('technical', 'TONOPLAST_CONTEXT'));
-    let input: Readonly<Record<string, unknown>>;
-    try { input = readDataRecord(response); }
-    catch (error) {
-      if (error instanceof ContextContractError) return result(decision('technical', 'TONOPLAST_TECHNICAL_INPUT', true));
-      throw error;
-    }
-    if (Object.keys(input).length !== 2 || !Object.hasOwn(input, 'fieldId') || !Object.hasOwn(input, 'text')) return result(decision('technical', 'TONOPLAST_TECHNICAL_INPUT', true));
-    if (input['fieldId'] !== TONOPLAST_FIELD_ID) return result(decision('technical', 'TONOPLAST_WRONG_FIELD'));
-    const text = input['text'];
-    if (typeof text !== 'string') return result(decision('technical', 'TONOPLAST_TECHNICAL_INPUT', true));
-    if (text.length > MAX_ANSWER_LENGTH) return result(decision('technical', 'TONOPLAST_TOO_LONG', true));
-    if (!isSupportedText(text)) return result(decision('technical', 'TONOPLAST_TECHNICAL_INPUT', true));
-    if (text.trim() === '') return result(decision('empty', 'TONOPLAST_EMPTY'));
-    const parsed = parseTermAnswer(tokenizeText(text), MEANINGS);
-    if (!parsed.complete) return result(unknown(), text, [{ start: 0, end: text.length }]);
-    if (parsed.clauses.every((clause) => clause.kind === 'name' && !clause.negated)) {
-      const ids = new Set(parsed.clauses.flatMap((clause) => clause.kind === 'name' ? clause.terms.map((term) => term.id) : []).filter((id) => id !== 'boundary' && id !== 'vacuole_boundary'));
-      if (ids.size > 1) return result(decision('clarify', 'TONOPLAST_COMPETING'), text, parsed.clauses);
-    }
-    return result(combine(parsed.clauses.map(assessClause)), text, parsed.clauses);
-  }
-  return Object.freeze({ taskId: TONOPLAST_TASK_ID, fieldId: TONOPLAST_FIELD_ID, rubricId: TONOPLAST_RUBRIC_ID, versions: boundVersions, evaluate });
+  const evaluator = createBoundTermEvaluator(versions, {
+    taskId: TONOPLAST_TASK_ID, fieldId: TONOPLAST_FIELD_ID, criterionId: TONOPLAST_CRITERION_ID,
+    supportsContext: (active) => active.material['highlightedStructureId'] === 'tonoplast',
+    codes: { wrongField: 'TONOPLAST_WRONG_FIELD', version: 'TONOPLAST_VERSION', context: 'TONOPLAST_CONTEXT',
+      input: 'TONOPLAST_TECHNICAL_INPUT', tooLong: 'TONOPLAST_TOO_LONG', empty: 'TONOPLAST_EMPTY' },
+    assessText(text) {
+      const parsed = parseTermAnswer(tokenizeText(text), MEANINGS, PROFILE);
+      if (!parsed.complete) return { ...unknown(), spans: [{ start: 0, end: text.length }] };
+      if (parsed.clauses.every((clause) => clause.kind === 'name' && !clause.negated)) {
+        const ids = new Set(parsed.clauses.flatMap((clause) => clause.kind === 'name' ? clause.terms.map((term) => term.id) : []).filter((id) => id !== 'boundary' && id !== 'vacuole_boundary'));
+        if (ids.size > 1) return { ...decision('clarify', 'TONOPLAST_COMPETING'), spans: parsed.evidence };
+      }
+      return { ...combine(parsed.clauses.map(assessClause)), spans: parsed.evidence };
+    },
+  });
+  return Object.freeze({ taskId: TONOPLAST_TASK_ID, fieldId: TONOPLAST_FIELD_ID, rubricId: TONOPLAST_RUBRIC_ID, ...evaluator });
 }

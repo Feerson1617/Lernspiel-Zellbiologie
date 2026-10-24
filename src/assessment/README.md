@@ -1,4 +1,17 @@
-# Bewertungskern P02a – ausschließlich Z1.02
+# Legacy-Bewertungskern P02a/P02b – Satzvertrag
+
+Seit dem genehmigten Option-B-Auftrag gilt für neue Begriffseingaben der
+separate [Vertrag 1.0.0 / API](NAMING.md). Der hier dokumentierte Satzkorrektor
+bleibt unverändert als Legacy-Regressionsbestand erhalten; seine alten
+Qualitätsgates sind weiterhin rot. Neue Aufgabenversionslabels dürfen den
+isolierten Ergebnisadapter unten nicht verwenden. Die neue Testansicht ist
+keine öffentliche Missionsoberfläche und keine Unterrichtsfreigabe.
+
+P02b ergänzt [M6.02/process](OSMOSIS.md) mit eigenem Feldprofil und eigener
+Fachregel. `term-evaluator.ts` ist die gemeinsame Eingabe-/Kontexthülle;
+`term-grammar.ts` bleibt der gemeinsame Parser. Hier stehen die unverändert
+geltenden Tonoplast-Regeln. Die gemeinsame Fortschrittsübergabe akzeptiert nur
+die vollständig implementierte Z1.02; ein Osmose-Teilfeld ist keine Gesamtaufgabe.
 
 **Codex-Selbstprüfung, keine unabhängige Gegenprüfung und keine Unterrichtsfreigabe.**
 Die öffentliche Startseite lädt/benutzt den Korrektor nicht. Keine Bewertung
@@ -188,4 +201,45 @@ Satzkonstruktionen benötigen Klärung. Andere biologische Behauptungen werden
 nicht mitbestätigt. Die Tests einschließlich Fehlerregister stehen in
 `qa/P02a.md` und `qa/p02a-review.json`. Keine unabhängige 95-%-Erkennungsrate oder
 reale Lerngruppenpassung behauptet. Gegenprüfung und echte Geräteprobe stehen
-aus. **P02b ist nicht Bestandteil dieser Phase.**
+aus. Der zusätzliche P02b-Vertrag steht separat in `OSMOSIS.md`.
+
+### R4: begrenzte Satzbezüge und Negationsbereich
+
+Gemeinsame Syntax ergänzt Feld-/Namensgruppen, ausdrückliche Zweifel an der
+Benennung, Verbendstellungen und vorangestellte Begriffe. Fachprofilgebundene
+Namensnomen werden über `NamingReferences.names` getrennt übergeben; das ist
+keine zusätzliche fachliche Lösung. Bereits negative Synonyme erreichen auch
+bei „und nicht“ die Ausschlussschleife. Genau zwei ausdrücklich tentative
+Fragen mit verschiedenen Vorschlägen bleiben offen, ohne einzelne falsche
+Fragen zu neutralisieren. Aktive Wahl/Originalevidenz in naming-choice bleibt
+unverändert. Bericht und sämtliche offenen ursprünglichen Sollabweichungen:
+`qa/P02b-Sechste-Nachbesserung.md` / `qa/p02b-r4-results.json`.
+
+### R5: Benennungsrollen und tentative Fragepaare
+
+Finite Dativzuweisung, Benennungsverben, Namensnomen/-adjektive und Wortstellungen
+werden feldbezogen zusammengesetzt. Ein Index fester Starttokens ändert weder
+Slots noch längstes Präfix oder Pflichtendungen. Zwei vollständig gelesene
+„Vielleicht …?“-Benennungsfragen mit unterschiedlichen Konzepten oder Polaritäten
+bleiben in beiden Reihenfolgen clarify. Einzelne falsche Fragen, bestimmte
+Ausschlüsse und zusätzliche falsche wissenschaftliche Prädikate bleiben getrennt.
+Zwei ursprüngliche eigene R4-Frage-Sollwerte stehen ausdrücklich neben der
+revidierten Lesart; alle gelieferten Rohtexte/IDs/Sollwerte bleiben unverändert.
+Begrenzter Ausnahmeumfang, keine allgemeine Interpretation von Fragefolgen.
+Bericht: `qa/P02b-Siebte-Nachbesserung.md`; alle offenen ursprünglichen Sollwerte
+in `qa/p02b-r5-results.json`. Keine unabhängige Freigabe. Der reviewbare engere
+Vertrag in `review/naming-input-0.2-decision.md` bleibt ein Entwurf.
+
+### R6: begrenzte Reparatur und erreichte Entscheidungsgrenze
+
+Feldgebundene Benennungsrollen, Genitivbezüge („Art des Wassertransports“),
+abgeschlossene Wortwahl-Relativsätze und lokale Höflichkeit „, danke“ ergänzen
+den bestehenden Vertrag. Originaltokens, Negation und sämtliche Folgesätze
+bleiben erhalten. `naming-choice.ts` und die Fragepaar-Regeln sind unverändert.
+Die 60 übernommenen R6-Kurzantworten bestehen; die vorher eingefrorenen eigenen
+60 erreichen nur 56/60. Das 95-%-Gate bleibt rot, ohne weitere Musterergänzung
+für die vier gelben Sätze. Alle 3.580 tatsächlich gemessenen Objekte samt
+Original-Soll und ausdrücklich technischen Lückensperren stehen in
+`qa/p02b-r6-results.json`, Grenzen in `qa/P02b-Achte-Nachbesserung.md`.
+`review/R6-Eingabeempfehlung.md` empfiehlt einen Fachbegriff-Vertrag mit optionaler
+Klärung zur Entscheidung. Kein Formatwechsel, keine fachliche Abnahme.

@@ -9,6 +9,9 @@ on:
 permissions:
   contents: read
 
+env:
+  PR_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+
 concurrency:
   group: pages-${{ github.ref }}
   cancel-in-progress: true
@@ -33,11 +36,109 @@ jobs:
       - run: python -m pip install -r requirements-spec.txt
       - run: npx playwright install --with-deps chromium
       - run: npm run check
+      - run: npm run report:naming
+      - name: Report actual build-gate counts
+        if: always()
+        run: |
+          node --input-type=module <<'JS'
+          import { readFileSync } from 'node:fs';
+          for (const suite of ['unit', 'content', 'build', 'playwright']) {
+            try {
+              const r = JSON.parse(readFileSync(`qa/generated/${suite}.json`, 'utf8'));
+              const stats = r.stats ?? { passed: r.numPassedTests, failed: r.numFailedTests, pending: r.numPendingTests, total: r.numTotalTests };
+              console.log(`::notice title=Actual ${suite} results::${JSON.stringify({ prHead: process.env.PR_HEAD_SHA, executionSha: process.env.GITHUB_SHA, suite, ...stats })}`);
+            } catch {
+              console.log(`::warning title=Actual ${suite} unavailable::No completed report; not a pass.`);
+            }
+          }
+          JS
+      - name: Retain self-check reports and browser images (synthetic test data only)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: chromium-self-check
+          path: |
+            qa/generated/*.json
+            test-results/**/*.png
       - name: Upload only the inspected production artifact
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
+
+  webkit:
+    if: github.event_name == 'pull_request'
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - run: python -m pip install -r requirements-spec.txt
+      - run: npx playwright install webkit
+      - run: npm run build
+      - name: Complete WebKit suite (WEBKIT_SUITE=all)
+        id: webkit_all
+        continue-on-error: true
+        env:
+          WEBKIT_SUITE: all
+        run: npx playwright test --config=playwright.webkit.config.ts
+      - name: Report actual WebKit counts and retain a failed gate for any failed tests
+        if: always()
+        run: |
+          node --input-type=module <<'JS'
+          import { readFileSync } from 'node:fs';
+          let failed = false;
+          for (const suite of ['all']) {
+            try {
+              const r = JSON.parse(readFileSync(`qa/generated/webkit-${suite}.json`, 'utf8'));
+              const s = r.stats;
+              const keyboard = [];
+              const timings = [];
+              const failedTests = [];
+              function collect(value) {
+                if (!value || typeof value !== 'object') return;
+                if (value.name === 'keyboard-platform.json' && typeof value.body === 'string') {
+                  keyboard.push(JSON.parse(Buffer.from(value.body, 'base64').toString('utf8')));
+                }
+                if (value.name === 'runtime-parity-timing.json' && typeof value.body === 'string') {
+                  timings.push(JSON.parse(Buffer.from(value.body, 'base64').toString('utf8')));
+                }
+                if (typeof value.title === 'string' && Array.isArray(value.tests)) {
+                  for (const test of value.tests) {
+                    if (test.status === 'unexpected') {
+                      failedTests.push({ title: value.title, file: value.file, project: test.projectName });
+                    }
+                  }
+                }
+                Object.values(value).forEach(collect);
+              }
+              collect(r.suites);
+              const result = { prHead: process.env.PR_HEAD_SHA, executionSha: process.env.GITHUB_SHA, platform: process.platform, arch: process.arch, node: process.version, suite, ...s, keyboard, failedTests, timings };
+              console.log(`::notice title=WebKit ${suite} actual results::${JSON.stringify(result)}`);
+              if (s.unexpected || s.skipped || s.flaky || r.errors?.length) failed = true;
+            } catch (error) {
+              failed = true;
+              console.log(`::error title=WebKit ${suite} unavailable::${String(error)}`);
+            }
+          }
+          if (failed) process.exit(1);
+          JS
+      - name: Retain actual WebKit reports and browser images
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: webkit-self-check
+          path: |
+            qa/generated/webkit-*.json
+            test-results/**/*.png
 
   deploy:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'

@@ -1,0 +1,608 @@
+{
+  "reviewId": "P02b-second-revision-self-check-2026-10-22",
+  "reviewKind": "self_check",
+  "commitSha": "29d12d14d1ade8cdabdad50c67879234f0138482",
+  "sourceVersions": [
+    "Konzept 1.0 / 22.10.2026",
+    "Prior PR #6 head 32cf4fcb1756ea41ab6d99abef725865151d7bd3",
+    "Main b155936443745d98c8133788872c9c5ff44d7fb2; 21 protected source files unchanged",
+    "AGENTS.md, C sections 4/5/9/10, F M6.02, spec tasks/text-rubrics/contracts/result schema",
+    "M6.02/process/C01 only; Z1.02 regression; no scientific expectations or model values changed"
+  ],
+  "environment": {
+    "testedAtLocal": "2026-10-22T22:07:36+02:00",
+    "reportTimeZone": "Europe/Berlin",
+    "os": "Linux x86_64",
+    "node": "v24.19.0",
+    "npm": "11.9.0",
+    "python": "3.12.14",
+    "jsonschema": "4.26.0",
+    "browser": {
+      "version": "Chromium 154.0.8037.57",
+      "profiles": [
+        "desktop-chromium",
+        "tablet-chromium",
+        "mobile-chromium"
+      ],
+      "newCasesPerProfile": 256,
+      "newCaseEvaluations": 768,
+      "scope": "Real Vite bundle and both runtime APIs; all complete result objects compared with Node, original evidence, feedback and status descriptors. No visible task UI or real device claim."
+    },
+    "externalEnvironmentDifference": "The supplied review used macOS arm64, Node 24.21.0/npm 11.19.0, Python 3.9.6/jsonschema 4.25.1 and Chromium 156. This cloud run used the exact required jsonschema 4.26.0 and Python 3.12.14; no substitution.",
+    "technicalSuites": {
+      "unit": 1624,
+      "content": 177,
+      "build": 14,
+      "browser": 48
+    },
+    "concept": {
+      "passed": 694,
+      "failed": 0,
+      "scope": "Editorial concept/schema/arithmetic/declaration checks, not 694 runtime biology tests"
+    },
+    "suppliedCorpus": {
+      "cases": 156,
+      "guards": 69,
+      "expectationsUnchanged": true,
+      "baseline": {
+        "short-correct": {
+          "total": 50,
+          "passed": 12,
+          "statuses": {
+            "clarify": 38,
+            "correct": 12
+          }
+        },
+        "long-correct": {
+          "total": 20,
+          "passed": 20,
+          "statuses": {
+            "clarify": 18,
+            "correct": 2
+          }
+        },
+        "wrong-name": {
+          "total": 10,
+          "passed": 10,
+          "statuses": {
+            "incorrect": 8,
+            "clarify": 2
+          }
+        },
+        "contradiction": {
+          "total": 15,
+          "passed": 15,
+          "statuses": {
+            "incorrect": 14,
+            "clarify": 1
+          }
+        },
+        "correct-negation": {
+          "total": 10,
+          "passed": 10,
+          "statuses": {
+            "correct": 10
+          }
+        },
+        "unassessed": {
+          "total": 10,
+          "passed": 10,
+          "statuses": {
+            "clarify": 10
+          }
+        },
+        "partial": {
+          "total": 5,
+          "passed": 5,
+          "statuses": {
+            "partial": 5
+          }
+        },
+        "ambiguous": {
+          "total": 6,
+          "passed": 6,
+          "statuses": {
+            "clarify": 6
+          }
+        },
+        "tonoplast-correct": {
+          "total": 15,
+          "passed": 15,
+          "statuses": {
+            "correct": 12,
+            "clarify": 3
+          }
+        },
+        "tonoplast-wrong": {
+          "total": 10,
+          "passed": 10,
+          "statuses": {
+            "incorrect": 10
+          }
+        },
+        "tonoplast-unassessed": {
+          "total": 5,
+          "passed": 5,
+          "statuses": {
+            "clarify": 5
+          }
+        }
+      },
+      "final": {
+        "short-correct": {
+          "total": 50,
+          "passed": 50,
+          "statuses": {
+            "correct": 50
+          }
+        },
+        "long-correct": {
+          "total": 20,
+          "passed": 20,
+          "statuses": {
+            "clarify": 18,
+            "correct": 2
+          }
+        },
+        "wrong-name": {
+          "total": 10,
+          "passed": 10,
+          "statuses": {
+            "incorrect": 10
+          }
+        },
+        "contradiction": {
+          "total": 15,
+          "passed": 15,
+          "statuses": {
+            "incorrect": 15
+          }
+        },
+        "correct-negation": {
+          "total": 10,
+          "passed": 10,
+          "statuses": {
+            "correct": 10
+          }
+        },
+        "unassessed": {
+          "total": 10,
+          "passed": 10,
+          "statuses": {
+            "clarify": 10
+          }
+        },
+        "partial": {
+          "total": 5,
+          "passed": 5,
+          "statuses": {
+            "partial": 5
+          }
+        },
+        "ambiguous": {
+          "total": 6,
+          "passed": 6,
+          "statuses": {
+            "clarify": 6
+          }
+        },
+        "tonoplast-correct": {
+          "total": 15,
+          "passed": 15,
+          "statuses": {
+            "correct": 15
+          }
+        },
+        "tonoplast-wrong": {
+          "total": 10,
+          "passed": 10,
+          "statuses": {
+            "incorrect": 10
+          }
+        },
+        "tonoplast-unassessed": {
+          "total": 5,
+          "passed": 5,
+          "statuses": {
+            "clarify": 5
+          }
+        }
+      },
+      "failedCases": [],
+      "failedGuards": [],
+      "sourceCasesSha256": "2c191902371a51cbd78ab8fad1b6a9686589595f0c6d539f331aa86fddfff31a",
+      "sourceRunnerSha256": "e233da725fc4e4d2a8fb037e90f8496562bbaba44128c680c46e9a0028f5e7de",
+      "scope": "Former independent cases now known regressions, reproduced by Codex; this reuse is not an independent check of the fix. Additional 69 guard calls overlap existing regression checks."
+    },
+    "fixedCaseGroups": {
+      "short-correct": {
+        "total": 50,
+        "statuses": {
+          "correct": 50
+        },
+        "passed": 50
+      },
+      "long-correct": {
+        "total": 20,
+        "statuses": {
+          "clarify": 18,
+          "correct": 2
+        },
+        "passed": 20
+      },
+      "wrong-name": {
+        "total": 10,
+        "statuses": {
+          "incorrect": 10
+        },
+        "passed": 10
+      },
+      "contradiction": {
+        "total": 15,
+        "statuses": {
+          "incorrect": 15
+        },
+        "passed": 15
+      },
+      "correct-negation": {
+        "total": 10,
+        "statuses": {
+          "correct": 10
+        },
+        "passed": 10
+      },
+      "unassessed": {
+        "total": 10,
+        "statuses": {
+          "clarify": 10
+        },
+        "passed": 10
+      },
+      "partial": {
+        "total": 5,
+        "statuses": {
+          "partial": 5
+        },
+        "passed": 5
+      },
+      "ambiguous": {
+        "total": 6,
+        "statuses": {
+          "clarify": 6
+        },
+        "passed": 6
+      },
+      "tonoplast-correct": {
+        "total": 15,
+        "statuses": {
+          "correct": 15
+        },
+        "passed": 15
+      },
+      "tonoplast-wrong": {
+        "total": 10,
+        "statuses": {
+          "incorrect": 10
+        },
+        "passed": 10
+      },
+      "tonoplast-unassessed": {
+        "total": 5,
+        "statuses": {
+          "clarify": 5
+        },
+        "passed": 5
+      },
+      "fresh-short": {
+        "total": 60,
+        "statuses": {
+          "correct": 60
+        },
+        "passed": 60
+      },
+      "fresh-long": {
+        "total": 20,
+        "statuses": {
+          "clarify": 17,
+          "correct": 3
+        },
+        "passed": 20
+      }
+    },
+    "recognition": {
+      "knownShort": {
+        "total": 50,
+        "green": 50,
+        "clarify": 0,
+        "incorrect": 0,
+        "rate": 1,
+        "beforeGreen": 12
+      },
+      "freshShort": {
+        "total": 60,
+        "green": 60,
+        "clarify": 0,
+        "incorrect": 0,
+        "rate": 1,
+        "minimum": 0.95,
+        "beforeGreen": 2
+      },
+      "knownLong": {
+        "total": 20,
+        "green": 2,
+        "clarify": 18,
+        "incorrect": 0,
+        "rate": 0.1
+      },
+      "freshLong": {
+        "total": 20,
+        "green": 3,
+        "clarify": 17,
+        "incorrect": 0,
+        "rate": 0.15,
+        "beforeGreen": 1
+      },
+      "knownTonoplastCorrect": {
+        "total": 15,
+        "green": 15,
+        "clarify": 0,
+        "incorrect": 0,
+        "beforeGreen": 12
+      },
+      "allYellowKeptInDenominator": true,
+      "independent": false,
+      "empiricalLearnerSample": false,
+      "novelty": "80 inputs fixed before first execution/runtime edits; NFC/case/punctuation-normalised equality against all own/supplied/editorial fixtures, no overlaps. No assertion of semantic/statistical independence."
+    },
+    "additionalSafety": {
+      "osmosisNamingConstructions": 110,
+      "osmosisCallsPerConstruction": 11,
+      "tonoplastCommonNamingConstructions": 85,
+      "tonoplastCallsPerConstruction": 8,
+      "scope": "False scientific terms, partials, unresolved alternatives, later contradictions even after Danke!, and unassessed relevant suffixes. Does not exhaust every generated word combination."
+    },
+    "schema": {
+      "priorOsmosisActualResults": 409,
+      "priorTonoplastActualResults": 291,
+      "additionalActualResults": 256,
+      "validator": "Python jsonschema 4.26.0; unchanged result schema"
+    },
+    "contextVersions": {
+      "taskVersion": "review-task-20261022",
+      "rubricVersion": "review-rubric-20261022",
+      "contentVersion": "concept-1.0-20261022",
+      "modelVersion": "review-no-simulation"
+    },
+    "illustrativeMaterial": {
+      "cellProfile": "onion_epidermis",
+      "cellIntegrity": "intact",
+      "observationPhase": "early_water_loss_after_solution_change",
+      "waterPotential": {
+        "unit": "Pa",
+        "vacuole": -120000,
+        "cytosol": -350000,
+        "external": -810000
+      },
+      "waterPermeability": {
+        "cellMembrane": true,
+        "tonoplast": true
+      },
+      "sucroseRetention": "largely_retained",
+      "otherTransport": "excluded"
+    },
+    "publication": {
+      "protectedFilesUnchanged": 21,
+      "tasks": 79,
+      "missionRecords": 19,
+      "distFiles": 4,
+      "assetReferences": 3,
+      "base": "/Lernspiel-Zellbiologie/",
+      "distHashes": {
+        "assets/favicon-BBsVGNz0.svg": "aa985a2fdd116dc0dbecda5e953bc794ee0d8b57808ea234e8fce79bae75a37e",
+        "assets/index-92g-guUY.js": "c8006380bebf1dd37080164407046abbce1af76b9264a3fdd12f7bec3e1f7515",
+        "assets/index-D6JBs7Gr.css": "e8a3871aa7485d1b1d7dc1c5d5c99fe725e03cca96102b89a6dfd86848a3cc7e",
+        "index.html": "bfad6ec651669679ca18461711cb577f8ee6b7406456b9fa56f4981468b2d1fa"
+      },
+      "distIdenticalToPreviousHead": true,
+      "newExactAllowlistPaths": 10,
+      "negativeViteBuilds": 7,
+      "archiveCopiedToRepository": false,
+      "privateOriginalComparison": "Original exams/marking schemes unavailable; no fresh semantic or private-file-hash comparison claimed. Reviewed allowlist/history/protected hashes and unchanged dist; no private original was accessed or added."
+    },
+    "githubProtection": {
+      "mainProtected": false,
+      "enforcementLevel": "off",
+      "rulesets": [],
+      "requiredChecks": [],
+      "observedOnBerlin": "2026-10-22",
+      "checkName": "build",
+      "checkApp": "github-actions",
+      "integrationId": 15368,
+      "proposal": "review/main-ruleset-proposal.json",
+      "applied": false,
+      "settingsChanged": false,
+      "scope": "Successful read of branches/main, rulesets and head check-runs; no protection claimed. Activation/effective enforcement still needs separate administrative work."
+    },
+    "preliminaryRuns": [
+      {
+        "file": "qa/generated/p02b-second-before-tests.json",
+        "passed": 156,
+        "failed": 193,
+        "skipped": 0
+      },
+      {
+        "file": "qa/generated/p02b-second-first-fix.json",
+        "passed": 1218,
+        "failed": 10,
+        "skipped": 0
+      },
+      {
+        "file": "qa/generated/p02b-second-second-fix.json",
+        "passed": 1197,
+        "failed": 31,
+        "skipped": 0
+      },
+      {
+        "file": "qa/generated/p02b-second-third-fix.json",
+        "passed": 1226,
+        "failed": 2,
+        "skipped": 0
+      },
+      {
+        "file": "qa/generated/p02b-second-targeted.json",
+        "passed": 1231,
+        "failed": 0,
+        "skipped": 0
+      },
+      {
+        "file": "qa/generated/p02b-second-cross-field.json",
+        "passed": 434,
+        "failed": 0,
+        "skipped": 0
+      },
+      {
+        "file": "qa/generated/p02b-second-conjunction.json",
+        "passed": 435,
+        "failed": 0,
+        "skipped": 0
+      },
+      {
+        "file": "qa/generated/p02b-second-field-scope.json",
+        "passed": 1315,
+        "failed": 0,
+        "skipped": 0
+      },
+      {
+        "file": "qa/generated/p02b-second-field-scope-final.json",
+        "passed": 439,
+        "failed": 1,
+        "skipped": 0
+      },
+      {
+        "file": "qa/generated/p02b-second-field-scope-verified.json",
+        "passed": 440,
+        "failed": 0,
+        "skipped": 0
+      }
+    ],
+    "previousCompleteRun": {
+      "codeCommit": "c9ffcd7e76fcdab284f2fcc7cee544cf78d9b57c",
+      "passed": 1861,
+      "failed": 0,
+      "skipped": 0,
+      "conceptPassed": 694,
+      "reasonForRerun": "The known comma-aber contradiction still clarified. Explicit separator between two complete predicates added, then full regression rerun."
+    },
+    "resolvedFindings": [
+      {
+        "id": "P02b-R2-01",
+        "severity": "P1",
+        "before": "Supplied short correct: 12/50 green, 38 clarify. Own fresh short: 2/60 green, 58 clarify.",
+        "cause": "Rigid prefixes did not compose naming subject, inversion, neutral modifiers and required endings.",
+        "fix": "Separate composable naming fragments, explicit finite modifiers and combined required endings; no answer whitelist or unknown-text deletion.",
+        "fixedIn": "c9ffcd7e76fcdab284f2fcc7cee544cf78d9b57c"
+      },
+      {
+        "id": "P02b-R2-02",
+        "severity": "P2",
+        "before": "Osmose ist passiver Transport, aber Osmose ist aktiver Transport. => clarify",
+        "fix": "Comma conjunctions require complete predicates on both sides; incompatible claims remain incorrect; fragments unknown.",
+        "fixedIn": "1c17f62e1a8a93a500e9b23613de1a685f27e0d2"
+      },
+      {
+        "id": "P02b-R2-04",
+        "severity": "P1",
+        "before": "Four false green Tonoplast process references found by the final scope check on 1c17f62: subordinate der Vorgang, ich nenne als Vorgang, and two process-naming tails.",
+        "fix": "Move process-specific subjects and certainty tails into the osmosis profile; 20 fixed field-scope cases checked through both Node and browser APIs. No supplied expectation changed.",
+        "fixedIn": "29d12d14d1ade8cdabdad50c67879234f0138482"
+      },
+      {
+        "id": "P02b-R2-03",
+        "severity": "P2",
+        "before": "First fix introduced four yellow Tonoplast regression assertions by shorter naming-prefix shadowing.",
+        "fix": "Explicit mit A meine ich B / A ist der Name der B relations retain precedence; old expectations unchanged and full regression green.",
+        "fixedIn": "c9ffcd7e76fcdab284f2fcc7cee544cf78d9b57c"
+      }
+    ],
+    "localEvidenceHashes": {
+      "unit.json": "1e5cc515536d772aeadefe67f333174ba0f817600e06968c7743ca74e5998850",
+      "content.json": "f048f0ff803ad343bcfe797a3cc4add90fee1414790ddfb0a243ae3d6f835714",
+      "build.json": "daecb5aa6430eda5fc2fed1610191692ca31204f2872085e9ff9b216671a3df6",
+      "playwright.json": "cafa827d19d9390ddddc68457a0b6166123ad87507225d3907366a2584e99019",
+      "concept.json": "96b0fe40e0e93ae51647ce633c025f6a254edf2c73cac6e46660bdeef9fdbab4",
+      "p02b-second-before.json": "5f885ec0e6ec79cd076215fa546db19c5b65c2e65debd118955c9735da933ae8",
+      "p02b-second-before-tests.json": "6958be0f98b1664b0199a4e9f6ea264b0881689c20dd37c6e4ad0922913a0e05",
+      "p02b-second-first-fix.json": "67b42642902a7f2e5ae29d28616692037b1eff03afc2772098b2f6cb52891ed4",
+      "p02b-second-second-fix.json": "fe52f1cc222a70e363f8f575f51d4ab2fbdbf248223f645db61e4da9875365f9",
+      "p02b-second-third-fix.json": "01f861cba8d5b453921c7e4e9a6b17fffc6f8f7e3186b135599f554960de3fac",
+      "p02b-second-targeted.json": "c3961e70a57826b838c116316f9fc6544d30596b16735893d7b1c67beec03ecb",
+      "p02b-second-cross-field.json": "6b9a640172bf17efe8de8bec3e5adfad344750a28d526ba9aa119cdb2e1d90cf",
+      "p02b-second-conjunction.json": "a59464c6f3a0c83d3bc2ec702df1477fe10ff5ade481cb028a9898e26f2e24a0",
+      "p02b-second-supplied-final.json": "5f856795fc7658bf2bac77143f2407d828c9782e7ec0901945659d8a76a53aed",
+      "p02b-second-check.log": "647c517fbd1b92d001c5d55a63642584cd416469b24543c8ebde5473e6a78585",
+      "p02b-second-pre-scope-check.log": "5b3d4e3f6f487ac33487852de65d86bf56da6d65f4cf1ce54ba98a27b2187303",
+      "p02b-second-final-check.log": "19f37db1c837ec8083b87928503acbdd4edefd4984c564de191299cca3a1c785",
+      "p02b-second-field-scope-before.json": "0e59f81f4147e64fa9c142d888ed84e0830cf3d9450e64431821f761323aa719",
+      "p02b-second-field-scope.json": "c2be33c1852170134c2928caad57451d93ab947938473d13eda228e836bb57b0",
+      "p02b-second-field-scope-final.json": "5fbe879a53362be8628c6aba3aa8719f127d28db66a3e2c314863588fb42fee6",
+      "p02b-second-field-scope-verified.json": "a9e68a4326fec2432eba188731ec6be2763d62fd6a29307e8f78ed72fac87f8c"
+    },
+    "additionalFieldScope": {
+      "cases": 20,
+      "passed": 20,
+      "falseGreenDiscoveredBeforeFix": 4,
+      "finalStatus": "All expected statuses and unassessed text flags passed; all 20 also in schema/browser tests."
+    },
+    "intermediateScopeRun": {
+      "codeCommit": "1c17f62e1a8a93a500e9b23613de1a685f27e0d2",
+      "technicalPassed": 1862,
+      "failed": 0,
+      "note": "This previous suite did not include the four later diagnosed field-scope false greens; no release was granted."
+    },
+    "publicResultHash": "81b210078631cd1f456ae17c857ccff475e9b937bbe67875eba6eb2534414c1e",
+    "frozenFreshFixtureHash": "a79851273a4277eb5394ae58fa604108899d9a31ffbf5a9edd2b1ca17bf88017",
+    "countsScope": "Full local regression executed with application/test sources exactly at commitSha; only untracked report drafts present. Subsequent report-only commit adds manifests/Markdown and result provenance; schema/publication rechecked, final-head CI required."
+  },
+  "executedCommands": [
+    "node --experimental-transform-types /workspace/attachments/pr6-countercheck/PR6_Gegenpruefung_2026-10-22/run-review.mjs /workspace/Lernspiel-Zellbiologie /workspace/Lernspiel-Zellbiologie/qa/generated/p02b-second-before.json",
+    "npx vitest run tests/unit/p02b-second.test.ts --outputFile=qa/generated/p02b-second-before-tests.json",
+    "npm run check:types",
+    "npx vitest run tests/unit/osmosis.test.ts tests/unit/osmosis-revision.test.ts tests/unit/tonoplast.test.ts tests/unit/tonoplast-revision.test.ts tests/unit/p02b-second.test.ts --outputFile=qa/generated/p02b-second-first-fix.json",
+    "Same five unit files, outputFile qa/generated/p02b-second-second-fix.json and p02b-second-third-fix.json",
+    "npx vitest run tests/unit/p02b-second.test.ts tests/unit/osmosis.test.ts tests/unit/osmosis-revision.test.ts tests/unit/tonoplast.test.ts tests/unit/tonoplast-revision.test.ts tests/content/p02b-second.test.ts --outputFile=qa/generated/p02b-second-targeted.json",
+    "npx vitest run tests/unit/p02b-second.test.ts --outputFile=qa/generated/p02b-second-cross-field.json",
+    "npm run build",
+    "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npx playwright test tests/browser/p02b-second.spec.ts",
+    "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run check",
+    "npx vitest run tests/unit/p02b-second.test.ts --outputFile=qa/generated/p02b-second-conjunction.json",
+    "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run check > qa/generated/p02b-second-final-check.log 2>&1",
+    "node --experimental-transform-types /workspace/attachments/pr6-countercheck/PR6_Gegenpruefung_2026-10-22/run-review.mjs /workspace/Lernspiel-Zellbiologie /workspace/Lernspiel-Zellbiologie/qa/generated/p02b-second-supplied-final.json",
+    "gh api repos/Feerson1617/Lernspiel-Zellbiologie/branches/main",
+    "gh api repos/Feerson1617/Lernspiel-Zellbiologie/rulesets",
+    "gh api repos/Feerson1617/Lernspiel-Zellbiologie/commits/32cf4fcb1756ea41ab6d99abef725865151d7bd3/check-runs",
+    "npx vitest run tests/unit/p02b-second.test.ts tests/content/p02b-second.test.ts --outputFile=qa/generated/p02b-second-field-scope-final.json",
+    "npx vitest run tests/unit/p02b-second.test.ts tests/content/p02b-second.test.ts --outputFile=qa/generated/p02b-second-field-scope-verified.json",
+    "git diff --check",
+    "npm run check:publish",
+    ".venv/bin/python -c 'import json,jsonschema; jsonschema.validate(json.load(open(\"qa/p02b-second-review.json\")),json.load(open(\"spec/review-manifest.schema.json\")))'"
+  ],
+  "caseCounts": {
+    "passed": 1863,
+    "failed": 0,
+    "skipped": 0
+  },
+  "newCases": [
+    "Supplied 156 cases copied unchanged into tests/fixtures/p02b-countercheck-cases.ts; now known regressions",
+    "Own 60 new short naming answers S2-01..S2-60 and 20 longer correct explanations L2-01..L2-20, tests/fixtures/p02b-second-language.ts",
+    "20 field-scope guards, including 4 discovered false green regressions; 110 osmosis construction substitution/suffix tests; 85 shared constructions with separate tonoplast meanings; negation, self-correction, mandatory endings and comma-conjunction guards"
+  ],
+  "blockedChecks": [
+    "Renewed independent countercheck on this fix pending; self-check cannot grant merge or classroom approval",
+    "Real Safari/iPad, WebKit and empirical learner sample not executed",
+    "Visible task/feedback UI remains unimplemented; actual APIs and presentation descriptors tested",
+    "Private originals unavailable; no new semantic/hash comparison against original exam packages",
+    "main branch protection remains absent; proposal prepared, no settings changed"
+  ],
+  "criticalFindings": [],
+  "releaseStatus": "countercheck_pending"
+}

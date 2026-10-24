@@ -1,0 +1,16 @@
+{
+  "contractVersion": "naming-input/1.0.0",
+  "frozenAtUTC": "2026-10-24T07:49:43.962409+00:00",
+  "beforeImplementation": true,
+  "sourceHead": "f67e86f096d5cb47386c50f934e43f519ff80cb6",
+  "interpretation": "Eigenprüfung. Konfigurationen sind keine unabhängigen Schüleräußerungen. Alle correct-Sollfälle je Feld im Nenner, mindestens95%; alle Pflichtstatus exakt, null kritische Fehlfarben. Technisch ungültige Hüllen dürfen explizit zurückgewiesen werden.",
+  "files": {
+    "review/naming-input-1.0.0.md": "1868bb6c2eff8586ea51f852d7007c63f113912212fd4f74b825dfa127aa740d",
+    "tests/fixtures/naming-v1-cases.json": "372ff900cf7ba05913e367d7959eb1bfd9e63f8bad1daef66ee46c1e2c1d31bc",
+    "tests/fixtures/naming-v1-scenarios.json": "3fcac6ee3f616362178e65c680f408eecaefba6a5176e9806c9e71fcd6dabce5"
+  },
+  "counts": {
+    "Z1.02": 132,
+    "M6.02": 128
+  }
+}

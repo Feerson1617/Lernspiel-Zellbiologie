@@ -30,7 +30,24 @@ it('bundles the prepared public catalog without editorial keys, fixtures or deve
   } finally { rmSync(directory, { recursive: true, force: true }); }
 });
 
-it.each(['spec/tasks.json', 'spec/reference-fixtures.json?raw', 'spec/text-rubrics.json?raw'])('rejects a real Vite runtime import from %s before writing output', async (file) => {
+it.each(['spec/tasks.json', 'spec/reference-fixtures.json?raw', 'spec/text-rubrics.json?raw',
+  'tests/fixtures/p02b-countercheck-cases.ts?raw', 'tests/fixtures/p02b-second-language.ts?raw',
+  'review/main-ruleset-proposal.json?raw', 'qa/P02b-Nachbesserung.md?raw',
+  'tests/fixtures/p02b-20261023-cases.ts?raw', 'tests/fixtures/p02b-20261023-fresh.ts?raw',
+  'tests/fixtures/p02b-20261023-r2-cases.ts?raw', 'tests/fixtures/p02b-20261023-r2-fresh.ts?raw',
+  'tests/fixtures/p02b-20261023-r2-additions.ts?raw',
+  'tests/fixtures/p02b-r3-cases.ts?raw', 'tests/fixtures/p02b-r3-fresh.ts?raw',
+  'tests/fixtures/p02b-r4-cases.ts?raw', 'tests/fixtures/p02b-r4-fresh.ts?raw',
+  'tests/fixtures/p02b-r4-boundaries.ts?raw', 'qa/p02b-r4-results.json?raw',
+  'tests/fixtures/p02b-r5-cases.ts?raw', 'tests/fixtures/p02b-r5-fresh.ts?raw',
+  'tests/fixtures/p02b-r5-boundaries.ts?raw', 'qa/p02b-r5-results.json?raw',
+  'tests/fixtures/p02b-r6-cases.ts?raw', 'tests/fixtures/p02b-r6-fresh.ts?raw',
+  'tests/fixtures/p02b-r6-boundaries.ts?raw', 'qa/p02b-r6-results.json?raw',
+  'review/R6-Eingabeempfehlung.md?raw',
+  'tests/fixtures/p02b-r7-cases.ts?raw', 'qa/p02b-r7-results.json?raw',
+  'qa/p02b-r7-review.json?raw', 'review/P02b-Eingabeentscheidung.md?raw',
+  'review/pages-gates-proposal.patch?raw',
+])('rejects a real Vite runtime import from %s before writing output', async (file) => {
   const entry = 'p01a-negative-runtime-entry';
   await expect(build({
     configFile,
