@@ -26,7 +26,8 @@
     "check:publish": "node tools/check-publish.ts",
     "check": "npm run check:spec && npm run test",
     "test:legacy": "vitest run tests/legacy --outputFile=qa/generated/legacy.json",
-    "report:naming": "node tools/report-naming.ts"
+    "report:naming": "node tools/report-naming.ts",
+    "report:m602": "node tools/report-m602.ts"
   },
   "dependencies": {
     "@noble/hashes": "2.4.0",

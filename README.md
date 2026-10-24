@@ -1,12 +1,23 @@
 # Zelllabor 11 – Die Zelle erforschen
 
-P00 bis P02b: technisches Fundament, stabile Identitäten, typisierte Metadaten,
+P00 bis P02c: technisches Fundament, stabile Identitäten, typisierte Metadaten,
 unveränderliche Aufgabenkontexte, explizite SI-Einheitenumrechnungen und lokale
-Fortschrittsverträge und begrenzte Fachkorrektoren für Z1.02 und M6.02/process.
+Fortschrittsverträge und begrenzte Fachkorrektoren für Z1.02 und M6.02/C01–C03.
 **Entwicklungsfassung, noch kein für den Unterricht freigegebenes Lernspiel.**
 Die Startseite informiert über den Projektstand. Sie enthält keine Missionen,
 Antwortbewertung, Simulationen oder Zellmodelle. Korrektor und Fortschrittsadapter
 sind separat getestet und noch nicht an die Startseite angebunden.
+
+P02c folgt auf dem eigenen Branch `feature/p02c-m602-relationen` dem unveränderten
+P02b-Korrekturstand `09d2cd18e50cad22b035b2fe5e23e9bcfa94ed72` aus PR #6.
+Nur die Relationen Nettowasserstrom und Vakuolenvolumen sowie deren vollständige
+M6.02-Ergebnisintegration kommen hinzu. Fachlicher Umfang:
+[Relationsvertrag](review/m602-relations-1.0.0.md), API in
+[assessment](src/assessment/README.md), Tests/Fehler/offene Prüfungen in
+[P02c-Bericht](qa/P02c.md). Die DOM-Probe wird ausschließlich im Testharness
+geladen und durch den Produktionsguard von `dist` ausgeschlossen. Keine neue
+Mission oder Simulation. `npm run report:m602` erzeugt die vollständigen eigenen
+Runtime-Befunde separat von den alten Begriffskorrektor- und Legacy-Berichten.
 
 ## P02b nach genehmigter Option B (24.10.2026)
 

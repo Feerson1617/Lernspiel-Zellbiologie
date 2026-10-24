@@ -1,5 +1,27 @@
 # Legacy-Bewertungskern P02a/P02b – Satzvertrag
 
+## Separater P02c-Folgebaustein
+
+`m602-relations.ts` enthält reine T2-Relationsentscheidungen für M6.02/C02 und
+C03. Ganze begrenzte Relationsglieder werden mit lokalen Negationen,
+Nettomarkierung/Einzelbewegung und expliziten Selbstkorrekturen zusammengesetzt.
+Unbekannter Rest und unklarer Zeitbezug bleiben klärungsbedürftig. Keine
+unscharfe Richtungskorrektur, freien Erklärungsaufsätze oder Satzkorpusabfragen.
+Fachlicher Vertrag und vorab festgelegte Fallmatrix:
+[`review/m602-relations-1.0.0.md`](../../review/m602-relations-1.0.0.md).
+
+`m602.ts` bindet drei Feldresultate und das Gesamtresultat an exakt denselben
+unveränderlichen Kontext. `m602Versions(modelVersion)` verlangt die explizite
+Modellkennung; Aufgaben-, Rubrik- und Inhaltsversionen sind separat neu gebunden.
+`parseM602Submission` validiert die geschlossene Eingabe mit drei Antworten und
+getrennten Zusätzen. `evaluateM602` ist rein und verlangt pro Feld tatsächliche
+Unterstützungsdaten. Seine Ausgabe entspricht `contracts/m602.schema.json`;
+semantische Bindung und Vertrauensherkunft prüft zusätzlich die RAM-Sitzung.
+Ein passendes JSON-Schema allein beweist keine Herkunft. Hilfe/Feedback stehen
+getrennt in `m602-feedback.ts`; Rohtexte/Evidenz bleiben im RAM. Die frühere
+M6.02-Benennungshülle bleibt unverändert und kann weiterhin keinen Gesamterfolg
+erzeugen. Eigene Tests und Einschränkungen: [`qa/P02c.md`](../../qa/P02c.md).
+
 Seit dem genehmigten Option-B-Auftrag gilt für neue Begriffseingaben der
 separate [Vertrag 1.0.0 / API](NAMING.md). Der hier dokumentierte Satzkorrektor
 bleibt unverändert als Legacy-Regressionsbestand erhalten; seine alten

@@ -1,0 +1,9 @@
+{
+  "beforeImplementation": true,
+  "frozenAtUTC": "2026-10-24T12:49:43.262000+00:00",
+  "base": "09d2cd18e50cad22b035b2fe5e23e9bcfa94ed72",
+  "files": {
+    "review/m602-relations-1.0.0.md": "fe64a95fa572a8322e093829a80c75672377995bbd0cedcf21801c9b03b2cf1a",
+    "tests/fixtures/p02c-cases.json": "dafffe5835642dd802b16d047f92f13a1f1fb0e232beea17d5277b257b2d91d2"
+  }
+}

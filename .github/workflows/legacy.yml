@@ -2,7 +2,7 @@ name: Legacy sentence-contract evidence (historically red)
 
 on:
   pull_request:
-    branches: [main]
+    branches: [main, feature/p02b-osmose-korrektor]
 
 permissions:
   contents: read
