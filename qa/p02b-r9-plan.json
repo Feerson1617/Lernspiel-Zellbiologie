@@ -1,0 +1,76 @@
+{
+  "policy": "naming-history/1.0.1",
+  "frozenAtUTC": "2026-10-24T12:14:30.911108+00:00",
+  "sourceHead": "056d760eb1fc08bd9d8b374558b11678ab6e42ce",
+  "scope": "P02b R9 provenance only. P02c authorized by direct additional user request only after all Phase A gates pass, on a separate branch/PR.",
+  "rules": [
+    "No session with resumed=true OR any loaded metadata may promote any locally unknown case to verified.",
+    "No new persistent fields/events/hashes/raw text. Missing history remains unknown, no invented solution_viewed event.",
+    "Fresh explicitly trusted RAM session with no loaded metadata retains verified new-case behavior, unused instance+seed+actual material required.",
+    "Same-instance and known-return help remain sticky; duplicate outcomes idempotent; complete-envelope handoff required.",
+    "Deterministic official source B remains identical before/after reload; no random renaming.",
+    "Correct C01 remains correct but overall technical with history_unverified; no Z1 booking, no M6 completion."
+  ],
+  "unitMatrix": {
+    "tasks": [
+      "Z1.02",
+      "M6.02"
+    ],
+    "help": [
+      "hint",
+      "wordbank",
+      "clarified",
+      "solution_viewed"
+    ],
+    "historyOrigins": [
+      "resumed-empty",
+      "resumed-stored-A",
+      "loaded-metadata-without-resumed-flag"
+    ],
+    "expected": [
+      "full identical B context",
+      "history_unverified after activate",
+      "correct termResult",
+      "technical overall",
+      "record rejected",
+      "no manufactured previous help events"
+    ]
+  },
+  "domMatrix": {
+    "tasks": [
+      "Z1.02",
+      "M6.02"
+    ],
+    "help": [
+      "hint",
+      "wordbank",
+      "clarified",
+      "solution_viewed"
+    ],
+    "storage": [
+      "empty",
+      "stored-A",
+      "quota",
+      "denied"
+    ],
+    "navigation": [
+      "reload",
+      "back"
+    ],
+    "casesPerProfile": 64,
+    "expected": [
+      "B context deep equals before and after including all labels/hash",
+      "no B submission before navigation",
+      "no independent UI claim or new success metadata",
+      "C01 correct, technical overall, M6 C02/C03 pending",
+      "foreign browser data preserved",
+      "fresh trusted A->B positive separate"
+    ]
+  },
+  "knownRegression": "Original R9 300+384 cases and Soll untouched; original R8 3586 full results unchanged; legacy 4 actual red gates.",
+  "beforeRepro": {
+    "driver": "Original extracted openLab; only repository path and local Chromium binary selector adapted",
+    "proof": "/tmp/r9-work/official-fixture-results.json",
+    "sha256": "6a5a620a607eea806778e158888f277a3ebdfd0caaa16477bd7e4979160e2d6b"
+  }
+}

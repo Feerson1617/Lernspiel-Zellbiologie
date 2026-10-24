@@ -1,0 +1,6364 @@
+{
+  "source": "Supplied independent R9 cases, now known regression. Original inputs and Soll unchanged.",
+  "groups": {
+    "primary": [
+      {
+        "id": "R9-001",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "eventuell, „dem Vakuolen-Membran“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-002",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "(dem Tonoplasten) vermutlich, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-003",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vielleicht, „dem Vakuolen Membran“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-004",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "(dem Tonoplast) wahrscheinlich, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-005",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wohl, „dem Vakuolenmembran“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-006",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "(einer Tonoplasten) eventuell, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-007",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vermutlich, „einer Vakuolen Membran“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-008",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "(einer Tonoplast) vielleicht, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-009",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wahrscheinlich, „einer Vakuolenmembran“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-010",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "(einer Vakuolen-Membran) wohl, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-011",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "eventuell, „eines Vakuolen Membran“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-012",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "(eines Tonoplast) vermutlich, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-013",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vielleicht, „eines Vakuolenmembran“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-014",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "(eines Vakuolen-Membran) wahrscheinlich, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-015",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wohl, „eines Tonoplasten“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-016",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "(einem Tonoplast) eventuell, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-017",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vermutlich, „einem Vakuolenmembran“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-018",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "(einem Vakuolen-Membran) vielleicht, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-019",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wahrscheinlich, „einem Tonoplasten“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-020",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "(einem Vakuolen Membran) wohl, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-021",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "eventuell, „den Vakuolenmembran oder eine Tonoplasten“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-022",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "(den Vakuolen-Membran oder dem Vakuolen Membran) vermutlich, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-023",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vielleicht, „den Tonoplasten oder einer Tonoplast“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-024",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "(den Vakuolen Membran oder eines Vakuolenmembran) wahrscheinlich, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-025",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wohl, „den Tonoplast oder einem Vakuolen-Membran“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-026",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "(einen Vakuolen-Membran oder den Tonoplasten) eventuell, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-027",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vermutlich, „einen Tonoplasten oder einen Vakuolen Membran“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-028",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "(einen Vakuolen Membran oder des Tonoplast) vielleicht, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-029",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wahrscheinlich, „einen Tonoplast oder das Vakuolenmembran“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-030",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "(einen Vakuolenmembran oder der Vakuolen-Membran) wohl, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-031",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "eventuell, „des Tonoplasten oder die Tonoplasten“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-032",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "(des Vakuolen Membran oder ein Vakuolen Membran) vermutlich, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-033",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vielleicht, „des Tonoplast oder eine Tonoplast“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-034",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "(des Vakuolenmembran oder dem Vakuolenmembran) wahrscheinlich, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-035",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wohl, „des Vakuolen-Membran oder einer Vakuolen-Membran“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-036",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "(das Vakuolen Membran oder eines Tonoplasten) eventuell, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-037",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vermutlich, „das Tonoplast oder einem Vakuolen Membran“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-038",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "(das Vakuolenmembran oder den Tonoplast) vielleicht, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-039",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wahrscheinlich, „das Vakuolen-Membran oder einen Vakuolenmembran“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-040",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "(das Tonoplasten oder des Vakuolen-Membran) wohl, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-041",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "eventuell, „der Tonoplast statt eine Plasmamembran“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-042",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "(der Vakuolenmembran statt dem Kernhülle) vermutlich, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-043",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vielleicht, „der Vakuolen-Membran statt einer Vakuolenraum“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-044",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "(der Tonoplasten statt eines Zellwand) wahrscheinlich, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-045",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wohl, „der Vakuolen Membran statt einem Zellkern“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-046",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "(die Vakuolenmembran statt den Plasmamembran) eventuell, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-047",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vermutlich, „die Vakuolen-Membran statt einen Kernhülle“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-048",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "(die Tonoplasten statt des Vakuolenraum) vielleicht, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-049",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wahrscheinlich, „die Vakuolen Membran statt das Zellwand“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-050",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "(die Tonoplast statt der Zellkern) wohl, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-051",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "eventuell, „ein Vakuolen-Membran statt die Plasmamembran“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-052",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "(ein Tonoplasten statt ein Kernhülle) vermutlich, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-053",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vielleicht, „ein Vakuolen Membran statt eine Vakuolenraum“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-054",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "(ein Tonoplast statt dem Zellwand) wahrscheinlich, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-055",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wohl, „ein Vakuolenmembran statt einer Zellkern“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-056",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "(eine Tonoplasten statt eines Plasmamembran) eventuell, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-057",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vermutlich, „eine Vakuolen Membran statt einem Kernhülle“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-058",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "(eine Tonoplast statt den Vakuolenraum) vielleicht, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-059",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wahrscheinlich, „eine Vakuolenmembran statt einen Zellwand“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-060",
+        "task": "Z1.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "(eine Vakuolen-Membran statt des Zellkern) wohl, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-061",
+        "task": "Z1.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "eventuell eines Plasmamembran;",
+        "extra": []
+      },
+      {
+        "id": "R9-062",
+        "task": "Z1.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vermutlich einem Kernhülle?!",
+        "extra": []
+      },
+      {
+        "id": "R9-063",
+        "task": "Z1.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vielleicht den Vakuolenraum;",
+        "extra": []
+      },
+      {
+        "id": "R9-064",
+        "task": "Z1.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wahrscheinlich einen Zellwand?!",
+        "extra": []
+      },
+      {
+        "id": "R9-065",
+        "task": "Z1.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wohl des Zellkern;",
+        "extra": []
+      },
+      {
+        "id": "R9-066",
+        "task": "Z1.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "eventuell das Plasmamembran?!",
+        "extra": []
+      },
+      {
+        "id": "R9-067",
+        "task": "Z1.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vermutlich der Kernhülle;",
+        "extra": []
+      },
+      {
+        "id": "R9-068",
+        "task": "Z1.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vielleicht die Vakuolenraum?!",
+        "extra": []
+      },
+      {
+        "id": "R9-069",
+        "task": "Z1.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wahrscheinlich ein Zellwand;",
+        "extra": []
+      },
+      {
+        "id": "R9-070",
+        "task": "Z1.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wohl eine Zellkern?!",
+        "extra": []
+      },
+      {
+        "id": "R9-071",
+        "task": "Z1.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "eventuell dem Plasmamembran;",
+        "extra": []
+      },
+      {
+        "id": "R9-072",
+        "task": "Z1.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vermutlich einer Kernhülle?!",
+        "extra": []
+      },
+      {
+        "id": "R9-073",
+        "task": "Z1.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vielleicht eines Vakuolenraum;",
+        "extra": []
+      },
+      {
+        "id": "R9-074",
+        "task": "Z1.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wahrscheinlich einem Zellwand?!",
+        "extra": []
+      },
+      {
+        "id": "R9-075",
+        "task": "Z1.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wohl den Zellkern;",
+        "extra": []
+      },
+      {
+        "id": "R9-076",
+        "task": "Z1.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "eventuell einen Plasmamembran?!",
+        "extra": []
+      },
+      {
+        "id": "R9-077",
+        "task": "Z1.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vermutlich des Kernhülle;",
+        "extra": []
+      },
+      {
+        "id": "R9-078",
+        "task": "Z1.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vielleicht das Vakuolenraum?!",
+        "extra": []
+      },
+      {
+        "id": "R9-079",
+        "task": "Z1.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wahrscheinlich der Zellwand;",
+        "extra": []
+      },
+      {
+        "id": "R9-080",
+        "task": "Z1.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wohl die Zellkern?!",
+        "extra": []
+      },
+      {
+        "id": "R9-081",
+        "task": "Z1.02",
+        "group": "partial",
+        "expectedTerm": "partial",
+        "expectedOverall": "partial",
+        "text": "vielleicht den Membran?",
+        "extra": []
+      },
+      {
+        "id": "R9-082",
+        "task": "Z1.02",
+        "group": "partial",
+        "expectedTerm": "partial",
+        "expectedOverall": "partial",
+        "text": "wahrscheinlich einen Hülle?",
+        "extra": []
+      },
+      {
+        "id": "R9-083",
+        "task": "Z1.02",
+        "group": "partial",
+        "expectedTerm": "partial",
+        "expectedOverall": "partial",
+        "text": "wohl des Vakuolenhülle?",
+        "extra": []
+      },
+      {
+        "id": "R9-084",
+        "task": "Z1.02",
+        "group": "partial",
+        "expectedTerm": "partial",
+        "expectedOverall": "partial",
+        "text": "eventuell das innere Grenze?",
+        "extra": []
+      },
+      {
+        "id": "R9-085",
+        "task": "Z1.02",
+        "group": "partial",
+        "expectedTerm": "partial",
+        "expectedOverall": "partial",
+        "text": "vermutlich der Membran um die Vakuole?",
+        "extra": []
+      },
+      {
+        "id": "R9-086",
+        "task": "Z1.02",
+        "group": "partial",
+        "expectedTerm": "partial",
+        "expectedOverall": "partial",
+        "text": "vielleicht die Membran der Vakuole?",
+        "extra": []
+      },
+      {
+        "id": "R9-087",
+        "task": "Z1.02",
+        "group": "partial",
+        "expectedTerm": "partial",
+        "expectedOverall": "partial",
+        "text": "wahrscheinlich ein Hülle um die Vakuole?",
+        "extra": []
+      },
+      {
+        "id": "R9-088",
+        "task": "Z1.02",
+        "group": "partial",
+        "expectedTerm": "partial",
+        "expectedOverall": "partial",
+        "text": "wohl eine Hülle der Vakuole?",
+        "extra": []
+      },
+      {
+        "id": "R9-089",
+        "task": "Z1.02",
+        "group": "partial",
+        "expectedTerm": "partial",
+        "expectedOverall": "partial",
+        "text": "eventuell dem Grenze um die Vakuole?",
+        "extra": []
+      },
+      {
+        "id": "R9-090",
+        "task": "Z1.02",
+        "group": "partial",
+        "expectedTerm": "partial",
+        "expectedOverall": "partial",
+        "text": "vermutlich einer Grenze der Vakuole?",
+        "extra": []
+      },
+      {
+        "id": "R9-091",
+        "task": "Z1.02",
+        "group": "partial",
+        "expectedTerm": "partial",
+        "expectedOverall": "partial",
+        "text": "vielleicht eines Membran?",
+        "extra": []
+      },
+      {
+        "id": "R9-092",
+        "task": "Z1.02",
+        "group": "partial",
+        "expectedTerm": "partial",
+        "expectedOverall": "partial",
+        "text": "wahrscheinlich einem Vakuolenhülle?",
+        "extra": []
+      },
+      {
+        "id": "R9-093",
+        "task": "Z1.02",
+        "group": "competing",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vermutlich einen Vakuolen-Membran oder der Kernhülle?",
+        "extra": []
+      },
+      {
+        "id": "R9-094",
+        "task": "Z1.02",
+        "group": "competing",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vielleicht des Tonoplasten oder die Vakuolenraum?",
+        "extra": []
+      },
+      {
+        "id": "R9-095",
+        "task": "Z1.02",
+        "group": "competing",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wahrscheinlich das Vakuolen Membran oder ein Zellwand?",
+        "extra": []
+      },
+      {
+        "id": "R9-096",
+        "task": "Z1.02",
+        "group": "competing",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wohl der Tonoplast oder eine Zellkern?",
+        "extra": []
+      },
+      {
+        "id": "R9-097",
+        "task": "Z1.02",
+        "group": "competing",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "eventuell die Vakuolenmembran oder dem Plasmamembran?",
+        "extra": []
+      },
+      {
+        "id": "R9-098",
+        "task": "Z1.02",
+        "group": "competing",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vermutlich ein Vakuolen-Membran oder einer Kernhülle?",
+        "extra": []
+      },
+      {
+        "id": "R9-099",
+        "task": "Z1.02",
+        "group": "competing",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vielleicht eine Tonoplasten oder eines Vakuolenraum?",
+        "extra": []
+      },
+      {
+        "id": "R9-100",
+        "task": "Z1.02",
+        "group": "competing",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wahrscheinlich dem Vakuolen Membran oder einem Zellwand?",
+        "extra": []
+      },
+      {
+        "id": "R9-101",
+        "task": "Z1.02",
+        "group": "competing",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wohl einer Tonoplast oder den Zellkern?",
+        "extra": []
+      },
+      {
+        "id": "R9-102",
+        "task": "Z1.02",
+        "group": "competing",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "eventuell eines Vakuolenmembran oder einen Plasmamembran?",
+        "extra": []
+      },
+      {
+        "id": "R9-103",
+        "task": "Z1.02",
+        "group": "competing",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vermutlich einem Vakuolen-Membran oder des Kernhülle?",
+        "extra": []
+      },
+      {
+        "id": "R9-104",
+        "task": "Z1.02",
+        "group": "competing",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vielleicht den Tonoplasten oder das Vakuolenraum?",
+        "extra": []
+      },
+      {
+        "id": "R9-105",
+        "task": "Z1.02",
+        "group": "target-excluded",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "eventuell nicht eines Vakuolen-Membran!",
+        "extra": []
+      },
+      {
+        "id": "R9-106",
+        "task": "Z1.02",
+        "group": "target-excluded",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vermutlich nicht einem Tonoplasten!",
+        "extra": []
+      },
+      {
+        "id": "R9-107",
+        "task": "Z1.02",
+        "group": "target-excluded",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vielleicht nicht den Vakuolen Membran!",
+        "extra": []
+      },
+      {
+        "id": "R9-108",
+        "task": "Z1.02",
+        "group": "target-excluded",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wahrscheinlich nicht einen Tonoplast!",
+        "extra": []
+      },
+      {
+        "id": "R9-109",
+        "task": "Z1.02",
+        "group": "target-excluded",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wohl nicht des Vakuolenmembran!",
+        "extra": []
+      },
+      {
+        "id": "R9-110",
+        "task": "Z1.02",
+        "group": "other-excluded",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "„eventuell keine Plasmamembran“?",
+        "extra": []
+      },
+      {
+        "id": "R9-111",
+        "task": "Z1.02",
+        "group": "other-excluded",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "„vermutlich keine Kernhülle“?",
+        "extra": []
+      },
+      {
+        "id": "R9-112",
+        "task": "Z1.02",
+        "group": "other-excluded",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "„vielleicht keine Vakuolenraum“?",
+        "extra": []
+      },
+      {
+        "id": "R9-113",
+        "task": "Z1.02",
+        "group": "other-excluded",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "„wahrscheinlich keine Zellwand“?",
+        "extra": []
+      },
+      {
+        "id": "R9-114",
+        "task": "Z1.02",
+        "group": "other-excluded",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "„wohl keine Zellkern“?",
+        "extra": []
+      },
+      {
+        "id": "R9-115",
+        "task": "Z1.02",
+        "group": "same-contrast",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "eventuell nicht Vakuolen-Membran, sondern Tonoplast.",
+        "extra": []
+      },
+      {
+        "id": "R9-116",
+        "task": "Z1.02",
+        "group": "same-contrast",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vermutlich nicht Tonoplasten, sondern Tonoplast.",
+        "extra": []
+      },
+      {
+        "id": "R9-117",
+        "task": "Z1.02",
+        "group": "same-contrast",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vielleicht nicht Vakuolen Membran, sondern Tonoplast.",
+        "extra": []
+      },
+      {
+        "id": "R9-118",
+        "task": "Z1.02",
+        "group": "same-contrast",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wahrscheinlich nicht Tonoplast, sondern Tonoplast.",
+        "extra": []
+      },
+      {
+        "id": "R9-119",
+        "task": "Z1.02",
+        "group": "same-contrast",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wohl nicht Vakuolenmembran, sondern Tonoplast.",
+        "extra": []
+      },
+      {
+        "id": "R9-120",
+        "task": "Z1.02",
+        "group": "double-negation",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "eventuell nicht keine Tonoplast?",
+        "extra": []
+      },
+      {
+        "id": "R9-121",
+        "task": "Z1.02",
+        "group": "double-negation",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vermutlich nicht keine Tonoplast?",
+        "extra": []
+      },
+      {
+        "id": "R9-122",
+        "task": "Z1.02",
+        "group": "double-negation",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vielleicht nicht keine Tonoplast?",
+        "extra": []
+      },
+      {
+        "id": "R9-123",
+        "task": "Z1.02",
+        "group": "double-negation",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wahrscheinlich nicht keine Tonoplast?",
+        "extra": []
+      },
+      {
+        "id": "R9-124",
+        "task": "Z1.02",
+        "group": "double-negation",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wohl nicht keine Tonoplast?",
+        "extra": []
+      },
+      {
+        "id": "R9-125",
+        "task": "Z1.02",
+        "group": "outside-sentence-scope",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "Ich würde diesmal Tonoplast eintragen.",
+        "extra": []
+      },
+      {
+        "id": "R9-126",
+        "task": "Z1.02",
+        "group": "outside-sentence-scope",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "Tonoplast. Das ist mein Fachbegriff für diese Teilfrage.",
+        "extra": []
+      },
+      {
+        "id": "R9-127",
+        "task": "Z1.02",
+        "group": "outside-sentence-scope",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "Tonoplast, weil ich den Namen so gelernt habe.",
+        "extra": []
+      },
+      {
+        "id": "R9-128",
+        "task": "Z1.02",
+        "group": "outside-sentence-scope",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "Tonoplast. Danach noch eine Erklärung.",
+        "extra": []
+      },
+      {
+        "id": "R9-129",
+        "task": "Z1.02",
+        "group": "outside-sentence-scope",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "Tonoplast und dann weitere Dinge.",
+        "extra": []
+      },
+      {
+        "id": "R9-130",
+        "task": "Z1.02",
+        "group": "outside-sentence-scope",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "Tonoplast bitte mit allem anderen prüfen.",
+        "extra": []
+      },
+      {
+        "id": "R9-131",
+        "task": "Z1.02",
+        "group": "outside-sentence-scope",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "Tonoplast<img src=x onerror=window.reviewXss=1>",
+        "extra": []
+      },
+      {
+        "id": "R9-132",
+        "task": "Z1.02",
+        "group": "outside-sentence-scope",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "Tonoplast. Tonoplast ist eine Zellwand.",
+        "extra": []
+      },
+      {
+        "id": "R9-133",
+        "task": "Z1.02",
+        "group": "correct-with-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "Tonoplast",
+        "extra": [
+          "Ein zusätzlicher Gedanke bleibt ungeprüft."
+        ]
+      },
+      {
+        "id": "R9-134",
+        "task": "Z1.02",
+        "group": "correct-with-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "Tonoplast",
+        "extra": [
+          "Wasser bewegt sich netto nach außen."
+        ]
+      },
+      {
+        "id": "R9-135",
+        "task": "Z1.02",
+        "group": "correct-with-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "Tonoplast",
+        "extra": [
+          "Die Zellwand schrumpft mit."
+        ]
+      },
+      {
+        "id": "R9-136",
+        "task": "Z1.02",
+        "group": "correct-with-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "Tonoplast",
+        "extra": [
+          "Der Tonoplast begrenzt den Zellkern."
+        ]
+      },
+      {
+        "id": "R9-137",
+        "task": "Z1.02",
+        "group": "correct-with-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "Tonoplast",
+        "extra": [
+          "Osmose ist passiv."
+        ]
+      },
+      {
+        "id": "R9-138",
+        "task": "Z1.02",
+        "group": "correct-with-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "Tonoplast",
+        "extra": [
+          "<img src=x onerror=window.reviewXss=1>"
+        ]
+      },
+      {
+        "id": "R9-139",
+        "task": "Z1.02",
+        "group": "correct-with-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "Tonoplast",
+        "extra": [
+          "🧬 Ein weiterer Gedanke."
+        ]
+      },
+      {
+        "id": "R9-140",
+        "task": "Z1.02",
+        "group": "correct-with-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "Tonoplast",
+        "extra": [
+          "𝛙 und unbekannter Bezug."
+        ]
+      },
+      {
+        "id": "R9-141",
+        "task": "Z1.02",
+        "group": "wrong-with-extra",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "Plasmamembran",
+        "extra": [
+          "Ein richtiger Zusatz rettet keinen falschen Namen."
+        ]
+      },
+      {
+        "id": "R9-142",
+        "task": "Z1.02",
+        "group": "wrong-with-extra",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "Plasmamembran",
+        "extra": [
+          "Der Tonoplast umschließt die Vakuole."
+        ]
+      },
+      {
+        "id": "R9-143",
+        "task": "Z1.02",
+        "group": "empty-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "Tonoplast",
+        "extra": [
+          ""
+        ]
+      },
+      {
+        "id": "R9-144",
+        "task": "Z1.02",
+        "group": "empty-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "Tonoplast",
+        "extra": [
+          " \n\t "
+        ]
+      },
+      {
+        "id": "R9-145",
+        "task": "Z1.02",
+        "group": "empty",
+        "expectedTerm": "empty",
+        "expectedOverall": "empty",
+        "text": "",
+        "extra": []
+      },
+      {
+        "id": "R9-146",
+        "task": "Z1.02",
+        "group": "empty",
+        "expectedTerm": "empty",
+        "expectedOverall": "empty",
+        "text": " \n\t ",
+        "extra": []
+      },
+      {
+        "id": "R9-147",
+        "task": "Z1.02",
+        "group": "technical-text",
+        "expectedTerm": "technical",
+        "expectedOverall": "technical",
+        "text": "Tonoplast\u0000",
+        "extra": []
+      },
+      {
+        "id": "R9-148",
+        "task": "Z1.02",
+        "group": "technical-text",
+        "expectedTerm": "technical",
+        "expectedOverall": "technical",
+        "text": "Tonoplast‮",
+        "extra": []
+      },
+      {
+        "id": "R9-149",
+        "task": "Z1.02",
+        "group": "technical-text",
+        "expectedTerm": "technical",
+        "expectedOverall": "technical",
+        "text": "Tonoplast\ud800",
+        "extra": []
+      },
+      {
+        "id": "R9-150",
+        "task": "Z1.02",
+        "group": "technical-text",
+        "expectedTerm": "technical",
+        "expectedOverall": "technical",
+        "text": "Tonoplast                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ",
+        "extra": []
+      },
+      {
+        "id": "R9-151",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "eventuell, „dem Osmosee“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-152",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "(dem Ossmose) vermutlich, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-153",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vielleicht, „dem Osmsoe“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-154",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "(dem Osmosse) wahrscheinlich, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-155",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wohl, „dem Osmose“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-156",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "(einer Ossmose) eventuell, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-157",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vermutlich, „einer Osmsoe“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-158",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "(einer Osmosse) vielleicht, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-159",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wahrscheinlich, „einer Osmose“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-160",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "(einer Osmosee) wohl, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-161",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "eventuell, „eines Osmsoe“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-162",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "(eines Osmosse) vermutlich, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-163",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vielleicht, „eines Osmose“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-164",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "(eines Osmosee) wahrscheinlich, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-165",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wohl, „eines Ossmose“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-166",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "(einem Osmosse) eventuell, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-167",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vermutlich, „einem Osmose“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-168",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "(einem Osmosee) vielleicht, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-169",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wahrscheinlich, „einem Ossmose“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-170",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "(einem Osmsoe) wohl, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-171",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "eventuell, „den Osmose oder eine Ossmose“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-172",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "(den Osmosee oder dem Osmsoe) vermutlich, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-173",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vielleicht, „den Ossmose oder einer Osmosse“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-174",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "(den Osmsoe oder eines Osmose) wahrscheinlich, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-175",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wohl, „den Osmosse oder einem Osmosee“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-176",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "(einen Osmosee oder den Ossmose) eventuell, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-177",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vermutlich, „einen Ossmose oder einen Osmsoe“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-178",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "(einen Osmsoe oder des Osmosse) vielleicht, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-179",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wahrscheinlich, „einen Osmosse oder das Osmose“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-180",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "(einen Osmose oder der Osmosee) wohl, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-181",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "eventuell, „des Ossmose oder die Ossmose“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-182",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "(des Osmsoe oder ein Osmsoe) vermutlich, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-183",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vielleicht, „des Osmosse oder eine Osmosse“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-184",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "(des Osmose oder dem Osmose) wahrscheinlich, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-185",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wohl, „des Osmosee oder einer Osmosee“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-186",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "(das Osmsoe oder eines Ossmose) eventuell, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-187",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vermutlich, „das Osmosse oder einem Osmsoe“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-188",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "(das Osmose oder den Osmosse) vielleicht, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-189",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wahrscheinlich, „das Osmosee oder einen Osmose“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-190",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "(das Ossmose oder des Osmosee) wohl, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-191",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "eventuell, „der Osmosse statt eine Exozytose“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-192",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "(der Osmose statt dem Endozytose) vermutlich, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-193",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vielleicht, „der Osmosee statt einer Plasmolyse“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-194",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "(der Ossmose statt eines aktiver Wassertransport) wahrscheinlich, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-195",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wohl, „der Osmsoe statt einem ATP-Pumpe“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-196",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "(die Osmose statt den Exozytose) eventuell, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-197",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vermutlich, „die Osmosee statt einen Endozytose“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-198",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "(die Ossmose statt des Plasmolyse) vielleicht, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-199",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wahrscheinlich, „die Osmsoe statt das aktiver Wassertransport“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-200",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "(die Osmosse statt der ATP-Pumpe) wohl, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-201",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "eventuell, „ein Osmosee statt die Exozytose“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-202",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "(ein Ossmose statt ein Endozytose) vermutlich, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-203",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vielleicht, „ein Osmsoe statt eine Plasmolyse“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-204",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "(ein Osmosse statt dem aktiver Wassertransport) wahrscheinlich, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-205",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wohl, „ein Osmose statt einer ATP-Pumpe“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-206",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "(eine Ossmose statt eines Exozytose) eventuell, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-207",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vermutlich, „eine Osmsoe statt einem Endozytose“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-208",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "(eine Osmosse statt den Plasmolyse) vielleicht, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-209",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wahrscheinlich, „eine Osmose statt einen aktiver Wassertransport“!?",
+        "extra": []
+      },
+      {
+        "id": "R9-210",
+        "task": "M6.02",
+        "group": "complete-valid",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "(eine Osmosee statt des ATP-Pumpe) wohl, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9-211",
+        "task": "M6.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "eventuell eines Exozytose;",
+        "extra": []
+      },
+      {
+        "id": "R9-212",
+        "task": "M6.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vermutlich einem Endozytose?!",
+        "extra": []
+      },
+      {
+        "id": "R9-213",
+        "task": "M6.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vielleicht den Plasmolyse;",
+        "extra": []
+      },
+      {
+        "id": "R9-214",
+        "task": "M6.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wahrscheinlich einen aktiver Wassertransport?!",
+        "extra": []
+      },
+      {
+        "id": "R9-215",
+        "task": "M6.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wohl des ATP-Pumpe;",
+        "extra": []
+      },
+      {
+        "id": "R9-216",
+        "task": "M6.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "eventuell das Exozytose?!",
+        "extra": []
+      },
+      {
+        "id": "R9-217",
+        "task": "M6.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vermutlich der Endozytose;",
+        "extra": []
+      },
+      {
+        "id": "R9-218",
+        "task": "M6.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vielleicht die Plasmolyse?!",
+        "extra": []
+      },
+      {
+        "id": "R9-219",
+        "task": "M6.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wahrscheinlich ein aktiver Wassertransport;",
+        "extra": []
+      },
+      {
+        "id": "R9-220",
+        "task": "M6.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wohl eine ATP-Pumpe?!",
+        "extra": []
+      },
+      {
+        "id": "R9-221",
+        "task": "M6.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "eventuell dem Exozytose;",
+        "extra": []
+      },
+      {
+        "id": "R9-222",
+        "task": "M6.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vermutlich einer Endozytose?!",
+        "extra": []
+      },
+      {
+        "id": "R9-223",
+        "task": "M6.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vielleicht eines Plasmolyse;",
+        "extra": []
+      },
+      {
+        "id": "R9-224",
+        "task": "M6.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wahrscheinlich einem aktiver Wassertransport?!",
+        "extra": []
+      },
+      {
+        "id": "R9-225",
+        "task": "M6.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wohl den ATP-Pumpe;",
+        "extra": []
+      },
+      {
+        "id": "R9-226",
+        "task": "M6.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "eventuell einen Exozytose?!",
+        "extra": []
+      },
+      {
+        "id": "R9-227",
+        "task": "M6.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vermutlich des Endozytose;",
+        "extra": []
+      },
+      {
+        "id": "R9-228",
+        "task": "M6.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vielleicht das Plasmolyse?!",
+        "extra": []
+      },
+      {
+        "id": "R9-229",
+        "task": "M6.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wahrscheinlich der aktiver Wassertransport;",
+        "extra": []
+      },
+      {
+        "id": "R9-230",
+        "task": "M6.02",
+        "group": "wrong-name",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wohl die ATP-Pumpe?!",
+        "extra": []
+      },
+      {
+        "id": "R9-231",
+        "task": "M6.02",
+        "group": "partial",
+        "expectedTerm": "partial",
+        "expectedOverall": "partial",
+        "text": "vielleicht den Diffusion?",
+        "extra": []
+      },
+      {
+        "id": "R9-232",
+        "task": "M6.02",
+        "group": "partial",
+        "expectedTerm": "partial",
+        "expectedOverall": "partial",
+        "text": "wahrscheinlich einen Diffusion von Wasser?",
+        "extra": []
+      },
+      {
+        "id": "R9-233",
+        "task": "M6.02",
+        "group": "partial",
+        "expectedTerm": "partial",
+        "expectedOverall": "partial",
+        "text": "wohl des Diffusion des Wassers?",
+        "extra": []
+      },
+      {
+        "id": "R9-234",
+        "task": "M6.02",
+        "group": "partial",
+        "expectedTerm": "partial",
+        "expectedOverall": "partial",
+        "text": "eventuell das Wassertransport?",
+        "extra": []
+      },
+      {
+        "id": "R9-235",
+        "task": "M6.02",
+        "group": "partial",
+        "expectedTerm": "partial",
+        "expectedOverall": "partial",
+        "text": "vermutlich der Transport von Wasser?",
+        "extra": []
+      },
+      {
+        "id": "R9-236",
+        "task": "M6.02",
+        "group": "partial",
+        "expectedTerm": "partial",
+        "expectedOverall": "partial",
+        "text": "vielleicht die Wasserbewegung?",
+        "extra": []
+      },
+      {
+        "id": "R9-237",
+        "task": "M6.02",
+        "group": "partial",
+        "expectedTerm": "partial",
+        "expectedOverall": "partial",
+        "text": "wahrscheinlich ein Bewegung von Wasser?",
+        "extra": []
+      },
+      {
+        "id": "R9-238",
+        "task": "M6.02",
+        "group": "partial",
+        "expectedTerm": "partial",
+        "expectedOverall": "partial",
+        "text": "wohl eine passiver Transport?",
+        "extra": []
+      },
+      {
+        "id": "R9-239",
+        "task": "M6.02",
+        "group": "partial",
+        "expectedTerm": "partial",
+        "expectedOverall": "partial",
+        "text": "eventuell dem passiver Wassertransport?",
+        "extra": []
+      },
+      {
+        "id": "R9-240",
+        "task": "M6.02",
+        "group": "partial",
+        "expectedTerm": "partial",
+        "expectedOverall": "partial",
+        "text": "vermutlich einer passive Wasserbewegung?",
+        "extra": []
+      },
+      {
+        "id": "R9-241",
+        "task": "M6.02",
+        "group": "partial",
+        "expectedTerm": "partial",
+        "expectedOverall": "partial",
+        "text": "vielleicht eines Diffusion?",
+        "extra": []
+      },
+      {
+        "id": "R9-242",
+        "task": "M6.02",
+        "group": "partial",
+        "expectedTerm": "partial",
+        "expectedOverall": "partial",
+        "text": "wahrscheinlich einem Wassertransport?",
+        "extra": []
+      },
+      {
+        "id": "R9-243",
+        "task": "M6.02",
+        "group": "competing",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vermutlich einen Osmosee oder der Endozytose?",
+        "extra": []
+      },
+      {
+        "id": "R9-244",
+        "task": "M6.02",
+        "group": "competing",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vielleicht des Ossmose oder die Plasmolyse?",
+        "extra": []
+      },
+      {
+        "id": "R9-245",
+        "task": "M6.02",
+        "group": "competing",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wahrscheinlich das Osmsoe oder ein aktiver Wassertransport?",
+        "extra": []
+      },
+      {
+        "id": "R9-246",
+        "task": "M6.02",
+        "group": "competing",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wohl der Osmosse oder eine ATP-Pumpe?",
+        "extra": []
+      },
+      {
+        "id": "R9-247",
+        "task": "M6.02",
+        "group": "competing",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "eventuell die Osmose oder dem Exozytose?",
+        "extra": []
+      },
+      {
+        "id": "R9-248",
+        "task": "M6.02",
+        "group": "competing",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vermutlich ein Osmosee oder einer Endozytose?",
+        "extra": []
+      },
+      {
+        "id": "R9-249",
+        "task": "M6.02",
+        "group": "competing",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vielleicht eine Ossmose oder eines Plasmolyse?",
+        "extra": []
+      },
+      {
+        "id": "R9-250",
+        "task": "M6.02",
+        "group": "competing",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wahrscheinlich dem Osmsoe oder einem aktiver Wassertransport?",
+        "extra": []
+      },
+      {
+        "id": "R9-251",
+        "task": "M6.02",
+        "group": "competing",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wohl einer Osmosse oder den ATP-Pumpe?",
+        "extra": []
+      },
+      {
+        "id": "R9-252",
+        "task": "M6.02",
+        "group": "competing",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "eventuell eines Osmose oder einen Exozytose?",
+        "extra": []
+      },
+      {
+        "id": "R9-253",
+        "task": "M6.02",
+        "group": "competing",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vermutlich einem Osmosee oder des Endozytose?",
+        "extra": []
+      },
+      {
+        "id": "R9-254",
+        "task": "M6.02",
+        "group": "competing",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vielleicht den Ossmose oder das Plasmolyse?",
+        "extra": []
+      },
+      {
+        "id": "R9-255",
+        "task": "M6.02",
+        "group": "target-excluded",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "eventuell nicht eines Osmosee!",
+        "extra": []
+      },
+      {
+        "id": "R9-256",
+        "task": "M6.02",
+        "group": "target-excluded",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vermutlich nicht einem Ossmose!",
+        "extra": []
+      },
+      {
+        "id": "R9-257",
+        "task": "M6.02",
+        "group": "target-excluded",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vielleicht nicht den Osmsoe!",
+        "extra": []
+      },
+      {
+        "id": "R9-258",
+        "task": "M6.02",
+        "group": "target-excluded",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wahrscheinlich nicht einen Osmosse!",
+        "extra": []
+      },
+      {
+        "id": "R9-259",
+        "task": "M6.02",
+        "group": "target-excluded",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wohl nicht des Osmose!",
+        "extra": []
+      },
+      {
+        "id": "R9-260",
+        "task": "M6.02",
+        "group": "other-excluded",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "„eventuell keine Exozytose“?",
+        "extra": []
+      },
+      {
+        "id": "R9-261",
+        "task": "M6.02",
+        "group": "other-excluded",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "„vermutlich keine Endozytose“?",
+        "extra": []
+      },
+      {
+        "id": "R9-262",
+        "task": "M6.02",
+        "group": "other-excluded",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "„vielleicht keine Plasmolyse“?",
+        "extra": []
+      },
+      {
+        "id": "R9-263",
+        "task": "M6.02",
+        "group": "other-excluded",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "„wahrscheinlich keine aktiver Wassertransport“?",
+        "extra": []
+      },
+      {
+        "id": "R9-264",
+        "task": "M6.02",
+        "group": "other-excluded",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "„wohl keine ATP-Pumpe“?",
+        "extra": []
+      },
+      {
+        "id": "R9-265",
+        "task": "M6.02",
+        "group": "same-contrast",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "eventuell nicht Osmosee, sondern Osmose.",
+        "extra": []
+      },
+      {
+        "id": "R9-266",
+        "task": "M6.02",
+        "group": "same-contrast",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vermutlich nicht Ossmose, sondern Osmose.",
+        "extra": []
+      },
+      {
+        "id": "R9-267",
+        "task": "M6.02",
+        "group": "same-contrast",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vielleicht nicht Osmsoe, sondern Osmose.",
+        "extra": []
+      },
+      {
+        "id": "R9-268",
+        "task": "M6.02",
+        "group": "same-contrast",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wahrscheinlich nicht Osmosse, sondern Osmose.",
+        "extra": []
+      },
+      {
+        "id": "R9-269",
+        "task": "M6.02",
+        "group": "same-contrast",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wohl nicht Osmose, sondern Osmose.",
+        "extra": []
+      },
+      {
+        "id": "R9-270",
+        "task": "M6.02",
+        "group": "double-negation",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "eventuell nicht keine Osmose?",
+        "extra": []
+      },
+      {
+        "id": "R9-271",
+        "task": "M6.02",
+        "group": "double-negation",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vermutlich nicht keine Osmose?",
+        "extra": []
+      },
+      {
+        "id": "R9-272",
+        "task": "M6.02",
+        "group": "double-negation",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vielleicht nicht keine Osmose?",
+        "extra": []
+      },
+      {
+        "id": "R9-273",
+        "task": "M6.02",
+        "group": "double-negation",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wahrscheinlich nicht keine Osmose?",
+        "extra": []
+      },
+      {
+        "id": "R9-274",
+        "task": "M6.02",
+        "group": "double-negation",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wohl nicht keine Osmose?",
+        "extra": []
+      },
+      {
+        "id": "R9-275",
+        "task": "M6.02",
+        "group": "outside-sentence-scope",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "Ich würde diesmal Osmose eintragen.",
+        "extra": []
+      },
+      {
+        "id": "R9-276",
+        "task": "M6.02",
+        "group": "outside-sentence-scope",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "Osmose. Das ist mein Fachbegriff für diese Teilfrage.",
+        "extra": []
+      },
+      {
+        "id": "R9-277",
+        "task": "M6.02",
+        "group": "outside-sentence-scope",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "Osmose, weil ich den Namen so gelernt habe.",
+        "extra": []
+      },
+      {
+        "id": "R9-278",
+        "task": "M6.02",
+        "group": "outside-sentence-scope",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "Osmose. Danach noch eine Erklärung.",
+        "extra": []
+      },
+      {
+        "id": "R9-279",
+        "task": "M6.02",
+        "group": "outside-sentence-scope",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "Osmose und dann weitere Dinge.",
+        "extra": []
+      },
+      {
+        "id": "R9-280",
+        "task": "M6.02",
+        "group": "outside-sentence-scope",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "Osmose bitte mit allem anderen prüfen.",
+        "extra": []
+      },
+      {
+        "id": "R9-281",
+        "task": "M6.02",
+        "group": "outside-sentence-scope",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "Osmose<img src=x onerror=window.reviewXss=1>",
+        "extra": []
+      },
+      {
+        "id": "R9-282",
+        "task": "M6.02",
+        "group": "outside-sentence-scope",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "Osmose. Osmose ist aktiver Transport.",
+        "extra": []
+      },
+      {
+        "id": "R9-283",
+        "task": "M6.02",
+        "group": "correct-with-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "Osmose",
+        "extra": [
+          "Ein zusätzlicher Gedanke bleibt ungeprüft."
+        ]
+      },
+      {
+        "id": "R9-284",
+        "task": "M6.02",
+        "group": "correct-with-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "Osmose",
+        "extra": [
+          "Wasser bewegt sich netto nach außen."
+        ]
+      },
+      {
+        "id": "R9-285",
+        "task": "M6.02",
+        "group": "correct-with-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "Osmose",
+        "extra": [
+          "Die Zellwand schrumpft mit."
+        ]
+      },
+      {
+        "id": "R9-286",
+        "task": "M6.02",
+        "group": "correct-with-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "Osmose",
+        "extra": [
+          "Der Tonoplast begrenzt den Zellkern."
+        ]
+      },
+      {
+        "id": "R9-287",
+        "task": "M6.02",
+        "group": "correct-with-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "Osmose",
+        "extra": [
+          "Osmose ist passiv."
+        ]
+      },
+      {
+        "id": "R9-288",
+        "task": "M6.02",
+        "group": "correct-with-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "Osmose",
+        "extra": [
+          "<img src=x onerror=window.reviewXss=1>"
+        ]
+      },
+      {
+        "id": "R9-289",
+        "task": "M6.02",
+        "group": "correct-with-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "Osmose",
+        "extra": [
+          "🧬 Ein weiterer Gedanke."
+        ]
+      },
+      {
+        "id": "R9-290",
+        "task": "M6.02",
+        "group": "correct-with-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "Osmose",
+        "extra": [
+          "𝛙 und unbekannter Bezug."
+        ]
+      },
+      {
+        "id": "R9-291",
+        "task": "M6.02",
+        "group": "wrong-with-extra",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "Exozytose",
+        "extra": [
+          "Ein richtiger Zusatz rettet keinen falschen Namen."
+        ]
+      },
+      {
+        "id": "R9-292",
+        "task": "M6.02",
+        "group": "wrong-with-extra",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "Exozytose",
+        "extra": [
+          "Der Tonoplast umschließt die Vakuole."
+        ]
+      },
+      {
+        "id": "R9-293",
+        "task": "M6.02",
+        "group": "empty-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "Osmose",
+        "extra": [
+          ""
+        ]
+      },
+      {
+        "id": "R9-294",
+        "task": "M6.02",
+        "group": "empty-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "Osmose",
+        "extra": [
+          " \n\t "
+        ]
+      },
+      {
+        "id": "R9-295",
+        "task": "M6.02",
+        "group": "empty",
+        "expectedTerm": "empty",
+        "expectedOverall": "empty",
+        "text": "",
+        "extra": []
+      },
+      {
+        "id": "R9-296",
+        "task": "M6.02",
+        "group": "empty",
+        "expectedTerm": "empty",
+        "expectedOverall": "empty",
+        "text": " \n\t ",
+        "extra": []
+      },
+      {
+        "id": "R9-297",
+        "task": "M6.02",
+        "group": "technical-text",
+        "expectedTerm": "technical",
+        "expectedOverall": "technical",
+        "text": "Osmose\u0000",
+        "extra": []
+      },
+      {
+        "id": "R9-298",
+        "task": "M6.02",
+        "group": "technical-text",
+        "expectedTerm": "technical",
+        "expectedOverall": "technical",
+        "text": "Osmose‮",
+        "extra": []
+      },
+      {
+        "id": "R9-299",
+        "task": "M6.02",
+        "group": "technical-text",
+        "expectedTerm": "technical",
+        "expectedOverall": "technical",
+        "text": "Osmose\ud800",
+        "extra": []
+      },
+      {
+        "id": "R9-300",
+        "task": "M6.02",
+        "group": "technical-text",
+        "expectedTerm": "technical",
+        "expectedOverall": "technical",
+        "text": "Osmose                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ",
+        "extra": []
+      }
+    ],
+    "systematic": [
+      {
+        "id": "R9SYS-001",
+        "task": "Z1.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "der Tonoplast und das Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-002",
+        "task": "Z1.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "der Tonoplast/Zellwand",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-003",
+        "task": "Z1.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "nicht der Tonoplast, sondern Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-004",
+        "task": "Z1.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "nicht der Zellwand, sondern Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-005",
+        "task": "Z1.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "keine der Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-006",
+        "task": "Z1.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "der Tonoplast mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-007",
+        "task": "Z1.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "der Tonoplast",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-008",
+        "task": "Z1.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "der Tonoplast, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-009",
+        "task": "Z1.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "dem Tonoplast und das Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-010",
+        "task": "Z1.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "dem Tonoplast/Zellwand",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-011",
+        "task": "Z1.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "nicht dem Tonoplast, sondern Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-012",
+        "task": "Z1.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "nicht dem Zellwand, sondern Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-013",
+        "task": "Z1.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "keine dem Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-014",
+        "task": "Z1.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "dem Tonoplast mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-015",
+        "task": "Z1.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "dem Tonoplast",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-016",
+        "task": "Z1.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "dem Tonoplast, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-017",
+        "task": "Z1.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "eines Tonoplast und das Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-018",
+        "task": "Z1.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "eines Tonoplast/Zellwand",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-019",
+        "task": "Z1.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "nicht eines Tonoplast, sondern Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-020",
+        "task": "Z1.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "nicht eines Zellwand, sondern Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-021",
+        "task": "Z1.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "keine eines Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-022",
+        "task": "Z1.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "eines Tonoplast mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-023",
+        "task": "Z1.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "eines Tonoplast",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-024",
+        "task": "Z1.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "eines Tonoplast, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-025",
+        "task": "Z1.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "eine Tonoplast und das Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-026",
+        "task": "Z1.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "eine Tonoplast/Zellwand",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-027",
+        "task": "Z1.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "nicht eine Tonoplast, sondern Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-028",
+        "task": "Z1.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "nicht eine Zellwand, sondern Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-029",
+        "task": "Z1.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "keine eine Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-030",
+        "task": "Z1.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "eine Tonoplast mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-031",
+        "task": "Z1.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "eine Tonoplast",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-032",
+        "task": "Z1.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "eine Tonoplast, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-033",
+        "task": "Z1.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "eventuell der Tonoplast und das Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-034",
+        "task": "Z1.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "eventuell der Tonoplast/Zellwand",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-035",
+        "task": "Z1.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "eventuell nicht der Tonoplast, sondern Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-036",
+        "task": "Z1.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "eventuell nicht der Zellwand, sondern Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-037",
+        "task": "Z1.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "eventuell keine der Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-038",
+        "task": "Z1.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "eventuell der Tonoplast mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-039",
+        "task": "Z1.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "eventuell der Tonoplast",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-040",
+        "task": "Z1.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "eventuell der Tonoplast, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-041",
+        "task": "Z1.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "eventuell dem Tonoplast und das Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-042",
+        "task": "Z1.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "eventuell dem Tonoplast/Zellwand",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-043",
+        "task": "Z1.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "eventuell nicht dem Tonoplast, sondern Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-044",
+        "task": "Z1.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "eventuell nicht dem Zellwand, sondern Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-045",
+        "task": "Z1.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "eventuell keine dem Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-046",
+        "task": "Z1.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "eventuell dem Tonoplast mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-047",
+        "task": "Z1.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "eventuell dem Tonoplast",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-048",
+        "task": "Z1.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "eventuell dem Tonoplast, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-049",
+        "task": "Z1.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "eventuell eines Tonoplast und das Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-050",
+        "task": "Z1.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "eventuell eines Tonoplast/Zellwand",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-051",
+        "task": "Z1.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "eventuell nicht eines Tonoplast, sondern Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-052",
+        "task": "Z1.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "eventuell nicht eines Zellwand, sondern Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-053",
+        "task": "Z1.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "eventuell keine eines Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-054",
+        "task": "Z1.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "eventuell eines Tonoplast mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-055",
+        "task": "Z1.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "eventuell eines Tonoplast",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-056",
+        "task": "Z1.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "eventuell eines Tonoplast, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-057",
+        "task": "Z1.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "eventuell eine Tonoplast und das Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-058",
+        "task": "Z1.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "eventuell eine Tonoplast/Zellwand",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-059",
+        "task": "Z1.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "eventuell nicht eine Tonoplast, sondern Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-060",
+        "task": "Z1.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "eventuell nicht eine Zellwand, sondern Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-061",
+        "task": "Z1.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "eventuell keine eine Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-062",
+        "task": "Z1.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "eventuell eine Tonoplast mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-063",
+        "task": "Z1.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "eventuell eine Tonoplast",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-064",
+        "task": "Z1.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "eventuell eine Tonoplast, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-065",
+        "task": "Z1.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vermutlich der Tonoplast und das Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-066",
+        "task": "Z1.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vermutlich der Tonoplast/Zellwand",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-067",
+        "task": "Z1.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vermutlich nicht der Tonoplast, sondern Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-068",
+        "task": "Z1.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vermutlich nicht der Zellwand, sondern Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-069",
+        "task": "Z1.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vermutlich keine der Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-070",
+        "task": "Z1.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vermutlich der Tonoplast mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-071",
+        "task": "Z1.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "vermutlich der Tonoplast",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-072",
+        "task": "Z1.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vermutlich der Tonoplast, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-073",
+        "task": "Z1.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vermutlich dem Tonoplast und das Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-074",
+        "task": "Z1.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vermutlich dem Tonoplast/Zellwand",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-075",
+        "task": "Z1.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vermutlich nicht dem Tonoplast, sondern Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-076",
+        "task": "Z1.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vermutlich nicht dem Zellwand, sondern Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-077",
+        "task": "Z1.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vermutlich keine dem Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-078",
+        "task": "Z1.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vermutlich dem Tonoplast mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-079",
+        "task": "Z1.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "vermutlich dem Tonoplast",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-080",
+        "task": "Z1.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vermutlich dem Tonoplast, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-081",
+        "task": "Z1.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vermutlich eines Tonoplast und das Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-082",
+        "task": "Z1.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vermutlich eines Tonoplast/Zellwand",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-083",
+        "task": "Z1.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vermutlich nicht eines Tonoplast, sondern Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-084",
+        "task": "Z1.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vermutlich nicht eines Zellwand, sondern Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-085",
+        "task": "Z1.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vermutlich keine eines Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-086",
+        "task": "Z1.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vermutlich eines Tonoplast mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-087",
+        "task": "Z1.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "vermutlich eines Tonoplast",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-088",
+        "task": "Z1.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vermutlich eines Tonoplast, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-089",
+        "task": "Z1.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vermutlich eine Tonoplast und das Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-090",
+        "task": "Z1.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vermutlich eine Tonoplast/Zellwand",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-091",
+        "task": "Z1.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vermutlich nicht eine Tonoplast, sondern Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-092",
+        "task": "Z1.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vermutlich nicht eine Zellwand, sondern Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-093",
+        "task": "Z1.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vermutlich keine eine Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-094",
+        "task": "Z1.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vermutlich eine Tonoplast mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-095",
+        "task": "Z1.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "vermutlich eine Tonoplast",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-096",
+        "task": "Z1.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vermutlich eine Tonoplast, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-097",
+        "task": "Z1.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vielleicht der Tonoplast und das Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-098",
+        "task": "Z1.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vielleicht der Tonoplast/Zellwand",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-099",
+        "task": "Z1.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vielleicht nicht der Tonoplast, sondern Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-100",
+        "task": "Z1.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vielleicht nicht der Zellwand, sondern Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-101",
+        "task": "Z1.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vielleicht keine der Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-102",
+        "task": "Z1.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vielleicht der Tonoplast mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-103",
+        "task": "Z1.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "vielleicht der Tonoplast",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-104",
+        "task": "Z1.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vielleicht der Tonoplast, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-105",
+        "task": "Z1.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vielleicht dem Tonoplast und das Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-106",
+        "task": "Z1.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vielleicht dem Tonoplast/Zellwand",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-107",
+        "task": "Z1.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vielleicht nicht dem Tonoplast, sondern Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-108",
+        "task": "Z1.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vielleicht nicht dem Zellwand, sondern Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-109",
+        "task": "Z1.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vielleicht keine dem Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-110",
+        "task": "Z1.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vielleicht dem Tonoplast mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-111",
+        "task": "Z1.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "vielleicht dem Tonoplast",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-112",
+        "task": "Z1.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vielleicht dem Tonoplast, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-113",
+        "task": "Z1.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vielleicht eines Tonoplast und das Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-114",
+        "task": "Z1.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vielleicht eines Tonoplast/Zellwand",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-115",
+        "task": "Z1.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vielleicht nicht eines Tonoplast, sondern Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-116",
+        "task": "Z1.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vielleicht nicht eines Zellwand, sondern Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-117",
+        "task": "Z1.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vielleicht keine eines Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-118",
+        "task": "Z1.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vielleicht eines Tonoplast mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-119",
+        "task": "Z1.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "vielleicht eines Tonoplast",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-120",
+        "task": "Z1.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vielleicht eines Tonoplast, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-121",
+        "task": "Z1.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vielleicht eine Tonoplast und das Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-122",
+        "task": "Z1.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vielleicht eine Tonoplast/Zellwand",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-123",
+        "task": "Z1.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vielleicht nicht eine Tonoplast, sondern Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-124",
+        "task": "Z1.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vielleicht nicht eine Zellwand, sondern Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-125",
+        "task": "Z1.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vielleicht keine eine Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-126",
+        "task": "Z1.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vielleicht eine Tonoplast mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-127",
+        "task": "Z1.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "vielleicht eine Tonoplast",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-128",
+        "task": "Z1.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "vielleicht eine Tonoplast, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-129",
+        "task": "Z1.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wahrscheinlich der Tonoplast und das Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-130",
+        "task": "Z1.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wahrscheinlich der Tonoplast/Zellwand",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-131",
+        "task": "Z1.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wahrscheinlich nicht der Tonoplast, sondern Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-132",
+        "task": "Z1.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wahrscheinlich nicht der Zellwand, sondern Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-133",
+        "task": "Z1.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wahrscheinlich keine der Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-134",
+        "task": "Z1.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wahrscheinlich der Tonoplast mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-135",
+        "task": "Z1.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "wahrscheinlich der Tonoplast",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-136",
+        "task": "Z1.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wahrscheinlich der Tonoplast, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-137",
+        "task": "Z1.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wahrscheinlich dem Tonoplast und das Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-138",
+        "task": "Z1.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wahrscheinlich dem Tonoplast/Zellwand",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-139",
+        "task": "Z1.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wahrscheinlich nicht dem Tonoplast, sondern Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-140",
+        "task": "Z1.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wahrscheinlich nicht dem Zellwand, sondern Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-141",
+        "task": "Z1.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wahrscheinlich keine dem Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-142",
+        "task": "Z1.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wahrscheinlich dem Tonoplast mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-143",
+        "task": "Z1.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "wahrscheinlich dem Tonoplast",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-144",
+        "task": "Z1.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wahrscheinlich dem Tonoplast, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-145",
+        "task": "Z1.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wahrscheinlich eines Tonoplast und das Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-146",
+        "task": "Z1.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wahrscheinlich eines Tonoplast/Zellwand",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-147",
+        "task": "Z1.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wahrscheinlich nicht eines Tonoplast, sondern Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-148",
+        "task": "Z1.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wahrscheinlich nicht eines Zellwand, sondern Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-149",
+        "task": "Z1.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wahrscheinlich keine eines Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-150",
+        "task": "Z1.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wahrscheinlich eines Tonoplast mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-151",
+        "task": "Z1.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "wahrscheinlich eines Tonoplast",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-152",
+        "task": "Z1.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wahrscheinlich eines Tonoplast, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-153",
+        "task": "Z1.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wahrscheinlich eine Tonoplast und das Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-154",
+        "task": "Z1.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wahrscheinlich eine Tonoplast/Zellwand",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-155",
+        "task": "Z1.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wahrscheinlich nicht eine Tonoplast, sondern Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-156",
+        "task": "Z1.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wahrscheinlich nicht eine Zellwand, sondern Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-157",
+        "task": "Z1.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wahrscheinlich keine eine Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-158",
+        "task": "Z1.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wahrscheinlich eine Tonoplast mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-159",
+        "task": "Z1.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "wahrscheinlich eine Tonoplast",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-160",
+        "task": "Z1.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wahrscheinlich eine Tonoplast, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-161",
+        "task": "Z1.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wohl der Tonoplast und das Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-162",
+        "task": "Z1.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wohl der Tonoplast/Zellwand",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-163",
+        "task": "Z1.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wohl nicht der Tonoplast, sondern Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-164",
+        "task": "Z1.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wohl nicht der Zellwand, sondern Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-165",
+        "task": "Z1.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wohl keine der Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-166",
+        "task": "Z1.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wohl der Tonoplast mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-167",
+        "task": "Z1.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "wohl der Tonoplast",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-168",
+        "task": "Z1.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wohl der Tonoplast, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-169",
+        "task": "Z1.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wohl dem Tonoplast und das Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-170",
+        "task": "Z1.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wohl dem Tonoplast/Zellwand",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-171",
+        "task": "Z1.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wohl nicht dem Tonoplast, sondern Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-172",
+        "task": "Z1.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wohl nicht dem Zellwand, sondern Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-173",
+        "task": "Z1.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wohl keine dem Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-174",
+        "task": "Z1.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wohl dem Tonoplast mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-175",
+        "task": "Z1.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "wohl dem Tonoplast",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-176",
+        "task": "Z1.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wohl dem Tonoplast, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-177",
+        "task": "Z1.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wohl eines Tonoplast und das Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-178",
+        "task": "Z1.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wohl eines Tonoplast/Zellwand",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-179",
+        "task": "Z1.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wohl nicht eines Tonoplast, sondern Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-180",
+        "task": "Z1.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wohl nicht eines Zellwand, sondern Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-181",
+        "task": "Z1.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wohl keine eines Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-182",
+        "task": "Z1.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wohl eines Tonoplast mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-183",
+        "task": "Z1.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "wohl eines Tonoplast",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-184",
+        "task": "Z1.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wohl eines Tonoplast, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-185",
+        "task": "Z1.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wohl eine Tonoplast und das Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-186",
+        "task": "Z1.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wohl eine Tonoplast/Zellwand",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-187",
+        "task": "Z1.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wohl nicht eine Tonoplast, sondern Vakuolenmembran",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-188",
+        "task": "Z1.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wohl nicht eine Zellwand, sondern Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-189",
+        "task": "Z1.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wohl keine eine Tonoplast",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-190",
+        "task": "Z1.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wohl eine Tonoplast mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-191",
+        "task": "Z1.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "wohl eine Tonoplast",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-192",
+        "task": "Z1.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "correct",
+        "text": "wohl eine Tonoplast, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-193",
+        "task": "M6.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "der Osmose und das Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-194",
+        "task": "M6.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "der Osmose/Exocytose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-195",
+        "task": "M6.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "nicht der Osmose, sondern Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-196",
+        "task": "M6.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "nicht der Exocytose, sondern Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-197",
+        "task": "M6.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "keine der Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-198",
+        "task": "M6.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "der Osmose mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-199",
+        "task": "M6.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "der Osmose",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-200",
+        "task": "M6.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "der Osmose, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-201",
+        "task": "M6.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "dem Osmose und das Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-202",
+        "task": "M6.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "dem Osmose/Exocytose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-203",
+        "task": "M6.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "nicht dem Osmose, sondern Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-204",
+        "task": "M6.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "nicht dem Exocytose, sondern Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-205",
+        "task": "M6.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "keine dem Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-206",
+        "task": "M6.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "dem Osmose mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-207",
+        "task": "M6.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "dem Osmose",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-208",
+        "task": "M6.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "dem Osmose, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-209",
+        "task": "M6.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "eines Osmose und das Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-210",
+        "task": "M6.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "eines Osmose/Exocytose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-211",
+        "task": "M6.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "nicht eines Osmose, sondern Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-212",
+        "task": "M6.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "nicht eines Exocytose, sondern Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-213",
+        "task": "M6.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "keine eines Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-214",
+        "task": "M6.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "eines Osmose mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-215",
+        "task": "M6.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "eines Osmose",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-216",
+        "task": "M6.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "eines Osmose, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-217",
+        "task": "M6.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "eine Osmose und das Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-218",
+        "task": "M6.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "eine Osmose/Exocytose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-219",
+        "task": "M6.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "nicht eine Osmose, sondern Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-220",
+        "task": "M6.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "nicht eine Exocytose, sondern Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-221",
+        "task": "M6.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "keine eine Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-222",
+        "task": "M6.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "eine Osmose mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-223",
+        "task": "M6.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "eine Osmose",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-224",
+        "task": "M6.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "eine Osmose, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-225",
+        "task": "M6.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "eventuell der Osmose und das Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-226",
+        "task": "M6.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "eventuell der Osmose/Exocytose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-227",
+        "task": "M6.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "eventuell nicht der Osmose, sondern Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-228",
+        "task": "M6.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "eventuell nicht der Exocytose, sondern Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-229",
+        "task": "M6.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "eventuell keine der Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-230",
+        "task": "M6.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "eventuell der Osmose mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-231",
+        "task": "M6.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "eventuell der Osmose",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-232",
+        "task": "M6.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "eventuell der Osmose, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-233",
+        "task": "M6.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "eventuell dem Osmose und das Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-234",
+        "task": "M6.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "eventuell dem Osmose/Exocytose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-235",
+        "task": "M6.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "eventuell nicht dem Osmose, sondern Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-236",
+        "task": "M6.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "eventuell nicht dem Exocytose, sondern Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-237",
+        "task": "M6.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "eventuell keine dem Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-238",
+        "task": "M6.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "eventuell dem Osmose mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-239",
+        "task": "M6.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "eventuell dem Osmose",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-240",
+        "task": "M6.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "eventuell dem Osmose, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-241",
+        "task": "M6.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "eventuell eines Osmose und das Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-242",
+        "task": "M6.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "eventuell eines Osmose/Exocytose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-243",
+        "task": "M6.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "eventuell nicht eines Osmose, sondern Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-244",
+        "task": "M6.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "eventuell nicht eines Exocytose, sondern Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-245",
+        "task": "M6.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "eventuell keine eines Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-246",
+        "task": "M6.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "eventuell eines Osmose mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-247",
+        "task": "M6.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "eventuell eines Osmose",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-248",
+        "task": "M6.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "eventuell eines Osmose, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-249",
+        "task": "M6.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "eventuell eine Osmose und das Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-250",
+        "task": "M6.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "eventuell eine Osmose/Exocytose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-251",
+        "task": "M6.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "eventuell nicht eine Osmose, sondern Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-252",
+        "task": "M6.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "eventuell nicht eine Exocytose, sondern Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-253",
+        "task": "M6.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "eventuell keine eine Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-254",
+        "task": "M6.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "eventuell eine Osmose mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-255",
+        "task": "M6.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "eventuell eine Osmose",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-256",
+        "task": "M6.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "eventuell eine Osmose, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-257",
+        "task": "M6.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vermutlich der Osmose und das Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-258",
+        "task": "M6.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vermutlich der Osmose/Exocytose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-259",
+        "task": "M6.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vermutlich nicht der Osmose, sondern Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-260",
+        "task": "M6.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vermutlich nicht der Exocytose, sondern Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-261",
+        "task": "M6.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vermutlich keine der Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-262",
+        "task": "M6.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vermutlich der Osmose mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-263",
+        "task": "M6.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "vermutlich der Osmose",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-264",
+        "task": "M6.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vermutlich der Osmose, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-265",
+        "task": "M6.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vermutlich dem Osmose und das Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-266",
+        "task": "M6.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vermutlich dem Osmose/Exocytose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-267",
+        "task": "M6.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vermutlich nicht dem Osmose, sondern Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-268",
+        "task": "M6.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vermutlich nicht dem Exocytose, sondern Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-269",
+        "task": "M6.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vermutlich keine dem Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-270",
+        "task": "M6.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vermutlich dem Osmose mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-271",
+        "task": "M6.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "vermutlich dem Osmose",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-272",
+        "task": "M6.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vermutlich dem Osmose, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-273",
+        "task": "M6.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vermutlich eines Osmose und das Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-274",
+        "task": "M6.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vermutlich eines Osmose/Exocytose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-275",
+        "task": "M6.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vermutlich nicht eines Osmose, sondern Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-276",
+        "task": "M6.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vermutlich nicht eines Exocytose, sondern Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-277",
+        "task": "M6.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vermutlich keine eines Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-278",
+        "task": "M6.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vermutlich eines Osmose mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-279",
+        "task": "M6.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "vermutlich eines Osmose",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-280",
+        "task": "M6.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vermutlich eines Osmose, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-281",
+        "task": "M6.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vermutlich eine Osmose und das Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-282",
+        "task": "M6.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vermutlich eine Osmose/Exocytose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-283",
+        "task": "M6.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vermutlich nicht eine Osmose, sondern Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-284",
+        "task": "M6.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vermutlich nicht eine Exocytose, sondern Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-285",
+        "task": "M6.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vermutlich keine eine Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-286",
+        "task": "M6.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vermutlich eine Osmose mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-287",
+        "task": "M6.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "vermutlich eine Osmose",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-288",
+        "task": "M6.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vermutlich eine Osmose, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-289",
+        "task": "M6.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vielleicht der Osmose und das Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-290",
+        "task": "M6.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vielleicht der Osmose/Exocytose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-291",
+        "task": "M6.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vielleicht nicht der Osmose, sondern Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-292",
+        "task": "M6.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vielleicht nicht der Exocytose, sondern Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-293",
+        "task": "M6.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vielleicht keine der Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-294",
+        "task": "M6.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vielleicht der Osmose mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-295",
+        "task": "M6.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "vielleicht der Osmose",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-296",
+        "task": "M6.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vielleicht der Osmose, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-297",
+        "task": "M6.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vielleicht dem Osmose und das Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-298",
+        "task": "M6.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vielleicht dem Osmose/Exocytose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-299",
+        "task": "M6.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vielleicht nicht dem Osmose, sondern Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-300",
+        "task": "M6.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vielleicht nicht dem Exocytose, sondern Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-301",
+        "task": "M6.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vielleicht keine dem Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-302",
+        "task": "M6.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vielleicht dem Osmose mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-303",
+        "task": "M6.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "vielleicht dem Osmose",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-304",
+        "task": "M6.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vielleicht dem Osmose, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-305",
+        "task": "M6.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vielleicht eines Osmose und das Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-306",
+        "task": "M6.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vielleicht eines Osmose/Exocytose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-307",
+        "task": "M6.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vielleicht nicht eines Osmose, sondern Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-308",
+        "task": "M6.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vielleicht nicht eines Exocytose, sondern Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-309",
+        "task": "M6.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vielleicht keine eines Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-310",
+        "task": "M6.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vielleicht eines Osmose mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-311",
+        "task": "M6.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "vielleicht eines Osmose",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-312",
+        "task": "M6.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vielleicht eines Osmose, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-313",
+        "task": "M6.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vielleicht eine Osmose und das Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-314",
+        "task": "M6.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vielleicht eine Osmose/Exocytose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-315",
+        "task": "M6.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vielleicht nicht eine Osmose, sondern Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-316",
+        "task": "M6.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vielleicht nicht eine Exocytose, sondern Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-317",
+        "task": "M6.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "vielleicht keine eine Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-318",
+        "task": "M6.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "vielleicht eine Osmose mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-319",
+        "task": "M6.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "vielleicht eine Osmose",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-320",
+        "task": "M6.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "vielleicht eine Osmose, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-321",
+        "task": "M6.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wahrscheinlich der Osmose und das Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-322",
+        "task": "M6.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wahrscheinlich der Osmose/Exocytose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-323",
+        "task": "M6.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wahrscheinlich nicht der Osmose, sondern Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-324",
+        "task": "M6.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wahrscheinlich nicht der Exocytose, sondern Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-325",
+        "task": "M6.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wahrscheinlich keine der Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-326",
+        "task": "M6.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wahrscheinlich der Osmose mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-327",
+        "task": "M6.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "wahrscheinlich der Osmose",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-328",
+        "task": "M6.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wahrscheinlich der Osmose, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-329",
+        "task": "M6.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wahrscheinlich dem Osmose und das Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-330",
+        "task": "M6.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wahrscheinlich dem Osmose/Exocytose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-331",
+        "task": "M6.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wahrscheinlich nicht dem Osmose, sondern Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-332",
+        "task": "M6.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wahrscheinlich nicht dem Exocytose, sondern Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-333",
+        "task": "M6.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wahrscheinlich keine dem Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-334",
+        "task": "M6.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wahrscheinlich dem Osmose mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-335",
+        "task": "M6.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "wahrscheinlich dem Osmose",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-336",
+        "task": "M6.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wahrscheinlich dem Osmose, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-337",
+        "task": "M6.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wahrscheinlich eines Osmose und das Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-338",
+        "task": "M6.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wahrscheinlich eines Osmose/Exocytose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-339",
+        "task": "M6.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wahrscheinlich nicht eines Osmose, sondern Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-340",
+        "task": "M6.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wahrscheinlich nicht eines Exocytose, sondern Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-341",
+        "task": "M6.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wahrscheinlich keine eines Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-342",
+        "task": "M6.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wahrscheinlich eines Osmose mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-343",
+        "task": "M6.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "wahrscheinlich eines Osmose",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-344",
+        "task": "M6.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wahrscheinlich eines Osmose, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-345",
+        "task": "M6.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wahrscheinlich eine Osmose und das Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-346",
+        "task": "M6.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wahrscheinlich eine Osmose/Exocytose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-347",
+        "task": "M6.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wahrscheinlich nicht eine Osmose, sondern Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-348",
+        "task": "M6.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wahrscheinlich nicht eine Exocytose, sondern Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-349",
+        "task": "M6.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wahrscheinlich keine eine Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-350",
+        "task": "M6.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wahrscheinlich eine Osmose mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-351",
+        "task": "M6.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "wahrscheinlich eine Osmose",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-352",
+        "task": "M6.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wahrscheinlich eine Osmose, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-353",
+        "task": "M6.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wohl der Osmose und das Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-354",
+        "task": "M6.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wohl der Osmose/Exocytose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-355",
+        "task": "M6.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wohl nicht der Osmose, sondern Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-356",
+        "task": "M6.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wohl nicht der Exocytose, sondern Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-357",
+        "task": "M6.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wohl keine der Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-358",
+        "task": "M6.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wohl der Osmose mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-359",
+        "task": "M6.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "wohl der Osmose",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-360",
+        "task": "M6.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wohl der Osmose, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-361",
+        "task": "M6.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wohl dem Osmose und das Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-362",
+        "task": "M6.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wohl dem Osmose/Exocytose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-363",
+        "task": "M6.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wohl nicht dem Osmose, sondern Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-364",
+        "task": "M6.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wohl nicht dem Exocytose, sondern Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-365",
+        "task": "M6.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wohl keine dem Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-366",
+        "task": "M6.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wohl dem Osmose mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-367",
+        "task": "M6.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "wohl dem Osmose",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-368",
+        "task": "M6.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wohl dem Osmose, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-369",
+        "task": "M6.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wohl eines Osmose und das Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-370",
+        "task": "M6.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wohl eines Osmose/Exocytose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-371",
+        "task": "M6.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wohl nicht eines Osmose, sondern Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-372",
+        "task": "M6.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wohl nicht eines Exocytose, sondern Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-373",
+        "task": "M6.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wohl keine eines Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-374",
+        "task": "M6.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wohl eines Osmose mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-375",
+        "task": "M6.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "wohl eines Osmose",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-376",
+        "task": "M6.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wohl eines Osmose, danke!",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-377",
+        "task": "M6.02",
+        "group": "synonym",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wohl eine Osmose und das Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-378",
+        "task": "M6.02",
+        "group": "competition",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wohl eine Osmose/Exocytose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-379",
+        "task": "M6.02",
+        "group": "contradiction",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wohl nicht eine Osmose, sondern Osmosse",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-380",
+        "task": "M6.02",
+        "group": "correction",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wohl nicht eine Exocytose, sondern Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-381",
+        "task": "M6.02",
+        "group": "not-target",
+        "expectedTerm": "incorrect",
+        "expectedOverall": "incorrect",
+        "text": "wohl keine eine Osmose",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-382",
+        "task": "M6.02",
+        "group": "unknown-tail",
+        "expectedTerm": "clarify",
+        "expectedOverall": "clarify",
+        "text": "wohl eine Osmose mit unbekanntem Rest",
+        "extra": []
+      },
+      {
+        "id": "R9SYS-383",
+        "task": "M6.02",
+        "group": "unknown-extra",
+        "expectedTerm": "correct",
+        "expectedOverall": "clarify",
+        "text": "wohl eine Osmose",
+        "extra": [
+          "Die Membran ist ein unbekanntes Zusatzobjekt."
+        ]
+      },
+      {
+        "id": "R9SYS-384",
+        "task": "M6.02",
+        "group": "polite-tail",
+        "expectedTerm": "correct",
+        "expectedOverall": "partial",
+        "text": "wohl eine Osmose, danke!",
+        "extra": []
+      }
+    ]
+  },
+  "contexts": {
+    "Z1.02": {
+      "contentVersion": "zelllabor11.naming-content/1.0.0",
+      "instanceId": "independent-R9-Z1.02",
+      "material": {
+        "cellProfile": "plant_leaf",
+        "highlightedStructureId": "tonoplast"
+      },
+      "modelState": {},
+      "modelVersion": "review-no-simulation",
+      "phase": "explain",
+      "rubricVersion": "Z1.02.C01@concept-1-scope-1",
+      "seed": "independent-R9-fresh-seed",
+      "taskId": "Z1.02",
+      "taskVersion": "Z1.02@term-input-1",
+      "contextHash": "sha256-v1:4fb2148fd914c52575147ac769b2967a0613c234d2de1ae4b9114af417bc5dd7"
+    },
+    "M6.02": {
+      "contentVersion": "zelllabor11.naming-content/1.0.0",
+      "instanceId": "independent-R9-M6.02",
+      "material": {
+        "cellIntegrity": "intact",
+        "cellProfile": "onion_epidermis",
+        "observationPhase": "early_water_loss_after_solution_change",
+        "otherTransport": "excluded",
+        "sucroseRetention": "largely_retained",
+        "waterPermeability": {
+          "cellMembrane": true,
+          "tonoplast": true
+        },
+        "waterPotential": {
+          "cytosol": -390000,
+          "external": -925000,
+          "unit": "Pa",
+          "vacuole": -175000
+        }
+      },
+      "modelState": {},
+      "modelVersion": "review-no-simulation",
+      "phase": "explain",
+      "rubricVersion": "M6.02.C01@concept-1-scope-1",
+      "seed": "independent-R9-fresh-seed",
+      "taskId": "M6.02",
+      "taskVersion": "M6.02@term-input-1",
+      "contextHash": "sha256-v1:1cc9105728cdb15118d1d91dded16ea722f7c06cc8eed34763d4ca9f5d12195d"
+    }
+  },
+  "expectedInputHashes": {
+    "primary": "8fd500aafc43c5d216671047113f9a012fb85c7ab1746709cac3ebaf16267328",
+    "systematic": "782e760f5250a0d75a9673dc2f0fb902ed97804e598c2561e7b139dd84c1a4a6"
+  },
+  "expectedOutcomeHashes": {
+    "primary": "bb6947fdda54fc13871a434ea45d90c055078c80cfa04af0c48d300e67e2d70c",
+    "systematic": "411beb06270e755e0669b8a4ca49be80e1081dc875bc415f26d6dc9e2c8bce23"
+  }
+}

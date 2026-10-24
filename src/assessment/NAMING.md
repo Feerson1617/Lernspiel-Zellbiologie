@@ -1,5 +1,10 @@
 # Benennung mit naming-input/1.0.0
 
+R9-Provenienzkorrektur: `review/naming-history-1.0.1.md`. Verlorenes RAM-Vertrauen
+gilt für die gesamte rekonstruierte Sitzung; ein lokal unbekannter Materialfall
+stellt es nicht wieder her. Fachliche Übung bleibt möglich, neue Erfolgsbuchungen
+bleiben gesperrt. Die folgenden Begriffs-/Ergebnisverträge sind unverändert.
+
 Nur `{Z1.02,term}` und `{M6.02,process}`. Originalfrage und C01 unverändert;
 keine Richtungs-/Volumenkorrektur. Normativer, vor Code und erster Bewertung
 fixierter Vertrag: `review/naming-input-1.0.0.md`; Freeze mit Zeit/Hashes:

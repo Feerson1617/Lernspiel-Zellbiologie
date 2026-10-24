@@ -84,17 +84,11 @@ jobs:
       - run: python -m pip install -r requirements-spec.txt
       - run: npx playwright install webkit
       - run: npm run build
-      - name: WebKit baseline (platform-correct link navigation and Enter)
-        id: webkit_baseline
+      - name: Complete WebKit suite (WEBKIT_SUITE=all)
+        id: webkit_all
         continue-on-error: true
         env:
-          WEBKIT_SUITE: baseline
-        run: npx playwright test --config=playwright.webkit.config.ts
-      - name: Additional actual-runtime and platform-keyboard checks
-        id: webkit_additional
-        continue-on-error: true
-        env:
-          WEBKIT_SUITE: additional
+          WEBKIT_SUITE: all
         run: npx playwright test --config=playwright.webkit.config.ts
       - name: Report actual WebKit counts and retain a failed gate for any failed tests
         if: always()
@@ -102,7 +96,7 @@ jobs:
           node --input-type=module <<'JS'
           import { readFileSync } from 'node:fs';
           let failed = false;
-          for (const suite of ['baseline', 'additional']) {
+          for (const suite of ['all']) {
             try {
               const r = JSON.parse(readFileSync(`qa/generated/webkit-${suite}.json`, 'utf8'));
               const s = r.stats;
@@ -127,7 +121,7 @@ jobs:
                 Object.values(value).forEach(collect);
               }
               collect(r.suites);
-              const result = { prHead: process.env.PR_HEAD_SHA, executionSha: process.env.GITHUB_SHA, platform: process.platform, arch: process.arch, node: process.version, suite, ...s, keyboard, timings, failedTests };
+              const result = { prHead: process.env.PR_HEAD_SHA, executionSha: process.env.GITHUB_SHA, platform: process.platform, arch: process.arch, node: process.version, suite, ...s, keyboard, failedTests, timings };
               console.log(`::notice title=WebKit ${suite} actual results::${JSON.stringify(result)}`);
               if (s.unexpected || s.skipped || s.flaky || r.errors?.length) failed = true;
             } catch (error) {

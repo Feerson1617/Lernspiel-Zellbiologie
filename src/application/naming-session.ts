@@ -29,6 +29,9 @@ export function createNamingSession(initial: TaskContext, configuration: NamingS
   const receipts = new Map<NamingOutcome, AttemptRecord>();
   const submissions = new Map<string, string>();
   const loadedAttempts = parseProgress({ schemaVersion: 1, contentVersion: initial.contentVersion, attempts: options.loadedAttempts }).attempts;
+  // naming-history/1.0.1: an absent RAM entry is not evidence of novelty after
+  // reconstruction. Unsaved help cannot be recovered from eight-field receipts.
+  const sessionHistory = options.resumed || loadedAttempts.length > 0 ? 'history_unverified' : 'verified';
   const seenCases: TaskContext[] = [context];
   let revision = 1;
   let latest: NamingOutcome | null = null;
@@ -38,7 +41,7 @@ export function createNamingSession(initial: TaskContext, configuration: NamingS
   const rank = (a: Assistance) => ASSISTANCE_KINDS.indexOf(a);
   const loaded = loadedAttempts.filter(a => a.taskId === context.taskId && a.instanceId === context.instanceId);
   const floor = loaded.reduce<Assistance>((v, a) => rank(a.assistance) > rank(v) ? a.assistance : v, 'independent');
-  instances.set(key(context), { context, events: [], history: options.resumed || loaded.length ? 'history_unverified' : 'verified', floor });
+  instances.set(key(context), { context, events: [], history: sessionHistory, floor });
   const history = () => instances.get(key(context))!;
   function assistance(): Assistance { return history().events.reduce<Assistance>((v, e) => rank(e.kind) > rank(v) ? e.kind : v, history().floor); }
   function edit(): void { revision++; origin = 'typed'; }
@@ -91,7 +94,7 @@ export function createNamingSession(initial: TaskContext, configuration: NamingS
       const prior = seenCases.filter(v => v.taskId === next.taskId);
       namingRequire(prior.every(v => v.seed !== next.seed && snapshotContextData(v.material).json !== material), 'RELABELLED_CASE');
       namingRequire(!loadedAttempts.some(a => a.taskId === next.taskId && a.instanceId === next.instanceId), 'LOADED_INSTANCE');
-      instances.set(key(next), { context: next, events: [], floor: 'independent', history: 'verified' });
+      instances.set(key(next), { context: next, events: [], floor: 'independent', history: sessionHistory });
     }
     seenCases.push(next); context = next; latest = null; edit();
   }

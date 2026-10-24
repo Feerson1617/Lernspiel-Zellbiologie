@@ -10,18 +10,23 @@ test.beforeAll(async () => { source = await buildDomainModule(); });
 async function openLab(page: import('@playwright/test').Page, baseURL: string, taskId: NamingTaskId, fault = '') {
   await page.route(`${baseURL}naming-runtime.mjs`, route => route.fulfill({ contentType: 'text/javascript', body: source }));
   const initial = JSON.stringify(namingContext(taskId));
-  await page.route(`${baseURL}naming-lab*`, route => route.fulfill({ contentType: 'text/html', body: `<!doctype html><html lang="de"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Interne Benennungsprobe</title><div id="lab"></div><script type="module">
+  let opened = false; // trusted harness RAM, not persistent browser metadata
+  await page.route(`${baseURL}naming-lab*`, route => {
+    const reconstructed = opened; opened = true;
+    return route.fulfill({ contentType: 'text/html', body: `<!doctype html><html lang="de"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Interne Benennungsprobe</title><div id="lab"></div><script type="module">
     import * as api from './naming-runtime.mjs';
     const initial=${initial};
     const nav=performance.getEntriesByType('navigation')[0]?.type;
     function replace(c,changes){const {contextHash,...input}=c;return api.createTaskContext({...input,...changes});}
     function changedMaterial(c){return c.taskId==='Z1.02'?{...c.material,cellProfile:c.material.cellProfile==='onion_epidermis'?'plant_leaf':'onion_epidermis'}:{...c.material,waterPotential:{...c.material.waterPotential,external:c.material.waterPotential.external-1000}};}
-    let next=0;
-    window.lab=api.mountNamingLab(document.getElementById('lab'),{initialContext:initial,idPrefix:crypto.randomUUID(),resumed:nav==='reload'||nav==='back_forward',
+    // Two explicit material cases. B has a stable identity even across reload;
+    // source-local counters or random labels cannot establish global novelty.
+    const caseB=replace(initial,{instanceId:initial.instanceId+'-new-1',seed:initial.seed+'-new-1',material:changedMaterial(initial)});
+    window.lab=api.mountNamingLab(document.getElementById('lab'),{initialContext:initial,idPrefix:crypto.randomUUID(),resumed:${reconstructed}||nav==='reload'||nav==='back_forward',
       acquireStorage:()=>{if(${JSON.stringify(fault)}==='denied')throw new DOMException('test','SecurityError');if(${JSON.stringify(fault)}==='quota')return {getItem:k=>localStorage.getItem(k),setItem:()=>{throw new DOMException('test','QuotaExceededError')},removeItem:()=>{throw Error('never delete')}};return localStorage;},
       changedContext:c=>replace(c,{seed:c.seed+'-changed',material:changedMaterial(c)}),
-      newCase:c=>replace(c,{instanceId:c.instanceId+'-new-'+(++next),seed:c.seed+'-new-'+next,material:changedMaterial(c)})});
-  </script></html>` }));
+      newCase:()=>caseB});
+  </script></html>` }); });
   await page.goto(`./naming-lab?task=${taskId}&fault=${fault}`);
   await expect(page.getByRole('heading', { name: 'Fachbegriff prüfen', exact: true })).toBeVisible();
 }
@@ -132,10 +137,10 @@ test('reload/back keeps unknown history explicit; new material case distinct; qu
     await expect(page.getByRole('textbox', { name: 'Fachbegriff', exact: true })).toHaveValue('');
     await expect(page.getByRole('region', { name: 'Versuchsverlauf' })).toContainText('Nicht als Antwort des neuen Falls übernommen');
     await page.getByRole('button', { name: 'Begriff prüfen', exact: true }).click();
-    await expect(page.getByRole('region', { name: 'Rückmeldung' })).toHaveAttribute('data-status', 'empty');
+    await expect(page.getByRole('region', { name: 'Rückmeldung' })).toHaveAttribute('data-status', 'technical');
     await page.getByRole('textbox', { name: 'Fachbegriff', exact: true }).fill('Tonoplast');
     await page.getByRole('button', { name: 'Begriff prüfen', exact: true }).click();
-    await expect(page.getByRole('region', { name: 'Rückmeldung' })).toHaveAttribute('data-status', 'correct');
+    await expect(page.getByRole('region', { name: 'Rückmeldung' })).toHaveAttribute('data-status', 'technical');
     await page.goto('./'); await page.goBack();
     await expect(page.getByRole('region', { name: 'Überarbeiten und Hilfen' })).toContainText('Historie nach Laden/Zurück ungesichert');
     expect(await page.evaluate(() => localStorage.getItem('foreign-test-sentinel'))).toBe('preserve');

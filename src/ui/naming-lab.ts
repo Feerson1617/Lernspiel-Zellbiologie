@@ -96,7 +96,7 @@ export function mountNamingLab(root: HTMLElement, options: NamingLabOptions) {
   }
   function renderMeta(): void {
     const state = session.getState(), storage = store.getState();
-    supportInfo.textContent = `${state.history === 'verified' ? ASSISTANCE_LABELS[state.assistance] + ' · Sitzungsverlauf bekannt' : 'Historie nach Laden/Zurück ungesichert: frühere Hilfen unbekannt; kein neuer Erfolgsnachweis für diesen Fall'} · Hilfeereignisse dieser Sitzung: ${state.events.map(e => e.kind).join(', ') || 'keine'}`;
+    supportInfo.textContent = `${state.history === 'verified' ? ASSISTANCE_LABELS[state.assistance] + ' · Sitzungsverlauf bekannt' : 'Historie nach Laden/Zurück ungesichert: frühere Hilfen unbekannt; auch ein anderer Materialfall stellt diesen Nachweis nicht wieder her. Du kannst fachlich weiterüben; ein neuer eigenständiger Erfolg wird in dieser Sitzung nicht gebucht.'} · Hilfeereignisse dieser Sitzung: ${state.events.map(e => e.kind).join(', ') || 'keine'}`;
     storageInfo.textContent = storage.issue ? `Speicherhinweis (${storage.issue}): Die aktuelle Arbeit bleibt in dieser Sitzung erhalten. Vorhandene fremde Daten bleiben unberührt.` : 'Lokal gespeichert werden ausschließlich acht Metadatenfelder je Versuch, keine Antworttexte oder Belege.';
     history.replaceChildren(); node('h2', 'Versuchsverlauf · nur in dieser Sitzung', history);
     for (const o of state.outcomes) {
@@ -123,7 +123,7 @@ export function mountNamingLab(root: HTMLElement, options: NamingLabOptions) {
     for (const unassessed of o.notAssessed) node('p', `Nicht geprüft (not_assessed) · ${unassessed.field === 'termText' ? 'vollständiger Feldtext' : 'Weitere Aussage'}: ${unassessed.value}`, feedback);
     if (o.notAssessed.length) node('p', 'Die ungeprüften Gedanken bleiben erhalten. Kein grünes Gesamturteil; eine gesonderte Erklärung benötigt eine spätere eigene Prüfung.', feedback);
     if (o.pendingCriteria.length) node('p', `Weiterhin offen: ${o.pendingCriteria.join(', ')}. Keine abgeschlossene M6.02-Aufgabe.`, feedback);
-    if (o.support.history === 'history_unverified') node('p', 'Historie nach Laden/Zurück ungesichert: Kriteriumsübung möglich, kein neuer Erfolgsnachweis. Ein tatsächlich neuer Materialfall wird getrennt erfasst.', feedback);
+    if (o.support.history === 'history_unverified') node('p', 'Historie nach Laden/Zurück ungesichert: Die fachliche Übung bleibt möglich. Frühere Hilfen sind nicht belegbar; auch der Materialwechsel erzeugt keinen neuen eigenständigen Erfolgsnachweis in dieser Sitzung.', feedback);
     node('p', o.support.history === 'verified' ? ASSISTANCE_LABELS[o.support.assistance] : 'Frühere Hilfen unbekannt. Keine bestätigte Eigenständigkeit nach Laden/Zurück.', feedback);
   }
   function changed(): void { session.edit(); showMessage('Die Eingabe wurde geändert. Das vorherige Ergebnis gilt nicht für diesen ungeprüften Entwurf. Prüfe erneut.'); renderMeta(); }
