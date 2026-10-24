@@ -125,6 +125,17 @@ it('provides specific rich feedback, no unrequested solution for wrong/partial a
   }
 });
 function session() { return createNamingSession(namingContext('Z1.02'), { idPrefix: 'chain', resumed: false, loadedAttempts: [] }); }
+it('owns the session configuration: caller mutation cannot mint a second booking for the same revision', () => {
+  const config = { idPrefix: 'owned-prefix', resumed: false, loadedAttempts: [] };
+  const s = createNamingSession(namingContext('Z1.02'), config);
+  const first = s.submit(s.makeSubmission('Tonoplast', [])), record = s.record(first);
+  config.idPrefix = 'changed-prefix'; config.resumed = true;
+  const duplicate = s.submit(s.makeSubmission('Tonoplast', []));
+  expect(duplicate).toBe(first); expect(s.record(duplicate)).toBe(record);
+  expect(duplicate.submission.attemptId).toBe('owned-prefix-1');
+  expect(s.getState().outcomes).toHaveLength(1);
+  expect(() => createNamingSession(namingContext('Z1.02'), { ...config, unexpected: true } as never)).toThrow();
+});
 it('makes self revision independent, links to the original predecessor context and prevents duplicate bookings', () => {
   const s = session(); const first = s.submit(s.makeSubmission('Membran', [])); s.edit();
   const request = s.makeSubmission('Tonoplast', []), second = s.submit(request);
@@ -142,6 +153,8 @@ it('keeps actual support sticky across all five states, material changes and cop
     s.help(help); const result = s.submit(s.makeSubmission('Tonoplast', []));
     expect(result.support.assistance).toBe(help); expect(result.support.events.at(-1)?.kind).toBe(help);
     expect(result.support.origin).toBe(help === 'clarified' ? 'wordbank_selection' : 'typed');
+    s.edit(); const wrong = s.submit(s.makeSubmission('Zellwand', []));
+    expect(wrong.termResult.status).toBe('incorrect'); expect(wrong.support.assistance).toBe(help);
   }
   expect(first.support.assistance).toBe('independent'); expect(first.overallStatus).toBe('incorrect');
   const changed = namingContext('Z1.02', { material: { highlightedStructureId: 'tonoplast', cellProfile: 'plant_leaf' }, seed: 'new-state' });

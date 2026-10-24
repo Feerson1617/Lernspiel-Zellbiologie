@@ -1,7 +1,7 @@
 import { ASSISTANCE_KINDS } from '../domain/contracts.ts';
 import type { Assistance } from '../domain/contracts.ts';
-import { snapshotContextData } from '../domain/context-data.ts';
-import { NAMING_CONTRACT, namingRequire, namingSnapshot, parseNamingSubmission } from '../domain/naming-contract.ts';
+import { readDataRecord, snapshotContextData } from '../domain/context-data.ts';
+import { NAMING_CONTRACT, namingRequire, namingSnapshot, parseNamingSubmission, exactNamingFields } from '../domain/naming-contract.ts';
 import type { NamingHelpEvent, NamingOutcome, NamingSubmission, NamingTaskId } from '../domain/naming-contract.ts';
 import { createContextBinding, isResultForContext, parseTaskContext } from '../domain/task-context.ts';
 import type { TaskContext } from '../domain/task-context.ts';
@@ -17,7 +17,9 @@ export interface NamingSessionOptions {
   readonly loadedAttempts: readonly AttemptRecord[];
 }
 /** Private issuance ledger is RAM-only. No raw answers, evidence or links go to storage. */
-export function createNamingSession(initial: TaskContext, options: NamingSessionOptions) {
+export function createNamingSession(initial: TaskContext, configuration: NamingSessionOptions) {
+  const options = namingSnapshot(configuration);
+  exactNamingFields(readDataRecord(options), ['idPrefix', 'resumed', 'loadedAttempts']);
   requireProgressLabel(options.idPrefix);
   namingRequire(typeof options.resumed === 'boolean', 'RESUME_ORIGIN');
   let context = parseTaskContext(initial);

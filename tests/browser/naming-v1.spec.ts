@@ -103,7 +103,10 @@ for (const taskId of ['Z1.02', 'M6.02'] as const) {
     await expect(term).toBeFocused(); await check.click(); await expect(feedback).toContainText('Mit Auswahl geklärt');
     await page.getByRole('button', { name: 'Lösung ausdrücklich ansehen', exact: true }).click();
     await expect(page.getByRole('heading', { name: 'Ausdrücklich aufgerufene Lösung' })).toBeVisible();
+    await page.getByRole('button', { name: 'Antwort selbst überarbeiten', exact: true }).click();
+    await term.fill(taskId === 'Z1.02' ? 'Tonoplast' : 'Osmose');
     await check.click(); await expect(feedback).toContainText('Lösung angesehen');
+    await term.fill(taskId === 'Z1.02' ? 'Vakuolenmembran' : 'Osmosse');
     await page.getByRole('button', { name: 'Materialzustand wechseln', exact: true }).click();
     await expect(feedback).toHaveAttribute('data-status', 'technical');
     await expect(page.getByRole('region', { name: 'Versuchsverlauf' })).toContainText('Veraltet – keine aktuelle Bewertung');

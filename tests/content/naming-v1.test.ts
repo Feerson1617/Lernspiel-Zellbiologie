@@ -33,6 +33,9 @@ it('validates all new envelopes AND unchanged embedded EvaluationResults against
 });
 it('retains all supplied R8 groups and input counts', () => {
   expect(Object.values(R8_CORPUS.groups).map(list => list.length)).toEqual([199, 370, 3017]);
+  for (const [name, list] of Object.entries(R8_CORPUS.groups)) {
+    expect(createHash('sha256').update(JSON.stringify(canonicalReviewData(list))).digest('hex')).toBe(R8_CORPUS.expectedInputHashes[name as keyof typeof R8_CORPUS.expectedInputHashes]);
+  }
 });
 const r8cases = Object.values(R8_CORPUS.groups).flat();
 for (let offset = 0; offset < r8cases.length; offset += 900) {

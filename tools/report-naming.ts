@@ -36,7 +36,7 @@ const fields = Object.fromEntries((['Z1.02', 'M6.02'] as const).map(taskId => {
 }));
 const legacyGroups = Object.fromEntries(Object.entries(R8_CORPUS.groups).map(([name, list]) => {
   const records = list.map(c => ({ ...c, ...executeR8(c) }));
-  return [name, { count: records.length, statuses: count(records.map(r => r.result.status)), originalSollMatched: records.filter(r => r.expected.includes(r.result.status)).length,
+  return [name, { count: records.length, originalInputSHA256: sha(JSON.stringify(canonicalReviewData(list))), statuses: count(records.map(r => r.result.status)), originalSollMatched: records.filter(r => r.expected.includes(r.result.status)).length,
     completeResultFeedbackSHA256: sha(JSON.stringify(canonicalReviewData(records.map(({ result, feedback }) => ({ result, feedback }))))), records }];
 }));
 const legacyShort = ['short-correct', 'tonoplast-correct'].map(group => {
