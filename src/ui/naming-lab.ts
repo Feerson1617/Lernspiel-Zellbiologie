@@ -32,6 +32,7 @@ export function mountNamingLab(root: HTMLElement, options: NamingLabOptions) {
   const loaded = store.getState();
   const session = createNamingSession(options.initialContext, { idPrefix: options.idPrefix, resumed: options.resumed,
     loadedAttempts: [...loaded.progress.attempts, ...(loaded.history?.attempts ?? [])] });
+  const priorDrafts: { readonly context: TaskContext; readonly termText: string; readonly extraText: string }[] = [];
   root.replaceChildren();
   function node<K extends keyof HTMLElementTagNameMap>(tag: K, text = '', parent: HTMLElement = root): HTMLElementTagNameMap[K] {
     const element = document.createElement(tag); element.textContent = text; parent.append(element); return element;
@@ -71,6 +72,7 @@ export function mountNamingLab(root: HTMLElement, options: NamingLabOptions) {
   const history = node('section', '', main); history.setAttribute('aria-label', 'Versuchsverlauf');
   const dev = node('section', '', main); dev.setAttribute('aria-label', 'Testfall-Steuerung');
   node('h2', 'Testfall-Steuerung', dev); node('p', 'Synthetische Materialfälle, kein Simulator.', dev);
+  node('p', 'Ein neuer Materialfall beginnt mit leeren Eingabefeldern. Eingaben des vorherigen Falls bleiben zum Vergleich nur in den Sitzungsnotizen erhalten.', dev);
   const change = node('button', 'Materialzustand wechseln', dev);
   const fresh = node('button', 'Neuen Materialfall starten', dev);
   function renderContext(): void {
@@ -100,8 +102,10 @@ export function mountNamingLab(root: HTMLElement, options: NamingLabOptions) {
     for (const o of state.outcomes) {
       const item = node('p', '', history);
       const old = o.submission.context.contextHash !== state.context.contextHash;
-      item.textContent = `${o.submission.attemptId} · Revision ${o.submission.revision} · Vorgänger ${o.submission.predecessorId ?? 'keiner'} · ${old ? 'Veraltet – keine aktuelle Bewertung' : 'damaliges Ergebnis'}: ${STATUS_PRESENTATION[o.overallStatus].label} · ${ASSISTANCE_LABELS[o.support.assistance]} · Antwort: ${o.submission.termText} · ursprünglicher Kontext ${o.submission.context.instanceId} / ${o.submission.context.contextHash}`;
+      const supportLabel = o.support.history === 'verified' ? ASSISTANCE_LABELS[o.support.assistance] : 'Frühere Hilfen unbekannt, keine bestätigte Eigenständigkeit';
+      item.textContent = `${o.submission.attemptId} · Revision ${o.submission.revision} · Vorgänger ${o.submission.predecessorId ?? 'keiner'} · ${old ? 'Veraltet – keine aktuelle Bewertung' : 'damaliges Ergebnis'}: ${STATUS_PRESENTATION[o.overallStatus].label} · ${supportLabel} · Antwort: ${o.submission.termText} · ursprünglicher Kontext ${o.submission.context.instanceId} / ${o.submission.context.contextHash}`;
     }
+    for (const draft of priorDrafts) node('p', `Sitzungsnotiz zum vorherigen Fall ${draft.context.instanceId} / ${draft.context.contextHash}: Fachbegriff: ${draft.termText} · Weitere Aussagen: ${draft.extraText} · Hier keine neue Bewertung. Nicht als Antwort des neuen Falls übernommen.`, history);
   }
   function showMessage(message: string): void {
     feedback.replaceChildren(); feedback.dataset['color'] = 'yellow'; feedback.dataset['status'] = 'technical';
@@ -157,8 +161,17 @@ export function mountNamingLab(root: HTMLElement, options: NamingLabOptions) {
     showMessage('Lösung angesehen. Ein späteres Abschreiben in dieser Instanz ist kein eigenständiger Erfolgsnachweis.'); renderMeta();
   });
   function activate(next: TaskContext, mode: 'same_instance' | 'new_case'): void {
-    try { session.activate(next, mode); renderContext(); renderMeta(); helpText.replaceChildren(); bank.hidden = true; solution.hidden = true;
-      showMessage('Materialkontext gewechselt. Vorherige Ergebnisse sind keine aktuelle Bewertung. Dein Entwurf bleibt erhalten und muss neu geprüft werden.');
+    try {
+      const draft = { context: session.getState().context, termText: term.value, extraText: extra.value };
+      session.activate(next, mode);
+      if (mode === 'new_case') {
+        if (draft.termText || draft.extraText) priorDrafts.push(draft);
+        term.value = ''; extra.value = ''; details.open = false;
+      }
+      renderContext(); renderMeta(); helpText.replaceChildren(); bank.hidden = true; solution.hidden = true;
+      showMessage(mode === 'new_case'
+        ? 'Neuer Materialfall mit leeren Eingabefeldern. Vorherige Eingaben bleiben in den Sitzungsnotizen; sie werden nicht als neue eigenständige Antwort übernommen.'
+        : 'Materialkontext gewechselt. Vorherige Ergebnisse sind keine aktuelle Bewertung. Dein Entwurf bleibt erhalten und muss neu geprüft werden.');
     } catch { showMessage('Dieser Fall ist kein nachweislich neuer Materialfall oder sein Kontext ist ungültig. Die bisherige Bindung bleibt aktiv.'); }
   }
   change.addEventListener('click', () => activate(options.changedContext(session.getState().context), 'same_instance'));

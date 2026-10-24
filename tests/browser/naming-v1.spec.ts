@@ -127,7 +127,13 @@ test('reload/back keeps unknown history explicit; new material case distinct; qu
     await expect(page.getByRole('region', { name: 'Überarbeiten und Hilfen' })).toContainText('Historie nach Laden/Zurück ungesichert');
     await page.getByRole('textbox', { name: 'Fachbegriff', exact: true }).fill('Tonoplast'); await page.getByRole('button', { name: 'Begriff prüfen', exact: true }).click();
     await expect(page.getByRole('region', { name: 'Rückmeldung' })).toHaveAttribute('data-status', 'technical');
+    await expect(page.getByRole('region', { name: 'Versuchsverlauf' })).not.toContainText('Ohne Hilfe beantwortet');
     await page.getByRole('button', { name: 'Neuen Materialfall starten', exact: true }).click();
+    await expect(page.getByRole('textbox', { name: 'Fachbegriff', exact: true })).toHaveValue('');
+    await expect(page.getByRole('region', { name: 'Versuchsverlauf' })).toContainText('Nicht als Antwort des neuen Falls übernommen');
+    await page.getByRole('button', { name: 'Begriff prüfen', exact: true }).click();
+    await expect(page.getByRole('region', { name: 'Rückmeldung' })).toHaveAttribute('data-status', 'empty');
+    await page.getByRole('textbox', { name: 'Fachbegriff', exact: true }).fill('Tonoplast');
     await page.getByRole('button', { name: 'Begriff prüfen', exact: true }).click();
     await expect(page.getByRole('region', { name: 'Rückmeldung' })).toHaveAttribute('data-status', 'correct');
     await page.goto('./'); await page.goBack();
