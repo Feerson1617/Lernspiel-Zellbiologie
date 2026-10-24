@@ -9,6 +9,9 @@ on:
 permissions:
   contents: read
 
+env:
+  PR_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+
 concurrency:
   group: pages-${{ github.ref }}
   cancel-in-progress: true
@@ -33,6 +36,30 @@ jobs:
       - run: python -m pip install -r requirements-spec.txt
       - run: npx playwright install --with-deps chromium
       - run: npm run check
+      - run: npm run report:naming
+      - name: Report actual build-gate counts
+        if: always()
+        run: |
+          node --input-type=module <<'JS'
+          import { readFileSync } from 'node:fs';
+          for (const suite of ['unit', 'content', 'build', 'playwright']) {
+            try {
+              const r = JSON.parse(readFileSync(`qa/generated/${suite}.json`, 'utf8'));
+              const stats = r.stats ?? { passed: r.numPassedTests, failed: r.numFailedTests, pending: r.numPendingTests, total: r.numTotalTests };
+              console.log(`::notice title=Actual ${suite} results::${JSON.stringify({ prHead: process.env.PR_HEAD_SHA, executionSha: process.env.GITHUB_SHA, suite, ...stats })}`);
+            } catch {
+              console.log(`::warning title=Actual ${suite} unavailable::No completed report; not a pass.`);
+            }
+          }
+          JS
+      - name: Retain self-check reports and browser images (synthetic test data only)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: chromium-self-check
+          path: |
+            qa/generated/*.json
+            test-results/**/*.png
       - name: Upload only the inspected production artifact
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v3
@@ -57,7 +84,7 @@ jobs:
       - run: python -m pip install -r requirements-spec.txt
       - run: npx playwright install webkit
       - run: npm run build
-      - name: Unchanged WebKit baseline (standard Tab)
+      - name: WebKit baseline (platform-correct link navigation and Enter)
         id: webkit_baseline
         continue-on-error: true
         env:
@@ -100,7 +127,7 @@ jobs:
                 Object.values(value).forEach(collect);
               }
               collect(r.suites);
-              const result = { platform: process.platform, arch: process.arch, node: process.version, suite, ...s, keyboard, timings, failedTests };
+              const result = { prHead: process.env.PR_HEAD_SHA, executionSha: process.env.GITHUB_SHA, platform: process.platform, arch: process.arch, node: process.version, suite, ...s, keyboard, timings, failedTests };
               console.log(`::notice title=WebKit ${suite} actual results::${JSON.stringify(result)}`);
               if (s.unexpected || s.skipped || s.flaky || r.errors?.length) failed = true;
             } catch (error) {
@@ -110,6 +137,14 @@ jobs:
           }
           if (failed) process.exit(1);
           JS
+      - name: Retain actual WebKit reports and browser images
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: webkit-self-check
+          path: |
+            qa/generated/webkit-*.json
+            test-results/**/*.png
 
   deploy:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'

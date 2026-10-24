@@ -8,6 +8,23 @@ Die Startseite informiert über den Projektstand. Sie enthält keine Missionen,
 Antwortbewertung, Simulationen oder Zellmodelle. Korrektor und Fortschrittsadapter
 sind separat getestet und noch nicht an die Startseite angebunden.
 
+## P02b nach genehmigter Option B (24.10.2026)
+
+Der neue [Fachbegriff-Vertrag 1.0.0](review/naming-input-1.0.0.md) gilt nur für
+Z1.02/term und M6.02/process. Er enthält eine getrennte, rein testinterne
+DOM-Ansicht mit konkretem Feedback, Selbstüberarbeitung und Hilfekette.
+Die öffentliche Startseite bleibt die Informationsseite. Architektur/API und
+reproduzierbarer UI-Testpfad: [NAMING.md](src/assessment/NAMING.md).
+
+`npm run check` prüft den neuen Begriffsumfang und sämtliche aktiven
+Sicherheitsregressionen. `npm run test:legacy` führt separat die weiterhin
+**roten** 95-%-Gates des alten Satzvertrags aus: 56/60, 41/60, R8 26/60 und
+9/20. Kein Skip/xfail; der eigene Legacy-CI-Workflow schlägt tatsächlich fehl.
+Die bisherigen R6/R7-Assert-Körper sind mit Hashnachweis unverändert umgezogen.
+`npm run report:naming` erzeugt vollständige neue und R8-Legacy-Rohbefunde
+unter `qa/generated/`. Eigene Ergebnisse sind keine unabhängige Abnahme.
+Bericht: [P02b-OptionB.md](qa/P02b-OptionB.md).
+
 ## Lokal starten
 
 Voraussetzungen: Node.js **24.19.0** (siehe `.nvmrc`), npm **11.x** und für die

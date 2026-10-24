@@ -1,4 +1,11 @@
-# Bewertungskern P02a – ausschließlich Z1.02
+# Legacy-Bewertungskern P02a/P02b – Satzvertrag
+
+Seit dem genehmigten Option-B-Auftrag gilt für neue Begriffseingaben der
+separate [Vertrag 1.0.0 / API](NAMING.md). Der hier dokumentierte Satzkorrektor
+bleibt unverändert als Legacy-Regressionsbestand erhalten; seine alten
+Qualitätsgates sind weiterhin rot. Neue Aufgabenversionslabels dürfen den
+isolierten Ergebnisadapter unten nicht verwenden. Die neue Testansicht ist
+keine öffentliche Missionsoberfläche und keine Unterrichtsfreigabe.
 
 P02b ergänzt [M6.02/process](OSMOSIS.md) mit eigenem Feldprofil und eigener
 Fachregel. `term-evaluator.ts` ist die gemeinsame Eingabe-/Kontexthülle;

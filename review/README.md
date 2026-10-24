@@ -31,17 +31,27 @@ nachgewiesen; dessen JSON-Datei allein erzwingt nichts.
 Nach R7 enthält der JSON-Vorschlag beide Checks. Der getrennte, mit
 `git apply --check review/pages-gates-proposal.patch` nur lesend prüfbare
 Workflowvorschlag lässt WebKit auf PR und main-Push laufen und setzt
-`deploy.needs: [build, webkit]`. Der aktive Workflow ist unverändert;
-keine Regel oder Veröffentlichung wurde aktiviert. Die Integration-ID und
+`deploy.needs: [build, webkit]`. Die aktive Deployment-Abhängigkeit bleibt
+weiterhin nur `build`; keine Regel oder Veröffentlichung wurde aktiviert. Die Integration-ID und
 Checknamen sind vor einer späteren autorisierten Aktivierung erneut abzugleichen.
 
-## Aktuelle Entscheidung nach R7
+## Genehmigte Umsetzung nach R8
+
+Der neu abgesandte überarbeitete Auftrag vom 24.10.2026 genehmigt ausdrücklich
+Option B ausschließlich für die zwei Benennungsfelder und ihre isolierte
+Testansicht. Vor Implementierung fixiert: [naming-input/1.0.0](naming-input-1.0.0.md).
+Die nachstehenden R6/R7-Texte dokumentieren den früheren Entscheidungsstand;
+0.2-draft bleibt ein Entwurf. Keine fachliche/unterrichtliche Abnahme.
+Alter Satzvertrag: unverändert, weiterhin rote Legacy-Gates. Neuer Umfang:
+getrennte verpflichtende Matrix und Hilfen-/UI-/Fortschrittsprüfung.
+
+## Historische Entscheidung nach R7
 
 [Kurze Entscheidungsvorlage a/b](P02b-Eingabeentscheidung.md): Option b wird
 begründet empfohlen. Die Prüfentscheidung „B: nicht freigegeben“ ist kein
 Formatbeschluss. Kein Formatwechsel und keine weitere Satzmusterergänzung.
 
-## Aktuelle Entscheidung nach R6
+## Historische Entscheidung nach R6
 
 [R6-Eingabeempfehlung](R6-Eingabeempfehlung.md): Die unabhängige 95-%-Grenze ist
 erneut deutlich verfehlt. Konkrete Empfehlung eines Fachbegriff-Vertrags mit

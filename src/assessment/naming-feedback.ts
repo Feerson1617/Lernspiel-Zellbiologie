@@ -1,0 +1,40 @@
+import type { NamingFeedback, NamingTaskId } from '../domain/naming-contract.ts';
+
+type Row = readonly [recognized: string, difference: string, next: string];
+const common: Readonly<Record<string, Row>> = {
+  empty: ['Im Begriffsfeld steht noch keine Antwort.', 'Es wurde noch kein fachlicher Versuch bewertet.', 'Trage einen Fachbegriff ein. Du musst keinen Satz schreiben.'],
+  scope: ['Der vollständige Feldtext lässt sich im angekündigten Begriffsumfang nicht sicher einordnen.', 'Das ist kein Nachweis eines biologischen Fehlers. Es wird kein passendes Wort aus deinem Text herausgegriffen.', 'Überarbeite die Benennung selbst. Weitere Gedanken kannst du in „Weitere Aussagen“ erhalten; dort bleiben sie zunächst ungeprüft.'],
+  alternatives: ['Du hast verschiedene bekannte Begriffe nebeneinander genannt.', 'Eine eindeutige Benennung fehlt; es wird keiner der Begriffe stillschweigend ausgewählt.', 'Vergleiche die Bedeutungen am Material und entscheide dich selbst. Bei Bedarf kannst du eine Wortbank öffnen.'],
+  negated: ['Deine Eingabe schließt die für dieses Material passende Benennung ausdrücklich aus.', 'Die Verneinung widerspricht dem gefragten Kriterium; sie wird nicht überlesen.', 'Prüfe, was du ausschließen und was du benennen möchtest. Überarbeite anschließend deine Wahl.'],
+  contradiction: ['Dein Kontrast schließt dieselbe Begriffsidentität aus, die er zugleich auswählt.', 'Gleichwertige Benennungen bezeichnen hier denselben Gegenstand; dieser Gegensatz ist widersprüchlich.', 'Löse den Widerspruch auf und gib eine positive Benennung an.'],
+  technical: ['Die Eingabe oder der Material-/Versionskontext kann technisch nicht sicher geprüft werden.', 'Es wurde kein biologischer Fehler festgestellt. Es wird nichts abgeschnitten und kein älteres Ergebnis weiter bestätigt.', 'Prüfe Eingabeformat und aktiven Materialfall. Starte danach eine neue Prüfung; der vollständige Text bleibt in dieser Sitzung erhalten.'],
+};
+const tone: Readonly<Record<string, Row>> = {
+  target: ['Du hast die markierte Membran richtig benannt.', 'Sie trennt den Vakuolenraum vom Cytosol. Bestätigt ist dieses Benennungskriterium, keine zusätzliche Aussage.', 'Prüfe den angezeigten Gesamtumfang. Eine fachliche Erläuterung kannst du bei Bedarf ausdrücklich öffnen.'],
+  spelling: ['Die eindeutige Schreibvariante wurde als Benennung der markierten Membran erkannt.', 'Die Standardschreibweise lautet Tonoplast beziehungsweise Vakuolenmembran. Der Schreibfehler ist kein biologischer Fehler.', 'Du kannst die Schreibweise selbst angleichen. Bestätigt ist nur die Benennung der Grenze Vakuolenraum–Cytosol.'],
+  membrane: ['Du erkennst eine Membran beziehungsweise die Grenze um den Vakuolenraum.', 'Das ist die richtige Strukturebene. Der spezifische Name dieser inneren Membran fehlt noch.', 'Präzisiere den Namen selbst. Ein Hinweis zur Lage der Grenze ist bei Bedarf verfügbar.'],
+  cell_wall: ['Du nennst die Zellwand, die feste äußere Hülle der Pflanzenzelle.', 'Markiert ist eine innere Membrangrenze direkt um den Vakuolenraum. Die Zellwand ist diese Grenze nicht.', 'Vergleiche im Schema äußere Hülle und inneren Speicherraum. Benenne dann die markierte Membran neu.'],
+  cell_boundary: ['Du nennst die äußere Membran des Protoplasten.', 'Diese trennt den Zellinhalt vom Außenraum. Gefragt ist die innere Membran zwischen Vakuolenraum und Cytosol.', 'Verfolge, welchen Raum die hervorgehobene Grenze umschließt, und überarbeite deine Benennung.'],
+  nuclear: ['Deine Benennung bezieht sich auf die Hülle des Zellkerns.', 'Der Zellkern wird von der Kernhülle umgeben. Hervorgehoben ist dagegen die Grenze um den Vakuolenraum.', 'Unterscheide die beiden umschlossenen Räume im Material und benenne die gefragte Grenze.'],
+  nucleus: ['Du hast den Zellkern als Organell benannt.', 'Gefragt ist eine Membran um den Vakuolenraum, weder der Zellkern noch seine Hülle.', 'Prüfe zuerst den umschlossenen Raum und dann den Namen seiner Membran.'],
+  space: ['Dein Begriff bezeichnet den Vakuolenraum beziehungsweise die Vakuole.', 'Ein Raum und die Membran um diesen Raum sind verschiedene Strukturebenen. Gefragt ist der Membranname.', 'Unterscheide Innenraum und Grenze und präzisiere anschließend die Benennung.'],
+};
+const osmosis: Readonly<Record<string, Row>> = {
+  target: ['Du hast den Wassertransportvorgang richtig benannt: Osmose.', 'Bestätigt ist ausschließlich M6.02.C01. Richtung und Vakuolenvolumen sind damit nicht bewertet; C02 und C03 bleiben offen.', 'Beachte den begrenzten Gesamtstatus. Die anderen Teilfragen benötigen später eigene Prüfungen.'],
+  spelling: ['Die eindeutige Schreibvariante wurde als Osmose erkannt.', 'Die Standardschreibweise ist Osmose. Nur die Benennung C01 ist erfüllt, weder Richtung noch Volumen sind geprüft.', 'Du kannst die Schreibweise selbst angleichen; C02 und C03 bleiben weiterhin offen.'],
+  diffusion: ['Diffusion ist ein zutreffender übergeordneter Ansatz.', 'Hier ist der spezielle Name für den passiven Wassertransport über selektiv permeable Membranen gefragt. Der allgemeinere Begriff genügt noch nicht.', 'Präzisiere den Vorgang selbst. Ein Hinweis kann dich auf die Wasserpermeabilität der Membranen lenken.'],
+  transport: ['Deine Benennung beschreibt einen allgemeinen Wassertransport beziehungsweise eine passive Bewegung.', 'Sie ist als allgemeiner Ansatz zutreffend, nennt aber noch nicht den spezifischen Vorgang über die selektiv permeablen Membranen.', 'Suche den speziellen Fachbegriff. Nutze zunächst das Material, danach bei Bedarf einen Hinweis.'],
+  plasmolysis: ['Du nennst Plasmolyse, eine Zellreaktion bei Wasserabgabe.', 'Die beobachtbare Reaktion der Zelle ist nicht der Name des Wassertransportmechanismus über die Membranen.', 'Trenne Mechanismus und sichtbare Folge. Benenne den Transportvorgang erneut.'],
+  active: ['Dein Begriff bezeichnet aktiven, energiegekoppelten Transport beziehungsweise eine Pumpe.', 'Im angegebenen Fall bewegt sich Wasser passiv entsprechend dem Gesamtwasserpotenzial einschließlich Druck. Eine aktive Energie-Kopplung dieses Wassertransports ist nicht angegeben.', 'Vergleiche die Fallbedingungen mit der Bedeutung von „aktiv“ und überarbeite den Vorgangsnamen.'],
+  endo: ['Du nennst die vesikuläre Aufnahme von Material in die Zelle.', 'Hier wird Wasser über durchlässige Membranen transportiert. Eine Aufnahme durch Vesikel ist nicht der beschriebene Mechanismus.', 'Unterscheide Membranübertritt und Vesikelbildung; benenne dann den Wassertransport.'],
+  exo: ['Du nennst die vesikuläre Abgabe von Material aus der Zelle.', 'Hier tritt Wasser durch die Membranen; eine Ausschleusung durch Vesikel ist nicht angegeben.', 'Vergleiche Vesikeltransport mit dem beschriebenen Wasserübertritt und überarbeite die Benennung.'],
+};
+export function namingFeedback(taskId: NamingTaskId, reason: string): NamingFeedback {
+  const row = (taskId === 'Z1.02' ? tone : osmosis)[reason] ?? common[reason];
+  if (!row) throw new Error('Missing criterion-specific naming feedback.');
+  return Object.freeze({ recognized: row[0], difference: row[1], next: row[2] });
+}
+export const NAMING_HELP = Object.freeze({
+  'Z1.02': Object.freeze({ hint: 'Verfolge die unmittelbar um den inneren Speicherraum liegende Membran. Welche Grenze trennt diesen Raum vom Cytosol?', wordbank: Object.freeze(['Zellwand', 'Tonoplast', 'Zellmembran', 'Kernhülle', 'Vakuolenmembran']), solution: 'Tonoplast und Vakuolenmembran sind gleichwertige Namen. Diese Membran trennt den Vakuolenraum vom Cytosol; Zellmembran und Zellwand bilden andere Grenzen.' }),
+  'M6.02': Object.freeze({ hint: 'Betrachte nur Wasser: Es kann beide Membranen passieren, Saccharose bleibt weitgehend zurück. Gesucht ist der spezielle Name dieses passiven Wassertransports.', wordbank: Object.freeze(['Diffusion', 'Endocytose', 'Osmose', 'Plasmolyse', 'aktiver Transport']), solution: 'Der Wassertransportvorgang heißt Osmose: passiver Wassertransport über selektiv permeable Membranen entsprechend dem Gesamtwasserpotenzial einschließlich Druck. Dies erläutert C01, bewertet aber weder die Richtungsantwort noch die Volumenantwort.' }),
+});

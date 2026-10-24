@@ -1,0 +1,2358 @@
+[
+  {
+    "id": "B1-0001",
+    "taskId": "Z1.02",
+    "termText": "Tonoplast",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0002",
+    "taskId": "Z1.02",
+    "termText": "  Tonoplast  ",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0003",
+    "taskId": "Z1.02",
+    "termText": "Tonoplast?",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0004",
+    "taskId": "Z1.02",
+    "termText": "die Tonoplast",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0005",
+    "taskId": "Z1.02",
+    "termText": "Vielleicht Tonoplast",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0006",
+    "taskId": "Z1.02",
+    "termText": "Tonoplast, vermutlich",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0007",
+    "taskId": "Z1.02",
+    "termText": "\u201eTonoplast\u201c",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0008",
+    "taskId": "Z1.02",
+    "termText": "(Tonoplast)",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0009",
+    "taskId": "Z1.02",
+    "termText": "Tonoplast, danke!",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0010",
+    "taskId": "Z1.02",
+    "termText": "Tonoplast!!!",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0011",
+    "taskId": "Z1.02",
+    "termText": "\"Tonoplast\"?",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0012",
+    "taskId": "Z1.02",
+    "termText": "eventuell, Tonoplast",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0013",
+    "taskId": "Z1.02",
+    "termText": "Tonoplast wohl.",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0014",
+    "taskId": "Z1.02",
+    "termText": "Tonoplasten",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0015",
+    "taskId": "Z1.02",
+    "termText": "  Tonoplasten  ",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0016",
+    "taskId": "Z1.02",
+    "termText": "Tonoplasten?",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0017",
+    "taskId": "Z1.02",
+    "termText": "die Tonoplasten",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0018",
+    "taskId": "Z1.02",
+    "termText": "Vielleicht Tonoplasten",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0019",
+    "taskId": "Z1.02",
+    "termText": "Tonoplasten, vermutlich",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0020",
+    "taskId": "Z1.02",
+    "termText": "\u201eTonoplasten\u201c",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0021",
+    "taskId": "Z1.02",
+    "termText": "(Tonoplasten)",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0022",
+    "taskId": "Z1.02",
+    "termText": "Tonoplasten, danke!",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0023",
+    "taskId": "Z1.02",
+    "termText": "Tonoplasten!!!",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0024",
+    "taskId": "Z1.02",
+    "termText": "\"Tonoplasten\"?",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0025",
+    "taskId": "Z1.02",
+    "termText": "eventuell, Tonoplasten",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0026",
+    "taskId": "Z1.02",
+    "termText": "Tonoplasten wohl.",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0027",
+    "taskId": "Z1.02",
+    "termText": "Vakuolenmembran",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0028",
+    "taskId": "Z1.02",
+    "termText": "  Vakuolenmembran  ",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0029",
+    "taskId": "Z1.02",
+    "termText": "Vakuolenmembran?",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0030",
+    "taskId": "Z1.02",
+    "termText": "die Vakuolenmembran",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0031",
+    "taskId": "Z1.02",
+    "termText": "Vielleicht Vakuolenmembran",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0032",
+    "taskId": "Z1.02",
+    "termText": "Vakuolenmembran, vermutlich",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0033",
+    "taskId": "Z1.02",
+    "termText": "\u201eVakuolenmembran\u201c",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0034",
+    "taskId": "Z1.02",
+    "termText": "(Vakuolenmembran)",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0035",
+    "taskId": "Z1.02",
+    "termText": "Vakuolenmembran, danke!",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0036",
+    "taskId": "Z1.02",
+    "termText": "Vakuolenmembran!!!",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0037",
+    "taskId": "Z1.02",
+    "termText": "\"Vakuolenmembran\"?",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0038",
+    "taskId": "Z1.02",
+    "termText": "eventuell, Vakuolenmembran",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0039",
+    "taskId": "Z1.02",
+    "termText": "Vakuolenmembran wohl.",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0040",
+    "taskId": "Z1.02",
+    "termText": "Vakuolen-Membran",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0041",
+    "taskId": "Z1.02",
+    "termText": "  Vakuolen-Membran  ",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0042",
+    "taskId": "Z1.02",
+    "termText": "Vakuolen-Membran?",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0043",
+    "taskId": "Z1.02",
+    "termText": "die Vakuolen-Membran",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0044",
+    "taskId": "Z1.02",
+    "termText": "Vielleicht Vakuolen-Membran",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0045",
+    "taskId": "Z1.02",
+    "termText": "Vakuolen-Membran, vermutlich",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0046",
+    "taskId": "Z1.02",
+    "termText": "\u201eVakuolen-Membran\u201c",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0047",
+    "taskId": "Z1.02",
+    "termText": "(Vakuolen-Membran)",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0048",
+    "taskId": "Z1.02",
+    "termText": "Vakuolen-Membran, danke!",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0049",
+    "taskId": "Z1.02",
+    "termText": "Vakuolen-Membran!!!",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0050",
+    "taskId": "Z1.02",
+    "termText": "\"Vakuolen-Membran\"?",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0051",
+    "taskId": "Z1.02",
+    "termText": "eventuell, Vakuolen-Membran",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0052",
+    "taskId": "Z1.02",
+    "termText": "Vakuolen-Membran wohl.",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0053",
+    "taskId": "Z1.02",
+    "termText": "Vakuolen Membran",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0054",
+    "taskId": "Z1.02",
+    "termText": "  Vakuolen Membran  ",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0055",
+    "taskId": "Z1.02",
+    "termText": "Vakuolen Membran?",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0056",
+    "taskId": "Z1.02",
+    "termText": "die Vakuolen Membran",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0057",
+    "taskId": "Z1.02",
+    "termText": "Vielleicht Vakuolen Membran",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0058",
+    "taskId": "Z1.02",
+    "termText": "Vakuolen Membran, vermutlich",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0059",
+    "taskId": "Z1.02",
+    "termText": "\u201eVakuolen Membran\u201c",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0060",
+    "taskId": "Z1.02",
+    "termText": "(Vakuolen Membran)",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0061",
+    "taskId": "Z1.02",
+    "termText": "Vakuolen Membran, danke!",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0062",
+    "taskId": "Z1.02",
+    "termText": "Vakuolen Membran!!!",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0063",
+    "taskId": "Z1.02",
+    "termText": "\"Vakuolen Membran\"?",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0064",
+    "taskId": "Z1.02",
+    "termText": "eventuell, Vakuolen Membran",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0065",
+    "taskId": "Z1.02",
+    "termText": "Vakuolen Membran wohl.",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0066",
+    "taskId": "Z1.02",
+    "termText": "Tonoplast oder Vakuolenmembran",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0067",
+    "taskId": "Z1.02",
+    "termText": "Tonoplast/Vakuolenmembran",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0068",
+    "taskId": "Z1.02",
+    "termText": "der Tonoplast und die Vakuolenmembran",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0069",
+    "taskId": "Z1.02",
+    "termText": "Nicht Zellwand, sondern Tonoplast",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0070",
+    "taskId": "Z1.02",
+    "termText": "Tonoplast statt Zellwand",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0071",
+    "taskId": "Z1.02",
+    "termText": "Tonoplast, danke",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0072",
+    "taskId": "Z1.02",
+    "termText": "nicht Tonoplast",
+    "additionalStatements": [],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "explicit-negation-or-contradiction"
+  },
+  {
+    "id": "B1-0073",
+    "taskId": "Z1.02",
+    "termText": "kein Tonoplast",
+    "additionalStatements": [],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "explicit-negation-or-contradiction"
+  },
+  {
+    "id": "B1-0074",
+    "taskId": "Z1.02",
+    "termText": "nicht Tonoplast, sondern Zellwand",
+    "additionalStatements": [],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "explicit-negation-or-contradiction"
+  },
+  {
+    "id": "B1-0075",
+    "taskId": "Z1.02",
+    "termText": "Nicht Tonoplast, sondern Vakuolenmembran",
+    "additionalStatements": [],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "explicit-negation-or-contradiction"
+  },
+  {
+    "id": "B1-0076",
+    "taskId": "Z1.02",
+    "termText": "Tonoplast statt Vakuolenmembran",
+    "additionalStatements": [],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "explicit-negation-or-contradiction"
+  },
+  {
+    "id": "B1-0077",
+    "taskId": "Z1.02",
+    "termText": "Tonoplast oder Zellwand",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0078",
+    "taskId": "Z1.02",
+    "termText": "Tonoplast und Zellwand",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0079",
+    "taskId": "Z1.02",
+    "termText": "Tonoplast/Zellwand",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0080",
+    "taskId": "Z1.02",
+    "termText": "nicht Zellwand",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0081",
+    "taskId": "Z1.02",
+    "termText": "nicht nicht Tonoplast",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0082",
+    "taskId": "Z1.02",
+    "termText": "Das ist Tonoplast.",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0083",
+    "taskId": "Z1.02",
+    "termText": "Tonoplast, aber nicht sicher",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0084",
+    "taskId": "Z1.02",
+    "termText": "Tonoplast. Danke, ich vermute es.",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0085",
+    "taskId": "Z1.02",
+    "termText": "Tonoplast und ein unbekanntes Wort",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0086",
+    "taskId": "Z1.02",
+    "termText": "\ud83e\udd14",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0087",
+    "taskId": "Z1.02",
+    "termText": "ein Fachwort",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0088",
+    "taskId": "Z1.02",
+    "termText": "vielleicht vielleicht Tonoplast",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0089",
+    "taskId": "Z1.02",
+    "termText": "\"Tonoplast",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0090",
+    "taskId": "Z1.02",
+    "termText": "(Tonoplast",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0091",
+    "taskId": "Z1.02",
+    "termText": "?Tonoplast",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0092",
+    "taskId": "Z1.02",
+    "termText": "Tonoplast \ud83d\ude03",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0093",
+    "taskId": "Z1.02",
+    "termText": "Tonoplast!!!!",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0094",
+    "taskId": "Z1.02",
+    "termText": "Tonoplast; anderes",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0095",
+    "taskId": "Z1.02",
+    "termText": "",
+    "additionalStatements": [],
+    "expectedTerm": "empty",
+    "expectedOverall": "empty",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0096",
+    "taskId": "Z1.02",
+    "termText": "  \t\n",
+    "additionalStatements": [],
+    "expectedTerm": "empty",
+    "expectedOverall": "empty",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0097",
+    "taskId": "Z1.02",
+    "termText": "Tonoplast",
+    "additionalStatements": [
+      "Das ist meine zus\u00e4tzliche Erkl\u00e4rung."
+    ],
+    "expectedTerm": "correct",
+    "expectedOverall": "clarify",
+    "group": "additional-statements"
+  },
+  {
+    "id": "B1-0098",
+    "taskId": "Z1.02",
+    "termText": "Tonoplast",
+    "additionalStatements": [
+      "Die Zellwand schrumpft."
+    ],
+    "expectedTerm": "correct",
+    "expectedOverall": "clarify",
+    "group": "additional-statements"
+  },
+  {
+    "id": "B1-0099",
+    "taskId": "Z1.02",
+    "termText": "Tonoplast",
+    "additionalStatements": [
+      "Wasser kann die Membran passieren."
+    ],
+    "expectedTerm": "correct",
+    "expectedOverall": "clarify",
+    "group": "additional-statements"
+  },
+  {
+    "id": "B1-0100",
+    "taskId": "Z1.02",
+    "termText": "Zellwand",
+    "additionalStatements": [
+      "Tonoplast"
+    ],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "additional-statements"
+  },
+  {
+    "id": "B1-0101",
+    "taskId": "Z1.02",
+    "termText": "Tonoplast\u202e",
+    "additionalStatements": [],
+    "expectedTerm": "technical",
+    "expectedOverall": "technical",
+    "group": "technical-boundary"
+  },
+  {
+    "id": "B1-0102",
+    "taskId": "Z1.02",
+    "termText": "Tonoplast\u200b",
+    "additionalStatements": [],
+    "expectedTerm": "technical",
+    "expectedOverall": "technical",
+    "group": "technical-boundary"
+  },
+  {
+    "id": "B1-0103",
+    "taskId": "Z1.02",
+    "termText": "\ud800",
+    "additionalStatements": [],
+    "expectedTerm": "technical",
+    "expectedOverall": "technical",
+    "group": "technical-boundary"
+  },
+  {
+    "id": "B1-0104",
+    "taskId": "Z1.02",
+    "termText": "Tonoplastxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "additionalStatements": [],
+    "expectedTerm": "technical",
+    "expectedOverall": "technical",
+    "group": "technical-boundary"
+  },
+  {
+    "id": "B1-0105",
+    "taskId": "M6.02",
+    "termText": "Osmose",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0106",
+    "taskId": "M6.02",
+    "termText": "  Osmose  ",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0107",
+    "taskId": "M6.02",
+    "termText": "Osmose?",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0108",
+    "taskId": "M6.02",
+    "termText": "die Osmose",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0109",
+    "taskId": "M6.02",
+    "termText": "Vielleicht Osmose",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0110",
+    "taskId": "M6.02",
+    "termText": "Osmose, vermutlich",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0111",
+    "taskId": "M6.02",
+    "termText": "\u201eOsmose\u201c",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0112",
+    "taskId": "M6.02",
+    "termText": "(Osmose)",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0113",
+    "taskId": "M6.02",
+    "termText": "Osmose, danke!",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0114",
+    "taskId": "M6.02",
+    "termText": "Osmose!!!",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0115",
+    "taskId": "M6.02",
+    "termText": "\"Osmose\"?",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0116",
+    "taskId": "M6.02",
+    "termText": "eventuell, Osmose",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0117",
+    "taskId": "M6.02",
+    "termText": "Osmose wohl.",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0118",
+    "taskId": "M6.02",
+    "termText": "Osmosse",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0119",
+    "taskId": "M6.02",
+    "termText": "  Osmosse  ",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0120",
+    "taskId": "M6.02",
+    "termText": "Osmosse?",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0121",
+    "taskId": "M6.02",
+    "termText": "die Osmosse",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0122",
+    "taskId": "M6.02",
+    "termText": "Vielleicht Osmosse",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0123",
+    "taskId": "M6.02",
+    "termText": "Osmosse, vermutlich",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0124",
+    "taskId": "M6.02",
+    "termText": "\u201eOsmosse\u201c",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0125",
+    "taskId": "M6.02",
+    "termText": "(Osmosse)",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0126",
+    "taskId": "M6.02",
+    "termText": "Osmosse, danke!",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0127",
+    "taskId": "M6.02",
+    "termText": "Osmosse!!!",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0128",
+    "taskId": "M6.02",
+    "termText": "\"Osmosse\"?",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0129",
+    "taskId": "M6.02",
+    "termText": "eventuell, Osmosse",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0130",
+    "taskId": "M6.02",
+    "termText": "Osmosse wohl.",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0131",
+    "taskId": "M6.02",
+    "termText": "Osmosee",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0132",
+    "taskId": "M6.02",
+    "termText": "  Osmosee  ",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0133",
+    "taskId": "M6.02",
+    "termText": "Osmosee?",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0134",
+    "taskId": "M6.02",
+    "termText": "die Osmosee",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0135",
+    "taskId": "M6.02",
+    "termText": "Vielleicht Osmosee",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0136",
+    "taskId": "M6.02",
+    "termText": "Osmosee, vermutlich",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0137",
+    "taskId": "M6.02",
+    "termText": "\u201eOsmosee\u201c",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0138",
+    "taskId": "M6.02",
+    "termText": "(Osmosee)",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0139",
+    "taskId": "M6.02",
+    "termText": "Osmosee, danke!",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0140",
+    "taskId": "M6.02",
+    "termText": "Osmosee!!!",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0141",
+    "taskId": "M6.02",
+    "termText": "\"Osmosee\"?",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0142",
+    "taskId": "M6.02",
+    "termText": "eventuell, Osmosee",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0143",
+    "taskId": "M6.02",
+    "termText": "Osmosee wohl.",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0144",
+    "taskId": "M6.02",
+    "termText": "Ossmose",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0145",
+    "taskId": "M6.02",
+    "termText": "  Ossmose  ",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0146",
+    "taskId": "M6.02",
+    "termText": "Ossmose?",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0147",
+    "taskId": "M6.02",
+    "termText": "die Ossmose",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0148",
+    "taskId": "M6.02",
+    "termText": "Vielleicht Ossmose",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0149",
+    "taskId": "M6.02",
+    "termText": "Ossmose, vermutlich",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0150",
+    "taskId": "M6.02",
+    "termText": "\u201eOssmose\u201c",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0151",
+    "taskId": "M6.02",
+    "termText": "(Ossmose)",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0152",
+    "taskId": "M6.02",
+    "termText": "Ossmose, danke!",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0153",
+    "taskId": "M6.02",
+    "termText": "Ossmose!!!",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0154",
+    "taskId": "M6.02",
+    "termText": "\"Ossmose\"?",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0155",
+    "taskId": "M6.02",
+    "termText": "eventuell, Ossmose",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0156",
+    "taskId": "M6.02",
+    "termText": "Ossmose wohl.",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0157",
+    "taskId": "M6.02",
+    "termText": "Osmsoe",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0158",
+    "taskId": "M6.02",
+    "termText": "  Osmsoe  ",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0159",
+    "taskId": "M6.02",
+    "termText": "Osmsoe?",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0160",
+    "taskId": "M6.02",
+    "termText": "die Osmsoe",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0161",
+    "taskId": "M6.02",
+    "termText": "Vielleicht Osmsoe",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0162",
+    "taskId": "M6.02",
+    "termText": "Osmsoe, vermutlich",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0163",
+    "taskId": "M6.02",
+    "termText": "\u201eOsmsoe\u201c",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0164",
+    "taskId": "M6.02",
+    "termText": "(Osmsoe)",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0165",
+    "taskId": "M6.02",
+    "termText": "Osmsoe, danke!",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0166",
+    "taskId": "M6.02",
+    "termText": "Osmsoe!!!",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0167",
+    "taskId": "M6.02",
+    "termText": "\"Osmsoe\"?",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0168",
+    "taskId": "M6.02",
+    "termText": "eventuell, Osmsoe",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0169",
+    "taskId": "M6.02",
+    "termText": "Osmsoe wohl.",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "declared-configuration"
+  },
+  {
+    "id": "B1-0170",
+    "taskId": "M6.02",
+    "termText": "Osmose oder Osmose",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0171",
+    "taskId": "M6.02",
+    "termText": "Osmose/Osmose",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0172",
+    "taskId": "M6.02",
+    "termText": "der Osmose und die Osmose",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0173",
+    "taskId": "M6.02",
+    "termText": "Nicht Plasmolyse, sondern Osmose",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0174",
+    "taskId": "M6.02",
+    "termText": "Osmose statt Plasmolyse",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0175",
+    "taskId": "M6.02",
+    "termText": "Osmose, danke",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0176",
+    "taskId": "M6.02",
+    "termText": "nicht Osmose",
+    "additionalStatements": [],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "explicit-negation-or-contradiction"
+  },
+  {
+    "id": "B1-0177",
+    "taskId": "M6.02",
+    "termText": "kein Osmose",
+    "additionalStatements": [],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "explicit-negation-or-contradiction"
+  },
+  {
+    "id": "B1-0178",
+    "taskId": "M6.02",
+    "termText": "nicht Osmose, sondern Plasmolyse",
+    "additionalStatements": [],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "explicit-negation-or-contradiction"
+  },
+  {
+    "id": "B1-0179",
+    "taskId": "M6.02",
+    "termText": "Nicht Osmose, sondern Osmose",
+    "additionalStatements": [],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "explicit-negation-or-contradiction"
+  },
+  {
+    "id": "B1-0180",
+    "taskId": "M6.02",
+    "termText": "Osmose statt Osmose",
+    "additionalStatements": [],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "explicit-negation-or-contradiction"
+  },
+  {
+    "id": "B1-0181",
+    "taskId": "M6.02",
+    "termText": "Osmose oder Plasmolyse",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0182",
+    "taskId": "M6.02",
+    "termText": "Osmose und Plasmolyse",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0183",
+    "taskId": "M6.02",
+    "termText": "Osmose/Plasmolyse",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0184",
+    "taskId": "M6.02",
+    "termText": "nicht Plasmolyse",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0185",
+    "taskId": "M6.02",
+    "termText": "nicht nicht Osmose",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0186",
+    "taskId": "M6.02",
+    "termText": "Das ist Osmose.",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0187",
+    "taskId": "M6.02",
+    "termText": "Osmose, aber nicht sicher",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0188",
+    "taskId": "M6.02",
+    "termText": "Osmose. Danke, ich vermute es.",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0189",
+    "taskId": "M6.02",
+    "termText": "Osmose und ein unbekanntes Wort",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0190",
+    "taskId": "M6.02",
+    "termText": "\ud83e\udd14",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0191",
+    "taskId": "M6.02",
+    "termText": "ein Fachwort",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0192",
+    "taskId": "M6.02",
+    "termText": "vielleicht vielleicht Osmose",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0193",
+    "taskId": "M6.02",
+    "termText": "\"Osmose",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0194",
+    "taskId": "M6.02",
+    "termText": "(Osmose",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0195",
+    "taskId": "M6.02",
+    "termText": "?Osmose",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0196",
+    "taskId": "M6.02",
+    "termText": "Osmose \ud83d\ude03",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0197",
+    "taskId": "M6.02",
+    "termText": "Osmose!!!!",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0198",
+    "taskId": "M6.02",
+    "termText": "Osmose; anderes",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0199",
+    "taskId": "M6.02",
+    "termText": "",
+    "additionalStatements": [],
+    "expectedTerm": "empty",
+    "expectedOverall": "empty",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0200",
+    "taskId": "M6.02",
+    "termText": "  \t\n",
+    "additionalStatements": [],
+    "expectedTerm": "empty",
+    "expectedOverall": "empty",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0201",
+    "taskId": "M6.02",
+    "termText": "Osmose",
+    "additionalStatements": [
+      "Das ist meine zus\u00e4tzliche Erkl\u00e4rung."
+    ],
+    "expectedTerm": "correct",
+    "expectedOverall": "clarify",
+    "group": "additional-statements"
+  },
+  {
+    "id": "B1-0202",
+    "taskId": "M6.02",
+    "termText": "Osmose",
+    "additionalStatements": [
+      "Die Zellwand schrumpft."
+    ],
+    "expectedTerm": "correct",
+    "expectedOverall": "clarify",
+    "group": "additional-statements"
+  },
+  {
+    "id": "B1-0203",
+    "taskId": "M6.02",
+    "termText": "Osmose",
+    "additionalStatements": [
+      "Wasser kann die Membran passieren."
+    ],
+    "expectedTerm": "correct",
+    "expectedOverall": "clarify",
+    "group": "additional-statements"
+  },
+  {
+    "id": "B1-0204",
+    "taskId": "M6.02",
+    "termText": "Plasmolyse",
+    "additionalStatements": [
+      "Osmose"
+    ],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "additional-statements"
+  },
+  {
+    "id": "B1-0205",
+    "taskId": "M6.02",
+    "termText": "Osmose\u202e",
+    "additionalStatements": [],
+    "expectedTerm": "technical",
+    "expectedOverall": "technical",
+    "group": "technical-boundary"
+  },
+  {
+    "id": "B1-0206",
+    "taskId": "M6.02",
+    "termText": "Osmose\u200b",
+    "additionalStatements": [],
+    "expectedTerm": "technical",
+    "expectedOverall": "technical",
+    "group": "technical-boundary"
+  },
+  {
+    "id": "B1-0207",
+    "taskId": "M6.02",
+    "termText": "\ud800",
+    "additionalStatements": [],
+    "expectedTerm": "technical",
+    "expectedOverall": "technical",
+    "group": "technical-boundary"
+  },
+  {
+    "id": "B1-0208",
+    "taskId": "M6.02",
+    "termText": "Osmosexxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "additionalStatements": [],
+    "expectedTerm": "technical",
+    "expectedOverall": "technical",
+    "group": "technical-boundary"
+  },
+  {
+    "id": "B1-0209",
+    "taskId": "Z1.02",
+    "termText": "Membran",
+    "additionalStatements": [],
+    "expectedTerm": "partial",
+    "expectedOverall": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0210",
+    "taskId": "Z1.02",
+    "termText": "H\u00fclle",
+    "additionalStatements": [],
+    "expectedTerm": "partial",
+    "expectedOverall": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0211",
+    "taskId": "Z1.02",
+    "termText": "Vakuolenh\u00fclle",
+    "additionalStatements": [],
+    "expectedTerm": "partial",
+    "expectedOverall": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0212",
+    "taskId": "Z1.02",
+    "termText": "innere Grenze",
+    "additionalStatements": [],
+    "expectedTerm": "partial",
+    "expectedOverall": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0213",
+    "taskId": "Z1.02",
+    "termText": "Membran der Vakuole",
+    "additionalStatements": [],
+    "expectedTerm": "partial",
+    "expectedOverall": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0214",
+    "taskId": "Z1.02",
+    "termText": "H\u00fclle um die Vakuole",
+    "additionalStatements": [],
+    "expectedTerm": "partial",
+    "expectedOverall": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0215",
+    "taskId": "Z1.02",
+    "termText": "Grenze der Vakuole",
+    "additionalStatements": [],
+    "expectedTerm": "partial",
+    "expectedOverall": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0216",
+    "taskId": "Z1.02",
+    "termText": "die Membran um die Vakuole",
+    "additionalStatements": [],
+    "expectedTerm": "partial",
+    "expectedOverall": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0217",
+    "taskId": "Z1.02",
+    "termText": "Zellwand",
+    "additionalStatements": [],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0218",
+    "taskId": "Z1.02",
+    "termText": "Zellmembran",
+    "additionalStatements": [],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0219",
+    "taskId": "Z1.02",
+    "termText": "Plasmamembran",
+    "additionalStatements": [],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0220",
+    "taskId": "Z1.02",
+    "termText": "Plasmalemma",
+    "additionalStatements": [],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0221",
+    "taskId": "Z1.02",
+    "termText": "Kernh\u00fclle",
+    "additionalStatements": [],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0222",
+    "taskId": "Z1.02",
+    "termText": "Kernmembran",
+    "additionalStatements": [],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0223",
+    "taskId": "Z1.02",
+    "termText": "Membran um den Zellkern",
+    "additionalStatements": [],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0224",
+    "taskId": "Z1.02",
+    "termText": "Membran des Zellkerns",
+    "additionalStatements": [],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0225",
+    "taskId": "Z1.02",
+    "termText": "Vakuole",
+    "additionalStatements": [],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0226",
+    "taskId": "Z1.02",
+    "termText": "Vakuolenraum",
+    "additionalStatements": [],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0227",
+    "taskId": "Z1.02",
+    "termText": "Vakuoleninnere",
+    "additionalStatements": [],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0228",
+    "taskId": "Z1.02",
+    "termText": "Zellkern",
+    "additionalStatements": [],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0229",
+    "taskId": "Z1.02",
+    "termText": "Tonoplat",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "checked-spelling"
+  },
+  {
+    "id": "B1-0230",
+    "taskId": "Z1.02",
+    "termText": "Tonopast",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "checked-spelling"
+  },
+  {
+    "id": "B1-0231",
+    "taskId": "Z1.02",
+    "termText": "Vakuolenmembrann",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "checked-spelling"
+  },
+  {
+    "id": "B1-0232",
+    "taskId": "Z1.02",
+    "termText": "Tonoplsat",
+    "additionalStatements": [],
+    "expectedTerm": "correct",
+    "expectedOverall": "correct",
+    "group": "checked-spelling"
+  },
+  {
+    "id": "B1-0233",
+    "taskId": "Z1.02",
+    "termText": "Tonoblast",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "spelling-boundary"
+  },
+  {
+    "id": "B1-0234",
+    "taskId": "Z1.02",
+    "termText": "Vakuolenmembram",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "spelling-boundary"
+  },
+  {
+    "id": "B1-0235",
+    "taskId": "Z1.02",
+    "termText": "Tono",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "spelling-boundary"
+  },
+  {
+    "id": "B1-0236",
+    "taskId": "Z1.02",
+    "termText": "Tonoplast Zellwand",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "spelling-boundary"
+  },
+  {
+    "id": "B1-0237",
+    "taskId": "M6.02",
+    "termText": "Diffusion",
+    "additionalStatements": [],
+    "expectedTerm": "partial",
+    "expectedOverall": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0238",
+    "taskId": "M6.02",
+    "termText": "Diffusion von Wasser",
+    "additionalStatements": [],
+    "expectedTerm": "partial",
+    "expectedOverall": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0239",
+    "taskId": "M6.02",
+    "termText": "Diffusion des Wassers",
+    "additionalStatements": [],
+    "expectedTerm": "partial",
+    "expectedOverall": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0240",
+    "taskId": "M6.02",
+    "termText": "Wassertransport",
+    "additionalStatements": [],
+    "expectedTerm": "partial",
+    "expectedOverall": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0241",
+    "taskId": "M6.02",
+    "termText": "Transport von Wasser",
+    "additionalStatements": [],
+    "expectedTerm": "partial",
+    "expectedOverall": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0242",
+    "taskId": "M6.02",
+    "termText": "Wasserbewegung",
+    "additionalStatements": [],
+    "expectedTerm": "partial",
+    "expectedOverall": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0243",
+    "taskId": "M6.02",
+    "termText": "Bewegung von Wasser",
+    "additionalStatements": [],
+    "expectedTerm": "partial",
+    "expectedOverall": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0244",
+    "taskId": "M6.02",
+    "termText": "passiver Transport",
+    "additionalStatements": [],
+    "expectedTerm": "partial",
+    "expectedOverall": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0245",
+    "taskId": "M6.02",
+    "termText": "passiver Wassertransport",
+    "additionalStatements": [],
+    "expectedTerm": "partial",
+    "expectedOverall": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0246",
+    "taskId": "M6.02",
+    "termText": "passive Wasserbewegung",
+    "additionalStatements": [],
+    "expectedTerm": "partial",
+    "expectedOverall": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0247",
+    "taskId": "M6.02",
+    "termText": "Plasmolyse",
+    "additionalStatements": [],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0248",
+    "taskId": "M6.02",
+    "termText": "aktiver Transport",
+    "additionalStatements": [],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0249",
+    "taskId": "M6.02",
+    "termText": "aktiver Wassertransport",
+    "additionalStatements": [],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0250",
+    "taskId": "M6.02",
+    "termText": "aktive Pumpe",
+    "additionalStatements": [],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0251",
+    "taskId": "M6.02",
+    "termText": "ATP-Pumpe",
+    "additionalStatements": [],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0252",
+    "taskId": "M6.02",
+    "termText": "Endocytose",
+    "additionalStatements": [],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0253",
+    "taskId": "M6.02",
+    "termText": "Endozytose",
+    "additionalStatements": [],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0254",
+    "taskId": "M6.02",
+    "termText": "Exocytose",
+    "additionalStatements": [],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0255",
+    "taskId": "M6.02",
+    "termText": "Exozytose",
+    "additionalStatements": [],
+    "expectedTerm": "incorrect",
+    "expectedOverall": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "B1-0256",
+    "taskId": "M6.02",
+    "termText": "Osmos",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "spelling-or-scope-boundary"
+  },
+  {
+    "id": "B1-0257",
+    "taskId": "M6.02",
+    "termText": "Osmose Diffusion",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "spelling-or-scope-boundary"
+  },
+  {
+    "id": "B1-0258",
+    "taskId": "M6.02",
+    "termText": "Umkehrosmose",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "spelling-or-scope-boundary"
+  },
+  {
+    "id": "B1-0259",
+    "taskId": "M6.02",
+    "termText": "osmotischer Druck",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "spelling-or-scope-boundary"
+  },
+  {
+    "id": "B1-0260",
+    "taskId": "M6.02",
+    "termText": "Osmoxe",
+    "additionalStatements": [],
+    "expectedTerm": "clarify",
+    "expectedOverall": "clarify",
+    "group": "spelling-or-scope-boundary"
+  }
+]

@@ -1,11 +1,10 @@
 import { defineConfig } from '@playwright/test';
 import original from './playwright.config.ts';
 
-/** Separate engine/platform evidence. Existing Tab tests are never rewritten or
- * skipped to manufacture success. The additional profile tests Option-Tab on
- * macOS WebKit and Tab on other platforms, and records both raw behaviours. */
+/** R8 approved equivalent navigation repair: macOS WebKit Option-Tab + Enter.
+ * Raw standard/Option-Tab observations remain separate platform evidence. */
 const suite = process.env['WEBKIT_SUITE'] ?? 'all';
-const additional = ['**/p02b-third.spec.ts', '**/keyboard-platform.spec.ts', '**/p02b-fourth.spec.ts', '**/p02b-r3.spec.ts', '**/p02b-r4.spec.ts', '**/p02b-r5.spec.ts', '**/p02b-r6.spec.ts', '**/p02b-r7.spec.ts'];
+const additional = ['**/p02b-third.spec.ts', '**/keyboard-platform.spec.ts', '**/p02b-fourth.spec.ts', '**/p02b-r3.spec.ts', '**/p02b-r4.spec.ts', '**/p02b-r5.spec.ts', '**/p02b-r6.spec.ts', '**/p02b-r7.spec.ts', '**/naming-v1.spec.ts', '**/p02b-r8.spec.ts'];
 const projects = original.projects;
 if (!projects?.length) throw new Error('The standard browser profiles must be present.');
 export default defineConfig({
