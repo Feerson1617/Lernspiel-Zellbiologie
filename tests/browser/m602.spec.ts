@@ -126,7 +126,13 @@ for (const navigation of ['reload', 'back']) for (const fault of ['', 'quota', '
   if (restored.fields.volume.events.length) expect(after.latest?.support.assistance).toBe('solution_viewed');
   else { expect(after.history).toBe('history_unverified'); await expect(result(page)).toHaveAttribute('data-status', 'technical'); }
   await expect(result(page)).not.toContainText('Ohne Hilfe beantwortet');
-  expect(await page.evaluate(() => localStorage.getItem('zelllabor11.progress.v1'))).toBeNull();
+  const saved = await page.evaluate(() => localStorage.getItem('zelllabor11.progress.v1'));
+  if (!restored.fields.volume.events.length) expect(saved).toBeNull();
+  else if (saved) {
+    // Retained BFCache RAM may retain a known assisted completion, never independence.
+    const attempts = (JSON.parse(saved) as { attempts: { assistance: string }[] }).attempts;
+    expect(attempts.every(a => a.assistance === 'solution_viewed')).toBe(true);
+  }
   expect(await page.evaluate(() => localStorage.getItem('foreign-p02c'))).toBe('keep');
 });
 for (const fault of ['quota', 'denied']) test(`whole completed task exposes ${fault} without losing RAM or foreign content`, async ({ page, baseURL }) => {
