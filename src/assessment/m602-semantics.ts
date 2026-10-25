@@ -12,7 +12,29 @@ export interface WaterRelation {
   readonly net: boolean;
   readonly negative: boolean;
 }
-export interface SemanticAtom { readonly tag: string; readonly negative: boolean; readonly individual: boolean; readonly net: boolean }
+export type VolumeReferent = 'vacuole' | 'wall' | 'protoplast';
+export interface VolumeMeaning {
+  readonly referent: VolumeReferent;
+  readonly change: 'down' | 'up' | 'same' | 'change' | 'loss';
+  readonly negative: boolean;
+  readonly phase: 'given_early_state';
+  readonly origin: 'explicit' | 'inherited' | 'question';
+  readonly gender: 'feminine' | 'masculine' | 'neuter' | 'implicit';
+}
+export interface SemanticAtom { readonly tag: string; readonly negative: boolean; readonly individual: boolean; readonly net: boolean; readonly volume?: VolumeMeaning }
+export function volumeReferent(object: string): VolumeReferent {
+  return object.includes('zellwand') ? 'wall' : object.includes('protoplast') ? 'protoplast' : 'vacuole';
+}
+export function volumeGender(object: string): VolumeMeaning['gender'] {
+  const head = object.replace(/^(?:das|der|die|ihr|ihren) /u, '');
+  return /^(?:vakuolenvolumen|volumen)(?: |$)/u.test(head) ? 'neuter' : /^(?:rauminhalt|protoplast|vakuolenraum|vakuoleninhalt)(?: |$)/u.test(head) ? 'masculine' : /^(?:vakuole|zentralvakuole|zellwand|groesse)(?: |$)/u.test(head) ? 'feminine' : 'implicit';
+}
+export function volumeAtom(tag: string, referent: VolumeReferent, negative: boolean, origin: VolumeMeaning['origin'], gender: VolumeMeaning['gender'] = 'implicit'): SemanticAtom {
+  if (referent === 'wall') tag = tag === 'down' ? 'wall_down' : tag === 'same' ? 'wall_same' : tag;
+  if (referent === 'protoplast' && tag === 'down') tag = 'protoplast_down';
+  const change = tag.endsWith('down') ? 'down' : tag === 'up' ? 'up' : tag.endsWith('same') ? 'same' : tag === 'loss' ? 'loss' : 'change';
+  return { tag, negative, individual: false, net: false, volume: { referent, change, negative, phase: 'given_early_state', origin, gender } };
+}
 const rooms: Readonly<Record<string, Room>> = Object.fromEntries([
   ...['zelle', 'pflanzenzelle', 'cytosol', 'cytoplasma', 'zellinneren', 'zellinnere', 'innen', 'drinnen', 'zellinnenseite', 'inneren der zelle', 'innenraum der zelle'].map(k => [k, 'cytosol']),
   ...['aussen', 'draussen', 'aussenraum', 'aussenloesung', 'aussenmedium', 'umgebung', 'umgebende loesung', 'umgebenden loesung', 'umgebende medium', 'umgebenden medium'].map(k => [k, 'external']),
@@ -99,7 +121,7 @@ export function compareWaterRelations(a: WaterRelation, b: WaterRelation): Seman
 
 /** Quantity slot and a complete predicate. Discourse words are consumed only
  * inside a recognized clause, never by discarding an unknown sentence tail. */
-export function parseVolumeAtom(input: string): SemanticAtom | null {
+export function parseVolumeAtom(input: string, inherited?: VolumeReferent): SemanticAtom | null {
   const negs = input.match(/\b(?:nicht|kein|keine|keinen)\b/gu) ?? [];
   if (negs.length > 1) return null;
   let text = modifiers(input).replace(/\b(?:also|dabei)\b/gu, '').replace(/\s+/gu, ' ').trim();
@@ -121,7 +143,9 @@ export function parseVolumeAtom(input: string): SemanticAtom | null {
   const same = ['bleibt gleich', 'bleibt konstant', 'bleibt unveraendert', 'bleibt in ihrem volumen unveraendert'];
   let tag = down.includes(predicate) ? 'down' : up.includes(predicate) ? 'up' : same.includes(predicate) ? 'same' : ['aendert sich', 'veraendert sich'].includes(predicate) ? 'change' : null;
   if (!tag) return null;
-  if (object.includes('zellwand')) tag = tag === 'down' ? 'wall_down' : tag === 'same' ? 'wall_same' : null;
-  if (object.includes('protoplast')) tag = tag === 'down' ? 'protoplast_down' : null;
-  return tag ? { tag, negative: negs.length === 1, individual: false, net: false } : null;
+  const referent = /zellwand|protoplast|vakuol/u.test(object) ? volumeReferent(object) : inherited ?? 'vacuole';
+  if (referent === 'wall') tag = tag === 'down' ? 'wall_down' : tag === 'same' ? 'wall_same' : null;
+  if (referent === 'protoplast') tag = tag === 'down' ? 'protoplast_down' : null;
+  const ref = /zellwand|protoplast|vakuol/u.test(object) ? volumeReferent(object) : inherited ?? 'vacuole';
+  return tag ? volumeAtom(tag, ref, negs.length === 1, /zellwand|protoplast|vakuol/u.test(object) ? 'explicit' : inherited ? 'inherited' : 'question', volumeGender(object)) : null;
 }

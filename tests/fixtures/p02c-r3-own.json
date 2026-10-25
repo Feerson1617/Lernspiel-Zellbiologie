@@ -1,0 +1,233 @@
+[
+  {
+    "id": "OWN-C01",
+    "field": "volume",
+    "text": "Die Zellwand bleibt gleich und wird kleiner.",
+    "expected": "incorrect",
+    "extra": []
+  },
+  {
+    "id": "OWN-C02",
+    "field": "volume",
+    "text": "Die Zellwand bleibt gleich und schrumpft.",
+    "expected": "incorrect",
+    "extra": []
+  },
+  {
+    "id": "OWN-C03",
+    "field": "volume",
+    "text": "Die Zellwand bleibt gleich und nimmt ab.",
+    "expected": "incorrect",
+    "extra": []
+  },
+  {
+    "id": "OWN-C04",
+    "field": "volume",
+    "text": "Das Volumen der Zellwand bleibt gleich und wird kleiner.",
+    "expected": "incorrect",
+    "extra": []
+  },
+  {
+    "id": "OWN-C05",
+    "field": "volume",
+    "text": "Das Volumen der Zellwand bleibt gleich und schrumpft.",
+    "expected": "incorrect",
+    "extra": []
+  },
+  {
+    "id": "OWN-C06",
+    "field": "volume",
+    "text": "Das Volumen der Zellwand bleibt gleich und nimmt ab.",
+    "expected": "incorrect",
+    "extra": []
+  },
+  {
+    "id": "OWN-C07",
+    "field": "volume",
+    "text": "Der Protoplast schrumpft und wird kleiner.",
+    "expected": "partial",
+    "extra": []
+  },
+  {
+    "id": "OWN-C08",
+    "field": "volume",
+    "text": "Der Protoplast schrumpft und nimmt ab.",
+    "expected": "partial",
+    "extra": []
+  },
+  {
+    "id": "OWN-C09",
+    "field": "volume",
+    "text": "Der Protoplast schrumpft und schrumpft.",
+    "expected": "partial",
+    "extra": []
+  },
+  {
+    "id": "OWN-C10",
+    "field": "volume",
+    "text": "Die Vakuole schrumpft und wird kleiner.",
+    "expected": "correct",
+    "extra": []
+  },
+  {
+    "id": "OWN-C11",
+    "field": "volume",
+    "text": "Das Vakuolenvolumen sinkt und nimmt ab.",
+    "expected": "correct",
+    "extra": []
+  },
+  {
+    "id": "OWN-C12",
+    "field": "volume",
+    "text": "Die Vakuole schrumpft und bleibt gleich.",
+    "expected": "incorrect",
+    "extra": []
+  },
+  {
+    "id": "OWN-C13",
+    "field": "volume",
+    "text": "Die Vakuole schrumpft, aber die Zellwand bleibt gleich.",
+    "expected": "correct",
+    "extra": []
+  },
+  {
+    "id": "OWN-C14",
+    "field": "volume",
+    "text": "Die Zellwand bleibt gleich, aber die Vakuole schrumpft.",
+    "expected": "correct",
+    "extra": []
+  },
+  {
+    "id": "OWN-C15",
+    "field": "volume",
+    "text": "Der Protoplast wird kleiner und die Vakuole schrumpft.",
+    "expected": "correct",
+    "extra": []
+  },
+  {
+    "id": "OWN-C16",
+    "field": "volume",
+    "text": "Die Zellwand bleibt gleich; nimmt ab.",
+    "expected": "incorrect",
+    "extra": []
+  },
+  {
+    "id": "OWN-C17",
+    "field": "volume",
+    "text": "Die Zellwand bleibt gleich. Wird kleiner.",
+    "expected": "incorrect",
+    "extra": []
+  },
+  {
+    "id": "OWN-C18",
+    "field": "volume",
+    "text": "Der Protoplast schrumpft und die Zellwand bleibt gleich.",
+    "expected": "partial",
+    "extra": []
+  },
+  {
+    "id": "OWN-C19",
+    "field": "volume",
+    "text": "Die Zellwand bleibt gleich und der Protoplast schrumpft.",
+    "expected": "partial",
+    "extra": []
+  },
+  {
+    "id": "OWN-C20",
+    "field": "volume",
+    "text": "Die Vakuole schrumpft und schrumpft nicht.",
+    "expected": "incorrect",
+    "extra": []
+  },
+  {
+    "id": "OWN-C21",
+    "field": "volume",
+    "text": "Der Protoplast schrumpft und schrumpft nicht.",
+    "expected": "incorrect",
+    "extra": []
+  },
+  {
+    "id": "OWN-C22",
+    "field": "volume",
+    "text": "Die Zellwand bleibt gleich und wird später kleiner.",
+    "expected": "clarify",
+    "extra": []
+  },
+  {
+    "id": "OWN-C23",
+    "field": "volume",
+    "text": "Die Vakuole schrumpft erst, später bleibt sie gleich.",
+    "expected": "clarify",
+    "extra": []
+  },
+  {
+    "id": "OWN-C24",
+    "field": "volume",
+    "text": "Die Vakuole schrumpft und sie wird kleiner.",
+    "expected": "clarify",
+    "extra": []
+  },
+  {
+    "id": "OWN-C25",
+    "field": "volume",
+    "text": "Die Zellwand bleibt gleich und es wird kleiner.",
+    "expected": "clarify",
+    "extra": []
+  },
+  {
+    "id": "OWN-C26",
+    "field": "volume",
+    "text": "Die Zellwand bleibt gleich und die Vakuole schrumpft und sie wird kleiner.",
+    "expected": "clarify",
+    "extra": []
+  },
+  {
+    "id": "OWN-C27",
+    "field": "volume",
+    "text": "Die Vakuole schrumpft und der Zellkern wird kleiner.",
+    "expected": "clarify",
+    "extra": []
+  },
+  {
+    "id": "OWN-C28",
+    "field": "volume",
+    "text": "Nicht die Zellwand schrumpft, sondern die Vakuole schrumpft.",
+    "expected": "correct",
+    "extra": []
+  },
+  {
+    "id": "OWN-C29",
+    "field": "volume",
+    "text": "Nicht die Zellwand schrumpft, sondern schrumpft.",
+    "expected": "incorrect",
+    "extra": []
+  },
+  {
+    "id": "OWN-C30",
+    "field": "volume",
+    "text": "Ich dachte zuerst die Zellwand schrumpft; jetzt meine ich nimmt ab.",
+    "expected": "incorrect",
+    "extra": []
+  },
+  {
+    "id": "OWN-C31",
+    "field": "volume",
+    "text": "Ich dachte zuerst die Zellwand schrumpft; jetzt meine ich die Vakuole nimmt ab.",
+    "expected": "correct",
+    "extra": []
+  },
+  {
+    "id": "OWN-C32",
+    "field": "volume",
+    "text": "schrumpft",
+    "expected": "correct",
+    "extra": []
+  },
+  {
+    "id": "OWN-C33",
+    "field": "volume",
+    "text": "wird kleiner",
+    "expected": "correct",
+    "extra": []
+  }
+]

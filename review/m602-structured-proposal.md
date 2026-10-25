@@ -1,82 +1,113 @@
-# Entscheidungsvorlage: explizite Relationsantwort für M6.02
+# Entscheidungsvorlage C02/C03: begrenzte Relationsantwort
 
-**Status: vorgeschlagen, nicht implementiert und nicht freigegeben.**
-Die vorhandene Eingabeversion `m602-response/1.0.0`, Aufgabenfrage, C01–C03,
-Sollwerte und Hilfegeschichte gelten weiter. Diese Vorlage ersetzt keinen Vertrag.
+**Zur ausdrücklichen fachlichen Genehmigung; nicht implementiert.**
+Die frühere Option-B-Freigabe betrifft allein Begriffsfelder. Sie autorisiert
+keinen Wechsel von C02/C03. `m602-response/1.0.0`, Originalfrage, Rubrik,
+Material-/Versionsbindung und strenge Zusatztextregel gelten unverändert weiter.
 
-## Anlass und Empfehlung
+## Empfohlener Entscheidungsumfang
 
-Die Reparatur beseitigt membranübergreifende Fehlfarben, aber eine kohärente
-Grammatik erreicht auf den neuen R2-Kurzantworten nur Richtung 35/45 (77,78 %)
-und Volumen 32/45 (71,11 %). Die zuvor eingefrorenen eigenen kurzen Kombinationen
-werden 32/32 und 28/28 erkannt. Diese Differenz und die wiederholten Gegenprüfungen
-sprechen für eine Begrenzung des Eingabevertrags statt weiterer Satzmuster.
-Empfehlung: nach fachlicher Entscheidung eine eigene versionierte Relationshülle
-mit ausdrücklich benannten biologischen Slots beauftragen. Bis dahin bleibt die
-Freigabe des aktuellen Freitextformats blockiert. Die Grenze wird nicht durch eine
-niedrigere Schwelle oder die Auswahl nur bekannter Formulierungen aufgehoben.
+Die offenen Sprachgrenzen bleiben trotz Fehlerreparaturen deutlich unter 95 %:
+R2 kurz richtig 35/45 Richtung und 32/45 Volumen; unabhängiger R3-Bestand am
+geprüften Ausgangsstand 14/40 und 11/40. Bekannte Fälle und eigene endliche
+Kombinationen sind kein Generalisierungsnachweis. Empfehlung: nach der P1-Reparatur
+einen einzelnen begrenzten, versionierten Folgeauftrag für C02/C03 freigeben,
+keine weitere Satzparser- oder Oberflächenphase auf Verdacht.
 
-## Konkreter Schülerablauf zur Entscheidung
+## Konkreter Wortlaut und Schülerablauf
 
-Frage und Material bleiben gleichzeitig lesbar: drei Räume, Gesamtwasserpotenziale
-mit Druckanteil in Pa, Membranpermeabilität, frühe Phase. C01 bleibt ein Fachbegriff.
-C02 wird von Anfang an angekündigt als „Beschreibe die **Nettobewegung von Wasser**:
-von [selbst benannte Quelle] über [selbst benannte Membran] nach [selbst benanntes Ziel].“
-C03: „[selbst benannte Bezugsgröße] verändert sich [selbst benannte Änderung].“
-Alle Felder starten leer. Vorbelegt werden allein die in der Frage vorgegebenen
-Bedingungen (Wasser, Nettobewegung, angezeigter Zeitpunkt), keine gesuchten Antworten.
-Als Eingaben zunächst eng begrenzte Begriffs-/Richtungsfelder mit transparent
-angekündigten Synonymen; keine verdeckte Suche nach einem vollständigen Satz.
-Das fordert Abrufen und Zuordnen. Sichtbar wählbare Karten/Listen wären ausdrücklich
-als alternative Auswahlleistung zu kennzeichnen und gesondert fachlich zu entscheiden.
+1. Originalfrage und Material bleiben gleichzeitig lesbar: frühe Phase,
+   drei Räume, Gesamtwasserpotenziale einschließlich Druck in Pa,
+   Permeabilität und ausgeschlossene Transporte. C01 bleibt unverändert.
+2. Sichtbar als **gegeben**: Wasser, Nettobetrachtung, Zellmembran und frühe
+   Phase. Eingabe C02: **„Wasser bewegt sich netto über die Zellmembran:
+   [deine Richtung]“**. Das Feld startet leer; keine Antwort oder Option ist
+   vorgewählt. Quelle/Ziel können alternativ im deklarierten Richtungsumfang
+   benannt werden. Die Membran abzuschreiben ist kein weiteres Prüfkriterium.
+3. Sichtbar als **gegeben**: Vakuole und ihr Volumen. Eingabe C03:
+   **„Das Vakuolenvolumen [deine Veränderung]“**. Auch dieses Feld startet leer.
+   „Vakuole“ erneut einzutragen ist keine zusätzliche Leistung oder Bedingung.
+4. Freiwillig darunter: **„Weitere Erklärung zur selben Antwort – noch nicht
+   automatisch geprüft. Ein ungeprüfter relevanter Zusatz verhindert die
+   vollständige Bestätigung deiner gesamten Einreichung.“** Text bleibt sichtbar
+   im RAM. Danach prüfen, die getrennten Kriterien und den Gesamtumfang lesen,
+   selbst überarbeiten; erst auf Wunsch Hinweis/Wortbank/Klärung/Lösung ansehen.
 
-Darunter freiwillig: „Begründe deinen Zusammenhang – diese freie Erklärung wird
-hier nicht automatisch bewertet.“ Text bleibt sichtbar im RAM. Der Erfolg der Slots
-bestätigt ausschließlich die drei definierten Kriterien, keine frei geschriebene
-Erklärungskompetenz. Keine Rohtexte standardmäßig speichern oder übertragen.
+Die Satzrahmen geben ausschließlich schon genannte Fragebedingungen wieder.
+Wer eine Membran oder Bezugsgröße künftig frei bestimmen lassen möchte, muss dies
+als geänderte Aufgabenanforderung und Rubrik vorab separat beschließen. Kein
+heimliches Zusatzkriterium und keine Doppelwertung von Abschreibeleistung.
 
-Nach Prüfen bleiben die erkannten Beziehungen und offenen Kriterien sichtbar.
-Feedback nennt einen erkannten Bezug, die fachliche Unterscheidung und genau eine
-nächste Handlung. Eine eigene Überarbeitung ist zuerst möglich. Dann ausdrücklich
-abrufbar: Hinweis → Wortbank → Auswahlklärung → Lösung ansehen. Keine automatische
-Auswahl. Ein von Anfang an angekündigtes Auswahlformat belegt Auswahlleistung;
-eine nach unklarem Freitext geöffnete Auswahlklärung ist dagegen ein neuer
-unterstützter Versuch mit Vorgängerbindung. Sie zertifiziert den alten Text nicht
-nachträglich und setzt die Hilfehistorie nicht zurück.
+## Geschlossener Entwurf der späteren Prüfregeln
 
-## Folgen für bestehende Verträge
+Die folgenden Antwortwerte sind Referenzen für Lehrkraft/Entwicklung, keine
+vorbelegten Schülerantworten. Diese Vorlage ist noch keine Runtime-Spezifikation.
 
-- Neue Eingabehülle, z.B. `m602-relation-slots/1.0.0`, erst nach Freigabe festlegen;
-  getrennte Aufgaben-/Rubrik-/Inhaltsversionen eindeutig binden. Keine Umdeutung
-  vorhandener Einreichungen und keine automatische Migration zu „verstanden“.
-- Aufgaben-ID M6.02 und biologische Kriterien C01–C03 bleiben. Die Slots verfeinern
-  die Form des Nachweises, nicht das Lernziel. Ein freier Zusatz wird nicht Teil
-  eines scheinbar vollständig ausgewerteten Aufsatzes.
-- `TaskContext` und `EvaluationResult` weiterverwenden: pro Kriterium aktuelle
-  Kontextbindung, tatsächliche Textspanne oder option_id/state_value-Evidenz,
-  klarer reasonCode und deklarierter unbewerteter Umfang. Ein freier Zusatz darf
-  weder still mitbestätigt noch ohne ausdrückliche Vertragsentscheidung als
-  heutiger `additionalStatements`-Erfolgsblocker umgedeutet werden. Dieser Punkt
-  muss für die neue Hülle vor Umsetzung entschieden und schematisch geschlossen sein.
-- Hilfe-/Versuchshistorie, Auswahlherkunft, sticky help und R9-Vertrauensgrenze
-  bleiben. Selbst eingegebene Slots können Abrufleistung belegen; Wortbank/
-  Auswahlklärung muss sich in assistance/origin zeigen. Eindeutiges Gesamtresultat
-  erst bei drei aktuellen, widerspruchsfreien Kriterien ohne unbewerteten
-  **bewertungsrelevanten** Rest. Bei Rekonstruktion kein unabhängiger Erfolgsbeleg.
-- Persistiert werden weiterhin ausschließlich die acht zulässigen Metadaten.
-  Ob eine reine ursprüngliche Auswahl als independent bezeichnet werden darf,
-  braucht eine explizite didaktische Definition; sie darf nicht als unabhängige
-  Freitextleistung ausgegeben werden. Kein neues Speicherfeld auf Verdacht.
+| Kriterium | vollständig richtig | nachweislich falsch | Teilansatz/Klärung |
+|---|---|---|---|
+| C02 Nettorichtung | nach außen / hinaus / aus der Zelle / Cytosol → Außenraum; echte Gegenrichtungsbilanz desselben Wassers über dieselbe Zellmembran zur gegebenen Phase | netto nach innen, ausdrücklich kein Nettostrom im gegebenen Fall, sicher gleichzeitiger Nettowiderspruch | bloße Bewegung oder Einzelbewegung ohne Bilanz: partial; unklare Richtung, andere/unklare Grenze, Zeit oder Rest: clarify |
+| C03 Volumenfolge | nimmt ab / kleiner / schrumpft / weniger; eindeutig gleichwertige Volumenabnahme | nimmt zu / größer / bleibt gleich; im gegebenen Modell schrumpfende Zellwand; sicherer Widerspruch desselben Volumens zur selben Phase | Änderung ohne Richtung oder nur andere richtige Strukturbeobachtung: partial; ungeklärter Gegenstand, Zeit oder Rest: clarify |
 
-## Abnahme und späterer P03-Anschluss
+Angekündigter Umfang: je ein selbst eingegebener Richtungs-/Veränderungsausdruck,
+zulässige Mehrwortformen, Synonyme und vorher geprüfte Schreibvarianten. Keine
+unscharfe Ersetzung von Gegensätzen, Zahlen oder Negationen. Bekannte Negation
+bleibt Teil der Bedeutung. Unbekannte Aussagebestandteile werden erhalten und
+geklärt, keine Extraktion eines richtigen Wortes aus einem ungeprüften Satz.
+Ein richtiger Tonoplastfluss erfüllt nicht automatisch die Zellmembranfrage.
+Protoplast und Zellwand werden nicht still in Vakuolenvolumen umgedeutet.
 
-Vor Umsetzung: fachliche Genehmigung der Eingabe- und Zusatztextsemantik. Danach
-neuer begrenzter Folgeauftrag, Referenzfälle für Slotverwechslung, beide Membranen,
-Negation/Zeiten, Hilfen, Material-/Versionswechsel und echte DOM-Wege. Alte
-Sprachnenner bleiben als Befund archiviert; ein neues Format macht sie nicht grün.
-Neue unabhängige Gegenprüfung vor Übergang. Diese Vorlage genehmigt keinen Wechsel.
+## Verbindliche Empfehlung zur freien Erklärung
 
-P03 anschließend separat: ein durchgängiger Schülerzyklus mit Frage/Material,
-Eingabe, Kriterienfeedback, eigenständiger Verbesserung, abgestuften Hilfen,
-Kontextwechsel und Fortschritt auf Desktop/iPad; Tastatur, Touch, sichtbarer Fokus
-und Bildschirmtastatur prüfen. Kein Implementierungsbeginn in dieser Reparatur.
+**Für den kleinsten Folgeauftrag bleibt die Erklärung Bestandteil derselben
+bewerteten Einreichung. Die heutige strenge Zusatzregel wird beibehalten.**
+Ein nichtleerer relevanter, nicht geprüfter Zusatz erhält notAssessed und blockiert
+Gesamtgrün. Richtige Kriterien dürfen getrennt grün bleiben. Ein sicher belegter
+falscher oder widersprüchlicher Teil wird gemäß bestehender Priorität rot; bloße
+Unsicherheit wird nicht als fachlicher Fehler etikettiert. Ungeprüfter Freitext
+wird weder als richtig bestätigt noch pauschal als falsch gewertet. Technische
+Kontext-/Historienunsicherheit hat weiterhin Vorrang. Nur Leerraum gilt als leer.
+
+Eine separate „nicht bewertete Lernnotiz“, die trotz ihres Inhalts unabhängig von
+der bewerteten Einreichung wäre, wird **in diesem Vorschlag nicht umgesetzt**.
+Sie benötigt einen weiteren ausdrücklichen fachlichen Trennungsbeschluss mit
+sichtbar getrenntem Ergebnis und Speichervertrag. Keine stille Umbenennung des
+heutigen additionalStatements-Erfolgsblockers in eine folgenlose Notiz.
+
+## Eingabeart, Hilfe, Ergebnisse und Versionen
+
+- Empfehlung: von Anfang an freie begrenzte Richtungs-/Fachwortslots zum Abrufen.
+  Sichtbare vorgegebene Auswahl wäre ein anderer deklarierter Nachweistyp und
+  erfordert eine gesonderte Genehmigung. Unabhängigkeit bezieht sich immer nur
+  auf den angekündigten Nachweistyp, nie auf eine freie Erklärung oder Note.
+- Eine erst nach unklarem Text geöffnete Auswahlklärung ist ein neuer unterstützter
+  Versuch mit Vorgänger-/Kontextbindung. Wortbank/clarified/solution_viewed bleiben
+  historisch sichtbar; kein Rückdatieren unabhängiger Leistung. Eigene Eingabe
+  ist zuerst möglich, keine automatisch ausgewählte Lösung.
+- Vorgeschlagene neue Hülle für den Folgeauftrag: `m602-cued-relations/1.0.0`;
+  getrennte Kandidaten `M6.02@cued-relations-1`,
+  `M6.02.C01-C03@cued-relations-1`, `zelllabor11.m602-cued-content/1.0.0`.
+  Diese Bezeichner werden erst mit der fachlichen Genehmigung verbindlich.
+  Es gibt keine erfundene neue Modellversion. Die ursprünglichen C01–C03 bleiben
+  dieselben biologischen Kriterien, nur die erklärte Form des Nachweises ändert sich.
+- `TaskContext`, kriterienspezifische `EvaluationResult`, Original-UTF-16-Spannen,
+  offene Kriterien, notAssessed, Unterstützung und R9-Historiengrenze weiterverwenden.
+  Gesamtbeleg nur für drei richtige aktuelle Kriterien ohne relevanten ungeprüften
+  Rest und mit gesicherter Provenienz. Keine Mischung früherer Teilresultate.
+- Migration: alte Versuche mit ihren alten Versionen erhalten; neue Aufgabenfassung
+  benötigt einen neuen Versuch. Keine Umdeutung zu „verstanden“, keine nachträgliche
+  Unabhängigkeit und kein automatischer Beherrschungsnachweis. Weiterhin nur acht
+  freigegebene Speichermetadaten, keine Rohtexte oder Hilfeereignisse dauerhaft speichern.
+
+## Kleinster Folgeauftrag und Abnahme
+
+Nach ausdrücklicher Genehmigung: ausschließlich die neue C02/C03-Hülle mit
+angekündigtem Wortumfang und strenger Zusatztextsemantik spezifizieren, zwei
+begrenzte Prüfer und die bestehende interne Probe daran anbinden. Keine Mission,
+neue Simulation oder allgemeine Parserbibliothek. Vorher eigene Sollfälle fixieren;
+später unabhängige Sicherheits-/Formatprüfung, Kontext-/Hilfe-/Speicherregression
+und reale Bedienprobe. Die alten Freitextnenner bleiben unverändert dokumentiert.
+
+P03 erst nach separater Beauftragung und unabhängiger Abnahme des vereinbarten
+Formats: ein durchgängiger Schülerzyklus Frage/Material → Eingabe → Kriterienfeedback
+→ eigene Verbesserung → gestufte Hilfe → Kontextwechsel → Fortschritt, mit
+Tastatur/Touch und echter iPad-Prüfung. Dieser Auftrag implementiert P03 nicht.

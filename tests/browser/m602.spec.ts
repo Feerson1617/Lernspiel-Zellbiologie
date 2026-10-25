@@ -234,3 +234,60 @@ test('R2 all 180 supplied, 12 targeted and 82 own inputs have full actual Node/b
   const actual = await page.evaluate(json => { const { inputs, support } = JSON.parse(json); return JSON.stringify(inputs.map((i: unknown) => (window as unknown as LabWindow).api.evaluateM602(i, support))); }, JSON.stringify({ inputs, support: M602_SUPPORT }));
   expect(JSON.parse(actual)).toEqual(inputs.map(i => evaluateM602(i, M602_SUPPORT)));
 });
+
+test('R3 retains each coordinated quantity in actual feedback, whole status and persisted receipts', async ({ page, baseURL }, info) => {
+  await openLab(page, baseURL!); await fillCorrect(page);
+  const rows = JSON.parse(readFileSync('tests/fixtures/p02c-r3-coordination-cases.json', 'utf8')).cases as { id: string; text: string; accepted: string[] }[];
+  const panel = page.getByRole('region', { name: 'Bewertung volume', exact: true });
+  let booked = 0;
+  for (const c of rows) {
+    await page.locator('#m602-volume').fill(c.text); await check(page).click();
+    const state = await panel.getAttribute('data-status'); expect(c.accepted).toContain(state);
+    if (['C01','C02','C05'].includes(c.id)) {
+      await expect(panel).toHaveAttribute('data-color', 'red');
+      await expect(panel).toContainText('Du schreibst der Zellwand eine Verkleinerung zu.');
+      await expect(panel).toContainText('annähernd formstabil'); await expect(panel).toContainText('Vakuolenraum');
+    }
+    if (['C03','C04'].includes(c.id)) {
+      await expect(panel).toHaveAttribute('data-color', 'yellow');
+      await expect(panel).toContainText('Du beschreibst eine Verkleinerung des Protoplasten.');
+      await expect(panel).toContainText('noch keine ausdrückliche Volumenantwort');
+      await expect(panel).toContainText('dessen eigene Wasserbilanz');
+    }
+    if (state === 'correct') { booked++; await expect(result(page)).toHaveAttribute('data-status','correct'); }
+    else { await expect(result(page)).not.toHaveAttribute('data-status','correct'); }
+    const snapshot = await page.evaluate(() => {
+      const w = window as unknown as LabWindow, snapshot = w.lab.session.getState().latest!;
+      // getState deliberately returns a copy. Obtain the original issued handle
+      // through the existing idempotent submission API; clones must stay rejected.
+      let cloneRejected = false; try { w.lab.session.record(snapshot); } catch { cloneRejected = true; }
+      const o = w.lab.session.submit(w.lab.session.makeSubmission(snapshot.submission.answers, snapshot.submission.additionalStatements));
+      let rejected = false; try { w.lab.session.record(o); } catch { rejected = true; }
+      return { rejected, cloneRejected, original: o.submission.answers.volume, evidence: o.fields.volume.result.criteria[0]!.evidence, notAssessed: o.notAssessed, persisted: localStorage.getItem('zelllabor11.progress.v1') };
+    });
+    expect(snapshot.cloneRejected).toBe(true);
+    expect(snapshot.original).toBe(c.text);
+    expect(snapshot.evidence).toEqual([{ kind: 'input_span', value: c.text, start: 0, end: c.text.length }]);
+    expect(snapshot.rejected).toBe(state !== 'correct');
+    if (state === 'clarify') expect(snapshot.notAssessed.some(e => e.value === c.text)).toBe(true);
+    const attempts = snapshot.persisted ? JSON.parse(snapshot.persisted).attempts : [];
+    expect(attempts).toHaveLength(booked);
+    for (const a of attempts) { expect(Object.keys(a)).toHaveLength(8); expect(a.status).toBe('correct'); expect(a.assistance).toBe('independent'); }
+    if (['C02','C03','C07','C08'].includes(c.id)) await panel.screenshot({ path: info.outputPath(`r3-${c.id}-feedback.png`) });
+  }
+  expect(booked).toBe(3);
+});
+test('R3 executes all 156 supplied and 33 frozen own cases in the actual browser with complete Node parity', async ({ page, baseURL }) => {
+  await openLab(page, baseURL!);
+  const rows = ['cases','own'].flatMap(name => JSON.parse(readFileSync(`tests/fixtures/p02c-r3-${name}.json`, 'utf8'))) as { field: 'direction'|'volume'; text: string; extra: string[] }[];
+  expect(rows).toHaveLength(189);
+  const inputs = rows.map(c => m602Input({ [c.field]: c.text }, c.extra));
+  const actual = await page.evaluate(json => { const { inputs, support } = JSON.parse(json); return JSON.stringify(inputs.map((i: unknown) => (window as unknown as LabWindow).api.evaluateM602(i, support))); }, JSON.stringify({ inputs, support: M602_SUPPORT }));
+  expect(JSON.parse(actual)).toEqual(inputs.map(i => evaluateM602(i, M602_SUPPORT)));
+  await fillCorrect(page);
+  const original = 'Die Zellwand bleibt gleich und die Vakuole schrumpft und ihr Volumen sinkt.';
+  await page.locator('#m602-volume').fill(original); await check(page).click();
+  await expect(page.getByRole('region',{ name:'Bewertung volume',exact:true })).toHaveAttribute('data-status','clarify');
+  await expect(result(page)).toContainText(`Nicht geprüft (not_assessed), volume: ${original}`);
+  expect(await page.evaluate(() => localStorage.getItem('zelllabor11.progress.v1'))).toBeNull();
+});
