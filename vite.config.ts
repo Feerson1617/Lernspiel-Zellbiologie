@@ -15,6 +15,10 @@ export default defineConfig({
       for (const output of Object.values(bundle)) {
         if (output.type === 'chunk') {
           for (const id of output.moduleIds) assertRuntimeModule(id, root, policy.repositoryFiles);
+          if (output.moduleIds.some(id => id === fileURLToPath(new URL('src/ui/naming-lab.ts', import.meta.url)))
+            && output.facadeModuleId !== '\0p01b-domain-browser-test') {
+            throw new Error('Internal naming lab must not enter production output.');
+          }
         }
       }
     },

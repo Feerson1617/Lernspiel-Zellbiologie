@@ -1,0 +1,43 @@
+name: Legacy sentence-contract evidence (historically red)
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+env:
+  PR_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+
+jobs:
+  legacy-sentence-contract:
+    name: Legacy R6–R8 (not the naming-input/1.0.0 release gate)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: Run unchanged old 95-percent assertions (a failure remains a failure)
+        run: |
+          mkdir -p qa/generated
+          npm run test:legacy > qa/generated/legacy.log 2>&1
+      - name: Retain actual red results and complete log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: legacy-sentence-contract
+          path: |
+            qa/generated/legacy.json
+            qa/generated/legacy.log
+      - name: Report actual legacy failures without changing their conclusion
+        if: always()
+        run: |
+          node --input-type=module <<'JS'
+          import { readFileSync } from 'node:fs';
+          const r = JSON.parse(readFileSync('qa/generated/legacy.json', 'utf8'));
+          console.log(`::notice title=Actual legacy sentence-contract results::${JSON.stringify({ prHead: process.env.PR_HEAD_SHA, executionSha: process.env.GITHUB_SHA, passed: r.numPassedTests, failed: r.numFailedTests, pending: r.numPendingTests, total: r.numTotalTests })}`);
+          JS

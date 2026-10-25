@@ -1,0 +1,126 @@
+{
+  "reviewId": "P02b-eighth-revision-self-check-2026-10-23-R6",
+  "reviewKind": "self_check",
+  "commitSha": "3194330eb0d92f3edea5b8c3915087d9667bf6b5",
+  "sourceVersions": [
+    "Konzept 1.0 / 22.10.2026; AGENTS C D F; protected tasks/rubrics/context/result/progress contracts unchanged",
+    "Baseline 7ca29bdf96b7128969abee663675bda0b480b073; main b155936443745d98c8133788872c9c5ff44d7fb2",
+    "66 archive hashes verified outside checkout; supplied 183+290+24+2023 raw records preserved",
+    "60 own short answers and 480 variants frozen before first evaluation, SHA256 f67e544c56285f3ade2914795910deaa2005180651963ea43f94c717b828ab8e"
+  ],
+  "environment": {
+    "node": "24.19.0",
+    "npm": "11.9.0",
+    "python": "3.12.14",
+    "jsonschema": "4.26.0",
+    "chromium": "154.0.8037.57",
+    "os": "Linux x86_64",
+    "testedAtBerlin": "2026-10-23T17:31:24.026990+02:00",
+    "sourceHashes": {
+      "src/assessment/osmosis-context.ts": "d160484f69f672a89f0b47bb77bd4b5abb4f9b90310a1475f8b8e5536b9f9b57",
+      "src/assessment/osmosis.ts": "e88efee8e942ed2f5f4a0c42fc05678cb3bf1fb91e7e844090d1cf562b6604c3",
+      "src/assessment/text.ts": "b4336758144aba5b9d89691afc5232d41ee35e52eb0ddf79401113ad55f2d9f1",
+      "src/assessment/naming-choice.ts": "a27e4503483a61432d403e8f75258ce56ca2625d968ad05d439f25450e868143",
+      "src/assessment/osmosis-feedback.ts": "3851a5ae9196db598e9d28ce017e79c06976fc4caf5caade8b598615a5006586",
+      "src/assessment/term-evaluator.ts": "2eef7058f818d807d30701c5cb6c7984bb4040bd0b2591bc9eb4061eef42be6d",
+      "src/assessment/tonoplast.ts": "ac9c0b2506dd0181cdf0628840ad036df2f515f5041d37930159d46fd2fd31d7",
+      "src/assessment/result.ts": "2eb628017bb481923584c2d8028ca9c08ca733d5ee5bc96f61f96593045240f6",
+      "src/assessment/term-grammar.ts": "8c2de083f416a80852b20c569e4e2e4b5ab36a258000f77474968a9921c81922",
+      "src/assessment/naming-syntax.ts": "7c4f4c226d0d17094ec6aa914106c15321684d96065ed2085b83307c614c736c",
+      "src/assessment/progress.ts": "1aa7749ecd5d841f91540867484d2368cebcceb72463c7bafce1ca35a283ff50",
+      "src/assessment/naming-frames.ts": "26f40ee6b16e47e53ed4656516f642e50276bbc20f832c125f6cf782ae76722d",
+      "src/assessment/feedback.ts": "78e9e63db1e391e2649142c2d4a70f0303201dea0f464a0e824ea484a1d82683"
+    },
+    "localSuites": {
+      "unit": {
+        "passed": 13923,
+        "failed": 0,
+        "total": 13923,
+        "skipped": 0
+      },
+      "content": {
+        "passed": 200,
+        "failed": 1,
+        "total": 201,
+        "skipped": 0
+      },
+      "build": {
+        "passed": 34,
+        "failed": 0,
+        "total": 34,
+        "skipped": 0
+      },
+      "chromium": {
+        "passed": 78,
+        "failed": 0,
+        "total": 78,
+        "skipped": 0,
+        "durationMs": 288748.399
+      }
+    },
+    "conceptChecksSeparately": 694,
+    "guardChecksSeparately": 69,
+    "schemaEvaluations": 12892,
+    "rawResults": "qa/p02b-r6-results.json",
+    "originalSollMismatches": {
+      "main": 42,
+      "systematic": 0,
+      "diagnosticsAdjudicatedRed": 1,
+      "known": 162,
+      "ownShort": 4,
+      "ownVariants": 24
+    },
+    "ciAtReportCommit": {
+      "status": "not_yet_executed_for_final_documentation_head",
+      "actualFinalEvidence": "https://github.com/Feerson1617/Lernspiel-Zellbiologie/pull/6 (description and exact-head checks updated after push)",
+      "previousHeadRun": 39957895371,
+      "previousHead": "7ca29bdf96b7128969abee663675bda0b480b073",
+      "previousBuild": "success",
+      "previousWebkit": "failure",
+      "previousWebkitPassed": 63,
+      "previousWebkitTotal": 66,
+      "previousDeploy": "skipped"
+    }
+  },
+  "executedCommands": [
+    "node --experimental-transform-types /tmp/p02b-r6-import.mjs (pre-evaluation corpus identity, 60 unique, no normalized overlap against 36454 available strings)",
+    "node --experimental-transform-types /tmp/p02b-r6-run.mjs p02b-r6-before (actual unmodified 7ca29bd source, existing explicit review6 test binding)",
+    "npm run check:types (passed)",
+    "npx vitest run tests/unit (10341 passed before adding R6 tests)",
+    "npx vitest run tests/unit/p02b-r6.test.ts (3582 passed)",
+    "node --experimental-transform-types ATTACHMENT/run-review.mjs ROOT qa/generated/p02b-r6-guards.json (69 supplied guards rerun; self-check)",
+    "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run check (694 concept and 13923 unit pass; 200 content pass, 1 quality-gate failure; stops before build/browser)",
+    "npm run test:build (executed separately after check failure; TypeScript, catalog, production build, publication and all 34 tests pass)",
+    "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npx playwright test (all 78 pass, 0 skips/flaky)",
+    "node --input-type=module (WebKit executable availability: false)",
+    "gh api pull/6, branches/main, rulesets (open, no auto-merge, main unprotected, rulesets empty)"
+  ],
+  "caseCounts": {
+    "passed": 14235,
+    "failed": 1,
+    "skipped": 0
+  },
+  "newCases": [
+    "60 own short answers, 60 unique/0 normalized overlap against 36454 strings incl metadata; own sample, not independent",
+    "480 fixed own countervariants; 24 remain clarify, original expected values preserved",
+    "490 supplied short-frame control variants and 30 courtesy controls; generated combinations, not independent new natural language evidence",
+    "Supplied R6 183 main + 290 systematic + 24 diagnoses + 2023 known are regression after import"
+  ],
+  "blockedChecks": [
+    "Own fresh 56/60=93.33%: 95-percent quality gate remains failed; four yellow retained in denominator",
+    "Fresh separate independent countercheck after bounded repair, no self-certification",
+    "Local WebKit binary absent; final exact-head macOS CI result recorded in PR description after push",
+    "Three preceding standard macOS WebKit Tab focus failures; Option-Tab is no replacement",
+    "Real named Safari/iPad tests, keyboard settings/orientation/background/storage and learner pilot not executed",
+    "Private original files unavailable: no own private hash/text-window/OCR scan",
+    "Main unprotected/rulesets empty; no administrative activation or workflow deployment change",
+    "No visible assessment UI, complete missions, direction/volume grader, simulation or P02c"
+  ],
+  "criticalFindings": [
+    "233 original-Soll discrepancies retained: 42 main, 1 reviewer-adjudicated diagnosis, 162 known, 28 own. Technical locks do not pass biological acceptance.",
+    "No false green or red on unambiguously correct answers found in these recorded cases; three original clarify-to-red readings are separately documented biological counterexamples, not false-red findings.",
+    "Independent R6 threshold triggers concrete recommendation for communicated term-only field with optional clarification; broad parser expansion stops, no unilateral format change.",
+    "Question-pair symmetry and prior two own question readings preserved; naming-choice byte identity tested; no protected biological rubric changed."
+  ],
+  "releaseStatus": "blocked"
+}

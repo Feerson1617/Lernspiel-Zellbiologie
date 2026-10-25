@@ -1,0 +1,462 @@
+{
+  "kind": "Codex self-check; NOT independent acceptance",
+  "createdAtUTC": "2026-10-24T08:55:15.393455+00:00",
+  "timezoneForReport": "Europe/Berlin",
+  "baseHead": "f67e86f096d5cb47386c50f934e43f519ff80cb6",
+  "testedFullCoreCommit": "fbe83f568c275a240e43f3f3c84fb5c5ab6e5f1a",
+  "testedFinalUiCommit": "155fd095be3f8b93c9d0152067edb8084a20e67b",
+  "finalDeliveryCommit": "Read current PR #6 head; following commit changes QA/docs only. Exact final-head CI is recorded in PR and evidence artifact.",
+  "sourceHash": "0796fc9b85ac3e31b187bdc6b22835711ce638637ff8cbe581e7fb783db573b0",
+  "sourceHashes": {
+    ".github/workflows/legacy.yml": "11d2150ce5c43291fd95c0f5088287b40fcdb5f1f39d95e5975f4b775ee85c5a",
+    ".github/workflows/pages.yml": "2c86bbf57940bb953f98c65180b95e412cd022d3040a5b12658f73d4e8c9b230",
+    "contracts/naming-v1.schema.json": "fc2d5e011cc81c38860da1238436b154aa822ad930cc6703538732d6e1605f4b",
+    "package-lock.json": "19648e7fa841edc6a7889a65e913e130af8393096a7fc7e06de14e0e0ff6cd30",
+    "package.json": "1e7b23912d554f32339dd64b67bf7e88cd2dd1b91902336ac33058af7050f85c",
+    "playwright.config.ts": "ebae972c6ff0ad31edfbfcd2e10d8f4fac5b2e9aa558705c31be271f18dd4c06",
+    "playwright.webkit.config.ts": "81cf4ccba601b26c5a2b4318a5bcf0718851747a5d9990841cb690392b0b5170",
+    "publish.allowlist.json": "757634425f7605da2d7ac4c9bb922e648999db78279d2dfe08984dd195f6e775",
+    "src/application/README.md": "50107b01ba566f36db4a66356c564e89f7e8c5c3bd46e8d1f985fe3cc8647d90",
+    "src/application/naming-session.ts": "89944e2273777f8dcf006fed56cacd4536a8cc4e5726188cc47387f64b433bd9",
+    "src/application/start.ts": "b723ece56a9e429762528fde2e8575b0c8f65706ed8969b16ec8b6692b82faf7",
+    "src/assessment/NAMING.md": "fd3a43c8e5be6a16f4a9d1d4dcc47871ffdfc825578efa17ef28144b4077a6ef",
+    "src/assessment/OSMOSIS.md": "e091f4b96aabb8a6e2c9ece86687bf5d19a1a5c31dbf871de1968883963227f1",
+    "src/assessment/README.md": "73d36ac54722865535f856ff6867049fd25f4e639c34a8d5dbfd9e5d3a8596ea",
+    "src/assessment/feedback.ts": "78e9e63db1e391e2649142c2d4a70f0303201dea0f464a0e824ea484a1d82683",
+    "src/assessment/naming-choice.ts": "a27e4503483a61432d403e8f75258ce56ca2625d968ad05d439f25450e868143",
+    "src/assessment/naming-feedback.ts": "03a2e7bf2dc8c976d011afc7ca1d09d019ce637c69f45c012c84a06aac987caf",
+    "src/assessment/naming-frames.ts": "26f40ee6b16e47e53ed4656516f642e50276bbc20f832c125f6cf782ae76722d",
+    "src/assessment/naming-profiles.ts": "c5e6df19264991299b3f992f7ca315a42750f8461af36b1533aa3d17cffd3523",
+    "src/assessment/naming-syntax.ts": "7c4f4c226d0d17094ec6aa914106c15321684d96065ed2085b83307c614c736c",
+    "src/assessment/naming-v1.ts": "2950405bed711d1d1ec72ae5cc69a14dfa260f52b136d52e5b8aa6ec313dd316",
+    "src/assessment/osmosis-context.ts": "d160484f69f672a89f0b47bb77bd4b5abb4f9b90310a1475f8b8e5536b9f9b57",
+    "src/assessment/osmosis-feedback.ts": "3851a5ae9196db598e9d28ce017e79c06976fc4caf5caade8b598615a5006586",
+    "src/assessment/osmosis.ts": "e88efee8e942ed2f5f4a0c42fc05678cb3bf1fb91e7e844090d1cf562b6604c3",
+    "src/assessment/progress.ts": "0ae93d73ec41ebb5a8acbca86aabff24ef67a522a84a111a40804e9538601854",
+    "src/assessment/result.ts": "2eb628017bb481923584c2d8028ca9c08ca733d5ee5bc96f61f96593045240f6",
+    "src/assessment/term-evaluator.ts": "2eef7058f818d807d30701c5cb6c7984bb4040bd0b2591bc9eb4061eef42be6d",
+    "src/assessment/term-grammar.ts": "8c2de083f416a80852b20c569e4e2e4b5ab36a258000f77474968a9921c81922",
+    "src/assessment/text.ts": "b4336758144aba5b9d89691afc5232d41ee35e52eb0ddf79401113ad55f2d9f1",
+    "src/assessment/tonoplast.ts": "ac9c0b2506dd0181cdf0628840ad036df2f515f5041d37930159d46fd2fd31d7",
+    "src/assets/README.md": "9cdf01c230c92c0044df3187b81b5a787aaeefc4cf9fad0f8b8ac92b79b88f2a",
+    "src/assets/favicon.svg": "aa985a2fdd116dc0dbecda5e953bc794ee0d8b57808ea234e8fce79bae75a37e",
+    "src/biology/README.md": "2efccf26621991b7d955e26fbdfdd5511e1228e8e1fc4dae98efd1a654e358a3",
+    "src/content/README.md": "84170fb686b12ae41b0d52939d1fc9cb293c7970231582707840a409c9d8ae61",
+    "src/content/catalog-data.ts": "4372e58b2a729dfb5f554f1526c7410668e04ad66bef18d729e3571b47642490",
+    "src/content/task-catalog.ts": "5113dd526cac53189841967948b62d0e1f9d725f6ad18baed98edebaf054f7c0",
+    "src/domain/README.md": "065261cd9d0c4cfa7da2a000dde64ddc299ab79021c96008c1963d8e8a00a896",
+    "src/domain/catalog.ts": "f7ceac0ce6b2019f27dc0003caa86a91c9502fa9433647f45fe72e4b960d7b0f",
+    "src/domain/context-data.ts": "b9fcb6a9a30e0c222fd26a1b7e4cf2d04c449cecae8281e75ae42a39600797f5",
+    "src/domain/contracts.ts": "16afa9c87c9f618acd8d32d29203e27adef4f713957170722a14aa648d0ca432",
+    "src/domain/identities.ts": "d2faf02fb314b82a61133b92adc9641eee524f4dfa3476f2a276bae75517001a",
+    "src/domain/naming-contract.ts": "fbe053196188c1f1f033863f1e68cb90b6a844ebcb872ba060174eea91f8f1d6",
+    "src/domain/progress.ts": "8c4f3b15bc61b95094369e0b9ed08180f1e2fefecc3590d34292387ca66a1256",
+    "src/domain/task-context.ts": "12defb994a612253ea8c2fded96b547ddce0d91526f47f6c3409fe79ce5c86b9",
+    "src/domain/units.ts": "ba2088e4a82ff207a787f060b1010342a56e936504f84c2e23d2eb91782d7539",
+    "src/main.ts": "7fbb4dbf716451a2dc95106696b530ff69f9f0c7e1d96636e6a8eb0f9ff62da5",
+    "src/persistence/README.md": "941b14bfe813b7c1218195f3f68085ac1c3a8f6df3d31305449b3bf852605b8d",
+    "src/persistence/progress-store.ts": "e695ba986aef3881f09383ea8697c539e4f1fa48438535c7e890f1492b687553",
+    "src/render2d/README.md": "19d8ee27d670e09e3ca0cbcedba3b135689ed6d9a2de21e132118cedf890ec91",
+    "src/render3d/README.md": "33a7d68c9640f7e06d35403719d6ddf6189744cf8b2fd4b81b34e9abcc502b3d",
+    "src/render3d/create-scene.ts": "0ed1ec96108f280b126d998e0889de9a6d427e76a77a228142191205c8a8d470",
+    "src/ui/README.md": "9468d9ad2aae6632619cf8a4953741cf9144184323f1236d4615a296077e470f",
+    "src/ui/feedback-presentation.ts": "f3e022c3a871cd1415a050110934f2b972b9ab751858ff01aa7683c8dc6eea55",
+    "src/ui/naming-lab.ts": "0379d3a5292be57c4d9531914520bead4cafd7cc414ecc187e4c940d030ec74f",
+    "src/ui/start-page.ts": "0c21ffd5cba3170eea4a6abf8a8feeb1d14997537c4f6c89766e0a7f95d75d11",
+    "src/ui/styles.css": "8c4d5f98276328b366f4311e669383ff0453bde5bd7ed1402fa52973ea37d7c9",
+    "tests/browser/assessment.spec.ts": "4cfe987d07559821c65786a30d901fcf322ac0c21550b0c1968fa885b7e0a76f",
+    "tests/browser/domain.spec.ts": "3de4bed7109af65a0dd19081930a6e4ec4fb9ecb5bb2098e42e376b5f58ddb74",
+    "tests/browser/keyboard-platform.spec.ts": "4bfd8c349f663d815641480056c4380306e03ffca6851304a8b99c54f517797a",
+    "tests/browser/naming-v1.spec.ts": "c0f4bd0ef1492c0f441a8d9721c76371f692fd528f4669a8b606260999d4602f",
+    "tests/browser/osmosis.spec.ts": "51ccf76dde063d1ac2efe5cfacf933c058c036c6dd70234d12106db1b96f0a21",
+    "tests/browser/p02b-fourth.spec.ts": "2e43e7275da2d31d7e260dc222ab2b3a6a2675b8ce17d5c956587c8664765458",
+    "tests/browser/p02b-r3.spec.ts": "161a17bbdae02ffd558f00d3586e0003cc6cd260d9117c9892d8eca5f8ce5fcc",
+    "tests/browser/p02b-r4.spec.ts": "ff415e8924728f47283ad401256601355adccea8d81ff167d68aa61d3bde4964",
+    "tests/browser/p02b-r5.spec.ts": "e3a73d1329a15a819b03a5e8c39e4abae789b5d0cbcfe6549021325094821dcb",
+    "tests/browser/p02b-r6.spec.ts": "e026ecdb6f7c24d0e25b6dc8de9c793343fbd7a052965d6c8458fbf1e04afcf2",
+    "tests/browser/p02b-r7.spec.ts": "54298ab1acc8bcb4037ffc87ec128726b58946dc1410197d39a3ec1c283c2a85",
+    "tests/browser/p02b-r8.spec.ts": "c6643582d7f562455872749aeba2cb1a82c0517dae9e6bf9b5973c502602201c",
+    "tests/browser/p02b-second.spec.ts": "c4e592cf6411d8bcf6ed9468bf7d9e3949403c48d9e5615480aa55404c4e0cd9",
+    "tests/browser/p02b-third.spec.ts": "075e5b2b551d15535d2cb42553657f9d8a943e1037f91e5854978c957e2cfaf8",
+    "tests/browser/progress.spec.ts": "ec241af74738b91f10ee32e3f29e123c9eb103c18fabc59bd5a08d2ce3f375af",
+    "tests/browser/start.spec.ts": "cbcfaba56a52dd4c2816162666a9503f992b9bef0a026df4c5b9bc1c3b823d83",
+    "tests/build/assessment-bundle.test.ts": "22fa9e92680a03ecfa17c7844fb05167a58217075e871ad9e8368c84bb13c82a",
+    "tests/build/catalog-bundle.test.ts": "2016b2e625b95ae4039cd530a73d861bc292a58d21754b2c65f1f3ec4dfcfdf6",
+    "tests/build/naming-boundary.test.ts": "b4c328dc7af49f9d2acdaeb116ca3cb3290c06dd359f11d87559afe42ad8f8e3",
+    "tests/build/osmosis-bundle.test.ts": "888a5d63e3b8bd9cd541bffc33a6ca3a2c3b0ceb8cfe49b69b2d8bf6bc681d17",
+    "tests/build/output.test.ts": "50abb3891bf318778146e5096026bbf2142a5f75a140ce07bf1652ac401b5b7b",
+    "tests/content/README.md": "259ac56f90636caa2193e40535d48905ca34955ae3de6633ba519a3bfea7c4e5",
+    "tests/content/naming-v1.test.ts": "4501decc476ee90f0e4b4a91419f47cb000f64dcf545cc3069c38bc7574a6cf3",
+    "tests/content/osmosis-spec.test.ts": "0baf72503329dd384e8d962b9a2da1842ae5deec836629dc51a4f8c85b9a6d43",
+    "tests/content/p02b-fourth.test.ts": "646629068a9472050625244fffa592ab078f24b354f083fc37216416a11422ce",
+    "tests/content/p02b-r3.test.ts": "aa22ff17a171edaa6d63e7e00cb7e8d79ba53547eb3d4ab6bb50c818715b96d4",
+    "tests/content/p02b-r4.test.ts": "775fb7cd40f8b5c335e4e11aff59a7d9b7d171730ae9cba11ff99b77e22e8730",
+    "tests/content/p02b-r5.test.ts": "e1aedfc2324ae89d6ed1f5425f32c6591b08e586538b6d0fdffc73289e6ebc3f",
+    "tests/content/p02b-r6.test.ts": "04e67e958697a04c2473816999b51e7906d8d47e7049c2fa196f83af9232182c",
+    "tests/content/p02b-r7.test.ts": "9747a3b485fc9f3da7ade1c1dd1b45cd8658719435aa644eb69b3c967b0d630b",
+    "tests/content/p02b-second.test.ts": "c15f74227337baa7c39248693f77aea09877b9217ad85c37fa91f5eeafe9225f",
+    "tests/content/p02b-third.test.ts": "9e3cfeecec3f3fa82fac70aff353a35c664943e362e971899d5e204867a3b1ea",
+    "tests/content/task-catalog.test.ts": "04fdeb68b217ee06458ae777a30ef371200b170e59eaba6e767b436292c4d9d7",
+    "tests/content/tonoplast-spec.test.ts": "9a477e51cb1b534e80f0fcac774c739344daa3e5ad5687e23b2ec30f34eb5c4b",
+    "tests/fixtures/naming-v1-cases.json": "372ff900cf7ba05913e367d7959eb1bfd9e63f8bad1daef66ee46c1e2c1d31bc",
+    "tests/fixtures/naming-v1-scenarios.json": "3fcac6ee3f616362178e65c680f408eecaefba6a5176e9806c9e71fcd6dabce5",
+    "tests/fixtures/osmosis-cases.ts": "108b3c39817909a54726357ed36c5d16672a6012ba6b1e47c48a90bb4bd2a36d",
+    "tests/fixtures/osmosis-revision-cases.ts": "04b7cc160f900cd0406510b9cd7e722c880ab066cd5577eb8442f20e6f254a48",
+    "tests/fixtures/p02b-20261023-cases.ts": "ca76183b2b15873fcf036a3af42378979470eda2d798720ced29767fe393e1e6",
+    "tests/fixtures/p02b-20261023-fresh.ts": "1a5da4bab4eaee97d4bc4664e771614b58e38cbfbbcd0d306bf4538ed63a38e2",
+    "tests/fixtures/p02b-20261023-r2-additions.ts": "ffcbd4070e7c23bf50f0ebc238f148f746852810dff55ffe18faec27e992c28d",
+    "tests/fixtures/p02b-20261023-r2-cases.ts": "02a8357b90c2a6cd6773dcaf92a19ba76a8bbfaf5fde526953017552cf8099bb",
+    "tests/fixtures/p02b-20261023-r2-fresh.ts": "0a06125b2b61fc04deaacaa4c7ca5522ad7b8a117450cb9b7898ce480a15fae3",
+    "tests/fixtures/p02b-countercheck-cases.ts": "4b0eabe4c7142fdeec541c0a1d8fb5807e4d77ce36c635693b5453559fb403c6",
+    "tests/fixtures/p02b-r3-cases.ts": "3c642b6132fc4e4927ff08d8ddfab294d2313ecfbd25791fadf6017376c941c4",
+    "tests/fixtures/p02b-r3-fresh.ts": "0914edb1a426dffb9693803687a2a9c2412f75a7265a08911bdc81fe6ec53758",
+    "tests/fixtures/p02b-r4-boundaries.ts": "7bc7b13c1e8dc919822e733465c9686e9fb96a04e03e6fc0c657f5c8e533d48f",
+    "tests/fixtures/p02b-r4-cases.ts": "66cd51c2ce5ae12d16392297ce172051cab14dafe9441c8bdc47a5716e4237e2",
+    "tests/fixtures/p02b-r4-fresh.ts": "7e2fab84acb08cc254cb50881e389c33090a4eae28af5d294ad325d4d4411ef1",
+    "tests/fixtures/p02b-r5-boundaries.ts": "ae7c63c10044884f8850c8bfa8474816ab6540097f61faeb343a73a59a798ab8",
+    "tests/fixtures/p02b-r5-cases.ts": "6ca4ea5a5db2ac4194c0cc63fb20bd778b047262262e9dedc51f9b582fd4f580",
+    "tests/fixtures/p02b-r5-fresh.ts": "7a18b4357986ffb6b786f06f4feea9d8c01e96ef5f1e91e460c6c9612355f197",
+    "tests/fixtures/p02b-r6-boundaries.ts": "3c9a4786368e40e34d69876eea98dde7e1b8926368e800c62a0f2fb6b44b1db3",
+    "tests/fixtures/p02b-r6-cases.ts": "ff62f6dfec1798e83307c0fe77438c84d77931e39686e32e4e037ba6801216de",
+    "tests/fixtures/p02b-r6-fresh.ts": "f67e544c56285f3ade2914795910deaa2005180651963ea43f94c717b828ab8e",
+    "tests/fixtures/p02b-r7-cases.ts": "c30b1e543607288f2df95eb30752776a6a30ae504a1ceddaf3e8585a85af90c4",
+    "tests/fixtures/p02b-r8-cases.json": "c1c31a3a6b945f8799309c52b9bc79bf9557f43e9b9b2b6a2829802c831c1e4f",
+    "tests/fixtures/p02b-second-language.ts": "a79851273a4277eb5394ae58fa604108899d9a31ffbf5a9edd2b1ca17bf88017",
+    "tests/fixtures/tonoplast-cases.ts": "bd798d1109a47245200cbbabb3d8b05599f549f1af5f51e5fc6a21eb563d6a10",
+    "tests/fixtures/tonoplast-revision-cases.ts": "8f78349d559f1d5c3f677642d3b76c87d3ae556da0f2a96ca711b6306891a4b9",
+    "tests/helpers/domain-bundle.ts": "b08570d0ff585947bf0d24bcb2b5f62c8753e4ecfa69b50fcae003f215b49a1e",
+    "tests/helpers/naming-v1.ts": "6cd748a63a594b5175467797a028e95d544d9c2d68575c3812ba7de5e05fc258",
+    "tests/helpers/osmosis.ts": "731b47e4e55348ab018625812d4836b668c7ebfd5da3f65cf82ea17c5d4618d2",
+    "tests/helpers/p02b-fourth.ts": "082e51f29d37a9607effd8d991a0b77a42b9a10b30c0cd6f001f37f7d8f88436",
+    "tests/helpers/p02b-r3.ts": "e644db8523bcce67900fb6a86b30ce94b945534340bf22f00453b588ed1fc087",
+    "tests/helpers/p02b-r4.ts": "e94dc1605e56b12316591b75de1dda4a7d0fda6dfa9c53942bd0b52ad97cfc57",
+    "tests/helpers/p02b-r5.ts": "0e76b81169dafdf0f6f61600d43f29cf368ce9dfc95b1730c6985a4fe0af898a",
+    "tests/helpers/p02b-r6.ts": "05c9a37fc8a6d89dc5ce63b78e0c0ee5e8c722a6797bd85db6e2b2965386c20d",
+    "tests/helpers/p02b-r7.ts": "79dd4385c5238ec48c64324a1f13a1219681386a49f8e34c85459f80aec0d1c0",
+    "tests/helpers/p02b-r8.ts": "d803362caba0ee138df26cbfbd5c09ffe568ee59c56e0d022106749e5755b6f3",
+    "tests/helpers/p02b-second.ts": "cdfd6b0250041ec0d02cf5813f8d60616a2863e8bf0e77a6791363dda6bf8e2e",
+    "tests/helpers/p02b-third.ts": "3fb19190ac04b9b0a64ad436b15516959fff47f50c3a9719a184d386a7ef0fc0",
+    "tests/helpers/tonoplast.ts": "1d5626f3ff4d3c8050c4993158fb6ccc6db818dedffe1c31f1a0aa401e45cca3",
+    "tests/legacy/p02b-r6-quality.test.ts": "204a94a49c25247ace65604d2f1386501baf8c02cd8f6db3fc592d5e5059ff76",
+    "tests/legacy/p02b-r7-quality.test.ts": "15d4b2fc296dec53a2cf2fa423485677093eaf0e959a16240147775bc3b40ae6",
+    "tests/legacy/p02b-r8-quality.test.ts": "ae3f4c7672f826b2e027b3b63ff8614bdc9dbed8d56f0ae9e0731fecd09b1af1",
+    "tests/models/README.md": "2e6ea3e6b517f90ee351f4d264bacaa4b25b2b5996459b8c2cebb974a72b1ac5",
+    "tests/unit/assessment-progress.test.ts": "560f4206b72c1a166c73b86ffc9bdd74c23753dc7f87a0c7acb1a2bd7003be40",
+    "tests/unit/assessment-result.test.ts": "ea4dfe6d1ca2e09314cb8ca689bdb5a38960f763d3981d3cd8fbca4ae2ba5c2d",
+    "tests/unit/config.test.ts": "9718fc8f18ff287912be5bae5501f448b9f159377a9235f244ac39860969e140",
+    "tests/unit/domain-contracts.test.ts": "9be61a17bb8acb02ff5598be0f2c8c633d55ce86a46935b3e7e8ea2c720c4096",
+    "tests/unit/naming-v1.test.ts": "e9b434307e76a31dbf7601e0dd4ae6a66cbf72b133e93cbd3daca4dc41549a83",
+    "tests/unit/osmosis-revision.test.ts": "e972af897a13839bb4fec0988bc856e47dd23c406293dfa1f6aa8700476afe8f",
+    "tests/unit/osmosis.test.ts": "7d9784396aacd97b2c2f9c7db0218dc48739f30cc0ae04d46eb0097aac33268f",
+    "tests/unit/p02b-fourth.test.ts": "fcad6d78472dc96a50c9320689685799f57997e8f75d3782a190650aadac178b",
+    "tests/unit/p02b-r3.test.ts": "e2384c7ab6409d1785bfa07b033d3f7b920a0ae1cd4364fed655d814eb76c7b0",
+    "tests/unit/p02b-r4.test.ts": "d7882a938e342c615d76ce33238d94396eea94b770aa7597ffe45dcddeba32a1",
+    "tests/unit/p02b-r5.test.ts": "787432ee97d3e52bfb0b31ee2f1950925331162f31f36682de52aa7c94a7d41a",
+    "tests/unit/p02b-r6.test.ts": "853316bb0274887633937fd01cd4de586fdece8a9e22937cd092d219f3b304ac",
+    "tests/unit/p02b-r7.test.ts": "097a3f96e922b7c21c6fe43ba3fc41020a06d582a805488930161ab390f9853d",
+    "tests/unit/p02b-second.test.ts": "0b5b881f32ceed6f428e99e8fd125b92330f03da86ed490f8c5df7f9a8aec4d9",
+    "tests/unit/p02b-third.test.ts": "443c7690f2d18efe544fbb84b2bace7f3cd41c0f005981f45708daec4a7abf47",
+    "tests/unit/progress-store.test.ts": "2030ce9779fbe6a5588a8237f058de5965da6b76cdaa73a67f11dfda5c00dd78",
+    "tests/unit/progress.test.ts": "1d55ab6b45061ec6d9b6e62fa12c71d2d3066e91217370e96effd50bd1aafe92",
+    "tests/unit/publish-policy.test.ts": "742f6eaa658271b6e75fbc64617973b1ef8740058e6647f6bc934fdd22ce9ead",
+    "tests/unit/task-context.test.ts": "fcb5bbb57e82939faca10f47cb6305929f1508ca200ff1d559df637c5fd7b847",
+    "tests/unit/three-adapter.test.ts": "0c31a2d2aac527ac7dec8b6722eecdd0e6e289d61918135baea542503e0e3611",
+    "tests/unit/tonoplast-revision.test.ts": "089c265ea54b1dc8613809fbf73a0911f5a2b1f2a004d1d5a444f4bbfa5793ad",
+    "tests/unit/tonoplast.test.ts": "b1a1bd4673354ee3fccfa061f92f620926815272a8ae34221e72359a0f05db02",
+    "tests/unit/units.test.ts": "b09a7dd396e94d33b7f552be6e4c90bc20840c20760dc644e1bca63d6e6eef91",
+    "tools/catalog-source.ts": "6f3fe77be61bb008d466708503cb451ec5a32ff91a97fded24de564af146eeee",
+    "tools/check-publish.ts": "e1722b0824876c17d7c6b857eaf6b5ab552934adcce0588ecbe2cb062d05d6a5",
+    "tools/check-spec.ts": "41a3e0c1c76dca03e93b6e1abcbbc063baa6ad80abd1896c70f8a5fe858bb3a8",
+    "tools/check_spec.py": "832c7014459d677f0dd8e17950efd9cbc1787001371a83810aa070e46e2c429a",
+    "tools/publish-policy.ts": "3d1c072630e1702b5a150e968c4652b5a48fd45d665f280cabf1732fc917eada",
+    "tools/report-naming.ts": "71a1ea1bf8c372100719b4e317d01bca8eb08ce5771e062154e457d17f44abdb",
+    "tools/sync-task-catalog.ts": "7e5813538b2191fdbccee99a4c9681ae473376d1229b3e7dd3cf86b9a40c0a99",
+    "vite.config.ts": "6e6a14d82d2f758132533223059bd915f4e47410d3bef5881d74f5fbf6e4ae9a",
+    "vitest.config.ts": "1f61da865b5686f84fcbaa16eb020893a3a27d57a4b1336b24c94823923836e6"
+  },
+  "environment": {
+    "node": "24.19.0",
+    "npm": "11.9.0",
+    "typescript": "7.0.2",
+    "python": "3.12.14",
+    "jsonschema": "4.26.0",
+    "playwright": "1.64.1",
+    "chromium": "154.0.8037.57",
+    "host": "Linux/Debian 13, x86_64; desktop/tablet/mobile emulation"
+  },
+  "commands": [
+    {
+      "command": "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run check",
+      "sourceCommit": "fbe83f568c275a240e43f3f3c84fb5c5ab6e5f1a",
+      "exitCode": 0,
+      "log": "qa/generated/check-fbe83f5.log"
+    },
+    {
+      "command": "npm run test:build",
+      "exitCode": 0,
+      "log": "qa/generated/build-ui-final.log"
+    },
+    {
+      "command": "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npx playwright test tests/browser/naming-v1.spec.ts",
+      "exitCode": 0,
+      "log": "qa/generated/naming-browser-ui-final.log"
+    },
+    {
+      "command": "npm run report:naming",
+      "exitCode": 0,
+      "log": "qa/generated/naming-report-final.log"
+    },
+    {
+      "command": "npm run test:legacy",
+      "exitCode": 1,
+      "log": "qa/generated/legacy-final.log"
+    }
+  ],
+  "counts": {
+    "unit": {
+      "passed": 17222,
+      "failed": 0,
+      "pending": 0,
+      "total": 17222
+    },
+    "content": {
+      "passed": 209,
+      "failed": 0,
+      "pending": 0,
+      "total": 209
+    },
+    "build": {
+      "passed": 46,
+      "failed": 0,
+      "pending": 0,
+      "total": 46
+    },
+    "legacy-final": {
+      "passed": 0,
+      "failed": 4,
+      "pending": 0,
+      "total": 4
+    },
+    "fullChromium": {
+      "startTime": "2026-10-24T08:40:27.566Z",
+      "duration": 417388.906,
+      "expected": 120,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "finalUiChromium": {
+      "startTime": "2026-10-24T08:49:49.135Z",
+      "duration": 42278.465,
+      "expected": 18,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "newFields": {
+    "Z1.02": {
+      "cases": 132,
+      "termStatuses": {
+        "clarify": 22,
+        "correct": 78,
+        "empty": 2,
+        "incorrect": 18,
+        "partial": 8,
+        "technical": 4
+      },
+      "overallStatuses": {
+        "clarify": 25,
+        "correct": 75,
+        "empty": 2,
+        "incorrect": 18,
+        "partial": 8,
+        "technical": 4
+      },
+      "completeDenominator": 78,
+      "completeCorrect": 78,
+      "completeClarify": 0,
+      "correctRate": 1,
+      "mandatoryMismatches": [],
+      "criticalFalseGreen": [],
+      "criticalFalseRed": []
+    },
+    "M6.02": {
+      "cases": 128,
+      "termStatuses": {
+        "clarify": 23,
+        "correct": 74,
+        "empty": 2,
+        "incorrect": 15,
+        "partial": 10,
+        "technical": 4
+      },
+      "overallStatuses": {
+        "clarify": 26,
+        "empty": 2,
+        "incorrect": 15,
+        "partial": 81,
+        "technical": 4
+      },
+      "completeDenominator": 74,
+      "completeCorrect": 74,
+      "completeClarify": 0,
+      "correctRate": 1,
+      "mandatoryMismatches": [],
+      "criticalFalseGreen": [],
+      "criticalFalseRed": []
+    }
+  },
+  "schemaValidatedObjects": 4106,
+  "legacyR8": {
+    "quality": [
+      {
+        "group": "short-correct",
+        "denominator": 60,
+        "correct": 26,
+        "statuses": {
+          "clarify": 34,
+          "correct": 26
+        },
+        "requirement": 0.95,
+        "passed": false
+      },
+      {
+        "group": "tonoplast-correct",
+        "denominator": 20,
+        "correct": 9,
+        "statuses": {
+          "clarify": 11,
+          "correct": 9
+        },
+        "requirement": 0.95,
+        "passed": false
+      }
+    ],
+    "groups": {
+      "main": {
+        "count": 199,
+        "originalInputSHA256": "f7789cae2c5156fd18752928706840cd55c388accd8022ed5f26aeb3dbca4134",
+        "statuses": {
+          "clarify": 136,
+          "correct": 35,
+          "incorrect": 21,
+          "partial": 7
+        },
+        "originalSollMatched": 93,
+        "completeResultFeedbackSHA256": "933a49876b513f1c42cae0632c8d3b65e5ba1cec50899592e5921a1c6f446439"
+      },
+      "systematic": {
+        "count": 370,
+        "originalInputSHA256": "2b7ef0e7b691133f5e8c1cee2d7fe9929a29b5e32bebd2276f081cdc3b915718",
+        "statuses": {
+          "clarify": 254,
+          "correct": 76,
+          "incorrect": 40
+        },
+        "originalSollMatched": 226,
+        "completeResultFeedbackSHA256": "cd904c018254c721b640288fc019674497af1ef5d2d250a152e317af3d0a84f9"
+      },
+      "known": {
+        "count": 3017,
+        "originalInputSHA256": "ebaa6d92b3211df7b60479956ee401954289ac4c334b71f6ef7c9c67b8939e10",
+        "statuses": {
+          "clarify": 1105,
+          "correct": 1225,
+          "incorrect": 621,
+          "partial": 66
+        },
+        "originalSollMatched": 2699,
+        "completeResultFeedbackSHA256": "988e08243d5ea6b276c8f1f379c7c2e89139308d1bf45bb1d419a438b19775e1"
+      }
+    }
+  },
+  "freeze": {
+    "contractVersion": "naming-input/1.0.0",
+    "frozenAtUTC": "2026-10-24T07:49:43.962409+00:00",
+    "beforeImplementation": true,
+    "sourceHead": "f67e86f096d5cb47386c50f934e43f519ff80cb6",
+    "interpretation": "Eigenprüfung. Konfigurationen sind keine unabhängigen Schüleräußerungen. Alle correct-Sollfälle je Feld im Nenner, mindestens95%; alle Pflichtstatus exakt, null kritische Fehlfarben. Technisch ungültige Hüllen dürfen explizit zurückgewiesen werden.",
+    "files": {
+      "review/naming-input-1.0.0.md": "1868bb6c2eff8586ea51f852d7007c63f113912212fd4f74b825dfa127aa740d",
+      "tests/fixtures/naming-v1-cases.json": "372ff900cf7ba05913e367d7959eb1bfd9e63f8bad1daef66ee46c1e2c1d31bc",
+      "tests/fixtures/naming-v1-scenarios.json": "3fcac6ee3f616362178e65c680f408eecaefba6a5176e9806c9e71fcd6dabce5"
+    },
+    "counts": {
+      "Z1.02": 132,
+      "M6.02": 128
+    }
+  },
+  "legacyAssertionTransfer": [
+    {
+      "from": "tests/content/p02b-r6.test.ts",
+      "to": "tests/legacy/p02b-r6-quality.test.ts",
+      "testBodySHA256": "d897d376f45803a1dd96288ce4b5329c9ee0f709789c93312a91b88d45238116",
+      "sourceCommit": "f67e86f096d5cb47386c50f934e43f519ff80cb6",
+      "reason": "Approved versioned supersession. Assertion body unchanged; actual failing separate test:legacy required."
+    },
+    {
+      "from": "tests/content/p02b-r7.test.ts",
+      "to": "tests/legacy/p02b-r7-quality.test.ts",
+      "testBodySHA256": "71e6e33173609022d07fb080e0c455912b1b3611fa3509a2c817693ab0b0723e",
+      "sourceCommit": "f67e86f096d5cb47386c50f934e43f519ff80cb6",
+      "reason": "Approved versioned supersession. Assertion body unchanged; actual failing separate test:legacy required."
+    }
+  ],
+  "webkitLocal": {
+    "available": false,
+    "attempted": true,
+    "message": "browserType.launch: Executable doesn't exist at /home/agent/.cache/ms-playwright/webkit-2370/pw_run.sh\n╔════════════════════════════════════════════════════════════╗"
+  },
+  "ci": "No completed final-head CI claimed before push. Actual final-head build/webkit/legacy job states and counts will be read from GitHub and recorded in PR/evidence.",
+  "publication": {
+    "protectedConceptAndSpecFilesUnchanged": 21,
+    "distFiles": 4,
+    "localAssetReferences": 3,
+    "base": "/Lernspiel-Zellbiologie/",
+    "runtimeData": "No spec/QA/test corpus imports; internal lab explicitly blocked in production",
+    "privateOriginalComparison": "not possible: original private sources not available",
+    "mainObservation": {
+      "protected": false,
+      "rulesets": [],
+      "mainSha": "b155936443745d98c8133788872c9c5ff44d7fb2"
+    },
+    "noAdministrativeChange": true,
+    "noMergeOrDeployment": true
+  },
+  "open": [
+    "fresh independent pre-frozen countercases for naming-input/1.0.0",
+    "real Safari/iPad hardware with on-screen keyboard and rotation",
+    "private-original fulltext/hash comparison",
+    "production navigation must always supply reliable resumed provenance; no competence certificate from empty browser storage"
+  ],
+  "screenshotsInspected": [
+    "desktop Z1.02 scope, yellow overall and preserved extra",
+    "mobile M6.02 full layout after actual overflow fix",
+    "desktop M6.02 scope feedback, green C01/yellow overall",
+    "mobile technical error and unchanged full input before layout repair"
+  ],
+  "priorFailures": {
+    "newFirst": {
+      "passed": 276,
+      "failed": 2,
+      "causes": [
+        "configuration-count assumption",
+        "unbounded R8 aggregate exceeded default test limit; split into bounded batches without increasing timeout"
+      ]
+    },
+    "buildFirst": {
+      "passed": 45,
+      "failed": 1,
+      "cause": "negative import parsed deliberately invalid Unicode JSON before reaching import guard; raw import now reaches guard, frozen input unchanged"
+    },
+    "browserFirst": {
+      "passed": 118,
+      "failed": 2,
+      "cause": "mobile unbreakable context hash; actual wrapping fix, no clipping"
+    },
+    "reportFirst": "Node strip-only unsupported TS parameter property and unnecessary old-helper import; repaired and rerun",
+    "ownership": "reproduced duplicate revision booking via mutated caller idPrefix; private immutable configuration snapshot now returns same outcome/receipt",
+    "newCase": "no automatic carry of previous answer into a genuine new case; prior drafts preserved in RAM, fresh entry required"
+  }
+}

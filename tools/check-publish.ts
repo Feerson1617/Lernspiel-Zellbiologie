@@ -1,3 +1,4 @@
+import { inspectReachableHistory } from './publish-history.ts';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { lstatSync, readFileSync } from 'node:fs';
@@ -15,8 +16,7 @@ const manifest = JSON.parse(readFileSync(join(root, 'qa/source-manifest.json'), 
 
 const files = execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard', '-z'], { cwd: root, encoding: 'utf8' }).split('\0').filter(Boolean);
 assertRepositoryFiles(files, policy.repositoryFiles);
-const historyFiles = [...new Set(execFileSync('git', ['log', '--all', '--format=', '--name-only', '--no-renames'], { cwd: root, encoding: 'utf8' }).split('\n').filter(Boolean))];
-assertRepositoryFiles(historyFiles, policy.repositoryFiles);
+const history = inspectReachableHistory(root, policy.repositoryFiles);
 for (const file of files) {
   if (!lstatSync(join(root, file)).isFile() || lstatSync(join(root, file)).isSymbolicLink()) {
     throw new Error('The repository allowlist permits regular files only.');
@@ -35,8 +35,8 @@ if (references.length < 3 || references.some((file) => !published.includes(file)
   throw new Error('The built page references missing assets.');
 }
 for (const file of published.filter((path) => /\.(?:js|css|html)$/.test(path))) {
-  if (/sourceMappingURL|reference-fixtures|model-vectors|spec\/tasks/.test(readFileSync(join(dist, file), 'utf8'))) {
+  if (/sourceMappingURL|reference-fixtures|model-vectors|spec\/tasks|naming-input\/1\.0\.0|naming-term|Interne Benennungsprobe/.test(readFileSync(join(dist, file), 'utf8'))) {
     throw new Error('The build contains source maps or editorial reference data.');
   }
 }
-console.log(`Publication check passed: ${files.length} approved repository files; ${historyFiles.length} approved historical paths; ${manifest.protectedFiles.length} unchanged protected files; ${published.length} dist files; ${references.length} local asset references.`);
+console.log(`Publication check passed: ${files.length} approved repository files; ${history.paths} historical paths in ${history.trees} policy-checked trees; ${history.blobs} inspected blobs; ${manifest.protectedFiles.length} unchanged protected files; ${published.length} dist files; ${references.length} local asset references.`);

@@ -1,0 +1,527 @@
+{
+  "reviewId": "P02b-seventh-revision-self-check-2026-10-23-R5",
+  "reviewKind": "self_check",
+  "commitSha": "ae093b4ae56474aa412c1beec8e0206d9e22cb58",
+  "sourceVersions": [
+    "Konzept 1.0 / 22.10.2026; AGENTS; C/D/F; unchanged protected tasks/rubrics/context/result/progress contracts",
+    "Baseline dcb81232297de5755a660bff8119c2c6a75e1a15; main b155936443745d98c8133788872c9c5ff44d7fb2",
+    "Supplied R5: 71 archive hashes verified; 183+290+24+1526 original raw records; 60 own short answers frozen before first evaluation"
+  ],
+  "environment": {
+    "node": "24.19.0",
+    "npm": "11.9.0",
+    "python": "3.12.14",
+    "jsonschema": "4.26.0",
+    "chromium": "154.0.8037.57",
+    "os": "Linux x86_64",
+    "testedAtBerlin": "2026-10-23T14:57:06.953213+02:00",
+    "sourceHashes": {
+      "src/assessment/osmosis-context.ts": "d160484f69f672a89f0b47bb77bd4b5abb4f9b90310a1475f8b8e5536b9f9b57",
+      "src/assessment/osmosis.ts": "bdf49a80a1772a0dea4a5424a993a1f681fbf869f86a2812c7d15ec3ba9385cd",
+      "src/assessment/text.ts": "b4336758144aba5b9d89691afc5232d41ee35e52eb0ddf79401113ad55f2d9f1",
+      "src/assessment/naming-choice.ts": "a27e4503483a61432d403e8f75258ce56ca2625d968ad05d439f25450e868143",
+      "src/assessment/osmosis-feedback.ts": "3851a5ae9196db598e9d28ce017e79c06976fc4caf5caade8b598615a5006586",
+      "src/assessment/term-evaluator.ts": "2eef7058f818d807d30701c5cb6c7984bb4040bd0b2591bc9eb4061eef42be6d",
+      "src/assessment/tonoplast.ts": "fac9620adb1ace9e02293def1aaddc09f5c1fd45eb1d7331ef200de801e19186",
+      "src/assessment/result.ts": "2eb628017bb481923584c2d8028ca9c08ca733d5ee5bc96f61f96593045240f6",
+      "src/assessment/term-grammar.ts": "ed620aafab25760c432d67e647d9c4664b70f005d6dbb8508128a9cee83a3a35",
+      "src/assessment/naming-syntax.ts": "ae097f782d3d034732381ed0e67e655b5be4ab5958bf6df09365c7e4b3bbadb3",
+      "src/assessment/progress.ts": "1aa7749ecd5d841f91540867484d2368cebcceb72463c7bafce1ca35a283ff50",
+      "src/assessment/naming-frames.ts": "e109abc96c890f54b98fb780c1a62750f33c375c6bbda593884757f9e5b6ae1a",
+      "src/assessment/feedback.ts": "78e9e63db1e391e2649142c2d4a70f0303201dea0f464a0e824ea484a1d82683"
+    },
+    "localTechnicalSuites": {
+      "unit": 10341,
+      "content": 197,
+      "build": 29,
+      "chromium": 66,
+      "total": 10633,
+      "failed": 0,
+      "skipped": 0
+    },
+    "conceptChecksSeparately": 694,
+    "guardChecksSeparately": 69,
+    "schemaEvaluations": 9312,
+    "rawResults": "qa/p02b-r5-results.json",
+    "originalSollMismatches": {
+      "newMain": 48,
+      "systematic": 0,
+      "diagnostics": 0,
+      "known": 114
+    },
+    "ownPriorQuestionReadingsRevised": 2,
+    "ci": {
+      "conclusion": "failure",
+      "headSha": "ae093b4ae56474aa412c1beec8e0206d9e22cb58",
+      "jobs": [
+        {
+          "completedAt": "2026-10-23T12:58:00Z",
+          "conclusion": "success",
+          "databaseId": 120424643838,
+          "name": "build",
+          "startedAt": "2026-10-23T12:54:01Z",
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-node@v4",
+              "number": 3,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 4,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run npm ci",
+              "number": 5,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run python -m pip install -r requirements-spec.txt",
+              "number": 6,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run npx playwright install --with-deps chromium",
+              "number": 7,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run npm run check",
+              "number": 8,
+              "status": "completed"
+            },
+            {
+              "conclusion": "skipped",
+              "name": "Upload only the inspected production artifact",
+              "number": 9,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 16,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/setup-node@v4",
+              "number": 17,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 18,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 19,
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/Feerson1617/Lernspiel-Zellbiologie/actions/runs/39956832616/job/120424643838"
+        },
+        {
+          "completedAt": "2026-10-23T13:00:42Z",
+          "conclusion": "failure",
+          "databaseId": 120424644271,
+          "name": "webkit",
+          "startedAt": "2026-10-23T12:54:03Z",
+          "status": "completed",
+          "steps": [
+            {
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-node@v4",
+              "number": 3,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 4,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run npm ci",
+              "number": 5,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run python -m pip install -r requirements-spec.txt",
+              "number": 6,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run npx playwright install webkit",
+              "number": 7,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Run npm run build",
+              "number": 8,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Unchanged WebKit baseline (standard Tab)",
+              "number": 9,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Additional actual-runtime and platform-keyboard checks",
+              "number": 10,
+              "status": "completed"
+            },
+            {
+              "conclusion": "failure",
+              "name": "Report actual WebKit counts and retain a failed gate for any failed tests",
+              "number": 11,
+              "status": "completed"
+            },
+            {
+              "conclusion": "skipped",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 20,
+              "status": "completed"
+            },
+            {
+              "conclusion": "skipped",
+              "name": "Post Run actions/setup-node@v4",
+              "number": 21,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 22,
+              "status": "completed"
+            },
+            {
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 23,
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/Feerson1617/Lernspiel-Zellbiologie/actions/runs/39956832616/job/120424644271"
+        },
+        {
+          "completedAt": "2026-10-23T12:58:01Z",
+          "conclusion": "skipped",
+          "databaseId": 120426396478,
+          "name": "deploy",
+          "startedAt": "2026-10-23T12:58:01Z",
+          "status": "completed",
+          "steps": [],
+          "url": "https://github.com/Feerson1617/Lernspiel-Zellbiologie/actions/runs/39956832616/job/120426396478"
+        }
+      ],
+      "status": "completed",
+      "url": "https://github.com/Feerson1617/Lernspiel-Zellbiologie/actions/runs/39956832616",
+      "webkit": [
+        {
+          "platform": "darwin",
+          "arch": "arm64",
+          "node": "v24.19.0",
+          "suite": "additional",
+          "startTime": "2026-10-23T12:55:34.018Z",
+          "duration": 296127.67600000004,
+          "expected": 18,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0,
+          "keyboard": [
+            {
+              "engine": "webkit",
+              "version": "27.2",
+              "hostPlatform": "darwin",
+              "selectedKey": "Alt+Tab",
+              "observed": [
+                {
+                  "key": "Tab",
+                  "active": {
+                    "tag": "BODY",
+                    "text": null
+                  }
+                },
+                {
+                  "key": "Alt+Tab",
+                  "active": {
+                    "tag": "A",
+                    "text": "Zum Inhalt"
+                  }
+                }
+              ]
+            },
+            {
+              "engine": "webkit",
+              "version": "27.2",
+              "hostPlatform": "darwin",
+              "selectedKey": "Alt+Tab",
+              "observed": [
+                {
+                  "key": "Tab",
+                  "active": {
+                    "tag": "BODY",
+                    "text": null
+                  }
+                },
+                {
+                  "key": "Alt+Tab",
+                  "active": {
+                    "tag": "A",
+                    "text": "Zum Inhalt"
+                  }
+                }
+              ]
+            },
+            {
+              "engine": "webkit",
+              "version": "27.2",
+              "hostPlatform": "darwin",
+              "selectedKey": "Alt+Tab",
+              "observed": [
+                {
+                  "key": "Tab",
+                  "active": {
+                    "tag": "BODY",
+                    "text": null
+                  }
+                },
+                {
+                  "key": "Alt+Tab",
+                  "active": {
+                    "tag": "A",
+                    "text": "Zum Inhalt"
+                  }
+                }
+              ]
+            }
+          ],
+          "timings": [
+            {
+              "file": "p02b-fourth.spec.ts",
+              "profile": "desktop-webkit",
+              "engine": "27.2",
+              "cases": 968,
+              "browserMs": 4888.89525,
+              "nodeAndAssertionsMs": 9094.19225
+            },
+            {
+              "file": "p02b-fourth.spec.ts",
+              "profile": "tablet-webkit",
+              "engine": "27.2",
+              "cases": 968,
+              "browserMs": 4284.137625,
+              "nodeAndAssertionsMs": 12555.536083
+            },
+            {
+              "file": "p02b-fourth.spec.ts",
+              "profile": "mobile-webkit",
+              "engine": "27.2",
+              "cases": 968,
+              "browserMs": 5583.91775,
+              "nodeAndAssertionsMs": 11420.054667000002
+            },
+            {
+              "file": "p02b-r3.spec.ts",
+              "profile": "desktop-webkit",
+              "engine": "27.2",
+              "cases": 1501,
+              "browserMs": 7134.002916000001,
+              "nodeAndAssertionsMs": 12249.085375
+            },
+            {
+              "file": "p02b-r3.spec.ts",
+              "profile": "tablet-webkit",
+              "engine": "27.2",
+              "cases": 1501,
+              "browserMs": 8140.896542,
+              "nodeAndAssertionsMs": 17425.73125
+            },
+            {
+              "file": "p02b-r3.spec.ts",
+              "profile": "mobile-webkit",
+              "engine": "27.2",
+              "cases": 1501,
+              "browserMs": 8671.265458000002,
+              "nodeAndAssertionsMs": 20245.999959
+            },
+            {
+              "file": "p02b-r4.spec.ts",
+              "profile": "desktop-webkit",
+              "engine": "27.2",
+              "cases": 2402,
+              "browserMs": 8961.465333,
+              "nodeAndAssertionsMs": 34395.877875
+            },
+            {
+              "file": "p02b-r4.spec.ts",
+              "profile": "tablet-webkit",
+              "engine": "27.2",
+              "cases": 2402,
+              "browserMs": 11939.486874999995,
+              "nodeAndAssertionsMs": 38851.620124999994
+            },
+            {
+              "file": "p02b-r4.spec.ts",
+              "profile": "mobile-webkit",
+              "engine": "27.2",
+              "cases": 2402,
+              "browserMs": 14745.403999999999,
+              "nodeAndAssertionsMs": 40682.083125
+            },
+            {
+              "file": "p02b-r5.spec.ts",
+              "profile": "desktop-webkit",
+              "engine": "27.2",
+              "cases": 2823,
+              "browserMs": 10949.514292,
+              "nodeAndAssertionsMs": 55260.979083
+            },
+            {
+              "file": "p02b-r5.spec.ts",
+              "profile": "tablet-webkit",
+              "engine": "27.2",
+              "cases": 2823,
+              "browserMs": 15910.536333999997,
+              "nodeAndAssertionsMs": 61029.323583
+            },
+            {
+              "file": "p02b-r5.spec.ts",
+              "profile": "mobile-webkit",
+              "engine": "27.2",
+              "cases": 2823,
+              "browserMs": 14804.47466700001,
+              "nodeAndAssertionsMs": 59461.564459
+            }
+          ],
+          "failedTests": []
+        },
+        {
+          "platform": "darwin",
+          "arch": "arm64",
+          "node": "v24.19.0",
+          "suite": "baseline",
+          "startTime": "2026-10-23T12:54:40.058Z",
+          "duration": 52635.712,
+          "expected": 45,
+          "skipped": 0,
+          "unexpected": 3,
+          "flaky": 0,
+          "keyboard": [],
+          "timings": [],
+          "failedTests": [
+            {
+              "title": "offers working keyboard navigation and a readable responsive layout",
+              "file": "start.spec.ts",
+              "project": "desktop-webkit"
+            },
+            {
+              "title": "offers working keyboard navigation and a readable responsive layout",
+              "file": "start.spec.ts",
+              "project": "tablet-webkit"
+            },
+            {
+              "title": "offers working keyboard navigation and a readable responsive layout",
+              "file": "start.spec.ts",
+              "project": "mobile-webkit"
+            }
+          ]
+        }
+      ],
+      "evidenceRead": "Actual job/step outcomes and all check-run annotations; unavailable full job logs not claimed."
+    },
+    "postReportContentCheck": {
+      "command": "npx vitest run tests/content --outputFile=qa/generated/p02b-r5-report-content.json",
+      "passed": 197,
+      "failed": 0,
+      "skipped": 0
+    },
+    "counting": "10633 local technical + 63 passed/3 failed WebKit; CI repeated build not double-counted. 694 concept + 69 guards separate."
+  },
+  "executedCommands": [
+    "node --experimental-transform-types /tmp/p02b-r5-import.mjs (pre-evaluation corpus identity/novelty scan, no grading)",
+    "node --experimental-transform-types /tmp/p02b-r5-run.mjs p02b-r5-before (actual dcb8123 source and matching review6 context)",
+    "npm run check:types",
+    "npx vitest run tests/unit --outputFile=qa/generated/p02b-r5-old-unit-first.json (7442 passed, 12 failed: 10 syntax regressions, 2 explicitly revised own question readings)",
+    "npx vitest run tests/unit --outputFile=qa/generated/p02b-r5-old-unit-fixed.json (7454 passed)",
+    "npx vitest run tests/unit/p02b-r5.test.ts --outputFile=qa/generated/p02b-r5-first-unit.json (2887 passed)",
+    "npm run build",
+    "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npx playwright test tests/browser/p02b-r5.spec.ts --reporter=list,json (3 passed; before literal-start indexing)",
+    "node --experimental-transform-types ATTACHMENT/run-review.mjs ROOT qa/generated/p02b-r5-guards.json (69 supplied guards passed)",
+    "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run check (complete final-source run)",
+    "node --input-type=module (webkit.executablePath availability check: false)",
+    "npm run check:publish",
+    "npx vitest run tests/content --outputFile=qa/generated/p02b-r5-report-content.json (197 passed after report metadata)",
+    "npm run check:publish (195 current approved files, 193 historical paths, 21 protected files unchanged, 4 dist/3 local assets)",
+    "GitHub Actions run 39956832616 on ae093b4ae56474aa412c1beec8e0206d9e22cb58: full npm run check; WEBKIT_SUITE=baseline and WEBKIT_SUITE=additional npx playwright test --config=playwright.webkit.config.ts; strict end gate failure"
+  ],
+  "caseCounts": {
+    "passed": 10696,
+    "failed": 3,
+    "skipped": 0
+  },
+  "newCases": [
+    "60 own short answers frozen before first evaluation; 60 unique/0 normalized overlap against 28358 available strings including metadata",
+    "480 predetermined wrong/partial/alternative/negative/contradictory/added-claim variants",
+    "260 additional Tonoplast-transfer and question controls fixed before execution; not 260 independent novel formulations",
+    "Supplied 183 main + 290 systematic + 24 later diagnostics and 1526 known now regression, not fresh independent proof"
+  ],
+  "blockedChecks": [
+    "Fresh separate independent countercheck after repair",
+    "Local WebKit binary unavailable; actual complete macOS CI executed: 63/66, three standard-Tab failures",
+    "Three current standard macOS WebKit Tab focus failures; Option-Tab is no replacement",
+    "Real named Safari/iPad, keyboard settings/orientation/background/storage",
+    "Private original files unavailable: no repeated private hash/text-window/OCR scan",
+    "Main unprotected, rulesets empty; no administrative or deployment changes",
+    "No visible assessment UI, complete missions, direction/volume grader, simulation or P02c"
+  ],
+  "criticalFindings": [
+    "48 new main and 114 older original-Soll discrepancies retained; technical documentation locks do not satisfy biological acceptance",
+    "No false green/red for clearly correct answers in the 2823 checked records; two older incorrect Tonoplast classifications correctly red despite original clarify Soll",
+    "Two own prior question readings explicitly revised beside original incorrect Soll; no protected biological rubric altered",
+    "Current broad input remains pending independent release; naming-input/0.2-draft is a reviewable alternative, not implemented/approved",
+    "Actual strict WebKit gate/overall workflow failure; 18/18 additional tests passed, baseline 45/48"
+  ],
+  "releaseStatus": "blocked"
+}
