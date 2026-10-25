@@ -273,7 +273,10 @@
     "tsconfig.json",
     "vite.config.ts",
     "vitest.config.ts",
-    "tools/report-m602.ts"
+    "tools/report-m602.ts",
+    "tools/publish-history.ts",
+    "tests/unit/publish-history.test.ts",
+    "qa/PR6-R10.md"
   ],
   "distPatterns": [
     "^index\\.html$",
