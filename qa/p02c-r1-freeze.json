@@ -1,0 +1,8 @@
+{
+  "frozenAt": "2026-10-25T04:28:23.435858+00:00",
+  "independentAcceptance": false,
+  "files": {
+    "tests/fixtures/p02c-r1-own.json": "1e546357927dd37b4e88f93730b0a1221a235eecbb58165eb8d6f020302f58ce",
+    "tests/fixtures/p02c-r1-cases.json": "9064087e4924935e7484c578bb5e7dd45a459791354918dd4b5f7c68cd8df6c9"
+  }
+}

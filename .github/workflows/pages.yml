@@ -38,6 +38,7 @@ jobs:
       - run: npm run check
       - run: npm run report:naming
       - run: npm run report:m602
+      - run: npm run report:m602-r1
       - name: Report actual build-gate counts
         if: always()
         run: |

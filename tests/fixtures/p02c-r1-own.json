@@ -1,0 +1,172 @@
+[
+  {
+    "field": "direction",
+    "text": "Wasser wandert vom Zellinneren in den Außenraum",
+    "expected": "correct"
+  },
+  {
+    "field": "direction",
+    "text": "Wasser wandert vom Außenraum in das Zellinnere",
+    "expected": "incorrect"
+  },
+  {
+    "field": "direction",
+    "text": "Wasser diffundiert",
+    "expected": "partial"
+  },
+  {
+    "field": "direction",
+    "text": "Nicht Wasser wandert vom Zellinneren in den Außenraum",
+    "expected": "incorrect"
+  },
+  {
+    "field": "direction",
+    "text": "Nicht Wasser wandert vom Außenraum in das Zellinnere",
+    "expected": "clarify"
+  },
+  {
+    "field": "direction",
+    "text": "Wasser wandert vom Zellinneren in den Außenraum oder Wasser wandert vom Außenraum in das Zellinnere",
+    "expected": "clarify"
+  },
+  {
+    "field": "direction",
+    "text": "Morgen Wasser wandert vom Zellinneren in den Außenraum",
+    "expected": "clarify"
+  },
+  {
+    "field": "direction",
+    "text": "Wasser wandert vom Zellinneren in den Außenraum; unbekannter Zusammenhang",
+    "expected": "clarify"
+  },
+  {
+    "field": "direction",
+    "text": "Ich dachte zunächst Wasser wandert vom Außenraum in das Zellinnere; jetzt meine ich Wasser wandert vom Zellinneren in den Außenraum",
+    "expected": "correct"
+  },
+  {
+    "field": "volume",
+    "text": "Das Vakuolenvolumen vermindert sich",
+    "expected": "correct"
+  },
+  {
+    "field": "volume",
+    "text": "Das Vakuolenvolumen erhöht sich",
+    "expected": "incorrect"
+  },
+  {
+    "field": "volume",
+    "text": "Die Vakuole gibt Wasser ab",
+    "expected": "partial"
+  },
+  {
+    "field": "volume",
+    "text": "Nicht Das Vakuolenvolumen vermindert sich",
+    "expected": "incorrect"
+  },
+  {
+    "field": "volume",
+    "text": "Nicht Das Vakuolenvolumen erhöht sich",
+    "expected": "clarify"
+  },
+  {
+    "field": "volume",
+    "text": "Das Vakuolenvolumen vermindert sich oder Das Vakuolenvolumen erhöht sich",
+    "expected": "clarify"
+  },
+  {
+    "field": "volume",
+    "text": "Morgen Das Vakuolenvolumen vermindert sich",
+    "expected": "clarify"
+  },
+  {
+    "field": "volume",
+    "text": "Das Vakuolenvolumen vermindert sich; unbekannter Zusammenhang",
+    "expected": "clarify"
+  },
+  {
+    "field": "volume",
+    "text": "Ich dachte zunächst Das Vakuolenvolumen erhöht sich; jetzt meine ich Das Vakuolenvolumen vermindert sich",
+    "expected": "correct"
+  },
+  {
+    "field": "direction",
+    "text": "Saccharose wandert vom Zellinneren in den Außenraum",
+    "expected": "incorrect"
+  },
+  {
+    "field": "direction",
+    "text": "Saccharose strömt vom Zellinneren in den Außenraum",
+    "expected": "incorrect"
+  },
+  {
+    "field": "direction",
+    "text": "Saccharose fließt vom Zellinneren in den Außenraum",
+    "expected": "incorrect"
+  },
+  {
+    "field": "direction",
+    "text": "Zucker wandert vom Zellinneren in den Außenraum",
+    "expected": "incorrect"
+  },
+  {
+    "field": "direction",
+    "text": "Zucker strömt vom Zellinneren in den Außenraum",
+    "expected": "incorrect"
+  },
+  {
+    "field": "direction",
+    "text": "Zucker fließt vom Zellinneren in den Außenraum",
+    "expected": "incorrect"
+  },
+  {
+    "field": "volume",
+    "text": "Die Zellwand schrumpft",
+    "expected": "incorrect"
+  },
+  {
+    "field": "volume",
+    "text": "Die Zellwand vermindert sich",
+    "expected": "incorrect"
+  },
+  {
+    "field": "volume",
+    "text": "Die Zellwand nimmt ab",
+    "expected": "incorrect"
+  },
+  {
+    "field": "volume",
+    "text": "Das Volumen der Zellwand schrumpft",
+    "expected": "incorrect"
+  },
+  {
+    "field": "volume",
+    "text": "Das Volumen der Zellwand vermindert sich",
+    "expected": "incorrect"
+  },
+  {
+    "field": "volume",
+    "text": "Das Volumen der Zellwand nimmt ab",
+    "expected": "incorrect"
+  },
+  {
+    "field": "direction",
+    "text": "Wasser wandert aus der Vakuole ins Cytosol",
+    "expected": "partial"
+  },
+  {
+    "field": "direction",
+    "text": "Wasser wandert aus der Vakuole in den Außenraum",
+    "expected": "clarify"
+  },
+  {
+    "field": "volume",
+    "text": "Das Volumen des Zellkerns sinkt",
+    "expected": "clarify"
+  },
+  {
+    "field": "direction",
+    "text": "Einzelne Wassermoleküle wandern nach innen; netto wandert Wasser nach außen",
+    "expected": "correct"
+  }
+]

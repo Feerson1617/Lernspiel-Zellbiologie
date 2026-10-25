@@ -176,3 +176,23 @@ test('actual browser rejects foreign versions/material; changed context invalida
   // Caller-supplied model labels, seed and phase change identity, without inventing a model release.
   expect(rows.find(r => r.key === 'modelVersion')?.status).toBe('correct');
 });
+
+test('R1 mechanism/movement feedback never invents bidirectional exchange', async ({ page, baseURL }) => {
+  await openLab(page, baseURL!); await fillCorrect(page);
+  for (const text of ['Osmose', 'Wasser bewegt sich']) {
+    await page.locator('#m602-direction').fill(text); await check(page).click();
+    const panel = page.getByRole('region', { name: 'Bewertung direction', exact: true });
+    await expect(panel).toHaveAttribute('data-status', 'partial');
+    await expect(panel).not.toContainText('Einzelbewegungen'); await expect(panel).not.toContainText('beide Richtungen');
+    await expect(panel).toContainText('Nettorichtung');
+  }
+  await page.locator('#m602-direction').fill('in beide Richtungen'); await check(page).click();
+  await expect(page.getByRole('region', { name: 'Bewertung direction', exact: true })).toContainText('Einzelbewegungen');
+});
+test('R1 actual browser matches all 642 full runtime envelopes, including reported unresolved long answers', async ({ page, baseURL }) => {
+  await openLab(page, baseURL!);
+  const c = JSON.parse(readFileSync('tests/fixtures/p02c-r1-cases.json', 'utf8')) as { cases: { field: 'direction' | 'volume'; text: string; extra: string[] }[]; systematic: { field: 'direction' | 'volume'; text: string; extra: string[] }[] };
+  const inputs = [...c.cases, ...c.systematic].map(r => m602Input({ [r.field]: r.text }, r.extra));
+  const actual = await page.evaluate(json => { const { inputs, support } = JSON.parse(json); return JSON.stringify(inputs.map((i: unknown) => (window as unknown as LabWindow).api.evaluateM602(i, support))); }, JSON.stringify({ inputs, support: M602_SUPPORT }));
+  expect(JSON.parse(actual)).toEqual(inputs.map(i => evaluateM602(i, M602_SUPPORT)));
+});

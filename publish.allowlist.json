@@ -276,7 +276,13 @@
     "tools/report-m602.ts",
     "tools/publish-history.ts",
     "tests/unit/publish-history.test.ts",
-    "qa/PR6-R10.md"
+    "qa/PR6-R10.md",
+    "tests/unit/m602-r1.test.ts",
+    "tests/fixtures/p02c-r1-cases.json",
+    "tests/fixtures/p02c-r1-own.json",
+    "qa/p02c-r1-freeze.json",
+    "qa/PR7-R1.md",
+    "tools/report-m602-r1.ts"
   ],
   "distPatterns": [
     "^index\\.html$",
