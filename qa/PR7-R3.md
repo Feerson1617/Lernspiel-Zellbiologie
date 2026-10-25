@@ -118,3 +118,17 @@ Prüfharness, keine Rücknahme der Produktgrenze. Erste Logs, JSON und Screensho
 Traces sind erhalten. Eigene gezielte Gegenfälle aus dieser Codeprüfung prüfen
 zusätzlich unaufgelöste Pronomen nach Wasserverlust-/Strukturbeobachtung; sie sind
 keine nachträgliche Veränderung des eingefrorenen 33er-Bestands.
+
+Abschließender Klassencheck am ersten Reparaturstand: Ein unprofilierter
+Änderungstyp nach einem gebundenen anderen Gegenstand durfte noch den generischen
+Vakuolen-Feedbackweg benutzen. Zwei zusätzliche direkte Runtime-/Buchungsproben
+belegten eine falsche Zuschreibung bzw. einen falschen Gesamtbeleg. Der zentrale
+Volumenatom-Konstruktor akzeptiert nun ausschließlich die zum tatsächlichen
+Gegenstand definierten Prädikatprofile; andere bleiben null/clarify mit vollständigem
+notAssessed-Text. Keine neuen Antwortmuster. Drei codegeleitete Gegenfälle sind
+zusätzlich geprüft und nicht in den eingefrorenen 33er-Bestand aufgenommen.
+Der vorherige komplette CI-WebKit-Lauf hatte zudem 369/372 mit drei alten R5-
+Paritätsfehlern; Detail-Logs/Artefakte waren netzwerkseitig blockiert. Eine einmalige
+unveränderte Jobwiederholung wurde diagnostisch gestartet; sie ist kein Nachweis
+für den danach korrigierten Endhead. Erstlauf und Wiederholungsgrund bleiben im
+externen Archiv, finale technische Nachweise beziehen sich auf den neuen Endhead.

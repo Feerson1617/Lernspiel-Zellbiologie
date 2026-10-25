@@ -285,9 +285,15 @@ test('R3 executes all 156 supplied and 33 frozen own cases in the actual browser
   const actual = await page.evaluate(json => { const { inputs, support } = JSON.parse(json); return JSON.stringify(inputs.map((i: unknown) => (window as unknown as LabWindow).api.evaluateM602(i, support))); }, JSON.stringify({ inputs, support: M602_SUPPORT }));
   expect(JSON.parse(actual)).toEqual(inputs.map(i => evaluateM602(i, M602_SUPPORT)));
   await fillCorrect(page);
-  const original = 'Die Zellwand bleibt gleich und die Vakuole schrumpft und ihr Volumen sinkt.';
-  await page.locator('#m602-volume').fill(original); await check(page).click();
-  await expect(page.getByRole('region',{ name:'Bewertung volume',exact:true })).toHaveAttribute('data-status','clarify');
-  await expect(result(page)).toContainText(`Nicht geprüft (not_assessed), volume: ${original}`);
-  expect(await page.evaluate(() => localStorage.getItem('zelllabor11.progress.v1'))).toBeNull();
+  for (const original of [
+    'Die Zellwand bleibt gleich und die Vakuole schrumpft und ihr Volumen sinkt.',
+    'Die Zellwand bleibt gleich und das Volumen wird größer.',
+    'Die Vakuole schrumpft und die Zellwand bleibt gleich und das Volumen ändert sich.',
+    'Der Protoplast schrumpft und das Volumen nimmt zu.',
+  ]) {
+    await page.locator('#m602-volume').fill(original); await check(page).click();
+    await expect(page.getByRole('region',{ name:'Bewertung volume',exact:true })).toHaveAttribute('data-status','clarify');
+    await expect(result(page)).toContainText(`Nicht geprüft (not_assessed), volume: ${original}`);
+    expect(await page.evaluate(() => localStorage.getItem('zelllabor11.progress.v1'))).toBeNull();
+  }
 });

@@ -29,9 +29,13 @@ export function volumeGender(object: string): VolumeMeaning['gender'] {
   const head = object.replace(/^(?:das|der|die|ihr|ihren) /u, '');
   return /^(?:vakuolenvolumen|volumen)(?: |$)/u.test(head) ? 'neuter' : /^(?:rauminhalt|protoplast|vakuolenraum|vakuoleninhalt)(?: |$)/u.test(head) ? 'masculine' : /^(?:vakuole|zentralvakuole|zellwand|groesse)(?: |$)/u.test(head) ? 'feminine' : 'implicit';
 }
-export function volumeAtom(tag: string, referent: VolumeReferent, negative: boolean, origin: VolumeMeaning['origin'], gender: VolumeMeaning['gender'] = 'implicit'): SemanticAtom {
+export function volumeAtom(tag: string, referent: VolumeReferent, negative: boolean, origin: VolumeMeaning['origin'], gender: VolumeMeaning['gender'] = 'implicit'): SemanticAtom | null {
   if (referent === 'wall') tag = tag === 'down' ? 'wall_down' : tag === 'same' ? 'wall_same' : tag;
   if (referent === 'protoplast' && tag === 'down') tag = 'protoplast_down';
+  // Reference binding must also constrain the feedback profile. A generic up/
+  // change/loss tag must never describe the vacuole when its actual object differs.
+  const supported = referent === 'wall' ? ['wall_down', 'wall_same'] : referent === 'protoplast' ? ['protoplast_down'] : ['down', 'up', 'same', 'change', 'loss'];
+  if (!supported.includes(tag)) return null;
   const change = tag.endsWith('down') ? 'down' : tag === 'up' ? 'up' : tag.endsWith('same') ? 'same' : tag === 'loss' ? 'loss' : 'change';
   return { tag, negative, individual: false, net: false, volume: { referent, change, negative, phase: 'given_early_state', origin, gender } };
 }

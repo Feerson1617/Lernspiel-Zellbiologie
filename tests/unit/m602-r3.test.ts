@@ -53,3 +53,18 @@ it('binds existing neuter quantity pronouns without confusing a feminine wall wi
     ['Die Zellmembran löst sich von der Zellwand und es wird kleiner.', 'clarify'],
   ] as const) expect(evaluateM602(m602Input({ volume: text }), M602_SUPPORT).fields.volume.result.status).toBe(status);
 });
+
+it('does not let an unprofiled predicate use a vacuole feedback path for another bound object', () => {
+  for (const text of [
+    'Die Zellwand bleibt gleich und das Volumen wird größer.',
+    'Die Vakuole schrumpft und die Zellwand bleibt gleich und das Volumen ändert sich.',
+    'Der Protoplast schrumpft und das Volumen nimmt zu.',
+  ]) {
+    const input = m602Input({ volume: text }), o = evaluateM602(input, M602_SUPPORT);
+    expect(o.fields.volume.result.status).toBe('clarify');
+    expect(o.fields.volume.feedback.recognized).not.toMatch(/Zunahme des Vakuolenvolumens|Abnahme des Vakuolenvolumens/);
+    expect(o.notAssessed[0]!.value).toBe(text); expect(o.overallStatus).toBe('clarify');
+    const s = createM602Session(input.context, { idPrefix: 'unsupported-quantity', resumed: false, loadedAttempts: [] });
+    const live = s.submit(s.makeSubmission(input.answers, [])); expect(() => s.record(live)).toThrow();
+  }
+});

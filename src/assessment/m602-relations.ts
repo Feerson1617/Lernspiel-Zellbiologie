@@ -73,7 +73,7 @@ function atom(input: string, field: RelationField, inheritedVolume?: VolumeRefer
   const negativeTokens = text.match(/\b(?:nicht|kein|keine|keinen)\b/gu) ?? [];
   if (negativeTokens.length > 1) return null;
   const negative = negativeTokens.length === 1;
-  const result = (tag: string, individual = false, neg = negative): Atom => field === 'volume' ? volumeAtom(tag, activeVolume, neg, volumeOrigin, activeGender) : ({ tag, negative: neg, individual, net });
+  const result = (tag: string, individual = false, neg = negative): Atom | null => field === 'volume' ? volumeAtom(tag, activeVolume, neg, volumeOrigin, activeGender) : ({ tag, negative: neg, individual, net });
   text = text.replace(/^(?:netto|insgesamt) /u, '');
   if (field === 'direction' && /^(?:kein (?:wassertransport|wasserfluss|nettofluss|nettostrom)|wasser steht still|es gibt keine wasserbewegung|es fliesst netto kein wasser)$/u.test(text)) return result('still', false, false);
   text = text.replace(/\b(?:nicht|kein|keine|keinen)\b/gu, '').replace(/\s+/gu, ' ').trim();
