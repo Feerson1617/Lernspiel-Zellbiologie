@@ -113,3 +113,16 @@ Feedbacktext „Vakuole → Cytosol“ erhalten. Er bleibt im aktuellen Feldprof
 ausdrücklich ungeklärt. Ein zusätzlicher codegeleiteter Gegenfall prüft dies;
 er gehört nicht zum vorab fixierten 82er-Sprachbestand. Der erste Abschlusslauf
 am Zwischencommit wurde deshalb ersetzt; seine Teilergebnisse bleiben erhalten.
+
+Der vollständige lokale Browserlauf am Zwischenstand 86b2c3c fand drei identische
+Textregressionen (Desktop/Tablet/Mobil): Die Präzisierung des Klärungsfeedbacks
+hatte das bestehend geprüfte Wort „Zusatzbehauptungen“ entfernt. Der Textvertrag
+wurde wiederhergestellt, ohne Assertions/Sollwerte abzuschwächen. Der gesamte
+M6.02-Browserblock wird gezielt erneut geprüft; die vollständigen technischen
+Endhead-Prüfungen einschließlich beider Browserengines laufen anschließend in CI.
+Der fehlgeschlagene lokale Voll-Lauf wird nicht als bestanden ausgegeben.
+Ein zu früh gestarteter gezielter Wiederholungslauf fand den lokalen Testport noch
+vom auslaufenden Voll-Lauf belegt und wurde vor Testbeginn blockiert. Dieser
+Setupfehler bleibt als fehlgeschlagener Prozess dokumentiert. Die Wiederholung
+wartet auf das vollständige Ende des bisherigen Laufs; kein Portwechsel oder
+Wiederverwenden eines fremden Testservers und keine Timeoutänderung.
