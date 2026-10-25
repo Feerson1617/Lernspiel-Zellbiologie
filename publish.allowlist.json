@@ -256,7 +256,10 @@
     "tools/sync-task-catalog.ts",
     "tsconfig.json",
     "vite.config.ts",
-    "vitest.config.ts"
+    "vitest.config.ts",
+    "tools/publish-history.ts",
+    "tests/unit/publish-history.test.ts",
+    "qa/PR6-R10.md"
   ],
   "distPatterns": [
     "^index\\.html$",
