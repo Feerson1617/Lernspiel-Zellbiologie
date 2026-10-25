@@ -114,6 +114,8 @@ function atom(input: string, field: RelationField): Atom | null {
   return result(substance ? 'substance' : all ? 'all_one_way' : tag, individual);
 }
 function atomDecision(a: Atom): RelationDecision {
+  // The reverse inner path has no approved feedback profile in this field.
+  if (a.tag === 'inner_reverse') return unclear;
   if (a.negative) return ['out', 'down'].includes(a.tag) && !a.individual ? { status: 'incorrect', reason: 'negated' } : { status: 'clarify', reason: 'exclusion_only' };
   if (a.individual) return { status: 'partial', reason: 'individual' };
   if (a.tag === 'out' || a.tag === 'down') return { status: 'correct', reason: a.tag };

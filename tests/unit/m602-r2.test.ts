@@ -52,3 +52,11 @@ it('joins only reverse paths of the same substance, membrane, quantity, phase an
     expect(compareWaterRelations(left,{ ...right, negative: true })).toBeNull();
   }
 });
+
+it('does not attribute the opposite inner-membrane direction to a newly recognized reverse path', () => {
+  const text = 'Wasser fließt aus dem Cytosol in die Vakuole';
+  const o = evaluateM602(m602Input({ direction: text }), M602_SUPPORT);
+  expect(o.fields.direction.result.status).toBe('clarify');
+  expect(o.fields.direction.feedback.recognized).not.toContain('von der Vakuole');
+  expect(o.notAssessed[0]!.value).toBe(text);
+});

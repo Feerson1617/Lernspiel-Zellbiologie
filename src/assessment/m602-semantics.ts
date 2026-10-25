@@ -88,7 +88,7 @@ export function parseWaterRelation(input: string): WaterRelation | null {
   return { ...route, quantity: 'transport_amount', substance: /saccharose|zucker/u.test(noun) ? 'sucrose' : 'water', phase: 'given_early_state', scale, net, negative: neg.length === 1 };
 }
 export function relationAtom(r: WaterRelation): SemanticAtom {
-  return { tag: r.substance !== 'water' ? 'substance' : r.scale === 'all' ? 'all_one_way' : r.membrane === 'tonoplast' ? 'inner' : r.target === 'external' ? 'out' : 'in', negative: r.negative, individual: r.scale === 'individual', net: r.net };
+  return { tag: r.substance !== 'water' ? 'substance' : r.scale === 'all' ? 'all_one_way' : r.membrane === 'tonoplast' ? r.source === 'vacuole' ? 'inner' : 'inner_reverse' : r.target === 'external' ? 'out' : 'in', negative: r.negative, individual: r.scale === 'individual', net: r.net };
 }
 /** A balance requires opposite flows of the same substance across the SAME
  * membrane at the SAME phase; different compartments are not scalar opposites. */

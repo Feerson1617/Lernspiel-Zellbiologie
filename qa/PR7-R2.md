@@ -107,3 +107,9 @@ Die CI erhält einen eigenen roten `Relations recognition readiness`-Job für de
 vollständigen R2-Rohbericht. Sein Fehler ist der ehrliche offene Sprachbefund;
 Build/Regression/WebKit werden davon unabhängig vollständig ausgeführt. Das ist
 keine Abschwächung der Freigabekriterien und kein erfolgreicher Gesamtworkflow.
+
+Abschließende Codeprüfung: Der neu zerlegte umgekehrte Tonoplastweg darf nicht den
+Feedbacktext „Vakuole → Cytosol“ erhalten. Er bleibt im aktuellen Feldprofil
+ausdrücklich ungeklärt. Ein zusätzlicher codegeleiteter Gegenfall prüft dies;
+er gehört nicht zum vorab fixierten 82er-Sprachbestand. Der erste Abschlusslauf
+am Zwischencommit wurde deshalb ersetzt; seine Teilergebnisse bleiben erhalten.
