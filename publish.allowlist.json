@@ -314,7 +314,11 @@
     "tools/report-m602-cued.ts",
     "qa/m602-cued-supplement-freeze.json",
     "tests/fixtures/m602-cued-supplement.json",
-    "qa/P02c-Cued.md"
+    "qa/P02c-Cued.md",
+    "qa/m602-cued-r5-freeze.json",
+    "tests/fixtures/m602-cued-r5-own.json",
+    "tests/unit/m602-cued-r5.test.ts",
+    "qa/P02c-Cued-R5.md"
   ],
   "distPatterns": [
     "^index\\.html$",

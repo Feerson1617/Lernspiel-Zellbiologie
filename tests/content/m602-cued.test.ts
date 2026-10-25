@@ -1,4 +1,5 @@
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { expect, it } from 'vitest';
 import { evaluateM602Cued } from '../../src/assessment/m602-cued.ts';
@@ -15,6 +16,7 @@ it('validates all current envelopes and rejects legacy/extra keys/versions/swapp
     { ...o, fullResult: { ...o.fullResult, rubricVersion: 'old' } },
     { ...o, fullResult: { ...o.fullResult, criteria: [...o.fullResult.criteria].reverse() } }];
   const script = `import json,sys\nfrom jsonschema import Draft202012Validator\nv=Draft202012Validator(json.load(open('contracts/m602-cued.schema.json')))\nd=json.load(sys.stdin)\nassert all(not list(v.iter_errors(x)) for x in d['valid'])\nassert all(list(v.iter_errors(x)) for x in d['invalid'])\nprint(len(d['valid']),len(d['invalid']))`;
-  const result = spawnSync('python3', ['-c', script], { input: JSON.stringify({ valid, invalid }), encoding: 'utf8' });
+  const venv = fileURLToPath(new URL('../../.venv/bin/python', import.meta.url));
+  const result = spawnSync(existsSync(venv) ? venv : 'python3', ['-c', script], { input: JSON.stringify({ valid, invalid }), encoding: 'utf8' });
   expect(result.status, result.stderr).toBe(0);
 });

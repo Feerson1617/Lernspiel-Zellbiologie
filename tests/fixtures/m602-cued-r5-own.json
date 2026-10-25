@@ -1,0 +1,200 @@
+[
+  {
+    "id": "OWN-R5-01",
+    "field": "direction",
+    "text": "Zellinneres \u2192 Au\u00dfenmedium",
+    "expected": "correct"
+  },
+  {
+    "id": "OWN-R5-02",
+    "field": "direction",
+    "text": "das Zellinnere \u2192 die Umgebung",
+    "expected": "correct"
+  },
+  {
+    "id": "OWN-R5-03",
+    "field": "direction",
+    "text": "aus dem Zellinneren in das Au\u00dfenmedium",
+    "expected": "correct"
+  },
+  {
+    "id": "OWN-R5-04",
+    "field": "direction",
+    "text": "Vermutlich netto Zellinneres \u2192 Au\u00dfenl\u00f6sung?",
+    "expected": "correct"
+  },
+  {
+    "id": "OWN-R5-05",
+    "field": "direction",
+    "text": "Au\u00dfenmedium \u2192 Zellinneres",
+    "expected": "incorrect"
+  },
+  {
+    "id": "OWN-R5-06",
+    "field": "direction",
+    "text": "die Au\u00dfenl\u00f6sung \u2192 das Zellinnere",
+    "expected": "incorrect"
+  },
+  {
+    "id": "OWN-R5-07",
+    "field": "direction",
+    "text": "ZellinneresPlus \u2192 Au\u00dfenmedium",
+    "expected": "clarify"
+  },
+  {
+    "id": "OWN-R5-08",
+    "field": "direction",
+    "text": "Zellinneres \u2192 Au\u00dfenmedium \u00fcber den Tonoplasten",
+    "expected": "clarify"
+  },
+  {
+    "id": "OWN-R5-09",
+    "field": "direction",
+    "text": "Mitochondrium \u2192 Zellinneres",
+    "expected": "clarify"
+  },
+  {
+    "id": "OWN-R5-10",
+    "field": "volume",
+    "text": "wird nicht kleiner",
+    "expected": "incorrect"
+  },
+  {
+    "id": "OWN-R5-11",
+    "field": "volume",
+    "text": "schrumpft nicht",
+    "expected": "incorrect"
+  },
+  {
+    "id": "OWN-R5-12",
+    "field": "volume",
+    "text": "verringert sich nicht",
+    "expected": "incorrect"
+  },
+  {
+    "id": "OWN-R5-13",
+    "field": "volume",
+    "text": "ver\u00e4ndert sich nicht",
+    "expected": "incorrect"
+  },
+  {
+    "id": "OWN-R5-14",
+    "field": "volume",
+    "text": "nimmt nicht zu",
+    "expected": "partial"
+  },
+  {
+    "id": "OWN-R5-15",
+    "field": "volume",
+    "text": "bleibt nicht gleich",
+    "expected": "partial"
+  },
+  {
+    "id": "OWN-R5-16",
+    "field": "volume",
+    "text": "vergr\u00f6\u00dfert sich nicht",
+    "expected": "partial"
+  },
+  {
+    "id": "OWN-R5-17",
+    "field": "volume",
+    "text": "nimmt nicht nicht zu",
+    "expected": "clarify"
+  },
+  {
+    "id": "OWN-R5-18",
+    "field": "volume",
+    "text": "nicht wird nicht kleiner",
+    "expected": "clarify"
+  },
+  {
+    "id": "OWN-R5-19",
+    "field": "volume",
+    "text": "nimmt nicht ab wegen Magie",
+    "expected": "clarify"
+  },
+  {
+    "id": "OWN-R5-20",
+    "field": "volume",
+    "text": "Volumenabnahme nicht",
+    "expected": "clarify"
+  },
+  {
+    "id": "OWN-R5-21",
+    "field": "direction",
+    "text": "kein Nettostrom und hinaus",
+    "expected": "incorrect"
+  },
+  {
+    "id": "OWN-R5-22",
+    "field": "direction",
+    "text": "hinein und kein Nettotransport",
+    "expected": "incorrect"
+  },
+  {
+    "id": "OWN-R5-23",
+    "field": "direction",
+    "text": "kein Nettowassertransport und netto hinaus",
+    "expected": "incorrect"
+  },
+  {
+    "id": "OWN-R5-24",
+    "field": "direction",
+    "text": "kein Nettostrom und kein Nettotransport",
+    "expected": "incorrect"
+  },
+  {
+    "id": "OWN-R5-25",
+    "field": "direction",
+    "text": "netto hinaus und netto hinein",
+    "expected": "incorrect"
+  },
+  {
+    "id": "OWN-R5-26",
+    "field": "direction",
+    "text": "hinaus und ausw\u00e4rts",
+    "expected": "correct"
+  },
+  {
+    "id": "OWN-R5-27",
+    "field": "direction",
+    "text": "hin und her",
+    "expected": "partial"
+  },
+  {
+    "id": "OWN-R5-28",
+    "field": "direction",
+    "text": "kein Nettostrom oder hinein",
+    "expected": "clarify"
+  },
+  {
+    "id": "OWN-R5-29",
+    "field": "direction",
+    "text": "kein Nettostrom und hin und her",
+    "expected": "clarify"
+  },
+  {
+    "id": "OWN-R5-30",
+    "field": "direction",
+    "text": "hinaus und unbekannt",
+    "expected": "clarify"
+  },
+  {
+    "id": "OWN-R5-31",
+    "field": "volume",
+    "text": "sinkt und verkleinert sich",
+    "expected": "correct"
+  },
+  {
+    "id": "OWN-R5-32",
+    "field": "volume",
+    "text": "wird kleiner und nimmt zu",
+    "expected": "incorrect"
+  },
+  {
+    "id": "OWN-R5-33",
+    "field": "volume",
+    "text": "wird kleiner oder nimmt zu",
+    "expected": "clarify"
+  }
+]

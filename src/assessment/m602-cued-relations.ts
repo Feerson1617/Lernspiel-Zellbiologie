@@ -18,7 +18,7 @@ const changes: Readonly<Record<string, string>> = Object.fromEntries([
 ]);
 type Room = 'cell' | 'external' | 'vacuole';
 const rooms: Readonly<Record<string, Room>> = Object.fromEntries([
-  ...['zelle', 'zellinneren', 'zellinnere', 'cytosol'].map(x => [x, 'cell' as const]),
+  ...['zelle', 'zellinneres', 'zellinneren', 'zellinnere', 'cytosol'].map(x => [x, 'cell' as const]),
   ...['aussenraum', 'aussenloesung', 'aussenmedium', 'umgebung', 'umgebende loesung', 'umgebenden loesung'].map(x => [x, 'external' as const]),
   ...['vakuole', 'vakuolenraum'].map(x => [x, 'vacuole' as const]),
 ]);
@@ -38,8 +38,20 @@ function path(value: string): string | null {
   return from === 'cell' && to === 'external' ? 'out' : from === 'external' && to === 'cell' ? 'in' : from === 'vacuole' && to === 'cell' ? 'inner' : null;
 }
 interface Meaning { readonly tag: string; readonly negative: boolean }
+// Negate only existing finite predicates at their verb/reflexive boundary.
+// Full lookup retains every complement; unknown tails and double negation
+// cannot be repaired by deleting a token from arbitrary input.
+const finiteVerbs = new Set(['nimmt', 'wird', 'schrumpft', 'verkleinert', 'verringert', 'vermindert', 'reduziert', 'sinkt', 'verliert', 'geht', 'waechst', 'steigt', 'vergroessert', 'erhoeht', 'schwillt', 'bleibt', 'veraendert', 'aendert']);
+const negatedChanges: Readonly<Record<string, Meaning>> = Object.fromEntries(Object.entries(changes)
+  .filter(([predicate]) => finiteVerbs.has(predicate.split(' ')[0]!))
+  .flatMap(([predicate, tag]) => {
+    const words = predicate.split(' '); words.splice(words[1] === 'sich' ? 2 : 1, 0, 'nicht');
+    const meaning = { tag: tag === 'change' ? 'same' : tag, negative: tag !== 'change' };
+    return [[words.join(' '), meaning], ['nicht ' + predicate, meaning]];
+  }));
 function meaning(text: string, field: RelationField): Meaning | null {
   let body = text.replace(/^netto /u, ''), negative = false;
+  if (field === 'volume' && negatedChanges[body]) return negatedChanges[body]!;
   if (body.startsWith('nicht ')) { body = body.slice(6); negative = true; }
   const tag = field === 'volume' ? changes[body] : dirs[body] ?? path(body);
   return tag ? { tag, negative } : null;
@@ -64,7 +76,9 @@ export function classifyM602CuedRelation(original: string, field: RelationField)
   if (!a || !b) return unclear;
   if (parts[1] === 'oder') return { status: 'clarify', reason: 'alternatives' };
   const opposing = a.tag === b.tag && a.negative !== b.negative || !a.negative && !b.negative &&
-    (new Set([a.tag, b.tag]).has('out') && new Set([a.tag, b.tag]).has('in') || [a.tag, b.tag].includes('down') && [a.tag, b.tag].some(t => ['up', 'same'].includes(t)));
+    (new Set([a.tag, b.tag]).has('out') && new Set([a.tag, b.tag]).has('in')
+      || field === 'direction' && [a.tag, b.tag].includes('net_zero') && [a.tag, b.tag].some(t => ['out', 'in'].includes(t))
+      || [a.tag, b.tag].includes('down') && [a.tag, b.tag].some(t => ['up', 'same'].includes(t)));
   if (opposing) return { status: 'incorrect', reason: 'contradiction' };
   return a.tag === b.tag && a.negative === b.negative ? decision(a) : unclear;
 }

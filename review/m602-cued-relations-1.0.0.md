@@ -60,11 +60,20 @@ auf das ausdrücklich vorgegebene Vakuolenvolumen.
 | technical | >4096 UTF-16-Zeichen, unzulässige Steuer-/Formatzeichen oder ungültiger Kontext | ebenso |
 
 Eine einzelne Negation wird nur mit vollständig erkanntem Ausdruck verbunden:
+Bei den bereits erlaubten finiten Volumenprädikaten steht „nicht“ entweder vor
+dem Prädikat oder hinter Verb und gegebenenfalls Reflexivpronomen (z. B.
+„nimmt nicht ab“, „verringert sich nicht“). Nur die vollständige bekannte
+Prädikatform wird zugeordnet; unbekannte Reste werden nicht entfernt. Die
+verneinte finite allgemeine Änderung bezeichnet Gleichbleiben. Nachgestellte
+Negation eines bloßen Nomens bleibt außerhalb des begrenzten Profils.
 Negation von out/down widerspricht dem gegebenen Fall; Ausschluss von in/up/same
 benennt noch keine positive gesicherte Beziehung (partial). Doppelnegation bleibt
 clarify. Genau zwei erkannte Ausdrücke können durch „und“ verbunden werden:
 Gegenrichtungen bzw. Abnahme/Zunahme/Gleichbleiben am selben gegebenen Bezug
 sind widersprüchlich; gleiche Bedeutung bleibt erhalten. „oder“ verlangt Klärung.
+Auch eine gerichtete Nettobilanz und Nettobilanz null widersprechen sich in
+beiden Reihenfolgen. Einzelbewegungen in beide Richtungen sind damit nicht
+gleichzusetzen; sie begründen für sich weder einen Nettostrom noch Nettogleichgewicht.
 Ein unbekannter Operand verhindert jede fachliche Bestätigung des Ganzen.
 Keine Rekonstruktion von Pronomen, Kausalsätzen, Vorher-/Nachher-Geschichten,
 Membranvergleichen oder Allquantoren. Ein biologisch richtiger ganzer Satz
@@ -107,9 +116,10 @@ Eigene Sollmatrix und Hash vor dem ersten neuen Lauf eingefroren. Ziel pro Feld
 mindestens 95 % Grün auf **allen** gültigen kurzen eigenen Slotantworten und null
 kritische Fehlfarben; Darstellungsvarianten und natürliche Ausdrucksvielfalt
 getrennt betrachten, keine Generalisierung auf beliebige Schülerantworten.
-Danach neue unabhängige Gegenprüfung. Die extern gelieferten R4-Dateien bleiben
-außerhalb des Repositorys, Bundles und veröffentlichter CI-Artefakte; solange das
-ZIP fehlt, sind seine vollständigen G/S/C/X-/Rohdatenprüfungen offen.
+Danach neue unabhängige Gegenprüfung. Externe R4-/R5-Prüfdateien bleiben außerhalb
+des Repositorys, Bundles und veröffentlichter CI-Artefakte. Die zuvor fehlenden
+R4-Kontrollen sind im R5-Paket zugänglich; ihre eigene Wiederholung und die
+begrenzte R5-Nachbesserung sind in [P02c-Cued-R5.md](../qa/P02c-Cued-R5.md) dokumentiert.
 Echte Safari/iPad- und Unterrichtsprobe bleiben offen. Kein P03 in diesem Auftrag.
 
 Der Startbestand mit 113 Fällen und seinen 24 gültigen Eingaben je Feld bleibt

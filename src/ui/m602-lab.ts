@@ -81,7 +81,7 @@ function mountLab<V extends M602ContractVersion>(root: HTMLElement, options: Nam
     potentials.textContent = `Gesamtwasserpotenziale einschließlich Druck in Pa: ${JSON.stringify(s.context.material['waterPotential'])}`;
     binding.textContent = JSON.stringify(s.context);
     supportInfo.textContent = s.history === 'history_unverified' ? 'Frühere Hilfen unbekannt. Auch ein Materialwechsel stellt kein verlorenes Historienvertrauen wieder her; fachliches Üben bleibt möglich.'
-      : M602_FIELDS.map(f => `${helpLabels[f]}: ${ASSISTANCE_LABELS[s.fields[f].assistance]}`).join(' · ');
+      : M602_FIELDS.map(f => `${helpLabels[f]}: ${s.fields[f].assistance === 'independent' ? 'Bisher keine Hilfe genutzt' : ASSISTANCE_LABELS[s.fields[f].assistance]}`).join(' · ');
     storageInfo.textContent = saved.issue ? `Speicherhinweis (${saved.issue}): Arbeit bleibt in dieser Sitzung, fremde Daten bleiben erhalten.` : 'Nur acht Metadatenfelder je vollständigem Versuch werden gespeichert, keine Rohtexte oder Hilfeereignisse.';
     history.replaceChildren(); node('h2', 'Versuchsverlauf – nur RAM', history);
     for (const o of s.outcomes) node('p', `${o.submission.attemptId} · Vorgänger ${o.submission.predecessorId ?? 'keiner'} · ${o.submission.context.contextHash === s.context.contextHash ? 'damaliger Versuch' : 'Veraltet – keine aktuelle Bewertung'} · ${STATUS_PRESENTATION[o.overallStatus].label} · ${JSON.stringify(o.submission.answers)} · ursprünglicher Kontext ${o.submission.context.contextHash}`, history);

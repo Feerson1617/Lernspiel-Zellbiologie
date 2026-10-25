@@ -31,11 +31,15 @@ weiterer Satzmusterausbau. Sechs wörtliche Beispiele aus dem externen Bericht
 wurden lokal vor/nach dem Patch mit vollständigen Outcomes und Buchungsproben
 reproduziert; danach weder ungerechtfertigtes Rot noch grüner Beleg.
 
-**Das zusätzlich angekündigte R4-ZIP ist bisher nicht zugänglich.** Die vollständigen
+**Historischer Stand beim Abschluss von a02e9fa: R4-ZIP nicht zugänglich.** Die vollständigen
 ursprünglichen G/S/C/X-Sammlungen und Rohresultate wurden daher noch nicht gelesen
 oder erneut ausgeführt. Bericht und lokale Replays bleiben außerhalb des
 Repositorys, Bundles und CI-Artefakte. Keine Rekonstruktion fehlender Sollfälle
 und keine Behauptung einer vollständigen R4-Prüfung oder unabhängigen Abnahme.
+
+Nachtrag: Das spätere R5-Prüfpaket enthält die vollständigen hier benötigten
+R4-Kontrollen und Einreichungen. Deren eigene Wiederholung und die abschließende
+begrenzte Reparatur sind in [P02c-Cued-R5.md](P02c-Cued-R5.md) dokumentiert.
 
 ## Trennung und Integration
 
@@ -101,7 +105,8 @@ oder Deploy-Abhängigkeiten; grüne Selbsttests sind keine fachliche Abnahme.
 
 ## Offen und Anschluss
 
-R4-ZIP/gesamte Originalmatrix fehlen; neue unabhängige Gegenprüfung bleibt Pflicht.
+Die zuvor fehlenden R4-Kontrollen sind inzwischen im R5-Paket vorhanden;
+neue unabhängige Gegenprüfung bleibt Pflicht, siehe Nachtrag oben.
 Keine echte Safari/iPad-Hardware samt Bildschirmtastatur/Rotation und keine
 Unterrichts-/Lernendenprüfung ausgeführt. Private Unterrichtsoriginale nicht
 verfügbar; kein eigener privater Quellenabgleich behauptet. Produktionsschutz

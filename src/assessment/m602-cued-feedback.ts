@@ -3,6 +3,11 @@ import type { RelationField } from './m602-relations.ts';
 import { relationFeedback } from './m602-feedback.ts';
 
 export function cuedRelationFeedback(field: RelationField, reason: string): NamingFeedback {
+  if (field === 'direction' && reason === 'contradiction') return Object.freeze({
+    recognized: 'Deine kurzen Angaben widersprechen sich für denselben Stoff, dieselbe Zellmembran und denselben Zeitpunkt.',
+    difference: 'Ein Nettostrom kann nicht zugleich nach außen und nach innen gerichtet oder zugleich gerichtet und null sein. Nettobilanz null bedeutet dabei keinen Stillstand aller Moleküle: Einzelne Durchtritte können weiterhin in beide Richtungen stattfinden.',
+    next: 'Vergleiche die Gesamtwasserpotenziale von Cytosol und Außenraum und formuliere eine widerspruchsfreie Nettobilanz.',
+  });
   if (reason === 'scope') return Object.freeze({
     recognized: 'Der vollständige Ausdruck ist im angekündigten kurzen Eingabeformat noch nicht sicher zugeordnet.',
     difference: 'Das ist kein Nachweis eines biologischen Fehlers. Ein ganzer Satz, ein unklarer Rückbezug oder ein unbekannter Zusatz wird hier nicht als fachlich falsch bezeichnet und nicht still mitbestätigt.',

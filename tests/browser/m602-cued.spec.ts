@@ -38,11 +38,14 @@ test('announces given conditions and empty independent slots, then checks actual
   const errors: string[] = [], foreign: string[] = [];
   page.on('pageerror', e => errors.push(e.message)); page.on('request', r => { if (!r.url().startsWith(baseURL!)) foreign.push(r.url()); });
   await open(page, baseURL!);
+  await expect(page.getByText('Ohne Hilfe beantwortet', { exact: true })).toHaveCount(0);
+  expect((await page.locator('body').innerText()).match(/Bisher keine Hilfe genutzt/gu)).toHaveLength(3);
   await expect(page.getByRole('textbox',{name:'Wasser bewegt sich NETTO über die ZELLMEMBRAN: deine Richtung',exact:true})).toHaveValue('');
   await expect(page.getByRole('textbox',{name:'Das VAKUOLENVOLUMEN: deine Veränderung',exact:true})).toHaveValue('');
   await expect(page.locator('select,input[type=radio]')).toHaveCount(0);
   for (const [f,v] of Object.entries(m602CuedInput().answers)) { await page.locator(`#m602-${f}`).focus(); await page.keyboard.type(v); }
   await check(page); await expect(result(page)).toHaveAttribute('data-status','correct'); await expect(result(page)).toBeFocused();
+  await expect(result(page)).toContainText('Ohne Hilfe beantwortet');
   await expect(result(page)).toContainText('Erkannter Ansatz'); await expect(result(page)).toContainText('Gesamtpotenziale'); await expect(result(page)).toContainText('Nächster Schritt');
   const raw = await page.evaluate(() => localStorage.getItem('zelllabor11.progress.v1'));
   const saved = JSON.parse(raw!); expect(saved.attempts).toHaveLength(1); expect(Object.keys(saved.attempts[0])).toHaveLength(8); expect(saved.attempts[0].taskVersion).toBe('M6.02@cued-relations-1');
@@ -50,6 +53,34 @@ test('announces given conditions and empty independent slots, then checks actual
   expect(await page.evaluate(() => 'evaluateM602' in (window as unknown as LabWindow).api)).toBe(false);
   expect(source).not.toContain('ich dachte'); // old sentence grammar is absent from the current-only bundle
   await result(page).screenshot({ path: info.outputPath('cued-current-feedback.png') });
+});
+
+test('checks the announced room alias, predicate negation and directed-versus-zero balance in the actual DOM', async ({ page, baseURL }, info) => {
+  // Small scope-derived regressions only; the external 192-case file is never
+  // imported into this bundle, repository or CI artifacts.
+  const probes = [
+    ['direction', 'Zellinneres → Außenraum', 'correct', 'Nettowasserbewegung'],
+    ['direction', 'Wahrscheinlich netto Zellinneres → Außenraum!', 'correct', 'Nettowasserbewegung'],
+    ['direction', 'Umgebung → Zellinneres', 'incorrect', 'Nettostrom in die Zelle'],
+    ['volume', 'nimmt nicht ab', 'incorrect', 'Verneinung'],
+    ['direction', 'netto hinaus und kein Nettostrom', 'incorrect', 'Nettobilanz null'],
+  ] as const;
+  await open(page, baseURL!);
+  for (const [i, [field, text, status, detail]] of probes.entries()) {
+    await fill(page); await page.locator(`#m602-${field}`).fill(text); await check(page);
+    const panel = page.getByRole('region', { name: `Bewertung ${field}`, exact: true });
+    await expect(panel).toHaveAttribute('data-status', status); await expect(panel).toHaveAttribute('data-color', status === 'correct' ? 'green' : 'red');
+    await expect(panel).toContainText(detail); await expect(panel).toContainText(status === 'correct' ? '✓' : '✕');
+    const state = await page.evaluate(() => (window as unknown as LabWindow).lab.session.getState());
+    const outcome = state.latest!;
+    expect(outcome.submission.answers[field]).toBe(text);
+    expect(outcome.fields[field].result.criteria[0]!.evidence).toEqual([{ kind: 'input_span', value: text, start: 0, end: text.length }]);
+    expect(outcome.overallStatus).toBe(status);
+    const saved = JSON.parse((await page.evaluate(() => localStorage.getItem('zelllabor11.progress.v1')))!);
+    expect(saved.attempts).toHaveLength(Math.min(i + 1, 2));
+    for (const attempt of saved.attempts) expect(Object.keys(attempt)).toHaveLength(8);
+    await panel.screenshot({ path: info.outputPath(`r5-probe-${i + 1}.png`) });
+  }
 });
 test('keeps full browser/Node parity for the entire frozen current matrix, with no private R4 corpus import', async ({ page, baseURL }) => {
   await open(page, baseURL!);
