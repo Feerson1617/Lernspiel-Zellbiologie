@@ -282,7 +282,16 @@
     "tests/fixtures/p02c-r1-own.json",
     "qa/p02c-r1-freeze.json",
     "qa/PR7-R1.md",
-    "tools/report-m602-r1.ts"
+    "tools/report-m602-r1.ts",
+    "src/assessment/m602-semantics.ts",
+    "tests/fixtures/p02c-r2-cases.json",
+    "tests/fixtures/p02c-r2-targeted.json",
+    "tests/fixtures/p02c-r2-own.json",
+    "tests/unit/m602-r2.test.ts",
+    "tools/report-m602-r2.ts",
+    "qa/p02c-r2-freeze.json",
+    "qa/PR7-R2.md",
+    "review/m602-structured-proposal.md"
   ],
   "distPatterns": [
     "^index\\.html$",

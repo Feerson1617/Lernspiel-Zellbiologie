@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { evaluateM602 } from '../src/assessment/m602.ts';
 import { m602Input, M602_SUPPORT } from '../tests/helpers/m602.ts';
@@ -14,6 +14,7 @@ const summary = Object.fromEntries((['direction', 'volume'] as const).map(field 
     falseGreen: list.filter(r => r.expected !== 'correct' && r.outcome.fields[field].result.status === 'correct').map(r => r.id), falseRed: list.filter(r => r.expected !== 'incorrect' && r.outcome.fields[field].result.status === 'incorrect').map(r => r.id) }];
 }));
 const gaps = rows.filter(r => r.expected !== r.outcome.fields[r.field].result.status).map(r => ({ id: r.id, group: r.group, text: r.text, expected: r.expected, actual: r.outcome.fields[r.field].result.status }));
+mkdirSync('qa/generated', { recursive: true });
 writeFileSync('qa/generated/p02c-r1-results.json', JSON.stringify({ head: execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(), independentAcceptance: false, summary, gaps, rows }, null, 2) + '\n');
 console.log(JSON.stringify({ summary, gaps }, null, 2));
 if (Object.values(summary).some(s => s.falseGreen.length || s.falseRed.length || s.groups['short-correct']!.matched / 60 < .95) || rows.some(r => r.group === 'own' && r.expected !== r.outcome.fields[r.field].result.status)) process.exitCode = 1;

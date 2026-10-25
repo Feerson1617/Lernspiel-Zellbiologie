@@ -196,3 +196,41 @@ test('R1 actual browser matches all 642 full runtime envelopes, including report
   const actual = await page.evaluate(json => { const { inputs, support } = JSON.parse(json); return JSON.stringify(inputs.map((i: unknown) => (window as unknown as LabWindow).api.evaluateM602(i, support))); }, JSON.stringify({ inputs, support: M602_SUPPORT }));
   expect(JSON.parse(actual)).toEqual(inputs.map(i => evaluateM602(i, M602_SUPPORT)));
 });
+
+test('R2 X01–X04 have yellow comparison feedback and cannot persist a false completion; X07 is red and X12 remains green', async ({ page, baseURL }, info) => {
+  await openLab(page, baseURL!); await fillCorrect(page);
+  const cases = JSON.parse(readFileSync('tests/fixtures/p02c-r2-targeted.json', 'utf8')).cases as { id: string; text: string }[];
+  const panel = page.getByRole('region', { name: 'Bewertung direction', exact: true });
+  for (const c of cases.filter(c => ['X01','X02','X03','X04','X07'].includes(c.id))) {
+    await page.locator('#m602-direction').fill(c.text); await check(page).click();
+    const unclear = c.id !== 'X07';
+    await expect(panel).toHaveAttribute('data-status', unclear ? 'clarify' : 'incorrect');
+    await expect(panel).toHaveAttribute('data-color', unclear ? 'yellow' : 'red');
+    await expect(result(page)).toHaveAttribute('data-status', unclear ? 'clarify' : 'incorrect');
+    if (unclear) {
+      await expect(panel).toContainText('Du vergleichst zwei Bewegungsangaben.');
+      await expect(panel).toContainText('dieselbe Membran');
+      await expect(panel).toContainText('Quelle, Ziel und Membran');
+      await expect(result(page)).toContainText(`Nicht geprüft (not_assessed), direction: ${c.text}`);
+    } else {
+      await expect(panel).toContainText('Widerspruch');
+      await expect(panel).not.toContainText('Du beschreibst Einzelbewegungen');
+    }
+    expect(await page.evaluate(() => localStorage.getItem('zelllabor11.progress.v1'))).toBeNull();
+    if (['X01','X03','X07'].includes(c.id)) await panel.screenshot({ path: info.outputPath(`r2-${c.id}-feedback.png`) });
+  }
+  await page.locator('#m602-direction').fill(cases.find(c => c.id === 'X12')!.text); await check(page).click();
+  await expect(result(page)).toHaveAttribute('data-status', 'correct');
+  const saved = await page.evaluate(() => JSON.parse(localStorage.getItem('zelllabor11.progress.v1')!));
+  expect(saved.attempts).toHaveLength(1); expect(saved.attempts[0].assistance).toBe('independent');
+  expect(Object.keys(saved.attempts[0])).toHaveLength(8);
+});
+test('R2 all 180 supplied, 12 targeted and 82 own inputs have full actual Node/browser outcome parity', async ({ page, baseURL }) => {
+  await openLab(page, baseURL!);
+  const rows = ['cases','own'].flatMap(name => JSON.parse(readFileSync(`tests/fixtures/p02c-r2-${name}.json`, 'utf8')));
+  rows.push(...JSON.parse(readFileSync('tests/fixtures/p02c-r2-targeted.json', 'utf8')).cases);
+  expect(rows).toHaveLength(274);
+  const inputs = rows.map((r: { field: 'direction' | 'volume'; text: string; extra?: string[] }) => m602Input({ [r.field]: r.text }, r.extra ?? []));
+  const actual = await page.evaluate(json => { const { inputs, support } = JSON.parse(json); return JSON.stringify(inputs.map((i: unknown) => (window as unknown as LabWindow).api.evaluateM602(i, support))); }, JSON.stringify({ inputs, support: M602_SUPPORT }));
+  expect(JSON.parse(actual)).toEqual(inputs.map(i => evaluateM602(i, M602_SUPPORT)));
+});

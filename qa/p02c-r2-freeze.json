@@ -1,0 +1,14 @@
+{
+  "frozenAt": "2026-10-25T05:51:01.058767+00:00",
+  "independentAcceptance": false,
+  "counts": {
+    "supplied": 180,
+    "targeted": 12,
+    "own": 82
+  },
+  "files": {
+    "tests/fixtures/p02c-r2-cases.json": "cecb30775c4da6afbe7b878a2fb1c99f0662470d6482eef07afec127f3027772",
+    "tests/fixtures/p02c-r2-targeted.json": "181e038daafb1a9ba27156c1eefbf5bcd147bc8f8ab1e040979e7c3bcd1e33d6",
+    "tests/fixtures/p02c-r2-own.json": "0cd61b6a0b09d64d3b026aec69a84e3f5f2052302decafb89b9d93cc45cc7c95"
+  }
+}

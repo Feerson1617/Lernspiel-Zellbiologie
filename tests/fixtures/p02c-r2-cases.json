@@ -1,0 +1,1450 @@
+[
+  {
+    "id": "N001",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Aus der Pflanzenzelle strömt Wasser hinaus.",
+    "extra": []
+  },
+  {
+    "id": "N002",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Wasser strömt von der Zellinnenseite in die umgebende Lösung.",
+    "extra": []
+  },
+  {
+    "id": "N003",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Es fließt netto Wasser aus dem Cytosol in den Außenraum.",
+    "extra": []
+  },
+  {
+    "id": "N004",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "In der Bilanz tritt Wasser aus der Zelle aus.",
+    "extra": []
+  },
+  {
+    "id": "N005",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Insgesamt verliert die Zelle Wasser nach außen.",
+    "extra": []
+  },
+  {
+    "id": "N006",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Wasser wandert netto vom Zellinneren nach draußen.",
+    "extra": []
+  },
+  {
+    "id": "N007",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Der Wasserstrom ist auswärts gerichtet.",
+    "extra": []
+  },
+  {
+    "id": "N008",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Der Nettowasserstrom führt vom Cytosol zum Außenmedium.",
+    "extra": []
+  },
+  {
+    "id": "N009",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Wasser tritt durch die Zellmembran nach außen über.",
+    "extra": []
+  },
+  {
+    "id": "N010",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Über die Zellmembran gelangt Wasser in die Außenlösung.",
+    "extra": []
+  },
+  {
+    "id": "N011",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Wasser bewegt sich netto vom Cytoplasma zur Außenlösung.",
+    "extra": []
+  },
+  {
+    "id": "N012",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Mehr Wasser verlässt die Zelle als in sie eintritt.",
+    "extra": []
+  },
+  {
+    "id": "N013",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Es tritt mehr Wasser aus der Zelle aus als ein.",
+    "extra": []
+  },
+  {
+    "id": "N014",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Der Wasserausstrom ist größer als der Wassereinstrom.",
+    "extra": []
+  },
+  {
+    "id": "N015",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Aus der Zelle fließt netto Wasser ab.",
+    "extra": []
+  },
+  {
+    "id": "N016",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Die Zelle gibt insgesamt Wasser an ihre Umgebung ab.",
+    "extra": []
+  },
+  {
+    "id": "N017",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Nach außen geht mehr Wasser als nach innen.",
+    "extra": []
+  },
+  {
+    "id": "N018",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Im Ergebnis wandert Wasser nach außen.",
+    "extra": []
+  },
+  {
+    "id": "N019",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Die Nettobewegung des Wassers zeigt aus der Zelle heraus.",
+    "extra": []
+  },
+  {
+    "id": "N020",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Wassermoleküle bewegen sich in der Summe nach außen.",
+    "extra": []
+  },
+  {
+    "id": "N021",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Vom Inneren der Zelle fließt Wasser in den Außenraum.",
+    "extra": []
+  },
+  {
+    "id": "N022",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Wasser gelangt netto aus dem Zellinneren ins Außenmedium.",
+    "extra": []
+  },
+  {
+    "id": "N023",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Der gerichtete Nettofluss des Wassers geht nach draußen.",
+    "extra": []
+  },
+  {
+    "id": "N024",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Überwiegend bewegt sich Wasser von der Zelle zur Außenlösung.",
+    "extra": []
+  },
+  {
+    "id": "N025",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Netto wird Wasser aus der Zelle abgegeben.",
+    "extra": []
+  },
+  {
+    "id": "N026",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Die Zellmembran passiert Wasser netto nach außen.",
+    "extra": []
+  },
+  {
+    "id": "N027",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Nach außen durchquert Wasser netto die Zellmembran.",
+    "extra": []
+  },
+  {
+    "id": "N028",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Auswärts durch die Zellmembran fließt netto Wasser.",
+    "extra": []
+  },
+  {
+    "id": "N029",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Vom Cytosol aus wandert Wasser ins umgebende Medium.",
+    "extra": []
+  },
+  {
+    "id": "N030",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "In Richtung Außenlösung strömt netto Wasser.",
+    "extra": []
+  },
+  {
+    "id": "N031",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Vom Cytoplasma weg fließt Wasser nach außen.",
+    "extra": []
+  },
+  {
+    "id": "N032",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Wasser verlässt das Zellinnere und gelangt in die Außenlösung.",
+    "extra": []
+  },
+  {
+    "id": "N033",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Wasser strömt aus der Zelle heraus.",
+    "extra": []
+  },
+  {
+    "id": "N034",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Das Wasser fließt vom Innenraum der Zelle zum Außenraum.",
+    "extra": []
+  },
+  {
+    "id": "N035",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Es kommt zu einem Nettoausstrom von Wasser.",
+    "extra": []
+  },
+  {
+    "id": "N036",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Die Nettowasserbewegung verläuft nach außen.",
+    "extra": []
+  },
+  {
+    "id": "N037",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Wasser geht netto aus der Zelle hinaus.",
+    "extra": []
+  },
+  {
+    "id": "N038",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Durch die Plasmamembran fließt netto Wasser nach draußen.",
+    "extra": []
+  },
+  {
+    "id": "N039",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Aus dem Cytosol in den Außenraum, netto.",
+    "extra": []
+  },
+  {
+    "id": "N040",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Die Wasserbilanz zeigt einen Ausstrom aus der Zelle.",
+    "extra": []
+  },
+  {
+    "id": "N041",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Das Wasser tritt netto aus der Pflanzenzelle aus.",
+    "extra": []
+  },
+  {
+    "id": "N042",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Nach außen ist der Nettowasserstrom gerichtet.",
+    "extra": []
+  },
+  {
+    "id": "N043",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Wasser fließt insgesamt von innen nach draußen.",
+    "extra": []
+  },
+  {
+    "id": "N044",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Die Zelle verliert in der Nettobilanz Wasser an die Außenlösung.",
+    "extra": []
+  },
+  {
+    "id": "N045",
+    "field": "direction",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Netto verlässt Wasser die Zelle.",
+    "extra": []
+  },
+  {
+    "id": "N046",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Das Volumen im Inneren der Vakuole wird geringer.",
+    "extra": []
+  },
+  {
+    "id": "N047",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Die Vakuole verliert Volumen.",
+    "extra": []
+  },
+  {
+    "id": "N048",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Die Vakuole nimmt weniger Raum ein.",
+    "extra": []
+  },
+  {
+    "id": "N049",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Die Vakuole beansprucht ein kleineres Volumen.",
+    "extra": []
+  },
+  {
+    "id": "N050",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Der Rauminhalt der Vakuole sinkt.",
+    "extra": []
+  },
+  {
+    "id": "N051",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Das Volumen der Zentralvakuole verringert sich.",
+    "extra": []
+  },
+  {
+    "id": "N052",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Die Zentralvakuole wird kleiner.",
+    "extra": []
+  },
+  {
+    "id": "N053",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Die Vakuole verkleinert sich.",
+    "extra": []
+  },
+  {
+    "id": "N054",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Das Vakuolenvolumen reduziert sich.",
+    "extra": []
+  },
+  {
+    "id": "N055",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Die Vakuole hat danach weniger Volumen.",
+    "extra": []
+  },
+  {
+    "id": "N056",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Die Vakuole ist im betrachteten Verlauf kleiner.",
+    "extra": []
+  },
+  {
+    "id": "N057",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Die Größe der Vakuole nimmt ab.",
+    "extra": []
+  },
+  {
+    "id": "N058",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Das Volumen des Vakuolenraums sinkt.",
+    "extra": []
+  },
+  {
+    "id": "N059",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Das Volumen innerhalb der Vakuole nimmt ab.",
+    "extra": []
+  },
+  {
+    "id": "N060",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Für die Vakuole ergibt sich eine Volumenabnahme.",
+    "extra": []
+  },
+  {
+    "id": "N061",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Die Volumenänderung der Vakuole ist negativ.",
+    "extra": []
+  },
+  {
+    "id": "N062",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Es kommt zu einer Abnahme des Vakuolenvolumens.",
+    "extra": []
+  },
+  {
+    "id": "N063",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Die Vakuole büßt Volumen ein.",
+    "extra": []
+  },
+  {
+    "id": "N064",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Der Vakuoleninhalt nimmt an Volumen ab.",
+    "extra": []
+  },
+  {
+    "id": "N065",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Die Vakuole schrumpft zusammen.",
+    "extra": []
+  },
+  {
+    "id": "N066",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Kleiner wird dabei das Volumen der Vakuole.",
+    "extra": []
+  },
+  {
+    "id": "N067",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Ab nimmt das Vakuolenvolumen.",
+    "extra": []
+  },
+  {
+    "id": "N068",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Geringer wird das Volumen der Vakuole.",
+    "extra": []
+  },
+  {
+    "id": "N069",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Weniger Raum wird von der Vakuole eingenommen.",
+    "extra": []
+  },
+  {
+    "id": "N070",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Die Vakuole zeigt eine Volumenverminderung.",
+    "extra": []
+  },
+  {
+    "id": "N071",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Das Volumen der Vakuole geht zurück.",
+    "extra": []
+  },
+  {
+    "id": "N072",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Die Vakuole wird hinsichtlich ihres Volumens kleiner.",
+    "extra": []
+  },
+  {
+    "id": "N073",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Das Vakuolenvolumen fällt ab.",
+    "extra": []
+  },
+  {
+    "id": "N074",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Der Rauminhalt der Zentralvakuole nimmt ab.",
+    "extra": []
+  },
+  {
+    "id": "N075",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Insgesamt schrumpft das Vakuolenvolumen.",
+    "extra": []
+  },
+  {
+    "id": "N076",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Das Volumen der Vakuole wird reduziert.",
+    "extra": []
+  },
+  {
+    "id": "N077",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Es verkleinert sich die Vakuole.",
+    "extra": []
+  },
+  {
+    "id": "N078",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "An Volumen verliert die Vakuole.",
+    "extra": []
+  },
+  {
+    "id": "N079",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Kleiner ist anschließend die Vakuole.",
+    "extra": []
+  },
+  {
+    "id": "N080",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Die Volumenbilanz der Vakuole ist negativ.",
+    "extra": []
+  },
+  {
+    "id": "N081",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Der Vakuolenraum wird kleiner.",
+    "extra": []
+  },
+  {
+    "id": "N082",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Die Vakuole verringert ihren Rauminhalt.",
+    "extra": []
+  },
+  {
+    "id": "N083",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Das Vakuolenvolumen nimmt also ab.",
+    "extra": []
+  },
+  {
+    "id": "N084",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Die Vakuole verkleinert ihr Volumen.",
+    "extra": []
+  },
+  {
+    "id": "N085",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Das Volumen in der Vakuole wird kleiner.",
+    "extra": []
+  },
+  {
+    "id": "N086",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Die Vakuole ist von einer Volumenabnahme betroffen.",
+    "extra": []
+  },
+  {
+    "id": "N087",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Das Vakuolenvolumen vermindert sich.",
+    "extra": []
+  },
+  {
+    "id": "N088",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Weniger Volumen hat die Vakuole.",
+    "extra": []
+  },
+  {
+    "id": "N089",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Die Vakuole zieht sich durch den Wasserverlust zusammen.",
+    "extra": []
+  },
+  {
+    "id": "N090",
+    "field": "volume",
+    "group": "correct_short",
+    "expected": "correct",
+    "text": "Die Vakuole nimmt im Volumen ab.",
+    "extra": []
+  },
+  {
+    "id": "N091",
+    "field": "direction",
+    "group": "correct_explanation",
+    "expected": "correct",
+    "text": "Wasser strömt netto nach außen, weil das Gesamtwasserpotenzial außen niedriger ist als im Cytosol.",
+    "extra": []
+  },
+  {
+    "id": "N092",
+    "field": "direction",
+    "group": "correct_explanation",
+    "expected": "correct",
+    "text": "Auch wenn einzelne Moleküle nach innen gelangen, fließt Wasser netto nach außen.",
+    "extra": []
+  },
+  {
+    "id": "N093",
+    "field": "direction",
+    "group": "correct_explanation",
+    "expected": "correct",
+    "text": "An der Zellmembran geht netto Wasser aus dem Cytosol in die Außenlösung; der Tonoplast ist eine andere Membran.",
+    "extra": []
+  },
+  {
+    "id": "N094",
+    "field": "direction",
+    "group": "correct_explanation",
+    "expected": "correct",
+    "text": "Der Druckanteil ist in den angegebenen Wasserpotenzialen bereits enthalten, daher fließt Wasser netto nach außen.",
+    "extra": []
+  },
+  {
+    "id": "N095",
+    "field": "direction",
+    "group": "correct_explanation",
+    "expected": "correct",
+    "text": "Das Wasser bewegt sich in beide Richtungen, insgesamt aber mehr nach außen als nach innen.",
+    "extra": []
+  },
+  {
+    "id": "N096",
+    "field": "volume",
+    "group": "correct_explanation",
+    "expected": "correct",
+    "text": "Weil die Vakuole netto Wasser abgibt, verringert sich ihr Volumen.",
+    "extra": []
+  },
+  {
+    "id": "N097",
+    "field": "volume",
+    "group": "correct_explanation",
+    "expected": "correct",
+    "text": "Die Vakuole schrumpft, während die starre Zellwand ihre Form behält.",
+    "extra": []
+  },
+  {
+    "id": "N098",
+    "field": "volume",
+    "group": "correct_explanation",
+    "expected": "correct",
+    "text": "Wasser verlässt die Vakuole durch den Tonoplasten; dadurch nimmt ihr Volumen ab.",
+    "extra": []
+  },
+  {
+    "id": "N099",
+    "field": "volume",
+    "group": "correct_explanation",
+    "expected": "correct",
+    "text": "Das Gesamtwasserpotenzial ist im Cytosol niedriger als in der Vakuole, deshalb verliert diese Wasser und Volumen.",
+    "extra": []
+  },
+  {
+    "id": "N100",
+    "field": "volume",
+    "group": "correct_explanation",
+    "expected": "correct",
+    "text": "Die Vakuole verliert mehr Wasser, als sie aufnimmt, und ihr Volumen sinkt.",
+    "extra": []
+  },
+  {
+    "id": "N101",
+    "field": "direction",
+    "group": "wrong",
+    "expected": "incorrect",
+    "text": "Netto strömt Wasser vom Außenraum in das Cytosol.",
+    "extra": []
+  },
+  {
+    "id": "N102",
+    "field": "direction",
+    "group": "wrong",
+    "expected": "incorrect",
+    "text": "Insgesamt gewinnt die Zelle Wasser aus der Außenlösung.",
+    "extra": []
+  },
+  {
+    "id": "N103",
+    "field": "direction",
+    "group": "wrong",
+    "expected": "incorrect",
+    "text": "Wasser wandert netto von draußen nach drinnen.",
+    "extra": []
+  },
+  {
+    "id": "N104",
+    "field": "direction",
+    "group": "wrong",
+    "expected": "incorrect",
+    "text": "Der Nettowasserstrom ist einwärts gerichtet.",
+    "extra": []
+  },
+  {
+    "id": "N105",
+    "field": "direction",
+    "group": "wrong",
+    "expected": "incorrect",
+    "text": "Wasser bleibt vollständig unbewegt.",
+    "extra": []
+  },
+  {
+    "id": "N106",
+    "field": "direction",
+    "group": "wrong",
+    "expected": "incorrect",
+    "text": "Der Nettofluss von Wasser ist null.",
+    "extra": []
+  },
+  {
+    "id": "N107",
+    "field": "direction",
+    "group": "wrong",
+    "expected": "incorrect",
+    "text": "Es fließt gleich viel Wasser hinein wie hinaus.",
+    "extra": []
+  },
+  {
+    "id": "N108",
+    "field": "direction",
+    "group": "wrong",
+    "expected": "incorrect",
+    "text": "Alle Wassermoleküle fließen ausschließlich nach außen.",
+    "extra": []
+  },
+  {
+    "id": "N109",
+    "field": "direction",
+    "group": "wrong",
+    "expected": "incorrect",
+    "text": "Kein Wassermolekül kann nach innen gelangen.",
+    "extra": []
+  },
+  {
+    "id": "N110",
+    "field": "direction",
+    "group": "wrong",
+    "expected": "incorrect",
+    "text": "Die Saccharose fließt netto durch die Zellmembran nach außen.",
+    "extra": []
+  },
+  {
+    "id": "N111",
+    "field": "direction",
+    "group": "wrong",
+    "expected": "incorrect",
+    "text": "Die Zellmembran lässt in diesem Fall kein Wasser hindurch.",
+    "extra": []
+  },
+  {
+    "id": "N112",
+    "field": "direction",
+    "group": "wrong",
+    "expected": "incorrect",
+    "text": "Wasser wird gegen das Gesamtwasserpotenzialgefälle in die Zelle gepumpt.",
+    "extra": []
+  },
+  {
+    "id": "N113",
+    "field": "direction",
+    "group": "wrong",
+    "expected": "incorrect",
+    "text": "Es gibt keinen Wasserverlust der Zelle.",
+    "extra": []
+  },
+  {
+    "id": "N114",
+    "field": "direction",
+    "group": "wrong",
+    "expected": "incorrect",
+    "text": "Wasser strömt netto nicht aus der Zelle heraus.",
+    "extra": []
+  },
+  {
+    "id": "N115",
+    "field": "direction",
+    "group": "wrong",
+    "expected": "incorrect",
+    "text": "Nach innen strömt netto Wasser.",
+    "extra": []
+  },
+  {
+    "id": "N116",
+    "field": "volume",
+    "group": "wrong",
+    "expected": "incorrect",
+    "text": "Die Vakuole gewinnt an Volumen.",
+    "extra": []
+  },
+  {
+    "id": "N117",
+    "field": "volume",
+    "group": "wrong",
+    "expected": "incorrect",
+    "text": "Die Vakuole wird voluminöser.",
+    "extra": []
+  },
+  {
+    "id": "N118",
+    "field": "volume",
+    "group": "wrong",
+    "expected": "incorrect",
+    "text": "Der Rauminhalt der Vakuole steigt.",
+    "extra": []
+  },
+  {
+    "id": "N119",
+    "field": "volume",
+    "group": "wrong",
+    "expected": "incorrect",
+    "text": "Es kommt zu einer Vergrößerung der Vakuole.",
+    "extra": []
+  },
+  {
+    "id": "N120",
+    "field": "volume",
+    "group": "wrong",
+    "expected": "incorrect",
+    "text": "Die Vakuole bleibt in ihrem Volumen unverändert.",
+    "extra": []
+  },
+  {
+    "id": "N121",
+    "field": "volume",
+    "group": "wrong",
+    "expected": "incorrect",
+    "text": "Die Volumenänderung der Vakuole beträgt null.",
+    "extra": []
+  },
+  {
+    "id": "N122",
+    "field": "volume",
+    "group": "wrong",
+    "expected": "incorrect",
+    "text": "Das Volumen der Vakuole nimmt nicht ab.",
+    "extra": []
+  },
+  {
+    "id": "N123",
+    "field": "volume",
+    "group": "wrong",
+    "expected": "incorrect",
+    "text": "Wasserverlust vergrößert das Vakuolenvolumen.",
+    "extra": []
+  },
+  {
+    "id": "N124",
+    "field": "volume",
+    "group": "wrong",
+    "expected": "incorrect",
+    "text": "Die Zellwand verliert durch Osmose Volumen und schrumpft zusammen.",
+    "extra": []
+  },
+  {
+    "id": "N125",
+    "field": "volume",
+    "group": "wrong",
+    "expected": "incorrect",
+    "text": "Die Vakuole platzt im beschriebenen frühen Wasserverlustfall.",
+    "extra": []
+  },
+  {
+    "id": "N126",
+    "field": "volume",
+    "group": "wrong",
+    "expected": "incorrect",
+    "text": "Das Volumen der Vakuole wird größer.",
+    "extra": []
+  },
+  {
+    "id": "N127",
+    "field": "volume",
+    "group": "wrong",
+    "expected": "incorrect",
+    "text": "Die Vakuole schrumpft nicht.",
+    "extra": []
+  },
+  {
+    "id": "N128",
+    "field": "volume",
+    "group": "wrong",
+    "expected": "incorrect",
+    "text": "Die Vakuole dehnt sich aus.",
+    "extra": []
+  },
+  {
+    "id": "N129",
+    "field": "volume",
+    "group": "wrong",
+    "expected": "incorrect",
+    "text": "Das Volumen der Zentralvakuole steigt.",
+    "extra": []
+  },
+  {
+    "id": "N130",
+    "field": "volume",
+    "group": "wrong",
+    "expected": "incorrect",
+    "text": "Die Vakuole behält trotz des Nettoverlusts an Wasser ihr Volumen.",
+    "extra": []
+  },
+  {
+    "id": "N131",
+    "field": "direction",
+    "group": "partial",
+    "expected": "partial",
+    "text": "Es findet eine Bewegung von Wasser statt.",
+    "extra": []
+  },
+  {
+    "id": "N132",
+    "field": "direction",
+    "group": "partial",
+    "expected": "partial",
+    "text": "Wassermoleküle wechseln in beide Richtungen die Seite.",
+    "extra": []
+  },
+  {
+    "id": "N133",
+    "field": "direction",
+    "group": "partial",
+    "expected": "partial",
+    "text": "Ein einzelnes Wassermolekül kann in die Zelle gelangen.",
+    "extra": []
+  },
+  {
+    "id": "N134",
+    "field": "direction",
+    "group": "partial",
+    "expected": "partial",
+    "text": "Einige Wassermoleküle treten aus der Zelle aus.",
+    "extra": []
+  },
+  {
+    "id": "N135",
+    "field": "direction",
+    "group": "partial",
+    "expected": "partial",
+    "text": "Wasser passiert den Tonoplasten von der Vakuole zum Cytosol.",
+    "extra": []
+  },
+  {
+    "id": "N136",
+    "field": "direction",
+    "group": "partial",
+    "expected": "partial",
+    "text": "Der Vorgang heißt Osmose.",
+    "extra": []
+  },
+  {
+    "id": "N137",
+    "field": "direction",
+    "group": "partial",
+    "expected": "partial",
+    "text": "Wasser bewegt sich durch die Zellmembran.",
+    "extra": []
+  },
+  {
+    "id": "N138",
+    "field": "direction",
+    "group": "partial",
+    "expected": "partial",
+    "text": "Wasseraustausch zwischen Zelle und Umgebung.",
+    "extra": []
+  },
+  {
+    "id": "N139",
+    "field": "volume",
+    "group": "partial",
+    "expected": "partial",
+    "text": "Das Volumen der Vakuole ändert sich.",
+    "extra": []
+  },
+  {
+    "id": "N140",
+    "field": "volume",
+    "group": "partial",
+    "expected": "partial",
+    "text": "Die Vakuole gibt Wasser an das Cytosol ab.",
+    "extra": []
+  },
+  {
+    "id": "N141",
+    "field": "volume",
+    "group": "partial",
+    "expected": "partial",
+    "text": "Wasser tritt aus der Vakuole aus.",
+    "extra": []
+  },
+  {
+    "id": "N142",
+    "field": "volume",
+    "group": "partial",
+    "expected": "partial",
+    "text": "Die Vakuole hat einen Nettoverlust an Wasser.",
+    "extra": []
+  },
+  {
+    "id": "N143",
+    "field": "volume",
+    "group": "partial",
+    "expected": "partial",
+    "text": "Der Protoplast löst sich von der Zellwand.",
+    "extra": []
+  },
+  {
+    "id": "N144",
+    "field": "volume",
+    "group": "partial",
+    "expected": "partial",
+    "text": "Die Form der Vakuole verändert sich.",
+    "extra": []
+  },
+  {
+    "id": "N145",
+    "field": "volume",
+    "group": "partial",
+    "expected": "partial",
+    "text": "Die Zellwand bleibt starr.",
+    "extra": []
+  },
+  {
+    "id": "N146",
+    "field": "volume",
+    "group": "partial",
+    "expected": "partial",
+    "text": "Die Vakuole verändert ihren Rauminhalt.",
+    "extra": []
+  },
+  {
+    "id": "N147",
+    "field": "direction",
+    "group": "ambiguous",
+    "expected": "clarify",
+    "text": "Wasser fließt entweder netto nach außen oder netto nach innen.",
+    "extra": []
+  },
+  {
+    "id": "N148",
+    "field": "direction",
+    "group": "ambiguous",
+    "expected": "clarify",
+    "text": "Wenn der Außenraum ein höheres Gesamtwasserpotenzial hätte, würde Wasser einströmen.",
+    "extra": []
+  },
+  {
+    "id": "N149",
+    "field": "direction",
+    "group": "ambiguous",
+    "expected": "clarify",
+    "text": "Später fließt das Wasser nach innen.",
+    "extra": []
+  },
+  {
+    "id": "N150",
+    "field": "direction",
+    "group": "ambiguous",
+    "expected": "clarify",
+    "text": "Zunächst strömt Wasser aus, danach wieder ein.",
+    "extra": []
+  },
+  {
+    "id": "N151",
+    "field": "direction",
+    "group": "ambiguous",
+    "expected": "clarify",
+    "text": "Wasser fließt zur anderen Seite.",
+    "extra": []
+  },
+  {
+    "id": "N152",
+    "field": "direction",
+    "group": "ambiguous",
+    "expected": "clarify",
+    "text": "Wasser strömt dahin, wo es hingehört.",
+    "extra": []
+  },
+  {
+    "id": "N153",
+    "field": "direction",
+    "group": "ambiguous",
+    "expected": "clarify",
+    "text": "Nicht nach innen.",
+    "extra": []
+  },
+  {
+    "id": "N154",
+    "field": "direction",
+    "group": "ambiguous",
+    "expected": "clarify",
+    "text": "Wasser fließt nach außen, weil die Membran das so möchte.",
+    "extra": []
+  },
+  {
+    "id": "N155",
+    "field": "volume",
+    "group": "ambiguous",
+    "expected": "clarify",
+    "text": "Die Vakuole wird kleiner oder größer.",
+    "extra": []
+  },
+  {
+    "id": "N156",
+    "field": "volume",
+    "group": "ambiguous",
+    "expected": "clarify",
+    "text": "Später wächst das Vakuolenvolumen wieder.",
+    "extra": []
+  },
+  {
+    "id": "N157",
+    "field": "volume",
+    "group": "ambiguous",
+    "expected": "clarify",
+    "text": "Zuerst schrumpft sie, später wächst sie.",
+    "extra": []
+  },
+  {
+    "id": "N158",
+    "field": "volume",
+    "group": "ambiguous",
+    "expected": "clarify",
+    "text": "Die Vakuole verändert sich in die richtige Richtung.",
+    "extra": []
+  },
+  {
+    "id": "N159",
+    "field": "volume",
+    "group": "ambiguous",
+    "expected": "clarify",
+    "text": "Die Vakuole bleibt nicht gleich groß.",
+    "extra": []
+  },
+  {
+    "id": "N160",
+    "field": "volume",
+    "group": "ambiguous",
+    "expected": "clarify",
+    "text": "Die Vakuole wird vermutlich weder größer noch kleiner, vielleicht doch kleiner.",
+    "extra": []
+  },
+  {
+    "id": "N161",
+    "field": "volume",
+    "group": "ambiguous",
+    "expected": "clarify",
+    "text": "Falls Wasser in die Vakuole käme, würde ihr Volumen wachsen.",
+    "extra": []
+  },
+  {
+    "id": "N162",
+    "field": "volume",
+    "group": "ambiguous",
+    "expected": "clarify",
+    "text": "Das Volumen der Vakuole sinkt, weil die Zelle traurig ist.",
+    "extra": []
+  },
+  {
+    "id": "N163",
+    "field": "direction",
+    "group": "contradiction",
+    "expected": "incorrect",
+    "text": "Gleichzeitig fließt Wasser netto durch dieselbe Zellmembran nach außen und netto nach innen.",
+    "extra": []
+  },
+  {
+    "id": "N164",
+    "field": "direction",
+    "group": "contradiction",
+    "expected": "incorrect",
+    "text": "Der Nettowasserstrom durch die Zellmembran geht nach außen und nach innen zur gleichen Zeit.",
+    "extra": []
+  },
+  {
+    "id": "N165",
+    "field": "direction",
+    "group": "contradiction",
+    "expected": "incorrect",
+    "text": "Wasser verlässt netto die Zelle und verlässt sie im selben Moment netto nicht.",
+    "extra": []
+  },
+  {
+    "id": "N166",
+    "field": "direction",
+    "group": "contradiction",
+    "expected": "incorrect",
+    "text": "Netto nach außen und nicht nach außen.",
+    "extra": []
+  },
+  {
+    "id": "N167",
+    "field": "direction",
+    "group": "contradiction",
+    "expected": "incorrect",
+    "text": "Der Nettowasserfluss ist zugleich auswärts und null.",
+    "extra": []
+  },
+  {
+    "id": "N168",
+    "field": "direction",
+    "group": "contradiction",
+    "expected": "incorrect",
+    "text": "Durch die Zellmembran nach außen, aber netto nicht nach außen.",
+    "extra": []
+  },
+  {
+    "id": "N169",
+    "field": "volume",
+    "group": "contradiction",
+    "expected": "incorrect",
+    "text": "Das Vakuolenvolumen nimmt im selben Zeitraum ab und zu.",
+    "extra": []
+  },
+  {
+    "id": "N170",
+    "field": "volume",
+    "group": "contradiction",
+    "expected": "incorrect",
+    "text": "Die Vakuole wird gleichzeitig kleiner und größer.",
+    "extra": []
+  },
+  {
+    "id": "N171",
+    "field": "volume",
+    "group": "contradiction",
+    "expected": "incorrect",
+    "text": "Das Volumen der Vakuole sinkt und sinkt nicht.",
+    "extra": []
+  },
+  {
+    "id": "N172",
+    "field": "volume",
+    "group": "contradiction",
+    "expected": "incorrect",
+    "text": "Die Vakuole schrumpft, aber sie schrumpft nicht.",
+    "extra": []
+  },
+  {
+    "id": "N173",
+    "field": "volume",
+    "group": "contradiction",
+    "expected": "incorrect",
+    "text": "Das Vakuolenvolumen bleibt gleich und nimmt im selben Zustand ab.",
+    "extra": []
+  },
+  {
+    "id": "N174",
+    "field": "volume",
+    "group": "contradiction",
+    "expected": "incorrect",
+    "text": "Die Vakuole verliert Volumen und gewinnt im selben Zeitraum netto Volumen.",
+    "extra": []
+  },
+  {
+    "id": "N175",
+    "field": "direction",
+    "group": "empty",
+    "expected": "empty",
+    "text": "  ",
+    "extra": []
+  },
+  {
+    "id": "N176",
+    "field": "volume",
+    "group": "empty",
+    "expected": "empty",
+    "text": "  ",
+    "extra": []
+  },
+  {
+    "id": "N177",
+    "field": "direction",
+    "group": "extra",
+    "expected": "correct",
+    "text": "netto nach außen",
+    "extra": [
+      "Die Zellwand schrumpft."
+    ]
+  },
+  {
+    "id": "N178",
+    "field": "direction",
+    "group": "extra",
+    "expected": "correct",
+    "text": "netto nach außen",
+    "extra": [
+      "🧫 Eine unbekannte weitere Aussage."
+    ]
+  },
+  {
+    "id": "N179",
+    "field": "volume",
+    "group": "extra",
+    "expected": "correct",
+    "text": "wird kleiner",
+    "extra": [
+      "Die Zellwand schrumpft."
+    ]
+  },
+  {
+    "id": "N180",
+    "field": "volume",
+    "group": "extra",
+    "expected": "correct",
+    "text": "wird kleiner",
+    "extra": [
+      "🧫 Eine unbekannte weitere Aussage."
+    ]
+  }
+]

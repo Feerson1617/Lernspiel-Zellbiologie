@@ -1,4 +1,7 @@
+import { mkdirSync } from 'node:fs';
 import { defineConfig } from 'vitest/config';
+
+mkdirSync(new URL('./qa/generated/', import.meta.url), { recursive: true });
 
 export default defineConfig({
   test: {

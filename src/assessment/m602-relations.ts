@@ -1,3 +1,4 @@
+import { parseWaterRelation, compareWaterRelations, relationAtom, parseVolumeAtom } from './m602-semantics.ts';
 import type { Status } from '../domain/contracts.ts';
 import { isSupportedText, normalizeWord } from './text.ts';
 
@@ -44,6 +45,18 @@ function pathTag(input: string): string | null {
   return null;
 }
 function atom(input: string, field: RelationField): Atom | null {
+  if (field === 'direction' && /\bmehr\b/u.test(input) && input.includes(' als ')) {
+    const halves = input.split(' als ');
+    if (halves.length !== 2) return null;
+    const a = parseWaterRelation('netto ' + halves[0]!.replace(/\bmehr /u, ''));
+    const b = parseWaterRelation('netto ' + halves[1]!);
+    if (a && b) return compareWaterRelations(a, b);
+    // Compact particle comparison still consumes both operands completely.
+    const compact = input.match(/^(?:es treten )?mehr (?:wasser|wassermolekuele)(?: tritt| treten)? (aus|ein) als (aus|ein)$/u);
+    return compact && compact[1] !== compact[2] ? { tag: compact[1] === 'aus' ? 'out' : 'in', net: true, individual: false, negative: false } : null;
+  }
+  const semantic = field === 'volume' ? parseVolumeAtom(input) : parseWaterRelation(input);
+  if (semantic) return 'substance' in semantic ? relationAtom(semantic) : semantic;
   let text = input.trim().replace(/^(?:hier|jetzt|im angezeigten zustand|in dieser phase|in dieser fruehen phase|in der fruehen wasserverlustphase) /u, '');
   let net = /\b(?:netto|insgesamt|nettostrom|nettowasserstrom|nettowassertransport|nettotransport)\b/u.test(text);
   const negativeTokens = text.match(/\b(?:nicht|kein|keine|keinen)\b/gu) ?? [];
@@ -82,8 +95,6 @@ function atom(input: string, field: RelationField): Atom | null {
   if (['wasser bewegt sich', 'osmose', 'wassertransport', 'wasser fliesst', 'wasser diffundiert', 'es gibt eine wasserbewegung', 'wasser kann die membran passieren', 'durch die zellmembran'].includes(text)) return result('movement');
   const comparison = text.match(/^(?:es treten )?mehr (?:wasser|wassermolekuele)(?: tritt| treten)? (aus|ein) als (aus|ein)$/u);
   if (comparison) { net = true; return comparison[1] === comparison[2] ? null : result(comparison[1] === 'aus' ? 'out' : 'in'); }
-  const excess = text.match(/^(?:es (?:fliesst|bewegt sich) mehr wasser|mehr wasser (?:fliesst|geht)) (.+?) als (.+)$/u);
-  if (excess) { const a = pathTag(excess[1]!.replace(/ heraus$/u, '')), b = pathTag(excess[2]!); net = true; return a && b && a !== b ? result(a) : null; }
   if (/^mehr wasser verlaesst die zelle als hineinstroemt$/u.test(text)) { net = true; return result('out'); }
   const cell = text.match(/^(?:die )?zelle (verliert wasser|gibt wasser ab|nimmt wasser auf)$/u);
   if (cell) return result(cell[1] === 'nimmt wasser auf' ? 'in' : 'out');
@@ -150,9 +161,13 @@ export function classifyM602Relation(original: string, field: RelationField): Re
     // separate net clause follows. Split conjunctions only within one clause.
     let parts = value.split(/;\s*|\.\s+|,\s*(?:aber )?/u);
     if (parts.length === 1) parts = value.split(/ und gleichzeitig | und /u);
-    if (parts.length < 2 || parts.length > 4) return unclear;
-    const inheritedNet = /^(?:der )?netto(?:wasser)?strom /u.test(parts[0]!);
-    const atoms = parts.map(p => atom(p.replace(/^dadurch /u, ''), field)).map(a => a && inheritedNet ? { ...a, net: true } : a);
+    if (parts.length < 2 || parts.length > 4) return /\bmehr\b.* als /u.test(value) ? { status: 'clarify', reason: 'comparison_scope' } : unclear;
+    const first = atom(parts[0]!, field);
+    const atoms = parts.map((p, i) => {
+      const a = atom(p.replace(/^dadurch /u, ''), field);
+      const ellipsis = !/\b(?:wasser|wassermolekuele|molekuele|nettostrom|nettowasserstrom)\b/u.test(p);
+      return a && i > 0 && first?.net && ellipsis && !a.individual ? { ...a, net: true } : a;
+    });
     if (atoms.some(a => !a)) return unclear;
     const known = atoms as Atom[];
     if (known.some(a => known.some(b => a.tag === b.tag && a.negative !== b.negative && a.individual === b.individual))) return { status: 'incorrect', reason: 'contradiction' };
