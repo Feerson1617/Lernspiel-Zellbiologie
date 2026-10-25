@@ -1,0 +1,331 @@
+[
+  {
+    "id": "CUED-S001",
+    "field": "direction",
+    "group": "wrong",
+    "text": "nach drinnen",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-S002",
+    "field": "direction",
+    "group": "wrong",
+    "text": "in das Cytosol",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-S003",
+    "field": "direction",
+    "group": "wrong",
+    "text": "Au\u00dfenl\u00f6sung \u2192 Zelle",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-S004",
+    "field": "direction",
+    "group": "wrong",
+    "text": "vom Au\u00dfenmedium in das Zellinnere",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-S005",
+    "field": "direction",
+    "group": "wrong",
+    "text": "von der Umgebung in die Zelle",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-S006",
+    "field": "direction",
+    "group": "wrong",
+    "text": "aus dem Au\u00dfenraum in das Cytosol",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-S007",
+    "field": "direction",
+    "group": "wrong",
+    "text": "vermutlich rein",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-S008",
+    "field": "direction",
+    "group": "wrong",
+    "text": "vielleicht hinein",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-S009",
+    "field": "direction",
+    "group": "wrong",
+    "text": "netto nach innen",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-S010",
+    "field": "direction",
+    "group": "wrong",
+    "text": "Kein Nettostrom.",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-S011",
+    "field": "direction",
+    "group": "wrong",
+    "text": "nicht hinaus",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-S012",
+    "field": "direction",
+    "group": "wrong",
+    "text": "nicht raus",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-S013",
+    "field": "volume",
+    "group": "wrong",
+    "text": "mehr.",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-S014",
+    "field": "volume",
+    "group": "wrong",
+    "text": "w\u00e4chst.",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-S015",
+    "field": "volume",
+    "group": "wrong",
+    "text": "erh\u00f6ht sich",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-S016",
+    "field": "volume",
+    "group": "wrong",
+    "text": "schwillt an",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-S017",
+    "field": "volume",
+    "group": "wrong",
+    "text": "Zunahme",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-S018",
+    "field": "volume",
+    "group": "wrong",
+    "text": "konstant",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-S019",
+    "field": "volume",
+    "group": "wrong",
+    "text": "unver\u00e4ndert",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-S020",
+    "field": "volume",
+    "group": "wrong",
+    "text": "bleibt unver\u00e4ndert",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-S021",
+    "field": "volume",
+    "group": "wrong",
+    "text": "vermutlich gr\u00f6\u00dfer",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-S022",
+    "field": "volume",
+    "group": "wrong",
+    "text": "vielleicht bleibt gleich",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-S023",
+    "field": "volume",
+    "group": "wrong",
+    "text": "nicht weniger",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-S024",
+    "field": "volume",
+    "group": "wrong",
+    "text": "nicht schrumpft",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-S025",
+    "field": "direction",
+    "group": "partial",
+    "text": "wechselseitig",
+    "expected": "partial"
+  },
+  {
+    "id": "CUED-S026",
+    "field": "direction",
+    "group": "partial",
+    "text": "Osmose",
+    "expected": "partial"
+  },
+  {
+    "id": "CUED-S027",
+    "field": "direction",
+    "group": "partial",
+    "text": "Vakuole \u2192 Cytosol",
+    "expected": "partial"
+  },
+  {
+    "id": "CUED-S028",
+    "field": "direction",
+    "group": "partial",
+    "text": "vermutlich in beide Richtungen",
+    "expected": "partial"
+  },
+  {
+    "id": "CUED-S029",
+    "field": "direction",
+    "group": "partial",
+    "text": "nicht hinein",
+    "expected": "partial"
+  },
+  {
+    "id": "CUED-S030",
+    "field": "direction",
+    "group": "partial",
+    "text": "nicht rein",
+    "expected": "partial"
+  },
+  {
+    "id": "CUED-S031",
+    "field": "volume",
+    "group": "partial",
+    "text": "Ver\u00e4nderung",
+    "expected": "partial"
+  },
+  {
+    "id": "CUED-S032",
+    "field": "volume",
+    "group": "partial",
+    "text": "\u00e4ndert sich.",
+    "expected": "partial"
+  },
+  {
+    "id": "CUED-S033",
+    "field": "volume",
+    "group": "partial",
+    "text": "vermutlich ver\u00e4ndert sich",
+    "expected": "partial"
+  },
+  {
+    "id": "CUED-S034",
+    "field": "volume",
+    "group": "partial",
+    "text": "vielleicht Volumen\u00e4nderung",
+    "expected": "partial"
+  },
+  {
+    "id": "CUED-S035",
+    "field": "volume",
+    "group": "partial",
+    "text": "nicht gr\u00f6\u00dfer",
+    "expected": "partial"
+  },
+  {
+    "id": "CUED-S036",
+    "field": "volume",
+    "group": "partial",
+    "text": "nicht bleibt gleich",
+    "expected": "partial"
+  },
+  {
+    "id": "CUED-S037",
+    "field": "volume",
+    "group": "partial",
+    "text": "nicht steigt",
+    "expected": "partial"
+  },
+  {
+    "id": "CUED-S038",
+    "field": "direction",
+    "group": "scope",
+    "text": "im Gleichgewicht nach au\u00dfen",
+    "expected": "clarify"
+  },
+  {
+    "id": "CUED-S039",
+    "field": "volume",
+    "group": "scope",
+    "text": "mit einer Zellwandbegr\u00fcndung wird kleiner",
+    "expected": "clarify"
+  },
+  {
+    "id": "CUED-S040",
+    "field": "direction",
+    "group": "technical",
+    "text": "nach\u202eau\u00dfen",
+    "expected": "technical"
+  },
+  {
+    "id": "CUED-S041",
+    "field": "direction",
+    "group": "technical",
+    "text": "nach\u0001au\u00dfen",
+    "expected": "technical"
+  },
+  {
+    "id": "CUED-S042",
+    "field": "direction",
+    "group": "technical",
+    "text": "\ud800",
+    "expected": "technical"
+  },
+  {
+    "id": "CUED-S043",
+    "field": "direction",
+    "group": "technical",
+    "text": "\ufeffhinaus",
+    "expected": "technical"
+  },
+  {
+    "id": "CUED-S044",
+    "field": "volume",
+    "group": "technical",
+    "text": "nimmt\u200bab",
+    "expected": "technical"
+  },
+  {
+    "id": "CUED-S045",
+    "field": "volume",
+    "group": "technical",
+    "text": "nimmt\u202eab",
+    "expected": "technical"
+  },
+  {
+    "id": "CUED-S046",
+    "field": "volume",
+    "group": "technical",
+    "text": "\ufeffkleiner",
+    "expected": "technical"
+  },
+  {
+    "id": "CUED-S047",
+    "field": "volume",
+    "group": "technical",
+    "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "expected": "technical"
+  }
+]

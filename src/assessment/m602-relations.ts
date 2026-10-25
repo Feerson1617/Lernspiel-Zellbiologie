@@ -48,9 +48,9 @@ function pathTag(input: string): string | null {
 function atom(input: string, field: RelationField, inheritedVolume?: VolumeReferent, ambiguousVolume = false, inheritedGender?: VolumeMeaning['gender']): Atom | null {
   // Pronoun binding is outside the approved coordination profile. Never turn
   // an unresolved sie/es/ihr into the question's default vacuole after a subject.
-  if (field === 'volume' && inheritedVolume && /^(?:sie|es|er|ihr|ihre)\b/u.test(input)) {
-    const boundPossessive = /^ihr volumen /u.test(input) && !ambiguousVolume && inheritedVolume !== 'protoplast';
-    const boundNeuter = /^es /u.test(input) && !ambiguousVolume && inheritedGender === 'neuter';
+  if (field === 'volume' && inheritedVolume && /\b(?:sie|es|er|ihr|ihre)\b/u.test(input)) {
+    const boundPossessive = /\bihr volumen\b/u.test(input) && !ambiguousVolume && inheritedVolume !== 'protoplast';
+    const boundNeuter = /\bes\b/u.test(input) && !ambiguousVolume && inheritedGender === 'neuter';
     if (!boundPossessive && !boundNeuter) return null;
   }
   let activeVolume = inheritedVolume ?? 'vacuole';
@@ -144,6 +144,13 @@ export function classifyM602Relation(original: string, field: RelationField): Re
   if (punctuation.length > 3) return unclear;
   text = text.slice(0, text.length - punctuation.length).trim().replace(/, danke$/u, '');
   text = text.replace(/^(?:vielleicht|vermutlich|wahrscheinlich|wohl|eventuell|ich denke|ich glaube|ich vermute),? /u, '');
+  // Historical grammar only: a multi-object pronoun is unresolved regardless
+  // of clause order, inversion, temporal filler, correction or normalization.
+  // Do not certify one antecedent merely because it was visited last.
+  if (field === 'volume' && /\b(?:es|sie|er|ihr|ihre|ihren|ihrer)\b/u.test(text)) {
+    const objects = new Set((text.match(/\b(?:vakuolenvolumen|vakuole|zentralvakuole|vakuolenraum|zellwand|protoplast)\b/gu) ?? []).map(v => volumeReferent(v)));
+    if (objects.size > 1) return unclear;
+  }
   function parse(value: string, depth: number, inheritedVolume?: VolumeReferent, inheritedGender?: VolumeMeaning['gender']): RelationDecision {
     if (depth > 4) return unclear;
     value = value.trim();

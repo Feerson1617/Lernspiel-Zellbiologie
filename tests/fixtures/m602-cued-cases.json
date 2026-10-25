@@ -1,0 +1,793 @@
+[
+  {
+    "id": "CUED-001",
+    "field": "direction",
+    "group": "valid",
+    "text": "nach au\u00dfen",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-002",
+    "field": "direction",
+    "group": "valid",
+    "text": "hinaus",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-003",
+    "field": "direction",
+    "group": "valid",
+    "text": "raus",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-004",
+    "field": "direction",
+    "group": "valid",
+    "text": "ausw\u00e4rts",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-005",
+    "field": "direction",
+    "group": "valid",
+    "text": "nach drau\u00dfen",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-006",
+    "field": "direction",
+    "group": "valid",
+    "text": "aus der Zelle",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-007",
+    "field": "direction",
+    "group": "valid",
+    "text": "aus dem Zellinneren",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-008",
+    "field": "direction",
+    "group": "valid",
+    "text": "aus dem Cytosol in den Au\u00dfenraum",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-009",
+    "field": "direction",
+    "group": "valid",
+    "text": "vom Cytosol in die Au\u00dfenl\u00f6sung",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-010",
+    "field": "direction",
+    "group": "valid",
+    "text": "vom Zellinneren in die Umgebung",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-011",
+    "field": "direction",
+    "group": "valid",
+    "text": "in den Au\u00dfenraum",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-012",
+    "field": "direction",
+    "group": "valid",
+    "text": "ins Au\u00dfenmedium",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-013",
+    "field": "direction",
+    "group": "valid",
+    "text": "Cytosol \u2192 Au\u00dfenraum",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-014",
+    "field": "direction",
+    "group": "valid",
+    "text": "Zelle \u2192 Au\u00dfenl\u00f6sung",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-015",
+    "field": "direction",
+    "group": "valid",
+    "text": "netto nach au\u00dfen",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-016",
+    "field": "direction",
+    "group": "valid",
+    "text": "vermutlich nach au\u00dfen",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-017",
+    "field": "direction",
+    "group": "valid",
+    "text": "vielleicht hinaus",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-018",
+    "field": "direction",
+    "group": "valid",
+    "text": "ich denke, aus der Zelle",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-019",
+    "field": "direction",
+    "group": "valid",
+    "text": "NACH AUSSEN",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-020",
+    "field": "direction",
+    "group": "valid",
+    "text": "  nach\u00a0au\u00dfen.  ",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-021",
+    "field": "direction",
+    "group": "valid",
+    "text": "aus der Zelle heraus",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-022",
+    "field": "direction",
+    "group": "valid",
+    "text": "aus dem Zellinneren in das Au\u00dfenmedium",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-023",
+    "field": "direction",
+    "group": "valid",
+    "text": "vom Cytosol in die umgebende L\u00f6sung",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-024",
+    "field": "direction",
+    "group": "valid",
+    "text": "wahrscheinlich ausw\u00e4rts",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-025",
+    "field": "volume",
+    "group": "valid",
+    "text": "nimmt ab",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-026",
+    "field": "volume",
+    "group": "valid",
+    "text": "wird kleiner",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-027",
+    "field": "volume",
+    "group": "valid",
+    "text": "schrumpft",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-028",
+    "field": "volume",
+    "group": "valid",
+    "text": "verkleinert sich",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-029",
+    "field": "volume",
+    "group": "valid",
+    "text": "sinkt",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-030",
+    "field": "volume",
+    "group": "valid",
+    "text": "kleiner",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-031",
+    "field": "volume",
+    "group": "valid",
+    "text": "weniger",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-032",
+    "field": "volume",
+    "group": "valid",
+    "text": "verringert sich",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-033",
+    "field": "volume",
+    "group": "valid",
+    "text": "vermindert sich",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-034",
+    "field": "volume",
+    "group": "valid",
+    "text": "reduziert sich",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-035",
+    "field": "volume",
+    "group": "valid",
+    "text": "wird geringer",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-036",
+    "field": "volume",
+    "group": "valid",
+    "text": "nimmt an Volumen ab",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-037",
+    "field": "volume",
+    "group": "valid",
+    "text": "verliert Volumen",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-038",
+    "field": "volume",
+    "group": "valid",
+    "text": "Volumenabnahme",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-039",
+    "field": "volume",
+    "group": "valid",
+    "text": "Abnahme",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-040",
+    "field": "volume",
+    "group": "valid",
+    "text": "abnehmend",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-041",
+    "field": "volume",
+    "group": "valid",
+    "text": "vermutlich kleiner",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-042",
+    "field": "volume",
+    "group": "valid",
+    "text": "vielleicht nimmt ab",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-043",
+    "field": "volume",
+    "group": "valid",
+    "text": "ich glaube, schrumpft",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-044",
+    "field": "volume",
+    "group": "valid",
+    "text": "NIMMT AB",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-045",
+    "field": "volume",
+    "group": "valid",
+    "text": "  wird\nkleiner.  ",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-046",
+    "field": "volume",
+    "group": "valid",
+    "text": "verliert an Volumen",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-047",
+    "field": "volume",
+    "group": "valid",
+    "text": "geht zur\u00fcck",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-048",
+    "field": "volume",
+    "group": "valid",
+    "text": "wahrscheinlich sinkt",
+    "expected": "correct"
+  },
+  {
+    "id": "CUED-049",
+    "field": "direction",
+    "group": "wrong",
+    "text": "nach innen",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-050",
+    "field": "direction",
+    "group": "wrong",
+    "text": "hinein",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-051",
+    "field": "direction",
+    "group": "wrong",
+    "text": "rein",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-052",
+    "field": "direction",
+    "group": "wrong",
+    "text": "einw\u00e4rts",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-053",
+    "field": "direction",
+    "group": "wrong",
+    "text": "in die Zelle",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-054",
+    "field": "direction",
+    "group": "wrong",
+    "text": "vom Au\u00dfenraum in das Cytosol",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-055",
+    "field": "direction",
+    "group": "wrong",
+    "text": "Au\u00dfenraum \u2192 Cytosol",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-056",
+    "field": "direction",
+    "group": "wrong",
+    "text": "kein Nettotransport",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-057",
+    "field": "direction",
+    "group": "wrong",
+    "text": "kein Nettostrom",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-058",
+    "field": "direction",
+    "group": "wrong",
+    "text": "netto kein Wassertransport",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-059",
+    "field": "direction",
+    "group": "wrong",
+    "text": "nicht nach au\u00dfen",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-060",
+    "field": "direction",
+    "group": "wrong",
+    "text": "nach au\u00dfen und nach innen",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-061",
+    "field": "volume",
+    "group": "wrong",
+    "text": "nimmt zu",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-062",
+    "field": "volume",
+    "group": "wrong",
+    "text": "wird gr\u00f6\u00dfer",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-063",
+    "field": "volume",
+    "group": "wrong",
+    "text": "gr\u00f6\u00dfer",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-064",
+    "field": "volume",
+    "group": "wrong",
+    "text": "mehr",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-065",
+    "field": "volume",
+    "group": "wrong",
+    "text": "w\u00e4chst",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-066",
+    "field": "volume",
+    "group": "wrong",
+    "text": "steigt",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-067",
+    "field": "volume",
+    "group": "wrong",
+    "text": "vergr\u00f6\u00dfert sich",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-068",
+    "field": "volume",
+    "group": "wrong",
+    "text": "bleibt gleich",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-069",
+    "field": "volume",
+    "group": "wrong",
+    "text": "gleich",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-070",
+    "field": "volume",
+    "group": "wrong",
+    "text": "bleibt konstant",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-071",
+    "field": "volume",
+    "group": "wrong",
+    "text": "nicht nimmt ab",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-072",
+    "field": "volume",
+    "group": "wrong",
+    "text": "nimmt ab und nimmt zu",
+    "expected": "incorrect"
+  },
+  {
+    "id": "CUED-073",
+    "field": "direction",
+    "group": "partial",
+    "text": "in beide Richtungen",
+    "expected": "partial"
+  },
+  {
+    "id": "CUED-074",
+    "field": "direction",
+    "group": "partial",
+    "text": "hin und her",
+    "expected": "partial"
+  },
+  {
+    "id": "CUED-075",
+    "field": "direction",
+    "group": "partial",
+    "text": "bewegt sich",
+    "expected": "partial"
+  },
+  {
+    "id": "CUED-076",
+    "field": "direction",
+    "group": "partial",
+    "text": "Wasserbewegung",
+    "expected": "partial"
+  },
+  {
+    "id": "CUED-077",
+    "field": "direction",
+    "group": "partial",
+    "text": "aus der Vakuole in das Cytosol",
+    "expected": "partial"
+  },
+  {
+    "id": "CUED-078",
+    "field": "direction",
+    "group": "partial",
+    "text": "nicht nach innen",
+    "expected": "partial"
+  },
+  {
+    "id": "CUED-079",
+    "field": "volume",
+    "group": "partial",
+    "text": "ver\u00e4ndert sich",
+    "expected": "partial"
+  },
+  {
+    "id": "CUED-080",
+    "field": "volume",
+    "group": "partial",
+    "text": "\u00e4ndert sich",
+    "expected": "partial"
+  },
+  {
+    "id": "CUED-081",
+    "field": "volume",
+    "group": "partial",
+    "text": "Ver\u00e4nderung",
+    "expected": "partial"
+  },
+  {
+    "id": "CUED-082",
+    "field": "volume",
+    "group": "partial",
+    "text": "Volumen\u00e4nderung",
+    "expected": "partial"
+  },
+  {
+    "id": "CUED-083",
+    "field": "volume",
+    "group": "partial",
+    "text": "nicht nimmt zu",
+    "expected": "partial"
+  },
+  {
+    "id": "CUED-084",
+    "field": "direction",
+    "group": "scope",
+    "text": "Wasser flie\u00dft netto nach au\u00dfen.",
+    "expected": "clarify"
+  },
+  {
+    "id": "CUED-085",
+    "field": "direction",
+    "group": "scope",
+    "text": "Die Zelle verliert netto Wasser an die umgebende L\u00f6sung.",
+    "expected": "clarify"
+  },
+  {
+    "id": "CUED-086",
+    "field": "direction",
+    "group": "scope",
+    "text": "nach au\u00dfen \u00fcber den Tonoplasten",
+    "expected": "clarify"
+  },
+  {
+    "id": "CUED-087",
+    "field": "direction",
+    "group": "scope",
+    "text": "nach au\u00dfen sp\u00e4ter",
+    "expected": "clarify"
+  },
+  {
+    "id": "CUED-088",
+    "field": "direction",
+    "group": "scope",
+    "text": "nach au\u00dfen und ATP pumpt Wasser",
+    "expected": "clarify"
+  },
+  {
+    "id": "CUED-089",
+    "field": "direction",
+    "group": "scope",
+    "text": "nach au\u00dfen oder nach innen",
+    "expected": "clarify"
+  },
+  {
+    "id": "CUED-090",
+    "field": "direction",
+    "group": "scope",
+    "text": "sie flie\u00dft hinaus",
+    "expected": "clarify"
+  },
+  {
+    "id": "CUED-091",
+    "field": "direction",
+    "group": "scope",
+    "text": "alle nach au\u00dfen",
+    "expected": "clarify"
+  },
+  {
+    "id": "CUED-092",
+    "field": "direction",
+    "group": "scope",
+    "text": "nach au\u00dfen unbekannt",
+    "expected": "clarify"
+  },
+  {
+    "id": "CUED-093",
+    "field": "direction",
+    "group": "scope",
+    "text": "nach au\u00dfen und nicht",
+    "expected": "clarify"
+  },
+  {
+    "id": "CUED-094",
+    "field": "direction",
+    "group": "scope",
+    "text": "nach innen, weil Zucker Wasser dr\u00fcckt",
+    "expected": "clarify"
+  },
+  {
+    "id": "CUED-095",
+    "field": "volume",
+    "group": "scope",
+    "text": "Die Vakuole schrumpft.",
+    "expected": "clarify"
+  },
+  {
+    "id": "CUED-096",
+    "field": "volume",
+    "group": "scope",
+    "text": "Die Zentralvakuole verliert an Volumen.",
+    "expected": "clarify"
+  },
+  {
+    "id": "CUED-097",
+    "field": "volume",
+    "group": "scope",
+    "text": "Die Zellwand schrumpft.",
+    "expected": "clarify"
+  },
+  {
+    "id": "CUED-098",
+    "field": "volume",
+    "group": "scope",
+    "text": "Der Protoplast wird kleiner.",
+    "expected": "clarify"
+  },
+  {
+    "id": "CUED-099",
+    "field": "volume",
+    "group": "scope",
+    "text": "sie wird kleiner",
+    "expected": "clarify"
+  },
+  {
+    "id": "CUED-100",
+    "field": "volume",
+    "group": "scope",
+    "text": "jetzt wird es kleiner",
+    "expected": "clarify"
+  },
+  {
+    "id": "CUED-101",
+    "field": "volume",
+    "group": "scope",
+    "text": "nimmt ab sp\u00e4ter",
+    "expected": "clarify"
+  },
+  {
+    "id": "CUED-102",
+    "field": "volume",
+    "group": "scope",
+    "text": "nimmt ab und Magie",
+    "expected": "clarify"
+  },
+  {
+    "id": "CUED-103",
+    "field": "volume",
+    "group": "scope",
+    "text": "kleiner oder gr\u00f6\u00dfer",
+    "expected": "clarify"
+  },
+  {
+    "id": "CUED-104",
+    "field": "volume",
+    "group": "scope",
+    "text": "nicht nicht kleiner",
+    "expected": "clarify"
+  },
+  {
+    "id": "CUED-105",
+    "field": "volume",
+    "group": "scope",
+    "text": "Die Vakuole nimmt zu.",
+    "expected": "clarify"
+  },
+  {
+    "id": "CUED-106",
+    "field": "direction",
+    "group": "empty",
+    "text": "",
+    "expected": "empty"
+  },
+  {
+    "id": "CUED-107",
+    "field": "direction",
+    "group": "empty",
+    "text": "  ",
+    "expected": "empty"
+  },
+  {
+    "id": "CUED-108",
+    "field": "volume",
+    "group": "empty",
+    "text": "",
+    "expected": "empty"
+  },
+  {
+    "id": "CUED-109",
+    "field": "volume",
+    "group": "empty",
+    "text": "\n",
+    "expected": "empty"
+  },
+  {
+    "id": "CUED-110",
+    "field": "direction",
+    "group": "technical",
+    "text": "nach\u200bau\u00dfen",
+    "expected": "technical"
+  },
+  {
+    "id": "CUED-111",
+    "field": "direction",
+    "group": "technical",
+    "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "expected": "technical"
+  },
+  {
+    "id": "CUED-112",
+    "field": "volume",
+    "group": "technical",
+    "text": "nimmt\u0000ab",
+    "expected": "technical"
+  },
+  {
+    "id": "CUED-113",
+    "field": "volume",
+    "group": "technical",
+    "text": "\ud800",
+    "expected": "technical"
+  }
+]

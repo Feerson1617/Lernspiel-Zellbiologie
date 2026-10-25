@@ -35,7 +35,7 @@ if (references.length < 3 || references.some((file) => !published.includes(file)
   throw new Error('The built page references missing assets.');
 }
 for (const file of published.filter((path) => /\.(?:js|css|html)$/.test(path))) {
-  if (/sourceMappingURL|reference-fixtures|model-vectors|spec\/tasks|naming-input\/1\.0\.0|naming-term|Interne Benennungsprobe|m602-response\/1\.0\.0|p02c-cases|INTERNE P02c-BEDIENPROBE/.test(readFileSync(join(dist, file), 'utf8'))) {
+  if (/sourceMappingURL|reference-fixtures|model-vectors|spec\/tasks|naming-input\/1\.0\.0|naming-term|Interne Benennungsprobe|m602-response\/1\.0\.0|m602-cued-relations\/1\.0\.0|m602-cued-cases|p02c-cases|INTERNE P02c-BEDIENPROBE/.test(readFileSync(join(dist, file), 'utf8'))) {
     throw new Error('The build contains source maps or editorial reference data.');
   }
 }

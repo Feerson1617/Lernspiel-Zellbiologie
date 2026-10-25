@@ -1,0 +1,17 @@
+{
+  "frozenAt": "2026-10-25T10:55:48.484684+00:00",
+  "sourceHead": "7d6c657f61d53bc3d5e5e4a08343a9141bc8da28",
+  "independentAcceptance": false,
+  "origin": "Own matrix derived from the authorized slot scope and public M6.02 materials, before any new classifier execution. R4 source documents/corpora remain outside the repository. R4 ZIP not yet available.",
+  "files": {
+    "tests/fixtures/m602-cued-cases.json": "5aa47c00fe549fd42df6a13ab82ea2d8693f5b1a87d54e4fb1052bed4bee44be"
+  },
+  "counts": {
+    "direction": 57,
+    "volume": 56
+  },
+  "validDenominators": {
+    "direction": 24,
+    "volume": 24
+  }
+}

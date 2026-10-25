@@ -1,5 +1,15 @@
 # Zelllabor 11 – Die Zelle erforschen
 
+## Aktueller Entwicklungsstand in PR7
+
+P02c führt nach ausdrücklicher Fachentscheidung die getrennt versionierten kurzen
+Relationsfelder für M6.02/C02/C03 ein. Vertrag und Grenze:
+[cued 1.0.0](review/m602-cued-relations-1.0.0.md),
+[Prüfbericht](qa/P02c-Cued.md). `npm run report:m602-cued` prüft den aktuellen
+Vertrag; die R2/R3-Satzberichte bleiben separate historische offene Befunde.
+Interne Probe: `mountM602CuedLab`, keine öffentliche Mission oder Unterrichtsfreigabe.
+Die folgenden älteren Entwicklungsnotizen sind historische Stände.
+
 P00 bis P02c: technisches Fundament, stabile Identitäten, typisierte Metadaten,
 unveränderliche Aufgabenkontexte, explizite SI-Einheitenumrechnungen und lokale
 Fortschrittsverträge und begrenzte Fachkorrektoren für Z1.02 und M6.02/C01–C03.

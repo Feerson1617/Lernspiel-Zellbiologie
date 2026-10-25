@@ -3,7 +3,7 @@ import { fileURLToPath } from 'node:url';
 import { build } from 'vite';
 
 /** In-memory library build with the production runtime-import guard enabled. */
-export async function buildDomainModule(): Promise<string> {
+export async function buildDomainModule(cuedOnly = false): Promise<string> {
   const root = fileURLToPath(new URL('../..', import.meta.url));
   const entry = 'p01b-domain-browser-test';
   const result = await build({
@@ -13,7 +13,14 @@ export async function buildDomainModule(): Promise<string> {
       name: 'domain-browser-test-entry',
       resolveId(id) { if (id === entry || id === join(root, entry)) return `\0${entry}`; },
       load(id) {
-        if (id === `\0${entry}`) return [
+        if (id === `\0${entry}`) return (cuedOnly ? [
+          `export * from ${JSON.stringify(join(root, 'src/domain/task-context.ts'))};`,
+          `export * from ${JSON.stringify(join(root, 'src/domain/progress.ts'))};`,
+          `export * from ${JSON.stringify(join(root, 'src/domain/m602-cued-contract.ts'))};`,
+          `export { evaluateM602Cued, supportsM602CuedContext } from ${JSON.stringify(join(root, 'src/assessment/m602-cued.ts'))};`,
+          `export { createM602CuedSession } from ${JSON.stringify(join(root, 'src/application/m602-session.ts'))};`,
+          `export { mountM602CuedLab } from ${JSON.stringify(join(root, 'src/ui/m602-lab.ts'))};`,
+        ] : [
           `export * from ${JSON.stringify(join(root, 'src/domain/task-context.ts'))};`,
           `export * from ${JSON.stringify(join(root, 'src/domain/units.ts'))};`,
           `export * from ${JSON.stringify(join(root, 'src/domain/progress.ts'))};`,
@@ -33,7 +40,7 @@ export async function buildDomainModule(): Promise<string> {
           `export * from ${JSON.stringify(join(root, 'src/assessment/m602.ts'))};`,
           `export * from ${JSON.stringify(join(root, 'src/application/m602-session.ts'))};`,
           `export * from ${JSON.stringify(join(root, 'src/ui/m602-lab.ts'))};`,
-        ].join('\n');
+        ]).join('\n');
       },
     }],
     build: { write: false, lib: { entry, formats: ['es'] } },

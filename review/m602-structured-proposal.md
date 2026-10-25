@@ -1,3 +1,10 @@
+> Historische Entscheidungsvorlage aus R3. Die nachfolgende ausdrückliche
+> Nutzerentscheidung autorisiert inzwischen die begrenzte Umsetzung C02/C03.
+> Der vor Implementierung geschlossene Nachfolgevertrag steht in
+> [m602-cued-relations-1.0.0.md](m602-cued-relations-1.0.0.md).
+> Die nachstehenden damaligen Genehmigungsvorbehalte sind historische Aussagen,
+> keine aktuelle Rücknahme des Nutzerauftrags. Unterrichtsfreigabe bleibt offen.
+
 # Entscheidungsvorlage C02/C03: begrenzte Relationsantwort
 
 **Zur ausdrücklichen fachlichen Genehmigung; nicht implementiert.**

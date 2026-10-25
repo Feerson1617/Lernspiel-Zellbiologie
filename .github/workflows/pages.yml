@@ -142,8 +142,8 @@ jobs:
             qa/generated/webkit-*.json
             test-results/**/*.png
 
-  relations_readiness:
-    name: Relations recognition readiness (R11/R2/R3, blocks release)
+  current_relations_contract:
+    name: Current M6.02 cued contract 1.0.0
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
@@ -155,17 +155,14 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
-      - run: npm run report:m602-r2
-      - run: npm run report:m602-r3
-        if: always()
-      - name: Retain complete relation outcomes, including unmet expectations
+      - run: npm run report:m602-cued
+      - name: Retain current outcomes, including any unmet expectations
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: relations-readiness
+          name: current-cued-contract
           path: |
-            qa/generated/p02c-r2-results.json
-            qa/generated/p02c-r3-results.json
+            qa/generated/m602-cued-results.json
 
   deploy:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
