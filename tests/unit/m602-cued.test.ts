@@ -163,3 +163,51 @@ it('distinguishes a valid prediction workflow phase from an unsupported biologic
  const prediction=m602Context({phase:'predict'}),o=evaluateM602({...m602Input(),context:prediction},M602_SUPPORT);
  expect(o.overallStatus).toBe('correct');expect(isResultForContext(o.fullResult,m602Context())).toBe(false);
 });
+
+// Own code-guided crossprobe fixed before execution. No external review corpus
+// is imported; these names have no biological meaning and are not a blacklist.
+const ownKeyCases: { field: RelationField; text: string; status: string; reason: string }[] = [];
+for (const name of ['constructor', '__proto__', 'toString', 'hasOwnProperty', 'valueOf', 'isPrototypeOf']) {
+  for (const field of ['direction', 'volume'] as const) for (const prefix of ['', 'netto ', 'nicht ']) {
+    ownKeyCases.push({ field, text: prefix + name, status: 'clarify', reason: 'scope' });
+  }
+}
+for (const [field, good] of [['direction', 'nach außen'], ['volume', 'nimmt ab']] as const) {
+  for (const text of [`constructor und ${good}`, `${good} und __proto__`, 'constructor unbekannt', 'unbekannt constructor']) {
+    ownKeyCases.push({ field, text, status: 'clarify', reason: 'scope' });
+  }
+}
+for (const text of ['constructor → Außenraum', 'Zellinneres → constructor', '__proto__ → Außenraum', 'Zellinneres → __proto__']) {
+  ownKeyCases.push({ field: 'direction', text, status: 'clarify', reason: 'scope' });
+}
+for (const [field, text, status, reason] of [
+  ['direction', 'nach außen', 'correct', 'out'], ['direction', 'nach innen', 'incorrect', 'in'],
+  ['volume', 'nimmt ab', 'correct', 'down'], ['volume', 'nimmt zu', 'incorrect', 'up'],
+] as const) ownKeyCases.push({ field, text, status, reason });
+for (const c of ownKeyCases) it(`own-key ${c.field}: ${c.text} → ${c.status}/${c.reason}`, () => {
+  const input = m602Input({ [c.field]: c.text }), o = evaluateM602(input, M602_SUPPORT);
+  expect(classifyM602CuedRelation(c.text, c.field)).toEqual({ status: c.status, reason: c.reason });
+  expect(o.fields[c.field].result.status).toBe(c.status);
+  expect(o.fields[c.field].result.criteria[0]!.reasonCode).toBe(c.reason);
+  expect(o.overallStatus).toBe(c.status);
+  expect(o.fields[c.field].result.criteria[0]!.evidence).toEqual([{ kind: 'input_span', value: c.text, start: 0, end: c.text.length }]);
+  expect(o.notAssessed).toEqual(c.status === 'clarify'
+    ? [{ field: c.field, index: null, status: 'not_assessed', value: c.text, start: 0, end: c.text.length }] : []);
+  const s = session(), current = s.submit(s.makeSubmission(input.answers, []));
+  if (c.status === 'correct') expect(Object.keys(s.record(current))).toHaveLength(8);
+  else expect(() => s.record(current)).toThrow('INCOMPLETE_M602');
+});
+it('own-key repair preserves explicit malformed contract and technical context rejection', () => {
+  const input = m602Input({ volume: 'constructor' });
+  expect(() => evaluateM602({ ...input, answers: { ...input.answers, volume: null } }, M602_SUPPORT)).toThrow();
+  expect(() => evaluateM602({ ...input, context: { ...input.context, contextHash: 'forged' } }, M602_SUPPORT)).toThrow();
+  const invalid = evaluateM602({ ...input, context: m602Context({ modelState: { unsupported: true } }) }, M602_SUPPORT);
+  expect(invalid.overallStatus).toBe('technical');
+  expect(invalid.fields.volume.result.criteria[0]!.reasonCode).toBe('technical');
+  for (const field of ['direction', 'volume'] as const) {
+    const text = '🌱 constructor';
+    const o = evaluateM602(m602Input({ [field]: text }), M602_SUPPORT);
+    expect(o.fields[field].result.status).toBe('clarify');
+    expect(o.notAssessed).toContainEqual({ field, index: null, status: 'not_assessed', value: text, start: 0, end: 14 });
+  }
+});

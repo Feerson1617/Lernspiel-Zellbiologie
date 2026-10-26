@@ -141,3 +141,62 @@ for(const fault of ['denied','quota']as const)test(`current reload/new-ID histor
   const s=await page.evaluate(()=>(window as unknown as LabWindow).lab.session.getState());expect(s.history).toBe('history_unverified');
   for(const f of ['process','direction','volume'])await expect(page.getByRole('region',{name:`Bewertung ${f}`,exact:true})).toHaveAttribute('data-status','correct');
 });
+
+test('keeps unknown dictionary keys nontechnical, preserves raw evidence and permits self revision without a stale green', async ({ page, baseURL }, info) => {
+  const errors: string[] = [], foreign: string[] = [];
+  page.on('pageerror', e => errors.push(e.message));
+  page.on('request', r => { if (!r.url().startsWith(baseURL!)) foreign.push(r.url()); });
+  await open(page, baseURL!); await fill(page); await check(page);
+  const saved = async () => JSON.parse((await page.evaluate(() => localStorage.getItem('zelllabor11.progress.v1')))!);
+  let receipts = 1;
+  for (const field of ['direction', 'volume'] as const) {
+    const texts = ['constructor', '__proto__', `${field === 'volume' ? 'nicht' : 'netto'} constructor`, '__proto__ und __proto__', 'toString',
+      ...(field === 'direction' ? ['hasOwnProperty', 'constructor und nach außen', 'constructor unbekannt'] : ['unbekannt constructor'])];
+    for (const text of texts) {
+      const input = page.locator(`#m602-${field}`);
+      await input.focus(); await page.keyboard.press('ControlOrMeta+A'); await page.keyboard.type(text);
+      await expect(result(page)).not.toHaveAttribute('data-status', 'correct');
+      await check(page);
+      const panel = page.getByRole('region', { name: `Bewertung ${field}`, exact: true });
+      for (const region of [panel, result(page)]) {
+        await expect(region).toHaveAttribute('data-status', 'clarify');
+        await expect(region).toHaveAttribute('data-color', 'yellow');
+        await expect(region).toContainText('?');
+      }
+      await expect(panel).toContainText('kein Nachweis eines biologischen Fehlers');
+      await expect(panel).toContainText('Nächster Schritt'); await expect(panel).toContainText('Trage nur deine kurze');
+      await expect(result(page)).toContainText(`Nicht geprüft (not_assessed), ${field}: ${text}`);
+      await expect(result(page)).not.toContainText('Einreichung technisch nicht aktuell');
+      await expect(input).toHaveValue(text);
+      const state = await page.evaluate(() => (window as unknown as LabWindow).lab.session.getState()), o = state.latest!;
+      expect(o).toEqual(evaluateM602Cued(o.submission, o.fieldSupport));
+      expect(o.fields[field].result.criteria[0]!.reasonCode).toBe('scope');
+      expect(o.notAssessed).toEqual([{ field, index: null, status: 'not_assessed', value: text, start: 0, end: text.length }]);
+      expect(o.fields[field].result.criteria[0]!.evidence).toEqual([{ kind: 'input_span', value: text, start: 0, end: text.length }]);
+      expect((await saved()).attempts).toHaveLength(receipts);
+      if (text === 'constructor') await panel.screenshot({ path: info.outputPath(`r6-unknown-${field}.png`) });
+      await page.getByRole('button', { name: 'Antwort selbst überarbeiten', exact: true }).click();
+      await expect(input).toBeFocused();
+      await input.fill(m602CuedInput().answers[field]); await check(page);
+      await expect(result(page)).toHaveAttribute('data-status', 'correct');
+      const revised = await page.evaluate(() => (window as unknown as LabWindow).lab.session.getState());
+      expect(revised.latest!.submission.predecessorId).toBe(o.submission.attemptId);
+      expect(revised.latest!.fieldSupport[field].origin).toBe('typed');
+      expect(revised.latest!.support.assistance).toBe('independent');
+      expect((await saved()).attempts).toHaveLength(++receipts);
+    }
+  }
+  await page.getByRole('button', { name: 'Hinweis: Nettorichtung', exact: true }).click();
+  await page.locator('#m602-direction').fill('constructor'); await check(page);
+  await expect(result(page)).toHaveAttribute('data-status', 'clarify');
+  await page.getByRole('button', { name: 'Antwort selbst überarbeiten', exact: true }).click();
+  await page.locator('#m602-direction').fill('nach außen'); await check(page);
+  const helped = await page.evaluate(() => (window as unknown as LabWindow).lab.session.getState());
+  expect(helped.latest!.support.assistance).toBe('hint'); expect(helped.latest!.support.history).toBe('verified');
+  await expect(result(page)).toHaveAttribute('data-status', 'correct');
+  const stored = await saved(); expect(stored.attempts).toHaveLength(++receipts);
+  const keys = ['attemptId', 'taskId', 'instanceId', 'taskVersion', 'rubricVersion', 'modelVersion', 'status', 'assistance'].sort();
+  for (const attempt of stored.attempts) expect(Object.keys(attempt).sort()).toEqual(keys);
+  expect(JSON.stringify(stored)).not.toMatch(/constructor|__proto__|toString|contextHash|answers|events/);
+  expect(errors).toEqual([]); expect(foreign).toEqual([]);
+});

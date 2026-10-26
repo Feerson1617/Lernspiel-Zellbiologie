@@ -3,6 +3,10 @@ import { isSupportedText, normalizeWord, MAX_ANSWER_LENGTH } from './text.ts';
 import type { RelationField, RelationDecision } from './m602-relations.ts';
 
 const unclear: RelationDecision = Object.freeze({ status: 'clarify', reason: 'scope' });
+// Student text may name inherited properties; only declared entries carry meaning.
+function ownValue<T>(lexicon: Readonly<Record<string, T>>, key: string): T | undefined {
+  return Object.hasOwn(lexicon, key) ? lexicon[key] : undefined;
+}
 const dirs: Readonly<Record<string, string>> = Object.fromEntries([
   ...['nach aussen', 'hinaus', 'raus', 'auswaerts', 'nach draussen'].map(x => [x, 'out']),
   ...['nach innen', 'hinein', 'rein', 'einwaerts', 'nach drinnen'].map(x => [x, 'in']),
@@ -22,7 +26,7 @@ const rooms: Readonly<Record<string, Room>> = Object.fromEntries([
   ...['aussenraum', 'aussenloesung', 'aussenmedium', 'umgebung', 'umgebende loesung', 'umgebenden loesung'].map(x => [x, 'external' as const]),
   ...['vakuole', 'vakuolenraum'].map(x => [x, 'vacuole' as const]),
 ]);
-const room = (x: string): Room | undefined => rooms[x.replace(/^(?:der|die|das|den|dem) /u, '')];
+const room = (x: string): Room | undefined => ownValue(rooms, x.replace(/^(?:der|die|das|den|dem) /u, ''));
 function path(value: string): string | null {
   const text = value.replace(/^vom /u, 'von dem ').replace(/^ins /u, 'in das ').replace(/ ins /u, ' in das ');
   let from: Room | undefined, to: Room | undefined;
@@ -51,9 +55,10 @@ const negatedChanges: Readonly<Record<string, Meaning>> = Object.fromEntries(Obj
   }));
 function meaning(text: string, field: RelationField): Meaning | null {
   let body = text.replace(/^netto /u, ''), negative = false;
-  if (field === 'volume' && negatedChanges[body]) return negatedChanges[body]!;
+  const negated = field === 'volume' ? ownValue(negatedChanges, body) : undefined;
+  if (negated) return negated;
   if (body.startsWith('nicht ')) { body = body.slice(6); negative = true; }
-  const tag = field === 'volume' ? changes[body] : dirs[body] ?? path(body);
+  const tag = field === 'volume' ? ownValue(changes, body) : ownValue(dirs, body) ?? path(body);
   return tag ? { tag, negative } : null;
 }
 function decision(m: Meaning): RelationDecision {

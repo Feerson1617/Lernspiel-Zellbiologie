@@ -318,7 +318,8 @@
     "qa/m602-cued-r5-freeze.json",
     "tests/fixtures/m602-cued-r5-own.json",
     "tests/unit/m602-cued-r5.test.ts",
-    "qa/P02c-Cued-R5.md"
+    "qa/P02c-Cued-R5.md",
+    "qa/P02c-Cued-R6.md"
   ],
   "distPatterns": [
     "^index\\.html$",
