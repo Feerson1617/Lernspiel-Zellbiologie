@@ -5,7 +5,7 @@
  
    webkit:
 -    if: github.event_name == 'pull_request'
-     runs-on: macos-latest
+     runs-on: macos-15-intel
      steps:
        - uses: actions/checkout@v4
 @@ -113,7 +112,7 @@
