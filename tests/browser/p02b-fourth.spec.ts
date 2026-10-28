@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import { parityBlocks, assertParity } from '../helpers/parity-blocks.ts';
 import { buildDomainModule } from '../helpers/domain-bundle.ts';
 import { FOURTH_CASES, FOURTH_RETRACTION_CASES, executeFourth, acceptedFourth, FOURTH_VERSIONS, FOURTH_OSMOSIS_CONTEXT, FOURTH_TONOPLAST_CONTEXT } from '../helpers/p02b-fourth.ts';
 import type { TaskContext } from '../../src/domain/task-context.ts';
@@ -8,7 +9,7 @@ type API = typeof import('../../src/assessment/osmosis.ts') & typeof import('../
 let source: string;
 const cases = [...FOURTH_CASES, ...FOURTH_RETRACTION_CASES];
 test.beforeAll(async () => { source = await buildDomainModule(); });
-test('checks all 956 corpus inputs and 12 retraction diagnostics against Node in the actual guarded bundle', async ({ page, baseURL, browser }, info) => {
+for (const block of parityBlocks(cases, 968)) test(`checks original positions ${block.start}–${block.start + block.cases.length - 1} of 968 against Node`, async ({ page, baseURL, browser }, info) => {
   const errors: string[] = [], external: string[] = [];
   page.on('pageerror', error => errors.push(error.message));
   page.on('request', request => { if (!request.url().startsWith(baseURL!)) external.push(request.url()); });
@@ -24,23 +25,20 @@ test('checks all 956 corpus inputs and 12 retraction diagnostics against Node in
       const result = (f.field === 'osmosis' ? oe : te).evaluate(context, { fieldId: f.field === 'osmosis' ? 'process' : 'term', text: f.text }, 'independent');
       return { result, feedback: (f.field === 'osmosis' ? api.getOsmosisFeedback : api.getTonoplastFeedback)(result.feedbackCode), bound: api.isResultForContext(result, context), display: api.STATUS_PRESENTATION[result.status] };
     });
-  }, { url: `${baseURL}fourth-revision.mjs`, versions: FOURTH_VERSIONS, osmosis: JSON.stringify(FOURTH_OSMOSIS_CONTEXT), tonoplast: JSON.stringify(FOURTH_TONOPLAST_CONTEXT), cases });
-  expect(results).toHaveLength(968);
+  }, { url: `${baseURL}fourth-revision.mjs`, versions: FOURTH_VERSIONS, osmosis: JSON.stringify(FOURTH_OSMOSIS_CONTEXT), tonoplast: JSON.stringify(FOURTH_TONOPLAST_CONTEXT), cases: block.cases });
+  expect(results).toHaveLength(block.cases.length);
   const browserMs = performance.now() - browserStart;
   const nodeStart = performance.now();
-  for (const [i, f] of cases.entries()) {
+  for (const [i, f] of block.cases.entries()) {
     const actual = results[i]!;
     const node = executeFourth(f);
-    expect(actual.result, f.id).toEqual(node.result);
-    expect(acceptedFourth(f), f.id).toContain(actual.result.status);
-    expect(actual.bound).toBe(true);
-    expect(actual.feedback, f.id).toBe(node.feedback);
-    expect(actual.display.color).toBe(actual.result.status === 'correct' ? 'green' : actual.result.status === 'incorrect' ? 'red' : 'yellow');
-    expect(actual.display.symbol).toBeTruthy(); expect(actual.display.label).toBeTruthy();
-    for (const e of actual.result.criteria[0]!.evidence) if (e.kind === 'input_span') expect(f.text.slice(e.start, e.end)).toBe(e.value);
+    assertParity(actual, node, acceptedFourth(f), f.text, block.positions[i]!);
   }
-  await info.attach('runtime-parity-timing.json', { body: JSON.stringify({ file: info.file.split('/').at(-1), profile: info.project.name, engine: browser.version(), cases: cases.length, browserMs, nodeAndAssertionsMs: performance.now() - nodeStart }), contentType: 'application/json' });
+  await info.attach('runtime-parity-timing.json', { body: JSON.stringify({ file: info.file.split('/').at(-1), profile: info.project.name, engine: browser.version(), cases: block.cases.length, browserMs, nodeAndAssertionsMs: performance.now() - nodeStart }), contentType: 'application/json' });
   expect(errors).toEqual([]); expect(external).toEqual([]);
   expect(await page.evaluate(() => ({ ...localStorage }))).toEqual({ 'foreign-test-sentinel': 'preserve' });
   expect(await page.evaluate(() => Object.hasOwn(window, 'auditLeak'))).toBe(false);
+  // Only a fully completed block emits coverage; failed hooks/tests cannot
+  // silently supply evidence for the missing postconditions.
+  await info.attach('parity-coverage.json', { body: JSON.stringify({ source: info.file.split('/').at(-1), profile: info.project.name, total: cases.length, positions: block.positions }), contentType: 'application/json' });
 });

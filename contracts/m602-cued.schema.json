@@ -1,0 +1,745 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "M6.02 cued relations 1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contractVersion",
+    "submission",
+    "fields",
+    "fullResult",
+    "overallStatus",
+    "pendingCriteria",
+    "notAssessed",
+    "support",
+    "fieldSupport"
+  ],
+  "properties": {
+    "contractVersion": {
+      "const": "m602-cued-relations/1.0.0"
+    },
+    "submission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contractVersion",
+        "context",
+        "attemptId",
+        "revision",
+        "predecessorId",
+        "additionalStatements",
+        "answers"
+      ],
+      "properties": {
+        "contractVersion": {
+          "const": "m602-cued-relations/1.0.0"
+        },
+        "context": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "taskId",
+            "taskVersion",
+            "rubricVersion",
+            "contentVersion",
+            "modelVersion",
+            "instanceId",
+            "seed",
+            "phase",
+            "material",
+            "modelState",
+            "contextHash"
+          ],
+          "properties": {
+            "taskId": {
+              "const": "M6.02"
+            },
+            "taskVersion": {
+              "const": "M6.02@cued-relations-1"
+            },
+            "rubricVersion": {
+              "const": "M6.02.C01-C03@cued-relations-1"
+            },
+            "contentVersion": {
+              "const": "zelllabor11.m602-cued-content/1.0.0"
+            },
+            "modelVersion": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            },
+            "instanceId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            },
+            "seed": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            },
+            "phase": {
+              "enum": [
+                "predict",
+                "investigate",
+                "explain",
+                "transfer"
+              ]
+            },
+            "material": {
+              "type": "object"
+            },
+            "modelState": {
+              "type": "object"
+            },
+            "contextHash": {
+              "type": "string",
+              "pattern": "^sha256-v1:[a-f0-9]{64}$"
+            }
+          }
+        },
+        "attemptId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "predecessorId": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "additionalStatements": {
+          "type": "array",
+          "maxItems": 3,
+          "items": {
+            "type": "string"
+          }
+        },
+        "answers": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "process",
+            "direction",
+            "volume"
+          ],
+          "properties": {
+            "process": {
+              "type": "string"
+            },
+            "direction": {
+              "type": "string"
+            },
+            "volume": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "fields": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "process",
+        "direction",
+        "volume"
+      ],
+      "properties": {
+        "process": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "field",
+            "result",
+            "feedback"
+          ],
+          "properties": {
+            "field": {
+              "const": "process"
+            },
+            "result": {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/result"
+                },
+                {
+                  "properties": {
+                    "criteria": {
+                      "minItems": 1,
+                      "maxItems": 1,
+                      "items": {
+                        "properties": {
+                          "id": {
+                            "const": "M6.02.C01"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "feedback": {
+              "$ref": "#/$defs/feedback"
+            }
+          }
+        },
+        "direction": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "field",
+            "result",
+            "feedback"
+          ],
+          "properties": {
+            "field": {
+              "const": "direction"
+            },
+            "result": {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/result"
+                },
+                {
+                  "properties": {
+                    "criteria": {
+                      "minItems": 1,
+                      "maxItems": 1,
+                      "items": {
+                        "properties": {
+                          "id": {
+                            "const": "M6.02.C02"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "feedback": {
+              "$ref": "#/$defs/feedback"
+            }
+          }
+        },
+        "volume": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "field",
+            "result",
+            "feedback"
+          ],
+          "properties": {
+            "field": {
+              "const": "volume"
+            },
+            "result": {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/result"
+                },
+                {
+                  "properties": {
+                    "criteria": {
+                      "minItems": 1,
+                      "maxItems": 1,
+                      "items": {
+                        "properties": {
+                          "id": {
+                            "const": "M6.02.C03"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "feedback": {
+              "$ref": "#/$defs/feedback"
+            }
+          }
+        }
+      }
+    },
+    "fullResult": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/result"
+        },
+        {
+          "properties": {
+            "criteria": {
+              "minItems": 3,
+              "maxItems": 3,
+              "prefixItems": [
+                {
+                  "properties": {
+                    "id": {
+                      "const": "M6.02.C01"
+                    }
+                  }
+                },
+                {
+                  "properties": {
+                    "id": {
+                      "const": "M6.02.C02"
+                    }
+                  }
+                },
+                {
+                  "properties": {
+                    "id": {
+                      "const": "M6.02.C03"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "overallStatus": {
+      "enum": [
+        "correct",
+        "incorrect",
+        "partial",
+        "clarify",
+        "empty",
+        "technical"
+      ]
+    },
+    "pendingCriteria": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "M6.02.C01",
+          "M6.02.C02",
+          "M6.02.C03"
+        ]
+      }
+    },
+    "notAssessed": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "field",
+          "index",
+          "status",
+          "value",
+          "start",
+          "end"
+        ],
+        "properties": {
+          "field": {
+            "enum": [
+              "process",
+              "direction",
+              "volume",
+              "additionalStatements"
+            ]
+          },
+          "index": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 2
+              }
+            ]
+          },
+          "status": {
+            "const": "not_assessed"
+          },
+          "value": {
+            "type": "string"
+          },
+          "start": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "end": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "support": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assistance",
+        "history",
+        "events"
+      ],
+      "properties": {
+        "assistance": {
+          "enum": [
+            "independent",
+            "hint",
+            "wordbank",
+            "clarified",
+            "solution_viewed"
+          ]
+        },
+        "history": {
+          "enum": [
+            "verified",
+            "history_unverified"
+          ]
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "kind",
+              "contextHash"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 256
+              },
+              "kind": {
+                "enum": [
+                  "hint",
+                  "wordbank",
+                  "clarified",
+                  "solution_viewed"
+                ]
+              },
+              "contextHash": {
+                "type": "string",
+                "pattern": "^sha256-v1:[a-f0-9]{64}$"
+              }
+            }
+          }
+        }
+      }
+    },
+    "fieldSupport": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "process",
+        "direction",
+        "volume"
+      ],
+      "properties": {
+        "process": {
+          "$ref": "#/$defs/fieldSupport"
+        },
+        "direction": {
+          "$ref": "#/$defs/fieldSupport"
+        },
+        "volume": {
+          "$ref": "#/$defs/fieldSupport"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "result": {
+      "title": "EvaluationResult",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "taskId",
+        "taskVersion",
+        "rubricVersion",
+        "contextHash",
+        "status",
+        "criteria",
+        "unassessedRelevantText",
+        "assistance",
+        "feedbackCode"
+      ],
+      "properties": {
+        "taskId": {
+          "const": "M6.02"
+        },
+        "taskVersion": {
+          "const": "M6.02@cued-relations-1"
+        },
+        "rubricVersion": {
+          "const": "M6.02.C01-C03@cued-relations-1"
+        },
+        "contextHash": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "correct",
+            "incorrect",
+            "partial",
+            "clarify",
+            "empty",
+            "technical"
+          ]
+        },
+        "criteria": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "status",
+              "evidence",
+              "reasonCode"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "status": {
+                "enum": [
+                  "correct",
+                  "incorrect",
+                  "partial",
+                  "clarify",
+                  "empty",
+                  "technical"
+                ]
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "kind",
+                    "value"
+                  ],
+                  "properties": {
+                    "kind": {
+                      "enum": [
+                        "input_span",
+                        "option_id",
+                        "state_value"
+                      ]
+                    },
+                    "value": {
+                      "type": "string"
+                    },
+                    "start": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "end": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                }
+              },
+              "reasonCode": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "status": {
+                      "const": "incorrect"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "evidence": {
+                      "minItems": 1
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "unassessedRelevantText": {
+          "type": "boolean"
+        },
+        "assistance": {
+          "enum": [
+            "independent",
+            "hint",
+            "wordbank",
+            "clarified",
+            "solution_viewed"
+          ]
+        },
+        "feedbackCode": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "correct"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "unassessedRelevantText": {
+                "const": false
+              },
+              "criteria": {
+                "minItems": 1,
+                "items": {
+                  "properties": {
+                    "status": {
+                      "const": "correct"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "incorrect"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "criteria": {
+                "contains": {
+                  "properties": {
+                    "status": {
+                      "const": "incorrect"
+                    }
+                  },
+                  "required": [
+                    "status"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "feedback": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recognized",
+        "difference",
+        "next"
+      ],
+      "properties": {
+        "recognized": {
+          "type": "string",
+          "minLength": 1
+        },
+        "difference": {
+          "type": "string",
+          "minLength": 1
+        },
+        "next": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "fieldSupport": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assistance",
+        "history",
+        "origin",
+        "events"
+      ],
+      "properties": {
+        "assistance": {
+          "enum": [
+            "independent",
+            "hint",
+            "wordbank",
+            "clarified",
+            "solution_viewed"
+          ]
+        },
+        "history": {
+          "enum": [
+            "verified",
+            "history_unverified"
+          ]
+        },
+        "origin": {
+          "enum": [
+            "typed",
+            "wordbank_selection"
+          ]
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "kind",
+              "contextHash"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 256
+              },
+              "kind": {
+                "enum": [
+                  "hint",
+                  "wordbank",
+                  "clarified",
+                  "solution_viewed"
+                ]
+              },
+              "contextHash": {
+                "type": "string",
+                "pattern": "^sha256-v1:[a-f0-9]{64}$"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

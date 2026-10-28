@@ -1,0 +1,13 @@
+{
+  "frozenAtUTC": "2026-10-25T13:39:41.827276+00:00",
+  "independentAcceptance": false,
+  "origin": "Own source-informed counterprobe fixed before first new runtime execution, no claimed independent or natural pupil sample. Exact provided R5 corpus untouched and outside repository.",
+  "count": 33,
+  "sha256": "c3138b45104faaf966ba1105ed23bf3f34936397b144a1744875dce79e7caa42",
+  "literalControlsAlsoInR5": [
+    "OWN-R5-27"
+  ],
+  "files": {
+    "tests/fixtures/m602-cued-r5-own.json": "c3138b45104faaf966ba1105ed23bf3f34936397b144a1744875dce79e7caa42"
+  }
+}

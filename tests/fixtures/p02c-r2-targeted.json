@@ -1,0 +1,106 @@
+{
+  "declaredAtUTC": "2026-10-25T05:05:18.639Z",
+  "provenance": "Additional code-guided cases, distinct from blind frozen 180. Different membranes do not give a transmembrane influx-minus-efflux balance; their gross-rate comparison is not derivable from potentials alone. Yellow is required until relation is clarified, no green/red certification.",
+  "cases": [
+    {
+      "id": "X01",
+      "text": "Mehr Wasser fließt nach außen als aus der Vakuole in das Cytosol.",
+      "accepted": [
+        "clarify",
+        "partial"
+      ],
+      "field": "direction"
+    },
+    {
+      "id": "X02",
+      "text": "Es fließt mehr Wasser nach außen als aus der Vakuole in das Cytosol.",
+      "accepted": [
+        "clarify",
+        "partial"
+      ],
+      "field": "direction"
+    },
+    {
+      "id": "X03",
+      "text": "Mehr Wasser fließt nach innen als aus der Vakuole in das Cytosol.",
+      "accepted": [
+        "clarify",
+        "partial"
+      ],
+      "field": "direction"
+    },
+    {
+      "id": "X04",
+      "text": "Es fließt mehr Wasser nach innen als aus der Vakuole in das Cytosol.",
+      "accepted": [
+        "clarify",
+        "partial"
+      ],
+      "field": "direction"
+    },
+    {
+      "id": "X05",
+      "text": "Mehr Wasser fließt nach außen als nach innen.",
+      "accepted": [
+        "correct"
+      ],
+      "field": "direction"
+    },
+    {
+      "id": "X06",
+      "text": "Mehr Wasser fließt nach innen als nach außen.",
+      "accepted": [
+        "incorrect"
+      ],
+      "field": "direction"
+    },
+    {
+      "id": "X07",
+      "text": "Wasser fließt netto nach außen und nach innen.",
+      "accepted": [
+        "incorrect"
+      ],
+      "field": "direction"
+    },
+    {
+      "id": "X08",
+      "text": "Der Nettostrom geht nach außen und nach innen.",
+      "accepted": [
+        "incorrect"
+      ],
+      "field": "direction"
+    },
+    {
+      "id": "X09",
+      "text": "Osmose",
+      "accepted": [
+        "partial"
+      ],
+      "field": "direction"
+    },
+    {
+      "id": "X10",
+      "text": "Wasser bewegt sich",
+      "accepted": [
+        "partial"
+      ],
+      "field": "direction"
+    },
+    {
+      "id": "X11",
+      "text": "Wasser bewegt sich in beide Richtungen",
+      "accepted": [
+        "partial"
+      ],
+      "field": "direction"
+    },
+    {
+      "id": "X12",
+      "text": "Wasser fließt netto nach außen; einzelne Wassermoleküle gehen nach innen.",
+      "accepted": [
+        "correct"
+      ],
+      "field": "direction"
+    }
+  ]
+}

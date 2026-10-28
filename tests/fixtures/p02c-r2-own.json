@@ -1,0 +1,658 @@
+[
+  {
+    "id": "O001",
+    "field": "direction",
+    "text": "Wasser fließt netto aus dem Zellinneren in das Außenmedium.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O002",
+    "field": "direction",
+    "text": "Wasser fließt netto von der Zelle in den Außenraum.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O003",
+    "field": "direction",
+    "text": "Wasser fließt netto vom Cytosol nach draußen.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O004",
+    "field": "direction",
+    "text": "Wasser fließt netto aus der Pflanzenzelle heraus.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O005",
+    "field": "direction",
+    "text": "Das Wasser fließt netto aus dem Zellinneren in das Außenmedium.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O006",
+    "field": "direction",
+    "text": "Das Wasser fließt netto von der Zelle in den Außenraum.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O007",
+    "field": "direction",
+    "text": "Das Wasser fließt netto vom Cytosol nach draußen.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O008",
+    "field": "direction",
+    "text": "Das Wasser fließt netto aus der Pflanzenzelle heraus.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O009",
+    "field": "direction",
+    "text": "Der Nettowasserstrom fließt netto aus dem Zellinneren in das Außenmedium.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O010",
+    "field": "direction",
+    "text": "Der Nettowasserstrom fließt netto von der Zelle in den Außenraum.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O011",
+    "field": "direction",
+    "text": "Der Nettowasserstrom fließt netto vom Cytosol nach draußen.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O012",
+    "field": "direction",
+    "text": "Der Nettowasserstrom fließt netto aus der Pflanzenzelle heraus.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O013",
+    "field": "direction",
+    "text": "Die Nettowasserbewegung fließt netto aus dem Zellinneren in das Außenmedium.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O014",
+    "field": "direction",
+    "text": "Die Nettowasserbewegung fließt netto von der Zelle in den Außenraum.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O015",
+    "field": "direction",
+    "text": "Die Nettowasserbewegung fließt netto vom Cytosol nach draußen.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O016",
+    "field": "direction",
+    "text": "Die Nettowasserbewegung fließt netto aus der Pflanzenzelle heraus.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O017",
+    "field": "direction",
+    "text": "Im Moment fließt Wasser aus dem Cytosol nach außen.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O018",
+    "field": "direction",
+    "text": "Im Moment strömt Wasser aus dem Cytosol nach außen.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O019",
+    "field": "direction",
+    "text": "Im Moment wandert Wasser aus dem Cytosol nach außen.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O020",
+    "field": "direction",
+    "text": "Im Moment gelangt Wasser aus dem Cytosol nach außen.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O021",
+    "field": "direction",
+    "text": "Jetzt fließt Wasser aus dem Cytosol nach außen.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O022",
+    "field": "direction",
+    "text": "Jetzt strömt Wasser aus dem Cytosol nach außen.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O023",
+    "field": "direction",
+    "text": "Jetzt wandert Wasser aus dem Cytosol nach außen.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O024",
+    "field": "direction",
+    "text": "Jetzt gelangt Wasser aus dem Cytosol nach außen.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O025",
+    "field": "direction",
+    "text": "In der Bilanz fließt Wasser aus dem Cytosol nach außen.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O026",
+    "field": "direction",
+    "text": "In der Bilanz strömt Wasser aus dem Cytosol nach außen.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O027",
+    "field": "direction",
+    "text": "In der Bilanz wandert Wasser aus dem Cytosol nach außen.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O028",
+    "field": "direction",
+    "text": "In der Bilanz gelangt Wasser aus dem Cytosol nach außen.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O029",
+    "field": "direction",
+    "text": "In dieser frühen Phase fließt Wasser aus dem Cytosol nach außen.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O030",
+    "field": "direction",
+    "text": "In dieser frühen Phase strömt Wasser aus dem Cytosol nach außen.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O031",
+    "field": "direction",
+    "text": "In dieser frühen Phase wandert Wasser aus dem Cytosol nach außen.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O032",
+    "field": "direction",
+    "text": "In dieser frühen Phase gelangt Wasser aus dem Cytosol nach außen.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O033",
+    "field": "volume",
+    "text": "Das Volumen der Zentralvakuole nimmt im betrachteten Zustand ab.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O034",
+    "field": "volume",
+    "text": "Das Volumen der Zentralvakuole wird insgesamt geringer.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O035",
+    "field": "volume",
+    "text": "Das Volumen der Zentralvakuole vermindert sich.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O036",
+    "field": "volume",
+    "text": "Das Volumen der Zentralvakuole geht zurück.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O037",
+    "field": "volume",
+    "text": "Der Rauminhalt der Vakuole nimmt im betrachteten Zustand ab.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O038",
+    "field": "volume",
+    "text": "Der Rauminhalt der Vakuole wird insgesamt geringer.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O039",
+    "field": "volume",
+    "text": "Der Rauminhalt der Vakuole vermindert sich.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O040",
+    "field": "volume",
+    "text": "Der Rauminhalt der Vakuole geht zurück.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O041",
+    "field": "volume",
+    "text": "Die Größe der Vakuole nimmt im betrachteten Zustand ab.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O042",
+    "field": "volume",
+    "text": "Die Größe der Vakuole wird insgesamt geringer.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O043",
+    "field": "volume",
+    "text": "Die Größe der Vakuole vermindert sich.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O044",
+    "field": "volume",
+    "text": "Die Größe der Vakuole geht zurück.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O045",
+    "field": "volume",
+    "text": "Das Vakuolenvolumen nimmt im betrachteten Zustand ab.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O046",
+    "field": "volume",
+    "text": "Das Vakuolenvolumen wird insgesamt geringer.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O047",
+    "field": "volume",
+    "text": "Das Vakuolenvolumen vermindert sich.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O048",
+    "field": "volume",
+    "text": "Das Vakuolenvolumen geht zurück.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O049",
+    "field": "volume",
+    "text": "Die Zentralvakuole verkleinert sich.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O050",
+    "field": "volume",
+    "text": "Die Zentralvakuole wird im Moment kleiner.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O051",
+    "field": "volume",
+    "text": "Die Zentralvakuole schrumpft zusammen.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O052",
+    "field": "volume",
+    "text": "Die Zentralvakuole nimmt an Volumen ab.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O053",
+    "field": "volume",
+    "text": "Die Vakuole verkleinert sich.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O054",
+    "field": "volume",
+    "text": "Die Vakuole wird im Moment kleiner.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O055",
+    "field": "volume",
+    "text": "Die Vakuole schrumpft zusammen.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O056",
+    "field": "volume",
+    "text": "Die Vakuole nimmt an Volumen ab.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O057",
+    "field": "volume",
+    "text": "Der Vakuolenraum verkleinert sich.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O058",
+    "field": "volume",
+    "text": "Der Vakuolenraum wird im Moment kleiner.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O059",
+    "field": "volume",
+    "text": "Der Vakuolenraum schrumpft zusammen.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O060",
+    "field": "volume",
+    "text": "Der Vakuolenraum nimmt an Volumen ab.",
+    "expected": "correct",
+    "group": "correct_short",
+    "extra": []
+  },
+  {
+    "id": "O061",
+    "field": "direction",
+    "text": "Wasser strömt netto nach innen.",
+    "expected": "incorrect",
+    "group": "wrong",
+    "extra": []
+  },
+  {
+    "id": "O062",
+    "field": "direction",
+    "text": "Wasser strömt netto von außen ins Cytosol.",
+    "expected": "incorrect",
+    "group": "wrong",
+    "extra": []
+  },
+  {
+    "id": "O063",
+    "field": "direction",
+    "text": "Wasser strömt netto aus der Außenlösung in die Zelle.",
+    "expected": "incorrect",
+    "group": "wrong",
+    "extra": []
+  },
+  {
+    "id": "O064",
+    "field": "direction",
+    "text": "Wasser fließt netto nach außen und zugleich nach innen.",
+    "expected": "incorrect",
+    "group": "own_boundary",
+    "extra": []
+  },
+  {
+    "id": "O065",
+    "field": "direction",
+    "text": "Wasser fließt netto nach außen; einzelne Moleküle wandern nach innen.",
+    "expected": "correct",
+    "group": "own_boundary",
+    "extra": []
+  },
+  {
+    "id": "O066",
+    "field": "direction",
+    "text": "Mehr Wasser fließt nach außen als durch den Tonoplasten in das Cytosol.",
+    "expected": "clarify",
+    "group": "own_boundary",
+    "extra": []
+  },
+  {
+    "id": "O067",
+    "field": "direction",
+    "text": "Mehr Wasser fließt nach innen als Saccharose nach außen.",
+    "expected": "clarify",
+    "group": "own_boundary",
+    "extra": []
+  },
+  {
+    "id": "O068",
+    "field": "direction",
+    "text": "Mehr Wasser fließt jetzt nach außen als später nach innen.",
+    "expected": "clarify",
+    "group": "own_boundary",
+    "extra": []
+  },
+  {
+    "id": "O069",
+    "field": "direction",
+    "text": "Mehr einzelne Wassermoleküle fließen nach außen als netto nach innen.",
+    "expected": "clarify",
+    "group": "own_boundary",
+    "extra": []
+  },
+  {
+    "id": "O070",
+    "field": "direction",
+    "text": "Wasser fließt nach außen durch die Kernmembran.",
+    "expected": "clarify",
+    "group": "own_boundary",
+    "extra": []
+  },
+  {
+    "id": "O071",
+    "field": "direction",
+    "text": "Wasser fließt nicht netto nach außen.",
+    "expected": "incorrect",
+    "group": "own_boundary",
+    "extra": []
+  },
+  {
+    "id": "O072",
+    "field": "direction",
+    "text": "Wasser wandert in der Außenlösung.",
+    "expected": "clarify",
+    "group": "own_boundary",
+    "extra": []
+  },
+  {
+    "id": "O073",
+    "field": "direction",
+    "text": "Wasser strömt nach außen und erzeugt dabei ATP.",
+    "expected": "clarify",
+    "group": "own_boundary",
+    "extra": []
+  },
+  {
+    "id": "O074",
+    "field": "volume",
+    "text": "Die Größe der Zellwand nimmt ab.",
+    "expected": "incorrect",
+    "group": "own_boundary",
+    "extra": []
+  },
+  {
+    "id": "O075",
+    "field": "volume",
+    "text": "Die Größe der Vakuole bleibt gleich.",
+    "expected": "incorrect",
+    "group": "own_boundary",
+    "extra": []
+  },
+  {
+    "id": "O076",
+    "field": "volume",
+    "text": "Das Volumen der Zentralvakuole nimmt zu.",
+    "expected": "incorrect",
+    "group": "own_boundary",
+    "extra": []
+  },
+  {
+    "id": "O077",
+    "field": "volume",
+    "text": "Die Vakuole wird nicht kleiner.",
+    "expected": "incorrect",
+    "group": "own_boundary",
+    "extra": []
+  },
+  {
+    "id": "O078",
+    "field": "volume",
+    "text": "Die Vakuole wird kleiner und größer.",
+    "expected": "incorrect",
+    "group": "own_boundary",
+    "extra": []
+  },
+  {
+    "id": "O079",
+    "field": "volume",
+    "text": "Die Vakuole wird später kleiner.",
+    "expected": "clarify",
+    "group": "own_boundary",
+    "extra": []
+  },
+  {
+    "id": "O080",
+    "field": "volume",
+    "text": "Die Vakuole schrumpft wegen einer unbekannten Reaktion.",
+    "expected": "clarify",
+    "group": "own_boundary",
+    "extra": []
+  },
+  {
+    "id": "O081",
+    "field": "direction",
+    "text": "Wasser bewegt sich",
+    "expected": "partial",
+    "group": "own_boundary",
+    "extra": []
+  },
+  {
+    "id": "O082",
+    "field": "direction",
+    "text": "Osmose",
+    "expected": "partial",
+    "group": "own_boundary",
+    "extra": []
+  }
+]

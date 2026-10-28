@@ -1,0 +1,8 @@
+{
+  "frozenAt": "2026-10-25T11:13:05.250312+00:00",
+  "independentAcceptance": false,
+  "note": "Additional own source-informed technical/negative checks, fixed before their first execution. The original preimplementation 113 and its 24 valid answers per field remain byte-identical. No new valid inputs added after observing the classifier. Completes C baseline to 80 per field, including 6 technical plus 2 empty format cases. This is not independent pupil language.",
+  "files": {
+    "tests/fixtures/m602-cued-supplement.json": "cab024cd20cecc78a14eeb7a432d3929335ca5c6076087bcdda3a9d2f7d31a48"
+  }
+}

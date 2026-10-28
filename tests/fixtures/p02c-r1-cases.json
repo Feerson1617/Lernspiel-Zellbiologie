@@ -1,0 +1,5158 @@
+{
+  "cases": [
+    {
+      "id": "P7-001",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "nach außen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-002",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "hinaus",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-003",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "raus",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-004",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "aus der Zelle",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-005",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "von innen nach außen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-006",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "vom Cytosol in den Außenraum",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-007",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "von der Zelle in die Außenlösung",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-008",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "vom Zellinneren nach außen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-009",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Netto nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-010",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Insgesamt nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-011",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Wasser fließt nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-012",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Wasser strömt nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-013",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Wasser bewegt sich nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-014",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Wasser verlässt die Zelle.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-015",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Wasser geht nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-016",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Wasser fließt aus der Zelle.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-017",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Wasser strömt aus der Zelle.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-018",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Wasser bewegt sich aus der Zelle.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-019",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Wasser gelangt in den Außenraum.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-020",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Wasser fließt in die Außenlösung.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-021",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Netto fließt Wasser nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-022",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Netto strömt Wasser nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-023",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Netto bewegt sich Wasser nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-024",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Insgesamt fließt Wasser nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-025",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Insgesamt strömt Wasser nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-026",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Wasser fließt netto nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-027",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Wasser strömt netto nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-028",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Wasser bewegt sich netto nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-029",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Wasser fließt insgesamt nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-030",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Wasser strömt insgesamt nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-031",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Wasser fließt vom Cytosol in den Außenraum.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-032",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Wasser strömt vom Cytosol in den Außenraum.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-033",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Wasser bewegt sich vom Cytosol in den Außenraum.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-034",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Wasser fließt aus der Zelle in die Außenlösung.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-035",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Wasser strömt aus der Zelle in den Außenraum.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-036",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Wasser bewegt sich vom Zellinneren in die Außenlösung.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-037",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Netto fließt Wasser aus der Zelle.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-038",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Netto strömt Wasser aus der Zelle.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-039",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Insgesamt verlässt Wasser die Zelle.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-040",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Der Nettostrom geht nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-041",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Der Nettowasserstrom geht nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-042",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Der Nettowasserstrom ist nach außen gerichtet.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-043",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Der Nettostrom ist nach außen gerichtet.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-044",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Mehr Wasser verlässt die Zelle als hineinströmt.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-045",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Es fließt mehr Wasser hinaus als hinein.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-046",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Es bewegt sich mehr Wasser nach außen als nach innen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-047",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Mehr Wasser geht aus der Zelle heraus als hinein.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-048",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Wasser bewegt sich in beide Richtungen, netto nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-049",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Einzelne Wassermoleküle gehen nach innen, netto fließt Wasser nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-050",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Wasserteilchen bewegen sich auch einwärts, der Nettostrom geht nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-051",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Vielleicht nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-052",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Vermutlich fließt Wasser nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-053",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Ich denke, Wasser fließt netto nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-054",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Wahrscheinlich nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-055",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Nicht nach innen, sondern nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-056",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Nach außen statt nach innen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-057",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Nicht hinein, sondern hinaus.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-058",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Vom Cytosol nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-059",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Zelle → Außenraum",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-060",
+      "field": "direction",
+      "group": "short-correct",
+      "text": "Cytosol → Außenlösung",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-061",
+      "field": "direction",
+      "group": "longer-correct",
+      "text": "Im angezeigten Zustand fließt Wasser netto aus der Zelle nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-062",
+      "field": "direction",
+      "group": "longer-correct",
+      "text": "Jetzt bewegt sich Wasser netto vom Cytosol in den Außenraum.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-063",
+      "field": "direction",
+      "group": "longer-correct",
+      "text": "Der Nettowassertransport geht von der Zelle in die Außenlösung.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-064",
+      "field": "direction",
+      "group": "longer-correct",
+      "text": "Mehr Wasser fließt aus der Zelle heraus, als Wasser in die Zelle hineinfließt.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-065",
+      "field": "direction",
+      "group": "longer-correct",
+      "text": "Einzelne Wassermoleküle gelangen hinein, aber netto bewegt sich Wasser nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-066",
+      "field": "direction",
+      "group": "longer-correct",
+      "text": "Es gehen Wasserteilchen hinein und hinaus, insgesamt verlässt mehr Wasser die Zelle.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-067",
+      "field": "direction",
+      "group": "longer-correct",
+      "text": "Wasser bewegt sich in beide Richtungen, doch der Nettotransport geht nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-068",
+      "field": "direction",
+      "group": "longer-correct",
+      "text": "Zwar gelangen einzelne Moleküle hinein, netto fließt Wasser aus der Zelle.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-069",
+      "field": "direction",
+      "group": "longer-correct",
+      "text": "Ich vermute, Wasser strömt im Moment netto vom Cytosol nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-070",
+      "field": "direction",
+      "group": "longer-correct",
+      "text": "In dieser frühen Phase verlässt Wasser netto die Zelle.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-071",
+      "field": "direction",
+      "group": "longer-correct",
+      "text": "Der Nettostrom über die Zellmembran ist in die Außenlösung gerichtet.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-072",
+      "field": "direction",
+      "group": "longer-correct",
+      "text": "Ich dachte zunächst nach innen; jetzt meine ich nach außen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-073",
+      "field": "direction",
+      "group": "longer-correct",
+      "text": "Ich dachte zuerst hinein; jetzt meine ich hinaus.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-074",
+      "field": "direction",
+      "group": "longer-correct",
+      "text": "Es ist Wassertransport nach außen, also netto aus der Zelle.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-075",
+      "field": "direction",
+      "group": "longer-correct",
+      "text": "Wasserteilchen bewegen sich auch nach innen, trotzdem ist der Nettowasserstrom auswärts.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-076",
+      "field": "direction",
+      "group": "wrong",
+      "text": "nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-077",
+      "field": "direction",
+      "group": "wrong",
+      "text": "hinein",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-078",
+      "field": "direction",
+      "group": "wrong",
+      "text": "rein",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-079",
+      "field": "direction",
+      "group": "wrong",
+      "text": "von außen nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-080",
+      "field": "direction",
+      "group": "wrong",
+      "text": "Wasser fließt nach innen.",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-081",
+      "field": "direction",
+      "group": "wrong",
+      "text": "Wasser strömt in die Zelle.",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-082",
+      "field": "direction",
+      "group": "wrong",
+      "text": "Wasser bewegt sich netto nach innen.",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-083",
+      "field": "direction",
+      "group": "wrong",
+      "text": "Der Nettostrom geht nach innen.",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-084",
+      "field": "direction",
+      "group": "wrong",
+      "text": "Wasser fließt netto vom Außenraum in den Cytosol.",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-085",
+      "field": "direction",
+      "group": "wrong",
+      "text": "Außenraum → Cytosol",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-086",
+      "field": "direction",
+      "group": "wrong",
+      "text": "kein Nettostrom",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-087",
+      "field": "direction",
+      "group": "wrong",
+      "text": "Wasser steht still.",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-088",
+      "field": "direction",
+      "group": "wrong",
+      "text": "Es gibt keine Wasserbewegung.",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-089",
+      "field": "direction",
+      "group": "wrong",
+      "text": "Es fließt netto kein Wasser.",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-090",
+      "field": "direction",
+      "group": "wrong",
+      "text": "Saccharose fließt aus der Zelle.",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-091",
+      "field": "direction",
+      "group": "wrong",
+      "text": "Zucker bewegt sich nach außen.",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-092",
+      "field": "direction",
+      "group": "wrong",
+      "text": "Alle Wassermoleküle bewegen sich nur nach außen.",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-093",
+      "field": "direction",
+      "group": "wrong",
+      "text": "Alle Wasserteilchen gehen ausschließlich hinaus.",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-094",
+      "field": "direction",
+      "group": "wrong",
+      "text": "Wasser fließt netto nach außen und netto nach innen.",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-095",
+      "field": "direction",
+      "group": "wrong",
+      "text": "Der Nettostrom geht gleichzeitig hinein und hinaus.",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-096",
+      "field": "direction",
+      "group": "partial",
+      "text": "Wasser bewegt sich.",
+      "expected": "partial",
+      "extra": []
+    },
+    {
+      "id": "P7-097",
+      "field": "direction",
+      "group": "partial",
+      "text": "Wassertransport",
+      "expected": "partial",
+      "extra": []
+    },
+    {
+      "id": "P7-098",
+      "field": "direction",
+      "group": "partial",
+      "text": "Osmose",
+      "expected": "partial",
+      "extra": []
+    },
+    {
+      "id": "P7-099",
+      "field": "direction",
+      "group": "partial",
+      "text": "Wasser fließt.",
+      "expected": "partial",
+      "extra": []
+    },
+    {
+      "id": "P7-100",
+      "field": "direction",
+      "group": "partial",
+      "text": "Wasser bewegt sich in beide Richtungen.",
+      "expected": "partial",
+      "extra": []
+    },
+    {
+      "id": "P7-101",
+      "field": "direction",
+      "group": "partial",
+      "text": "Einzelne Moleküle gehen hinein und hinaus.",
+      "expected": "partial",
+      "extra": []
+    },
+    {
+      "id": "P7-102",
+      "field": "direction",
+      "group": "partial",
+      "text": "Wasser kann die Membran passieren.",
+      "expected": "partial",
+      "extra": []
+    },
+    {
+      "id": "P7-103",
+      "field": "direction",
+      "group": "partial",
+      "text": "Wasser diffundiert.",
+      "expected": "partial",
+      "extra": []
+    },
+    {
+      "id": "P7-104",
+      "field": "direction",
+      "group": "partial",
+      "text": "Vom Vakuolenraum ins Cytosol.",
+      "expected": "partial",
+      "extra": []
+    },
+    {
+      "id": "P7-105",
+      "field": "direction",
+      "group": "partial",
+      "text": "Wasser fließt aus der Vakuole in den Cytosol.",
+      "expected": "partial",
+      "extra": []
+    },
+    {
+      "id": "P7-106",
+      "field": "direction",
+      "group": "partial",
+      "text": "Es gibt eine Wasserbewegung.",
+      "expected": "partial",
+      "extra": []
+    },
+    {
+      "id": "P7-107",
+      "field": "direction",
+      "group": "partial",
+      "text": "Durch die Zellmembran.",
+      "expected": "partial",
+      "extra": []
+    },
+    {
+      "id": "P7-108",
+      "field": "direction",
+      "group": "clarify",
+      "text": "nach innen oder außen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7-109",
+      "field": "direction",
+      "group": "clarify",
+      "text": "hinein oder hinaus",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7-110",
+      "field": "direction",
+      "group": "clarify",
+      "text": "Wasser fließt nach außen oder innen.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7-111",
+      "field": "direction",
+      "group": "clarify",
+      "text": "Nicht nach innen.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7-112",
+      "field": "direction",
+      "group": "clarify",
+      "text": "Nicht hinein.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7-113",
+      "field": "direction",
+      "group": "clarify",
+      "text": "Erst nach außen, später nach innen.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7-114",
+      "field": "direction",
+      "group": "clarify",
+      "text": "Früher ging Wasser nach außen.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7-115",
+      "field": "direction",
+      "group": "clarify",
+      "text": "Morgen fließt Wasser nach außen.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7-116",
+      "field": "direction",
+      "group": "clarify",
+      "text": "Nach dem Rücktausch geht es nach innen.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7-117",
+      "field": "direction",
+      "group": "clarify",
+      "text": "Wasser fließt irgendwohin.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7-118",
+      "field": "direction",
+      "group": "clarify",
+      "text": "nach außen; außerdem etwas Unbekanntes",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7-119",
+      "field": "direction",
+      "group": "clarify",
+      "text": "Wasser geht nach außen oder bleibt stehen.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7-120",
+      "field": "direction",
+      "group": "correction",
+      "text": "Nicht nach innen, sondern nach außen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-121",
+      "field": "direction",
+      "group": "correction",
+      "text": "nach außen statt nach innen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-122",
+      "field": "direction",
+      "group": "correction",
+      "text": "Vielleicht nicht nach innen, sondern nach außen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-123",
+      "field": "direction",
+      "group": "correction",
+      "text": "Ich dachte zunächst nach innen; jetzt meine ich nach außen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-124",
+      "field": "direction",
+      "group": "negation-contradiction",
+      "text": "nicht nach außen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-125",
+      "field": "direction",
+      "group": "negation-contradiction",
+      "text": "Nicht nach außen, sondern nach außen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-126",
+      "field": "direction",
+      "group": "negation-contradiction",
+      "text": "nach außen statt nach außen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-127",
+      "field": "direction",
+      "group": "negation-contradiction",
+      "text": "Nicht nach außen, sondern nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-128",
+      "field": "direction",
+      "group": "mixed-boundary",
+      "text": "netto nach außen und netto nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-129",
+      "field": "direction",
+      "group": "mixed-boundary",
+      "text": "nach außen oder nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7-130",
+      "field": "direction",
+      "group": "mixed-boundary",
+      "text": "Erst nach außen, später nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7-131",
+      "field": "direction",
+      "group": "mixed-boundary",
+      "text": "Nicht nach innen; etwas anderes",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7-132",
+      "field": "direction",
+      "group": "unassessed-extra",
+      "text": "nach außen",
+      "expected": "correct",
+      "extra": [
+        "Ein weiterer Gedanke."
+      ]
+    },
+    {
+      "id": "P7-133",
+      "field": "direction",
+      "group": "unassessed-extra",
+      "text": "nach außen",
+      "expected": "correct",
+      "extra": [
+        "Wasser ist ein Molekül."
+      ]
+    },
+    {
+      "id": "P7-134",
+      "field": "direction",
+      "group": "unassessed-extra",
+      "text": "nach außen",
+      "expected": "correct",
+      "extra": [
+        "Die Zellwand schrumpft mit."
+      ]
+    },
+    {
+      "id": "P7-135",
+      "field": "direction",
+      "group": "unassessed-extra",
+      "text": "nach außen",
+      "expected": "correct",
+      "extra": [
+        "<img src=x onerror=window.auditInjected=1>"
+      ]
+    },
+    {
+      "id": "P7-136",
+      "field": "direction",
+      "group": "empty",
+      "text": "",
+      "expected": "empty",
+      "extra": []
+    },
+    {
+      "id": "P7-137",
+      "field": "direction",
+      "group": "empty",
+      "text": " \t\n ",
+      "expected": "empty",
+      "extra": []
+    },
+    {
+      "id": "P7-138",
+      "field": "direction",
+      "group": "technical",
+      "text": "nach außen‮",
+      "expected": "technical",
+      "extra": []
+    },
+    {
+      "id": "P7-139",
+      "field": "direction",
+      "group": "technical",
+      "text": "nach außen\u0000",
+      "expected": "technical",
+      "extra": []
+    },
+    {
+      "id": "P7-140",
+      "field": "direction",
+      "group": "technical",
+      "text": "nach außen\ud800",
+      "expected": "technical",
+      "extra": []
+    },
+    {
+      "id": "P7-141",
+      "field": "direction",
+      "group": "technical",
+      "text": "nach außenxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "expected": "technical",
+      "extra": []
+    },
+    {
+      "id": "P7-142",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "kleiner",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-143",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "nimmt ab",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-144",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "schrumpft",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-145",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "weniger",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-146",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Das Vakuolenvolumen nimmt ab.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-147",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Das Volumen der Vakuole nimmt ab.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-148",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Das Volumen nimmt ab.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-149",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Die Vakuole wird kleiner.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-150",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Die Vakuole schrumpft.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-151",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Die Vakuole nimmt an Volumen ab.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-152",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Das Vakuolenvolumen sinkt.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-153",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Das Volumen der Vakuole sinkt.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-154",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Das Volumen sinkt.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-155",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Das Vakuolenvolumen verringert sich.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-156",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Das Volumen der Vakuole verringert sich.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-157",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Das Volumen verringert sich.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-158",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Das Vakuolenvolumen wird kleiner.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-159",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Das Volumen der Vakuole wird kleiner.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-160",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Das Volumen wird kleiner.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-161",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Die Vakuole verkleinert sich.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-162",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Die Vakuole verliert Volumen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-163",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Die Vakuole verliert an Volumen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-164",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Das Vakuolenvolumen wird geringer.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-165",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Das Volumen der Vakuole wird geringer.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-166",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Das Volumen wird geringer.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-167",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Das Vakuolenvolumen reduziert sich.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-168",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Das Volumen der Vakuole reduziert sich.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-169",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Das Volumen reduziert sich.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-170",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Das Vakuolenvolumen vermindert sich.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-171",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Das Volumen der Vakuole vermindert sich.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-172",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Die Vakuole wird kleiner, ihr Volumen nimmt ab.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-173",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Die Vakuole schrumpft und ihr Volumen sinkt.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-174",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Das Vakuolenvolumen sinkt, die Vakuole wird kleiner.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-175",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Die Vakuole schrumpft, das Volumen nimmt ab.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-176",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Das Volumen nimmt ab und die Vakuole wird kleiner.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-177",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Vakuolenvolumen abnehmend.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-178",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Abnahme des Vakuolenvolumens.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-179",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Verringerung des Vakuolenvolumens.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-180",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Die Vakuole nimmt weniger Raum ein.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-181",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Die Vakuole wird durch Wasserverlust kleiner.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-182",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Die Vakuole verliert Wasser und wird kleiner.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-183",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Wasser verlässt die Vakuole, ihr Volumen nimmt ab.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-184",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Die Vakuole gibt Wasser ab, ihr Volumen sinkt.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-185",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Der Wasserverlust verkleinert die Vakuole.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-186",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Das Vakuolenvolumen nimmt durch Wasserabgabe ab.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-187",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Das Vakuolenvolumen nimmt wegen Wasserverlust ab.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-188",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Die Vakuole verliert Wasser; dadurch nimmt ihr Volumen ab.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-189",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Durch Wasserabgabe wird die Vakuole kleiner.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-190",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Das Volumen der Vakuole nimmt aufgrund der Wasserabgabe ab.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-191",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Wasserabgabe führt zu einem kleineren Vakuolenvolumen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-192",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Vielleicht nimmt das Vakuolenvolumen ab.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-193",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Vermutlich wird die Vakuole kleiner.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-194",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Ich denke, das Vakuolenvolumen sinkt.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-195",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Wahrscheinlich schrumpft die Vakuole.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-196",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Nicht größer, sondern kleiner.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-197",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Kleiner statt größer.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-198",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Es nimmt ab.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-199",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Das Vakuolenvolumen schrumpft.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-200",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Die Vakuole wird weniger voluminös.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-201",
+      "field": "volume",
+      "group": "short-correct",
+      "text": "Das Vakuolenvolumen verkleinert sich.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-202",
+      "field": "volume",
+      "group": "longer-correct",
+      "text": "Im angezeigten Zustand nimmt das Volumen der Vakuole ab.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-203",
+      "field": "volume",
+      "group": "longer-correct",
+      "text": "In dieser frühen Phase wird die Vakuole kleiner.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-204",
+      "field": "volume",
+      "group": "longer-correct",
+      "text": "Die Vakuole verliert Wasser, dadurch nimmt ihr Volumen ab.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-205",
+      "field": "volume",
+      "group": "longer-correct",
+      "text": "Da Wasser die Vakuole verlässt, nimmt ihr Volumen ab.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-206",
+      "field": "volume",
+      "group": "longer-correct",
+      "text": "Weil Wasser aus der Vakuole austritt, wird die Vakuole kleiner.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-207",
+      "field": "volume",
+      "group": "longer-correct",
+      "text": "Durch den Wasserverlust verringert sich das Volumen der Vakuole.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-208",
+      "field": "volume",
+      "group": "longer-correct",
+      "text": "Der Verlust von Wasser lässt die Vakuole schrumpfen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-209",
+      "field": "volume",
+      "group": "longer-correct",
+      "text": "Die Vakuole gibt Wasser ab und verliert deshalb an Volumen.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-210",
+      "field": "volume",
+      "group": "longer-correct",
+      "text": "Das Vakuolenvolumen sinkt infolge der Wasserabgabe.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-211",
+      "field": "volume",
+      "group": "longer-correct",
+      "text": "Ich vermute, das Vakuolenvolumen wird im Moment kleiner.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-212",
+      "field": "volume",
+      "group": "longer-correct",
+      "text": "Ich dachte zunächst größer; jetzt meine ich kleiner.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-213",
+      "field": "volume",
+      "group": "longer-correct",
+      "text": "Ich dachte zuerst Zunahme; jetzt meine ich Abnahme.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-214",
+      "field": "volume",
+      "group": "longer-correct",
+      "text": "Die Vakuole schrumpft; ihr Volumen wird also kleiner.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-215",
+      "field": "volume",
+      "group": "longer-correct",
+      "text": "Das Volumen der Vakuole nimmt ab, die Zellwand bleibt dabei unverändert.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-216",
+      "field": "volume",
+      "group": "longer-correct",
+      "text": "Der Protoplast wird kleiner; auch das Vakuolenvolumen nimmt ab.",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-217",
+      "field": "volume",
+      "group": "wrong",
+      "text": "größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-218",
+      "field": "volume",
+      "group": "wrong",
+      "text": "nimmt zu",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-219",
+      "field": "volume",
+      "group": "wrong",
+      "text": "wächst",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-220",
+      "field": "volume",
+      "group": "wrong",
+      "text": "bleibt gleich",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-221",
+      "field": "volume",
+      "group": "wrong",
+      "text": "Das Vakuolenvolumen nimmt zu.",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-222",
+      "field": "volume",
+      "group": "wrong",
+      "text": "Die Vakuole wird größer.",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-223",
+      "field": "volume",
+      "group": "wrong",
+      "text": "Die Vakuole wächst.",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-224",
+      "field": "volume",
+      "group": "wrong",
+      "text": "Das Volumen bleibt konstant.",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-225",
+      "field": "volume",
+      "group": "wrong",
+      "text": "Das Vakuolenvolumen bleibt unverändert.",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-226",
+      "field": "volume",
+      "group": "wrong",
+      "text": "Die Vakuole verändert ihr Volumen nicht.",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-227",
+      "field": "volume",
+      "group": "wrong",
+      "text": "Die Zellwand schrumpft.",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-228",
+      "field": "volume",
+      "group": "wrong",
+      "text": "Die Zellwand wird kleiner.",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-229",
+      "field": "volume",
+      "group": "wrong",
+      "text": "Das Volumen der Zellwand nimmt ab.",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-230",
+      "field": "volume",
+      "group": "wrong",
+      "text": "Das Vakuolenvolumen nimmt nicht ab.",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-231",
+      "field": "volume",
+      "group": "wrong",
+      "text": "Die Vakuole wird nicht kleiner.",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-232",
+      "field": "volume",
+      "group": "wrong",
+      "text": "Die Vakuole schrumpft nicht.",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-233",
+      "field": "volume",
+      "group": "wrong",
+      "text": "Das Vakuolenvolumen sinkt und steigt gleichzeitig.",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-234",
+      "field": "volume",
+      "group": "wrong",
+      "text": "Die Vakuole wird gleichzeitig kleiner und größer.",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-235",
+      "field": "volume",
+      "group": "wrong",
+      "text": "Die Vakuole schwillt an.",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-236",
+      "field": "volume",
+      "group": "wrong",
+      "text": "Das Volumen vergrößert sich.",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-237",
+      "field": "volume",
+      "group": "partial",
+      "text": "Das Volumen ändert sich.",
+      "expected": "partial",
+      "extra": []
+    },
+    {
+      "id": "P7-238",
+      "field": "volume",
+      "group": "partial",
+      "text": "Die Vakuole verändert sich.",
+      "expected": "partial",
+      "extra": []
+    },
+    {
+      "id": "P7-239",
+      "field": "volume",
+      "group": "partial",
+      "text": "Die Vakuole gibt Wasser ab.",
+      "expected": "partial",
+      "extra": []
+    },
+    {
+      "id": "P7-240",
+      "field": "volume",
+      "group": "partial",
+      "text": "Wasser verlässt die Vakuole.",
+      "expected": "partial",
+      "extra": []
+    },
+    {
+      "id": "P7-241",
+      "field": "volume",
+      "group": "partial",
+      "text": "Die Vakuole verliert Wasser.",
+      "expected": "partial",
+      "extra": []
+    },
+    {
+      "id": "P7-242",
+      "field": "volume",
+      "group": "partial",
+      "text": "Wasserverlust",
+      "expected": "partial",
+      "extra": []
+    },
+    {
+      "id": "P7-243",
+      "field": "volume",
+      "group": "partial",
+      "text": "Der Protoplast wird kleiner.",
+      "expected": "partial",
+      "extra": []
+    },
+    {
+      "id": "P7-244",
+      "field": "volume",
+      "group": "partial",
+      "text": "Die Zellmembran löst sich von der Zellwand.",
+      "expected": "partial",
+      "extra": []
+    },
+    {
+      "id": "P7-245",
+      "field": "volume",
+      "group": "partial",
+      "text": "Das Volumen verändert sich.",
+      "expected": "partial",
+      "extra": []
+    },
+    {
+      "id": "P7-246",
+      "field": "volume",
+      "group": "partial",
+      "text": "Die Vakuole ist betroffen.",
+      "expected": "partial",
+      "extra": []
+    },
+    {
+      "id": "P7-247",
+      "field": "volume",
+      "group": "partial",
+      "text": "Es gibt eine Volumenänderung.",
+      "expected": "partial",
+      "extra": []
+    },
+    {
+      "id": "P7-248",
+      "field": "volume",
+      "group": "partial",
+      "text": "Die Vakuole verliert Inhalt.",
+      "expected": "partial",
+      "extra": []
+    },
+    {
+      "id": "P7-249",
+      "field": "volume",
+      "group": "clarify",
+      "text": "kleiner oder größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7-250",
+      "field": "volume",
+      "group": "clarify",
+      "text": "nimmt ab oder zu",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7-251",
+      "field": "volume",
+      "group": "clarify",
+      "text": "Die Vakuole wird kleiner oder größer.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7-252",
+      "field": "volume",
+      "group": "clarify",
+      "text": "Nicht größer.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7-253",
+      "field": "volume",
+      "group": "clarify",
+      "text": "Nicht Zunahme.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7-254",
+      "field": "volume",
+      "group": "clarify",
+      "text": "Erst kleiner, später größer.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7-255",
+      "field": "volume",
+      "group": "clarify",
+      "text": "Früher schrumpfte die Vakuole.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7-256",
+      "field": "volume",
+      "group": "clarify",
+      "text": "Morgen wird die Vakuole kleiner.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7-257",
+      "field": "volume",
+      "group": "clarify",
+      "text": "Nach dem Rücktausch wird sie größer.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7-258",
+      "field": "volume",
+      "group": "clarify",
+      "text": "Die Vakuole macht etwas Unbekanntes.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7-259",
+      "field": "volume",
+      "group": "clarify",
+      "text": "kleiner; außerdem etwas Unbekanntes",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7-260",
+      "field": "volume",
+      "group": "clarify",
+      "text": "Die Vakuole wird kleiner oder bleibt gleich.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7-261",
+      "field": "volume",
+      "group": "correction",
+      "text": "Nicht größer, sondern kleiner",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-262",
+      "field": "volume",
+      "group": "correction",
+      "text": "kleiner statt größer",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-263",
+      "field": "volume",
+      "group": "correction",
+      "text": "Vielleicht nicht größer, sondern kleiner",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-264",
+      "field": "volume",
+      "group": "correction",
+      "text": "Ich dachte zunächst größer; jetzt meine ich kleiner",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7-265",
+      "field": "volume",
+      "group": "negation-contradiction",
+      "text": "nicht kleiner",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-266",
+      "field": "volume",
+      "group": "negation-contradiction",
+      "text": "Nicht kleiner, sondern kleiner",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-267",
+      "field": "volume",
+      "group": "negation-contradiction",
+      "text": "kleiner statt kleiner",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-268",
+      "field": "volume",
+      "group": "negation-contradiction",
+      "text": "Nicht kleiner, sondern größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-269",
+      "field": "volume",
+      "group": "mixed-boundary",
+      "text": "kleiner und größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7-270",
+      "field": "volume",
+      "group": "mixed-boundary",
+      "text": "kleiner oder größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7-271",
+      "field": "volume",
+      "group": "mixed-boundary",
+      "text": "Erst kleiner, später größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7-272",
+      "field": "volume",
+      "group": "mixed-boundary",
+      "text": "Nicht größer; etwas anderes",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7-273",
+      "field": "volume",
+      "group": "unassessed-extra",
+      "text": "kleiner",
+      "expected": "correct",
+      "extra": [
+        "Ein weiterer Gedanke."
+      ]
+    },
+    {
+      "id": "P7-274",
+      "field": "volume",
+      "group": "unassessed-extra",
+      "text": "kleiner",
+      "expected": "correct",
+      "extra": [
+        "Wasser ist ein Molekül."
+      ]
+    },
+    {
+      "id": "P7-275",
+      "field": "volume",
+      "group": "unassessed-extra",
+      "text": "kleiner",
+      "expected": "correct",
+      "extra": [
+        "Die Zellwand schrumpft mit."
+      ]
+    },
+    {
+      "id": "P7-276",
+      "field": "volume",
+      "group": "unassessed-extra",
+      "text": "kleiner",
+      "expected": "correct",
+      "extra": [
+        "<img src=x onerror=window.auditInjected=1>"
+      ]
+    },
+    {
+      "id": "P7-277",
+      "field": "volume",
+      "group": "empty",
+      "text": "",
+      "expected": "empty",
+      "extra": []
+    },
+    {
+      "id": "P7-278",
+      "field": "volume",
+      "group": "empty",
+      "text": " \t\n ",
+      "expected": "empty",
+      "extra": []
+    },
+    {
+      "id": "P7-279",
+      "field": "volume",
+      "group": "technical",
+      "text": "kleiner‮",
+      "expected": "technical",
+      "extra": []
+    },
+    {
+      "id": "P7-280",
+      "field": "volume",
+      "group": "technical",
+      "text": "kleiner\u0000",
+      "expected": "technical",
+      "extra": []
+    },
+    {
+      "id": "P7-281",
+      "field": "volume",
+      "group": "technical",
+      "text": "kleiner\ud800",
+      "expected": "technical",
+      "extra": []
+    },
+    {
+      "id": "P7-282",
+      "field": "volume",
+      "group": "technical",
+      "text": "kleinerxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "expected": "technical",
+      "extra": []
+    }
+  ],
+  "systematic": [
+    {
+      "id": "P7SYS-001",
+      "field": "direction",
+      "group": "repeat",
+      "text": "nach außen. nach außen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-002",
+      "field": "direction",
+      "group": "contradiction",
+      "text": "Der Nettostrom geht nach außen und der Nettostrom geht nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-003",
+      "field": "direction",
+      "group": "correction",
+      "text": "Nicht nach innen, sondern nach außen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-004",
+      "field": "direction",
+      "group": "same-contrast",
+      "text": "Nicht nach außen, sondern nach außen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-005",
+      "field": "direction",
+      "group": "unknown",
+      "text": "nach außen. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-006",
+      "field": "direction",
+      "group": "time",
+      "text": "Erst nach außen, später nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-007",
+      "field": "direction",
+      "group": "repeat",
+      "text": "vielleicht nach außen. nach außen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-008",
+      "field": "direction",
+      "group": "contradiction",
+      "text": "vielleicht Der Nettostrom geht nach außen und der Nettostrom geht nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-009",
+      "field": "direction",
+      "group": "correction",
+      "text": "vielleicht Nicht nach innen, sondern nach außen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-010",
+      "field": "direction",
+      "group": "same-contrast",
+      "text": "vielleicht Nicht nach außen, sondern nach außen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-011",
+      "field": "direction",
+      "group": "unknown",
+      "text": "vielleicht nach außen. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-012",
+      "field": "direction",
+      "group": "time",
+      "text": "vielleicht Erst nach außen, später nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-013",
+      "field": "direction",
+      "group": "repeat",
+      "text": "ich denke, nach außen. nach außen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-014",
+      "field": "direction",
+      "group": "contradiction",
+      "text": "ich denke, Der Nettostrom geht nach außen und der Nettostrom geht nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-015",
+      "field": "direction",
+      "group": "correction",
+      "text": "ich denke, Nicht nach innen, sondern nach außen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-016",
+      "field": "direction",
+      "group": "same-contrast",
+      "text": "ich denke, Nicht nach außen, sondern nach außen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-017",
+      "field": "direction",
+      "group": "unknown",
+      "text": "ich denke, nach außen. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-018",
+      "field": "direction",
+      "group": "time",
+      "text": "ich denke, Erst nach außen, später nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-019",
+      "field": "direction",
+      "group": "repeat",
+      "text": "hinaus. hinaus",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-020",
+      "field": "direction",
+      "group": "contradiction",
+      "text": "Der Nettostrom geht nach außen und der Nettostrom geht nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-021",
+      "field": "direction",
+      "group": "correction",
+      "text": "Nicht nach innen, sondern hinaus",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-022",
+      "field": "direction",
+      "group": "same-contrast",
+      "text": "Nicht hinaus, sondern hinaus",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-023",
+      "field": "direction",
+      "group": "unknown",
+      "text": "hinaus. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-024",
+      "field": "direction",
+      "group": "time",
+      "text": "Erst hinaus, später nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-025",
+      "field": "direction",
+      "group": "repeat",
+      "text": "vielleicht hinaus. hinaus",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-026",
+      "field": "direction",
+      "group": "contradiction",
+      "text": "vielleicht Der Nettostrom geht nach außen und der Nettostrom geht nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-027",
+      "field": "direction",
+      "group": "correction",
+      "text": "vielleicht Nicht nach innen, sondern hinaus",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-028",
+      "field": "direction",
+      "group": "same-contrast",
+      "text": "vielleicht Nicht hinaus, sondern hinaus",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-029",
+      "field": "direction",
+      "group": "unknown",
+      "text": "vielleicht hinaus. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-030",
+      "field": "direction",
+      "group": "time",
+      "text": "vielleicht Erst hinaus, später nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-031",
+      "field": "direction",
+      "group": "repeat",
+      "text": "ich denke, hinaus. hinaus",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-032",
+      "field": "direction",
+      "group": "contradiction",
+      "text": "ich denke, Der Nettostrom geht nach außen und der Nettostrom geht nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-033",
+      "field": "direction",
+      "group": "correction",
+      "text": "ich denke, Nicht nach innen, sondern hinaus",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-034",
+      "field": "direction",
+      "group": "same-contrast",
+      "text": "ich denke, Nicht hinaus, sondern hinaus",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-035",
+      "field": "direction",
+      "group": "unknown",
+      "text": "ich denke, hinaus. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-036",
+      "field": "direction",
+      "group": "time",
+      "text": "ich denke, Erst hinaus, später nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-037",
+      "field": "direction",
+      "group": "repeat",
+      "text": "raus. raus",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-038",
+      "field": "direction",
+      "group": "contradiction",
+      "text": "Der Nettostrom geht nach außen und der Nettostrom geht nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-039",
+      "field": "direction",
+      "group": "correction",
+      "text": "Nicht nach innen, sondern raus",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-040",
+      "field": "direction",
+      "group": "same-contrast",
+      "text": "Nicht raus, sondern raus",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-041",
+      "field": "direction",
+      "group": "unknown",
+      "text": "raus. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-042",
+      "field": "direction",
+      "group": "time",
+      "text": "Erst raus, später nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-043",
+      "field": "direction",
+      "group": "repeat",
+      "text": "vielleicht raus. raus",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-044",
+      "field": "direction",
+      "group": "contradiction",
+      "text": "vielleicht Der Nettostrom geht nach außen und der Nettostrom geht nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-045",
+      "field": "direction",
+      "group": "correction",
+      "text": "vielleicht Nicht nach innen, sondern raus",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-046",
+      "field": "direction",
+      "group": "same-contrast",
+      "text": "vielleicht Nicht raus, sondern raus",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-047",
+      "field": "direction",
+      "group": "unknown",
+      "text": "vielleicht raus. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-048",
+      "field": "direction",
+      "group": "time",
+      "text": "vielleicht Erst raus, später nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-049",
+      "field": "direction",
+      "group": "repeat",
+      "text": "ich denke, raus. raus",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-050",
+      "field": "direction",
+      "group": "contradiction",
+      "text": "ich denke, Der Nettostrom geht nach außen und der Nettostrom geht nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-051",
+      "field": "direction",
+      "group": "correction",
+      "text": "ich denke, Nicht nach innen, sondern raus",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-052",
+      "field": "direction",
+      "group": "same-contrast",
+      "text": "ich denke, Nicht raus, sondern raus",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-053",
+      "field": "direction",
+      "group": "unknown",
+      "text": "ich denke, raus. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-054",
+      "field": "direction",
+      "group": "time",
+      "text": "ich denke, Erst raus, später nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-055",
+      "field": "direction",
+      "group": "repeat",
+      "text": "Wasser fließt netto nach außen. Wasser fließt netto nach außen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-056",
+      "field": "direction",
+      "group": "contradiction",
+      "text": "Der Nettostrom geht nach außen und der Nettostrom geht nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-057",
+      "field": "direction",
+      "group": "correction",
+      "text": "Nicht nach innen, sondern Wasser fließt netto nach außen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-058",
+      "field": "direction",
+      "group": "same-contrast",
+      "text": "Nicht Wasser fließt netto nach außen, sondern Wasser fließt netto nach außen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-059",
+      "field": "direction",
+      "group": "unknown",
+      "text": "Wasser fließt netto nach außen. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-060",
+      "field": "direction",
+      "group": "time",
+      "text": "Erst Wasser fließt netto nach außen, später nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-061",
+      "field": "direction",
+      "group": "repeat",
+      "text": "vielleicht Wasser fließt netto nach außen. Wasser fließt netto nach außen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-062",
+      "field": "direction",
+      "group": "contradiction",
+      "text": "vielleicht Der Nettostrom geht nach außen und der Nettostrom geht nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-063",
+      "field": "direction",
+      "group": "correction",
+      "text": "vielleicht Nicht nach innen, sondern Wasser fließt netto nach außen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-064",
+      "field": "direction",
+      "group": "same-contrast",
+      "text": "vielleicht Nicht Wasser fließt netto nach außen, sondern Wasser fließt netto nach außen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-065",
+      "field": "direction",
+      "group": "unknown",
+      "text": "vielleicht Wasser fließt netto nach außen. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-066",
+      "field": "direction",
+      "group": "time",
+      "text": "vielleicht Erst Wasser fließt netto nach außen, später nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-067",
+      "field": "direction",
+      "group": "repeat",
+      "text": "ich denke, Wasser fließt netto nach außen. Wasser fließt netto nach außen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-068",
+      "field": "direction",
+      "group": "contradiction",
+      "text": "ich denke, Der Nettostrom geht nach außen und der Nettostrom geht nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-069",
+      "field": "direction",
+      "group": "correction",
+      "text": "ich denke, Nicht nach innen, sondern Wasser fließt netto nach außen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-070",
+      "field": "direction",
+      "group": "same-contrast",
+      "text": "ich denke, Nicht Wasser fließt netto nach außen, sondern Wasser fließt netto nach außen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-071",
+      "field": "direction",
+      "group": "unknown",
+      "text": "ich denke, Wasser fließt netto nach außen. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-072",
+      "field": "direction",
+      "group": "time",
+      "text": "ich denke, Erst Wasser fließt netto nach außen, später nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-073",
+      "field": "direction",
+      "group": "repeat",
+      "text": "Wasser strömt aus der Zelle. Wasser strömt aus der Zelle",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-074",
+      "field": "direction",
+      "group": "contradiction",
+      "text": "Der Nettostrom geht nach außen und der Nettostrom geht nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-075",
+      "field": "direction",
+      "group": "correction",
+      "text": "Nicht nach innen, sondern Wasser strömt aus der Zelle",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-076",
+      "field": "direction",
+      "group": "same-contrast",
+      "text": "Nicht Wasser strömt aus der Zelle, sondern Wasser strömt aus der Zelle",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-077",
+      "field": "direction",
+      "group": "unknown",
+      "text": "Wasser strömt aus der Zelle. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-078",
+      "field": "direction",
+      "group": "time",
+      "text": "Erst Wasser strömt aus der Zelle, später nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-079",
+      "field": "direction",
+      "group": "repeat",
+      "text": "vielleicht Wasser strömt aus der Zelle. Wasser strömt aus der Zelle",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-080",
+      "field": "direction",
+      "group": "contradiction",
+      "text": "vielleicht Der Nettostrom geht nach außen und der Nettostrom geht nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-081",
+      "field": "direction",
+      "group": "correction",
+      "text": "vielleicht Nicht nach innen, sondern Wasser strömt aus der Zelle",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-082",
+      "field": "direction",
+      "group": "same-contrast",
+      "text": "vielleicht Nicht Wasser strömt aus der Zelle, sondern Wasser strömt aus der Zelle",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-083",
+      "field": "direction",
+      "group": "unknown",
+      "text": "vielleicht Wasser strömt aus der Zelle. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-084",
+      "field": "direction",
+      "group": "time",
+      "text": "vielleicht Erst Wasser strömt aus der Zelle, später nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-085",
+      "field": "direction",
+      "group": "repeat",
+      "text": "ich denke, Wasser strömt aus der Zelle. Wasser strömt aus der Zelle",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-086",
+      "field": "direction",
+      "group": "contradiction",
+      "text": "ich denke, Der Nettostrom geht nach außen und der Nettostrom geht nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-087",
+      "field": "direction",
+      "group": "correction",
+      "text": "ich denke, Nicht nach innen, sondern Wasser strömt aus der Zelle",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-088",
+      "field": "direction",
+      "group": "same-contrast",
+      "text": "ich denke, Nicht Wasser strömt aus der Zelle, sondern Wasser strömt aus der Zelle",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-089",
+      "field": "direction",
+      "group": "unknown",
+      "text": "ich denke, Wasser strömt aus der Zelle. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-090",
+      "field": "direction",
+      "group": "time",
+      "text": "ich denke, Erst Wasser strömt aus der Zelle, später nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-091",
+      "field": "direction",
+      "group": "repeat",
+      "text": "vom Cytosol in den Außenraum. vom Cytosol in den Außenraum",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-092",
+      "field": "direction",
+      "group": "contradiction",
+      "text": "Der Nettostrom geht nach außen und der Nettostrom geht nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-093",
+      "field": "direction",
+      "group": "correction",
+      "text": "Nicht nach innen, sondern vom Cytosol in den Außenraum",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-094",
+      "field": "direction",
+      "group": "same-contrast",
+      "text": "Nicht vom Cytosol in den Außenraum, sondern vom Cytosol in den Außenraum",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-095",
+      "field": "direction",
+      "group": "unknown",
+      "text": "vom Cytosol in den Außenraum. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-096",
+      "field": "direction",
+      "group": "time",
+      "text": "Erst vom Cytosol in den Außenraum, später nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-097",
+      "field": "direction",
+      "group": "repeat",
+      "text": "vielleicht vom Cytosol in den Außenraum. vom Cytosol in den Außenraum",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-098",
+      "field": "direction",
+      "group": "contradiction",
+      "text": "vielleicht Der Nettostrom geht nach außen und der Nettostrom geht nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-099",
+      "field": "direction",
+      "group": "correction",
+      "text": "vielleicht Nicht nach innen, sondern vom Cytosol in den Außenraum",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-100",
+      "field": "direction",
+      "group": "same-contrast",
+      "text": "vielleicht Nicht vom Cytosol in den Außenraum, sondern vom Cytosol in den Außenraum",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-101",
+      "field": "direction",
+      "group": "unknown",
+      "text": "vielleicht vom Cytosol in den Außenraum. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-102",
+      "field": "direction",
+      "group": "time",
+      "text": "vielleicht Erst vom Cytosol in den Außenraum, später nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-103",
+      "field": "direction",
+      "group": "repeat",
+      "text": "ich denke, vom Cytosol in den Außenraum. vom Cytosol in den Außenraum",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-104",
+      "field": "direction",
+      "group": "contradiction",
+      "text": "ich denke, Der Nettostrom geht nach außen und der Nettostrom geht nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-105",
+      "field": "direction",
+      "group": "correction",
+      "text": "ich denke, Nicht nach innen, sondern vom Cytosol in den Außenraum",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-106",
+      "field": "direction",
+      "group": "same-contrast",
+      "text": "ich denke, Nicht vom Cytosol in den Außenraum, sondern vom Cytosol in den Außenraum",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-107",
+      "field": "direction",
+      "group": "unknown",
+      "text": "ich denke, vom Cytosol in den Außenraum. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-108",
+      "field": "direction",
+      "group": "time",
+      "text": "ich denke, Erst vom Cytosol in den Außenraum, später nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-109",
+      "field": "direction",
+      "group": "repeat",
+      "text": "Wasser bewegt sich nach außen. Wasser bewegt sich nach außen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-110",
+      "field": "direction",
+      "group": "contradiction",
+      "text": "Der Nettostrom geht nach außen und der Nettostrom geht nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-111",
+      "field": "direction",
+      "group": "correction",
+      "text": "Nicht nach innen, sondern Wasser bewegt sich nach außen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-112",
+      "field": "direction",
+      "group": "same-contrast",
+      "text": "Nicht Wasser bewegt sich nach außen, sondern Wasser bewegt sich nach außen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-113",
+      "field": "direction",
+      "group": "unknown",
+      "text": "Wasser bewegt sich nach außen. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-114",
+      "field": "direction",
+      "group": "time",
+      "text": "Erst Wasser bewegt sich nach außen, später nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-115",
+      "field": "direction",
+      "group": "repeat",
+      "text": "vielleicht Wasser bewegt sich nach außen. Wasser bewegt sich nach außen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-116",
+      "field": "direction",
+      "group": "contradiction",
+      "text": "vielleicht Der Nettostrom geht nach außen und der Nettostrom geht nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-117",
+      "field": "direction",
+      "group": "correction",
+      "text": "vielleicht Nicht nach innen, sondern Wasser bewegt sich nach außen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-118",
+      "field": "direction",
+      "group": "same-contrast",
+      "text": "vielleicht Nicht Wasser bewegt sich nach außen, sondern Wasser bewegt sich nach außen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-119",
+      "field": "direction",
+      "group": "unknown",
+      "text": "vielleicht Wasser bewegt sich nach außen. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-120",
+      "field": "direction",
+      "group": "time",
+      "text": "vielleicht Erst Wasser bewegt sich nach außen, später nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-121",
+      "field": "direction",
+      "group": "repeat",
+      "text": "ich denke, Wasser bewegt sich nach außen. Wasser bewegt sich nach außen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-122",
+      "field": "direction",
+      "group": "contradiction",
+      "text": "ich denke, Der Nettostrom geht nach außen und der Nettostrom geht nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-123",
+      "field": "direction",
+      "group": "correction",
+      "text": "ich denke, Nicht nach innen, sondern Wasser bewegt sich nach außen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-124",
+      "field": "direction",
+      "group": "same-contrast",
+      "text": "ich denke, Nicht Wasser bewegt sich nach außen, sondern Wasser bewegt sich nach außen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-125",
+      "field": "direction",
+      "group": "unknown",
+      "text": "ich denke, Wasser bewegt sich nach außen. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-126",
+      "field": "direction",
+      "group": "time",
+      "text": "ich denke, Erst Wasser bewegt sich nach außen, später nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-127",
+      "field": "direction",
+      "group": "repeat",
+      "text": "mehr Wasser fließt hinaus als hinein. mehr Wasser fließt hinaus als hinein",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-128",
+      "field": "direction",
+      "group": "contradiction",
+      "text": "Der Nettostrom geht nach außen und der Nettostrom geht nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-129",
+      "field": "direction",
+      "group": "correction",
+      "text": "Nicht nach innen, sondern mehr Wasser fließt hinaus als hinein",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-130",
+      "field": "direction",
+      "group": "same-contrast",
+      "text": "Nicht mehr Wasser fließt hinaus als hinein, sondern mehr Wasser fließt hinaus als hinein",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-131",
+      "field": "direction",
+      "group": "unknown",
+      "text": "mehr Wasser fließt hinaus als hinein. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-132",
+      "field": "direction",
+      "group": "time",
+      "text": "Erst mehr Wasser fließt hinaus als hinein, später nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-133",
+      "field": "direction",
+      "group": "repeat",
+      "text": "vielleicht mehr Wasser fließt hinaus als hinein. mehr Wasser fließt hinaus als hinein",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-134",
+      "field": "direction",
+      "group": "contradiction",
+      "text": "vielleicht Der Nettostrom geht nach außen und der Nettostrom geht nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-135",
+      "field": "direction",
+      "group": "correction",
+      "text": "vielleicht Nicht nach innen, sondern mehr Wasser fließt hinaus als hinein",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-136",
+      "field": "direction",
+      "group": "same-contrast",
+      "text": "vielleicht Nicht mehr Wasser fließt hinaus als hinein, sondern mehr Wasser fließt hinaus als hinein",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-137",
+      "field": "direction",
+      "group": "unknown",
+      "text": "vielleicht mehr Wasser fließt hinaus als hinein. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-138",
+      "field": "direction",
+      "group": "time",
+      "text": "vielleicht Erst mehr Wasser fließt hinaus als hinein, später nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-139",
+      "field": "direction",
+      "group": "repeat",
+      "text": "ich denke, mehr Wasser fließt hinaus als hinein. mehr Wasser fließt hinaus als hinein",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-140",
+      "field": "direction",
+      "group": "contradiction",
+      "text": "ich denke, Der Nettostrom geht nach außen und der Nettostrom geht nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-141",
+      "field": "direction",
+      "group": "correction",
+      "text": "ich denke, Nicht nach innen, sondern mehr Wasser fließt hinaus als hinein",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-142",
+      "field": "direction",
+      "group": "same-contrast",
+      "text": "ich denke, Nicht mehr Wasser fließt hinaus als hinein, sondern mehr Wasser fließt hinaus als hinein",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-143",
+      "field": "direction",
+      "group": "unknown",
+      "text": "ich denke, mehr Wasser fließt hinaus als hinein. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-144",
+      "field": "direction",
+      "group": "time",
+      "text": "ich denke, Erst mehr Wasser fließt hinaus als hinein, später nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-145",
+      "field": "direction",
+      "group": "repeat",
+      "text": "Wasser fließt aus der Zelle. Wasser fließt aus der Zelle",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-146",
+      "field": "direction",
+      "group": "contradiction",
+      "text": "Der Nettostrom geht nach außen und der Nettostrom geht nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-147",
+      "field": "direction",
+      "group": "correction",
+      "text": "Nicht nach innen, sondern Wasser fließt aus der Zelle",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-148",
+      "field": "direction",
+      "group": "same-contrast",
+      "text": "Nicht Wasser fließt aus der Zelle, sondern Wasser fließt aus der Zelle",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-149",
+      "field": "direction",
+      "group": "unknown",
+      "text": "Wasser fließt aus der Zelle. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-150",
+      "field": "direction",
+      "group": "time",
+      "text": "Erst Wasser fließt aus der Zelle, später nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-151",
+      "field": "direction",
+      "group": "repeat",
+      "text": "vielleicht Wasser fließt aus der Zelle. Wasser fließt aus der Zelle",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-152",
+      "field": "direction",
+      "group": "contradiction",
+      "text": "vielleicht Der Nettostrom geht nach außen und der Nettostrom geht nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-153",
+      "field": "direction",
+      "group": "correction",
+      "text": "vielleicht Nicht nach innen, sondern Wasser fließt aus der Zelle",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-154",
+      "field": "direction",
+      "group": "same-contrast",
+      "text": "vielleicht Nicht Wasser fließt aus der Zelle, sondern Wasser fließt aus der Zelle",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-155",
+      "field": "direction",
+      "group": "unknown",
+      "text": "vielleicht Wasser fließt aus der Zelle. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-156",
+      "field": "direction",
+      "group": "time",
+      "text": "vielleicht Erst Wasser fließt aus der Zelle, später nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-157",
+      "field": "direction",
+      "group": "repeat",
+      "text": "ich denke, Wasser fließt aus der Zelle. Wasser fließt aus der Zelle",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-158",
+      "field": "direction",
+      "group": "contradiction",
+      "text": "ich denke, Der Nettostrom geht nach außen und der Nettostrom geht nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-159",
+      "field": "direction",
+      "group": "correction",
+      "text": "ich denke, Nicht nach innen, sondern Wasser fließt aus der Zelle",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-160",
+      "field": "direction",
+      "group": "same-contrast",
+      "text": "ich denke, Nicht Wasser fließt aus der Zelle, sondern Wasser fließt aus der Zelle",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-161",
+      "field": "direction",
+      "group": "unknown",
+      "text": "ich denke, Wasser fließt aus der Zelle. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-162",
+      "field": "direction",
+      "group": "time",
+      "text": "ich denke, Erst Wasser fließt aus der Zelle, später nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-163",
+      "field": "direction",
+      "group": "repeat",
+      "text": "Der Nettostrom geht nach außen. Der Nettostrom geht nach außen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-164",
+      "field": "direction",
+      "group": "contradiction",
+      "text": "Der Nettostrom geht nach außen und der Nettostrom geht nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-165",
+      "field": "direction",
+      "group": "correction",
+      "text": "Nicht nach innen, sondern Der Nettostrom geht nach außen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-166",
+      "field": "direction",
+      "group": "same-contrast",
+      "text": "Nicht Der Nettostrom geht nach außen, sondern Der Nettostrom geht nach außen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-167",
+      "field": "direction",
+      "group": "unknown",
+      "text": "Der Nettostrom geht nach außen. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-168",
+      "field": "direction",
+      "group": "time",
+      "text": "Erst Der Nettostrom geht nach außen, später nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-169",
+      "field": "direction",
+      "group": "repeat",
+      "text": "vielleicht Der Nettostrom geht nach außen. Der Nettostrom geht nach außen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-170",
+      "field": "direction",
+      "group": "contradiction",
+      "text": "vielleicht Der Nettostrom geht nach außen und der Nettostrom geht nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-171",
+      "field": "direction",
+      "group": "correction",
+      "text": "vielleicht Nicht nach innen, sondern Der Nettostrom geht nach außen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-172",
+      "field": "direction",
+      "group": "same-contrast",
+      "text": "vielleicht Nicht Der Nettostrom geht nach außen, sondern Der Nettostrom geht nach außen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-173",
+      "field": "direction",
+      "group": "unknown",
+      "text": "vielleicht Der Nettostrom geht nach außen. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-174",
+      "field": "direction",
+      "group": "time",
+      "text": "vielleicht Erst Der Nettostrom geht nach außen, später nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-175",
+      "field": "direction",
+      "group": "repeat",
+      "text": "ich denke, Der Nettostrom geht nach außen. Der Nettostrom geht nach außen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-176",
+      "field": "direction",
+      "group": "contradiction",
+      "text": "ich denke, Der Nettostrom geht nach außen und der Nettostrom geht nach innen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-177",
+      "field": "direction",
+      "group": "correction",
+      "text": "ich denke, Nicht nach innen, sondern Der Nettostrom geht nach außen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-178",
+      "field": "direction",
+      "group": "same-contrast",
+      "text": "ich denke, Nicht Der Nettostrom geht nach außen, sondern Der Nettostrom geht nach außen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-179",
+      "field": "direction",
+      "group": "unknown",
+      "text": "ich denke, Der Nettostrom geht nach außen. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-180",
+      "field": "direction",
+      "group": "time",
+      "text": "ich denke, Erst Der Nettostrom geht nach außen, später nach innen",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-181",
+      "field": "volume",
+      "group": "repeat",
+      "text": "kleiner. kleiner",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-182",
+      "field": "volume",
+      "group": "contradiction",
+      "text": "kleiner und größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-183",
+      "field": "volume",
+      "group": "correction",
+      "text": "Nicht größer, sondern kleiner",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-184",
+      "field": "volume",
+      "group": "same-contrast",
+      "text": "Nicht kleiner, sondern kleiner",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-185",
+      "field": "volume",
+      "group": "unknown",
+      "text": "kleiner. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-186",
+      "field": "volume",
+      "group": "time",
+      "text": "Erst kleiner, später größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-187",
+      "field": "volume",
+      "group": "repeat",
+      "text": "vielleicht kleiner. kleiner",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-188",
+      "field": "volume",
+      "group": "contradiction",
+      "text": "vielleicht kleiner und größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-189",
+      "field": "volume",
+      "group": "correction",
+      "text": "vielleicht Nicht größer, sondern kleiner",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-190",
+      "field": "volume",
+      "group": "same-contrast",
+      "text": "vielleicht Nicht kleiner, sondern kleiner",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-191",
+      "field": "volume",
+      "group": "unknown",
+      "text": "vielleicht kleiner. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-192",
+      "field": "volume",
+      "group": "time",
+      "text": "vielleicht Erst kleiner, später größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-193",
+      "field": "volume",
+      "group": "repeat",
+      "text": "ich denke, kleiner. kleiner",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-194",
+      "field": "volume",
+      "group": "contradiction",
+      "text": "ich denke, kleiner und größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-195",
+      "field": "volume",
+      "group": "correction",
+      "text": "ich denke, Nicht größer, sondern kleiner",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-196",
+      "field": "volume",
+      "group": "same-contrast",
+      "text": "ich denke, Nicht kleiner, sondern kleiner",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-197",
+      "field": "volume",
+      "group": "unknown",
+      "text": "ich denke, kleiner. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-198",
+      "field": "volume",
+      "group": "time",
+      "text": "ich denke, Erst kleiner, später größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-199",
+      "field": "volume",
+      "group": "repeat",
+      "text": "nimmt ab. nimmt ab",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-200",
+      "field": "volume",
+      "group": "contradiction",
+      "text": "nimmt ab und größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-201",
+      "field": "volume",
+      "group": "correction",
+      "text": "Nicht größer, sondern nimmt ab",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-202",
+      "field": "volume",
+      "group": "same-contrast",
+      "text": "Nicht nimmt ab, sondern nimmt ab",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-203",
+      "field": "volume",
+      "group": "unknown",
+      "text": "nimmt ab. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-204",
+      "field": "volume",
+      "group": "time",
+      "text": "Erst nimmt ab, später größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-205",
+      "field": "volume",
+      "group": "repeat",
+      "text": "vielleicht nimmt ab. nimmt ab",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-206",
+      "field": "volume",
+      "group": "contradiction",
+      "text": "vielleicht nimmt ab und größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-207",
+      "field": "volume",
+      "group": "correction",
+      "text": "vielleicht Nicht größer, sondern nimmt ab",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-208",
+      "field": "volume",
+      "group": "same-contrast",
+      "text": "vielleicht Nicht nimmt ab, sondern nimmt ab",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-209",
+      "field": "volume",
+      "group": "unknown",
+      "text": "vielleicht nimmt ab. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-210",
+      "field": "volume",
+      "group": "time",
+      "text": "vielleicht Erst nimmt ab, später größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-211",
+      "field": "volume",
+      "group": "repeat",
+      "text": "ich denke, nimmt ab. nimmt ab",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-212",
+      "field": "volume",
+      "group": "contradiction",
+      "text": "ich denke, nimmt ab und größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-213",
+      "field": "volume",
+      "group": "correction",
+      "text": "ich denke, Nicht größer, sondern nimmt ab",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-214",
+      "field": "volume",
+      "group": "same-contrast",
+      "text": "ich denke, Nicht nimmt ab, sondern nimmt ab",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-215",
+      "field": "volume",
+      "group": "unknown",
+      "text": "ich denke, nimmt ab. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-216",
+      "field": "volume",
+      "group": "time",
+      "text": "ich denke, Erst nimmt ab, später größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-217",
+      "field": "volume",
+      "group": "repeat",
+      "text": "schrumpft. schrumpft",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-218",
+      "field": "volume",
+      "group": "contradiction",
+      "text": "schrumpft und größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-219",
+      "field": "volume",
+      "group": "correction",
+      "text": "Nicht größer, sondern schrumpft",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-220",
+      "field": "volume",
+      "group": "same-contrast",
+      "text": "Nicht schrumpft, sondern schrumpft",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-221",
+      "field": "volume",
+      "group": "unknown",
+      "text": "schrumpft. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-222",
+      "field": "volume",
+      "group": "time",
+      "text": "Erst schrumpft, später größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-223",
+      "field": "volume",
+      "group": "repeat",
+      "text": "vielleicht schrumpft. schrumpft",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-224",
+      "field": "volume",
+      "group": "contradiction",
+      "text": "vielleicht schrumpft und größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-225",
+      "field": "volume",
+      "group": "correction",
+      "text": "vielleicht Nicht größer, sondern schrumpft",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-226",
+      "field": "volume",
+      "group": "same-contrast",
+      "text": "vielleicht Nicht schrumpft, sondern schrumpft",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-227",
+      "field": "volume",
+      "group": "unknown",
+      "text": "vielleicht schrumpft. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-228",
+      "field": "volume",
+      "group": "time",
+      "text": "vielleicht Erst schrumpft, später größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-229",
+      "field": "volume",
+      "group": "repeat",
+      "text": "ich denke, schrumpft. schrumpft",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-230",
+      "field": "volume",
+      "group": "contradiction",
+      "text": "ich denke, schrumpft und größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-231",
+      "field": "volume",
+      "group": "correction",
+      "text": "ich denke, Nicht größer, sondern schrumpft",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-232",
+      "field": "volume",
+      "group": "same-contrast",
+      "text": "ich denke, Nicht schrumpft, sondern schrumpft",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-233",
+      "field": "volume",
+      "group": "unknown",
+      "text": "ich denke, schrumpft. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-234",
+      "field": "volume",
+      "group": "time",
+      "text": "ich denke, Erst schrumpft, später größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-235",
+      "field": "volume",
+      "group": "repeat",
+      "text": "Das Vakuolenvolumen nimmt ab. Das Vakuolenvolumen nimmt ab",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-236",
+      "field": "volume",
+      "group": "contradiction",
+      "text": "Das Vakuolenvolumen nimmt ab und größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-237",
+      "field": "volume",
+      "group": "correction",
+      "text": "Nicht größer, sondern Das Vakuolenvolumen nimmt ab",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-238",
+      "field": "volume",
+      "group": "same-contrast",
+      "text": "Nicht Das Vakuolenvolumen nimmt ab, sondern Das Vakuolenvolumen nimmt ab",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-239",
+      "field": "volume",
+      "group": "unknown",
+      "text": "Das Vakuolenvolumen nimmt ab. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-240",
+      "field": "volume",
+      "group": "time",
+      "text": "Erst Das Vakuolenvolumen nimmt ab, später größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-241",
+      "field": "volume",
+      "group": "repeat",
+      "text": "vielleicht Das Vakuolenvolumen nimmt ab. Das Vakuolenvolumen nimmt ab",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-242",
+      "field": "volume",
+      "group": "contradiction",
+      "text": "vielleicht Das Vakuolenvolumen nimmt ab und größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-243",
+      "field": "volume",
+      "group": "correction",
+      "text": "vielleicht Nicht größer, sondern Das Vakuolenvolumen nimmt ab",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-244",
+      "field": "volume",
+      "group": "same-contrast",
+      "text": "vielleicht Nicht Das Vakuolenvolumen nimmt ab, sondern Das Vakuolenvolumen nimmt ab",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-245",
+      "field": "volume",
+      "group": "unknown",
+      "text": "vielleicht Das Vakuolenvolumen nimmt ab. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-246",
+      "field": "volume",
+      "group": "time",
+      "text": "vielleicht Erst Das Vakuolenvolumen nimmt ab, später größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-247",
+      "field": "volume",
+      "group": "repeat",
+      "text": "ich denke, Das Vakuolenvolumen nimmt ab. Das Vakuolenvolumen nimmt ab",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-248",
+      "field": "volume",
+      "group": "contradiction",
+      "text": "ich denke, Das Vakuolenvolumen nimmt ab und größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-249",
+      "field": "volume",
+      "group": "correction",
+      "text": "ich denke, Nicht größer, sondern Das Vakuolenvolumen nimmt ab",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-250",
+      "field": "volume",
+      "group": "same-contrast",
+      "text": "ich denke, Nicht Das Vakuolenvolumen nimmt ab, sondern Das Vakuolenvolumen nimmt ab",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-251",
+      "field": "volume",
+      "group": "unknown",
+      "text": "ich denke, Das Vakuolenvolumen nimmt ab. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-252",
+      "field": "volume",
+      "group": "time",
+      "text": "ich denke, Erst Das Vakuolenvolumen nimmt ab, später größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-253",
+      "field": "volume",
+      "group": "repeat",
+      "text": "Die Vakuole wird kleiner. Die Vakuole wird kleiner",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-254",
+      "field": "volume",
+      "group": "contradiction",
+      "text": "Die Vakuole wird kleiner und größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-255",
+      "field": "volume",
+      "group": "correction",
+      "text": "Nicht größer, sondern Die Vakuole wird kleiner",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-256",
+      "field": "volume",
+      "group": "same-contrast",
+      "text": "Nicht Die Vakuole wird kleiner, sondern Die Vakuole wird kleiner",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-257",
+      "field": "volume",
+      "group": "unknown",
+      "text": "Die Vakuole wird kleiner. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-258",
+      "field": "volume",
+      "group": "time",
+      "text": "Erst Die Vakuole wird kleiner, später größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-259",
+      "field": "volume",
+      "group": "repeat",
+      "text": "vielleicht Die Vakuole wird kleiner. Die Vakuole wird kleiner",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-260",
+      "field": "volume",
+      "group": "contradiction",
+      "text": "vielleicht Die Vakuole wird kleiner und größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-261",
+      "field": "volume",
+      "group": "correction",
+      "text": "vielleicht Nicht größer, sondern Die Vakuole wird kleiner",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-262",
+      "field": "volume",
+      "group": "same-contrast",
+      "text": "vielleicht Nicht Die Vakuole wird kleiner, sondern Die Vakuole wird kleiner",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-263",
+      "field": "volume",
+      "group": "unknown",
+      "text": "vielleicht Die Vakuole wird kleiner. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-264",
+      "field": "volume",
+      "group": "time",
+      "text": "vielleicht Erst Die Vakuole wird kleiner, später größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-265",
+      "field": "volume",
+      "group": "repeat",
+      "text": "ich denke, Die Vakuole wird kleiner. Die Vakuole wird kleiner",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-266",
+      "field": "volume",
+      "group": "contradiction",
+      "text": "ich denke, Die Vakuole wird kleiner und größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-267",
+      "field": "volume",
+      "group": "correction",
+      "text": "ich denke, Nicht größer, sondern Die Vakuole wird kleiner",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-268",
+      "field": "volume",
+      "group": "same-contrast",
+      "text": "ich denke, Nicht Die Vakuole wird kleiner, sondern Die Vakuole wird kleiner",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-269",
+      "field": "volume",
+      "group": "unknown",
+      "text": "ich denke, Die Vakuole wird kleiner. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-270",
+      "field": "volume",
+      "group": "time",
+      "text": "ich denke, Erst Die Vakuole wird kleiner, später größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-271",
+      "field": "volume",
+      "group": "repeat",
+      "text": "Das Volumen sinkt. Das Volumen sinkt",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-272",
+      "field": "volume",
+      "group": "contradiction",
+      "text": "Das Volumen sinkt und größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-273",
+      "field": "volume",
+      "group": "correction",
+      "text": "Nicht größer, sondern Das Volumen sinkt",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-274",
+      "field": "volume",
+      "group": "same-contrast",
+      "text": "Nicht Das Volumen sinkt, sondern Das Volumen sinkt",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-275",
+      "field": "volume",
+      "group": "unknown",
+      "text": "Das Volumen sinkt. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-276",
+      "field": "volume",
+      "group": "time",
+      "text": "Erst Das Volumen sinkt, später größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-277",
+      "field": "volume",
+      "group": "repeat",
+      "text": "vielleicht Das Volumen sinkt. Das Volumen sinkt",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-278",
+      "field": "volume",
+      "group": "contradiction",
+      "text": "vielleicht Das Volumen sinkt und größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-279",
+      "field": "volume",
+      "group": "correction",
+      "text": "vielleicht Nicht größer, sondern Das Volumen sinkt",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-280",
+      "field": "volume",
+      "group": "same-contrast",
+      "text": "vielleicht Nicht Das Volumen sinkt, sondern Das Volumen sinkt",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-281",
+      "field": "volume",
+      "group": "unknown",
+      "text": "vielleicht Das Volumen sinkt. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-282",
+      "field": "volume",
+      "group": "time",
+      "text": "vielleicht Erst Das Volumen sinkt, später größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-283",
+      "field": "volume",
+      "group": "repeat",
+      "text": "ich denke, Das Volumen sinkt. Das Volumen sinkt",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-284",
+      "field": "volume",
+      "group": "contradiction",
+      "text": "ich denke, Das Volumen sinkt und größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-285",
+      "field": "volume",
+      "group": "correction",
+      "text": "ich denke, Nicht größer, sondern Das Volumen sinkt",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-286",
+      "field": "volume",
+      "group": "same-contrast",
+      "text": "ich denke, Nicht Das Volumen sinkt, sondern Das Volumen sinkt",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-287",
+      "field": "volume",
+      "group": "unknown",
+      "text": "ich denke, Das Volumen sinkt. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-288",
+      "field": "volume",
+      "group": "time",
+      "text": "ich denke, Erst Das Volumen sinkt, später größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-289",
+      "field": "volume",
+      "group": "repeat",
+      "text": "Die Vakuole schrumpft. Die Vakuole schrumpft",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-290",
+      "field": "volume",
+      "group": "contradiction",
+      "text": "Die Vakuole schrumpft und größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-291",
+      "field": "volume",
+      "group": "correction",
+      "text": "Nicht größer, sondern Die Vakuole schrumpft",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-292",
+      "field": "volume",
+      "group": "same-contrast",
+      "text": "Nicht Die Vakuole schrumpft, sondern Die Vakuole schrumpft",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-293",
+      "field": "volume",
+      "group": "unknown",
+      "text": "Die Vakuole schrumpft. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-294",
+      "field": "volume",
+      "group": "time",
+      "text": "Erst Die Vakuole schrumpft, später größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-295",
+      "field": "volume",
+      "group": "repeat",
+      "text": "vielleicht Die Vakuole schrumpft. Die Vakuole schrumpft",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-296",
+      "field": "volume",
+      "group": "contradiction",
+      "text": "vielleicht Die Vakuole schrumpft und größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-297",
+      "field": "volume",
+      "group": "correction",
+      "text": "vielleicht Nicht größer, sondern Die Vakuole schrumpft",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-298",
+      "field": "volume",
+      "group": "same-contrast",
+      "text": "vielleicht Nicht Die Vakuole schrumpft, sondern Die Vakuole schrumpft",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-299",
+      "field": "volume",
+      "group": "unknown",
+      "text": "vielleicht Die Vakuole schrumpft. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-300",
+      "field": "volume",
+      "group": "time",
+      "text": "vielleicht Erst Die Vakuole schrumpft, später größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-301",
+      "field": "volume",
+      "group": "repeat",
+      "text": "ich denke, Die Vakuole schrumpft. Die Vakuole schrumpft",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-302",
+      "field": "volume",
+      "group": "contradiction",
+      "text": "ich denke, Die Vakuole schrumpft und größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-303",
+      "field": "volume",
+      "group": "correction",
+      "text": "ich denke, Nicht größer, sondern Die Vakuole schrumpft",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-304",
+      "field": "volume",
+      "group": "same-contrast",
+      "text": "ich denke, Nicht Die Vakuole schrumpft, sondern Die Vakuole schrumpft",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-305",
+      "field": "volume",
+      "group": "unknown",
+      "text": "ich denke, Die Vakuole schrumpft. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-306",
+      "field": "volume",
+      "group": "time",
+      "text": "ich denke, Erst Die Vakuole schrumpft, später größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-307",
+      "field": "volume",
+      "group": "repeat",
+      "text": "Das Volumen wird kleiner. Das Volumen wird kleiner",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-308",
+      "field": "volume",
+      "group": "contradiction",
+      "text": "Das Volumen wird kleiner und größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-309",
+      "field": "volume",
+      "group": "correction",
+      "text": "Nicht größer, sondern Das Volumen wird kleiner",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-310",
+      "field": "volume",
+      "group": "same-contrast",
+      "text": "Nicht Das Volumen wird kleiner, sondern Das Volumen wird kleiner",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-311",
+      "field": "volume",
+      "group": "unknown",
+      "text": "Das Volumen wird kleiner. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-312",
+      "field": "volume",
+      "group": "time",
+      "text": "Erst Das Volumen wird kleiner, später größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-313",
+      "field": "volume",
+      "group": "repeat",
+      "text": "vielleicht Das Volumen wird kleiner. Das Volumen wird kleiner",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-314",
+      "field": "volume",
+      "group": "contradiction",
+      "text": "vielleicht Das Volumen wird kleiner und größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-315",
+      "field": "volume",
+      "group": "correction",
+      "text": "vielleicht Nicht größer, sondern Das Volumen wird kleiner",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-316",
+      "field": "volume",
+      "group": "same-contrast",
+      "text": "vielleicht Nicht Das Volumen wird kleiner, sondern Das Volumen wird kleiner",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-317",
+      "field": "volume",
+      "group": "unknown",
+      "text": "vielleicht Das Volumen wird kleiner. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-318",
+      "field": "volume",
+      "group": "time",
+      "text": "vielleicht Erst Das Volumen wird kleiner, später größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-319",
+      "field": "volume",
+      "group": "repeat",
+      "text": "ich denke, Das Volumen wird kleiner. Das Volumen wird kleiner",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-320",
+      "field": "volume",
+      "group": "contradiction",
+      "text": "ich denke, Das Volumen wird kleiner und größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-321",
+      "field": "volume",
+      "group": "correction",
+      "text": "ich denke, Nicht größer, sondern Das Volumen wird kleiner",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-322",
+      "field": "volume",
+      "group": "same-contrast",
+      "text": "ich denke, Nicht Das Volumen wird kleiner, sondern Das Volumen wird kleiner",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-323",
+      "field": "volume",
+      "group": "unknown",
+      "text": "ich denke, Das Volumen wird kleiner. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-324",
+      "field": "volume",
+      "group": "time",
+      "text": "ich denke, Erst Das Volumen wird kleiner, später größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-325",
+      "field": "volume",
+      "group": "repeat",
+      "text": "Das Vakuolenvolumen sinkt. Das Vakuolenvolumen sinkt",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-326",
+      "field": "volume",
+      "group": "contradiction",
+      "text": "Das Vakuolenvolumen sinkt und größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-327",
+      "field": "volume",
+      "group": "correction",
+      "text": "Nicht größer, sondern Das Vakuolenvolumen sinkt",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-328",
+      "field": "volume",
+      "group": "same-contrast",
+      "text": "Nicht Das Vakuolenvolumen sinkt, sondern Das Vakuolenvolumen sinkt",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-329",
+      "field": "volume",
+      "group": "unknown",
+      "text": "Das Vakuolenvolumen sinkt. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-330",
+      "field": "volume",
+      "group": "time",
+      "text": "Erst Das Vakuolenvolumen sinkt, später größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-331",
+      "field": "volume",
+      "group": "repeat",
+      "text": "vielleicht Das Vakuolenvolumen sinkt. Das Vakuolenvolumen sinkt",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-332",
+      "field": "volume",
+      "group": "contradiction",
+      "text": "vielleicht Das Vakuolenvolumen sinkt und größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-333",
+      "field": "volume",
+      "group": "correction",
+      "text": "vielleicht Nicht größer, sondern Das Vakuolenvolumen sinkt",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-334",
+      "field": "volume",
+      "group": "same-contrast",
+      "text": "vielleicht Nicht Das Vakuolenvolumen sinkt, sondern Das Vakuolenvolumen sinkt",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-335",
+      "field": "volume",
+      "group": "unknown",
+      "text": "vielleicht Das Vakuolenvolumen sinkt. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-336",
+      "field": "volume",
+      "group": "time",
+      "text": "vielleicht Erst Das Vakuolenvolumen sinkt, später größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-337",
+      "field": "volume",
+      "group": "repeat",
+      "text": "ich denke, Das Vakuolenvolumen sinkt. Das Vakuolenvolumen sinkt",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-338",
+      "field": "volume",
+      "group": "contradiction",
+      "text": "ich denke, Das Vakuolenvolumen sinkt und größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-339",
+      "field": "volume",
+      "group": "correction",
+      "text": "ich denke, Nicht größer, sondern Das Vakuolenvolumen sinkt",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-340",
+      "field": "volume",
+      "group": "same-contrast",
+      "text": "ich denke, Nicht Das Vakuolenvolumen sinkt, sondern Das Vakuolenvolumen sinkt",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-341",
+      "field": "volume",
+      "group": "unknown",
+      "text": "ich denke, Das Vakuolenvolumen sinkt. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-342",
+      "field": "volume",
+      "group": "time",
+      "text": "ich denke, Erst Das Vakuolenvolumen sinkt, später größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-343",
+      "field": "volume",
+      "group": "repeat",
+      "text": "Die Vakuole verliert Volumen. Die Vakuole verliert Volumen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-344",
+      "field": "volume",
+      "group": "contradiction",
+      "text": "Die Vakuole verliert Volumen und größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-345",
+      "field": "volume",
+      "group": "correction",
+      "text": "Nicht größer, sondern Die Vakuole verliert Volumen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-346",
+      "field": "volume",
+      "group": "same-contrast",
+      "text": "Nicht Die Vakuole verliert Volumen, sondern Die Vakuole verliert Volumen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-347",
+      "field": "volume",
+      "group": "unknown",
+      "text": "Die Vakuole verliert Volumen. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-348",
+      "field": "volume",
+      "group": "time",
+      "text": "Erst Die Vakuole verliert Volumen, später größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-349",
+      "field": "volume",
+      "group": "repeat",
+      "text": "vielleicht Die Vakuole verliert Volumen. Die Vakuole verliert Volumen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-350",
+      "field": "volume",
+      "group": "contradiction",
+      "text": "vielleicht Die Vakuole verliert Volumen und größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-351",
+      "field": "volume",
+      "group": "correction",
+      "text": "vielleicht Nicht größer, sondern Die Vakuole verliert Volumen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-352",
+      "field": "volume",
+      "group": "same-contrast",
+      "text": "vielleicht Nicht Die Vakuole verliert Volumen, sondern Die Vakuole verliert Volumen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-353",
+      "field": "volume",
+      "group": "unknown",
+      "text": "vielleicht Die Vakuole verliert Volumen. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-354",
+      "field": "volume",
+      "group": "time",
+      "text": "vielleicht Erst Die Vakuole verliert Volumen, später größer",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-355",
+      "field": "volume",
+      "group": "repeat",
+      "text": "ich denke, Die Vakuole verliert Volumen. Die Vakuole verliert Volumen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-356",
+      "field": "volume",
+      "group": "contradiction",
+      "text": "ich denke, Die Vakuole verliert Volumen und größer",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-357",
+      "field": "volume",
+      "group": "correction",
+      "text": "ich denke, Nicht größer, sondern Die Vakuole verliert Volumen",
+      "expected": "correct",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-358",
+      "field": "volume",
+      "group": "same-contrast",
+      "text": "ich denke, Nicht Die Vakuole verliert Volumen, sondern Die Vakuole verliert Volumen",
+      "expected": "incorrect",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-359",
+      "field": "volume",
+      "group": "unknown",
+      "text": "ich denke, Die Vakuole verliert Volumen. Ein unbekannter weiterer Zusammenhang.",
+      "expected": "clarify",
+      "extra": []
+    },
+    {
+      "id": "P7SYS-360",
+      "field": "volume",
+      "group": "time",
+      "text": "ich denke, Erst Die Vakuole verliert Volumen, später größer",
+      "expected": "clarify",
+      "extra": []
+    }
+  ]
+}

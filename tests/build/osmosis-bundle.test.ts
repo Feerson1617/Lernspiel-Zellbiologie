@@ -3,7 +3,7 @@ import { readFileSync } from 'node:fs';
 import { buildDomainModule } from '../helpers/domain-bundle.ts';
 import { OSMOSIS_TEST_CONTEXT, OSMOSIS_TEST_VERSIONS } from '../helpers/osmosis.ts';
 
-it('builds/imports the actual second corrector under the production guard without test data or other field solutions', async () => {
+it('builds/imports the actual second corrector under the runtime guard without editorial data or unrelated solutions', async () => {
   const code = await buildDomainModule();
   expect(code).not.toMatch(/osmosis-cases|OSMOSIS_RECOGNITION_CASES|reference-fixtures|REL_NET_WATER_OUT|REL_VACUOLE_SMALLER|TERM_HYDROPHIL|TERM_ATP_ROLE/);
   const api = await import(/* @vite-ignore */ `data:text/javascript;base64,${Buffer.from(code).toString('base64')}`) as typeof import('../../src/assessment/osmosis.ts');

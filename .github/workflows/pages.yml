@@ -2,7 +2,7 @@ name: Build and publish GitHub Pages
 
 on:
   pull_request:
-    branches: [main]
+    branches: [main, feature/p02b-osmose-korrektor]
   push:
     branches: [main]
 
@@ -37,6 +37,8 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: npm run check
       - run: npm run report:naming
+      - run: npm run report:m602
+      - run: npm run report:m602-r1
       - name: Report actual build-gate counts
         if: always()
         run: |
@@ -68,7 +70,7 @@ jobs:
 
   webkit:
     if: github.event_name == 'pull_request'
-    runs-on: macos-latest
+    runs-on: macos-15-intel
     steps:
       - uses: actions/checkout@v4
         with:
@@ -139,6 +141,28 @@ jobs:
           path: |
             qa/generated/webkit-*.json
             test-results/**/*.png
+
+  current_relations_contract:
+    name: Current M6.02 cued contract 1.0.0
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run report:m602-cued
+      - name: Retain current outcomes, including any unmet expectations
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: current-cued-contract
+          path: |
+            qa/generated/m602-cued-results.json
 
   deploy:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'

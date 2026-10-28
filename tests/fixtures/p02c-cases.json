@@ -1,0 +1,1430 @@
+[
+  {
+    "id": "P02C-001",
+    "field": "direction",
+    "text": "nach au\u00dfen",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-002",
+    "field": "direction",
+    "text": "hinaus",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-003",
+    "field": "direction",
+    "text": "raus",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-004",
+    "field": "direction",
+    "text": "aus der Zelle",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-005",
+    "field": "direction",
+    "text": "in den Au\u00dfenraum",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-006",
+    "field": "direction",
+    "text": "vom Cytosol in die Umgebung",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-007",
+    "field": "direction",
+    "text": "aus dem Cytosol in den Au\u00dfenraum",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-008",
+    "field": "direction",
+    "text": "Wasser bewegt sich nach au\u00dfen",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-009",
+    "field": "direction",
+    "text": "Wasser flie\u00dft netto nach au\u00dfen",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-010",
+    "field": "direction",
+    "text": "Wasser tritt netto aus der Zelle aus",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-011",
+    "field": "direction",
+    "text": "Wasser str\u00f6mt in den Au\u00dfenraum",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-012",
+    "field": "direction",
+    "text": "Die Zelle verliert Wasser",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-013",
+    "field": "direction",
+    "text": "Die Zelle gibt Wasser ab",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-014",
+    "field": "direction",
+    "text": "Es treten mehr Wassermolek\u00fcle aus als ein",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-015",
+    "field": "direction",
+    "text": "Mehr Wasser tritt aus als ein",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-016",
+    "field": "direction",
+    "text": "Wasser tritt in beide Richtungen \u00fcber, netto aber aus der Zelle",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-017",
+    "field": "direction",
+    "text": "Wasser bewegt sich in beide Richtungen, netto aber nach au\u00dfen",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-018",
+    "field": "direction",
+    "text": "Wasser tritt ein und aus; netto tritt es aus",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-019",
+    "field": "direction",
+    "text": "Einzelne Wassermolek\u00fcle bewegen sich nach innen, netto flie\u00dft Wasser nach au\u00dfen",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-020",
+    "field": "direction",
+    "text": "Nicht nach innen, sondern nach au\u00dfen",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-021",
+    "field": "direction",
+    "text": "Nach au\u00dfen statt nach innen",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-022",
+    "field": "direction",
+    "text": "Ich dachte zun\u00e4chst hinein; jetzt meine ich hinaus",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-023",
+    "field": "direction",
+    "text": "Ich dachte erst raus; jetzt meine ich nach au\u00dfen",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-024",
+    "field": "direction",
+    "text": "netto nach au\u00dfen und netto hinaus",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-025",
+    "field": "direction",
+    "text": "raus oder hinaus",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-026",
+    "field": "direction",
+    "text": "hier nach au\u00dfen",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-027",
+    "field": "direction",
+    "text": "im angezeigten Zustand netto hinaus",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-028",
+    "field": "direction",
+    "text": "Vielleicht nach au\u00dfen?",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-029",
+    "field": "direction",
+    "text": "Ich denke, nach au\u00dfen.",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-030",
+    "field": "direction",
+    "text": "nach au\u00dfen!",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-031",
+    "field": "direction",
+    "text": "Vielleicht hinaus?",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-032",
+    "field": "direction",
+    "text": "Ich denke, hinaus.",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-033",
+    "field": "direction",
+    "text": "hinaus!",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-034",
+    "field": "direction",
+    "text": "Vielleicht raus?",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-035",
+    "field": "direction",
+    "text": "Ich denke, raus.",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-036",
+    "field": "direction",
+    "text": "raus!",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-037",
+    "field": "direction",
+    "text": "Vielleicht aus der Zelle?",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-038",
+    "field": "direction",
+    "text": "Ich denke, aus der Zelle.",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-039",
+    "field": "direction",
+    "text": "aus der Zelle!",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-040",
+    "field": "direction",
+    "text": "Vielleicht in den Au\u00dfenraum?",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-041",
+    "field": "direction",
+    "text": "Ich denke, in den Au\u00dfenraum.",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-042",
+    "field": "direction",
+    "text": "in den Au\u00dfenraum!",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-043",
+    "field": "direction",
+    "text": "Vielleicht vom Cytosol in die Umgebung?",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-044",
+    "field": "direction",
+    "text": "Ich denke, vom Cytosol in die Umgebung.",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-045",
+    "field": "direction",
+    "text": "vom Cytosol in die Umgebung!",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-046",
+    "field": "direction",
+    "text": "Vielleicht aus dem Cytosol in den Au\u00dfenraum?",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-047",
+    "field": "direction",
+    "text": "Ich denke, aus dem Cytosol in den Au\u00dfenraum.",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-048",
+    "field": "direction",
+    "text": "aus dem Cytosol in den Au\u00dfenraum!",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-049",
+    "field": "direction",
+    "text": "Vielleicht Wasser bewegt sich nach au\u00dfen?",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-050",
+    "field": "direction",
+    "text": "Ich denke, Wasser bewegt sich nach au\u00dfen.",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-051",
+    "field": "direction",
+    "text": "Wasser bewegt sich nach au\u00dfen!",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-052",
+    "field": "direction",
+    "text": "Vielleicht Wasser flie\u00dft netto nach au\u00dfen?",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-053",
+    "field": "direction",
+    "text": "Ich denke, Wasser flie\u00dft netto nach au\u00dfen.",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-054",
+    "field": "direction",
+    "text": "Wasser flie\u00dft netto nach au\u00dfen!",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-055",
+    "field": "direction",
+    "text": "Vielleicht Wasser tritt netto aus der Zelle aus?",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-056",
+    "field": "direction",
+    "text": "Ich denke, Wasser tritt netto aus der Zelle aus.",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-057",
+    "field": "direction",
+    "text": "Wasser tritt netto aus der Zelle aus!",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-058",
+    "field": "direction",
+    "text": "Vielleicht Wasser str\u00f6mt in den Au\u00dfenraum?",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-059",
+    "field": "direction",
+    "text": "Ich denke, Wasser str\u00f6mt in den Au\u00dfenraum.",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-060",
+    "field": "direction",
+    "text": "Wasser str\u00f6mt in den Au\u00dfenraum!",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-061",
+    "field": "direction",
+    "text": "Vielleicht Die Zelle verliert Wasser?",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-062",
+    "field": "direction",
+    "text": "Ich denke, Die Zelle verliert Wasser.",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-063",
+    "field": "direction",
+    "text": "Die Zelle verliert Wasser!",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-064",
+    "field": "volume",
+    "text": "kleiner",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-065",
+    "field": "volume",
+    "text": "weniger",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-066",
+    "field": "volume",
+    "text": "nimmt ab",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-067",
+    "field": "volume",
+    "text": "schrumpft",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-068",
+    "field": "volume",
+    "text": "verkleinert sich",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-069",
+    "field": "volume",
+    "text": "wird kleiner",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-070",
+    "field": "volume",
+    "text": "wird geringer",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-071",
+    "field": "volume",
+    "text": "verringert sich",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-072",
+    "field": "volume",
+    "text": "Volumenabnahme",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-073",
+    "field": "volume",
+    "text": "Die Vakuole verliert Volumen",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-074",
+    "field": "volume",
+    "text": "Das Vakuolenvolumen nimmt ab",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-075",
+    "field": "volume",
+    "text": "Das Volumen wird kleiner",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-076",
+    "field": "volume",
+    "text": "Die Vakuole schrumpft",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-077",
+    "field": "volume",
+    "text": "Die Vakuole verkleinert sich",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-078",
+    "field": "volume",
+    "text": "Die Vakuole wird kleiner, weil sie Wasser verliert",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-079",
+    "field": "volume",
+    "text": "schrumpft, weil Wasser austritt",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-080",
+    "field": "volume",
+    "text": "Nicht gr\u00f6\u00dfer, sondern kleiner",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-081",
+    "field": "volume",
+    "text": "kleiner statt gr\u00f6\u00dfer",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-082",
+    "field": "volume",
+    "text": "Ich dachte zun\u00e4chst gr\u00f6\u00dfer; jetzt meine ich kleiner",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-083",
+    "field": "volume",
+    "text": "Die Vakuole schrumpft und die Zellwand bleibt gleich",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-084",
+    "field": "volume",
+    "text": "kleiner oder weniger",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-085",
+    "field": "volume",
+    "text": "nimmt ab und schrumpft",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-086",
+    "field": "volume",
+    "text": "hier kleiner",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-087",
+    "field": "volume",
+    "text": "in dieser Phase nimmt ab",
+    "expected": "correct",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-088",
+    "field": "volume",
+    "text": "Vielleicht kleiner?",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-089",
+    "field": "volume",
+    "text": "Ich denke, kleiner.",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-090",
+    "field": "volume",
+    "text": "kleiner!",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-091",
+    "field": "volume",
+    "text": "Vielleicht weniger?",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-092",
+    "field": "volume",
+    "text": "Ich denke, weniger.",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-093",
+    "field": "volume",
+    "text": "weniger!",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-094",
+    "field": "volume",
+    "text": "Vielleicht nimmt ab?",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-095",
+    "field": "volume",
+    "text": "Ich denke, nimmt ab.",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-096",
+    "field": "volume",
+    "text": "nimmt ab!",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-097",
+    "field": "volume",
+    "text": "Vielleicht schrumpft?",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-098",
+    "field": "volume",
+    "text": "Ich denke, schrumpft.",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-099",
+    "field": "volume",
+    "text": "schrumpft!",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-100",
+    "field": "volume",
+    "text": "Vielleicht verkleinert sich?",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-101",
+    "field": "volume",
+    "text": "Ich denke, verkleinert sich.",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-102",
+    "field": "volume",
+    "text": "verkleinert sich!",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-103",
+    "field": "volume",
+    "text": "Vielleicht wird kleiner?",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-104",
+    "field": "volume",
+    "text": "Ich denke, wird kleiner.",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-105",
+    "field": "volume",
+    "text": "wird kleiner!",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-106",
+    "field": "volume",
+    "text": "Vielleicht wird geringer?",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-107",
+    "field": "volume",
+    "text": "Ich denke, wird geringer.",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-108",
+    "field": "volume",
+    "text": "wird geringer!",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-109",
+    "field": "volume",
+    "text": "Vielleicht verringert sich?",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-110",
+    "field": "volume",
+    "text": "Ich denke, verringert sich.",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-111",
+    "field": "volume",
+    "text": "verringert sich!",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-112",
+    "field": "volume",
+    "text": "Vielleicht Volumenabnahme?",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-113",
+    "field": "volume",
+    "text": "Ich denke, Volumenabnahme.",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-114",
+    "field": "volume",
+    "text": "Volumenabnahme!",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-115",
+    "field": "volume",
+    "text": "Vielleicht Die Vakuole verliert Volumen?",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-116",
+    "field": "volume",
+    "text": "Ich denke, Die Vakuole verliert Volumen.",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-117",
+    "field": "volume",
+    "text": "Die Vakuole verliert Volumen!",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-118",
+    "field": "volume",
+    "text": "Vielleicht Das Vakuolenvolumen nimmt ab?",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-119",
+    "field": "volume",
+    "text": "Ich denke, Das Vakuolenvolumen nimmt ab.",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-120",
+    "field": "volume",
+    "text": "Das Vakuolenvolumen nimmt ab!",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-121",
+    "field": "volume",
+    "text": "Vielleicht Das Volumen wird kleiner?",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-122",
+    "field": "volume",
+    "text": "Ich denke, Das Volumen wird kleiner.",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-123",
+    "field": "volume",
+    "text": "Das Volumen wird kleiner!",
+    "expected": "correct",
+    "group": "orthography-confidence-configuration"
+  },
+  {
+    "id": "P02C-124",
+    "field": "direction",
+    "text": "nach innen",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-125",
+    "field": "direction",
+    "text": "hinein",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-126",
+    "field": "direction",
+    "text": "rein",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-127",
+    "field": "direction",
+    "text": "in die Zelle",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-128",
+    "field": "direction",
+    "text": "vom Au\u00dfenraum in das Cytosol",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-129",
+    "field": "direction",
+    "text": "Wasser flie\u00dft netto hinein",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-130",
+    "field": "direction",
+    "text": "Wasser steht still",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-131",
+    "field": "direction",
+    "text": "kein Wassertransport",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-132",
+    "field": "direction",
+    "text": "netto kein Wassertransport",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-133",
+    "field": "direction",
+    "text": "Saccharose flie\u00dft nach au\u00dfen",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-134",
+    "field": "direction",
+    "text": "Saccharose geht hinein",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-135",
+    "field": "direction",
+    "text": "netto hinaus und gleichzeitig netto hinein",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-136",
+    "field": "direction",
+    "text": "netto nach au\u00dfen und netto nicht nach au\u00dfen",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-137",
+    "field": "direction",
+    "text": "nicht nach au\u00dfen",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-138",
+    "field": "direction",
+    "text": "netto nicht nach au\u00dfen",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-139",
+    "field": "direction",
+    "text": "Wasser flie\u00dft nicht hinaus",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-140",
+    "field": "direction",
+    "text": "Ich dachte zun\u00e4chst hinaus; jetzt meine ich hinein",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-141",
+    "field": "direction",
+    "text": "Nicht nach au\u00dfen, sondern nach innen",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-142",
+    "field": "direction",
+    "text": "alle Wassermolek\u00fcle bewegen sich nach au\u00dfen",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-143",
+    "field": "direction",
+    "text": "in beide Richtungen",
+    "expected": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-144",
+    "field": "direction",
+    "text": "Wasser bewegt sich",
+    "expected": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-145",
+    "field": "direction",
+    "text": "Osmose",
+    "expected": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-146",
+    "field": "direction",
+    "text": "Wasser tritt ein und aus",
+    "expected": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-147",
+    "field": "direction",
+    "text": "ein Wassermolek\u00fcl bewegt sich nach au\u00dfen",
+    "expected": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-148",
+    "field": "direction",
+    "text": "Einzelne Wassermolek\u00fcle bewegen sich nach innen",
+    "expected": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-149",
+    "field": "direction",
+    "text": "Wasser tritt aus der Vakuole in das Cytosol",
+    "expected": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-150",
+    "field": "direction",
+    "text": "nach innen oder nach au\u00dfen",
+    "expected": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-151",
+    "field": "direction",
+    "text": "erst hinein, sp\u00e4ter hinaus",
+    "expected": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-152",
+    "field": "direction",
+    "text": "immer nach au\u00dfen",
+    "expected": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-153",
+    "field": "direction",
+    "text": "von hoch nach niedrig",
+    "expected": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-154",
+    "field": "direction",
+    "text": "nach au\u00dfen, weil Wasser aktiv durch ATP-Pumpen geht",
+    "expected": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-155",
+    "field": "direction",
+    "text": "Wasser verl\u00e4sst die Zelle und alle Organellen sind Bakterien",
+    "expected": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-156",
+    "field": "direction",
+    "text": "nicht nach innen",
+    "expected": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-157",
+    "field": "direction",
+    "text": "nicht nicht nach au\u00dfen",
+    "expected": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-158",
+    "field": "direction",
+    "text": "Hilfe",
+    "expected": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-159",
+    "field": "direction",
+    "text": "in der Zelle",
+    "expected": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-160",
+    "field": "direction",
+    "text": "nach au\u00dfen und dann nach innen",
+    "expected": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-161",
+    "field": "direction",
+    "text": "Die Zelle verliert Wasser, weil Wasser aktiv durch ATP-Pumpen geht",
+    "expected": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-162",
+    "field": "volume",
+    "text": "gr\u00f6\u00dfer",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-163",
+    "field": "volume",
+    "text": "w\u00e4chst",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-164",
+    "field": "volume",
+    "text": "nimmt zu",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-165",
+    "field": "volume",
+    "text": "bleibt gleich",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-166",
+    "field": "volume",
+    "text": "wird gr\u00f6\u00dfer",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-167",
+    "field": "volume",
+    "text": "Die Vakuole w\u00e4chst",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-168",
+    "field": "volume",
+    "text": "Die Vakuole bleibt gleich",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-169",
+    "field": "volume",
+    "text": "Die Zellwand schrumpft",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-170",
+    "field": "volume",
+    "text": "Die Zellwand wird kleiner",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-171",
+    "field": "volume",
+    "text": "Das Vakuolenvolumen nimmt ab und nimmt nicht ab",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-172",
+    "field": "volume",
+    "text": "kleiner und gr\u00f6\u00dfer",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-173",
+    "field": "volume",
+    "text": "w\u00e4chst, weil Wasser austritt",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-174",
+    "field": "volume",
+    "text": "nicht kleiner",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-175",
+    "field": "volume",
+    "text": "nimmt nicht ab",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-176",
+    "field": "volume",
+    "text": "schrumpft nicht",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-177",
+    "field": "volume",
+    "text": "Ich dachte zun\u00e4chst kleiner; jetzt meine ich gr\u00f6\u00dfer",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-178",
+    "field": "volume",
+    "text": "Nicht kleiner, sondern gr\u00f6\u00dfer",
+    "expected": "incorrect",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-179",
+    "field": "volume",
+    "text": "\u00e4ndert sich",
+    "expected": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-180",
+    "field": "volume",
+    "text": "ver\u00e4ndert sich",
+    "expected": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-181",
+    "field": "volume",
+    "text": "Wasserverlust",
+    "expected": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-182",
+    "field": "volume",
+    "text": "Die Vakuole ver\u00e4ndert sich",
+    "expected": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-183",
+    "field": "volume",
+    "text": "Die Zellwand bleibt gleich",
+    "expected": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-184",
+    "field": "volume",
+    "text": "Der Protoplast wird kleiner",
+    "expected": "partial",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-185",
+    "field": "volume",
+    "text": "kleiner oder gr\u00f6\u00dfer",
+    "expected": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-186",
+    "field": "volume",
+    "text": "erst gr\u00f6\u00dfer, sp\u00e4ter kleiner",
+    "expected": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-187",
+    "field": "volume",
+    "text": "sp\u00e4ter kleiner",
+    "expected": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-188",
+    "field": "volume",
+    "text": "immer kleiner",
+    "expected": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-189",
+    "field": "volume",
+    "text": "kleiner, weil Zucker die Vakuole zusammendr\u00fcckt",
+    "expected": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-190",
+    "field": "volume",
+    "text": "Die Vakuole schrumpft. Alle Organellen sind Bakterien",
+    "expected": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-191",
+    "field": "volume",
+    "text": "nicht gr\u00f6\u00dfer",
+    "expected": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-192",
+    "field": "volume",
+    "text": "nicht nicht kleiner",
+    "expected": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-193",
+    "field": "volume",
+    "text": "Wasser flie\u00dft nach au\u00dfen",
+    "expected": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-194",
+    "field": "volume",
+    "text": "Hilfe",
+    "expected": "clarify",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-195",
+    "field": "direction",
+    "text": "",
+    "expected": "empty",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-196",
+    "field": "direction",
+    "text": "  \n\t",
+    "expected": "empty",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-197",
+    "field": "direction",
+    "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "expected": "technical",
+    "group": "technical"
+  },
+  {
+    "id": "P02C-198",
+    "field": "direction",
+    "text": "raus\u202e",
+    "expected": "technical",
+    "group": "technical"
+  },
+  {
+    "id": "P02C-199",
+    "field": "direction",
+    "text": "\ud800",
+    "expected": "technical",
+    "group": "technical"
+  },
+  {
+    "id": "P02C-200",
+    "field": "volume",
+    "text": "",
+    "expected": "empty",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-201",
+    "field": "volume",
+    "text": "  \n\t",
+    "expected": "empty",
+    "group": "semantic"
+  },
+  {
+    "id": "P02C-202",
+    "field": "volume",
+    "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "expected": "technical",
+    "group": "technical"
+  },
+  {
+    "id": "P02C-203",
+    "field": "volume",
+    "text": "raus\u202e",
+    "expected": "technical",
+    "group": "technical"
+  },
+  {
+    "id": "P02C-204",
+    "field": "volume",
+    "text": "\ud800",
+    "expected": "technical",
+    "group": "technical"
+  }
+]

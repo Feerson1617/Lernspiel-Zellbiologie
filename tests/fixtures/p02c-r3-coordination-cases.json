@@ -1,0 +1,91 @@
+{
+  "frozenAtUTC": "2026-10-25T06:39:35.184Z",
+  "provenance": "Code-guided own additional cases, not part of blind 156. Coordinate predicates inherit their explicit subject; a protoplast-only observation does not answer vacuole volume; a contradictory wall claim cannot be certified correct.",
+  "cases": [
+    {
+      "id": "C01",
+      "text": "Die Zellwand bleibt gleich und wird kleiner.",
+      "accepted": [
+        "incorrect",
+        "clarify"
+      ],
+      "field": "volume"
+    },
+    {
+      "id": "C02",
+      "text": "Die Zellwand bleibt gleich und schrumpft.",
+      "accepted": [
+        "incorrect",
+        "clarify"
+      ],
+      "field": "volume"
+    },
+    {
+      "id": "C03",
+      "text": "Der Protoplast schrumpft und wird kleiner.",
+      "accepted": [
+        "partial",
+        "clarify"
+      ],
+      "field": "volume"
+    },
+    {
+      "id": "C04",
+      "text": "Der Protoplast schrumpft und nimmt ab.",
+      "accepted": [
+        "partial",
+        "clarify"
+      ],
+      "field": "volume"
+    },
+    {
+      "id": "C05",
+      "text": "Das Volumen der Zellwand bleibt gleich und nimmt ab.",
+      "accepted": [
+        "incorrect",
+        "clarify"
+      ],
+      "field": "volume"
+    },
+    {
+      "id": "C06",
+      "text": "Der Protoplast wird kleiner und die Vakuole schrumpft.",
+      "accepted": [
+        "correct"
+      ],
+      "field": "volume"
+    },
+    {
+      "id": "C07",
+      "text": "Die Zellwand bleibt gleich und die Vakuole schrumpft.",
+      "accepted": [
+        "correct"
+      ],
+      "field": "volume"
+    },
+    {
+      "id": "C08",
+      "text": "Die Vakuole schrumpft und bleibt gleich.",
+      "accepted": [
+        "incorrect"
+      ],
+      "field": "volume"
+    },
+    {
+      "id": "C09",
+      "text": "Die Vakuole schrumpft und wird kleiner.",
+      "accepted": [
+        "correct"
+      ],
+      "field": "volume"
+    },
+    {
+      "id": "C10",
+      "text": "Die Zellwand bleibt gleich und die Vakuole bleibt gleich.",
+      "accepted": [
+        "incorrect"
+      ],
+      "field": "volume"
+    }
+  ]
+}

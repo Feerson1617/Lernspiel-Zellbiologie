@@ -26,7 +26,12 @@
     "check:publish": "node tools/check-publish.ts",
     "check": "npm run check:spec && npm run test",
     "test:legacy": "vitest run tests/legacy --outputFile=qa/generated/legacy.json",
-    "report:naming": "node tools/report-naming.ts"
+    "report:naming": "node tools/report-naming.ts",
+    "report:m602": "node tools/report-m602.ts",
+    "report:m602-r1": "node tools/report-m602-r1.ts",
+    "report:m602-r2": "node --experimental-transform-types tools/report-m602-r2.ts",
+    "report:m602-r3": "node --experimental-transform-types tools/report-m602-r3.ts",
+    "report:m602-cued": "node --experimental-transform-types tools/report-m602-cued.ts"
   },
   "dependencies": {
     "@noble/hashes": "2.4.0",

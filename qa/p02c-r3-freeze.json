@@ -1,0 +1,11 @@
+{
+  "frozenAt": "2026-10-25T08:10:19.977017+00:00",
+  "independentAcceptance": false,
+  "ownCount": 33,
+  "note": "Own source-informed semantic safety cases, no language coverage claim; pronoun scope intentionally clarify. Fixed before new runtime execution.",
+  "files": {
+    "tests/fixtures/p02c-r3-cases.json": "d269b53b60b1f8c7a74cf568a3b02f3a05f344ad32393648e593f51fe2925bce",
+    "tests/fixtures/p02c-r3-coordination-cases.json": "58864132001ce24b6bedf7b904040ca327cce7fdb471fe5f2aefc28015bd8a82",
+    "tests/fixtures/p02c-r3-own.json": "78ecabad18091b23e3c43da2262ad1de6aba073f2e477198ab535517e4aa8ff1"
+  }
+}

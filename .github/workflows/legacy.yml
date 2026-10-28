@@ -2,7 +2,7 @@ name: Legacy sentence-contract evidence (historically red)
 
 on:
   pull_request:
-    branches: [main]
+    branches: [main, feature/p02b-osmose-korrektor]
 
 permissions:
   contents: read
@@ -41,3 +41,28 @@ jobs:
           const r = JSON.parse(readFileSync('qa/generated/legacy.json', 'utf8'));
           console.log(`::notice title=Actual legacy sentence-contract results::${JSON.stringify({ prHead: process.env.PR_HEAD_SHA, executionSha: process.env.GITHUB_SHA, passed: r.numPassedTests, failed: r.numFailedTests, pending: r.numPendingTests, total: r.numTotalTests })}`);
           JS
+
+  legacy-relations:
+    name: Historical free relations R2/R3 (not cued-contract evidence)
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run report:m602-r2
+      - run: npm run report:m602-r3
+        if: always()
+      - name: Retain complete relation outcomes, including unmet expectations
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: historical-relations-readiness
+          path: |
+            qa/generated/p02c-r2-results.json
+            qa/generated/p02c-r3-results.json
