@@ -332,7 +332,9 @@
     "tests/unit/m602-learning.test.ts",
     "tests/browser/p03a-learning.spec.ts",
     "qa/P03a.md",
-    "qa/P03a-Folgebacklog.md"
+    "qa/P03a-Folgebacklog.md",
+    "tests/browser/p03a-completion.spec.ts",
+    "qa/P03a-Abschluss-R10.md"
   ],
   "distPatterns": [
     "^index\\.html$",

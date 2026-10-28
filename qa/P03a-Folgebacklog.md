@@ -43,3 +43,19 @@ Spezifikationen nachvollzogen. Die Prüfungsnähe von M10.03 ist ein übermittel
 externer Befund; ein eigener Zugriff auf private Originale oder eigener Vergleich
 wird nicht behauptet. Inhaltliche Änderungen benötigen einen gesonderten Auftrag,
 Versionierung und Gegenprüfung. Keine weitere Mission wurde implementiert.
+
+## Konkrete Anschlussfolge nach Abschluss und Gegenprüfung von P03a
+
+1. M6.03: eigene Ursache-Wirkungs-Verknüpfungen mit bedeutungstragenden Kanten
+   und begründeten eigenen Sätzen. Zuerst Kriterien und sichere Auswertung planen.
+2. M6.04: kontrollierte Untersuchung und Rücktausch; Hypothese, Vergleich und
+   Aussagegrenzen auseinanderhalten. Virtuelle Planung ersetzt keine Praxis.
+3. M10: Tabellen, Diagramme, eigene Zahlenbelege, Rechnungen und Näherungen;
+   Prüfungsnähe vor Veröffentlichung im privaten Kontext ausschließen.
+4. M7: passive/aktive Wege und evidenzbezogene Deutung der Energieabhängigkeit;
+   ATP-Funktion, Stoffklasse und Grenzen eines Spaltungsnachweises unterscheiden.
+5. Vor jeder weiteren Aufgabenfamilie: individuelle fachliche Hilfen und
+   vollständige Antwortverträge. Neue eigenständige Problemstellungen entwickeln;
+   keine anspruchsvollen Originalprüfungsfälle durch Zahlenwechsel nachbauen.
+
+Diese Reihenfolge ist ein Übergabevorschlag, keine Umsetzung oder neue Freigabe.

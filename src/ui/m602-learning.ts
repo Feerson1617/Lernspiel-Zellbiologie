@@ -9,6 +9,7 @@ import { renderOnionCell } from '../render2d/onion-cell.ts';
 import { STATUS_PRESENTATION } from './feedback-presentation.ts';
 
 const names = { process: 'Fachbegriff', direction: 'Nettorichtung', volume: 'Vakuolenvolumen' } as const;
+const pa = (value: number) => `${value.toLocaleString('de-DE')} Pa`;
 /** Translate authored technical references only, never alter pupil input. */
 const learnerText = (text: string) => text
   .replace('Damit ist das Benennungskriterium C01 erfüllt.', 'Der gesuchte Fachbegriff ist damit richtig benannt.')
@@ -62,7 +63,7 @@ export function mountM602Learning(root: HTMLElement, model: M602LearningControll
 
   const knowledge = node('section', '', main, 'learning-preknowledge'); knowledge.id = 'vorwissen';
   node('h2', 'Vorwissen aktivieren', knowledge);
-  node('p', 'Drei freiwillige Denkaufträge, ohne Bewertung oder Zugangssperre. Beim Prüfen erhältst du eine Erklärung; diese wird als aufgerufener Hinweis erfasst.', knowledge);
+  node('p', 'Freiwillig und unbenotet. Aufgerufene Erklärungen zählen als digitale Hinweise; die Übung bleibt jederzeit zugänglich.', knowledge);
   const knowledgeDetails = node('details', '', knowledge); node('summary', 'Kurzen Vorwissencheck öffnen', knowledgeDetails);
   const checks = [
     { label: 'Räume und Grenzen', question: 'Welche Grenze trennt Vakuole und Cytosol?', choices: ['Zellmembran', 'Tonoplast', 'Zellwand'], correct: 'Tonoplast', explanation: 'Der Tonoplast umschließt die Vakuole. Die Zellmembran trennt Cytosol und Außenraum; die Zellwand liegt außerhalb der Zellmembran.', fields: ['volume'] as const, term: 'Tonoplast' },
@@ -77,6 +78,12 @@ export function mountM602Learning(root: HTMLElement, model: M602LearningControll
     const empty = node('option', 'Eigene Einschätzung wählen', select); empty.value = '';
     for (const text of check.choices) node('option', text, select).value = text;
     const explanation = node('p', '', row, 'knowledge-explanation'); explanation.hidden = true;
+    explanation.setAttribute('role', 'status'); explanation.setAttribute('aria-live', 'polite');
+    select.setAttribute('aria-describedby', `prior-feedback-${index}`); explanation.id = `prior-feedback-${index}`;
+    select.addEventListener('change', () => {
+      explanation.hidden = false;
+      explanation.textContent = 'Auswahl geändert – noch nicht erneut geprüft. Prüfe deine neue Einschätzung.';
+    });
     return { select, explanation };
   });
   const knowledgeButton = node('button', 'Vorwissen prüfen', knowledgeDetails); knowledgeButton.type = 'button';
@@ -97,24 +104,33 @@ export function mountM602Learning(root: HTMLElement, model: M602LearningControll
   node('p', '02 · Material untersuchen', material, 'eyebrow');
   node('h2', `Materialfall ${model.getState().caseIndex === 0 ? 'A' : 'B'}`, material);
   node('p', 'Eine intakte Zwiebel-Epidermiszelle befindet sich in der frühen Phase des Wasserverlusts nach einem Lösungswechsel. Nicht betrachtet wird der exakte Austauschzeitpunkt.', material);
-  const figure = node('figure', '', material);
+  const anatomy = node('div', '', material, 'material-anatomy');
+  const figure = node('figure', '', anatomy);
   renderOnionCell(figure, model.getState().material);
   node('figcaption', 'Didaktisches Zustandsmodell. Keine Mikroskopaufnahme, keine Simulation; Grenzen sind zur Unterscheidung überhöht. Nicht alle Zellbestandteile sind dargestellt.', figure);
+  const legend = node('dl', '', anatomy, 'cell-legend'); legend.setAttribute('aria-label', 'Zellräume und Grenzen');
+  for (const [term, definition] of [
+    ['Zellwand', 'Äußere, vergleichsweise formstabile Hülle.'],
+    ['Zellmembran', 'Grenze zwischen Cytosol und Außenraum.'],
+    ['Tonoplast', 'Grenze zwischen Vakuole und Cytosol.'],
+  ]) { node('dt', term, legend); node('dd', definition, legend); }
   const table = node('table', '', material); node('caption', 'Gesamtwasserpotenziale im aktuellen Zustand', table);
   const tr = node('tr', '', node('thead', '', table)); node('th', 'Raum', tr).scope = 'col'; node('th', 'Wasserpotenzial Ψ', tr).scope = 'col';
   const tbody = node('tbody', '', table), p = model.getState().material.waterPotential;
   for (const [label, value] of [['Vakuole', p.vacuole], ['Cytosol', p.cytosol], ['Außenraum', p.external]]) {
-    const row = node('tr', '', tbody); node('th', String(label), row).scope = 'row'; node('td', `${value} Pa`, row);
+    const row = node('tr', '', tbody); node('th', String(label), row).scope = 'row'; node('td', pa(Number(value)), row);
   }
   node('p', 'Es gilt ausdrücklich: ΨVakuole > ΨCytosol > ΨAußenraum. Weniger negativ bedeutet hier höher. Die Gesamtwerte berücksichtigen auch Druckbeiträge; eine Konzentration allein genügt nicht für diesen Vergleich.', material, 'material-explanation');
   const conditions = node('ul', '', material, 'material-conditions');
   for (const text of ['Wasser kann Zellmembran und Tonoplast passieren.', 'Saccharose wird im betrachteten Zeitraum weitgehend zurückgehalten.', 'Andere Transportprozesse sind ausgeschlossen.', 'Die Zellwand bleibt eine vergleichsweise formstabile Struktur.']) node('li', text, conditions);
+  const toAnswers = node('a', 'Vom Material zu deinen Antworten', material, 'learning-jump'); toAnswers.href = '#lernantworten'; scrollLink(toAnswers, 'lernantworten');
 
   const right = node('div', '', workspace, 'learning-answer-column');
   const form = node('form', '', right, 'learning-form'); form.id = 'lernantworten';
   node('p', '03 · Selbst antworten', form, 'eyebrow'); node('h2', 'Deine drei Antworten', form);
-  node('p', 'Ein Fachbegriff, eine kurze Nettorichtung und eine kurze Volumenänderung genügen. Wasser, Zellmembran, Vakuolenvolumen und die frühe Phase sind vorgegeben.', form);
-  node('p', 'Längere Sätze und unbekannte Zusätze können eine Klärung benötigen. Das allein ist kein biologischer Fehler.', form, 'learning-note');
+  node('p', 'Ein Fachbegriff und zwei kurze Beziehungen genügen. Wasser, Zellmembran, Vakuolenvolumen und die frühe Phase sind vorgegeben.', form);
+  node('p', 'Ganze Sätze oder unbekannte Zusätze können Klärung benötigen; das ist für sich kein biologischer Fehler.', form, 'learning-note');
+  const toMaterial = node('a', 'Material noch einmal ansehen', form, 'learning-jump'); toMaterial.href = '#lernmaterial'; scrollLink(toMaterial, 'lernmaterial');
   const inputs = {} as Record<M602Field, HTMLInputElement>;
   let activeField: M602Field = 'process';
   for (const [index, field] of M602_FIELDS.entries()) {
@@ -126,7 +142,7 @@ export function mountM602Learning(root: HTMLElement, model: M602LearningControll
     input.addEventListener('focus', () => { activeField = field; });
     input.addEventListener('input', () => perform(() => { model.edit(field, input.value); update(); }));
   }
-  const contractNote = node('p', 'Geprüft wird jeweils nur das genannte Kriterium. Deine Eingaben werden nicht abgeschnitten oder zu einem freien Erklärungstext umgedeutet.', form, 'learning-note'); contractNote.id = 'answer-contract';
+  const contractNote = node('p', 'Geprüft wird nur das jeweilige Kriterium; kein Text wird abgeschnitten.', form, 'learning-note'); contractNote.id = 'answer-contract';
   const extras = node('details', '', form, 'learning-extras'); node('summary', 'Weitere Aussagen ergänzen (optional)', extras);
   node('p', 'Zusätze gehören zu deiner Einreichung. Solange sie nicht geprüft sind, erhält die Gesamtantwort kein grünes Urteil.', extras);
   const extraLabel = node('label', 'Weitere Aussagen – ungeprüft', extras); extraLabel.htmlFor = 'learner-extra';
@@ -138,12 +154,15 @@ export function mountM602Learning(root: HTMLElement, model: M602LearningControll
   const revise = node('button', 'Antwort selbst überarbeiten', right, 'learning-revise'); revise.type = 'button';
   revise.addEventListener('click', () => { inputs[activeField].focus(); inputs[activeField].scrollIntoView({ block: 'center' }); });
   const helpers = node('section', '', right, 'learning-helpers'); helpers.setAttribute('aria-label', 'Überarbeiten und Hilfen');
-  node('h2', 'Eine Hilfe wählen', helpers); node('p', 'Überarbeite zuerst selbst oder rufe direkt eine passende Hilfe auf. Hilfen ändern nicht die fachlichen Kriterien und werden gesondert angezeigt.', helpers);
+  node('h2', 'Eine Hilfe wählen', helpers); node('p', 'Überarbeite zuerst selbst oder wähle direkt eine Hilfe. Unterstützung und fachliche Richtigkeit bleiben getrennt.', helpers);
   for (const field of M602_FIELDS) {
     const group = node('section', '', helpers, 'help-group'); group.setAttribute('aria-label', `Hilfen ${names[field]}`); node('h3', names[field], group);
     const profile = field === 'process' ? NAMING_HELP['M6.02'] : RELATION_HELP[field];
     const actions = node('div', '', group, 'help-actions');
     const hint = node('button', `Hinweis: ${names[field]}`, actions), bank = node('button', `Wortbank: ${names[field]}`, actions), solution = node('button', `Lösung ansehen: ${names[field]}`, actions);
+    for (const [button, text] of [[hint, 'Hinweis'], [bank, 'Wortbank'], [solution, 'Lösung ansehen']] as const) {
+      button.setAttribute('aria-label', button.textContent!); button.textContent = text;
+    }
     const text = node('div', '', group, 'help-text'); text.setAttribute('aria-live', 'polite');
     hint.addEventListener('click', () => perform(() => { model.help(field, 'hint'); text.replaceChildren(); node('p', learnerText(profile.hint), text); update('Hinweis geöffnet.'); }));
     bank.addEventListener('click', () => perform(() => {
@@ -181,14 +200,29 @@ export function mountM602Learning(root: HTMLElement, model: M602LearningControll
     });
   }
   const support = node('section', '', main, 'learning-support'); support.setAttribute('aria-label', 'Unterstützung und Lernstand');
-  const notebook = node('section', '', main, 'learning-notebook'); notebook.id = 'weiterdenken';
+  const notebook = node('section', '', main, 'learning-notebook'); notebook.id = 'weiterdenken'; notebook.tabIndex = -1;
   node('p', '04 · Weiterdenken', notebook, 'eyebrow'); node('h2', 'Erklären im Heft', notebook);
   node('p', 'Freiwillig: Erkläre auf Papier mit eigenen Worten, wie die Gesamtwasserpotenziale im bearbeiteten Material, die beiden Membrangrenzen und die Volumenfolge zusammenhängen. Verwende die Werte mit Einheit und unterscheide die Vakuole von der Zellwand.', notebook);
   node('p', 'Schreibe möglichst zuerst selbst. Vergleiche anschließend und besprich deine Begründung im Unterricht. Dieses Unterrichtsprodukt wird nicht durch die drei Kurzfelder automatisch bewertet und nicht in der Anwendung gespeichert.', notebook, 'learning-note');
+  node('p', 'Im Selbstlernen ist der Heftauftrag freiwillig. Deine Lehrkraft kann ihn im Unterricht verbindlich stellen.', notebook, 'learning-note');
+  const reflection = node('details', '', notebook, 'notebook-reflection');
+  node('summary', 'Nach dem Schreiben: Selbst- oder Partnerprüfung öffnen', reflection);
+  node('p', 'Lies deinen Hefttext selbst oder mit einer Partnerperson. Prüfe die Begründungen, nicht nur einzelne Fachwörter. Die Häkchen sind deine Einschätzung, keine automatische Fachbewertung. Sie bleiben nur in dieser Ansicht und ergeben keinen gespeicherten Erfolgsnachweis.', reflection);
+  for (const [i, text] of [
+    'Ich vergleiche die gegebenen Gesamtwasserpotenziale der passenden Räume mit Zahlen und Pa. Ich berücksichtige dabei auch Druckbeiträge.',
+    'Ich unterscheide die beiden Wege: über die Zellmembran zwischen Cytosol und Außenraum sowie über den Tonoplasten zwischen Vakuole und Cytosol.',
+    'Ich begründe aus dem Potenzialvergleich die Wasserbilanz der Vakuole und verknüpfe diese mit der Veränderung ihres Volumens.',
+    'Ich unterscheide die vergleichsweise formstabile Zellwand von der Vakuole. Meine Erklärung gilt für den gegebenen frühen Zustand; sie behauptet keine zwangsläufig sichtbare Ablösung oder spätere Entwicklung.',
+  ].entries()) {
+    const label = node('label', '', reflection, 'reflection-item');
+    const checkbox = node('input', '', label); checkbox.type = 'checkbox'; checkbox.id = `reflection-${i}`;
+    node('span', text, label);
+  }
+  node('p', 'Überarbeite eine noch nicht belegte Verbindung in deinem eigenen Text und besprich offene Fragen mit deiner Partnerperson oder Lehrkraft.', reflection);
   const notebookButton = node('button', 'Beispiellösung im Heftvergleich ansehen', notebook); const notebookText = node('div', '', notebook, 'notebook-example'); notebookText.setAttribute('aria-live', 'polite');
   notebookButton.addEventListener('click', () => perform(() => {
     model.showNotebookSolution(); notebookText.replaceChildren(); node('h3', 'Lösung angesehen · Vergleich nach dem eigenen Schreiben', notebookText);
-    node('p', `Im Material besitzt die Vakuole mit ${p.vacuole} Pa ein höheres Gesamtwasserpotenzial als das Cytosol mit ${p.cytosol} Pa. Das Cytosol liegt wiederum über dem Außenraum mit ${p.external} Pa. Die Werte enthalten Druckbeiträge. Wasser kann beide Membranen passieren; Saccharose wird weitgehend zurückgehalten. Dieser passive Wassertransport heißt Osmose.`, notebookText);
+    node('p', `Im Material besitzt die Vakuole mit ${pa(p.vacuole)} ein höheres Gesamtwasserpotenzial als das Cytosol mit ${pa(p.cytosol)}. Das Cytosol liegt wiederum über dem Außenraum mit ${pa(p.external)}. Die Werte enthalten Druckbeiträge. Wasser kann beide Membranen passieren; Saccharose wird weitgehend zurückgehalten. Dieser passive Wassertransport heißt Osmose.`, notebookText);
     node('p', 'Über die Zellmembran ist die Nettowasserbewegung aus dem Cytosol in den Außenraum gerichtet. Über den Tonoplasten gibt die Vakuole Wasser an das Cytosol ab; ihr Volumen nimmt in dieser frühen Phase ab. Die Zellwand ist eine andere, vergleichsweise formstabile Struktur. Einzelne Wassermoleküle können trotzdem in beide Richtungen wechseln.', notebookText);
     node('p', 'Prüfe deinen Hefttext auf passende Räume, Grenzen, Potenzialwerte und Ursache-Wirkungs-Verknüpfungen. Das Lesen dieser Erklärung weist keine selbstständige Erklärungskompetenz nach.', notebookText);
     update('Beispiellösung angesehen. Die Unterstützung gilt für alle drei Felder.');
@@ -212,24 +246,37 @@ export function mountM602Learning(root: HTMLElement, model: M602LearningControll
       feedback.dataset['status'] = 'stale'; feedback.dataset['color'] = 'neutral';
       node('h2', '○ Rückmeldung nicht mehr aktuell', feedback);
       node('p', 'Antwort oder Unterstützung geändert. Die vorige Rückmeldung bestätigt den aktuellen Entwurf nicht. Prüfe deine drei Antworten erneut.', feedback);
+      if (state.outcome?.overallStatus === 'correct') {
+        node('p', 'Deine früher geprüften Antworten waren bei der damaligen Abgabe fachlich richtig. Der frühere Bearbeitungsnachweis bleibt erhalten.', feedback);
+        const helpAdded = M602_FIELDS.some(field => state.support.fields[field].events.length > state.outcome!.fieldSupport[field].events.length);
+        if (helpAdded) node('p', 'Danach hast du zusätzliche Unterstützung aufgerufen. Diese Hilfe macht deine damaligen Antworten nicht rückwirkend biologisch falsch. Eine neue aktuelle Bewertung benötigt eine erneute Abgabe.', feedback);
+      }
     } else if (state.outcome) {
       const o = state.outcome, display = STATUS_PRESENTATION[o.overallStatus];
       feedback.dataset['status'] = o.overallStatus; feedback.dataset['color'] = display.color;
       node('h2', `${display.symbol} Deine drei Antworten: ${display.label}`, feedback);
-      if (o.overallStatus === 'correct') node('p', 'Alle drei Kriterien sind für diesen Materialfall erfüllt. Bestätigt sind Fachbegriff, Nettorichtung und Volumenfolge – keine vollständige Kausalerklärung.', feedback);
+      const complete = o.overallStatus === 'correct';
+      if (complete) {
+        node('p', 'Bestätigt sind Fachbegriff, Nettorichtung und Vakuolenvolumen für diesen Materialfall. Eine vollständige Kausalerklärung oder Klausurreife ist damit nicht nachgewiesen.', feedback);
+        const nextStep = node('a', 'Nächster Lernschritt: eigene biologische Erklärung schreiben', feedback, 'learning-jump');
+        nextStep.href = '#weiterdenken'; scrollLink(nextStep, 'weiterdenken');
+      }
       for (const field of M602_FIELDS) {
         const f = o.fields[field], status = STATUS_PRESENTATION[f.result.status], panel = node('section', '', feedback, 'field-feedback');
         panel.setAttribute('aria-label', `Bewertung ${field}`); panel.dataset['status'] = f.result.status; panel.dataset['color'] = status.color;
         node('h3', `${status.symbol} ${names[field]} · ${status.label}`, panel);
-        const summary = node('dl', '', panel);
-        node('dt', 'Erkannter Ansatz', summary); node('dd', learnerText(f.feedback.recognized), summary);
-        node('dt', 'Nächster Schritt', summary); node('dd', learnerText(f.feedback.next), summary);
         const explanation = node('details', '', panel);
-        node('summary', `Fachliche Erklärung: ${names[field]}`, explanation);
+        // On complete success, the single next step belongs to the whole task.
+        // Existing detailed field feedback remains available on explicit request.
+        const summary = node('dl', '', complete ? explanation : panel);
+        node('dt', 'Erkannter Ansatz', summary); node('dd', learnerText(f.feedback.recognized), summary);
+        if (!complete) { node('dt', 'Nächster Schritt', summary); node('dd', learnerText(f.feedback.next), summary); }
+        const toggle = node('summary', `Fachliche Erklärung: ${names[field]}`, explanation); explanation.prepend(toggle);
         const dl = node('dl', '', explanation);
         node('dt', 'Fachliche Einordnung und Begründung', dl); node('dd', learnerText(f.feedback.difference), dl);
-        const values = field === 'direction' ? `Cytosol: ${p.cytosol} Pa; Außenraum: ${p.external} Pa.` : field === 'volume' ? `Vakuole: ${p.vacuole} Pa; Cytosol: ${p.cytosol} Pa.` : 'Wasser kann beide Membranen passieren; Saccharose wird im betrachteten Zeitraum weitgehend zurückgehalten.';
+        const values = field === 'direction' ? `Cytosol: ${pa(p.cytosol)}; Außenraum: ${pa(p.external)}.` : field === 'volume' ? `Vakuole: ${pa(p.vacuole)}; Cytosol: ${pa(p.cytosol)}.` : 'Wasser kann beide Membranen passieren; Saccharose wird im betrachteten Zeitraum weitgehend zurückgehalten.';
         node('dt', 'Bezug zum Material', dl); node('dd', values, dl);
+        panel.append(explanation);
       }
       for (const extra of o.notAssessed) node('p', `Noch nicht geprüft: ${extra.value}`, feedback, 'unassessed-text');
       if (o.support.history === 'history_unverified') node('p', 'Frühere Hilfehistorie nicht gesichert. Die einzelnen fachlichen Rückmeldungen bleiben nutzbar; ein neuer vollständiger Erfolgsnachweis wird nicht gespeichert.', feedback);
@@ -247,10 +294,13 @@ export function mountM602Learning(root: HTMLElement, model: M602LearningControll
       node('p', `${names[field]}: ${label}.`, support);
     }
     if (state.revisedAfterFeedback) node('p', 'Nach Rückmeldung überarbeitet – in diesem Sitzungsverlauf nachweisbar.', support);
-    node('p', '„Ohne zusätzlich aufgerufene Hilfe“ bedeutet weder „beim ersten Versuch richtig“ noch „ohne vorheriges Feedback“ oder „dauerhaft beherrscht“.', support, 'learning-note');
-    node('p', 'Erfasst werden nur die hier aufgerufenen digitalen Hilfen. Unterstützung durch andere Personen oder externe Quellen kann die Anwendung nicht feststellen.', support, 'learning-note');
-    node('p', `${state.recordedCount} gespeicherte oder in dieser Sitzung vorgemerkte Bearbeitungsnachweise (einschließlich historischer Stände). Das ist kein aktueller Kompetenznachweis und keine Notenprognose.`, support);
-    node('p', state.storage.issue ? 'Speicherhinweis: Lokales Speichern ist derzeit eingeschränkt oder vorhandene Daten passen nicht zur aktuellen Fassung. Du kannst in dieser Sitzung weiterüben; vorhandene fremde Daten bleiben erhalten.' : 'Deine Rohantworten und Hilfeereignisse bleiben nur in dieser Sitzung. Lokal gespeichert werden ausschließlich die acht vorhandenen Fortschrittsmetadaten je bestätigtem Versuch.', support, 'learning-note');
+    node('p', 'Erfasst sind nur hier aufgerufene digitale Hilfen.', support, 'learning-note');
+    const storageDetails = node('details', '', support); node('summary', 'Lernstand und Speicherung verstehen', storageDetails);
+    node('p', '„Ohne zusätzlich aufgerufene Hilfe“ bedeutet weder „beim ersten Versuch richtig“ noch „ohne vorheriges Feedback“ oder „dauerhaft beherrscht“.', storageDetails, 'learning-note');
+    node('p', 'Erfasst werden nur die hier aufgerufenen digitalen Hilfen. Unterstützung durch andere Personen oder externe Quellen kann die Anwendung nicht feststellen.', storageDetails, 'learning-note');
+    node('p', `${state.recordedCount} gespeicherte oder in dieser Sitzung vorgemerkte Bearbeitungsnachweise (einschließlich historischer Stände). Das ist kein aktueller Kompetenznachweis und keine Notenprognose.`, storageDetails);
+    node('p', 'Deine Rohantworten und Hilfeereignisse bleiben nur in dieser Sitzung. Lokal gespeichert werden ausschließlich die acht vorhandenen Fortschrittsmetadaten je bestätigtem Versuch.', storageDetails, 'learning-note');
+    if (state.storage.issue) node('p', 'Speicherhinweis: Lokales Speichern ist derzeit eingeschränkt oder vorhandene Daten passen nicht zur aktuellen Fassung. Du kannst in dieser Sitzung weiterüben; vorhandene fremde Daten bleiben erhalten.', support, 'learning-note');
     if (message) announcement.textContent = message;
     else if (state.stale) announcement.textContent = 'Rückmeldung nicht mehr aktuell. Erneut prüfen.';
   }

@@ -23,11 +23,11 @@ export function renderOnionCell(parent: HTMLElement, material: OsmosisMaterial):
   shape('rect', { x: '111', y: '170', width: '194', height: '126', rx: '35', fill: '#d5e9ed', stroke: '#477786', 'stroke-width': '3' });
   const label = (x: number, y: number, value: string, cls = '') => shape('text', { x: String(x), y: String(y), 'text-anchor': 'middle', class: cls }, value);
   label(242, 34, 'Außenraum', 'schema-region');
-  label(242, 58, `${material.waterPotential.external} Pa`, 'schema-value');
+  label(242, 58, `${material.waterPotential.external.toLocaleString('de-DE')} Pa`, 'schema-value');
   label(208, 128, 'Cytosol', 'schema-region');
-  label(208, 151, `${material.waterPotential.cytosol} Pa`, 'schema-value');
+  label(208, 151, `${material.waterPotential.cytosol.toLocaleString('de-DE')} Pa`, 'schema-value');
   label(208, 222, 'Vakuole', 'schema-region');
-  label(208, 247, `${material.waterPotential.vacuole} Pa`, 'schema-value');
+  label(208, 247, `${material.waterPotential.vacuole.toLocaleString('de-DE')} Pa`, 'schema-value');
   shape('path', { d: 'M64 150 L31 69 L31 46 M340 151 L385 108 L385 92 M304 267 L370 313 L370 344', class: 'schema-label-line', fill: 'none' });
   label(54, 33, 'Zellwand', 'schema-label');
   label(348, 81, 'Zellmembran', 'schema-label');

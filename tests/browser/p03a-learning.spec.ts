@@ -64,7 +64,7 @@ test('plays the public learning cycle with material, feedback, own revision and 
   for (const structure of ['Zellwand', 'Zellmembran', 'Cytosol', 'Vakuole', 'Tonoplast', 'Außenraum']) await expect(diagram).toContainText(structure);
   await expect(diagram.locator('[marker-end], [marker-start]')).toHaveCount(0);
   const diagramText = await diagram.locator('text').allTextContents();
-  expect(diagramText.slice(0, 6)).toEqual(['Außenraum', '-700000 Pa', 'Cytosol', '-300000 Pa', 'Vakuole', '-120000 Pa']);
+  expect(diagramText.slice(0, 6)).toEqual(['Außenraum', '-700.000 Pa', 'Cytosol', '-300.000 Pa', 'Vakuole', '-120.000 Pa']);
   await expect(material(page)).toContainText('Pa');
   await expect(material(page)).toContainText('Druck');
   await image(page, info, 'p03a-material');
@@ -115,7 +115,7 @@ test('plays the public learning cycle with material, feedback, own revision and 
   await image(page, info, 'p03a-richtige-rueckmeldung');
   await press(page, 'Weiterer Materialfall');
   await expect(material(page)).toHaveAttribute('data-case', 'water-loss-b');
-  expect((await diagram.locator('text').allTextContents()).slice(0, 6)).toEqual(['Außenraum', '-900000 Pa', 'Cytosol', '-450000 Pa', 'Vakuole', '-200000 Pa']);
+  expect((await diagram.locator('text').allTextContents()).slice(0, 6)).toEqual(['Außenraum', '-900.000 Pa', 'Cytosol', '-450.000 Pa', 'Vakuole', '-200.000 Pa']);
   for (const field of fields) await expect(page.locator(`#learner-${field}`)).toHaveValue('');
   await expect(result(page)).not.toHaveAttribute('data-status', 'correct');
   await fill(page, { direction: 'Zellinneres → Außenraum', volume: 'wird kleiner' });
