@@ -29,6 +29,8 @@ test('offers working keyboard navigation and a readable responsive layout', asyn
   await expect(page.getByRole('link', { name: 'Zum Inhalt', exact: true })).toBeFocused();
   await page.keyboard.press('Enter');
   await expect(page.getByRole('main')).toBeFocused();
+  await page.keyboard.press(key);
+  await expect(page.getByRole('link', { name: 'Erste Übung ausprobieren – Wasserhaushalt der Zelle' })).toBeFocused();
   const link = page.getByRole('link', { name: 'Zum Entwicklungsstand' });
   await page.keyboard.press(key);
   await expect(link).toBeFocused();

@@ -321,11 +321,22 @@
     "qa/P02c-Cued-R5.md",
     "qa/P02c-Cued-R6.md",
     "tests/helpers/parity-blocks.ts",
-    "tests/unit/parity-blocks.test.ts"
+    "tests/unit/parity-blocks.test.ts",
+    "src/content/m602-materials.ts",
+    "src/application/m602-learning.ts",
+    "src/application/m602-entry.ts",
+    "src/ui/m602-learning.ts",
+    "src/ui/m602-learning.css",
+    "src/render2d/onion-cell.ts",
+    "tests/unit/m602-materials.test.ts",
+    "tests/unit/m602-learning.test.ts",
+    "tests/browser/p03a-learning.spec.ts",
+    "qa/P03a.md"
   ],
   "distPatterns": [
     "^index\\.html$",
     "^assets/index-[A-Za-z0-9_-]{8,}\\.(js|css)$",
-    "^assets/favicon-[A-Za-z0-9_-]{8,}\\.svg$"
+    "^assets/favicon-[A-Za-z0-9_-]{8,}\\.svg$",
+    "^assets/m602-entry-[A-Za-z0-9_-]{8,}\\.(js|css)$"
   ]
 }

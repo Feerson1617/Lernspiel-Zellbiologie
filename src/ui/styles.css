@@ -50,6 +50,7 @@
   .development-note { max-width: 450px; margin-top: 24px; padding-left: 16px; border-left: 2px solid #91ad93; font-size: 0.85rem; color: #52645d; }
   .development-note strong { color: #233d3b; font-weight: 650; }
   .text-link { display: inline-flex; align-items: center; gap: 30px; margin-top: 28px; min-height: 44px; font-size: 0.82rem; font-weight: 650; text-decoration-thickness: 1px; }
+  .exercise-link { padding: 14px 20px; background: #234b41; color: #fff; border-radius: 4px; max-width: 100%; text-decoration: none; }
   .link-arrow { position: relative; width: 16px; height: 16px; }
   .link-arrow::before { content: ""; position: absolute; left: 7px; top: 0; width: 1px; height: 14px; background: currentColor; }
   .link-arrow::after { content: ""; position: absolute; left: 3px; bottom: 1px; width: 8px; height: 8px; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; transform: rotate(45deg); }

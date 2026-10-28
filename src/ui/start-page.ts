@@ -16,7 +16,8 @@ export function renderStartPage(root: HTMLElement): void {
           <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Ein virtueller Lernraum entsteht</p>
           <h1 id="page-title">Zelllabor 11<span>Die Zelle<br />erforschen.</span></h1>
           <p class="intro">Kleine Strukturen. Große Zusammenhänge. Hier entsteht ein digitales Zelllabor, in dem du Zellbiologie Schritt für Schritt untersuchen kannst.</p>
-          <p class="development-note"><strong>Noch in Entwicklung.</strong> Diese Startseite ist das technische Fundament. Lernmissionen stehen noch nicht zur Verfügung.</p>
+          <p class="development-note"><strong>Noch in Entwicklung.</strong> Eine erste Übungsvorschau ist jetzt erreichbar. Sie zeigt einen begrenzten Lernzyklus; vollständige Lernmissionen folgen später.</p>
+          <a class="text-link exercise-link" href="#/m602">Erste Übung ausprobieren – Wasserhaushalt der Zelle</a><br />
           <a class="text-link" href="#entwicklungsstand">Zum Entwicklungsstand <span class="link-arrow" aria-hidden="true"></span></a>
         </div>
         <div class="lab-sheet" aria-hidden="true">
@@ -35,8 +36,8 @@ export function renderStartPage(root: HTMLElement): void {
       <section id="entwicklungsstand" class="development" aria-labelledby="development-title">
         <div class="section-heading"><p class="eyebrow">Entwicklungsstand</p><h2 id="development-title">Der Anfang ist gelegt.</h2></div>
         <div class="development-detail">
-          <span class="phase-label">P00 · Technisches Fundament</span>
-          <p>Die Grundlage für das spätere Zelllabor wird aufgebaut. Aufgaben, fachliche Rückmeldungen und interaktive Zellmodelle folgen erst in weiteren Entwicklungsphasen.</p>
+          <span class="phase-label">P03a · Erste Übungsvorschau</span>
+          <p>Untersuche ein Zellmodell, beantworte drei kurze Fragen und nutze gezielte Rückmeldungen zum Überarbeiten. Zwei Materialfälle ermöglichen eine Wiederholung desselben Beziehungstyps. Die vollständige Mission M6 ist noch nicht verfügbar.</p>
           <p class="release-note"><span aria-hidden="true">ⓘ</span> Noch kein für den Unterricht freigegebenes Lernspiel.</p>
         </div>
       </section>

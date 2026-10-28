@@ -2,10 +2,25 @@ import { mkdtempSync, mkdirSync, rmSync, symlinkSync, writeFileSync } from 'node
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { assertDistFiles, assertRepositoryFiles, assertRuntimeModule, listRegularFiles, publishedAssetPaths } from '../../tools/publish-policy.ts';
+import { assertDistFiles, assertRepositoryFiles, assertRuntimeModule, assertPublicBundleText, listRegularFiles, publishedAssetPaths } from '../../tools/publish-policy.ts';
 import policy from '../../publish.allowlist.json';
 
 describe('publication boundaries', () => {
+  it('permits current M6.02 runtime labels only in the authorized learner chunk', () => {
+    for (const label of ['m602-cued-relations/1.0.0', 'm602-response/1.0.0']) {
+      expect(() => assertPublicBundleText('assets/m602-entry-a1b2c3d4.js', label)).not.toThrow();
+      for (const file of ['assets/index-a1b2c3d4.js', 'assets/m602-entry-a1b2c3d4.css', 'index.html', 'assets/other-a1b2c3d4.js']) {
+        expect(() => assertPublicBundleText(file, label)).toThrow();
+      }
+    }
+  });
+  it('continues to reject editorial data and internal views even inside the new entry', () => {
+    for (const content of ['reference-fixtures', 'model-vectors', 'spec/tasks', 'm602-cued-cases', 'p02c-cases', 'INTERNE P02c-BEDIENPROBE', 'Interne Benennungsprobe', 'sourceMappingURL', 'naming-input/1.0.0']) {
+      expect(() => assertPublicBundleText('assets/m602-entry-a1b2c3d4.js', content)).toThrow();
+    }
+    expect(() => assertDistFiles(['index.html', 'assets/m602-entry-a1b2c3d4.js', 'assets/m602-entry-a1b2c3d4.css'], policy.distPatterns)).not.toThrow();
+    expect(() => assertDistFiles(['index.html', 'assets/arbitrary-a1b2c3d4.js'], policy.distPatterns)).toThrow();
+  });
   it('accepts the explicitly reviewed repository inventory', () => {
     expect(() => assertRepositoryFiles(['AGENTS.md', 'spec/tasks.json', 'src/main.ts'], policy.repositoryFiles)).not.toThrow();
   });
