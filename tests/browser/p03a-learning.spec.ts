@@ -75,6 +75,7 @@ test('plays the public learning cycle with material, feedback, own revision and 
   await expect(result(page)).toHaveAttribute('data-color', 'red');
   await expect(panel(page, 'direction')).toContainText('Nettostrom in die Zelle');
   await expect(panel(page, 'volume')).toContainText('Zunahme');
+  await expect(result(page)).toBeFocused();
   for (const field of fields) {
     await expect(panel(page, field)).toContainText('Erkannter Ansatz');
     await expect(panel(page, field)).toContainText('Nächster Schritt');
@@ -90,7 +91,6 @@ test('plays the public learning cycle with material, feedback, own revision and 
     await explanation.locator('summary').click();
   }
   expect(await result(page).innerText()).not.toMatch(/\bC0[123]\b|contextHash|rubricVersion/);
-  await expect(result(page)).toBeFocused();
   await image(page, info, 'p03a-falsche-rueckmeldung');
   expect(await stored(page)).toBeNull();
   await press(page, 'Antwort selbst überarbeiten');
