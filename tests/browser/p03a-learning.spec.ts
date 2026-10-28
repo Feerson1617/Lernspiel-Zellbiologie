@@ -80,7 +80,16 @@ test('plays the public learning cycle with material, feedback, own revision and 
     await expect(panel(page, field)).toContainText('Nächster Schritt');
     await expect(panel(page, field)).toContainText('Bezug zum Material');
     await expect(panel(page, field)).toContainText(field === 'process' ? 'Saccharose' : 'Pa');
+    const explanation = panel(page, field).locator('details');
+    await expect(explanation).not.toHaveAttribute('open', '');
+    await expect(panel(page, field).getByText('Nächster Schritt', { exact: true })).toBeVisible();
+    await expect(panel(page, field).getByText('Fachliche Einordnung und Begründung', { exact: true })).toBeHidden();
+    await explanation.locator('summary').click();
+    await expect(panel(page, field).getByText('Fachliche Einordnung und Begründung', { exact: true })).toBeVisible();
+    if (field === 'process') await image(page, info, 'p03a-erklaerung-geoeffnet');
+    await explanation.locator('summary').click();
   }
+  expect(await result(page).innerText()).not.toMatch(/\bC0[123]\b|contextHash|rubricVersion/);
   await expect(result(page)).toBeFocused();
   await image(page, info, 'p03a-falsche-rueckmeldung');
   expect(await stored(page)).toBeNull();
@@ -88,11 +97,14 @@ test('plays the public learning cycle with material, feedback, own revision and 
   await fill(page);
   await expect(result(page)).not.toHaveAttribute('data-status', 'correct');
   await expect(result(page)).toContainText('nicht mehr aktuell');
+  await expect(result(page)).toHaveAttribute('data-color', 'neutral');
+  await expect(result(page)).not.toContainText('Technischer Hinweis');
   await expect(result(page).locator('[data-color="green"]')).toHaveCount(0);
   await check(page);
   await expect(result(page)).toHaveAttribute('data-status', 'correct');
   await expect(result(page)).toHaveAttribute('data-color', 'green');
   await expect(result(page)).toContainText('✓');
+  expect(await result(page).innerText()).not.toMatch(/\bC0[123]\b/);
   await expect(support(page)).toContainText('Nach Rückmeldung überarbeitet');
   await expect(support(page)).toContainText('Ohne zusätzlich aufgerufene Hilfe beantwortet');
   const progress = await stored(page);
@@ -182,6 +194,7 @@ test('offers direct help and selection before a second attempt and preserves pro
   await press(page, 'Lösung ansehen: Vakuolenvolumen');
   await expect(result(page)).not.toHaveAttribute('data-status', 'correct');
   await expect(support(page)).toContainText('Lösung angesehen');
+  expect(await page.getByRole('region', { name: 'Überarbeiten und Hilfen', exact: true }).innerText()).not.toMatch(/\bC0[123]\b/);
   await image(page, info, 'p03a-hilfenutzung');
   await check(page);
   expect((await stored(page))!.attempts.at(-1)!['assistance']).toBe('solution_viewed');
@@ -200,7 +213,7 @@ test('offers direct help and selection before a second attempt and preserves pro
 test('keeps extra assertions visible, ungraded and out of persistence without turning them into HTML', async ({ page }) => {
   await open(page); await fill(page);
   await page.getByText('Weitere Aussagen ergänzen (optional)', { exact: true }).click();
-  const extra = 'Die Zellwand schrumpft. <img src=x onerror=alert(1)>';
+  const extra = 'Die Zellwand schrumpft. C01 <img src=x onerror=alert(1)>';
   await page.locator('#learner-extra').fill(extra); await check(page);
   for (const field of fields) await expect(panel(page, field)).toHaveAttribute('data-status', 'correct');
   await expect(result(page)).toHaveAttribute('data-status', 'clarify');
@@ -347,5 +360,5 @@ test('prior knowledge stays optional and the notebook example is explicit soluti
   await fill(page); await check(page);
   await expect(result(page)).toHaveAttribute('data-status', 'correct');
   expect((await stored(page))!.attempts.at(-1)!['assistance']).toBe('solution_viewed');
-  await expect(page.getByRole('main')).toContainText('nicht durch C01–C03 automatisch bewertet');
+  await expect(page.getByRole('main')).toContainText('nicht durch die drei Kurzfelder automatisch bewertet');
 });

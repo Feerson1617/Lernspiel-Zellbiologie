@@ -9,6 +9,12 @@ import { renderOnionCell } from '../render2d/onion-cell.ts';
 import { STATUS_PRESENTATION } from './feedback-presentation.ts';
 
 const names = { process: 'Fachbegriff', direction: 'Nettorichtung', volume: 'Vakuolenvolumen' } as const;
+/** Translate authored technical references only, never alter pupil input. */
+const learnerText = (text: string) => text
+  .replace('Damit ist das Benennungskriterium C01 erfüllt.', 'Der gesuchte Fachbegriff ist damit richtig benannt.')
+  .replace('Bestätigt ist C01.', 'Der gesuchte Fachbegriff ist richtig benannt.')
+  .replace('Dies erläutert C01', 'Dies erläutert den Fachbegriff')
+  .replace(/\bC01\b/g, 'Fachbegriff').replace(/\bC02\b/g, 'Nettorichtung').replace(/\bC03\b/g, 'Volumenfolge');
 const questions = {
   process: 'Wie heißt der Wassertransportvorgang?',
   direction: 'Wasser bewegt sich NETTO über die ZELLMEMBRAN: deine Richtung',
@@ -113,7 +119,7 @@ export function mountM602Learning(root: HTMLElement, model: M602LearningControll
   let activeField: M602Field = 'process';
   for (const [index, field] of M602_FIELDS.entries()) {
     const group = node('div', '', form, 'learner-field');
-    node('span', `C0${index + 1} · ${names[field]}`, group, 'field-kicker');
+    node('span', `${index + 1} · ${names[field]}`, group, 'field-kicker');
     const label = node('label', questions[field], group); label.htmlFor = `learner-${field}`;
     const input = node('input', '', group); input.id = label.htmlFor; input.name = field; input.autocomplete = 'off'; input.spellcheck = false;
     input.value = model.getState().answers[field]; input.setAttribute('aria-describedby', 'answer-contract'); inputs[field] = input;
@@ -139,7 +145,7 @@ export function mountM602Learning(root: HTMLElement, model: M602LearningControll
     const actions = node('div', '', group, 'help-actions');
     const hint = node('button', `Hinweis: ${names[field]}`, actions), bank = node('button', `Wortbank: ${names[field]}`, actions), solution = node('button', `Lösung ansehen: ${names[field]}`, actions);
     const text = node('div', '', group, 'help-text'); text.setAttribute('aria-live', 'polite');
-    hint.addEventListener('click', () => perform(() => { model.help(field, 'hint'); text.replaceChildren(); node('p', profile.hint, text); update('Hinweis geöffnet.'); }));
+    hint.addEventListener('click', () => perform(() => { model.help(field, 'hint'); text.replaceChildren(); node('p', learnerText(profile.hint), text); update('Hinweis geöffnet.'); }));
     bank.addEventListener('click', () => perform(() => {
       model.help(field, 'wordbank'); text.replaceChildren(); node('p', 'Wähle bei Bedarf selbst einen Ausdruck. Eine Übernahme ist ein neuer unterstützter Entwurf und wird erst mit „Prüfen“ bewertet.', text);
       for (const value of profile.wordbank) {
@@ -148,7 +154,7 @@ export function mountM602Learning(root: HTMLElement, model: M602LearningControll
       }
       update('Wortbank geöffnet.');
     }));
-    solution.addEventListener('click', () => perform(() => { model.help(field, 'solution_viewed'); text.replaceChildren(); node('p', profile.solution, text); update('Lösung ausdrücklich angesehen.'); }));
+    solution.addEventListener('click', () => perform(() => { model.help(field, 'solution_viewed'); text.replaceChildren(); node('p', learnerText(profile.solution), text); update('Lösung ausdrücklich angesehen.'); }));
   }
 
   const glossary = node('section', '', main, 'learning-glossary'); node('h2', 'Begriffe nachschlagen', glossary);
@@ -178,7 +184,7 @@ export function mountM602Learning(root: HTMLElement, model: M602LearningControll
   const notebook = node('section', '', main, 'learning-notebook'); notebook.id = 'weiterdenken';
   node('p', '04 · Weiterdenken', notebook, 'eyebrow'); node('h2', 'Erklären im Heft', notebook);
   node('p', 'Freiwillig: Erkläre auf Papier mit eigenen Worten, wie die Gesamtwasserpotenziale im bearbeiteten Material, die beiden Membrangrenzen und die Volumenfolge zusammenhängen. Verwende die Werte mit Einheit und unterscheide die Vakuole von der Zellwand.', notebook);
-  node('p', 'Schreibe möglichst zuerst selbst. Vergleiche anschließend und besprich deine Begründung im Unterricht. Dieses Unterrichtsprodukt wird nicht durch C01–C03 automatisch bewertet und nicht in der Anwendung gespeichert.', notebook, 'learning-note');
+  node('p', 'Schreibe möglichst zuerst selbst. Vergleiche anschließend und besprich deine Begründung im Unterricht. Dieses Unterrichtsprodukt wird nicht durch die drei Kurzfelder automatisch bewertet und nicht in der Anwendung gespeichert.', notebook, 'learning-note');
   const notebookButton = node('button', 'Beispiellösung im Heftvergleich ansehen', notebook); const notebookText = node('div', '', notebook, 'notebook-example'); notebookText.setAttribute('aria-live', 'polite');
   notebookButton.addEventListener('click', () => perform(() => {
     model.showNotebookSolution(); notebookText.replaceChildren(); node('h3', 'Lösung angesehen · Vergleich nach dem eigenen Schreiben', notebookText);
@@ -209,17 +215,21 @@ export function mountM602Learning(root: HTMLElement, model: M602LearningControll
     } else if (state.outcome) {
       const o = state.outcome, display = STATUS_PRESENTATION[o.overallStatus];
       feedback.dataset['status'] = o.overallStatus; feedback.dataset['color'] = display.color;
-      node('h2', `${display.symbol} M6.02 insgesamt: ${display.label}`, feedback);
+      node('h2', `${display.symbol} Deine drei Antworten: ${display.label}`, feedback);
       if (o.overallStatus === 'correct') node('p', 'Alle drei Kriterien sind für diesen Materialfall erfüllt. Bestätigt sind Fachbegriff, Nettorichtung und Volumenfolge – keine vollständige Kausalerklärung.', feedback);
       for (const field of M602_FIELDS) {
         const f = o.fields[field], status = STATUS_PRESENTATION[f.result.status], panel = node('section', '', feedback, 'field-feedback');
         panel.setAttribute('aria-label', `Bewertung ${field}`); panel.dataset['status'] = f.result.status; panel.dataset['color'] = status.color;
         node('h3', `${status.symbol} ${names[field]} · ${status.label}`, panel);
-        const dl = node('dl', '', panel);
-        for (const [title, value] of [['Erkannter Ansatz', f.feedback.recognized], ['Fachliche Einordnung und Begründung', f.feedback.difference]]) { node('dt', title, dl); node('dd', value, dl); }
+        const summary = node('dl', '', panel);
+        node('dt', 'Erkannter Ansatz', summary); node('dd', learnerText(f.feedback.recognized), summary);
+        node('dt', 'Nächster Schritt', summary); node('dd', learnerText(f.feedback.next), summary);
+        const explanation = node('details', '', panel);
+        node('summary', `Fachliche Erklärung: ${names[field]}`, explanation);
+        const dl = node('dl', '', explanation);
+        node('dt', 'Fachliche Einordnung und Begründung', dl); node('dd', learnerText(f.feedback.difference), dl);
         const values = field === 'direction' ? `Cytosol: ${p.cytosol} Pa; Außenraum: ${p.external} Pa.` : field === 'volume' ? `Vakuole: ${p.vacuole} Pa; Cytosol: ${p.cytosol} Pa.` : 'Wasser kann beide Membranen passieren; Saccharose wird im betrachteten Zeitraum weitgehend zurückgehalten.';
         node('dt', 'Bezug zum Material', dl); node('dd', values, dl);
-        node('dt', 'Nächster Schritt', dl); node('dd', f.feedback.next, dl);
       }
       for (const extra of o.notAssessed) node('p', `Noch nicht geprüft: ${extra.value}`, feedback, 'unassessed-text');
       if (o.support.history === 'history_unverified') node('p', 'Frühere Hilfehistorie nicht gesichert. Die einzelnen fachlichen Rückmeldungen bleiben nutzbar; ein neuer vollständiger Erfolgsnachweis wird nicht gespeichert.', feedback);
@@ -238,6 +248,7 @@ export function mountM602Learning(root: HTMLElement, model: M602LearningControll
     }
     if (state.revisedAfterFeedback) node('p', 'Nach Rückmeldung überarbeitet – in diesem Sitzungsverlauf nachweisbar.', support);
     node('p', '„Ohne zusätzlich aufgerufene Hilfe“ bedeutet weder „beim ersten Versuch richtig“ noch „ohne vorheriges Feedback“ oder „dauerhaft beherrscht“.', support, 'learning-note');
+    node('p', 'Erfasst werden nur die hier aufgerufenen digitalen Hilfen. Unterstützung durch andere Personen oder externe Quellen kann die Anwendung nicht feststellen.', support, 'learning-note');
     node('p', `${state.recordedCount} gespeicherte oder in dieser Sitzung vorgemerkte Bearbeitungsnachweise (einschließlich historischer Stände). Das ist kein aktueller Kompetenznachweis und keine Notenprognose.`, support);
     node('p', state.storage.issue ? 'Speicherhinweis: Lokales Speichern ist derzeit eingeschränkt oder vorhandene Daten passen nicht zur aktuellen Fassung. Du kannst in dieser Sitzung weiterüben; vorhandene fremde Daten bleiben erhalten.' : 'Deine Rohantworten und Hilfeereignisse bleiben nur in dieser Sitzung. Lokal gespeichert werden ausschließlich die acht vorhandenen Fortschrittsmetadaten je bestätigtem Versuch.', support, 'learning-note');
     if (message) announcement.textContent = message;
