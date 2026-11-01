@@ -39,7 +39,7 @@ test('R1 F01: all seven arrows paint below opaque, readable number badges and re
   for (const zoom of [100, 200]) for (const layout of ['default', 'alternate']) {
     await frame(page, zoom, layout);
     const metrics = await page.locator('.causal-board').evaluate(board => {
-      const svg = board.querySelector<SVGSVGElement>('svg')!, rect = svg.getBoundingClientRect();
+      const svg = board.querySelector<SVGSVGElement>('svg')!, rect = board.getBoundingClientRect();
       const paths = [...svg.querySelectorAll<SVGPathElement>('path[data-from]')];
       const circles = [...svg.querySelectorAll<SVGCircleElement>('circle')];
       const lines = svg.querySelector('[data-layer="connections"]'), numbers = svg.querySelector('[data-layer="numbers"]');
@@ -66,17 +66,24 @@ test('R1 F01: all seven arrows paint below opaque, readable number badges and re
       });
       return { width: rect.width, height: rect.height, paintOrderCorrect, badges, tips, inside, endpoints };
     });
-    const svg = page.locator('.causal-arrows');
-    const png = await svg.screenshot(), raster = readPngRaster(png);
+    const svg = page.locator('.causal-arrows'), capture = page.locator('.causal-board');
+    // HTML bounds remain stable across engines and visibility changes in SVG.
+    const png = await capture.screenshot(), raster = readPngRaster(png);
     // Actual raster comparisons, including glyph pixels. Hiding the lines must
     // not change any badge interior. A second reference isolates marker paint.
     await svg.locator('path[data-from]').evaluateAll(paths => paths.forEach(path => { (path as SVGPathElement).style.visibility = 'hidden'; }));
-    const withoutLines = readPngRaster(await svg.screenshot());
+    const withoutLines = readPngRaster(await capture.screenshot());
     await svg.locator('path[data-from]').evaluateAll(paths => paths.forEach(path => { (path as SVGPathElement).style.visibility = ''; (path as SVGPathElement).style.markerEnd = 'none'; }));
-    const withoutMarkers = readPngRaster(await svg.screenshot());
+    const withoutMarkers = readPngRaster(await capture.screenshot());
     await svg.locator('path[data-from]').evaluateAll(paths => paths.forEach(path => { (path as SVGPathElement).style.markerEnd = ''; }));
     const sx = raster.width / metrics.width, sy = raster.height / metrics.height;
-    const pixel = (source: ReturnType<typeof readPngRaster>, x: number, y: number) => source.rgb(Math.round(x * sx), Math.round(y * sy));
+    expect([withoutLines.width, withoutLines.height]).toEqual([raster.width, raster.height]);
+    expect([withoutMarkers.width, withoutMarkers.height]).toEqual([raster.width, raster.height]);
+    const pixel = (source: ReturnType<typeof readPngRaster>, x: number, y: number) => {
+      const px = Math.round(x * sx), py = Math.round(y * sy);
+      if (px < 0 || py < 0 || px >= source.width || py >= source.height) throw new Error(`${layout}/${zoom}: sample ${px},${py} outside ${source.width}×${source.height}; SVG ${metrics.width}×${metrics.height}`);
+      return source.rgb(px, py);
+    };
     const changed = (source: ReturnType<typeof readPngRaster>, x: number, y: number) => pixel(raster, x, y).some((value, channel) => Math.abs(value - pixel(source, x, y)[channel]!) > 24);
     const darkBadgeSamples: string[] = [], hiddenTips: string[] = [];
     for (const badge of metrics.badges) for (let y = -Math.floor(badge.radius - 2); y <= badge.radius - 2; y++) for (let x = -Math.floor(badge.radius - 2); x <= badge.radius - 2; x++) {
