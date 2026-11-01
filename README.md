@@ -21,7 +21,7 @@ Umfang, Prüfergebnisse, Screenshots und offene Quellen-/Geräteabstimmungen:
 [P03b-Prüfbericht](qa/P03b.md). M6 ist weiterhin unvollständig; keine neue
 Simulation, kein Rücktausch und keine Unterrichtsfreigabe.
 
-## Aktueller Entwicklungsstand P03a
+## Vorheriger Entwicklungsstand P03a
 
 Vom normalen Anwendungseinstieg führt **„Erste Übung ausprobieren – Wasserhaushalt
 der Zelle“** zu `#/m602`. Die erste Übungsvorschau verbindet Material, optionales

@@ -222,3 +222,35 @@ test('node tapping is a complete no-drag pointer alternative', async ({ page }) 
   }
   await press(page, 'Kausalnetz prüfen'); await expect(result(page)).toHaveAttribute('data-status', 'correct');
 });
+
+test('all allowed extra arrows retain distinct numbers and avoid the cards across layouts and text zoom', async ({ page }, info) => {
+  await open(page); await complete(page);
+  for (const [from, to, type] of [['B', 'C', 'coupled'], ['C', 'B', 'coupled'], ['A', 'D', 'possible_together']]) await edge(page, from!, to!, type!);
+  await press(page, 'Kausalnetz prüfen'); await expect(result(page)).toHaveAttribute('data-status', 'correct');
+  expect(await page.locator('.causal-edge-list').innerText()).not.toContain('Ergänze auch');
+  for (const zoom of [100, 200]) {
+    await page.addStyleTag({ content: `html {font-size:${zoom}% !important}` });
+    for (const layout of ['default', 'alternate']) {
+      if (await page.locator('.causal-board').getAttribute('data-layout') !== layout) await press(page, 'Karten anders anordnen');
+      const observed = await page.locator('.causal-board').evaluate(board => {
+        const bounds = board.getBoundingClientRect(), cards = [...board.querySelectorAll('.causal-node')].map(el => el.getBoundingClientRect());
+        const labels = [...board.querySelectorAll('circle')].map(el => ({ x: +el.getAttribute('cx')!, y: +el.getAttribute('cy')! }));
+        const collisions: string[] = [];
+        for (let i = 0; i < labels.length; i++) for (let j = i + 1; j < labels.length; j++) {
+          if (Math.hypot(labels[i]!.x - labels[j]!.x, labels[i]!.y - labels[j]!.y) < 25) collisions.push(`labels ${i + 1}/${j + 1}`);
+        }
+        for (const path of board.querySelectorAll<SVGPathElement>('path[data-from]')) {
+          const length = path.getTotalLength();
+          for (let step = 0; step <= 50; step++) {
+            const point = path.getPointAtLength(length * step / 50), x = point.x + bounds.x, y = point.y + bounds.y;
+            if (cards.some(card => x > card.left + 1 && x < card.right - 1 && y > card.top + 1 && y < card.bottom - 1)) collisions.push(`path ${path.dataset['from']}/${path.dataset['to']}`);
+          }
+        }
+        return { count: labels.length, collisions };
+      });
+      expect(observed).toEqual({ count: 7, collisions: [] });
+      await expect(result(page)).toHaveAttribute('data-status', 'correct');
+    }
+  }
+  await screenshot(page, info, 'p03b-all-valid-arrows-200-percent');
+});

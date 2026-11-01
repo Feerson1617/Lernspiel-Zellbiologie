@@ -186,21 +186,45 @@ export function mountM603Learning(root: HTMLElement, model: M603LearningControll
     }
     const defs = element('defs', {}), marker = element('marker', { id: 'causal-arrow-tip', viewBox: '0 0 10 10', refX: 9, refY: 5, markerWidth: 8, markerHeight: 8, orient: 'auto-start-reverse' }, defs);
     element('path', { d: 'M 0 0 L 10 5 L 0 10 z', fill: '#233d3b' }, marker);
-    const groups = new Map<string, number>();
+    const groups = new Map<string, number>(), labels: { x: number; y: number }[] = [];
+    const cards = M603_NODES.map(id => nodeButtons[id].getBoundingClientRect());
+    let diagonalCount = 0;
     current.answer.edges.forEach((edge, index) => {
       const a = nodeButtons[edge.from].getBoundingClientRect(), b = nodeButtons[edge.to].getBoundingClientRect();
       const ax = a.x + a.width / 2 - rect.x, ay = a.y + a.height / 2 - rect.y, bx = b.x + b.width / 2 - rect.x, by = b.y + b.height / 2 - rect.y;
       const dx = bx - ax, dy = by - ay, length = Math.hypot(dx, dy);
       if (!length) return;
       const pair = [edge.from, edge.to].sort().join(''), count = groups.get(pair) ?? 0; groups.set(pair, count + 1);
-      const offset = (count % 2 ? 1 : -1) * Math.ceil(count / 2) * 16;
+      const offset = (count % 2 ? 1 : -1) * Math.ceil(count / 2) * 56;
       const boundary = (box: DOMRect) => Math.min(dx ? (box.width / 2 + 4) / Math.abs(dx) : Infinity, dy ? (box.height / 2 + 4) / Math.abs(dy) : Infinity);
-      const ar = boundary(a), br = boundary(b), x1 = ax + dx * ar, y1 = ay + dy * ar, x2 = bx - dx * br, y2 = by - dy * br;
-      const mx = (x1 + x2) / 2 - dy / length * offset, my = (y1 + y2) / 2 + dx / length * offset;
-      const path = element('path', { d: `M ${x1} ${y1} Q ${mx} ${my} ${x2} ${y2}`, fill: 'none', stroke: '#233d3b', 'stroke-width': 2, 'marker-end': 'url(#causal-arrow-tip)' });
+      let pathData: string, pointAt: (t: number) => { x: number; y: number };
+      if (Math.abs(dx) > 1 && Math.abs(dy) > 1) {
+        // Opposite corners use the empty row gutter, even when large text makes
+        // the rows unequal. A diagonal centre-to-centre line could cross a card.
+        const top = ay < by ? a : b, bottom = ay < by ? b : a;
+        const gap = bottom.top - top.bottom, lane = diagonalCount++;
+        const shift = (lane % 2 ? -1 : 1) * Math.min(Math.ceil(lane / 2) * 14, Math.max(0, gap / 2 - 17));
+        const y = (top.bottom + bottom.top) / 2 - rect.y + shift;
+        const startY = (ay < by ? a.bottom + 4 : a.top - 4) - rect.y;
+        const endY = (ay < by ? b.top - 4 : b.bottom + 4) - rect.y;
+        pathData = `M ${ax} ${startY} L ${ax} ${y} L ${bx} ${y} L ${bx} ${endY}`;
+        pointAt = t => ({ x: ax + (bx - ax) * t, y });
+      } else {
+        const ar = boundary(a), br = boundary(b), x1 = ax + dx * ar, y1 = ay + dy * ar, x2 = bx - dx * br, y2 = by - dy * br;
+        const mx = (x1 + x2) / 2 - dy / length * offset, my = (y1 + y2) / 2 + dx / length * offset;
+        pathData = `M ${x1} ${y1} Q ${mx} ${my} ${x2} ${y2}`;
+        pointAt = t => ({ x: (1 - t) ** 2 * x1 + 2 * (1 - t) * t * mx + t ** 2 * x2, y: (1 - t) ** 2 * y1 + 2 * (1 - t) * t * my + t ** 2 * y2 });
+      }
+      const path = element('path', { d: pathData, fill: 'none', stroke: '#233d3b', 'stroke-width': 2, 'marker-end': 'url(#causal-arrow-tip)' });
       path.dataset['from'] = edge.from; path.dataset['to'] = edge.to; path.dataset['relation'] = edge.relation;
-      // Quadratic midpoint: readable edge number, full semantics remain in HTML.
-      const tx = (x1 + 2 * mx + x2) / 4, ty = (y1 + 2 * my + y2) / 4;
+      const candidates = [.5, .2, .8, .35, .65, .15, .85, .25, .75].map(pointAt);
+      const point = candidates.find(p => labels.every(label => Math.hypot(p.x - label.x, p.y - label.y) >= 25)
+        && cards.every(card => {
+          const x = p.x + rect.x, y = p.y + rect.y;
+          return Math.hypot(x - Math.max(card.left, Math.min(card.right, x)), y - Math.max(card.top, Math.min(card.bottom, y))) >= 13;
+        })) ?? candidates[0]!;
+      labels.push(point);
+      const { x: tx, y: ty } = point;
       element('circle', { cx: tx, cy: ty, r: 12, fill: '#fffef9', stroke: '#233d3b' });
       element('text', { x: tx, y: ty + 4, 'text-anchor': 'middle', 'font-size': 12, fill: '#233d3b' }).textContent = String(index + 1);
     });

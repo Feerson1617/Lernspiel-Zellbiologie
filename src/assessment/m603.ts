@@ -40,7 +40,7 @@ function judgeEdge(edge: M603Edge): M603Feedback {
   }
   const bc = (edge.from === 'B' && edge.to === 'C') || (edge.from === 'C' && edge.to === 'B');
   if (bc && edge.relation === 'coupled') return feedback('correct', 'COUPLED', 'Volumen und Turgor hängen zusammen. Die Verbindung behauptet keine zwingende zeitliche Reihenfolge.');
-  if (edge.from === 'A' && edge.to === 'D' && edge.relation === 'possible_together') return feedback('correct', 'CONDITIONAL_SUMMARY', 'Als Zusammenfassung zutreffend: nur bei vollständigem Turgorverlust und hinreichendem weiterem Wasserverlust ist Ablösung möglich. Ergänze auch die differenzierten Kernbeziehungen.');
+  if (edge.from === 'A' && edge.to === 'D' && edge.relation === 'possible_together') return feedback('correct', 'CONDITIONAL_SUMMARY', 'Als Zusammenfassung zutreffend: nur bei vollständigem Turgorverlust und hinreichendem weiterem Wasserverlust ist Ablösung möglich. Diese Zusammenfassung ersetzt die differenzierten Kernbeziehungen nicht.');
   if (bc && edge.relation === 'strictly_before') return feedback('incorrect', 'FALSE_LINEAR_ORDER', 'Volumenänderung und Turgorabnahme sind gekoppelt. Das Material begründet keine zwingende Folge „erst das eine vollständig, dann das andere“. Entferne die strikte Zeitfolge.');
   if (edge.to === 'D' && edge.relation === 'causes') return feedback('incorrect', 'DETACHMENT_NOT_GUARANTEED', 'Diese unbedingte Ursache-Wirkungs-Behauptung reicht nicht: Ablösung erfordert vollständigen Turgorverlust und hinreichenden weiteren Wasserverlust. Eine anfängliche Abnahme beweist keine sichtbare Plasmolyse. Wähle eine bedingte Bedeutung.');
   const reversed = M603_REQUIRED.find(item => item.from === edge.to && item.to === edge.from && item.relation === edge.relation);
