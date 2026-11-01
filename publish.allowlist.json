@@ -338,7 +338,20 @@
     "review/m603-causal-map-1.0.0.md",
     "contracts/m603-causal-map.json",
     "tests/fixtures/m603-cases.json",
-    "review/m603-causal-map-1.0.1.md"
+    "review/m603-causal-map-1.0.1.md",
+    "src/domain/m603-contract.ts",
+    "src/content/m603-materials.ts",
+    "src/content/m603-learning.ts",
+    "src/assessment/m603.ts",
+    "src/application/m603-learning.ts",
+    "src/ui/m603-learning.ts",
+    "src/ui/m603-learning.css",
+    "tests/unit/m603.test.ts",
+    "tests/unit/m603-learning.test.ts",
+    "tests/content/m603.test.ts",
+    "tests/browser/p03b-causal.spec.ts",
+    "tests/build/m603-bundle.test.ts",
+    "qa/P03b.md"
   ],
   "distPatterns": [
     "^index\\.html$",
