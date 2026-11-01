@@ -173,7 +173,8 @@ test('responsive board and text at 200 percent retain visible focus and complete
 });
 
 test('keyboard alone can build every required relation, check, edit, remove, open help and write', async ({ page, browserName }, info) => {
-  await open(page); const tab = browserName === 'webkit' && process.platform === 'darwin' ? 'Alt+Tab' : 'Tab';
+  await open(page); const macWebKit = browserName === 'webkit' && process.platform === 'darwin';
+  const tab = macWebKit ? 'Alt+Tab' : 'Tab';
   async function tabTo(id: string) {
     for (let i = 0; i < 90; i++) {
       if (await page.evaluate(target => document.activeElement?.id === target, id)) return;
@@ -181,13 +182,24 @@ test('keyboard alone can build every required relation, check, edit, remove, ope
     }
     throw new Error(`Keyboard did not reach ${id}`);
   }
-  async function nativeSelect(steps: number) { await page.keyboard.press('Home'); for (let i = 0; i < steps; i++) await page.keyboard.press('ArrowDown'); }
+  async function nativeSelect(steps: number) {
+    // macOS uses a native popup. Explicitly open and commit it before Tab;
+    // merely leaving the popup can retain the previous empty selection.
+    if (macWebKit) await page.keyboard.press('Space');
+    await page.keyboard.press('Home');
+    for (let i = 0; i < steps; i++) await page.keyboard.press('ArrowDown');
+    if (macWebKit) await page.keyboard.press('Enter');
+  }
   await tabTo('causal-from');
-  for (const [from, to, relation] of core) {
-    await nativeSelect('ABCD'.indexOf(from) + 1); await page.keyboard.press(tab); await expect(page.locator('#causal-to')).toBeFocused();
-    await nativeSelect('ABCD'.indexOf(to) + 1); await page.keyboard.press(tab); await expect(page.locator('#causal-relation')).toBeFocused();
-    await nativeSelect(['causes', 'enables_if', 'requires_zero'].indexOf(relation) + 1); await page.keyboard.press(tab);
+  for (const [index, [from, to, relation]] of core.entries()) {
+    await nativeSelect('ABCD'.indexOf(from) + 1); await expect(page.locator('#causal-from')).toHaveValue(from);
+    await page.keyboard.press(tab); await expect(page.locator('#causal-to')).toBeFocused();
+    await nativeSelect('ABCD'.indexOf(to) + 1); await expect(page.locator('#causal-to')).toHaveValue(to);
+    await page.keyboard.press(tab); await expect(page.locator('#causal-relation')).toBeFocused();
+    await nativeSelect(['causes', 'enables_if', 'requires_zero'].indexOf(relation) + 1); await expect(page.locator('#causal-relation')).toHaveValue(relation);
+    await page.keyboard.press(tab);
     await expect(page.getByRole('button', { name: 'Verbindung hinzufügen', exact: true })).toBeFocused(); await page.keyboard.press('Enter'); await expect(page.locator('#causal-from')).toBeFocused();
+    await expect(page.locator('.causal-edge-text')).toHaveCount(index + 1);
   }
   // Continue through the real document order, rather than replacing navigation with focus().
   for (let i = 0; i < 25 && !(await page.getByRole('button', { name: 'Kausalnetz prüfen', exact: true }).evaluate(el => el === document.activeElement)); i++) await page.keyboard.press(tab);
