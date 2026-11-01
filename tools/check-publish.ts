@@ -4,7 +4,7 @@ import { execFileSync } from 'node:child_process';
 import { lstatSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join } from 'node:path';
-import { assertDistFiles, assertRepositoryFiles, listRegularFiles, publishedAssetPaths } from './publish-policy.ts';
+import { assertDistFiles, assertRepositoryFiles, assertPublicBundleText, listRegularFiles, publishedAssetPaths } from './publish-policy.ts';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const policy = JSON.parse(readFileSync(join(root, 'publish.allowlist.json'), 'utf8')) as {
@@ -35,8 +35,6 @@ if (references.length < 3 || references.some((file) => !published.includes(file)
   throw new Error('The built page references missing assets.');
 }
 for (const file of published.filter((path) => /\.(?:js|css|html)$/.test(path))) {
-  if (/sourceMappingURL|reference-fixtures|model-vectors|spec\/tasks|naming-input\/1\.0\.0|naming-term|Interne Benennungsprobe|m602-response\/1\.0\.0|m602-cued-relations\/1\.0\.0|m602-cued-cases|p02c-cases|INTERNE P02c-BEDIENPROBE/.test(readFileSync(join(dist, file), 'utf8'))) {
-    throw new Error('The build contains source maps or editorial reference data.');
-  }
+  assertPublicBundleText(file, readFileSync(join(dist, file), 'utf8'));
 }
 console.log(`Publication check passed: ${files.length} approved repository files; ${history.paths} historical paths in ${history.trees} policy-checked trees; ${history.blobs} inspected blobs; ${manifest.protectedFiles.length} unchanged protected files; ${published.length} dist files; ${references.length} local asset references.`);

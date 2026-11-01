@@ -1,6 +1,21 @@
 # Zelllabor 11 – Die Zelle erforschen
 
-## Aktueller Entwicklungsstand in PR7
+## Aktueller Entwicklungsstand P03a
+
+Vom normalen Anwendungseinstieg führt **„Erste Übung ausprobieren – Wasserhaushalt
+der Zelle“** zu `#/m602`. Die erste Übungsvorschau verbindet Material, optionales
+Vorwissen, drei eigene Antworten, kriterienspezifisches Feedback, Überarbeitung,
+direkte Hilfen und zwei gültige Materialfälle. Sie ist keine vollständige Mission
+und noch nicht für den Unterricht freigegeben. Details und Prüfbefehle:
+[P03a](qa/P03a.md).
+
+Der bestehende Vertrag `m602-cued-relations/1.0.0` und der Korrektor bleiben
+unverändert. Die Produktion lädt die neue Schüleransicht bei Bedarf; interne
+Bedienproben und redaktionelle Testkorpora bleiben ausgeschlossen. Speicherung
+umfasst nur die bisherigen acht Metadatenfelder vollständiger gültiger Versuche.
+Rohantworten, Entwürfe, Überarbeitungs- und Hilfeereignisse bleiben im RAM.
+
+## Historischer Entwicklungsstand PR7 / P02c
 
 P02c führt nach ausdrücklicher Fachentscheidung die getrennt versionierten kurzen
 Relationsfelder für M6.02/C02/C03 ein. Vertrag und Grenze:
@@ -60,7 +75,8 @@ npm run dev
 Vite bedient die Anwendung unter `/Lernspiel-Zellbiologie/`. Alle Befehle laufen
 im Repository-Hauptverzeichnis. Für reine Frontendentwicklung ist Python nicht
 erforderlich. Die Anwendung verwendet keine externen Schriftdateien, CDNs,
-Tracker, Konten oder APIs. Es werden keine Browserdaten geschrieben.
+Tracker, Konten oder APIs. Die Startseite schreibt keine Browserdaten. In der
+Übung werden ausschließlich die beschriebenen Fortschrittsmetadaten lokal gespeichert.
 
 ## Prüfen und bauen
 
@@ -124,7 +140,7 @@ nachfolgenden Phasen vorbereitet. Solange keine passenden Tests existieren,
 Sie gehören noch nicht zur erforderlichen Prüfkette. `test:content` ist seit
 P01a mit echten Identitäts-/Metadatentests gefüllt und Bestandteil von `check`.
 
-## Architektur und Grenze nach P02b
+## Historische Architektur und Grenze nach P02b
 
 | Bereich | Verantwortung |
 | --- | --- |

@@ -11,10 +11,17 @@ it('builds/imports the actual prepared corrector with the production guard and n
   expect(api.createTonoplastEvaluator(TEST_VERSIONS).evaluate(TEST_CONTEXT, { fieldId: 'term', text: 'Tonoplast' }, 'independent').status).toBe('correct');
 });
 
-it('keeps the production start bundle free of the prepared solutions, assessment code and test corpus', () => {
+it('keeps solutions out of the initial entry while allowing only the new public learning chunks', () => {
   const root = new URL('../../dist/', import.meta.url);
   const files = listRegularFiles(root.pathname);
-  expect(files).toHaveLength(4);
-  const source = files.filter((file) => /\.(js|html)$/.test(file)).map((file) => readFileSync(new URL(file, root), 'utf8')).join('\n');
-  expect(source).not.toMatch(/Tonoplast|Vakuolenmembran|TERM_TONOPLAST|TONOPLAST_CORRECT|reference-fixtures|tonoplast-cases|TERM_OSMOSIS|REL_NET_WATER_OUT/);
+  const html = readFileSync(new URL('index.html', root), 'utf8');
+  const entry = html.match(/src="[^\"]*\/(index-[^\"]+\.js)"/)?.[1];
+  expect(entry).toBeDefined();
+  const initial = readFileSync(new URL(`assets/${entry}`, root), 'utf8');
+  expect(initial).not.toMatch(/Tonoplast|Vakuolenmembran|TERM_TONOPLAST|TONOPLAST_CORRECT|reference-fixtures|tonoplast-cases|TERM_OSMOSIS|REL_NET_WATER_OUT/);
+  const source = files.filter(file => /\.(js|html)$/.test(file)).map(file => readFileSync(new URL(file, root), 'utf8')).join('\n');
+  expect(source).toContain('Erklären im Heft');
+  expect(source).toContain('Wasserhaushalt der Zelle');
+  expect(source).not.toMatch(/TERM_TONOPLAST|TONOPLAST_CORRECT|reference-fixtures|tonoplast-cases|TERM_OSMOSIS|REL_NET_WATER_OUT|INTERNE P02c|Interne Testfall-Steuerung/);
+  expect(files.filter(file => file.endsWith('.js')).every(file => /^assets\/(?:index|m602-entry)-[\w-]+\.js$/.test(file))).toBe(true);
 });
