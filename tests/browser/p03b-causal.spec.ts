@@ -175,50 +175,48 @@ test('responsive board and text at 200 percent retain visible focus and complete
 test('keyboard alone can build every required relation, check, edit, remove, open help and write', async ({ page, browserName }, info) => {
   await open(page); const macWebKit = browserName === 'webkit' && process.platform === 'darwin';
   const tab = macWebKit ? 'Alt+Tab' : 'Tab';
-  async function tabTo(id: string) {
+  const reverse = macWebKit ? 'Alt+Shift+Tab' : 'Shift+Tab';
+  async function tabTo(id: string, backwards = false) {
     for (let i = 0; i < 90; i++) {
       if (await page.evaluate(target => document.activeElement?.id === target, id)) return;
-      await page.keyboard.press(tab);
+      await page.keyboard.press(backwards ? reverse : tab);
     }
     throw new Error(`Keyboard did not reach ${id}`);
   }
-  async function nativeSelect(steps: number) {
-    // macOS uses a native popup. Explicitly open and commit it before Tab;
-    // merely leaving the popup can retain the previous empty selection.
-    if (macWebKit) await page.keyboard.press('Space');
-    await page.keyboard.press('Home');
-    for (let i = 0; i < steps; i++) await page.keyboard.press('ArrowDown');
-    if (macWebKit) await page.keyboard.press('Enter');
-  }
-  await tabTo('causal-from');
   for (const [index, [from, to, relation]] of core.entries()) {
-    await nativeSelect('ABCD'.indexOf(from) + 1); await expect(page.locator('#causal-from')).toHaveValue(from);
-    await page.keyboard.press(tab); await expect(page.locator('#causal-to')).toBeFocused();
-    await nativeSelect('ABCD'.indexOf(to) + 1); await expect(page.locator('#causal-to')).toHaveValue(to);
-    await page.keyboard.press(tab); await expect(page.locator('#causal-relation')).toBeFocused();
-    await nativeSelect(['causes', 'enables_if', 'requires_zero'].indexOf(relation) + 1); await expect(page.locator('#causal-relation')).toHaveValue(relation);
+    // The actual visible card/radio path needs no platform-native popup.
+    // Test code neither injects focus nor assigns selections or responses.
+    await tabTo(`causal-node-${from}`, index > 0); await page.keyboard.press('Space');
+    await expect(page.locator('#causal-from')).toHaveValue(from);
+    await tabTo(`causal-node-${to}`); await page.keyboard.press('Space');
+    await expect(page.locator('#causal-to')).toHaveValue(to); await expect(page.locator('#causal-relation')).toBeFocused();
     await page.keyboard.press(tab);
-    await expect(page.getByRole('button', { name: 'Verbindung hinzufügen', exact: true })).toBeFocused(); await page.keyboard.press('Enter'); await expect(page.locator('#causal-from')).toBeFocused();
+    await expect(page.locator('#causal-type-toggle')).toBeFocused();
+    if (!(await page.locator('#causal-type-list').evaluate(el => (el as HTMLDetailsElement).open))) await page.keyboard.press('Space');
+    await page.keyboard.press(tab); await expect(page.locator('#causal-kind-causes')).toBeFocused(); await page.keyboard.press('Space');
+    for (let i = 0; i < ['causes', 'enables_if', 'requires_zero'].indexOf(relation); i++) await page.keyboard.press('ArrowDown');
+    await page.keyboard.press('Space');
+    await expect(page.locator(`#causal-kind-${relation}`)).toBeChecked(); await expect(page.locator('#causal-relation')).toHaveValue(relation);
+    await tabTo('causal-add'); await page.keyboard.press('Space'); await expect(page.locator('#causal-from')).toBeFocused();
     await expect(page.locator('.causal-edge-text')).toHaveCount(index + 1);
   }
   // Continue through the real document order, rather than replacing navigation with focus().
   for (let i = 0; i < 25 && !(await page.getByRole('button', { name: 'Kausalnetz prüfen', exact: true }).evaluate(el => el === document.activeElement)); i++) await page.keyboard.press(tab);
   await expect(page.getByRole('button', { name: 'Kausalnetz prüfen', exact: true })).toBeFocused();
-  await page.keyboard.press('Enter'); await expect(result(page)).toHaveAttribute('data-status', 'correct');
+  await page.keyboard.press('Space'); await expect(result(page)).toHaveAttribute('data-status', 'correct');
   await page.keyboard.press(tab); await expect(result(page).getByRole('link')).toBeFocused(); await page.keyboard.press('Enter');
   await expect(page.locator('#kausal-erklaerung')).toBeFocused(); await page.keyboard.press(tab); await expect(page.locator('#causal-explanation')).toBeFocused(); await page.keyboard.type('Eigene biologische Erklaerung.');
   // Buttons also expose native keyboard activation; edit/remove are reached by tab.
   const edit = page.getByRole('button', { name: 'Verbindung 1 bearbeiten', exact: true });
-  const reverse = tab === 'Alt+Tab' ? 'Alt+Shift+Tab' : 'Shift+Tab';
   for (let i = 0; i < 60 && !(await edit.evaluate(el => el === document.activeElement)); i++) await page.keyboard.press(reverse);
-  await expect(edit).toBeFocused(); await page.keyboard.press('Enter'); await expect(page.locator('#causal-from')).toBeFocused();
-  await page.keyboard.press(tab); await page.keyboard.press(tab); await page.keyboard.press(tab); await page.keyboard.press('Enter');
+  await expect(edit).toBeFocused(); await page.keyboard.press('Space'); await expect(page.locator('#causal-from')).toBeFocused();
+  await tabTo('causal-add'); await page.keyboard.press('Space');
   const remove = page.getByRole('button', { name: 'Verbindung 1 entfernen', exact: true });
   for (let i = 0; i < 15 && !(await remove.evaluate(el => el === document.activeElement)); i++) await page.keyboard.press(reverse);
-  await expect(remove).toBeFocused(); await page.keyboard.press('Enter'); await expect(page.locator('.causal-edge-text')).toHaveCount(3);
+  await expect(remove).toBeFocused(); await page.keyboard.press('Space'); await expect(page.locator('.causal-edge-text')).toHaveCount(3);
   const help = page.getByRole('button', { name: 'Kurzer Hinweis: Wasserbilanz und Volumen', exact: true });
   for (let i = 0; i < 30 && !(await help.evaluate(el => el === document.activeElement)); i++) await page.keyboard.press(tab);
-  await expect(help).toBeFocused(); await page.keyboard.press('Enter'); await expect(support(page)).toContainText('Digitale Unterstützung aufgerufen');
+  await expect(help).toBeFocused(); await page.keyboard.press('Space'); await expect(support(page)).toContainText('Digitale Unterstützung aufgerufen');
   await screenshot(page, info, 'p03b-keyboard');
 });
 
@@ -230,7 +228,11 @@ test('node tapping is a complete no-drag pointer alternative', async ({ page }) 
       if (await page.evaluate(() => navigator.maxTouchPoints > 0)) await button.tap(); else await button.click();
     }
     await expect(page.locator('#causal-relation')).toBeFocused();
-    await page.getByLabel('Bedeutung des Pfeils', { exact: true }).selectOption(relation); await press(page, 'Verbindung hinzufügen');
+    if (!(await page.locator('#causal-type-list').evaluate(el => (el as HTMLDetailsElement).open))) await page.locator('#causal-type-toggle').click();
+    const radio = page.locator(`#causal-kind-${relation}`);
+    if (await page.evaluate(() => navigator.maxTouchPoints > 0)) await radio.tap(); else await radio.click();
+    await expect(radio).toBeChecked(); await expect(page.locator('#causal-relation')).toHaveValue(relation);
+    await press(page, 'Verbindung hinzufügen'); await expect(radio).not.toBeChecked();
   }
   await press(page, 'Kausalnetz prüfen'); await expect(result(page)).toHaveAttribute('data-status', 'correct');
 });

@@ -68,6 +68,7 @@ export function mountM603Learning(root: HTMLElement, model: M603LearningControll
   const nodeButtons = {} as Record<M603Node, HTMLButtonElement>;
   for (const id of M603_NODES) {
     const button = node('button', '', board, `causal-node node-${id}`); button.type = 'button'; button.dataset['node'] = id;
+    button.id = `causal-node-${id}`;
     node('span', id, button, 'causal-letter'); node('span', M603_NODE_TEXT[id], button);
     button.setAttribute('aria-label', `${id}: ${M603_NODE_TEXT[id]} – als Start oder Ziel wählen`);
     nodeButtons[id] = button;
@@ -80,6 +81,7 @@ export function mountM603Learning(root: HTMLElement, model: M603LearningControll
   const editor = node('section', '', workspace, 'learning-form causal-editor'); editor.setAttribute('aria-label', 'Verbindung auswählen');
   node('h2', 'Einen Pfeil hinzufügen', editor);
   node('p', 'Wähle Start, Ziel und Bedeutung. Du kannst auch erst zwei Karten antippen oder anklicken. Ziehen ist nicht nötig.', editor);
+  node('p', 'Tastatur: Mit Tab (auf macOS ggf. Wahltaste+Tab) zu den Karten wechseln und mit der Leertaste Start und Ziel wählen. Die Bedeutung kannst du auch in der aufklappbaren Liste auswählen.', editor, 'learning-note');
   const form = node('form', '', editor); let editingIndex: number | null = null;
   function select(label: string, id: string, options: readonly (readonly [string, string])[]) {
     const field = node('div', '', form); const title = node('label', label, field); title.htmlFor = id;
@@ -92,13 +94,28 @@ export function mountM603Learning(root: HTMLElement, model: M603LearningControll
   const to = select('Zielknoten', 'causal-to', M603_NODES.map(id => [id, `${id} · ${M603_NODE_TEXT[id]}`] as const));
   const relation = select('Bedeutung des Pfeils', 'causal-relation', M603_RELATIONS.map(id => [id, M603_RELATION_TEXT[id]] as const));
   const relationPreview = node('p', 'Noch keine Bedeutung gewählt.', form, 'causal-relation-preview'); relationPreview.id = 'causal-type-explanation'; relation.setAttribute('aria-describedby', relationPreview.id);
-  relation.addEventListener('change', () => { relationPreview.textContent = relation.value ? M603_RELATION_TEXT[relation.value as M603Relation] : 'Noch keine Bedeutung gewählt.'; });
-  const add = node('button', 'Verbindung hinzufügen', form, 'learning-primary'); add.type = 'submit';
+  const typeList = node('details', '', form); typeList.id = 'causal-type-list';
+  const typeToggle = node('summary', 'Bedeutung als Liste wählen', typeList); typeToggle.id = 'causal-type-toggle';
+  node('p', 'Alternative ohne Auswahlmenü: Wähle einen Eintrag mit Klick, Tippen oder Leertaste. Mit den Pfeiltasten wechselst du zwischen den Bedeutungen.', typeList, 'learning-note');
+  const typeGroup = node('fieldset', '', typeList, 'causal-type-group'); node('legend', 'Alle Bedeutungen des Pfeils', typeGroup);
+  const typeInputs = M603_RELATIONS.map(id => {
+    const label = node('label', '', typeGroup, 'reflection-item'), input = node('input', '', label);
+    input.type = 'radio'; input.name = 'causal-kind'; input.value = id; input.id = `causal-kind-${id}`;
+    node('span', M603_RELATION_TEXT[id], label);
+    input.addEventListener('change', () => { if (input.checked) { relation.value = id; syncType(); } });
+    return input;
+  });
+  function syncType() {
+    relationPreview.textContent = relation.value ? M603_RELATION_TEXT[relation.value as M603Relation] : 'Noch keine Bedeutung gewählt.';
+    for (const input of typeInputs) input.checked = input.value === relation.value;
+  }
+  relation.addEventListener('change', syncType);
+  const add = node('button', 'Verbindung hinzufügen', form, 'learning-primary'); add.type = 'submit'; add.id = 'causal-add';
   const cancel = node('button', 'Bearbeiten abbrechen', form); cancel.type = 'button'; cancel.hidden = true;
   const editorMessage = node('p', '', form); editorMessage.setAttribute('role', 'status');
   function clearEditor() {
     editingIndex = null; from.value = ''; to.value = ''; relation.value = '';
-    relationPreview.textContent = 'Noch keine Bedeutung gewählt.'; add.textContent = 'Verbindung hinzufügen'; cancel.hidden = true; editorMessage.textContent = '';
+    syncType(); add.textContent = 'Verbindung hinzufügen'; cancel.hidden = true; editorMessage.textContent = '';
     updateNodeSelection();
   }
   cancel.addEventListener('click', () => { clearEditor(); from.focus(); });
@@ -129,7 +146,7 @@ export function mountM603Learning(root: HTMLElement, model: M603LearningControll
     node('span', M603_CLAIM_TEXT[claim], label);
     check.addEventListener('change', () => { model.toggleClaim(claim, check.checked); update('Zusatzbehauptung geändert. Erneut prüfen.'); }); return check;
   });
-  const submit = node('button', 'Kausalnetz prüfen', editor, 'learning-primary'); submit.type = 'button';
+  const submit = node('button', 'Kausalnetz prüfen', editor, 'learning-primary'); submit.type = 'button'; submit.id = 'causal-check';
   submit.addEventListener('click', () => { model.submit(); update(); feedback.focus(); live.textContent = `Kausalnetz: ${STATUS_PRESENTATION[model.getState().outcome!.status].label}.`; });
 
   const feedback = node('section', '', main, 'learning-feedback causal-feedback'); feedback.id = 'kausal-feedback'; feedback.tabIndex = -1; feedback.setAttribute('aria-label', 'Rückmeldung zum Kausalnetz');
@@ -242,7 +259,7 @@ export function mountM603Learning(root: HTMLElement, model: M603LearningControll
       if (current.outcome && !current.stale && current.outcome.edges[index]) renderItem(row, current.outcome.edges[index]!);
       const actions = node('div', '', row, 'causal-edge-actions'); const edit = node('button', 'Bearbeiten', actions), remove = node('button', 'Entfernen', actions);
       edit.type = remove.type = 'button'; edit.setAttribute('aria-label', `Verbindung ${index + 1} bearbeiten`); remove.setAttribute('aria-label', `Verbindung ${index + 1} entfernen`);
-      edit.addEventListener('click', () => { editingIndex = index; from.value = edge.from; to.value = edge.to; relation.value = edge.relation; relationPreview.textContent = M603_RELATION_TEXT[edge.relation]; add.textContent = 'Verbindung ändern'; cancel.hidden = false; updateNodeSelection(); from.focus(); });
+      edit.addEventListener('click', () => { editingIndex = index; from.value = edge.from; to.value = edge.to; relation.value = edge.relation; syncType(); add.textContent = 'Verbindung ändern'; cancel.hidden = false; updateNodeSelection(); from.focus(); });
       remove.addEventListener('click', () => { model.removeEdge(index); clearEditor(); update('Verbindung entfernt. Erneut prüfen.'); from.focus(); });
     });
     feedback.replaceChildren();

@@ -25,6 +25,8 @@
   .causal-editor form > div { margin-top: 16px; }
   .causal-page .causal-editor select { min-width: 0; text-overflow: ellipsis; }
   .causal-relation-preview { padding: 12px; background: #edf1e8; font-size: .9rem; margin-top: 8px; }
+  .causal-type-group { min-width: 0; border: 1px solid var(--causal-line); padding: 12px; }
+  .causal-type-group legend { font-size: .9rem; font-weight: 600; }
   .causal-editor form > button { margin: 14px 8px 0 0; }
   .causal-editor .learning-primary { width: 100%; }
   .causal-page .causal-item-feedback { padding: 8px 12px; margin-top: 12px; font-size: .92rem; }
