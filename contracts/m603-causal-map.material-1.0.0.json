@@ -1,0 +1,90 @@
+{
+  "contractVersion": "m603-causal-map/1.0.1",
+  "versions": {
+    "taskVersion": "M6.03@causal-map-1",
+    "rubricVersion": "M6.03.C01-C04@causal-map-1.0.1",
+    "contentVersion": "zelllabor11.m603-content/1.0.0",
+    "modelVersion": "m603-static-explanation/1.0.0"
+  },
+  "supersedes": "M6.03 evaluation details in F/spec concept 1.0; originals retained unchanged",
+  "nodes": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "relations": [
+    "causes",
+    "enables_if",
+    "requires_zero",
+    "coupled",
+    "possible_together",
+    "strictly_before",
+    "prevents"
+  ],
+  "requiredEdges": [
+    {
+      "criterion": "M6.03.C01",
+      "from": "A",
+      "to": "B",
+      "relation": "causes"
+    },
+    {
+      "criterion": "M6.03.C02",
+      "from": "A",
+      "to": "C",
+      "relation": "causes"
+    },
+    {
+      "criterion": "M6.03.C03",
+      "from": "B",
+      "to": "D",
+      "relation": "enables_if"
+    },
+    {
+      "criterion": "M6.03.C04",
+      "from": "C",
+      "to": "D",
+      "relation": "requires_zero"
+    }
+  ],
+  "jointConditionCriteria": [
+    "M6.03.C03",
+    "M6.03.C04"
+  ],
+  "optionalEdges": [
+    {
+      "from": "B",
+      "to": "C",
+      "relation": "coupled"
+    },
+    {
+      "from": "C",
+      "to": "B",
+      "relation": "coupled"
+    },
+    {
+      "from": "A",
+      "to": "D",
+      "relation": "possible_together"
+    }
+  ],
+  "safeClaims": [
+    "wall_stable",
+    "passive_potential"
+  ],
+  "falseClaims": [
+    "wall_shrinks",
+    "already_detached",
+    "active_water_pump",
+    "intentional_loss",
+    "concentration_only"
+  ],
+  "limits": {
+    "edges": 24,
+    "claims": 8
+  },
+  "persistence": "none; current-session evidence only",
+  "freeExplanation": "unassessed; volatile only",
+  "uncertainTypes": "Known but not explicitly supported combinations clarify; weak associations are never red merely for not being causal."
+}

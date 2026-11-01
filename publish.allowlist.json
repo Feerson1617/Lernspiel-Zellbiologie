@@ -351,7 +351,12 @@
     "tests/content/m603.test.ts",
     "tests/browser/p03b-causal.spec.ts",
     "tests/build/m603-bundle.test.ts",
-    "qa/P03b.md"
+    "qa/P03b.md",
+    "review/m603-material-1.1.0.md",
+    "contracts/m603-material-1.1.0.json",
+    "contracts/m603-causal-map.material-1.0.0.json",
+    "tests/helpers/png-raster.ts",
+    "tests/browser/p03b-r1.spec.ts"
   ],
   "distPatterns": [
     "^index\\.html$",

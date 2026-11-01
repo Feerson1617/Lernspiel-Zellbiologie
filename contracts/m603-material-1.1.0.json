@@ -1,0 +1,20 @@
+{
+  "materialVersion": "m603-water-loss-material/1.1.0",
+  "taskId": "M6.03",
+  "versions": {
+    "taskVersion": "M6.03@causal-map-2",
+    "rubricVersion": "M6.03.C01-C04@causal-map-1.0.1",
+    "contentVersion": "zelllabor11.m603-content/1.1.0",
+    "modelVersion": "m603-static-explanation/1.1.0"
+  },
+  "qualitativeConditions": {
+    "initialTurgor": "positive",
+    "consideredTurgorPhase": "before_or_until_complete_loss"
+  },
+  "seedVersion": "1.1.0",
+  "waterPotentialValuesUnchanged": true,
+  "absoluteTurgorGivenOrCalculated": false,
+  "dynamicsImplemented": false,
+  "assessmentContractUnchanged": "m603-causal-map/1.0.1",
+  "historicalContract": "contracts/m603-causal-map.material-1.0.0.json"
+}
