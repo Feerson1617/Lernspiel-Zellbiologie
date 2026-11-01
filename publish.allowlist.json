@@ -337,7 +337,8 @@
     "qa/P03a-Abschluss-R10.md",
     "review/m603-causal-map-1.0.0.md",
     "contracts/m603-causal-map.json",
-    "tests/fixtures/m603-cases.json"
+    "tests/fixtures/m603-cases.json",
+    "review/m603-causal-map-1.0.1.md"
   ],
   "distPatterns": [
     "^index\\.html$",

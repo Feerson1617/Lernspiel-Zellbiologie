@@ -1435,6 +1435,108 @@
         ]
       },
       "status": "technical"
+    },
+    {
+      "id": "weak-core-type",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          },
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "coupled"
+          }
+        ],
+        "claims": []
+      },
+      "status": "clarify"
+    },
+    {
+      "id": "reversed-association",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          },
+          {
+            "from": "B",
+            "to": "A",
+            "relation": "coupled"
+          }
+        ],
+        "claims": []
+      },
+      "status": "clarify"
+    },
+    {
+      "id": "weak-conditional",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "possible_together"
+          }
+        ],
+        "claims": []
+      },
+      "status": "clarify"
     }
   ]
 }
