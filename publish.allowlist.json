@@ -334,7 +334,10 @@
     "qa/P03a.md",
     "qa/P03a-Folgebacklog.md",
     "tests/browser/p03a-completion.spec.ts",
-    "qa/P03a-Abschluss-R10.md"
+    "qa/P03a-Abschluss-R10.md",
+    "review/m603-causal-map-1.0.0.md",
+    "contracts/m603-causal-map.json",
+    "tests/fixtures/m603-cases.json"
   ],
   "distPatterns": [
     "^index\\.html$",

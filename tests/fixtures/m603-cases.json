@@ -1,0 +1,1440 @@
+{
+  "source": "Own expected cases derived from the M6.03 contract before implementation, 2026-11-01. Not independent.",
+  "cases": [
+    {
+      "id": "all-four",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          }
+        ],
+        "claims": []
+      },
+      "status": "correct"
+    },
+    {
+      "id": "different-order",
+      "answer": {
+        "edges": [
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          }
+        ],
+        "claims": []
+      },
+      "status": "correct"
+    },
+    {
+      "id": "missing-1",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          }
+        ],
+        "claims": []
+      },
+      "status": "partial"
+    },
+    {
+      "id": "missing-2",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          }
+        ],
+        "claims": []
+      },
+      "status": "partial"
+    },
+    {
+      "id": "missing-3",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          }
+        ],
+        "claims": []
+      },
+      "status": "partial"
+    },
+    {
+      "id": "missing-4",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          }
+        ],
+        "claims": []
+      },
+      "status": "partial"
+    },
+    {
+      "id": "only-volume-condition",
+      "answer": {
+        "edges": [
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          }
+        ],
+        "claims": []
+      },
+      "status": "partial",
+      "criterionStatuses": [
+        "empty",
+        "empty",
+        "partial",
+        "empty"
+      ]
+    },
+    {
+      "id": "only-turgor-condition",
+      "answer": {
+        "edges": [
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          }
+        ],
+        "claims": []
+      },
+      "status": "partial",
+      "criterionStatuses": [
+        "empty",
+        "empty",
+        "empty",
+        "partial"
+      ]
+    },
+    {
+      "id": "joint-but-no-water-relations",
+      "answer": {
+        "edges": [
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          }
+        ],
+        "claims": []
+      },
+      "status": "partial"
+    },
+    {
+      "id": "reversed-1",
+      "answer": {
+        "edges": [
+          {
+            "from": "B",
+            "to": "A",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          }
+        ],
+        "claims": []
+      },
+      "status": "incorrect"
+    },
+    {
+      "id": "wrong-type-1",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "prevents"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          }
+        ],
+        "claims": []
+      },
+      "status": "incorrect"
+    },
+    {
+      "id": "reversed-2",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "C",
+            "to": "A",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          }
+        ],
+        "claims": []
+      },
+      "status": "incorrect"
+    },
+    {
+      "id": "wrong-type-2",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "prevents"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          }
+        ],
+        "claims": []
+      },
+      "status": "incorrect"
+    },
+    {
+      "id": "reversed-3",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "D",
+            "to": "B",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          }
+        ],
+        "claims": []
+      },
+      "status": "incorrect"
+    },
+    {
+      "id": "wrong-type-3",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "prevents"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          }
+        ],
+        "claims": []
+      },
+      "status": "incorrect"
+    },
+    {
+      "id": "reversed-4",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "D",
+            "to": "C",
+            "relation": "requires_zero"
+          }
+        ],
+        "claims": []
+      },
+      "status": "incorrect"
+    },
+    {
+      "id": "wrong-type-4",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "prevents"
+          }
+        ],
+        "claims": []
+      },
+      "status": "incorrect"
+    },
+    {
+      "id": "unconditional-volume-ablation",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "causes"
+          }
+        ],
+        "claims": []
+      },
+      "status": "incorrect"
+    },
+    {
+      "id": "unconditional-turgor-ablation",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "causes"
+          }
+        ],
+        "claims": []
+      },
+      "status": "incorrect"
+    },
+    {
+      "id": "unconditional-loss-ablation",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          },
+          {
+            "from": "A",
+            "to": "D",
+            "relation": "causes"
+          }
+        ],
+        "claims": []
+      },
+      "status": "incorrect"
+    },
+    {
+      "id": "strict-BC",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          },
+          {
+            "from": "B",
+            "to": "C",
+            "relation": "strictly_before"
+          }
+        ],
+        "claims": []
+      },
+      "status": "incorrect"
+    },
+    {
+      "id": "coupled-BC",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          },
+          {
+            "from": "B",
+            "to": "C",
+            "relation": "coupled"
+          }
+        ],
+        "claims": []
+      },
+      "status": "correct"
+    },
+    {
+      "id": "strict-CB",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          },
+          {
+            "from": "C",
+            "to": "B",
+            "relation": "strictly_before"
+          }
+        ],
+        "claims": []
+      },
+      "status": "incorrect"
+    },
+    {
+      "id": "coupled-CB",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          },
+          {
+            "from": "C",
+            "to": "B",
+            "relation": "coupled"
+          }
+        ],
+        "claims": []
+      },
+      "status": "correct"
+    },
+    {
+      "id": "summary",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          },
+          {
+            "from": "A",
+            "to": "D",
+            "relation": "possible_together"
+          }
+        ],
+        "claims": []
+      },
+      "status": "correct"
+    },
+    {
+      "id": "coupling-not-one-way-causality",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          },
+          {
+            "from": "B",
+            "to": "C",
+            "relation": "causes"
+          }
+        ],
+        "claims": []
+      },
+      "status": "clarify"
+    },
+    {
+      "id": "out-of-contract-edge",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          },
+          {
+            "from": "A",
+            "to": "D",
+            "relation": "coupled"
+          }
+        ],
+        "claims": []
+      },
+      "status": "clarify"
+    },
+    {
+      "id": "duplicate",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          },
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          }
+        ],
+        "claims": []
+      },
+      "status": "clarify"
+    },
+    {
+      "id": "contradiction",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          },
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "prevents"
+          }
+        ],
+        "claims": []
+      },
+      "status": "incorrect"
+    },
+    {
+      "id": "wall_shrinks",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          }
+        ],
+        "claims": [
+          "wall_shrinks"
+        ]
+      },
+      "status": "incorrect"
+    },
+    {
+      "id": "already_detached",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          }
+        ],
+        "claims": [
+          "already_detached"
+        ]
+      },
+      "status": "incorrect"
+    },
+    {
+      "id": "active_water_pump",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          }
+        ],
+        "claims": [
+          "active_water_pump"
+        ]
+      },
+      "status": "incorrect"
+    },
+    {
+      "id": "intentional_loss",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          }
+        ],
+        "claims": [
+          "intentional_loss"
+        ]
+      },
+      "status": "incorrect"
+    },
+    {
+      "id": "concentration_only",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          }
+        ],
+        "claims": [
+          "concentration_only"
+        ]
+      },
+      "status": "incorrect"
+    },
+    {
+      "id": "safe-claims",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          }
+        ],
+        "claims": [
+          "wall_stable",
+          "passive_potential"
+        ]
+      },
+      "status": "correct"
+    },
+    {
+      "id": "claim-only",
+      "answer": {
+        "edges": [],
+        "claims": [
+          "wall_stable"
+        ]
+      },
+      "status": "partial"
+    },
+    {
+      "id": "duplicate-claim",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          }
+        ],
+        "claims": [
+          "wall_stable",
+          "wall_stable"
+        ]
+      },
+      "status": "clarify"
+    },
+    {
+      "id": "empty",
+      "answer": {
+        "edges": [],
+        "claims": []
+      },
+      "status": "empty"
+    },
+    {
+      "id": "unknown-node",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          },
+          {
+            "from": "WALL",
+            "to": "B",
+            "relation": "causes"
+          }
+        ],
+        "claims": []
+      },
+      "status": "technical"
+    },
+    {
+      "id": "unknown-type",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          },
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "custom"
+          }
+        ],
+        "claims": []
+      },
+      "status": "technical"
+    },
+    {
+      "id": "self-loop",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          },
+          {
+            "from": "A",
+            "to": "A",
+            "relation": "causes"
+          }
+        ],
+        "claims": []
+      },
+      "status": "technical"
+    },
+    {
+      "id": "unknown-claim",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          }
+        ],
+        "claims": [
+          "custom"
+        ]
+      },
+      "status": "technical"
+    },
+    {
+      "id": "over-limit",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          },
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          },
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          },
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          },
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          },
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          },
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          }
+        ],
+        "claims": []
+      },
+      "status": "technical"
+    },
+    {
+      "id": "null",
+      "answer": null,
+      "status": "technical"
+    },
+    {
+      "id": "extra-field",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          }
+        ],
+        "claims": [],
+        "ignored": "wall shrinks"
+      },
+      "status": "technical"
+    },
+    {
+      "id": "missing-claims",
+      "answer": {
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "relation": "causes"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "relation": "causes"
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "relation": "enables_if"
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "relation": "requires_zero"
+          }
+        ]
+      },
+      "status": "technical"
+    }
+  ]
+}
