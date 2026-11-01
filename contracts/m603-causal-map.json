@@ -1,11 +1,12 @@
 {
   "contractVersion": "m603-causal-map/1.0.1",
   "versions": {
-    "taskVersion": "M6.03@causal-map-1",
+    "taskVersion": "M6.03@causal-map-2",
     "rubricVersion": "M6.03.C01-C04@causal-map-1.0.1",
-    "contentVersion": "zelllabor11.m603-content/1.0.0",
-    "modelVersion": "m603-static-explanation/1.0.0"
+    "contentVersion": "zelllabor11.m603-content/1.1.0",
+    "modelVersion": "m603-static-explanation/1.1.0"
   },
+  "materialContract": "contracts/m603-material-1.1.0.json",
   "supersedes": "M6.03 evaluation details in F/spec concept 1.0; originals retained unchanged",
   "nodes": [
     "A",

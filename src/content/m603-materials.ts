@@ -13,8 +13,10 @@ function material(index: number) {
   const item = M603_CASES[index];
   if (!item) throw new ContextContractError('INVALID_DATA');
   return {
+    materialVersion: 'm603-water-loss-material/1.1.0',
     caseId: item.id, cellProfile: 'onion_epidermis', cellIntegrity: 'intact',
     observationPhase: 'early_water_loss_after_solution_change',
+    initialTurgor: 'positive', consideredTurgorPhase: 'before_or_until_complete_loss',
     waterPotential: { unit: 'Pa', vacuole: item.vacuole, cytosol: item.cytosol, external: item.external, includesPressure: true },
     waterPermeability: { cellMembrane: true, tonoplast: true },
     sucroseRetention: 'largely_retained', otherTransport: 'excluded',
@@ -27,7 +29,7 @@ export function createM603Context(index: number, instanceKey: string): TaskConte
   const data = material(index), instanceId = `${instanceKey}:${data.caseId}`;
   requireProgressLabel(instanceId);
   return createTaskContext({ ...M603_VERSIONS, taskId: 'M6.03', instanceId,
-    seed: `${data.caseId}/1.0.0`, phase: 'explain', material: data, modelState: {} });
+    seed: `${data.caseId}/1.1.0`, phase: 'explain', material: data, modelState: {} });
 }
 
 /** Exact finite static cases, including every biological assumption. Rehash first. */
@@ -36,7 +38,7 @@ export function readM603Material(input: unknown): M603Material {
   const index = M603_CASES.findIndex(item => item.id === context.material['caseId']);
   if (context.taskId !== 'M6.03' || context.phase !== 'explain' || index < 0
     || Object.entries(M603_VERSIONS).some(([key, value]) => context[key as keyof typeof M603_VERSIONS] !== value)
-    || context.seed !== `${M603_CASES[index]!.id}/1.0.0` || Object.keys(context.modelState).length
+    || context.seed !== `${M603_CASES[index]!.id}/1.1.0` || Object.keys(context.modelState).length
     || snapshotContextData(context.material).json !== snapshotContextData(material(index)).json) {
     throw new ContextContractError('INVALID_DATA');
   }

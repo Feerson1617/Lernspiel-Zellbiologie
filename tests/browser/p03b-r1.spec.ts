@@ -66,18 +66,29 @@ test('R1 F01: all seven arrows paint below opaque, readable number badges and re
       });
       return { width: rect.width, height: rect.height, paintOrderCorrect, badges, tips, inside, endpoints };
     });
-    const png = await page.locator('.causal-arrows').screenshot(), raster = readPngRaster(png);
+    const svg = page.locator('.causal-arrows');
+    const png = await svg.screenshot(), raster = readPngRaster(png);
+    // Actual raster comparisons, including glyph pixels. Hiding the lines must
+    // not change any badge interior. A second reference isolates marker paint.
+    await svg.locator('path[data-from]').evaluateAll(paths => paths.forEach(path => { (path as SVGPathElement).style.visibility = 'hidden'; }));
+    const withoutLines = readPngRaster(await svg.screenshot());
+    await svg.locator('path[data-from]').evaluateAll(paths => paths.forEach(path => { (path as SVGPathElement).style.visibility = ''; (path as SVGPathElement).style.markerEnd = 'none'; }));
+    const withoutMarkers = readPngRaster(await svg.screenshot());
+    await svg.locator('path[data-from]').evaluateAll(paths => paths.forEach(path => { (path as SVGPathElement).style.markerEnd = ''; }));
     const sx = raster.width / metrics.width, sy = raster.height / metrics.height;
-    const pixel = (x: number, y: number) => raster.rgb(Math.round(x * sx), Math.round(y * sy));
+    const pixel = (source: ReturnType<typeof readPngRaster>, x: number, y: number) => source.rgb(Math.round(x * sx), Math.round(y * sy));
+    const changed = (source: ReturnType<typeof readPngRaster>, x: number, y: number) => pixel(raster, x, y).some((value, channel) => Math.abs(value - pixel(source, x, y)[channel]!) > 24);
     const darkBadgeSamples: string[] = [], hiddenTips: string[] = [];
-    for (const badge of metrics.badges) for (let step = 0; step < 64; step++) {
-      const angle = step * Math.PI / 32, radius = badge.radius - 3;
-      if (pixel(badge.x + Math.cos(angle) * radius, badge.y + Math.sin(angle) * radius).some(value => value < 220)) darkBadgeSamples.push(`${badge.number}/${step}`);
+    for (const badge of metrics.badges) for (let y = -Math.floor(badge.radius - 2); y <= badge.radius - 2; y++) for (let x = -Math.floor(badge.radius - 2); x <= badge.radius - 2; x++) {
+      if (Math.hypot(x, y) <= badge.radius - 2 && changed(withoutLines, badge.x + x, badge.y + y)) darkBadgeSamples.push(`${badge.number}/${x}/${y}`);
     }
     for (const tip of metrics.tips) {
-      for (const side of [-2, 2]) {
-        const rgb = pixel(tip.x - tip.dx * 6 - tip.dy * side, tip.y - tip.dy * 6 + tip.dx * side);
-        if (rgb.every(value => value > 190)) hiddenTips.push(`${tip.from}/${tip.to}/${side}`);
+      for (const side of [-1, 1]) {
+        let markerPixels = 0;
+        for (let back = 2; back <= 12; back++) for (let normal = 2; normal <= 7; normal++) {
+          if (changed(withoutMarkers, tip.x - tip.dx * back - tip.dy * normal * side, tip.y - tip.dy * back + tip.dx * normal * side)) markerPixels++;
+        }
+        if (markerPixels < 4) hiddenTips.push(`${tip.from}/${tip.to}/${side}`);
       }
     }
     observations.push({ zoom, layout, ...metrics, darkBadgeSamples, hiddenTips });
@@ -107,9 +118,14 @@ test('R1 F02: full statements and scientific words remain readable at both text 
       const fragments: string[] = [], clipping: string[] = [], cards: { id: string; text: string; font: number; height: number; width: number }[] = [];
       const elements = [...board.querySelectorAll<HTMLElement>('.causal-node > span:last-child'), ...document.querySelectorAll<HTMLElement>('.causal-edge-text')];
       for (const element of elements) {
-        const child = element.firstChild!;
+        const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT), texts: Text[] = [];
+        while (walker.nextNode()) texts.push(walker.currentNode as Text);
+        const position = (offset: number, end = false): [Text, number] => {
+          for (const child of texts) { if (offset < child.length || (end && offset === child.length)) return [child, offset]; offset -= child.length; }
+          throw new Error('Missing text range.');
+        };
         for (const word of element.textContent!.matchAll(/[A-Za-zÄÖÜäöüß]+/g)) {
-          const range = document.createRange(); range.setStart(child, word.index); range.setEnd(child, word.index + word[0].length);
+          const range = document.createRange(); range.setStart(...position(word.index)); range.setEnd(...position(word.index + word[0].length, true));
           if (range.getClientRects().length > 1) fragments.push(word[0]);
         }
       }

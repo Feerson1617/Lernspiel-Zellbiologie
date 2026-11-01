@@ -51,6 +51,7 @@ export function mountM603Learning(root: HTMLElement, model: M603LearningControll
   }
   const conditions = node('div', '', materialGrid);
   node('p', 'Frühe Wasserverlustphase nach dem Lösungswechsel. Wasser kann Zellmembran und Tonoplast passieren. Saccharose bleibt weitgehend außen; andere Transporte sind ausgeschlossen.', conditions);
+  node('p', 'Zu Beginn ist noch positiver Turgor vorhanden. Betrachtet wird seine Abnahme vor beziehungsweise bis zum vollständigen Turgorverlust. Ob dieser erreicht wird, wird nicht berechnet. Aus den Gesamtwasserpotenzialen lässt sich kein absoluter Turgorwert bestimmen.', conditions);
   node('p', 'Der Tonoplast trennt Vakuole und Cytosol, die Zellmembran Cytosol und Außenraum. Ein höheres Gesamtwasserpotenzial ist hier weniger negativ. Die Zellwand bleibt vergleichsweise formstabil.', conditions);
   node('p', 'Statische didaktische Daten, keine Messung oder Simulation. Aus dieser frühen Phase folgt noch keine beobachtete Ablösung. Adhäsion, Geometrie und zeitlicher Verlauf werden nicht berechnet.', material, 'learning-note');
   const definitions = node('details', '', material); node('summary', 'Begriffe im Material', definitions);
@@ -69,11 +70,23 @@ export function mountM603Learning(root: HTMLElement, model: M603LearningControll
   for (const id of M603_NODES) {
     const button = node('button', '', board, `causal-node node-${id}`); button.type = 'button'; button.dataset['node'] = id;
     button.id = `causal-node-${id}`;
-    node('span', id, button, 'causal-letter'); node('span', M603_NODE_TEXT[id], button);
+    node('span', id, button, 'causal-letter');
+    const statement = node('span', '', button);
+    // An explicit opportunity at the slash keeps both compound words whole.
+    const [first, second] = M603_NODE_TEXT[id].split('/');
+    statement.append(document.createTextNode(first! + (second ? '/' : '')));
+    if (second) { statement.append(document.createElement('wbr'), document.createTextNode(second)); }
     button.setAttribute('aria-label', `${id}: ${M603_NODE_TEXT[id]} – als Start oder Ziel wählen`);
     nodeButtons[id] = button;
   }
-  node('figcaption', 'Pfeilspitzen zeigen die Richtung. Die Nummern gehören zu den vollständigen Verbindungen in der Liste. Die Position der Karten hat keine fachliche Bedeutung.', figure);
+  const compactMap = node('div', '', board, 'causal-compact-map'); compactMap.setAttribute('aria-hidden', 'true');
+  node('p', 'Deine Verbindungen', compactMap, 'causal-map-heading');
+  const mapGrid = node('div', '', compactMap, 'causal-map-grid');
+  const mapNodes = {} as Record<M603Node, HTMLSpanElement>;
+  for (const id of M603_NODES) {
+    const anchor = node('span', id, mapGrid, `causal-map-node node-${id}`); anchor.dataset['mapNode'] = id; mapNodes[id] = anchor;
+  }
+  node('figcaption', 'Pfeilspitzen zeigen die Richtung. Die Nummern gehören zu den vollständigen, bearbeitbaren Verbindungen in der Liste. Bei wenig Platz zeigt die Zeichnung dieselben Aussagen als A–D. Die Position oder Reihenfolge der Textkarten hat keine zeitliche oder fachliche Bedeutung.', figure);
   const layout = node('button', 'Karten anders anordnen', graphColumn); layout.type = 'button';
   layout.addEventListener('click', () => { model.setLayout(model.getState().layout === 'default' ? 'alternate' : 'default'); update('Anordnung geändert. Verbindungen und Bewertung bleiben gleich.'); });
   const list = node('ol', '', graphColumn, 'causal-edge-list'); list.setAttribute('aria-label', 'Deine gerichteten Verbindungen');
@@ -203,16 +216,24 @@ export function mountM603Learning(root: HTMLElement, model: M603LearningControll
     }
     const defs = element('defs', {}), marker = element('marker', { id: 'causal-arrow-tip', viewBox: '0 0 10 10', refX: 9, refY: 5, markerWidth: 8, markerHeight: 8, orient: 'auto-start-reverse' }, defs);
     element('path', { d: 'M 0 0 L 10 5 L 0 10 z', fill: '#233d3b' }, marker);
+    // Paint every connection (including markers) before any opaque badge.
+    const connections = element('g', { 'data-layer': 'connections' });
+    const numbers = element('g', { 'data-layer': 'numbers' });
+    const compact = getComputedStyle(compactMap).display !== 'none';
+    board.dataset['presentation'] = compact ? 'compact' : 'cards';
+    const anchors = compact ? mapNodes : nodeButtons;
+    const labelFont = Math.max(12, Number.parseFloat(getComputedStyle(board).fontSize) * .75);
+    const radius = Math.max(12, labelFont * .85), separation = radius * 2 + 1;
     const groups = new Map<string, number>(), labels: { x: number; y: number }[] = [];
-    const cards = M603_NODES.map(id => nodeButtons[id].getBoundingClientRect());
+    const cards = M603_NODES.map(id => anchors[id].getBoundingClientRect());
     let diagonalCount = 0;
     current.answer.edges.forEach((edge, index) => {
-      const a = nodeButtons[edge.from].getBoundingClientRect(), b = nodeButtons[edge.to].getBoundingClientRect();
+      const a = anchors[edge.from].getBoundingClientRect(), b = anchors[edge.to].getBoundingClientRect();
       const ax = a.x + a.width / 2 - rect.x, ay = a.y + a.height / 2 - rect.y, bx = b.x + b.width / 2 - rect.x, by = b.y + b.height / 2 - rect.y;
       const dx = bx - ax, dy = by - ay, length = Math.hypot(dx, dy);
       if (!length) return;
       const pair = [edge.from, edge.to].sort().join(''), count = groups.get(pair) ?? 0; groups.set(pair, count + 1);
-      const offset = (count % 2 ? 1 : -1) * Math.ceil(count / 2) * 56;
+      const offset = (count % 2 ? 1 : -1) * Math.ceil(count / 2) * (radius * 2 + 4) * 2;
       const boundary = (box: DOMRect) => Math.min(dx ? (box.width / 2 + 4) / Math.abs(dx) : Infinity, dy ? (box.height / 2 + 4) / Math.abs(dy) : Infinity);
       let pathData: string, pointAt: (t: number) => { x: number; y: number };
       if (Math.abs(dx) > 1 && Math.abs(dy) > 1) {
@@ -220,7 +241,7 @@ export function mountM603Learning(root: HTMLElement, model: M603LearningControll
         // the rows unequal. A diagonal centre-to-centre line could cross a card.
         const top = ay < by ? a : b, bottom = ay < by ? b : a;
         const gap = bottom.top - top.bottom, lane = diagonalCount++;
-        const shift = (lane % 2 ? -1 : 1) * Math.min(Math.ceil(lane / 2) * 14, Math.max(0, gap / 2 - 17));
+        const shift = (lane % 2 ? -1 : 1) * Math.min(Math.ceil(lane / 2) * (radius * 2 + 4), Math.max(0, gap / 2 - radius - 5));
         const y = (top.bottom + bottom.top) / 2 - rect.y + shift;
         const startY = (ay < by ? a.bottom + 4 : a.top - 4) - rect.y;
         const endY = (ay < by ? b.top - 4 : b.bottom + 4) - rect.y;
@@ -232,18 +253,19 @@ export function mountM603Learning(root: HTMLElement, model: M603LearningControll
         pathData = `M ${x1} ${y1} Q ${mx} ${my} ${x2} ${y2}`;
         pointAt = t => ({ x: (1 - t) ** 2 * x1 + 2 * (1 - t) * t * mx + t ** 2 * x2, y: (1 - t) ** 2 * y1 + 2 * (1 - t) * t * my + t ** 2 * y2 });
       }
-      const path = element('path', { d: pathData, fill: 'none', stroke: '#233d3b', 'stroke-width': 2, 'marker-end': 'url(#causal-arrow-tip)' });
+      const path = element('path', { d: pathData, fill: 'none', stroke: '#233d3b', 'stroke-width': 2, 'marker-end': 'url(#causal-arrow-tip)' }, connections);
       path.dataset['from'] = edge.from; path.dataset['to'] = edge.to; path.dataset['relation'] = edge.relation;
       const candidates = [.5, .2, .8, .35, .65, .15, .85, .25, .75].map(pointAt);
-      const point = candidates.find(p => labels.every(label => Math.hypot(p.x - label.x, p.y - label.y) >= 25)
+      const point = candidates.find(p => labels.every(label => Math.hypot(p.x - label.x, p.y - label.y) >= separation)
         && cards.every(card => {
           const x = p.x + rect.x, y = p.y + rect.y;
-          return Math.hypot(x - Math.max(card.left, Math.min(card.right, x)), y - Math.max(card.top, Math.min(card.bottom, y))) >= 13;
+          return Math.hypot(x - Math.max(card.left, Math.min(card.right, x)), y - Math.max(card.top, Math.min(card.bottom, y))) >= radius + 1;
         })) ?? candidates[0]!;
       labels.push(point);
       const { x: tx, y: ty } = point;
-      element('circle', { cx: tx, cy: ty, r: 12, fill: '#fffef9', stroke: '#233d3b' });
-      element('text', { x: tx, y: ty + 4, 'text-anchor': 'middle', 'font-size': 12, fill: '#233d3b' }).textContent = String(index + 1);
+      const badge = element('g', { 'data-edge-index': index }, numbers);
+      element('circle', { cx: tx, cy: ty, r: radius, fill: '#fffef9', stroke: '#233d3b' }, badge);
+      element('text', { x: tx, y: ty + labelFont / 3, 'text-anchor': 'middle', 'font-size': labelFont, fill: '#233d3b' }, badge).textContent = String(index + 1);
     });
   }
   const observer = new ResizeObserver(drawGraph); observer.observe(board);

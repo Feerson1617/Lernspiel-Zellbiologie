@@ -356,7 +356,10 @@
     "contracts/m603-material-1.1.0.json",
     "contracts/m603-causal-map.material-1.0.0.json",
     "tests/helpers/png-raster.ts",
-    "tests/browser/p03b-r1.spec.ts"
+    "tests/browser/p03b-r1.spec.ts",
+    "tests/unit/m603-material-r1.test.ts",
+    "tests/content/m603-material-r1.test.ts",
+    "qa/P03b-R1.md"
   ],
   "distPatterns": [
     "^index\\.html$",

@@ -4,8 +4,8 @@ import type { CriterionResult } from '../assessment/result.ts';
 
 export const M603_CONTRACT = 'm603-causal-map/1.0.1';
 export const M603_VERSIONS = Object.freeze({
-  taskVersion: 'M6.03@causal-map-1', rubricVersion: 'M6.03.C01-C04@causal-map-1.0.1',
-  contentVersion: 'zelllabor11.m603-content/1.0.0', modelVersion: 'm603-static-explanation/1.0.0',
+  taskVersion: 'M6.03@causal-map-2', rubricVersion: 'M6.03.C01-C04@causal-map-1.0.1',
+  contentVersion: 'zelllabor11.m603-content/1.1.0', modelVersion: 'm603-static-explanation/1.1.0',
 });
 export const M603_NODES = Object.freeze(['A', 'B', 'C', 'D'] as const);
 export type M603Node = (typeof M603_NODES)[number];
