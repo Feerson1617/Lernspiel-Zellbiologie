@@ -208,10 +208,26 @@ export function mountM603Learning(root: HTMLElement, model: M603LearningControll
   jump(skip, workspace); jump(toMaterial, material); jump(toNet, workspace); jump(toHelp, helpers); jump(toWriting, writing);
 
   function drawGraph() {
-    const current = model.getState(), rect = board.getBoundingClientRect();
+    const current = model.getState();
+    const compact = getComputedStyle(compactMap).display !== 'none';
+    const anchors = compact ? mapNodes : nodeButtons;
+    const labelFont = Math.max(12, Number.parseFloat(getComputedStyle(board).fontSize) * .75);
+    // Capture every coordinate before changing SVG overflow. WebKit can adjust
+    // the page scroll position when an existing projection is replaced.
+    const rect = board.getBoundingClientRect();
+    const geometry = new Map(M603_NODES.map(id => {
+      // Offsets are local to the board, independent of viewport scroll. Include
+      // intervening offset parents for the compact map's nested HTML anchors.
+      const anchor = anchors[id]; let x = 0, y = 0;
+      for (let part: HTMLElement | null = anchor; part && part !== board; part = part.offsetParent as HTMLElement | null) {
+        x += part.offsetLeft; y += part.offsetTop;
+      }
+      return [id, new DOMRect(rect.x + x, rect.y + y, anchor.offsetWidth, anchor.offsetHeight)] as const;
+    }));
+    const cards = [...geometry.values()];
     if (!rect.width || !rect.height) return;
-    svg.replaceChildren(); svg.setAttribute('viewBox', `0 0 ${rect.width} ${rect.height}`);
-    function element<K extends keyof SVGElementTagNameMap>(tag: K, attrs: Record<string, string | number>, parent: SVGElement = svg) {
+    const projection = document.createDocumentFragment();
+    function element<K extends keyof SVGElementTagNameMap>(tag: K, attrs: Record<string, string | number>, parent: SVGElement | DocumentFragment = projection) {
       const value = document.createElementNS(svgNS, tag); for (const [key, attr] of Object.entries(attrs)) value.setAttribute(key, String(attr)); parent.append(value); return value;
     }
     const defs = element('defs', {}), marker = element('marker', { id: 'causal-arrow-tip', viewBox: '0 0 10 10', refX: 9, refY: 5, markerWidth: 8, markerHeight: 8, orient: 'auto-start-reverse' }, defs);
@@ -219,16 +235,12 @@ export function mountM603Learning(root: HTMLElement, model: M603LearningControll
     // Paint every connection (including markers) before any opaque badge.
     const connections = element('g', { 'data-layer': 'connections' });
     const numbers = element('g', { 'data-layer': 'numbers' });
-    const compact = getComputedStyle(compactMap).display !== 'none';
     board.dataset['presentation'] = compact ? 'compact' : 'cards';
-    const anchors = compact ? mapNodes : nodeButtons;
-    const labelFont = Math.max(12, Number.parseFloat(getComputedStyle(board).fontSize) * .75);
     const radius = Math.max(12, labelFont * .85), separation = radius * 2 + 1;
     const groups = new Map<string, number>(), labels: { x: number; y: number }[] = [];
-    const cards = M603_NODES.map(id => anchors[id].getBoundingClientRect());
     let diagonalCount = 0;
     current.answer.edges.forEach((edge, index) => {
-      const a = anchors[edge.from].getBoundingClientRect(), b = anchors[edge.to].getBoundingClientRect();
+      const a = geometry.get(edge.from)!, b = geometry.get(edge.to)!;
       const ax = a.x + a.width / 2 - rect.x, ay = a.y + a.height / 2 - rect.y, bx = b.x + b.width / 2 - rect.x, by = b.y + b.height / 2 - rect.y;
       const dx = bx - ax, dy = by - ay, length = Math.hypot(dx, dy);
       if (!length) return;
@@ -267,6 +279,8 @@ export function mountM603Learning(root: HTMLElement, model: M603LearningControll
       element('circle', { cx: tx, cy: ty, r: radius, fill: '#fffef9', stroke: '#233d3b' }, badge);
       element('text', { x: tx, y: ty + labelFont / 3, 'text-anchor': 'middle', 'font-size': labelFont, fill: '#233d3b' }, badge).textContent = String(index + 1);
     });
+    svg.setAttribute('viewBox', `0 0 ${rect.width} ${rect.height}`);
+    svg.replaceChildren(projection);
   }
   const observer = new ResizeObserver(drawGraph); observer.observe(board);
   function renderItem(parent: HTMLElement, value: M603Feedback) {

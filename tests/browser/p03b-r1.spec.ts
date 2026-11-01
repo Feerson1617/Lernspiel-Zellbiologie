@@ -66,6 +66,7 @@ test('R1 F01: all seven arrows paint below opaque, readable number badges and re
       });
       return { width: rect.width, height: rect.height, paintOrderCorrect, badges, tips, inside, endpoints };
     });
+    if (metrics.badges.some(badge => badge.x < 0 || badge.y < 0 || badge.x > metrics.width || badge.y > metrics.height)) console.log('R1 invalid projection', JSON.stringify({ project: info.project.name, zoom, layout, metrics }));
     const svg = page.locator('.causal-arrows'), capture = page.locator('.causal-board');
     // HTML bounds remain stable across engines and visibility changes in SVG.
     const png = await capture.screenshot(), raster = readPngRaster(png);
