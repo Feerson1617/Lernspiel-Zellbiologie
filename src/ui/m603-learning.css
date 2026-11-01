@@ -58,6 +58,9 @@
   @media (max-width: 600px) {
     .causal-criteria { grid-template-columns: 1fr; }
     .causal-page .causal-node { padding: 10px; }
+    .causal-edge-list { padding-left: 0; list-style-position: inside; }
+    .causal-edge-list > li { padding-left: 0; }
+    .causal-edge-text { display: inline; }
   }
   @media (forced-colors: active) {
     .causal-arrows path { stroke: CanvasText; }

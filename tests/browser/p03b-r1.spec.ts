@@ -148,6 +148,22 @@ test('R1 F02: full statements and scientific words remain readable at both text 
     }
     if (observed.presentation === 'compact') await expect(page.locator('.causal-compact-map')).toContainText('A');
   }
+  // CI's Linux system font is wider than this workspace's OpenAI Sans. Keep
+  // whole scientific words within the list at 200 %, including that fallback.
+  if (page.viewportSize()!.width === 390) {
+    await page.evaluate(() => { document.documentElement.style.fontFamily = '"DejaVu Sans", sans-serif'; });
+    await frame(page, 200, 'alternate');
+    const fallback = await page.locator('.causal-edge-list').evaluate(list => {
+      const box = list.getBoundingClientRect(), outside: string[] = [];
+      for (const element of list.querySelectorAll('.causal-edge-text')) for (const word of element.textContent!.matchAll(/[A-Za-zÄÖÜäöüß]+/g)) {
+        const range = document.createRange(); range.setStart(element.firstChild!, word.index); range.setEnd(element.firstChild!, word.index + word[0].length);
+        for (const rect of range.getClientRects()) if (rect.left < box.left - 1 || rect.right > box.right + 1) outside.push(word[0]);
+      }
+      return { font: getComputedStyle(list).fontFamily, outside, pageWidth: document.documentElement.scrollWidth, viewport: innerWidth };
+    });
+    await info.attach('r1-fallback-font-observations.json', { body: JSON.stringify(fallback), contentType: 'application/json' });
+    expect(fallback.outside).toEqual([]); expect(fallback.pageWidth).toBeLessThanOrEqual(fallback.viewport);
+  }
   await expect(page.getByRole('region', { name: 'Rückmeldung zum Kausalnetz', exact: true })).toHaveAttribute('data-status', 'correct');
   await page.getByRole('button', { name: 'Verbindung 7 bearbeiten', exact: true }).click(); await expect(page.locator('#causal-from')).toBeFocused();
 });
