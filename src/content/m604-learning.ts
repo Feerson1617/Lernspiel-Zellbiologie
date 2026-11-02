@@ -12,7 +12,7 @@ export function m604Fields(caseId: M604CaseId): readonly InvestigationField<M604
   const recovered = caseId === 'recovery';
   function field(id: M604Field, question: string, options: InvestigationOption[], required: string[] = [], minimumCorrect = 1): InvestigationField<M604Field> {
     return Object.freeze({ id, criterion: `M6.04.C${String(M604_FIELDS.indexOf(id) + 1).padStart(2, '0')}`, question,
-      mode: ['control','constants','limits'].includes(id) ? 'multi' : 'single', required: Object.freeze(required), minimumCorrect,
+      mode: ['control','constants','limits','dependent'].includes(id) ? 'multi' : 'single', required: Object.freeze(required), minimumCorrect,
       options: Object.freeze([...options, uncertain]) });
   }
   function classify(id: 'predictionType' | 'observationType' | 'explanationType', question: string, expected: string) {
@@ -69,10 +69,10 @@ export function m604Fields(caseId: M604CaseId): readonly InvestigationField<M604
       yes('solution_sequence','Die Lösungsfolge: Wasser → Saccharose → Wasser gegenüber Wasser → Wasser → Wasser.', 'Diese gezielt unterschiedliche Behandlung ist die unabhängige Größe.'),
       no('microscope_zoom','Die Mikroskopvergrößerung als einzigen Unterschied.', 'Die Fragestellung betrifft die Lösung. Unterschiedliche Optik würde zusätzlich die Vergleichbarkeit der Messung verändern.'),
     ]),
-    field('dependent', 'Welche bereitgestellte Messgröße eignet sich als abhängige Größe?', [
+    field('dependent', 'Welche Messgrößen planst du? Wähle die direkte Messgröße deiner Hypothese; ergänzende Reaktionsgrößen sind möglich.', [
       yes('relative_volume','Mittleres Protoplastvolumen aus gedachten Bildstapeln, relativ zum eigenen Ausgangswert.', 'Die Volumenschätzung erfasst eine Reaktion auf die Behandlung; die Unsicherheit muss berücksichtigt werden.'),
       no('solution_sequence','Die von mir gewählte Lösungsfolge.', 'Die Lösungsfolge wird vorgegeben und ist hier die unabhängige Größe, kein gemessenes Reaktionsergebnis.'),
-      yes('detached_fraction','Anteil der zehn markierten Zellen mit sichtbarer Protoplastablösung.', 'Die Lage des Protoplasten ist eine zweite geeignete Reaktionsgröße. Sie ersetzt keinen direkten Turgor- oder Vitalitätsnachweis.'),
+      yes('detached_fraction','Anteil der zehn markierten Zellen mit sichtbarer Protoplastablösung.', 'Die Ablösung ist eine geeignete ergänzende Reaktionsgröße. Sie ersetzt weder die direkte Volumenmessung für eine Volumenhypothese noch einen Turgor- oder Vitalitätsnachweis.'),
       no('temperature','Die als gleich festgelegte Temperatur.', 'In diesem Plan wird die Temperatur konstant gehalten und nicht als biologische Reaktion ausgewertet.'),
     ]),
     field('constants', 'Welche Bedingungen hältst du zusätzlich gleich? Wähle alle drei passenden Bedingungen.', [
@@ -142,7 +142,7 @@ export const M604_STEPS: readonly Readonly<{ title: string; fields: readonly M60
 
 export const M604_WRITTEN_PROMPT = 'Plane eine Untersuchung, mit der du die aufgestellte Hypothese überprüfen kannst. Begründe deine Kontrolle, die Messgrößen und die Aussagekraft deiner Ergebnisse.';
 export const M604_WRITING_RUBRIC = Object.freeze([
-  { title: 'Hypothese operationalisieren', evidence: 'Behandlung, Vergleich, Messgröße und erwarteten Unterschied so verknüpfen, dass ein möglicher Gegenbefund erkennbar ist.', incomplete: 'Fachwörter oder „etwas verändert sich“ ohne prüfbaren Vergleich.' },
+  { title: 'Hypothese prüfbar machen', evidence: 'Behandlung, Vergleich, Messgröße und erwarteten Unterschied so verknüpfen, dass ein möglicher Gegenbefund erkennbar ist.', incomplete: 'Fachwörter oder „etwas verändert sich“ ohne prüfbaren Vergleich.' },
   { title: 'Kontrolle begründen', evidence: 'Jede zentrale Kontrollbedingung einem möglichen Störeinfluss zuordnen; erklären, warum Wasser gegen Wasser bei gleichen Handgriffen und Zeiten hilft.', incomplete: 'Nur „Kontrollgruppe“ nennen oder bloß ein zweites beliebiges Präparat anbieten.' },
   { title: 'Reproduzierbar untersuchen', evidence: 'Markierte Zellfelder, vergleichbare Zeitpunkte, erster Durchgang plus zwei Wiederholungen, vollständige Lösungsfolge und Rücktausch nachvollziehbar festlegen.', incomplete: 'Eine unvollständige Schrittfolge oder mehrere Fotos desselben Zustands als Wiederholungen zählen.' },
   { title: 'Messqualität und Schlussfolgerung', evidence: 'Messgröße und Unsicherheit passend auswerten, Befund von Erklärung trennen, Ergebnisse auf diese Präparate begrenzen und fehlende Erholung ohne Zelltodbehauptung diskutieren.', incomplete: 'Zahlen oder Fachbegriffe wiederholen, ohne ihre Aussagekraft zu begründen.' },

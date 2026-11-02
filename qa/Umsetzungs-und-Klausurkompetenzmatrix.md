@@ -18,7 +18,7 @@ PR-9-Prüfung; deren vollständiger R2-Bericht liegt hier nicht vor.
 
 Für den endgültigen Commit gelten die ausgeführten Zählungen, Erstfehler,
 Wiederholungen und Umgebungen im mitgelieferten Nachweis
-`qa/generated/m604-evidence/manifest.json`. Die neuen M6.04-Teilprüfungen sind
+`qa/generated/m604-r1-evidence/manifest.json`. Die neuen M6.04-Teilprüfungen sind
 selbst ausgeführt; eine unabhängige Abnahme und sämtliche Unterrichtsfreigaben
 bleiben offen. Das Kriterienraster für eigene schriftliche Pläne gibt keinen
 maschinenbewerteten Text- oder Klausurreifenachweis.
@@ -64,7 +64,7 @@ maschinenbewerteten Text- oder Klausurreifenachweis.
 | **M6.01** Was bewegt sich zurück?; Struktur/Funktion zuordnen | Ja | Nein, redaktioneller Entwurf | Nein | Nein | Nein | Nein | Nein | U4 |
 | **M6.02** Wasserverlust schrittweise erklären; präzise begrenzte Fachsprache | Nein | Ja, cued 1.0.0 | Begrenzte Übung | Selbst, aktuelle Regeln | Browser | Offen für Gesamtlernzyklus | Nein | Regression / Wartung |
 | **M6.03** Eine Ursache-Wirkungs-Kette legen; gerichtete Beziehungen begründen | Nein | Ja, 1.0.1 + Material 1.1.0 | Begrenzte Übung | Selbst, unveränderter Prüfer | Browser, R2 nachgebessert | PR #9 berichtet; R2 offen | Nein | R2-Gegenprüfung |
-| **M6.04** Kontrolle und Rücktausch; Kontrolle, Planung und Aussagekraft | Nein | Ja, Untersuchung 1.0.0 | Vollständiger begrenzter Lernzyklus | Selbst, C01–C17 | Browser | Offen | Nein | Gegenprüfung |
+| **M6.04** Kontrolle und Rücktausch; Kontrolle, Planung und Aussagekraft | Nein | Ja, Untersuchung 1.1.0 | Vollständiger begrenzter Lernzyklus | Selbst, C01–C18 | Browser | Offen | Nein | Gegenprüfung |
 | **M7.01** Weg, Richtung und Energie; Struktur/Funktion zuordnen | Ja | Nein, redaktioneller Entwurf | Nein | Nein | Nein | Nein | Nein | U5 |
 | **M7.02** Eine hohe Rate ist kein Energienachweis; Schlussfolgerung abgrenzen | Ja | Nein, redaktioneller Entwurf | Nein | Nein | Nein | Nein | Nein | U5 |
 | **M7.03** ATP funktional einordnen; präzise begrenzte Fachsprache | Ja | Nein, redaktioneller Entwurf | Nein | Nein | Nein | Nein | Nein | U5 |
@@ -116,7 +116,7 @@ maschinenbewerteten Text- oder Klausurreifenachweis.
   gewertet.
 - M6.03: `contracts/m603-causal-map.json`, Materialvertrag 1.1.0, P03b/R1,
   PR #9 und die neuen R2-Darstellungsprüfungen. Fachverträge unverändert.
-- M6.04: `contracts/m604-investigation-1.0.0.json`, vorab fixierte eigene
+- M6.04: `contracts/m604-investigation-1.1.0.json`, vorab fixierte eigene
   Fachfälle, öffentliche `#/m604`-Übung, eigenes Schreibkriterienraster,
   Kontext-/Hilfe-/Datenschutz- und Browserprüfungen. Kein physikalisches
   Simulationsmodell, keine praktische Mikroskopiezertifizierung.

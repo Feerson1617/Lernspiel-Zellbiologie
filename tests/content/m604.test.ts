@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { expect, it } from 'vitest';
-import contract from '../../contracts/m604-investigation-1.0.0.json';
+import contract from '../../contracts/m604-investigation-1.1.0.json';
 import { M604_CASE_IDS, M604_CONTRACT, M604_FIELDS, M604_VERSIONS } from '../../src/domain/m604-contract.ts';
 import { createM604Context, readM604Material } from '../../src/content/m604-materials.ts';
 import { m604Fields, M604_STEPS, M604_WRITING_RUBRIC, M604_WRITTEN_PROMPT } from '../../src/content/m604-learning.ts';

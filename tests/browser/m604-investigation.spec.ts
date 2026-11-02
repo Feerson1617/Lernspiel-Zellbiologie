@@ -80,7 +80,7 @@ test('mouse or touch completes prediction, plan, control, recovery data, limited
 
 test('second scenario accepts a different valid design and distinguishes uncertainty from observed recovery',async ({ page },info) => {
   await open(page); await page.locator('#m604-case').click();
-  const answer = { ...fixtures.complete,...fixtures.limitedOverrides, hypothesis:['return_prediction'], design:['staggered_pairs'], dependent:['detached_fraction'], limits:['not_unique','damage'], nextCheck:['check_integrity'] };
+  const answer = { ...fixtures.complete,...fixtures.limitedOverrides, hypothesis:['return_prediction'], design:['staggered_pairs'], dependent:['relative_volume','detached_fraction'], limits:['not_unique','damage'], nextCheck:['check_integrity'] };
   await complete(page,answer); await expect(result(page)).toHaveAttribute('data-status','correct');
   await step(page,3); await expect(page.locator('.investigation-data')).toContainText('58 %'); await expect(page.locator('.investigation-data')).toContainText('60 %');
   await shot(page,info,'m604-limited-data');
@@ -158,6 +158,55 @@ test('free writing is literal, ungraded and volatile; no answer, help or text te
   await expect(support(page)).toContainText('Frühere Hilfehistorie nicht gesichert'); expect(await page.evaluate(() => localStorage.getItem('foreign.test'))).toBe('untouched');
 });
 
+for (const caseId of ['recovery','limited'] as const) for (const hypothesis of ['loss_prediction','return_prediction']) {
+  test(`M604R1 ${caseId}/${hypothesis}: volume hypothesis requires volume and allows supplementary detachment`, async ({page},info) => {
+    await open(page); if (caseId === 'limited') await press(page,page.locator('#m604-case'));
+    const answer = {...fixtures.complete,...(caseId === 'limited' ? fixtures.limitedOverrides : {}),hypothesis:[hypothesis],dependent:['detached_fraction']};
+    await complete(page,answer);
+    const coherence = page.locator('[data-criterion-feedback="M6.04.C18"]');
+    await expect(result(page)).toHaveAttribute('data-status','partial'); await expect(result(page)).toHaveAttribute('data-color','yellow');
+    await expect(coherence).toHaveAttribute('data-status','partial'); await expect(coherence).toHaveAttribute('data-color','yellow');
+    await expect(coherence).toContainText('Ergänze das relative Protoplastvolumen'); await expect(coherence).toContainText('Ablösungsanteil');
+    await expect(page.locator('[data-field-feedback="hypothesis"]')).toHaveAttribute('data-status','correct');
+    await expect(page.locator('[data-field-feedback="dependent"]')).toHaveAttribute('data-status','correct');
+    await expect(page.locator('[data-field-feedback][data-status="correct"]')).toHaveCount(17);
+    await expect(support(page)).toContainText('Kein aktueller Erfolgsbeleg');
+    await shot(page,info,`m604-r1-${caseId}-${hypothesis}-partial`,'.investigation-feedback');
+    await press(page,coherence.getByRole('button'));
+    await expect(page.locator('#m604-dependent-relative_volume')).toBeFocused();
+    await expect(page.locator('#m604-dependent-relative_volume')).toHaveAttribute('type','checkbox');
+    await choose(page,'dependent',['relative_volume','detached_fraction']);
+    await expect(result(page)).toHaveAttribute('data-status','stale'); await press(page,page.locator('#m604-check'));
+    await expect(result(page)).toHaveAttribute('data-status','correct'); await expect(coherence).toHaveAttribute('data-status','correct');
+    await expect(page.locator('[data-criterion-feedback][data-status="correct"]')).toHaveCount(18);
+    await expect(support(page)).toContainText('Aktueller geprüfter Sitzungsbeleg');
+    await expect(coherence).toContainText('Prüfbarkeit bedeutet nicht');
+    await step(page,1); await choose(page,'dependent',['relative_volume']); await press(page,page.locator('#m604-check'));
+    await expect(result(page)).toHaveAttribute('data-color','green'); await expect(coherence).toHaveAttribute('data-status','correct');
+  });
+  test(`M604R1 ${caseId}/${hypothesis}: missing, unsure and contradictory measurements retain specific feedback`, async ({page}) => {
+    await open(page); if (caseId === 'limited') await press(page,page.locator('#m604-case'));
+    await complete(page,{...fixtures.complete,...(caseId === 'limited' ? fixtures.limitedOverrides : {}),hypothesis:[hypothesis]});
+    for (const [values,overall,field,cross] of [
+      [[], 'partial','empty','partial'], [['unsure'],'clarify','clarify','clarify'],
+      [['relative_volume','solution_sequence'],'incorrect','incorrect','partial'],
+    ] as const) {
+      await step(page,1); await choose(page,'dependent',values); await press(page,page.locator('#m604-check'));
+      await expect(result(page)).toHaveAttribute('data-status',overall);
+      const measurement = page.locator('[data-field-feedback="dependent"]');
+      await expect(measurement).toHaveAttribute('data-status',field);
+      await expect(page.locator('[data-criterion-feedback="M6.04.C18"]')).toHaveAttribute('data-status',cross);
+      await expect(page.locator('[data-field-feedback="hypothesis"]')).toHaveAttribute('data-status','correct');
+      await expect(support(page)).toContainText('Kein aktueller Erfolgsbeleg');
+      if (overall === 'incorrect') {
+        await press(page,measurement.locator('summary')); await expect(measurement).toContainText('unabhängige Größe');
+        await expect(measurement.locator('[data-color="green"]')).toHaveCount(1);
+        await expect(measurement.locator('[data-color="red"]')).toHaveCount(1);
+      }
+    }
+  });
+}
+
 test('keyboard alone completes the investigation, opens findings, uses help and writes without focus injection',async ({ page,browserName },info) => {
   await page.goto('./#/m604'); await expect(page.getByRole('heading',{level:1})).toBeFocused();
   const tab = browserName === 'webkit' && process.platform === 'darwin' ? 'Alt+Tab' : 'Tab';
@@ -206,5 +255,8 @@ test('200 percent text and narrow fallback keep planning, data, feedback and wri
   }
   await page.setViewportSize({width:320,height:844}); await page.evaluate(() => { document.documentElement.style.fontFamily = '"DejaVu Sans", sans-serif'; });
   await step(page,3); expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true); await shot(page,info,'m604-320-data-200');
-  await step(page,6); await page.locator('#m604-writing').fill('Auch mit großer Schrift bearbeitbar.'); await expect(result(page)).toHaveAttribute('data-status','correct');
+  await step(page,6); await expect(page.locator('.investigation-rubric h3').first()).toHaveText('Hypothese prüfbar machen');
+  await shot(page,info,'m604-r1-320-writing-200');
+  await shot(page,info,'m604-r1-320-first-rubric-200','.investigation-rubric > li:first-child');
+  await page.locator('#m604-writing').fill('Auch mit großer Schrift bearbeitbar.'); await expect(result(page)).toHaveAttribute('data-status','correct');
 });

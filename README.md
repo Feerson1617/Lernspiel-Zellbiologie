@@ -8,6 +8,9 @@ zwei didaktische Befundfälle, begrenzte Schlussfolgerungen und einen eigenen
 unbewerteten Versuchsplan. Drei Durchgänge, gleiche Zellfelder und Zeitabstände,
 Messunsicherheit und alternative Erklärungen werden ausdrücklich behandelt.
 Automatisch geprüft werden nur begrenzte strukturierte Entscheidungen.
+Vertrag 1.1.0 verbindet beide Volumenhypothesen mit der erforderlichen relativen
+Volumenmessung; der Ablösungsanteil ist als Ergänzung zulässig. Nur Ablösung
+ergibt Gelb mit konkretem Ergänzungshinweis. [Nachbesserung R1](qa/M604-R1.md).
 Freie Texte und neue Erfolgsbelege bleiben flüchtig in der Sitzung.
 
 M6.02 und M6.03 sind ohne Zugangssperre erreichbar; ihre Fachverträge bleiben

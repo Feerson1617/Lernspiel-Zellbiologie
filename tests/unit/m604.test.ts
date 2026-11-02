@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
+import revision from '../fixtures/m604-r1-cases.json';
 import fixtures from '../fixtures/m604-cases.json';
-import contract from '../../contracts/m604-investigation-1.0.0.json';
+import contract from '../../contracts/m604-investigation-1.1.0.json';
 import { evaluateM604, parseM604Answer } from '../../src/assessment/m604.ts';
 import { createM604Context, readM604Material } from '../../src/content/m604-materials.ts';
 import { m604Fields } from '../../src/content/m604-learning.ts';
@@ -14,7 +15,8 @@ for (const caseId of M604_CASE_IDS) describe(`preimplementation biological cases
   for (const fixture of fixtures.cases.filter(c => c.scenario === 'both' || c.scenario === caseId)) it(`${fixture.id} → ${fixture.status}`, () => {
     const base = fixture.base === 'empty' ? Object.fromEntries(M604_FIELDS.map(id => [id, []])) : complete(caseId);
     const result = evaluateM604(context, { ...base, ...fixture.changes });
-    expect(result.status).toBe(fixture.status);
+    const changed = revision.historicalExpectationChanges[fixture.id as keyof typeof revision.historicalExpectationChanges];
+    expect(result.status).toBe(changed?.status ?? fixture.status);
     if (fixture.criterion) expect(result.criteria.find(c => c.field === fixture.criterion)?.status).toBe(fixture.criterionStatus);
     expect(result.binding?.contextHash).toBe(context.contextHash); expect(Object.isFrozen(result.criteria)).toBe(true);
     if (result.status === 'incorrect') expect(result.criteria.some(c => c.status === 'incorrect' && c.evidence.length && c.decisions.some(d => d.status === 'incorrect' && d.reason.length > 30))).toBe(true);
@@ -25,11 +27,11 @@ for (const caseId of M604_CASE_IDS) describe(`preimplementation biological cases
     expect(result.status).toBe('incorrect');
     expect(result.criteria.find(c => c.field === definition.id)?.decisions[0]?.status).toBe('incorrect');
   });
-  it('accepts every valid control ordering and alternative measurement without changing the biological meaning', () => {
+  it('accepts every valid control ordering and distinguishes standalone detachment from direct hypothesis testing', () => {
     const controls = ['water','handling','times','fresh'];
     function permutations(items: string[]): string[][] { return items.length ? items.flatMap((v,i) => permutations(items.filter((_,j) => i !== j)).map(rest => [v,...rest])) : [[]]; }
     for (const control of permutations(controls)) for (const dependent of ['relative_volume','detached_fraction']) for (const design of ['parallel_pairs','staggered_pairs']) {
-      expect(evaluateM604(context, { ...complete(caseId), control, dependent: [dependent], design: [design] }).status).toBe('correct');
+      expect(evaluateM604(context, { ...complete(caseId), control, dependent: [dependent], design: [design] }).status).toBe(dependent === 'relative_volume' ? 'correct' : 'partial');
     }
   });
   it('does not turn a valid unconfirmed prediction into a false hypothesis', () => {

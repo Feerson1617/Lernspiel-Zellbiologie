@@ -193,14 +193,18 @@ export function mountM604Learning(root: HTMLElement, model: M604LearningControll
       node('p',current.outcome.message,feedback);
       const list = node('ol','',feedback,'investigation-criteria');
       for (const criterion of current.outcome.criteria) {
-        const display = STATUS_PRESENTATION[criterion.status], li = node('li','',list); li.dataset['fieldFeedback'] = criterion.field; li.dataset['color'] = display.color; li.dataset['status'] = criterion.status;
-        node('h3',`${display.symbol} ${criterionNames[criterion.field]}: ${display.label}`,li);
+        const display = STATUS_PRESENTATION[criterion.status], li = node('li','',list);
+        const title = criterion.id === 'M6.04.C18' ? 'Hypothese und Messgröße verbinden' : criterionNames[criterion.field];
+        li.dataset['criterionFeedback'] = criterion.id;
+        if (criterion.id !== 'M6.04.C18') li.dataset['fieldFeedback'] = criterion.field;
+        li.dataset['color'] = display.color; li.dataset['status'] = criterion.status;
+        node('h3',`${display.symbol} ${title}: ${display.label}`,li);
         node('p',criterion.text,li);
         const detail = node('details','',li); node('summary','Gewählte Entscheidungen und Begründung',detail);
         for (const decision of criterion.decisions) {
           const choice = STATUS_PRESENTATION[decision.status], p = node('p',`${choice.symbol} ${decision.label} ${decision.reason}`,detail); p.dataset['color'] = choice.color;
         }
-        if (criterion.status !== 'correct') button(`${criterionNames[criterion.field]} selbst überarbeiten`,li,() => {
+        if (criterion.status !== 'correct') button(`${title} selbst überarbeiten`,li,() => {
           const index = M604_STEPS.findIndex(s => s.fields.includes(criterion.field)); go(index);
           fields.get(criterion.field)!.element.querySelector<HTMLInputElement>('input:not(:disabled)')?.focus();
         });

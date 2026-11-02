@@ -1,5 +1,10 @@
 # Gezielte Laufzeitprüfung und Wartungsauftrag
 
+**Wartungsauftrag jetzt ausgeführt:** siehe [M6.04-R1](M604-R1.md).
+Der neue Nutzerauftrag erlaubt die begrenzte Aufteilung und verlangt drei
+gezielte Intel-WebKit-Proben vor einem vollständigen finalen Lauf. Die unten
+stehenden Beschränkungen und Laufempfehlungen gehören zum früheren Auftrag.
+
 Stand: neuer M6.04-Branch auf Main `3c9da3f6c84e78cd1abb25bc6f6d2bb1000915f1`.
 Die Sammeltests, Workerzahlen, Timeouts, Retries und Fallzahlen werden in diesem
 Auftrag nicht verändert. Die Nutzerangabe zu wiederholten externen R2-Timeouts
