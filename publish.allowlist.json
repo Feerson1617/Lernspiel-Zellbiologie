@@ -382,7 +382,11 @@
     "tools/report-test-timing.ts",
     "qa/Teststabilitaet-M604.md",
     "qa/M604.md",
-    "qa/Umsetzungs-und-Klausurkompetenzmatrix.md"
+    "qa/Umsetzungs-und-Klausurkompetenzmatrix.md",
+    "contracts/m604-investigation-1.1.0.json",
+    "tests/fixtures/m604-r1-cases.json",
+    "tests/fixtures/m602-unknown-browser-cases.json",
+    "review/m604-investigation-1.1.0.md"
   ],
   "distPatterns": [
     "^index\\.html$",

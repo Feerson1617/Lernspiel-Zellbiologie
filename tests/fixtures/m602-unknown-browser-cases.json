@@ -1,0 +1,72 @@
+[
+  {
+    "id": "M602-UNKNOWN-direction-01",
+    "field": "direction",
+    "text": "constructor"
+  },
+  {
+    "id": "M602-UNKNOWN-direction-02",
+    "field": "direction",
+    "text": "__proto__"
+  },
+  {
+    "id": "M602-UNKNOWN-direction-03",
+    "field": "direction",
+    "text": "netto constructor"
+  },
+  {
+    "id": "M602-UNKNOWN-direction-04",
+    "field": "direction",
+    "text": "__proto__ und __proto__"
+  },
+  {
+    "id": "M602-UNKNOWN-direction-05",
+    "field": "direction",
+    "text": "toString"
+  },
+  {
+    "id": "M602-UNKNOWN-direction-06",
+    "field": "direction",
+    "text": "hasOwnProperty"
+  },
+  {
+    "id": "M602-UNKNOWN-direction-07",
+    "field": "direction",
+    "text": "constructor und nach außen"
+  },
+  {
+    "id": "M602-UNKNOWN-direction-08",
+    "field": "direction",
+    "text": "constructor unbekannt"
+  },
+  {
+    "id": "M602-UNKNOWN-volume-01",
+    "field": "volume",
+    "text": "constructor"
+  },
+  {
+    "id": "M602-UNKNOWN-volume-02",
+    "field": "volume",
+    "text": "__proto__"
+  },
+  {
+    "id": "M602-UNKNOWN-volume-03",
+    "field": "volume",
+    "text": "nicht constructor"
+  },
+  {
+    "id": "M602-UNKNOWN-volume-04",
+    "field": "volume",
+    "text": "__proto__ und __proto__"
+  },
+  {
+    "id": "M602-UNKNOWN-volume-05",
+    "field": "volume",
+    "text": "toString"
+  },
+  {
+    "id": "M602-UNKNOWN-volume-06",
+    "field": "volume",
+    "text": "unbekannt constructor"
+  }
+]
