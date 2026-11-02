@@ -360,7 +360,10 @@
     "tests/unit/m603-material-r1.test.ts",
     "tests/content/m603-material-r1.test.ts",
     "qa/P03b-R1.md",
-    "tests/browser/p03b-r2.spec.ts"
+    "tests/browser/p03b-r2.spec.ts",
+    "contracts/m604-investigation-1.0.0.json",
+    "review/m604-investigation-1.0.0.md",
+    "tests/fixtures/m604-cases.json"
   ],
   "distPatterns": [
     "^index\\.html$",
