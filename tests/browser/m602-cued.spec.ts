@@ -256,3 +256,56 @@ test('M602-UNKNOWN-help-revision: hint provenance and private storage after revi
   // END frozen privacy
   await timing.finish(info,'M602-UNKNOWN-help-revision');
 });
+
+// Additional cumulative check: the isolated real-keyboard tests above preserve
+// every original interaction; this deliberately repeats their input sequence
+// in one browser session to retain the original 1..16 receipt/history coverage.
+// DOM events are synchronous here, avoiding repeated protocol/actionability
+// overhead for this separate state-history check. No product state is forged.
+test('M602-UNKNOWN-history-accumulation: all original revisions retain the 16-receipt sequence', async ({page,baseURL}) => {
+  const errors: string[] = [], foreign: string[] = [];
+  page.on('pageerror', e => errors.push(e.message));
+  page.on('request', r => { if (!r.url().startsWith(baseURL!)) foreign.push(r.url()); });
+  await open(page,baseURL!); await fill(page); await check(page);
+  const actual = await page.evaluate(({rows,valid}) => {
+    const session = (window as unknown as LabWindow).lab.session;
+    const saved = () => JSON.parse(localStorage.getItem('zelllabor11.progress.v1')!);
+    const button = (text: string) => {
+      const target = [...document.querySelectorAll('button')].find(b => b.textContent === text);
+      if (!target) throw new Error(`Missing real control: ${text}`); target.click();
+    };
+    const enter = (field: string, value: string) => {
+      const input = document.querySelector<HTMLInputElement>(`#m602-${field}`)!;
+      input.value = value; input.dispatchEvent(new Event('input',{bubbles:true}));
+    };
+    const counts: number[] = [saved().attempts.length];
+    const outcomes = [];
+    for (const row of rows) {
+      const field = row.field as 'direction' | 'volume';
+      enter(field,row.text); button('Drei Antworten prüfen');
+      const unknown = session.getState().latest!; counts.push(saved().attempts.length);
+      button('Antwort selbst überarbeiten'); enter(field,valid[field]); button('Drei Antworten prüfen');
+      const revised = session.getState().latest!; counts.push(saved().attempts.length);
+      outcomes.push({id:row.id,unknown,revised});
+    }
+    button('Hinweis: Nettorichtung'); enter('direction','constructor'); button('Drei Antworten prüfen');
+    const helpedUnknown = session.getState().latest!; counts.push(saved().attempts.length);
+    button('Antwort selbst überarbeiten'); enter('direction','nach außen'); button('Drei Antworten prüfen');
+    const helped = session.getState().latest!, stored = saved(); counts.push(stored.attempts.length);
+    return {counts,outcomes,helpedUnknown,helped,stored};
+  },{rows:unknownCases,valid:m602CuedInput().answers});
+  expect(actual.counts).toEqual([1,...Array.from({length:14},(_,i) => [i+1,i+2]).flat(),15,16]);
+  expect(actual.outcomes.map(o => o.id)).toEqual(unknownCases.map(row => row.id));
+  for (const {unknown,revised} of actual.outcomes) {
+    expect(unknown.overallStatus).toBe('clarify'); expect(unknown).toEqual(evaluateM602Cued(unknown.submission,unknown.fieldSupport));
+    expect(revised.overallStatus).toBe('correct'); expect(revised.submission.predecessorId).toBe(unknown.submission.attemptId);
+    expect(revised.support.assistance).toBe('independent');
+  }
+  expect(actual.helpedUnknown.overallStatus).toBe('clarify'); expect(actual.helped.overallStatus).toBe('correct');
+  expect(actual.helped.support.assistance).toBe('hint'); expect(actual.helped.support.history).toBe('verified');
+  expect(actual.stored.attempts).toHaveLength(16);
+  const keys = ['attemptId','taskId','instanceId','taskVersion','rubricVersion','modelVersion','status','assistance'].sort();
+  for (const attempt of actual.stored.attempts) expect(Object.keys(attempt).sort()).toEqual(keys);
+  expect(JSON.stringify(actual.stored)).not.toMatch(/constructor|__proto__|toString|contextHash|answers|events/);
+  expect(errors).toEqual([]); expect(foreign).toEqual([]);
+});

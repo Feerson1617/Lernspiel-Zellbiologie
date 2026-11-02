@@ -17,7 +17,8 @@ assert.deepEqual(cases, frozen.cases);
 assert.equal(new Set(cases.map((r: {id:string}) => r.id)).size,14);
 assert.match(source,/for \(const row of unknownCases\) test\(`\$\{row.id\}:/);
 assert.equal(source.split("test('M602-UNKNOWN-help-revision:").length - 1,1);
-const report = { sourceCommit:frozen.sourceCommit, cases:cases.length, distinctCases:14, helpCases:1, blocks,
+assert.equal(source.split("test('M602-UNKNOWN-history-accumulation:").length - 1,1);
+const report = { sourceCommit:frozen.sourceCommit, cases:cases.length, distinctCases:14, helpCases:1, cumulativeHistoryCases:1, blocks,
   casesSha256:hash(JSON.stringify(cases)), preserved:true, intentionalRepetition:frozen.intentionalRepetition };
 mkdirSync('qa/generated',{recursive:true});
 writeFileSync('qa/generated/m602-browser-split.json',JSON.stringify(report,null,2));
