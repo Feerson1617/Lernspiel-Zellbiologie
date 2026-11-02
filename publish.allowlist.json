@@ -386,7 +386,8 @@
     "contracts/m604-investigation-1.1.0.json",
     "tests/fixtures/m604-r1-cases.json",
     "tests/fixtures/m602-unknown-browser-cases.json",
-    "review/m604-investigation-1.1.0.md"
+    "review/m604-investigation-1.1.0.md",
+    "tests/unit/m604-r1.test.ts"
   ],
   "distPatterns": [
     "^index\\.html$",
