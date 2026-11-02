@@ -359,7 +359,8 @@
     "tests/browser/p03b-r1.spec.ts",
     "tests/unit/m603-material-r1.test.ts",
     "tests/content/m603-material-r1.test.ts",
-    "qa/P03b-R1.md"
+    "qa/P03b-R1.md",
+    "tests/browser/p03b-r2.spec.ts"
   ],
   "distPatterns": [
     "^index\\.html$",
