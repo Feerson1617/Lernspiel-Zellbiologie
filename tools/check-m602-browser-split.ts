@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import assert from 'node:assert/strict';
 const source = readFileSync('tests/browser/m602-cued.spec.ts','utf8');
@@ -19,5 +19,6 @@ assert.match(source,/for \(const row of unknownCases\) test\(`\$\{row.id\}:/);
 assert.equal(source.split("test('M602-UNKNOWN-help-revision:").length - 1,1);
 const report = { sourceCommit:frozen.sourceCommit, cases:cases.length, distinctCases:14, helpCases:1, blocks,
   casesSha256:hash(JSON.stringify(cases)), preserved:true, intentionalRepetition:frozen.intentionalRepetition };
+mkdirSync('qa/generated',{recursive:true});
 writeFileSync('qa/generated/m602-browser-split.json',JSON.stringify(report,null,2));
 console.log('M6.02 split: all 14 inputs and the help path preserved; original action/assertion block hashes match.');
