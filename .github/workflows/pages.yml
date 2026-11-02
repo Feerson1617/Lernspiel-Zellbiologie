@@ -131,6 +131,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: webkit-m602-stability-probes
+          retention-days: 7
           path: |
             qa/generated/webkit-m602-probe-*.json
             qa/generated/m602-browser-split.json
