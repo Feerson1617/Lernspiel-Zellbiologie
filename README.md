@@ -1,6 +1,25 @@
 # Zelllabor 11 – Die Zelle erforschen
 
-## Aktueller Entwicklungsstand P03b
+## Aktueller Entwicklungsstand M6.04
+
+**„Untersuchung planen – Kontrolle und Rücktausch“** führt von der Startseite
+zu `#/m604`. Die Übung verbindet eigene Vorhersage, kontrollierte Planung,
+zwei didaktische Befundfälle, begrenzte Schlussfolgerungen und einen eigenen
+unbewerteten Versuchsplan. Drei Durchgänge, gleiche Zellfelder und Zeitabstände,
+Messunsicherheit und alternative Erklärungen werden ausdrücklich behandelt.
+Automatisch geprüft werden nur begrenzte strukturierte Entscheidungen.
+Freie Texte und neue Erfolgsbelege bleiben flüchtig in der Sitzung.
+
+M6.02 und M6.03 sind ohne Zugangssperre erreichbar; ihre Fachverträge bleiben
+unverändert. Dichte Kausalnetze bis 24 Verbindungen und der 320-px-Großschriftfall
+sind gezielt nachgebessert. Nachweise und Grenzen: [M6.04](qa/M604.md),
+[Teststabilität](qa/Teststabilitaet-M604.md). Die
+[Umsetzungs- und Klausurkompetenzmatrix](qa/Umsetzungs-und-Klausurkompetenzmatrix.md)
+führt alle 79 Aufgaben und die nächsten Entwicklungspakete auf.
+Entwicklungsfassung: keine echte Laborarbeit oder neue physikalische Simulation,
+keine vollständige Mission und keine Unterrichtsfreigabe.
+
+## Vorheriger Entwicklungsstand P03b
 
 **„Kausalnetz ausprobieren – Ursache und Wirkung“** führt von der Startseite
 direkt zu `#/m603`; M6.02 bietet zusätzlich einen Übergang ohne Zugangssperre.
