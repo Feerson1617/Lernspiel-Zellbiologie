@@ -52,6 +52,7 @@ export function mountM603Learning(root: HTMLElement, model: M603LearningControll
   node('p', 'Eine begrenzte Erklärungsaufgabe. M6.02 und M6.03 sind noch nicht die vollständige Mission M6.', intro, 'learning-note');
   const nav = node('nav', '', intro, 'learning-steps'); nav.setAttribute('aria-label', 'Dein Lernweg');
   const back = node('a', 'Vorherige Übung: Wasserhaushalt', nav); back.href = '#/m602';
+  node('a', 'Weitere Übung: Kontrolle und Rücktausch', nav).href = '#/m604';
   const toMaterial = node('a', '1 Material', nav), toNet = node('a', '2 Netz bauen', nav), toHelp = node('a', 'Hilfen', nav), toWriting = node('a', '3 Eigene Erklärung', nav);
   const live = node('p', '', main, 'visually-hidden'); live.setAttribute('role', 'status'); live.setAttribute('aria-atomic', 'true');
 
