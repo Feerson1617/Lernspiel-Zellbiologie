@@ -1,0 +1,85 @@
+{
+  "sourceCommit": "26794c5ff451018c9fec671303a2138a8ffe2fac",
+  "sourceFileSha256": "329df86dc8be51d24222b2fede360e8aadf66f92f39424ee4244b695c7d2baa9",
+  "normalization": "Trim indentation at each line and outer whitespace only; strings and every original action/assertion remain exact. Ignore added timing mark lines.",
+  "blocks": {
+    "setup": "e9183ca449a13177af677ef99870528ed61cba7974fbcae6bcda50d80c6898ba",
+    "unknown": "e97de0baae59ece342ddeb4916019bf2a19b008acb1c6aad98b1c8a1897f70d2",
+    "help": "7dab539af229aac72b15a037a4dc8dac2100147ebf1b1da2e64cbf4a257a0cae",
+    "privacy": "a04101b9d8f08bc71ac40d18b581c3f271e0dc5242837ff21c24d3f866eb6fbf"
+  },
+  "cases": [
+    {
+      "id": "M602-UNKNOWN-direction-01",
+      "field": "direction",
+      "text": "constructor"
+    },
+    {
+      "id": "M602-UNKNOWN-direction-02",
+      "field": "direction",
+      "text": "__proto__"
+    },
+    {
+      "id": "M602-UNKNOWN-direction-03",
+      "field": "direction",
+      "text": "netto constructor"
+    },
+    {
+      "id": "M602-UNKNOWN-direction-04",
+      "field": "direction",
+      "text": "__proto__ und __proto__"
+    },
+    {
+      "id": "M602-UNKNOWN-direction-05",
+      "field": "direction",
+      "text": "toString"
+    },
+    {
+      "id": "M602-UNKNOWN-direction-06",
+      "field": "direction",
+      "text": "hasOwnProperty"
+    },
+    {
+      "id": "M602-UNKNOWN-direction-07",
+      "field": "direction",
+      "text": "constructor und nach außen"
+    },
+    {
+      "id": "M602-UNKNOWN-direction-08",
+      "field": "direction",
+      "text": "constructor unbekannt"
+    },
+    {
+      "id": "M602-UNKNOWN-volume-01",
+      "field": "volume",
+      "text": "constructor"
+    },
+    {
+      "id": "M602-UNKNOWN-volume-02",
+      "field": "volume",
+      "text": "__proto__"
+    },
+    {
+      "id": "M602-UNKNOWN-volume-03",
+      "field": "volume",
+      "text": "nicht constructor"
+    },
+    {
+      "id": "M602-UNKNOWN-volume-04",
+      "field": "volume",
+      "text": "__proto__ und __proto__"
+    },
+    {
+      "id": "M602-UNKNOWN-volume-05",
+      "field": "volume",
+      "text": "toString"
+    },
+    {
+      "id": "M602-UNKNOWN-volume-06",
+      "field": "volume",
+      "text": "unbekannt constructor"
+    }
+  ],
+  "helpId": "M602-UNKNOWN-help-revision",
+  "intentionalRepetition": "Original initial green setup and final metadata/privacy checks run once per isolated case (15 sessions), instead of once for the former aggregate. Fourteen unknown cases and the help pathway each run once per profile. Receipt counts are relative to each isolated session."
+}

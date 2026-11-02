@@ -387,7 +387,10 @@
     "tests/fixtures/m604-r1-cases.json",
     "tests/fixtures/m602-unknown-browser-cases.json",
     "review/m604-investigation-1.1.0.md",
-    "tests/unit/m604-r1.test.ts"
+    "tests/unit/m604-r1.test.ts",
+    "qa/m602-unknown-browser-freeze.json",
+    "tools/check-m602-browser-split.ts",
+    "qa/M604-R1.md"
   ],
   "distPatterns": [
     "^index\\.html$",
