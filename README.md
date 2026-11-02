@@ -1,6 +1,27 @@
 # Zelllabor 11 – Die Zelle erforschen
 
-## Aktueller Entwicklungsstand P03a
+## Aktueller Entwicklungsstand P03b
+
+**„Kausalnetz ausprobieren – Ursache und Wirkung“** führt von der Startseite
+direkt zu `#/m603`; M6.02 bietet zusätzlich einen Übergang ohne Zugangssperre.
+Vier Aussagen lassen sich über Start, Ziel und Bedeutung verbinden, prüfen und
+selbst überarbeiten. Karten-Tippfolge und native Formulare unterstützen Maus,
+Touch und Tastatur. Eine andere Kartenlage ändert die Bewertung nicht.
+
+Der neue reine Prüfer bestätigt ausschließlich das Kausalnetz. Vollständiger
+Turgorverlust und hinreichender weiterer Wasserverlust werden gemeinsam als
+Bedingungen einer **möglichen** Ablösung geprüft. Der versionierte
+[Bewertungsvertrag](review/m603-causal-map-1.0.1.md) präzisiert ausdrücklich den
+historischen M6.03-Entwurf; M6.02-Fachlogik und geschützte Quellen bleiben erhalten.
+Drei Hilfestufen, nachvollziehbare Hilfeherkunft auch aus M6.02 und ein
+unbewerteter flüchtiger Schreibbereich ergänzen den Lernzyklus. M6.03 speichert
+keinen dauerhaften Fortschritt und keine Rohantworten.
+
+Umfang, Prüfergebnisse, Screenshots und offene Quellen-/Geräteabstimmungen:
+[P03b-Prüfbericht](qa/P03b.md). M6 ist weiterhin unvollständig; keine neue
+Simulation, kein Rücktausch und keine Unterrichtsfreigabe.
+
+## Vorheriger Entwicklungsstand P03a
 
 Vom normalen Anwendungseinstieg führt **„Erste Übung ausprobieren – Wasserhaushalt
 der Zelle“** zu `#/m602`. Die erste Übungsvorschau verbindet Material, optionales

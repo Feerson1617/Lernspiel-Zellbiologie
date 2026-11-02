@@ -227,6 +227,9 @@ export function mountM602Learning(root: HTMLElement, model: M602LearningControll
     node('p', 'Prüfe deinen Hefttext auf passende Räume, Grenzen, Potenzialwerte und Ursache-Wirkungs-Verknüpfungen. Das Lesen dieser Erklärung weist keine selbstständige Erklärungskompetenz nach.', notebookText);
     update('Beispiellösung angesehen. Die Unterstützung gilt für alle drei Felder.');
   }));
+  const causalNext = node('section', '', main, 'learning-repeat'); node('h2', 'Zusammenhänge selbst herstellen', causalNext);
+  node('p', 'In M6.03 verbindest du Wasserverlust, Volumen, Turgor und die Bedingungen einer möglichen Ablösung zu einem eigenen Kausalnetz. Du kannst direkt weitergehen; die drei Kurzantworten sind keine Zugangsvoraussetzung.', causalNext);
+  const causalLink = node('a', 'Weiter zu M6.03: eigenes Kausalnetz aufbauen', causalNext, 'learning-jump'); causalLink.href = '#/m603';
   const repeat = node('section', '', main, 'learning-repeat'); node('h2', 'Am zweiten Material weiterüben', repeat);
   node('p', 'Die beiden Fälle zeigen denselben frühen Wasserverlustzustand mit unterschiedlichen Gesamtwasserpotenzialen. Das ist Wiederholung desselben Beziehungstyps, kein Transfernachweis. Beim Wechsel starten alle Antworten leer.', repeat);
   const next = node('button', 'Weiterer Materialfall', repeat, 'learning-primary');
