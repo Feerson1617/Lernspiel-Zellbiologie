@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import assert from 'node:assert/strict';
 import { buildDomainModule } from '../helpers/domain-bundle.ts';
 import { THIRD_CASES, executeThird, acceptedThird, THIRD_VERSIONS, THIRD_OSMOSIS_CONTEXT, THIRD_TONOPLAST_CONTEXT } from '../helpers/p02b-third.ts';
 import type { TaskContext } from '../../src/domain/task-context.ts';
@@ -25,14 +26,16 @@ test('checks all 212 supplied and 450 fresh/metamorphic inputs against Node in t
   }, { url: `${baseURL}third-revision.mjs`, versions: THIRD_VERSIONS, osmosis: JSON.stringify(THIRD_OSMOSIS_CONTEXT), tonoplast: JSON.stringify(THIRD_TONOPLAST_CONTEXT), cases: THIRD_CASES });
   expect(results).toHaveLength(662);
   for (const [i, f] of THIRD_CASES.entries()) {
-    const actual = results[i]!;
-    expect(actual.result, f.id).toEqual(executeThird(f).result);
-    expect(acceptedThird(f), f.id).toContain(actual.result.status);
-    expect(actual.bound).toBe(true);
-    expect(actual.feedback, f.id).toBe(executeThird(f).feedback);
-    expect(actual.display.color).toBe(actual.result.status === 'correct' ? 'green' : actual.result.status === 'incorrect' ? 'red' : 'yellow');
-    expect(actual.display.symbol).toBeTruthy(); expect(actual.display.label).toBeTruthy();
-    for (const e of actual.result.criteria[0]!.evidence) if (e.kind === 'input_span') expect(f.text.slice(e.start, e.end)).toBe(e.value);
+    const actual = results[i]!, expected = executeThird(f);
+    // Pure Node comparisons need no per-assertion browser trace step. Keep the
+    // full 662-case sequence in one browser, every check and original case ID.
+    assert.deepStrictEqual(actual.result, expected.result, f.id);
+    assert.ok(acceptedThird(f).includes(actual.result.status), f.id);
+    assert.equal(actual.bound, true, f.id);
+    assert.equal(actual.feedback, expected.feedback, f.id);
+    assert.equal(actual.display.color, actual.result.status === 'correct' ? 'green' : actual.result.status === 'incorrect' ? 'red' : 'yellow', f.id);
+    assert.ok(actual.display.symbol, f.id); assert.ok(actual.display.label, f.id);
+    for (const e of actual.result.criteria[0]!.evidence) if (e.kind === 'input_span') assert.equal(f.text.slice(e.start, e.end), e.value, f.id);
   }
   expect(errors).toEqual([]); expect(external).toEqual([]);
   expect(await page.evaluate(() => ({ ...localStorage }))).toEqual({ 'foreign-test-sentinel': 'preserve' });

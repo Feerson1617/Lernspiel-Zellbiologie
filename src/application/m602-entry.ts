@@ -75,3 +75,11 @@ export function createM604View(): HTMLElement {
   mountM604Learning(m604View,m604,() => { createM604View(); });
   return m604View;
 }
+
+import { createM1001Learning } from './m1001-learning.ts';
+import { mountM1001Learning } from '../ui/m1001-learning.ts';
+let massView: HTMLElement | undefined;
+export function createM1001View(): HTMLElement {
+  if (!massView) { massView=document.createElement('div'); mountM1001Learning(massView,createM1001Learning()); }
+  return massView;
+}

@@ -390,7 +390,18 @@
     "tests/unit/m604-r1.test.ts",
     "qa/m602-unknown-browser-freeze.json",
     "tools/check-m602-browser-split.ts",
-    "qa/M604-R1.md"
+    "qa/M604-R1.md",
+    "contracts/m1001-numeric-1.0.0.json",
+    "tests/fixtures/m1001-numeric-cases.json",
+    "src/assessment/numeric.ts",
+    "src/content/m1001.ts",
+    "src/application/m1001-learning.ts",
+    "src/ui/m1001-learning.ts",
+    "src/ui/m1001-learning.css",
+    "tests/unit/m1001.test.ts",
+    "tests/browser/m1001.spec.ts",
+    "tests/content/m1001.test.ts",
+    "qa/M1001.md"
   ],
   "distPatterns": [
     "^index\\.html$",
