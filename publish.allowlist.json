@@ -404,7 +404,17 @@
     "qa/M1001.md",
     "contracts/m1002-diagram-1.0.0.json",
     "contracts/coordinate-decimal-1.0.0.json",
-    "tests/fixtures/m1002-diagram-cases.json"
+    "tests/fixtures/m1002-diagram-cases.json",
+    "src/content/m1002.ts",
+    "src/assessment/diagram.ts",
+    "src/application/m1002-learning.ts",
+    "src/ui/m1002-learning.ts",
+    "src/ui/m1002-plot.ts",
+    "src/ui/m1002-learning.css",
+    "tests/unit/m1002.test.ts",
+    "tests/content/m1002.test.ts",
+    "tests/browser/m1002.spec.ts",
+    "qa/M1002.md"
   ],
   "distPatterns": [
     "^index\\.html$",

@@ -1,4 +1,4 @@
-# Umsetzungs- und Klausurkompetenzmatrix – Stand M10.01
+# Umsetzungs- und Klausurkompetenzmatrix – Stand M10.02
 
 Ausgangsstand nach manuellem Merge von PR #9:
 `3c9da3f6c84e78cd1abb25bc6f6d2bb1000915f1` (02.11.2026).
@@ -16,7 +16,8 @@ geprüfte öffentliche Oberfläche in Testbrowsern, kein echter iPad-, Screenrea
 oder Lerngruppennachweis. „Berichtet“ bezeichnet die Nutzeraussage zur externen
 PR-9-Prüfung; deren vollständiger R2-Bericht liegt hier nicht vor.
 
-M10.01 ist im separaten [Nachweis](M1001.md) dokumentiert; die folgenden
+M10.01 und M10.02 sind in separaten Nachweisen ([M10.01](M1001.md),
+[M10.02](M1002.md)) dokumentiert; die folgenden
 M6.04-Nachweise gelten weiterhin für diesen früheren Entwicklungsschritt.
 
 Für den endgültigen Commit gelten die ausgeführten Zählungen, Erstfehler,
@@ -81,7 +82,7 @@ maschinenbewerteten Text- oder Klausurreifenachweis.
 | **M9.03** Negative Rückkopplung legen; gerichtete Beziehungen begründen | Ja | Nein, redaktioneller Entwurf | Nein | Nein | Nein | Nein | Nein | U7 |
 | **M9.04** Eine Kanalblockade prüfen; Kontrolle, Planung und Aussagekraft | Ja | Nein, redaktioneller Entwurf | Nein | Nein | Nein | Nein | Nein | U7 |
 | **M10.01** Relative Massenänderung; rechnen, Einheiten/Plausibilität prüfen | Nein | Ja, numeric 1.0.0 | Öffentlicher Lernweg | Eigene Nachweise: [M10.01](M1001.md) | Nachweise im PR | Offen | Nein | Gegenprüfung |
-| **M10.02** Ein Diagramm erstellen; Daten, Achsen und Einheiten darstellen | Ja | Nein, redaktioneller Entwurf | Nein | Nein | Nein | Nein | Nein | U3 |
+| **M10.02** Ein Diagramm erstellen; Daten, Achsen und Einheiten darstellen | Nein | Ja, Diagramm-/Koordinatenvertrag 1.0.0 | Öffentlicher Lernweg | Eigene Nachweise: [M10.02](M1002.md) | Nachweise im PR | Offen | Nein | Gegenprüfung |
 | **M10.03** Eine Näherung von einer Messung unterscheiden; rechnen, Einheiten/Plausibilität prüfen | Ja | Nein, redaktioneller Entwurf | Nein | Nein | Nein | Nein | Nein | U3 |
 | **M10.04** Fläche und Proteindichte trennen; Kontrolle, Planung und Aussagekraft | Ja | Nein, redaktioneller Entwurf | Nein | Nein | Nein | Nein | Nein | U7 |
 | **E1.01** Teilprobleme der Lebensentstehung; Struktur/Funktion zuordnen | Ja | Nein, redaktioneller Entwurf | Nein | Nein | Nein | Nein | Nein | U8 |
@@ -124,8 +125,8 @@ maschinenbewerteten Text- oder Klausurreifenachweis.
   Kontext-/Hilfe-/Datenschutz- und Browserprüfungen. Kein physikalisches
   Simulationsmodell, keine praktische Mikroskopiezertifizierung.
 
-**74 Aufgaben sind ausschließlich konzipiert.** Z1.02 besitzt zusätzlich einen
-begrenzten Prüfer, aber keinen vollständigen Schülerweg. Drei M6-Aufgaben und M10.01 haben
+**73 Aufgaben sind ausschließlich konzipiert.** Z1.02 besitzt zusätzlich einen
+begrenzten Prüfer, aber keinen vollständigen Schülerweg. Drei M6-Aufgaben sowie M10.01 und M10.02 haben
 nun begrenzte öffentliche Übungswege. Keine der 79 Aufgaben ist durch diesen
 Auftrag für den Unterricht insgesamt freigegeben. Eine Teilübung darf weder eine
 vollständige Mission noch alle offenen Klausurleistungen vertreten.
@@ -142,7 +143,7 @@ zerlegt; die gesamte Restmenge ist kein einzelner Implementierungsauftrag.
 | U0 | Wartung und Abnahme des aktuellen Stands | [Gezielte Sammeltest-Wartung](Teststabilitaet-M604.md), unabhängige neue M6.04-Sollfälle, R2-Grafikprüfung | Vollständige unveränderte Regression; keine falschen Grün-/Rotwerte; getrennter Gegenprüfbericht. Echte Geräte-/Nutzerproben gesondert. |
 | U1 | Z1.01–Z1.04 (4) | Zuerst Organellen- und Membrangrenzen; vorhandenen Begriffsprüfer integrieren, eine typisierte Zuordnung mit semantischen Ankern sowie begründete Auswahl ergänzen | Blatt-, Tier- und Zwiebelprofil; acht sichtbare Anker, Funktion/Struktur und Chloroplastengrenzen; öffentliche Bedienwege. |
 | U2 | M1.01–M3.04 (12) | Wasser/Ladung → amphiphile Bausteine → Membranaufbau/Passage/FRAP. Zuordnung und begrenzte Auswahl aus U1; Kausalnetz-Darstellung aus M6.03 mit jeweils eigener Fachregel | Keine Verwechslung polar/geladen, hydrophil/hydrophob oder Doppelschicht/Doppelmembran; Membranbeweglichkeit nicht mit Durchlässigkeit verwechseln. Neue Textprofile vorher gesondert validieren. |
-| U3 | Z4.02, M4.02, M4.04, M9.02, M10.02–M10.03 (6) | Gemeinsamer strikter Zahlen-/Einheitenbaustein, anschließend Diagramm mit Dateneingabealternative. Priorität auf quantitative Klausurarbeit | Dezimalkomma, Vorzeichen, Prozent/Prozentpunkte, Bilanz und zulässige Skalierung; Messung von Interpolation unterscheiden. Einzelaufgaben schalten nicht ihre gesamte Mission frei. |
+| U3 | Z4.02, M4.02, M4.04, M9.02, M10.03 (5) | Gemeinsamer strikter Zahlen-/Einheitenbaustein, anschließend Diagramm mit Dateneingabealternative. Priorität auf quantitative Klausurarbeit | Dezimalkomma, Vorzeichen, Prozent/Prozentpunkte, Bilanz und zulässige Skalierung; Messung von Interpolation unterscheiden. Einzelaufgaben schalten nicht ihre gesamte Mission frei. |
 | U4 | M4.01, M4.03, M5.01–M5.04, M6.01 (7) | Diffusion/Osmose systematisch ergänzen; Auswahl-, Zuordnungs- und Datenbausteine nutzen. Eigenes reines Fachmodell vor dynamischer Darstellung | Zufall und Erwartung, gleiche Konzentration statt gleicher Anzahl, Druckanteil und beide Membranen; Wand/Protoplast korrekt. Eine spätere berechnete Osmosesimulation braucht das eigene Bilanz-/Numerikpaket aus B/D. |
 | U5 | M7.01–M8.04, M9.01 (9) | Integrierte Transportauswertung: Weg, antreibendes Gefälle, Energie und Membrantopologie; vorhandene Zuordnung/Teilordnung | Proteintransport nicht automatisch aktiv; ATP-Abhängigkeit kein direkter ATPase-Nachweis; elektrische und chemische Beiträge, beide Membranseiten und drei Räume. |
 | U6 | Z2.01–Z3.04 (8) | Kompartimentierung, Produktwege, Befund/Deutung und Endosymbiose; vorhandene gerichtete Beziehungen, Teilordnung und begründete Auswahl | Mitochondrium nicht als Cargo-Durchgangsstation; Evidenzbündel und Reichweite historischer Erklärungen; Organellenwissen fachlich verknüpfen. |
@@ -151,8 +152,8 @@ zerlegt; die gesamte Restmenge ist kein einzelner Implementierungsauftrag.
 | U9 | T.01–T.08 (8) | Neue materialgebundene Trainingssets; quantitative Datenarbeit, integrierte Transporte und begründete Fachkommunikation verbinden. M6.04-Planungsfelder und Schreibrahmen nutzen, keine reservierte Klausurlogik kopieren | Fachverträge je neuem Material, zulässige Alternativpläne und vollständige Auswertung; eigener Text separat durch Kriterienraster. Kein automatisches Versprechen „klausurreif“. |
 | U10 | Gesamtabnahme aller 79 | Aufgabenmatrix mit tatsächlichen Nachweisen schließen; Quellenrevision mit zugänglichem Unterrichtsstand, echte iPad-/Safari-, Screenreader- und Lerngruppenprüfung | Lehrkraft dokumentiert den konkret freigegebenen Umfang. Automatischer PR-Erfolg allein ist keine Unterrichtsfreigabe. |
 
-Die Pakete U1–U9 enthalten **genau 75 noch nicht als vollständiger öffentlicher
+Die Pakete U1–U9 enthalten **genau 74 noch nicht als vollständiger öffentlicher
 Lernzyklus vorliegende Aufgaben**, ohne Doppelzählungen. Zusammen mit M6.02,
-M6.03, M6.04 und M10.01 bleibt der Katalogumfang 79. M9-, weitere M10- und Trainingsbausteine
-sind hier nur geplant; außer M10.01 wird keine dieser Aufgaben in diesem PR implementiert
+M6.03, M6.04, M10.01 und M10.02 bleibt der Katalogumfang 79. M9-, weitere M10- und Trainingsbausteine
+sind hier nur geplant; außer M10.01 und M10.02 wird keine dieser Aufgaben in diesem PR implementiert
 oder durch gemeinsame Komponenten automatisch aktiviert.

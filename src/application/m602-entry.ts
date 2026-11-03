@@ -83,3 +83,11 @@ export function createM1001View(): HTMLElement {
   if (!massView) { massView=document.createElement('div'); mountM1001Learning(massView,createM1001Learning()); }
   return massView;
 }
+
+import { createM1002Learning } from './m1002-learning.ts';
+import { mountM1002Learning } from '../ui/m1002-learning.ts';
+let diagramView:HTMLElement|undefined;
+export function createM1002View():HTMLElement {
+  if(!diagramView){diagramView=document.createElement('div');mountM1002Learning(diagramView,createM1002Learning());}
+  return diagramView;
+}
