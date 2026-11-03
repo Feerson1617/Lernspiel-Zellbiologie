@@ -1,0 +1,632 @@
+[
+  {
+    "field": "c0",
+    "input": "8",
+    "expected": "correct",
+    "reference": 8
+  },
+  {
+    "field": "c0",
+    "input": "8,0",
+    "expected": "correct",
+    "reference": 8
+  },
+  {
+    "field": "c0",
+    "input": "8.00",
+    "expected": "correct",
+    "reference": 8
+  },
+  {
+    "field": "c0",
+    "input": "+8",
+    "expected": "correct",
+    "reference": 8
+  },
+  {
+    "field": "c0",
+    "input": "+8,00",
+    "expected": "correct",
+    "reference": 8
+  },
+  {
+    "field": "c0",
+    "input": "8 %",
+    "expected": "correct",
+    "reference": 8
+  },
+  {
+    "field": "c0",
+    "input": "8 Prozent",
+    "expected": "correct",
+    "reference": 8
+  },
+  {
+    "field": "c0",
+    "input": "  8  ",
+    "expected": "correct",
+    "reference": 8
+  },
+  {
+    "field": "c0",
+    "input": "7.95",
+    "expected": "correct",
+    "reference": 8
+  },
+  {
+    "field": "c0",
+    "input": "8.05",
+    "expected": "correct",
+    "reference": 8
+  },
+  {
+    "field": "c0",
+    "input": "-8",
+    "expected": "incorrect",
+    "reference": 8
+  },
+  {
+    "field": "c0",
+    "input": "0,08",
+    "expected": "incorrect",
+    "reference": 8
+  },
+  {
+    "field": "c0",
+    "input": "24 g",
+    "expected": "incorrect",
+    "reference": 8
+  },
+  {
+    "field": "c0",
+    "input": "8 Prozentpunkte",
+    "expected": "incorrect",
+    "reference": 8
+  },
+  {
+    "field": "c0",
+    "input": "8 oder 0",
+    "expected": "clarify",
+    "reference": 8
+  },
+  {
+    "field": "c0",
+    "input": "8abc",
+    "expected": "clarify",
+    "reference": 8
+  },
+  {
+    "field": "c0",
+    "input": "1,000",
+    "expected": "clarify",
+    "reference": 8
+  },
+  {
+    "field": "c0",
+    "input": "1.2.3",
+    "expected": "clarify",
+    "reference": 8
+  },
+  {
+    "field": "c0",
+    "input": "",
+    "expected": "empty",
+    "reference": 8
+  },
+  {
+    "field": "c0",
+    "input": "8.0500001",
+    "expected": "incorrect",
+    "reference": 8
+  },
+  {
+    "field": "c0",
+    "input": "7.9499999",
+    "expected": "incorrect",
+    "reference": 8
+  },
+  {
+    "field": "c10",
+    "input": "3",
+    "expected": "correct",
+    "reference": 3
+  },
+  {
+    "field": "c10",
+    "input": "3,0",
+    "expected": "correct",
+    "reference": 3
+  },
+  {
+    "field": "c10",
+    "input": "3.00",
+    "expected": "correct",
+    "reference": 3
+  },
+  {
+    "field": "c10",
+    "input": "+3",
+    "expected": "correct",
+    "reference": 3
+  },
+  {
+    "field": "c10",
+    "input": "+3,00",
+    "expected": "correct",
+    "reference": 3
+  },
+  {
+    "field": "c10",
+    "input": "3 %",
+    "expected": "correct",
+    "reference": 3
+  },
+  {
+    "field": "c10",
+    "input": "3 Prozent",
+    "expected": "correct",
+    "reference": 3
+  },
+  {
+    "field": "c10",
+    "input": "  3  ",
+    "expected": "correct",
+    "reference": 3
+  },
+  {
+    "field": "c10",
+    "input": "2.95",
+    "expected": "correct",
+    "reference": 3
+  },
+  {
+    "field": "c10",
+    "input": "3.05",
+    "expected": "correct",
+    "reference": 3
+  },
+  {
+    "field": "c10",
+    "input": "-3",
+    "expected": "incorrect",
+    "reference": 3
+  },
+  {
+    "field": "c10",
+    "input": "0,08",
+    "expected": "incorrect",
+    "reference": 3
+  },
+  {
+    "field": "c10",
+    "input": "9 g",
+    "expected": "incorrect",
+    "reference": 3
+  },
+  {
+    "field": "c10",
+    "input": "3 Prozentpunkte",
+    "expected": "incorrect",
+    "reference": 3
+  },
+  {
+    "field": "c10",
+    "input": "3 oder 0",
+    "expected": "clarify",
+    "reference": 3
+  },
+  {
+    "field": "c10",
+    "input": "3abc",
+    "expected": "clarify",
+    "reference": 3
+  },
+  {
+    "field": "c10",
+    "input": "1,000",
+    "expected": "clarify",
+    "reference": 3
+  },
+  {
+    "field": "c10",
+    "input": "1.2.3",
+    "expected": "clarify",
+    "reference": 3
+  },
+  {
+    "field": "c10",
+    "input": "",
+    "expected": "empty",
+    "reference": 3
+  },
+  {
+    "field": "c10",
+    "input": "3.0500001",
+    "expected": "incorrect",
+    "reference": 3
+  },
+  {
+    "field": "c10",
+    "input": "2.9499999",
+    "expected": "incorrect",
+    "reference": 3
+  },
+  {
+    "field": "c20",
+    "input": "-1",
+    "expected": "correct",
+    "reference": -1
+  },
+  {
+    "field": "c20",
+    "input": "-1,0",
+    "expected": "correct",
+    "reference": -1
+  },
+  {
+    "field": "c20",
+    "input": "-1.00",
+    "expected": "correct",
+    "reference": -1
+  },
+  {
+    "field": "c20",
+    "input": "−1",
+    "expected": "correct",
+    "reference": -1
+  },
+  {
+    "field": "c20",
+    "input": "−1,00",
+    "expected": "correct",
+    "reference": -1
+  },
+  {
+    "field": "c20",
+    "input": "-1 %",
+    "expected": "correct",
+    "reference": -1
+  },
+  {
+    "field": "c20",
+    "input": "-1 Prozent",
+    "expected": "correct",
+    "reference": -1
+  },
+  {
+    "field": "c20",
+    "input": "  -1  ",
+    "expected": "correct",
+    "reference": -1
+  },
+  {
+    "field": "c20",
+    "input": "-1.05",
+    "expected": "correct",
+    "reference": -1
+  },
+  {
+    "field": "c20",
+    "input": "-0.95",
+    "expected": "correct",
+    "reference": -1
+  },
+  {
+    "field": "c20",
+    "input": "1",
+    "expected": "incorrect",
+    "reference": -1
+  },
+  {
+    "field": "c20",
+    "input": "0,08",
+    "expected": "incorrect",
+    "reference": -1
+  },
+  {
+    "field": "c20",
+    "input": "-3 g",
+    "expected": "incorrect",
+    "reference": -1
+  },
+  {
+    "field": "c20",
+    "input": "-1 Prozentpunkte",
+    "expected": "incorrect",
+    "reference": -1
+  },
+  {
+    "field": "c20",
+    "input": "-1 oder 0",
+    "expected": "clarify",
+    "reference": -1
+  },
+  {
+    "field": "c20",
+    "input": "-1abc",
+    "expected": "clarify",
+    "reference": -1
+  },
+  {
+    "field": "c20",
+    "input": "1,000",
+    "expected": "clarify",
+    "reference": -1
+  },
+  {
+    "field": "c20",
+    "input": "1.2.3",
+    "expected": "clarify",
+    "reference": -1
+  },
+  {
+    "field": "c20",
+    "input": "",
+    "expected": "empty",
+    "reference": -1
+  },
+  {
+    "field": "c20",
+    "input": "-0.9499999",
+    "expected": "incorrect",
+    "reference": -1
+  },
+  {
+    "field": "c20",
+    "input": "-1.0500001",
+    "expected": "incorrect",
+    "reference": -1
+  },
+  {
+    "field": "c30",
+    "input": "-5",
+    "expected": "correct",
+    "reference": -5
+  },
+  {
+    "field": "c30",
+    "input": "-5,0",
+    "expected": "correct",
+    "reference": -5
+  },
+  {
+    "field": "c30",
+    "input": "-5.00",
+    "expected": "correct",
+    "reference": -5
+  },
+  {
+    "field": "c30",
+    "input": "−5",
+    "expected": "correct",
+    "reference": -5
+  },
+  {
+    "field": "c30",
+    "input": "−5,00",
+    "expected": "correct",
+    "reference": -5
+  },
+  {
+    "field": "c30",
+    "input": "-5 %",
+    "expected": "correct",
+    "reference": -5
+  },
+  {
+    "field": "c30",
+    "input": "-5 Prozent",
+    "expected": "correct",
+    "reference": -5
+  },
+  {
+    "field": "c30",
+    "input": "  -5  ",
+    "expected": "correct",
+    "reference": -5
+  },
+  {
+    "field": "c30",
+    "input": "-5.05",
+    "expected": "correct",
+    "reference": -5
+  },
+  {
+    "field": "c30",
+    "input": "-4.95",
+    "expected": "correct",
+    "reference": -5
+  },
+  {
+    "field": "c30",
+    "input": "5",
+    "expected": "incorrect",
+    "reference": -5
+  },
+  {
+    "field": "c30",
+    "input": "0,08",
+    "expected": "incorrect",
+    "reference": -5
+  },
+  {
+    "field": "c30",
+    "input": "-15 g",
+    "expected": "incorrect",
+    "reference": -5
+  },
+  {
+    "field": "c30",
+    "input": "-5 Prozentpunkte",
+    "expected": "incorrect",
+    "reference": -5
+  },
+  {
+    "field": "c30",
+    "input": "-5 oder 0",
+    "expected": "clarify",
+    "reference": -5
+  },
+  {
+    "field": "c30",
+    "input": "-5abc",
+    "expected": "clarify",
+    "reference": -5
+  },
+  {
+    "field": "c30",
+    "input": "1,000",
+    "expected": "clarify",
+    "reference": -5
+  },
+  {
+    "field": "c30",
+    "input": "1.2.3",
+    "expected": "clarify",
+    "reference": -5
+  },
+  {
+    "field": "c30",
+    "input": "",
+    "expected": "empty",
+    "reference": -5
+  },
+  {
+    "field": "c30",
+    "input": "-4.9499999",
+    "expected": "incorrect",
+    "reference": -5
+  },
+  {
+    "field": "c30",
+    "input": "-5.0500001",
+    "expected": "incorrect",
+    "reference": -5
+  },
+  {
+    "field": "c40",
+    "input": "-8",
+    "expected": "correct",
+    "reference": -8
+  },
+  {
+    "field": "c40",
+    "input": "-8,0",
+    "expected": "correct",
+    "reference": -8
+  },
+  {
+    "field": "c40",
+    "input": "-8.00",
+    "expected": "correct",
+    "reference": -8
+  },
+  {
+    "field": "c40",
+    "input": "−8",
+    "expected": "correct",
+    "reference": -8
+  },
+  {
+    "field": "c40",
+    "input": "−8,00",
+    "expected": "correct",
+    "reference": -8
+  },
+  {
+    "field": "c40",
+    "input": "-8 %",
+    "expected": "correct",
+    "reference": -8
+  },
+  {
+    "field": "c40",
+    "input": "-8 Prozent",
+    "expected": "correct",
+    "reference": -8
+  },
+  {
+    "field": "c40",
+    "input": "  -8  ",
+    "expected": "correct",
+    "reference": -8
+  },
+  {
+    "field": "c40",
+    "input": "-8.05",
+    "expected": "correct",
+    "reference": -8
+  },
+  {
+    "field": "c40",
+    "input": "-7.95",
+    "expected": "correct",
+    "reference": -8
+  },
+  {
+    "field": "c40",
+    "input": "8",
+    "expected": "incorrect",
+    "reference": -8
+  },
+  {
+    "field": "c40",
+    "input": "0,08",
+    "expected": "incorrect",
+    "reference": -8
+  },
+  {
+    "field": "c40",
+    "input": "-24 g",
+    "expected": "incorrect",
+    "reference": -8
+  },
+  {
+    "field": "c40",
+    "input": "-8 Prozentpunkte",
+    "expected": "incorrect",
+    "reference": -8
+  },
+  {
+    "field": "c40",
+    "input": "-8 oder 0",
+    "expected": "clarify",
+    "reference": -8
+  },
+  {
+    "field": "c40",
+    "input": "-8abc",
+    "expected": "clarify",
+    "reference": -8
+  },
+  {
+    "field": "c40",
+    "input": "1,000",
+    "expected": "clarify",
+    "reference": -8
+  },
+  {
+    "field": "c40",
+    "input": "1.2.3",
+    "expected": "clarify",
+    "reference": -8
+  },
+  {
+    "field": "c40",
+    "input": "",
+    "expected": "empty",
+    "reference": -8
+  },
+  {
+    "field": "c40",
+    "input": "-7.9499999",
+    "expected": "incorrect",
+    "reference": -8
+  },
+  {
+    "field": "c40",
+    "input": "-8.0500001",
+    "expected": "incorrect",
+    "reference": -8
+  }
+]

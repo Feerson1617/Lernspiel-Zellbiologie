@@ -1,0 +1,53 @@
+{
+  "version": "numeric-input/1.0.0",
+  "task": "M10.01",
+  "source": "Public didactic data; spec/tasks.json and user request",
+  "formula": "100 * (final - initial) / initial",
+  "initialGrams": "3.00",
+  "rows": [
+    {
+      "field": "c0",
+      "criterion": "M10.01.C01",
+      "finalGrams": "81/25",
+      "expectedPercent": 8
+    },
+    {
+      "field": "c10",
+      "criterion": "M10.01.C02",
+      "finalGrams": "309/100",
+      "expectedPercent": 3
+    },
+    {
+      "field": "c20",
+      "criterion": "M10.01.C03",
+      "finalGrams": "297/100",
+      "expectedPercent": -1
+    },
+    {
+      "field": "c30",
+      "criterion": "M10.01.C04",
+      "finalGrams": "57/20",
+      "expectedPercent": -5
+    },
+    {
+      "field": "c40",
+      "criterion": "M10.01.C05",
+      "finalGrams": "69/25",
+      "expectedPercent": -8
+    }
+  ],
+  "tolerancePercentagePoints": "0.05",
+  "boundary": "inclusive; exact decimal rational arithmetic",
+  "grammar": "trimmed sign? digits (comma-or-dot digits)? optional known unit; U+2212 minus; no grouping, exponents, fractions, multiple values or prose. Leading-zero integers with >1 digit and separator followed by exactly three digits with nonzero fractional tail are ambiguous grouping: clarify. Max 128 characters, 40 digits.",
+  "units": [
+    "%",
+    "Prozent",
+    "Prozentpunkte",
+    "g"
+  ],
+  "unitPolicy": "Missing unit uses visible field unit. Known mismatching unit is incorrect; unknown additions clarify. Never rescale fractions to percent.",
+  "empty": "empty",
+  "unknown": "clarify",
+  "wrong": "incorrect, concrete comparison without guessing the reasoning",
+  "context": "exact versioned material; edit/help/reset invalidates receipt; help monotonic within session; no raw text persistence; writing unassessed"
+}
