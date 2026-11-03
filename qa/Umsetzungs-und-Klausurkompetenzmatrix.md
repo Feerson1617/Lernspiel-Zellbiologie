@@ -1,4 +1,4 @@
-# Umsetzungs- und Klausurkompetenzmatrix – Stand M6.04
+# Umsetzungs- und Klausurkompetenzmatrix – Stand M10.01
 
 Ausgangsstand nach manuellem Merge von PR #9:
 `3c9da3f6c84e78cd1abb25bc6f6d2bb1000915f1` (02.11.2026).
@@ -77,7 +77,7 @@ maschinenbewerteten Text- oder Klausurreifenachweis.
 | **M9.02** Abweichung und Sollbereich; rechnen, Einheiten/Plausibilität prüfen | Ja | Nein, redaktioneller Entwurf | Nein | Nein | Nein | Nein | Nein | U3 |
 | **M9.03** Negative Rückkopplung legen; gerichtete Beziehungen begründen | Ja | Nein, redaktioneller Entwurf | Nein | Nein | Nein | Nein | Nein | U7 |
 | **M9.04** Eine Kanalblockade prüfen; Kontrolle, Planung und Aussagekraft | Ja | Nein, redaktioneller Entwurf | Nein | Nein | Nein | Nein | Nein | U7 |
-| **M10.01** Relative Massenänderung; rechnen, Einheiten/Plausibilität prüfen | Ja | Nein, redaktioneller Entwurf | Nein | Nein | Nein | Nein | Nein | U3 |
+| **M10.01** Relative Massenänderung; rechnen, Einheiten/Plausibilität prüfen | Nein | Ja, numeric 1.0.0 | Öffentlicher Lernweg | Eigene Nachweise: [M10.01](M1001.md) | Nachweise im PR | Offen | Nein | Gegenprüfung |
 | **M10.02** Ein Diagramm erstellen; Daten, Achsen und Einheiten darstellen | Ja | Nein, redaktioneller Entwurf | Nein | Nein | Nein | Nein | Nein | U3 |
 | **M10.03** Eine Näherung von einer Messung unterscheiden; rechnen, Einheiten/Plausibilität prüfen | Ja | Nein, redaktioneller Entwurf | Nein | Nein | Nein | Nein | Nein | U3 |
 | **M10.04** Fläche und Proteindichte trennen; Kontrolle, Planung und Aussagekraft | Ja | Nein, redaktioneller Entwurf | Nein | Nein | Nein | Nein | Nein | U7 |
@@ -121,8 +121,8 @@ maschinenbewerteten Text- oder Klausurreifenachweis.
   Kontext-/Hilfe-/Datenschutz- und Browserprüfungen. Kein physikalisches
   Simulationsmodell, keine praktische Mikroskopiezertifizierung.
 
-**75 Aufgaben sind ausschließlich konzipiert.** Z1.02 besitzt zusätzlich einen
-begrenzten Prüfer, aber keinen vollständigen Schülerweg. Drei M6-Aufgaben haben
+**74 Aufgaben sind ausschließlich konzipiert.** Z1.02 besitzt zusätzlich einen
+begrenzten Prüfer, aber keinen vollständigen Schülerweg. Drei M6-Aufgaben und M10.01 haben
 nun begrenzte öffentliche Übungswege. Keine der 79 Aufgaben ist durch diesen
 Auftrag für den Unterricht insgesamt freigegeben. Eine Teilübung darf weder eine
 vollständige Mission noch alle offenen Klausurleistungen vertreten.
@@ -148,8 +148,8 @@ zerlegt; die gesamte Restmenge ist kein einzelner Implementierungsauftrag.
 | U9 | T.01–T.08 (8) | Neue materialgebundene Trainingssets; quantitative Datenarbeit, integrierte Transporte und begründete Fachkommunikation verbinden. M6.04-Planungsfelder und Schreibrahmen nutzen, keine reservierte Klausurlogik kopieren | Fachverträge je neuem Material, zulässige Alternativpläne und vollständige Auswertung; eigener Text separat durch Kriterienraster. Kein automatisches Versprechen „klausurreif“. |
 | U10 | Gesamtabnahme aller 79 | Aufgabenmatrix mit tatsächlichen Nachweisen schließen; Quellenrevision mit zugänglichem Unterrichtsstand, echte iPad-/Safari-, Screenreader- und Lerngruppenprüfung | Lehrkraft dokumentiert den konkret freigegebenen Umfang. Automatischer PR-Erfolg allein ist keine Unterrichtsfreigabe. |
 
-Die Pakete U1–U9 enthalten **genau 76 noch nicht als vollständiger öffentlicher
+Die Pakete U1–U9 enthalten **genau 75 noch nicht als vollständiger öffentlicher
 Lernzyklus vorliegende Aufgaben**, ohne Doppelzählungen. Zusammen mit M6.02,
-M6.03 und M6.04 bleibt der Katalogumfang 79. M9-, M10- und Trainingsbausteine
-sind hier nur geplant; keine dieser Aufgaben wird in diesem PR implementiert
+M6.03, M6.04 und M10.01 bleibt der Katalogumfang 79. M9-, weitere M10- und Trainingsbausteine
+sind hier nur geplant; außer M10.01 wird keine dieser Aufgaben in diesem PR implementiert
 oder durch gemeinsame Komponenten automatisch aktiviert.

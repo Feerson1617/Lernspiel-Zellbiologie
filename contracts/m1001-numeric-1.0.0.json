@@ -38,7 +38,7 @@
   ],
   "tolerancePercentagePoints": "0.05",
   "boundary": "inclusive; exact decimal rational arithmetic",
-  "grammar": "trimmed sign? digits (comma-or-dot digits)? optional known unit; U+2212 minus; no grouping, exponents, fractions, multiple values or prose. Leading-zero integers with >1 digit and separator followed by exactly three digits with nonzero fractional tail are ambiguous grouping: clarify. Max 128 characters, 40 digits.",
+  "grammar": "trimmed sign? digits (comma-or-dot digits)? optional known unit; U+2212 minus; no grouping, exponents, fractions, multiple values or prose. Leading-zero integers with >1 digit and separator followed by exactly three digits are ambiguous grouping: clarify. Max 128 characters, 40 digits.",
   "units": [
     "%",
     "Prozent",
