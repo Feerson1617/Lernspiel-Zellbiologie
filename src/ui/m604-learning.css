@@ -1,0 +1,41 @@
+@layer components {
+  .investigation-page { max-width: 1120px; }
+  .investigation-page [hidden] { display: none !important; }
+  .investigation-case { padding: 20px 0 28px; border-top: 1px solid var(--lab-line); }
+  .investigation-foundation { margin-block: 10px 30px; }
+  .investigation-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15em), 1fr)); gap: 8px; margin-bottom: 24px; }
+  .investigation-steps button { text-align: left; }
+  .investigation-steps [aria-current='step'] { background: var(--lab-accent); color: white; font-weight: 650; }
+  .investigation-step { padding: clamp(14px, 3vw, 30px); background: var(--lab-paper); border: 1px solid var(--lab-line); border-radius: 5px; }
+  .investigation-field { min-width: 0; margin: 28px 0 12px; padding: 14px 0; border: 0; border-top: 1px solid var(--lab-line); }
+  .investigation-field legend { font-weight: 650; font-size: 1rem; padding: 0 0 12px; max-width: 100%; }
+  .investigation-option { display: flex; align-items: start; gap: .7em; min-height: 48px; padding: 8px 6px; margin-block: 4px; border-radius: 3px; }
+  .investigation-option:has(input:checked) { background: #edf1e8; }
+  .investigation-page .investigation-option input { width: 24px; height: 24px; min-height: 24px; flex: 0 0 24px; margin: .2em 0 0; padding: 0; }
+  .investigation-option span { min-width: 0; font-size: 1rem; }
+  .investigation-field > button { margin-top: 12px; }
+  .investigation-actions { display: flex; justify-content: space-between; gap: 14px; margin-top: 18px; }
+  .investigation-page button:disabled { cursor: default; opacity: .65; }
+  .investigation-page fieldset:disabled { opacity: .6; }
+  .investigation-data { margin-top: 24px; }
+  .investigation-run { border-block-start: 1px solid var(--lab-line); padding-block: 8px; }
+  .investigation-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22em), 1fr)); gap: 20px; }
+  .investigation-series { background: #f3f5ee; padding: 16px; min-width: 0; }
+  .investigation-series ol { list-style: none; padding: 0; }
+  .investigation-series li { margin-top: 20px; padding-top: 12px; border-top: 1px solid var(--lab-line); }
+  .investigation-series dl { margin: 8px 0; }
+  .investigation-series dt { margin-top: 10px; color: var(--lab-muted); }
+  .investigation-series dd { margin: 2px 0; font-weight: 650; font-variant-numeric: tabular-nums; }
+  .investigation-criteria { list-style: none; padding: 0; }
+  .investigation-criteria > li { padding: 8px 14px 16px; margin-top: 16px; }
+  .investigation-criteria details p { padding-left: 12px; }
+  .investigation-rubric { padding-left: 1.3em; }
+  .investigation-rubric > li { padding-block: 8px 18px; }
+  .investigation-writing-prompt { padding: 16px; border-left: 3px solid var(--lab-accent); background: #edf1e8; font-weight: 600; }
+  @media (max-width: 460px) {
+    .investigation-series { padding: 10px; }
+    .investigation-option { gap: .45em; padding-inline: 0; }
+    .investigation-criteria > li { padding-inline: 10px; }
+    .investigation-actions { flex-wrap: wrap; }
+  }
+}

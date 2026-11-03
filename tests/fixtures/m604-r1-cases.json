@@ -1,0 +1,550 @@
+{
+  "contractVersion": "m604-controlled-investigation/1.1.0",
+  "source": "Own cases fixed before implementation from the two volume hypotheses and biological measurement distinction; not independent review.",
+  "cases": [
+    {
+      "id": "M604R1-recovery-loss_prediction-volume",
+      "caseId": "recovery",
+      "hypothesis": [
+        "loss_prediction"
+      ],
+      "dependent": [
+        "relative_volume"
+      ],
+      "expected": "correct",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "correct",
+      "coherenceStatus": "correct"
+    },
+    {
+      "id": "M604R1-recovery-loss_prediction-detachment",
+      "caseId": "recovery",
+      "hypothesis": [
+        "loss_prediction"
+      ],
+      "dependent": [
+        "detached_fraction"
+      ],
+      "expected": "partial",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "correct",
+      "coherenceStatus": "partial"
+    },
+    {
+      "id": "M604R1-recovery-loss_prediction-both",
+      "caseId": "recovery",
+      "hypothesis": [
+        "loss_prediction"
+      ],
+      "dependent": [
+        "relative_volume",
+        "detached_fraction"
+      ],
+      "expected": "correct",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "correct",
+      "coherenceStatus": "correct"
+    },
+    {
+      "id": "M604R1-recovery-loss_prediction-empty",
+      "caseId": "recovery",
+      "hypothesis": [
+        "loss_prediction"
+      ],
+      "dependent": [],
+      "expected": "partial",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "empty",
+      "coherenceStatus": "partial"
+    },
+    {
+      "id": "M604R1-recovery-loss_prediction-unsure",
+      "caseId": "recovery",
+      "hypothesis": [
+        "loss_prediction"
+      ],
+      "dependent": [
+        "unsure"
+      ],
+      "expected": "clarify",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "clarify",
+      "coherenceStatus": "clarify"
+    },
+    {
+      "id": "M604R1-recovery-loss_prediction-volume-unsure",
+      "caseId": "recovery",
+      "hypothesis": [
+        "loss_prediction"
+      ],
+      "dependent": [
+        "relative_volume",
+        "unsure"
+      ],
+      "expected": "clarify",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "clarify",
+      "coherenceStatus": "clarify"
+    },
+    {
+      "id": "M604R1-recovery-loss_prediction-treatment",
+      "caseId": "recovery",
+      "hypothesis": [
+        "loss_prediction"
+      ],
+      "dependent": [
+        "solution_sequence"
+      ],
+      "expected": "incorrect",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "incorrect",
+      "coherenceStatus": "partial"
+    },
+    {
+      "id": "M604R1-recovery-loss_prediction-constant",
+      "caseId": "recovery",
+      "hypothesis": [
+        "loss_prediction"
+      ],
+      "dependent": [
+        "temperature"
+      ],
+      "expected": "incorrect",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "incorrect",
+      "coherenceStatus": "partial"
+    },
+    {
+      "id": "M604R1-recovery-loss_prediction-volume-contradiction",
+      "caseId": "recovery",
+      "hypothesis": [
+        "loss_prediction"
+      ],
+      "dependent": [
+        "relative_volume",
+        "solution_sequence"
+      ],
+      "expected": "incorrect",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "incorrect",
+      "coherenceStatus": "partial"
+    },
+    {
+      "id": "M604R1-recovery-return_prediction-volume",
+      "caseId": "recovery",
+      "hypothesis": [
+        "return_prediction"
+      ],
+      "dependent": [
+        "relative_volume"
+      ],
+      "expected": "correct",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "correct",
+      "coherenceStatus": "correct"
+    },
+    {
+      "id": "M604R1-recovery-return_prediction-detachment",
+      "caseId": "recovery",
+      "hypothesis": [
+        "return_prediction"
+      ],
+      "dependent": [
+        "detached_fraction"
+      ],
+      "expected": "partial",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "correct",
+      "coherenceStatus": "partial"
+    },
+    {
+      "id": "M604R1-recovery-return_prediction-both",
+      "caseId": "recovery",
+      "hypothesis": [
+        "return_prediction"
+      ],
+      "dependent": [
+        "relative_volume",
+        "detached_fraction"
+      ],
+      "expected": "correct",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "correct",
+      "coherenceStatus": "correct"
+    },
+    {
+      "id": "M604R1-recovery-return_prediction-empty",
+      "caseId": "recovery",
+      "hypothesis": [
+        "return_prediction"
+      ],
+      "dependent": [],
+      "expected": "partial",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "empty",
+      "coherenceStatus": "partial"
+    },
+    {
+      "id": "M604R1-recovery-return_prediction-unsure",
+      "caseId": "recovery",
+      "hypothesis": [
+        "return_prediction"
+      ],
+      "dependent": [
+        "unsure"
+      ],
+      "expected": "clarify",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "clarify",
+      "coherenceStatus": "clarify"
+    },
+    {
+      "id": "M604R1-recovery-return_prediction-volume-unsure",
+      "caseId": "recovery",
+      "hypothesis": [
+        "return_prediction"
+      ],
+      "dependent": [
+        "relative_volume",
+        "unsure"
+      ],
+      "expected": "clarify",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "clarify",
+      "coherenceStatus": "clarify"
+    },
+    {
+      "id": "M604R1-recovery-return_prediction-treatment",
+      "caseId": "recovery",
+      "hypothesis": [
+        "return_prediction"
+      ],
+      "dependent": [
+        "solution_sequence"
+      ],
+      "expected": "incorrect",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "incorrect",
+      "coherenceStatus": "partial"
+    },
+    {
+      "id": "M604R1-recovery-return_prediction-constant",
+      "caseId": "recovery",
+      "hypothesis": [
+        "return_prediction"
+      ],
+      "dependent": [
+        "temperature"
+      ],
+      "expected": "incorrect",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "incorrect",
+      "coherenceStatus": "partial"
+    },
+    {
+      "id": "M604R1-recovery-return_prediction-volume-contradiction",
+      "caseId": "recovery",
+      "hypothesis": [
+        "return_prediction"
+      ],
+      "dependent": [
+        "relative_volume",
+        "solution_sequence"
+      ],
+      "expected": "incorrect",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "incorrect",
+      "coherenceStatus": "partial"
+    },
+    {
+      "id": "M604R1-limited-loss_prediction-volume",
+      "caseId": "limited",
+      "hypothesis": [
+        "loss_prediction"
+      ],
+      "dependent": [
+        "relative_volume"
+      ],
+      "expected": "correct",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "correct",
+      "coherenceStatus": "correct"
+    },
+    {
+      "id": "M604R1-limited-loss_prediction-detachment",
+      "caseId": "limited",
+      "hypothesis": [
+        "loss_prediction"
+      ],
+      "dependent": [
+        "detached_fraction"
+      ],
+      "expected": "partial",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "correct",
+      "coherenceStatus": "partial"
+    },
+    {
+      "id": "M604R1-limited-loss_prediction-both",
+      "caseId": "limited",
+      "hypothesis": [
+        "loss_prediction"
+      ],
+      "dependent": [
+        "relative_volume",
+        "detached_fraction"
+      ],
+      "expected": "correct",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "correct",
+      "coherenceStatus": "correct"
+    },
+    {
+      "id": "M604R1-limited-loss_prediction-empty",
+      "caseId": "limited",
+      "hypothesis": [
+        "loss_prediction"
+      ],
+      "dependent": [],
+      "expected": "partial",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "empty",
+      "coherenceStatus": "partial"
+    },
+    {
+      "id": "M604R1-limited-loss_prediction-unsure",
+      "caseId": "limited",
+      "hypothesis": [
+        "loss_prediction"
+      ],
+      "dependent": [
+        "unsure"
+      ],
+      "expected": "clarify",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "clarify",
+      "coherenceStatus": "clarify"
+    },
+    {
+      "id": "M604R1-limited-loss_prediction-volume-unsure",
+      "caseId": "limited",
+      "hypothesis": [
+        "loss_prediction"
+      ],
+      "dependent": [
+        "relative_volume",
+        "unsure"
+      ],
+      "expected": "clarify",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "clarify",
+      "coherenceStatus": "clarify"
+    },
+    {
+      "id": "M604R1-limited-loss_prediction-treatment",
+      "caseId": "limited",
+      "hypothesis": [
+        "loss_prediction"
+      ],
+      "dependent": [
+        "solution_sequence"
+      ],
+      "expected": "incorrect",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "incorrect",
+      "coherenceStatus": "partial"
+    },
+    {
+      "id": "M604R1-limited-loss_prediction-constant",
+      "caseId": "limited",
+      "hypothesis": [
+        "loss_prediction"
+      ],
+      "dependent": [
+        "temperature"
+      ],
+      "expected": "incorrect",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "incorrect",
+      "coherenceStatus": "partial"
+    },
+    {
+      "id": "M604R1-limited-loss_prediction-volume-contradiction",
+      "caseId": "limited",
+      "hypothesis": [
+        "loss_prediction"
+      ],
+      "dependent": [
+        "relative_volume",
+        "solution_sequence"
+      ],
+      "expected": "incorrect",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "incorrect",
+      "coherenceStatus": "partial"
+    },
+    {
+      "id": "M604R1-limited-return_prediction-volume",
+      "caseId": "limited",
+      "hypothesis": [
+        "return_prediction"
+      ],
+      "dependent": [
+        "relative_volume"
+      ],
+      "expected": "correct",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "correct",
+      "coherenceStatus": "correct"
+    },
+    {
+      "id": "M604R1-limited-return_prediction-detachment",
+      "caseId": "limited",
+      "hypothesis": [
+        "return_prediction"
+      ],
+      "dependent": [
+        "detached_fraction"
+      ],
+      "expected": "partial",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "correct",
+      "coherenceStatus": "partial"
+    },
+    {
+      "id": "M604R1-limited-return_prediction-both",
+      "caseId": "limited",
+      "hypothesis": [
+        "return_prediction"
+      ],
+      "dependent": [
+        "relative_volume",
+        "detached_fraction"
+      ],
+      "expected": "correct",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "correct",
+      "coherenceStatus": "correct"
+    },
+    {
+      "id": "M604R1-limited-return_prediction-empty",
+      "caseId": "limited",
+      "hypothesis": [
+        "return_prediction"
+      ],
+      "dependent": [],
+      "expected": "partial",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "empty",
+      "coherenceStatus": "partial"
+    },
+    {
+      "id": "M604R1-limited-return_prediction-unsure",
+      "caseId": "limited",
+      "hypothesis": [
+        "return_prediction"
+      ],
+      "dependent": [
+        "unsure"
+      ],
+      "expected": "clarify",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "clarify",
+      "coherenceStatus": "clarify"
+    },
+    {
+      "id": "M604R1-limited-return_prediction-volume-unsure",
+      "caseId": "limited",
+      "hypothesis": [
+        "return_prediction"
+      ],
+      "dependent": [
+        "relative_volume",
+        "unsure"
+      ],
+      "expected": "clarify",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "clarify",
+      "coherenceStatus": "clarify"
+    },
+    {
+      "id": "M604R1-limited-return_prediction-treatment",
+      "caseId": "limited",
+      "hypothesis": [
+        "return_prediction"
+      ],
+      "dependent": [
+        "solution_sequence"
+      ],
+      "expected": "incorrect",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "incorrect",
+      "coherenceStatus": "partial"
+    },
+    {
+      "id": "M604R1-limited-return_prediction-constant",
+      "caseId": "limited",
+      "hypothesis": [
+        "return_prediction"
+      ],
+      "dependent": [
+        "temperature"
+      ],
+      "expected": "incorrect",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "incorrect",
+      "coherenceStatus": "partial"
+    },
+    {
+      "id": "M604R1-limited-return_prediction-volume-contradiction",
+      "caseId": "limited",
+      "hypothesis": [
+        "return_prediction"
+      ],
+      "dependent": [
+        "relative_volume",
+        "solution_sequence"
+      ],
+      "expected": "incorrect",
+      "hypothesisStatus": "correct",
+      "dependentStatus": "incorrect",
+      "coherenceStatus": "partial"
+    }
+  ],
+  "historicalExpectationChanges": {
+    "alternative-valid-investigation": {
+      "status": "partial",
+      "reason": "The historical alternative uses only detachment to test a volume hypothesis; C04 and C07 remain correct, new C18 is partial."
+    }
+  },
+  "bindingCases": [
+    {
+      "id": "M604R1-old-task-version",
+      "expected": "technical"
+    },
+    {
+      "id": "M604R1-old-rubric-version",
+      "expected": "technical"
+    },
+    {
+      "id": "M604R1-old-content-version",
+      "expected": "technical"
+    },
+    {
+      "id": "M604R1-changed-material",
+      "expected": "technical"
+    },
+    {
+      "id": "M604R1-old-result",
+      "expected": "receipt_rejected"
+    },
+    {
+      "id": "M604R1-old-receipt",
+      "expected": "receipt_rejected"
+    },
+    {
+      "id": "M604R1-changed-context",
+      "expected": "receipt_rejected"
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import unknownCases from '../fixtures/m602-unknown-browser-cases.json' with { type: 'json' };
 import { readFileSync } from 'node:fs';
 import { expect, test } from '@playwright/test';
 import { buildDomainModule } from '../helpers/domain-bundle.ts';
@@ -142,50 +143,100 @@ for(const fault of ['denied','quota']as const)test(`current reload/new-ID histor
   for(const f of ['process','direction','volume'])await expect(page.getByRole('region',{name:`Bewertung ${f}`,exact:true})).toHaveAttribute('data-status','correct');
 });
 
-test('keeps unknown dictionary keys nontechnical, preserves raw evidence and permits self revision without a stale green', async ({ page, baseURL }, info) => {
+
+// The pre-split bodies are frozen by qa/m602-unknown-browser-freeze.json.
+// One isolated case per test keeps real keyboard, revision and evidence checks.
+function phaseTiming() {
+  const phases: {name: string; milliseconds: number}[] = [];
+  let name = 'initialization', start = performance.now();
+  return { mark(next: string) { const now = performance.now(); phases.push({name,milliseconds:now-start}); name=next; start=now; },
+    async finish(info: import('@playwright/test').TestInfo, id: string) {
+      this.mark('attachment'); await info.attach('m602-unknown-phases.json', {body:JSON.stringify({id,phases}),contentType:'application/json'});
+    } };
+}
+for (const row of unknownCases) test(`${row.id}: unknown input, raw evidence and self revision`, async ({ page, baseURL }, info) => {
+  const field = row.field as 'direction' | 'volume', text = row.text, timing = phaseTiming();
+  // BEGIN frozen setup
   const errors: string[] = [], foreign: string[] = [];
   page.on('pageerror', e => errors.push(e.message));
   page.on('request', r => { if (!r.url().startsWith(baseURL!)) foreign.push(r.url()); });
   await open(page, baseURL!); await fill(page); await check(page);
   const saved = async () => JSON.parse((await page.evaluate(() => localStorage.getItem('zelllabor11.progress.v1')))!);
   let receipts = 1;
-  for (const field of ['direction', 'volume'] as const) {
-    const texts = ['constructor', '__proto__', `${field === 'volume' ? 'nicht' : 'netto'} constructor`, '__proto__ und __proto__', 'toString',
-      ...(field === 'direction' ? ['hasOwnProperty', 'constructor und nach außen', 'constructor unbekannt'] : ['unbekannt constructor'])];
-    for (const text of texts) {
-      const input = page.locator(`#m602-${field}`);
-      await input.focus(); await page.keyboard.press('ControlOrMeta+A'); await page.keyboard.type(text);
-      await expect(result(page)).not.toHaveAttribute('data-status', 'correct');
-      await check(page);
-      const panel = page.getByRole('region', { name: `Bewertung ${field}`, exact: true });
-      for (const region of [panel, result(page)]) {
-        await expect(region).toHaveAttribute('data-status', 'clarify');
-        await expect(region).toHaveAttribute('data-color', 'yellow');
-        await expect(region).toContainText('?');
-      }
-      await expect(panel).toContainText('kein Nachweis eines biologischen Fehlers');
-      await expect(panel).toContainText('Nächster Schritt'); await expect(panel).toContainText('Trage nur deine kurze');
-      await expect(result(page)).toContainText(`Nicht geprüft (not_assessed), ${field}: ${text}`);
-      await expect(result(page)).not.toContainText('Einreichung technisch nicht aktuell');
-      await expect(input).toHaveValue(text);
-      const state = await page.evaluate(() => (window as unknown as LabWindow).lab.session.getState()), o = state.latest!;
-      expect(o).toEqual(evaluateM602Cued(o.submission, o.fieldSupport));
-      expect(o.fields[field].result.criteria[0]!.reasonCode).toBe('scope');
-      expect(o.notAssessed).toEqual([{ field, index: null, status: 'not_assessed', value: text, start: 0, end: text.length }]);
-      expect(o.fields[field].result.criteria[0]!.evidence).toEqual([{ kind: 'input_span', value: text, start: 0, end: text.length }]);
-      expect((await saved()).attempts).toHaveLength(receipts);
-      if (text === 'constructor') await panel.screenshot({ path: info.outputPath(`r6-unknown-${field}.png`) });
-      await page.getByRole('button', { name: 'Antwort selbst überarbeiten', exact: true }).click();
-      await expect(input).toBeFocused();
-      await input.fill(m602CuedInput().answers[field]); await check(page);
-      await expect(result(page)).toHaveAttribute('data-status', 'correct');
-      const revised = await page.evaluate(() => (window as unknown as LabWindow).lab.session.getState());
-      expect(revised.latest!.submission.predecessorId).toBe(o.submission.attemptId);
-      expect(revised.latest!.fieldSupport[field].origin).toBe('typed');
-      expect(revised.latest!.support.assistance).toBe('independent');
-      expect((await saved()).attempts).toHaveLength(++receipts);
-    }
+  // END frozen setup
+  // BEGIN frozen unknown
+  timing.mark('keyboard');
+  const input = page.locator(`#m602-${field}`);
+  await input.focus(); await page.keyboard.press('ControlOrMeta+A'); await page.keyboard.type(text);
+  timing.mark('stale assertion');
+  await expect(result(page)).not.toHaveAttribute('data-status', 'correct');
+  timing.mark('assessment action');
+  await check(page);
+  timing.mark('DOM assertions');
+  const panel = page.getByRole('region', { name: `Bewertung ${field}`, exact: true });
+  for (const region of [panel, result(page)]) {
+    await expect(region).toHaveAttribute('data-status', 'clarify');
+    await expect(region).toHaveAttribute('data-color', 'yellow');
+    await expect(region).toContainText('?');
   }
+  await expect(panel).toContainText('kein Nachweis eines biologischen Fehlers');
+  await expect(panel).toContainText('Nächster Schritt'); await expect(panel).toContainText('Trage nur deine kurze');
+  await expect(result(page)).toContainText(`Nicht geprüft (not_assessed), ${field}: ${text}`);
+  timing.mark('stale assertion');
+  await expect(result(page)).not.toContainText('Einreichung technisch nicht aktuell');
+  await expect(input).toHaveValue(text);
+  timing.mark('assessment result browser read');
+  const state = await page.evaluate(() => (window as unknown as LabWindow).lab.session.getState()), o = state.latest!;
+  timing.mark('Node comparison / evidence assertions');
+  expect(o).toEqual(evaluateM602Cued(o.submission, o.fieldSupport));
+  expect(o.fields[field].result.criteria[0]!.reasonCode).toBe('scope');
+  expect(o.notAssessed).toEqual([{ field, index: null, status: 'not_assessed', value: text, start: 0, end: text.length }]);
+  expect(o.fields[field].result.criteria[0]!.evidence).toEqual([{ kind: 'input_span', value: text, start: 0, end: text.length }]);
+  timing.mark('storage checks');
+  expect((await saved()).attempts).toHaveLength(receipts);
+  timing.mark('browser screenshot and self revision');
+  if (text === 'constructor') await panel.screenshot({ path: info.outputPath(`r6-unknown-${field}.png`) });
+  await page.getByRole('button', { name: 'Antwort selbst überarbeiten', exact: true }).click();
+  timing.mark('focus assertion');
+  await expect(input).toBeFocused();
+  timing.mark('browser revision / assessment');
+  await input.fill(m602CuedInput().answers[field]); await check(page);
+  timing.mark('DOM result assertion');
+  await expect(result(page)).toHaveAttribute('data-status', 'correct');
+  timing.mark('history browser read');
+  const revised = await page.evaluate(() => (window as unknown as LabWindow).lab.session.getState());
+  timing.mark('history assertions');
+  expect(revised.latest!.submission.predecessorId).toBe(o.submission.attemptId);
+  timing.mark('history assertions');
+  expect(revised.latest!.fieldSupport[field].origin).toBe('typed');
+  timing.mark('history assertions');
+  expect(revised.latest!.support.assistance).toBe('independent');
+  timing.mark('storage checks');
+  expect((await saved()).attempts).toHaveLength(++receipts);
+  // END frozen unknown
+  timing.mark('final metadata / privacy assertions');
+  const stored = await saved(); expect(stored.attempts).toHaveLength(receipts);
+  // BEGIN frozen privacy
+  const keys = ['attemptId', 'taskId', 'instanceId', 'taskVersion', 'rubricVersion', 'modelVersion', 'status', 'assistance'].sort();
+  for (const attempt of stored.attempts) expect(Object.keys(attempt).sort()).toEqual(keys);
+  expect(JSON.stringify(stored)).not.toMatch(/constructor|__proto__|toString|contextHash|answers|events/);
+  expect(errors).toEqual([]); expect(foreign).toEqual([]);
+  // END frozen privacy
+  await timing.finish(info,row.id);
+});
+
+test('M602-UNKNOWN-help-revision: hint provenance and private storage after revision', async ({ page, baseURL }, info) => {
+  const timing = phaseTiming();
+  // BEGIN frozen setup
+  const errors: string[] = [], foreign: string[] = [];
+  page.on('pageerror', e => errors.push(e.message));
+  page.on('request', r => { if (!r.url().startsWith(baseURL!)) foreign.push(r.url()); });
+  await open(page, baseURL!); await fill(page); await check(page);
+  const saved = async () => JSON.parse((await page.evaluate(() => localStorage.getItem('zelllabor11.progress.v1')))!);
+  let receipts = 1;
+  // END frozen setup
+  timing.mark('help / assessment / history / storage');
+  // BEGIN frozen help
   await page.getByRole('button', { name: 'Hinweis: Nettorichtung', exact: true }).click();
   await page.locator('#m602-direction').fill('constructor'); await check(page);
   await expect(result(page)).toHaveAttribute('data-status', 'clarify');
@@ -195,8 +246,66 @@ test('keeps unknown dictionary keys nontechnical, preserves raw evidence and per
   expect(helped.latest!.support.assistance).toBe('hint'); expect(helped.latest!.support.history).toBe('verified');
   await expect(result(page)).toHaveAttribute('data-status', 'correct');
   const stored = await saved(); expect(stored.attempts).toHaveLength(++receipts);
+  // END frozen help
+  timing.mark('final metadata / privacy assertions');
+  // BEGIN frozen privacy
   const keys = ['attemptId', 'taskId', 'instanceId', 'taskVersion', 'rubricVersion', 'modelVersion', 'status', 'assistance'].sort();
   for (const attempt of stored.attempts) expect(Object.keys(attempt).sort()).toEqual(keys);
   expect(JSON.stringify(stored)).not.toMatch(/constructor|__proto__|toString|contextHash|answers|events/);
+  expect(errors).toEqual([]); expect(foreign).toEqual([]);
+  // END frozen privacy
+  await timing.finish(info,'M602-UNKNOWN-help-revision');
+});
+
+// Additional cumulative check: the isolated real-keyboard tests above preserve
+// every original interaction; this deliberately repeats their input sequence
+// in one browser session to retain the original 1..16 receipt/history coverage.
+// DOM events are synchronous here, avoiding repeated protocol/actionability
+// overhead for this separate state-history check. No product state is forged.
+test('M602-UNKNOWN-history-accumulation: all original revisions retain the 16-receipt sequence', async ({page,baseURL}) => {
+  const errors: string[] = [], foreign: string[] = [];
+  page.on('pageerror', e => errors.push(e.message));
+  page.on('request', r => { if (!r.url().startsWith(baseURL!)) foreign.push(r.url()); });
+  await open(page,baseURL!); await fill(page); await check(page);
+  const actual = await page.evaluate(({rows,valid}) => {
+    const session = (window as unknown as LabWindow).lab.session;
+    const saved = () => JSON.parse(localStorage.getItem('zelllabor11.progress.v1')!);
+    const button = (text: string) => {
+      const target = [...document.querySelectorAll('button')].find(b => b.textContent === text);
+      if (!target) throw new Error(`Missing real control: ${text}`); target.click();
+    };
+    const enter = (field: string, value: string) => {
+      const input = document.querySelector<HTMLInputElement>(`#m602-${field}`)!;
+      input.value = value; input.dispatchEvent(new Event('input',{bubbles:true}));
+    };
+    const counts: number[] = [saved().attempts.length];
+    const outcomes = [];
+    for (const row of rows) {
+      const field = row.field as 'direction' | 'volume';
+      enter(field,row.text); button('Drei Antworten prüfen');
+      const unknown = session.getState().latest!; counts.push(saved().attempts.length);
+      button('Antwort selbst überarbeiten'); enter(field,valid[field]); button('Drei Antworten prüfen');
+      const revised = session.getState().latest!; counts.push(saved().attempts.length);
+      outcomes.push({id:row.id,unknown,revised});
+    }
+    button('Hinweis: Nettorichtung'); enter('direction','constructor'); button('Drei Antworten prüfen');
+    const helpedUnknown = session.getState().latest!; counts.push(saved().attempts.length);
+    button('Antwort selbst überarbeiten'); enter('direction','nach außen'); button('Drei Antworten prüfen');
+    const helped = session.getState().latest!, stored = saved(); counts.push(stored.attempts.length);
+    return {counts,outcomes,helpedUnknown,helped,stored};
+  },{rows:unknownCases,valid:m602CuedInput().answers});
+  expect(actual.counts).toEqual([1,...Array.from({length:14},(_,i) => [i+1,i+2]).flat(),15,16]);
+  expect(actual.outcomes.map(o => o.id)).toEqual(unknownCases.map(row => row.id));
+  for (const {unknown,revised} of actual.outcomes) {
+    expect(unknown.overallStatus).toBe('clarify'); expect(unknown).toEqual(evaluateM602Cued(unknown.submission,unknown.fieldSupport));
+    expect(revised.overallStatus).toBe('correct'); expect(revised.submission.predecessorId).toBe(unknown.submission.attemptId);
+    expect(revised.support.assistance).toBe('independent');
+  }
+  expect(actual.helpedUnknown.overallStatus).toBe('clarify'); expect(actual.helped.overallStatus).toBe('correct');
+  expect(actual.helped.support.assistance).toBe('hint'); expect(actual.helped.support.history).toBe('verified');
+  expect(actual.stored.attempts).toHaveLength(16);
+  const keys = ['attemptId','taskId','instanceId','taskVersion','rubricVersion','modelVersion','status','assistance'].sort();
+  for (const attempt of actual.stored.attempts) expect(Object.keys(attempt).sort()).toEqual(keys);
+  expect(JSON.stringify(actual.stored)).not.toMatch(/constructor|__proto__|toString|contextHash|answers|events/);
   expect(errors).toEqual([]); expect(foreign).toEqual([]);
 });

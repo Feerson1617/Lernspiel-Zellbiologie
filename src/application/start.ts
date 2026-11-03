@@ -6,7 +6,7 @@ export function startApplication(root: HTMLElement): void {
   let pending: Promise<typeof import('./m602-entry.ts')> | undefined;
   let route = '', sequence = 0;
   async function render() {
-    const next = location.hash === '#/m603' ? 'm603' : location.hash.startsWith('#/m602') ? 'm602' : 'home';
+    const next = location.hash === '#/m604' ? 'm604' : location.hash === '#/m603' ? 'm603' : location.hash.startsWith('#/m602') ? 'm602' : 'home';
     if (route === next) return;
     route = next;
     const request = ++sequence;
@@ -21,7 +21,7 @@ export function startApplication(root: HTMLElement): void {
       return;
     }
     if (request === sequence) {
-      const view = next === 'm603' ? entry.createM603View() : entry.createM602View();
+      const view = next === 'm604' ? entry.createM604View() : next === 'm603' ? entry.createM603View() : entry.createM602View();
       root.replaceChildren(view);
       view.querySelector<HTMLElement>('h1')?.focus();
       window.scrollTo(0, 0);

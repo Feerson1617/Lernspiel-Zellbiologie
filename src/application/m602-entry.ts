@@ -4,6 +4,9 @@ import { createM603Learning } from './m603-learning.ts';
 import { mountM603Learning } from '../ui/m603-learning.ts';
 import type { M603PriorHelp } from './m603-learning.ts';
 import { M602_FIELDS } from '../domain/m602-contract.ts';
+import { createM604Learning } from './m604-learning.ts';
+import { mountM604Learning } from '../ui/m604-learning.ts';
+import type { M604PriorHelp } from './m604-learning.ts';
 
 let m602: ReturnType<typeof createM602Learning> | undefined;
 let m602View: HTMLElement | undefined;
@@ -12,6 +15,19 @@ let m603View: HTMLElement | undefined;
 let m603Mount: ReturnType<typeof mountM603Learning> | undefined;
 const priorHelp = new Map<string, M603PriorHelp>();
 let priorUnverified = false;
+let m604: ReturnType<typeof createM604Learning> | undefined;
+let m604View: HTMLElement | undefined;
+
+function syncM604Help() {
+  if (!m604) return;
+  const events: M604PriorHelp[] = [...priorHelp.values()].map(event => ({ ...event, taskId: 'M6.02' }));
+  const causal = m603?.getState();
+  if (causal) for (const event of causal.help) {
+    // M6.02 events are already captured with their original stable identity.
+    if (event.taskId === 'M6.03') events.push({ id: `causal-${event.id}`, taskId: 'M6.03', source: event.source, contextHash: event.contextHash, kind: event.kind });
+  }
+  m604.syncPriorHelp(events, priorUnverified || Boolean(causal?.historyUnverified));
+}
 
 function rememberM602Help() {
   if (!m602) return;
@@ -26,7 +42,7 @@ function rememberM602Help() {
 export function createM602View(): HTMLElement {
   if (!m602) {
     const base = createM602Learning();
-    function capture() { rememberM602Help(); m603?.syncPriorHelp([...priorHelp.values()], priorUnverified); }
+    function capture() { rememberM602Help(); m603?.syncPriorHelp([...priorHelp.values()], priorUnverified); syncM604Help(); }
     // Observe actual disclosures before case changes; the existing controller,
     // corrector, progress contract and its stored receipts remain unchanged.
     m602 = Object.freeze({ ...base,
@@ -49,4 +65,13 @@ export function createM603View(): HTMLElement {
   m603Mount?.destroy();
   m603Mount = mountM603Learning(m603View, m603, () => { createM603View(); });
   return m603View;
+}
+
+/** Only this explicitly authorized task receives the reusable planning UI. */
+export function createM604View(): HTMLElement {
+  rememberM602Help();
+  m604 ??= createM604Learning(); m604View ??= document.createElement('div');
+  syncM604Help();
+  mountM604Learning(m604View,m604,() => { createM604View(); });
+  return m604View;
 }

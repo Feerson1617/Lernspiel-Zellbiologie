@@ -1,0 +1,740 @@
+{
+  "version": "m604-preimplementation-cases/1.0.0",
+  "origin": "Own cases derived from question, material and biological rubric before runtime implementation; not independent review.",
+  "complete": {
+    "control": [
+      "water",
+      "handling",
+      "times",
+      "fresh"
+    ],
+    "interpretation": [
+      "recovery_compatible"
+    ],
+    "limits": [
+      "not_unique",
+      "exchange"
+    ],
+    "hypothesis": [
+      "loss_prediction"
+    ],
+    "design": [
+      "parallel_pairs"
+    ],
+    "independent": [
+      "solution_sequence"
+    ],
+    "dependent": [
+      "relative_volume"
+    ],
+    "constants": [
+      "temperature",
+      "optics",
+      "exchange_volume"
+    ],
+    "fields": [
+      "same_marked"
+    ],
+    "repetitions": [
+      "first_plus_two"
+    ],
+    "sequence": [
+      "baseline_sucrose_return"
+    ],
+    "observation": [
+      "volume_rises"
+    ],
+    "predictionType": [
+      "prediction"
+    ],
+    "observationType": [
+      "observation"
+    ],
+    "explanationType": [
+      "explanation"
+    ],
+    "mechanism": [
+      "potential_membranes"
+    ],
+    "nextCheck": [
+      "check_exchange"
+    ]
+  },
+  "limitedOverrides": {
+    "interpretation": [
+      "no_clear_recovery"
+    ],
+    "observation": [
+      "within_uncertainty"
+    ]
+  },
+  "cases": [
+    {
+      "id": "all-empty",
+      "scenario": "both",
+      "base": "empty",
+      "changes": {},
+      "status": "empty"
+    },
+    {
+      "id": "complete-recovery",
+      "scenario": "recovery",
+      "base": "complete",
+      "changes": {},
+      "status": "correct"
+    },
+    {
+      "id": "complete-limited",
+      "scenario": "limited",
+      "base": "complete",
+      "changes": {
+        "interpretation": [
+          "no_clear_recovery"
+        ],
+        "observation": [
+          "within_uncertainty"
+        ]
+      },
+      "status": "correct"
+    },
+    {
+      "id": "alternative-valid-investigation",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "hypothesis": [
+          "return_prediction"
+        ],
+        "design": [
+          "staggered_pairs"
+        ],
+        "dependent": [
+          "detached_fraction"
+        ],
+        "limits": [
+          "not_unique",
+          "time"
+        ],
+        "nextCheck": [
+          "extend_observation"
+        ]
+      },
+      "status": "correct"
+    },
+    {
+      "id": "conditional-damage-alternative",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "limits": [
+          "not_unique",
+          "damage"
+        ],
+        "nextCheck": [
+          "check_integrity"
+        ]
+      },
+      "status": "correct"
+    },
+    {
+      "id": "all-three-alternatives",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "limits": [
+          "not_unique",
+          "exchange",
+          "time",
+          "damage"
+        ]
+      },
+      "status": "correct"
+    },
+    {
+      "id": "wrong-water-control",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "control": [
+          "none"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "control",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "old-stained-control",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "control": [
+          "old_stained"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "control",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "untouched-is-not-handling-control",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "control": [
+          "untouched"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "control",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "water-only-control-incomplete",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "control": [
+          "water"
+        ]
+      },
+      "status": "partial",
+      "criterion": "control",
+      "criterionStatus": "partial"
+    },
+    {
+      "id": "control-missing-comparable-time",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "control": [
+          "water",
+          "handling",
+          "fresh"
+        ]
+      },
+      "status": "partial",
+      "criterion": "control",
+      "criterionStatus": "partial"
+    },
+    {
+      "id": "independent-dependent-confused",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "independent": [
+          "volume_result"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "independent",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "treatment-as-dependent",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "dependent": [
+          "solution_sequence"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "dependent",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "same-solution-removes-comparison",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "constants": [
+          "temperature",
+          "optics",
+          "exchange_volume",
+          "same_solution"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "constants",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "preselect-result-not-control",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "constants": [
+          "same_result"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "constants",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "missing-constants",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "constants": [
+          "temperature"
+        ]
+      },
+      "status": "partial",
+      "criterion": "constants",
+      "criterionStatus": "partial"
+    },
+    {
+      "id": "new-cells-cannot-track-same",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "fields": [
+          "different_each_time"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "fields",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "select-best-cells-bias",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "fields": [
+          "best_looking"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "fields",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "missing-two-repetitions",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "repetitions": [
+          "one_only"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "repetitions",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "repeated-images-not-repeated-run",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "repetitions": [
+          "three_photos"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "repetitions",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "some-repeats-unspecified",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "repetitions": [
+          "more_unspecified"
+        ]
+      },
+      "status": "partial",
+      "criterion": "repetitions",
+      "criterionStatus": "partial"
+    },
+    {
+      "id": "missing-return",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "sequence": [
+          "no_return"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "sequence",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "wrong-time-order",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "sequence": [
+          "return_first"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "sequence",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "clock-time-not-relative-exposure",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "design": [
+          "unmatched_clock"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "design",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "prediction-is-not-observation",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "predictionType": [
+          "observation"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "predictionType",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "observation-is-not-explanation",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "observationType": [
+          "explanation"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "observationType",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "interpretation-is-not-measured",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "explanationType": [
+          "observation"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "explanationType",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "death-not-proved",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "interpretation": [
+          "death_proven"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "interpretation",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "no-instant-full-recovery",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "interpretation": [
+          "immediate_complete"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "interpretation",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "damage-not-proved",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "interpretation": [
+          "damage_proven"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "interpretation",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "limitation-needs-alternative",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "limits": [
+          "not_unique"
+        ]
+      },
+      "status": "partial",
+      "criterion": "limits",
+      "criterionStatus": "partial"
+    },
+    {
+      "id": "alternative-needs-bounded-conclusion",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "limits": [
+          "exchange"
+        ]
+      },
+      "status": "partial",
+      "criterion": "limits",
+      "criterionStatus": "partial"
+    },
+    {
+      "id": "residual-sucrose-not-proven",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "limits": [
+          "not_unique",
+          "exchange",
+          "exchange_certain"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "limits",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "death-not-certain",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "limits": [
+          "not_unique",
+          "damage",
+          "death_certain"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "limits",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "not-all-onions",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "limits": [
+          "not_unique",
+          "time",
+          "all_cells"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "limits",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "water-mechanism-too-vague",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "mechanism": [
+          "water_only"
+        ]
+      },
+      "status": "partial",
+      "criterion": "mechanism",
+      "criterionStatus": "partial"
+    },
+    {
+      "id": "no-active-water-pump",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "mechanism": [
+          "active_water"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "mechanism",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "pressure-cannot-be-ignored",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "mechanism": [
+          "concentration_always"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "mechanism",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "wall-is-not-collapsing",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "mechanism": [
+          "wall_collapse"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "mechanism",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "unknown-hypothesis-not-red",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "hypothesis": [
+          "change_unspecified"
+        ]
+      },
+      "status": "partial",
+      "criterion": "hypothesis",
+      "criterionStatus": "partial"
+    },
+    {
+      "id": "uncertain-answer-not-red",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "nextCheck": [
+          "unsure"
+        ]
+      },
+      "status": "clarify",
+      "criterion": "nextCheck",
+      "criterionStatus": "clarify"
+    },
+    {
+      "id": "correct-parts-do-not-hide-contradiction",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "control": [
+          "water",
+          "handling",
+          "times",
+          "fresh",
+          "none"
+        ],
+        "limits": []
+      },
+      "status": "incorrect",
+      "criterion": "control",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "unanswered-required-part",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "independent": []
+      },
+      "status": "partial",
+      "criterion": "independent",
+      "criterionStatus": "empty"
+    },
+    {
+      "id": "observe-before-inferring",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "observation": [
+          "death_seen"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "observation",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "recovery-case-is-not-uncertainty-only",
+      "scenario": "recovery",
+      "base": "complete",
+      "changes": {
+        "observation": [
+          "within_uncertainty"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "observation",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "limited-case-does-not-prove-increase",
+      "scenario": "limited",
+      "base": "complete",
+      "changes": {
+        "observation": [
+          "volume_rises"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "observation",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "limited-case-no-clear-uptake-finding",
+      "scenario": "limited",
+      "base": "complete",
+      "changes": {
+        "interpretation": [
+          "recovery_compatible"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "interpretation",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "recovery-case-not-absence",
+      "scenario": "recovery",
+      "base": "complete",
+      "changes": {
+        "interpretation": [
+          "no_clear_recovery"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "interpretation",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "declaring-death-is-not-further-test",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "nextCheck": [
+          "declare_dead"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "nextCheck",
+      "criterionStatus": "incorrect"
+    },
+    {
+      "id": "only-recovered-fields-is-selection-bias",
+      "scenario": "both",
+      "base": "complete",
+      "changes": {
+        "nextCheck": [
+          "select_recovered"
+        ]
+      },
+      "status": "incorrect",
+      "criterion": "nextCheck",
+      "criterionStatus": "incorrect"
+    }
+  ]
+}

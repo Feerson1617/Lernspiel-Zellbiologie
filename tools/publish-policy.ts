@@ -20,7 +20,7 @@ export function assertDistFiles(files: readonly string[], patterns: readonly str
  * The initial entry and all other files retain the previous contract barrier. */
 export function assertPublicBundleText(path: string, source: string): void {
   const forbidden = /sourceMappingURL|reference-fixtures|model-vectors|spec\/tasks|naming-input\/1\.0\.0|naming-term|Interne Benennungsprobe|m602-cued-cases|p02c-cases|INTERNE P02c-BEDIENPROBE/;
-  const assessmentContract = /m602-response\/1\.0\.0|m602-cued-relations\/1\.0\.0|m603-causal-map\/\d+\.\d+\.\d+/;
+  const assessmentContract = /m602-response\/1\.0\.0|m602-cued-relations\/1\.0\.0|m603-causal-map\/\d+\.\d+\.\d+|m604-controlled-investigation\/\d+\.\d+\.\d+/;
   if (forbidden.test(source) || (assessmentContract.test(source) && !/^assets\/m602-entry-[A-Za-z0-9_-]{8,}\.js$/.test(path))) {
     throw new Error('The build contains source maps, editorial reference data or an unapproved assessment entry.');
   }

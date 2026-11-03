@@ -1,0 +1,523 @@
+{
+  "contractVersion": "m604-controlled-investigation/1.0.0",
+  "versions": {
+    "taskVersion": "M6.04@controlled-investigation-1",
+    "rubricVersion": "M6.04.C01-C17@investigation-1.0.0",
+    "contentVersion": "zelllabor11.m604-content/1.0.0",
+    "modelVersion": "m604-didactic-observations/1.0.0"
+  },
+  "catalogSource": "spec/tasks.json#M6.04; concept 1.0, 22.10.2026",
+  "scope": "Own static didactic onion-epidermis investigation; no simulation or practical microscopy certificate. M6.02/M6.03 contracts unchanged.",
+  "catalogRefinement": {
+    "C01": "Construct matched water-against-water handling/time control.",
+    "C02": "Interpret this case, never guarantee immediate complete recovery.",
+    "C03": "No unique cause from absent recovery; at least one conditional alternative.",
+    "C04-C17": "Explicit additional planning, evidence-type and mechanism criteria authorized by this development request."
+  },
+  "observations": {
+    "kind": "newly authored didactic data, not laboratory measurements or calculated dynamics",
+    "cell": "Initially intact onion epidermis, without chloroplasts; later integrity is not measured.",
+    "waterLoss": "Given total water potentials including pressure: vacuole > cytosol > exterior; water permeates cell membrane and tonoplast; sucrose largely retained.",
+    "return": "Water replacement may favor uptake if exchange is sufficient, total potentials favor it, and membranes retain appropriate function. No measured final potentials or guaranteed recovery.",
+    "wall": "Comparatively stable in all supplied records; initial positive turgor qualitative, not calculated.",
+    "schedule": "Three paired preparations from one onion: initial run and two technical repetitions. Follow the same ten marked cells per field at baseline, 6 minutes after sucrose (control water), and 6 minutes after return to water. Times are chosen observation intervals, not universal reaction times. No population-level biological independence claimed.",
+    "measurement": "Mean protoplast volume estimated from hypothetical image stacks, relative to that field at baseline = 100%. Didactic uncertainty ±4 percentage points per estimate. Detachment is the count of ten marked cells with visible separation. Vakuole is qualitatively smaller after treatment. These are supplied observations, not newly simulated measurements.",
+    "recovery": {
+      "treatmentVolume": [
+        [
+          100,
+          61,
+          89
+        ],
+        [
+          100,
+          64,
+          91
+        ],
+        [
+          100,
+          60,
+          86
+        ]
+      ],
+      "treatmentDetached": [
+        [
+          0,
+          8,
+          2
+        ],
+        [
+          0,
+          7,
+          1
+        ],
+        [
+          0,
+          8,
+          3
+        ]
+      ],
+      "controlVolume": [
+        [
+          100,
+          99,
+          100
+        ],
+        [
+          100,
+          101,
+          100
+        ],
+        [
+          100,
+          100,
+          99
+        ]
+      ],
+      "controlDetached": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "finding": "Clear increase after return, still below baseline. Compatible with renewed uptake and partial recovery, not full immediate recovery or proof of every cell function."
+    },
+    "limited": {
+      "treatmentVolume": [
+        [
+          100,
+          58,
+          60
+        ],
+        [
+          100,
+          63,
+          65
+        ],
+        [
+          100,
+          60,
+          61
+        ]
+      ],
+      "treatmentDetached": [
+        [
+          0,
+          8,
+          8
+        ],
+        [
+          0,
+          7,
+          7
+        ],
+        [
+          0,
+          8,
+          8
+        ]
+      ],
+      "controlVolume": [
+        [
+          100,
+          100,
+          99
+        ],
+        [
+          100,
+          99,
+          100
+        ],
+        [
+          100,
+          101,
+          100
+        ]
+      ],
+      "controlDetached": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "finding": "Return differences remain within stated uncertainty; no clear recovery at this observation point. Residual sucrose, limited observation duration, or damage are possible, unproven alternatives; no death diagnosis."
+    }
+  },
+  "answerShape": "Exact object with one dense array of stable option IDs per field. Single fields at most one; multi fields at most all defined options; duplicate IDs, unknown/extra fields, sparse arrays/accessors/prototypes rejected technically, never assessed as biological error.",
+  "fields": [
+    {
+      "id": "control",
+      "criterion": "M6.04.C01",
+      "mode": "multi",
+      "required": [
+        "water",
+        "handling",
+        "times",
+        "fresh"
+      ],
+      "completeAlternatives": [
+        [
+          "water",
+          "handling",
+          "times",
+          "fresh"
+        ]
+      ],
+      "contradictions": [
+        "none",
+        "old_stained",
+        "untouched"
+      ]
+    },
+    {
+      "id": "interpretation",
+      "criterion": "M6.04.C02",
+      "mode": "single",
+      "required": [],
+      "completeAlternatives": [
+        [
+          "recovery_compatible"
+        ],
+        [
+          "no_clear_recovery"
+        ]
+      ],
+      "contradictions": [
+        "death_proven",
+        "immediate_complete",
+        "damage_proven"
+      ]
+    },
+    {
+      "id": "limits",
+      "criterion": "M6.04.C03",
+      "mode": "multi",
+      "required": [
+        "not_unique"
+      ],
+      "completeAlternatives": [
+        [
+          "not_unique",
+          "exchange"
+        ],
+        [
+          "not_unique",
+          "time"
+        ],
+        [
+          "not_unique",
+          "damage"
+        ]
+      ],
+      "contradictions": [
+        "death_certain",
+        "exchange_certain",
+        "all_cells"
+      ]
+    },
+    {
+      "id": "hypothesis",
+      "criterion": "M6.04.C04",
+      "mode": "single",
+      "required": [],
+      "completeAlternatives": [
+        [
+          "loss_prediction"
+        ],
+        [
+          "return_prediction"
+        ]
+      ],
+      "contradictions": [
+        "already_proven"
+      ]
+    },
+    {
+      "id": "design",
+      "criterion": "M6.04.C05",
+      "mode": "single",
+      "required": [],
+      "completeAlternatives": [
+        [
+          "parallel_pairs"
+        ],
+        [
+          "staggered_pairs"
+        ]
+      ],
+      "contradictions": [
+        "unmatched_clock"
+      ]
+    },
+    {
+      "id": "independent",
+      "criterion": "M6.04.C06",
+      "mode": "single",
+      "required": [],
+      "completeAlternatives": [
+        [
+          "solution_sequence"
+        ]
+      ],
+      "contradictions": [
+        "volume_result",
+        "microscope_zoom"
+      ]
+    },
+    {
+      "id": "dependent",
+      "criterion": "M6.04.C07",
+      "mode": "single",
+      "required": [],
+      "completeAlternatives": [
+        [
+          "relative_volume"
+        ],
+        [
+          "detached_fraction"
+        ]
+      ],
+      "contradictions": [
+        "solution_sequence",
+        "temperature"
+      ]
+    },
+    {
+      "id": "constants",
+      "criterion": "M6.04.C08",
+      "mode": "multi",
+      "required": [
+        "temperature",
+        "optics",
+        "exchange_volume"
+      ],
+      "completeAlternatives": [
+        [
+          "temperature",
+          "optics",
+          "exchange_volume"
+        ]
+      ],
+      "contradictions": [
+        "same_solution",
+        "same_result"
+      ]
+    },
+    {
+      "id": "fields",
+      "criterion": "M6.04.C09",
+      "mode": "single",
+      "required": [],
+      "completeAlternatives": [
+        [
+          "same_marked"
+        ]
+      ],
+      "contradictions": [
+        "different_each_time",
+        "best_looking"
+      ]
+    },
+    {
+      "id": "repetitions",
+      "criterion": "M6.04.C10",
+      "mode": "single",
+      "required": [],
+      "completeAlternatives": [
+        [
+          "first_plus_two"
+        ]
+      ],
+      "contradictions": [
+        "one_only",
+        "three_photos"
+      ]
+    },
+    {
+      "id": "sequence",
+      "criterion": "M6.04.C11",
+      "mode": "single",
+      "required": [],
+      "completeAlternatives": [
+        [
+          "baseline_sucrose_return"
+        ]
+      ],
+      "contradictions": [
+        "return_first",
+        "no_return"
+      ]
+    },
+    {
+      "id": "observation",
+      "criterion": "M6.04.C12",
+      "mode": "single",
+      "required": [],
+      "completeAlternatives": [
+        [
+          "volume_rises"
+        ],
+        [
+          "within_uncertainty"
+        ]
+      ],
+      "contradictions": [
+        "wall_shrinks",
+        "death_seen"
+      ]
+    },
+    {
+      "id": "predictionType",
+      "criterion": "M6.04.C13",
+      "mode": "single",
+      "required": [],
+      "completeAlternatives": [
+        [
+          "prediction"
+        ]
+      ],
+      "contradictions": [
+        "observation",
+        "explanation"
+      ]
+    },
+    {
+      "id": "observationType",
+      "criterion": "M6.04.C14",
+      "mode": "single",
+      "required": [],
+      "completeAlternatives": [
+        [
+          "observation"
+        ]
+      ],
+      "contradictions": [
+        "prediction",
+        "explanation"
+      ]
+    },
+    {
+      "id": "explanationType",
+      "criterion": "M6.04.C15",
+      "mode": "single",
+      "required": [],
+      "completeAlternatives": [
+        [
+          "explanation"
+        ]
+      ],
+      "contradictions": [
+        "prediction",
+        "observation"
+      ]
+    },
+    {
+      "id": "mechanism",
+      "criterion": "M6.04.C16",
+      "mode": "single",
+      "required": [],
+      "completeAlternatives": [
+        [
+          "potential_membranes"
+        ]
+      ],
+      "contradictions": [
+        "active_water",
+        "wall_collapse",
+        "concentration_always"
+      ]
+    },
+    {
+      "id": "nextCheck",
+      "criterion": "M6.04.C17",
+      "mode": "single",
+      "required": [],
+      "completeAlternatives": [
+        [
+          "check_exchange"
+        ],
+        [
+          "extend_observation"
+        ],
+        [
+          "check_integrity"
+        ]
+      ],
+      "contradictions": [
+        "declare_dead",
+        "select_recovered"
+      ]
+    }
+  ],
+  "caseSpecific": {
+    "interpretation": {
+      "recovery": {
+        "recovery_compatible": "correct",
+        "no_clear_recovery": "incorrect"
+      },
+      "limited": {
+        "no_clear_recovery": "correct",
+        "recovery_compatible": "incorrect"
+      }
+    },
+    "observation": {
+      "recovery": {
+        "volume_rises": "correct",
+        "within_uncertainty": "incorrect"
+      },
+      "limited": {
+        "within_uncertainty": "correct",
+        "volume_rises": "incorrect"
+      }
+    }
+  },
+  "incompleteOptions": {
+    "control": [
+      "water_only"
+    ],
+    "hypothesis": [
+      "change_unspecified"
+    ],
+    "constants": [
+      "temperature_only"
+    ],
+    "repetitions": [
+      "more_unspecified"
+    ],
+    "sequence": [
+      "treatment_only"
+    ],
+    "mechanism": [
+      "water_only"
+    ]
+  },
+  "uncertainOption": "unsure is allowed in every field, produces clarify; never a biological contradiction.",
+  "aggregation": "incorrect if any proved contradiction; otherwise clarify if any unsure; otherwise empty if all arrays empty; otherwise correct only if every criterion complete; otherwise partial. Correct selected parts stay visible, no total numerical grade.",
+  "hypothesisPolicy": "Judge bounded testability and justified conditions, not whether a later finding supports the prediction. The return prediction remains a valid hypothesis in the limited-recovery case. Own hypothesis text is outside this answer and not evaluated.",
+  "limitsPolicy": "not_unique plus at least one of exchange/time/damage; any additional correct alternatives accepted. Each is conditional, no cause inferred from failure alone.",
+  "evidence": "Pure deterministic checker returns versioned context binding and selected option IDs with reasons. Session receipt only for current actual result identity, revision, context and verified assistance history after data reveal; changes invalidate; no extension of eight persisted metadata.",
+  "freeText": "Own prediction and complete written plan are outside the assessed answer; volatile DOM/controller memory only, never serialized into result, storage or telemetry.",
+  "writtenTask": "Plane eine Untersuchung, mit der du die aufgestellte Hypothese überprüfen kannst. Begründe deine Kontrolle, die Messgrößen und die Aussagekraft deiner Ergebnisse."
+}

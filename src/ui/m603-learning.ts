@@ -24,6 +24,22 @@ export function mountM603Learning(root: HTMLElement, model: M603LearningControll
     link.href = `#${target.id}`;
     link.addEventListener('click', event => { event.preventDefault(); target.focus({ preventScroll: true }); target.scrollIntoView({ block: 'start' }); });
   }
+  const narrowText = matchMedia('(max-width: 360px)');
+  const scientificTexts = new Map<HTMLElement, string>();
+  function scientificText(element: HTMLElement, text: string) {
+    scientificTexts.set(element, text);
+    // Explicit morphological divisions, only where a full compound cannot fit.
+    // U+00AD is discretionary: no smaller font or shortened biological wording.
+    element.textContent = narrowText.matches ? text.replaceAll('Protoplastvolumen', 'Protoplast\u00advolumen')
+      .replaceAll('Volumenabnahme', 'Volumen\u00adabnahme').replaceAll('Turgorverlust', 'Turgor\u00adverlust')
+      .replaceAll('Wasserverlust', 'Wasser\u00adverlust') : text;
+    if (text.includes('/')) {
+      const [first, second] = element.textContent!.split('/');
+      element.replaceChildren(document.createTextNode(first! + '/'), document.createElement('wbr'), document.createTextNode(second!));
+    }
+  }
+  function reflowWords() { for (const [element, text] of scientificTexts) scientificText(element, text); }
+  narrowText.addEventListener('change', reflowWords);
   const skip = node('a', 'Zum Kausalnetz', root, 'skip-link');
   const header = node('header', '', root, 'site-header learning-header');
   const home = node('a', 'Zelllabor 11', header, 'brand'); home.href = '#/';
@@ -36,6 +52,7 @@ export function mountM603Learning(root: HTMLElement, model: M603LearningControll
   node('p', 'Eine begrenzte Erklärungsaufgabe. M6.02 und M6.03 sind noch nicht die vollständige Mission M6.', intro, 'learning-note');
   const nav = node('nav', '', intro, 'learning-steps'); nav.setAttribute('aria-label', 'Dein Lernweg');
   const back = node('a', 'Vorherige Übung: Wasserhaushalt', nav); back.href = '#/m602';
+  node('a', 'Weitere Übung: Kontrolle und Rücktausch', nav).href = '#/m604';
   const toMaterial = node('a', '1 Material', nav), toNet = node('a', '2 Netz bauen', nav), toHelp = node('a', 'Hilfen', nav), toWriting = node('a', '3 Eigene Erklärung', nav);
   const live = node('p', '', main, 'visually-hidden'); live.setAttribute('role', 'status'); live.setAttribute('aria-atomic', 'true');
 
@@ -72,10 +89,7 @@ export function mountM603Learning(root: HTMLElement, model: M603LearningControll
     button.id = `causal-node-${id}`;
     node('span', id, button, 'causal-letter');
     const statement = node('span', '', button);
-    // An explicit opportunity at the slash keeps both compound words whole.
-    const [first, second] = M603_NODE_TEXT[id].split('/');
-    statement.append(document.createTextNode(first! + (second ? '/' : '')));
-    if (second) { statement.append(document.createElement('wbr'), document.createTextNode(second)); }
+    scientificText(statement, M603_NODE_TEXT[id]);
     button.setAttribute('aria-label', `${id}: ${M603_NODE_TEXT[id]} – als Start oder Ziel wählen`);
     nodeButtons[id] = button;
   }
@@ -85,6 +99,30 @@ export function mountM603Learning(root: HTMLElement, model: M603LearningControll
   const mapNodes = {} as Record<M603Node, HTMLSpanElement>;
   for (const id of M603_NODES) {
     const anchor = node('span', id, mapGrid, `causal-map-node node-${id}`); anchor.dataset['mapNode'] = id; mapNodes[id] = anchor;
+  }
+  const denseMap = node('div', '', board, 'causal-dense-map'); denseMap.hidden = true; denseMap.setAttribute('aria-hidden', 'true');
+  const denseAnchors = new Map<string, { from: HTMLElement; to: HTMLElement; indices: number[] }>();
+  const edgeKey = (edge: M603Edge) => `${edge.from}:${edge.to}:${edge.relation}`;
+  function renderDenseMap() {
+    denseMap.replaceChildren(); denseAnchors.clear();
+    const edges = model.getState().answer.edges, dense = edges.length > 7;
+    board.dataset['dense'] = String(dense); denseMap.hidden = !dense;
+    if (!dense) return;
+    node('p', 'Dichtes Netz: gleiche Richtung und Bedeutung werden zusammen dargestellt. Die Nummern nennen alle zugehörigen Listenpositionen; jede Verbindung bleibt einzeln bearbeitbar.', denseMap, 'learning-note');
+    const groups = new Map<string, { edge: M603Edge; indices: number[] }>();
+    edges.forEach((edge, index) => {
+      const key = edgeKey(edge), group = groups.get(key) ?? { edge, indices: [] };
+      group.indices.push(index + 1); groups.set(key, group);
+    });
+    for (const [key, { edge, indices }] of groups) {
+      const row = node('div', '', denseMap, 'causal-dense-group');
+      Object.assign(row.dataset, { denseGroup: key, indices: indices.join(','), from: edge.from, to: edge.to, relation: edge.relation });
+      const track = node('div', '', row, 'causal-dense-track');
+      const start = node('span', edge.from, track, 'causal-map-node'), end = node('span', edge.to, track, 'causal-map-node');
+      denseAnchors.set(key, { from: start, to: end, indices });
+      node('p', `${indices.length}× · Verbindungen ${indices.join(', ')}`, row, 'causal-dense-indices');
+      scientificText(node('p', '', row, 'causal-edge-text'), M603_RELATION_TEXT[edge.relation]);
+    }
   }
   node('figcaption', 'Pfeilspitzen zeigen die Richtung. Die Nummern gehören zu den vollständigen, bearbeitbaren Verbindungen in der Liste. Bei wenig Platz zeigt die Zeichnung dieselben Aussagen als A–D. Die Position oder Reihenfolge der Textkarten hat keine zeitliche oder fachliche Bedeutung.', figure);
   const layout = node('button', 'Karten anders anordnen', graphColumn); layout.type = 'button';
@@ -215,15 +253,18 @@ export function mountM603Learning(root: HTMLElement, model: M603LearningControll
     // Capture every coordinate before changing SVG overflow. WebKit can adjust
     // the page scroll position when an existing projection is replaced.
     const rect = board.getBoundingClientRect();
-    const geometry = new Map(M603_NODES.map(id => {
+    function localRect(anchor: HTMLElement) {
       // Offsets are local to the board, independent of viewport scroll. Include
       // intervening offset parents for the compact map's nested HTML anchors.
-      const anchor = anchors[id]; let x = 0, y = 0;
+      let x = 0, y = 0;
       for (let part: HTMLElement | null = anchor; part && part !== board; part = part.offsetParent as HTMLElement | null) {
         x += part.offsetLeft; y += part.offsetTop;
       }
-      return [id, new DOMRect(rect.x + x, rect.y + y, anchor.offsetWidth, anchor.offsetHeight)] as const;
-    }));
+      return new DOMRect(rect.x + x, rect.y + y, anchor.offsetWidth, anchor.offsetHeight);
+    }
+    const geometry = new Map(M603_NODES.map(id => [id, localRect(anchors[id])] as const));
+    const denseGeometry = new Map([...denseAnchors].map(([key, group]) => [key,
+      { from: localRect(group.from), to: localRect(group.to), indices: group.indices }] as const));
     const cards = [...geometry.values()];
     if (!rect.width || !rect.height) return;
     const projection = document.createDocumentFragment();
@@ -235,11 +276,26 @@ export function mountM603Learning(root: HTMLElement, model: M603LearningControll
     // Paint every connection (including markers) before any opaque badge.
     const connections = element('g', { 'data-layer': 'connections' });
     const numbers = element('g', { 'data-layer': 'numbers' });
-    board.dataset['presentation'] = compact ? 'compact' : 'cards';
+    board.dataset['presentation'] = current.answer.edges.length > 7 ? 'dense' : compact ? 'compact' : 'cards';
     const radius = Math.max(12, labelFont * .85), separation = radius * 2 + 1;
     const groups = new Map<string, number>(), labels: { x: number; y: number }[] = [];
     let diagonalCount = 0;
     current.answer.edges.forEach((edge, index) => {
+      const dense = denseGeometry.get(edgeKey(edge));
+      if (dense) {
+        const x1 = dense.from.right + 4 - rect.x, x2 = dense.to.left - 4 - rect.x;
+        const y = dense.from.y + dense.from.height / 2 - rect.y;
+        // Duplicate answer records share exactly one visual track, but retain
+        // their original per-record projection and evaluation identities.
+        const path = element('path', { d: `M ${x1} ${y} L ${x2} ${y}`, fill: 'none', stroke: '#233d3b', 'stroke-width': 2, 'marker-end': 'url(#causal-arrow-tip)' }, connections);
+        Object.assign(path.dataset, { from: edge.from, to: edge.to, relation: edge.relation, edgeIndex: String(index) });
+        if (dense.indices[0] === index + 1) {
+          const x = (x1 + x2) / 2, badge = element('g', { 'data-edge-index': index }, numbers);
+          element('circle', { cx: x, cy: y, r: radius, fill: '#fffef9', stroke: '#233d3b' }, badge);
+          element('text', { x, y: y + labelFont / 3, 'text-anchor': 'middle', 'font-size': labelFont, fill: '#233d3b' }, badge).textContent = String(index + 1);
+        }
+        return;
+      }
       const a = geometry.get(edge.from)!, b = geometry.get(edge.to)!;
       const ax = a.x + a.width / 2 - rect.x, ay = a.y + a.height / 2 - rect.y, bx = b.x + b.width / 2 - rect.x, by = b.y + b.height / 2 - rect.y;
       const dx = bx - ax, dy = by - ay, length = Math.hypot(dx, dy);
@@ -268,7 +324,8 @@ export function mountM603Learning(root: HTMLElement, model: M603LearningControll
       const path = element('path', { d: pathData, fill: 'none', stroke: '#233d3b', 'stroke-width': 2, 'marker-end': 'url(#causal-arrow-tip)' }, connections);
       path.dataset['from'] = edge.from; path.dataset['to'] = edge.to; path.dataset['relation'] = edge.relation;
       const candidates = [.5, .2, .8, .35, .65, .15, .85, .25, .75].map(pointAt);
-      const point = candidates.find(p => labels.every(label => Math.hypot(p.x - label.x, p.y - label.y) >= separation)
+      const point = candidates.find(p => p.x >= radius + 2 && p.y >= radius + 2 && p.x <= rect.width - radius - 2 && p.y <= rect.height - radius - 2
+        && labels.every(label => Math.hypot(p.x - label.x, p.y - label.y) >= separation)
         && cards.every(card => {
           const x = p.x + rect.x, y = p.y + rect.y;
           return Math.hypot(x - Math.max(card.left, Math.min(card.right, x)), y - Math.max(card.top, Math.min(card.bottom, y))) >= radius + 1;
@@ -287,11 +344,15 @@ export function mountM603Learning(root: HTMLElement, model: M603LearningControll
     const presentation = STATUS_PRESENTATION[value.status], p = node('p', `${presentation.symbol} ${presentation.label}: ${value.text}`, parent, 'causal-item-feedback'); p.dataset['color'] = presentation.color; p.dataset['status'] = value.status;
   }
   function update(message = '') {
+    // Remove detached list/overview nodes from the narrow-text registry.
+    for (const element of scientificTexts.keys()) if (!board.contains(element)) scientificTexts.delete(element);
+    for (const element of denseMap.querySelectorAll<HTMLElement>('.causal-edge-text')) scientificTexts.delete(element);
     const current = model.getState(); board.dataset['layout'] = current.layout; updateNodeSelection(); list.replaceChildren();
+    renderDenseMap();
     if (!current.answer.edges.length) node('li', 'Noch keine Verbindung. Wähle Start, Ziel und Bedeutung.', list, 'causal-empty');
     current.answer.edges.forEach((edge, index) => {
       const row = node('li', '', list); row.dataset['edgeIndex'] = String(index);
-      node('p', `${edge.from} → ${edge.to}: ${M603_RELATION_TEXT[edge.relation]}`, row, 'causal-edge-text');
+      scientificText(node('p', '', row, 'causal-edge-text'), `${edge.from} → ${edge.to}: ${M603_RELATION_TEXT[edge.relation]}`);
       if (current.outcome && !current.stale && current.outcome.edges[index]) renderItem(row, current.outcome.edges[index]!);
       const actions = node('div', '', row, 'causal-edge-actions'); const edit = node('button', 'Bearbeiten', actions), remove = node('button', 'Entfernen', actions);
       edit.type = remove.type = 'button'; edit.setAttribute('aria-label', `Verbindung ${index + 1} bearbeiten`); remove.setAttribute('aria-label', `Verbindung ${index + 1} entfernen`);
@@ -344,7 +405,7 @@ export function mountM603Learning(root: HTMLElement, model: M603LearningControll
     if (message) live.textContent = message;
     drawGraph();
   }
-  function destroy() { observer.disconnect(); }
+  function destroy() { observer.disconnect(); narrowText.removeEventListener('change', reflowWords); }
   update(); requestAnimationFrame(drawGraph);
   return Object.freeze({ destroy });
 }
