@@ -15,7 +15,14 @@ export function mountM1001Learning(root: HTMLElement, model: M1001Learning): voi
   node('h2','1. Material verstehen',main);
   node('p','Fünf ausdrücklich didaktische Datensätze, kein realer Versuch. Die Außenkonzentrationen gelten für einen im betrachteten Zeitfenster nicht permeierenden Stoff.',main);
   node('p','Relative Massenänderung = 100 × (Endmasse − Anfangsmasse) / Anfangsmasse. Die Anfangsmasse ist die Bezugsgröße: Sie entspricht dem Ausgangswert von 100 %.',main);
-  const scroll=node('div','',main,'mass-table'); scroll.tabIndex=0; scroll.setAttribute('role','region'); scroll.setAttribute('aria-label','Massentabelle, bei Bedarf seitlich scrollen'); const table=node('table','',scroll); node('caption','Material: Massen vor und nach der Behandlung',table);
+  const scroll=node('div','',main,'mass-table'); scroll.tabIndex=0; scroll.setAttribute('role','region'); scroll.setAttribute('aria-label','Massentabelle, bei Bedarf seitlich scrollen');
+  // Native horizontal arrow scrolling differs on touch-enabled WebKit.
+  scroll.addEventListener('keydown',event=>{
+    if(event.target===scroll && (event.key==='ArrowRight' || event.key==='ArrowLeft')) {
+      event.preventDefault(); scroll.scrollLeft += event.key==='ArrowRight' ? 64 : -64;
+    }
+  });
+  const table=node('table','',scroll); node('caption','Material: Massen vor und nach der Behandlung',table);
   const head=node('tr','',node('thead','',table)); for(const t of ['Ansatz','Außenkonzentration (mol/L)','Anfangsmasse (g)','Endmasse (g)']) node('th',t,head).scope='col';
   const tbody=node('tbody','',table);
   M1001_ROWS.forEach((r,i)=>{ const tr=node('tr','',tbody); node('th',String(i+1),tr).scope='row'; for(const t of [r.concentration,r.initial,r.final]) node('td',t,tr); });
