@@ -34,5 +34,8 @@ test('M10.01 keyboard, touch, large text and narrow layout',async({page},testInf
  await expect(page.locator('#mass-feedback-c0')).toHaveAttribute('data-status','correct');
  await page.addStyleTag({content:'html {font-size:200% !important;}'});
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+ const table=page.getByRole('region',{name:'Massentabelle, bei Bedarf seitlich scrollen'});
+ await table.focus();await expect(table).toBeFocused();
+ if(await table.evaluate(e=>e.scrollWidth>e.clientWidth)) { await page.keyboard.press('ArrowRight');await expect.poll(()=>table.evaluate(e=>e.scrollLeft)).toBeGreaterThan(0); }
  await page.screenshot({path:testInfo.outputPath('m1001-large-text.png'),fullPage:true});
 });
