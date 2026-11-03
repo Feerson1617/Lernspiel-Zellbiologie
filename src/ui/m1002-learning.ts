@@ -12,10 +12,13 @@ export function mountM1002Learning(root:HTMLElement,model:M1002Learning) {
   function node<K extends keyof HTMLElementTagNameMap>(tag:K,text='',parent:HTMLElement=root,cls='') {const n=document.createElement(tag);n.textContent=text;n.className=cls;parent.append(n);return n;}
   function button(text:string,parent:HTMLElement,fn:()=>void){const n=node('button',text,parent);n.type='button';n.addEventListener('click',fn);return n;}
   function label(text:string,id:string,parent:HTMLElement){const l=node('label',text,parent);l.htmlFor=id;}
-  function select(text:string,id:string,options:readonly (readonly [string,string])[],parent:HTMLElement,change:(value:string)=>void) {
-    label(text,id,parent);const s=node('select','',parent);s.id=id;
-    for(const [value,caption] of [['','Bitte wählen'],...options]){const o=node('option',caption,s);o.value=value!;}
-    s.addEventListener('change',()=>{change(s.value);refresh();});return s;
+  function choice(text:string,id:string,options:readonly (readonly [string,string])[],parent:HTMLElement,change:(value:string)=>void) {
+    const group=node('fieldset','',parent,'axis-choice');group.id=id;node('legend',text,group);
+    const radios=options.map(([value,caption],i)=>{
+      const l=node('label','',group),r=node('input','',l);r.type='radio';r.name=id;r.id=`${id}-${i}`;r.value=value;node('span',caption,l);
+      r.addEventListener('change',()=>{if(r.checked){change(r.value);refresh();}});return r;
+    });
+    return {setValue:(value:string)=>{for(const r of radios)r.checked=r.value===value;},focus:()=>radios[0]!.focus()};
   }
   function input(text:string,id:string,parent:HTMLElement,oninput:(value:string)=>void){label(text,id,parent);const i=node('input','',parent);i.id=id;i.type='text';i.autocomplete='off';i.spellcheck=false;i.addEventListener('input',()=>{oninput(i.value);refresh();});return i;}
   function present(p:HTMLElement,d:Decision){const v=STATUS_PRESENTATION[d.status];p.dataset['status']=d.status;p.dataset['color']=v.color;p.textContent=`${v.symbol} ${v.label}. ${d.message}`;}
@@ -31,11 +34,11 @@ export function mountM1002Learning(root:HTMLElement,model:M1002Learning) {
   node('h2','2. Achsen und lineare Skalen festlegen',main);
   node('p','Wähle Größen und Einheiten selbst. Beschrifte je Achse drei gleich weit auseinanderliegende Marken. Gleiche Abstände brauchen gleiche Zahlenschritte. Die Skala muss null und alle Datenwerte einschließen. Klar beschriftete umgekehrte Richtungen sind ebenso zulässig.',main);
   const axisGrid=node('div','',main,'axis-grid');
-  const axisControls={} as Record<'x'|'y',{quantity:HTMLSelectElement;unit:HTMLSelectElement;ticks:HTMLInputElement[];feedback:HTMLElement}>;
+  const axisControls={} as Record<'x'|'y',{quantity:ReturnType<typeof choice>;unit:ReturnType<typeof choice>;ticks:HTMLInputElement[];feedback:HTMLElement}>;
   for(const dimension of ['x','y'] as const) {
     const box=node('fieldset','',axisGrid);node('legend',`${dimension}-Achse`,box);
-    const quantity=select(`${dimension}-Achse · Größe`,`diagram-${dimension}-quantity`,quantities,box,v=>model.setAxis(dimension,{quantity:v}));
-    const unit=select(`${dimension}-Achse · Einheit`,`diagram-${dimension}-unit`,units.map(u=>[u,u] as const),box,v=>model.setAxis(dimension,{unit:v}));
+    const quantity=choice(`${dimension}-Achse · Größe`,`diagram-${dimension}-quantity`,quantities,box,v=>model.setAxis(dimension,{quantity:v}));
+    const unit=choice(`${dimension}-Achse · Einheit`,`diagram-${dimension}-unit`,units.map(u=>[u,u] as const),box,v=>model.setAxis(dimension,{unit:v}));
     const tickGrid=node('div','',box,'tick-grid');
     const ticks=(dimension==='x'?['links','Mitte','rechts']:['unten','Mitte','oben']).map((name,i)=>{
       const holder=node('div','',tickGrid);
@@ -101,7 +104,7 @@ export function mountM1002Learning(root:HTMLElement,model:M1002Learning) {
   node('p','Die Punkte werden nicht durch eine Musterkurve verbunden. Das Diagramm belegt weder zusätzliche Messwerte zwischen den Punkten noch ein allgemeines biologisches Gesetz. Ein grünes Diagramm bestätigt nur die geprüfte Diagrammleistung, nicht deinen Erklärungstext.',main);
   const support=node('p','',main,'learning-note');support.id='diagram-support';node('p','Koordinaten und Texte bleiben nur in dieser Sitzung. Es gibt keine dauerhafte Rohantwortspeicherung und keine automatische Übertragung. Nach Neuladen ist die frühere Hilfehistorie ungesichert.',main,'learning-note');
   button('Neue Bearbeitung beginnen',main,()=>{model.reset();selectedId=null;helpContent.replaceChildren();syncInputs();renderRows();refresh();axisControls.x.quantity.focus();});
-  function syncInputs(){const s=model.getState();for(const dim of ['x','y'] as const){const a=s.answer[dim==='x'?'xAxis':'yAxis'],c=axisControls[dim];c.quantity.value=a.quantity;c.unit.value=a.unit;c.ticks.forEach((t,i)=>{t.value=a.ticks[i]!;});}writing.value=s.writing;}
+  function syncInputs(){const s=model.getState();for(const dim of ['x','y'] as const){const a=s.answer[dim==='x'?'xAxis':'yAxis'],c=axisControls[dim];c.quantity.setValue(a.quantity);c.unit.setValue(a.unit);c.ticks.forEach((t,i)=>{t.value=a.ticks[i]!;});}writing.value=s.writing;}
   function axisLabel(a:DiagramAxis){return `${quantities.find(q=>q[0]===a.quantity)?.[1]??'Größe noch offen'} (${a.unit||'Einheit noch offen'})`;}
   function refresh(){const s=model.getState(),r=s.outcome,stale=s.stale;
     xLabel.textContent=`x-Achse: ${axisLabel(s.answer.xAxis)}`;yLabel.textContent=`y-Achse: ${axisLabel(s.answer.yAxis)}`;

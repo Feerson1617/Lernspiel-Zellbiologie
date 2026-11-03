@@ -3,8 +3,9 @@ import type { Page } from '@playwright/test';
 const pairs=[['0','8'],['0.100','3'],['0.2','-1'],['0.3','-5'],['0.4','-8']];
 async function axes(page:Page,reverse=false,native=false){
  for(const [id,value,steps] of [['x-quantity','concentration',1],['x-unit','mol/L',1],['y-quantity','mass_change',2],['y-unit','%',3]] as const){
-  const s=page.locator(`#diagram-${id}`);
-  if(native){await s.focus();await page.keyboard.press('Space');for(let i=0;i<steps;i++)await page.keyboard.press('ArrowDown');await page.keyboard.press('Enter');await expect(s).toHaveValue(value);}else await s.selectOption(value);
+  const group=page.locator(`#diagram-${id}`),radios=group.getByRole('radio');
+  if(native){await radios.first().focus();await page.keyboard.press('Space');for(let i=1;i<steps;i++)await page.keyboard.press('ArrowDown');await page.keyboard.press('Space');}else await radios.nth(steps-1).check();
+  await expect(group.locator('input:checked')).toHaveValue(value);
  }
  const values=reverse?['0.4','0.2','0','10','0','-10']:['0','0.2','0.4','-10','0','10'];
  for(const [i,id] of ['x-tick-0','x-tick-1','x-tick-2','y-tick-0','y-tick-1','y-tick-2'].entries()){
@@ -37,7 +38,7 @@ test('M10.02 complete native keyboard learning path and private writing',async({
  await page.goto('');await page.evaluate(()=>localStorage.setItem('foreign-test-sentinel','keep'));
  await page.getByRole('link',{name:'Ein Diagramm selbst erstellen',exact:true}).focus();await page.keyboard.press('Enter');
  await expect(page.getByRole('heading',{name:'Ein Diagramm selbst erstellen',exact:true})).toBeFocused();
- await expect(page.getByRole('img',{name:'Mein Diagramm',exact:true}).locator('circle')).toHaveCount(0);await expect(page.locator('#diagram-x-quantity')).toHaveValue('');
+ await expect(page.getByRole('img',{name:'Mein Diagramm',exact:true}).locator('circle')).toHaveCount(0);await expect(page.locator('.axis-choice input:checked')).toHaveCount(0);
  await axes(page,false,true);await addPairs(page,true);
  await page.getByRole('button',{name:'Diagramm überprüfen',exact:true}).focus();await page.keyboard.press('Enter');
  await expect(page.locator('#diagram-summary')).toHaveAttribute('data-status','correct');await expect(page.locator('#diagram-summary')).toBeFocused();
@@ -81,7 +82,7 @@ test('M10.02 specific errors, aid provenance and separate comparison solution',a
  await page.getByRole('button',{name:'Vergleichsdiagramm ansehen',exact:true}).click();await expect(page.getByRole('img',{name:'Ausdrücklich geöffnetes Vergleichsdiagramm'}).locator('circle')).toHaveCount(5);
  await expect(page.getByRole('img',{name:'Mein Diagramm',exact:true}).locator('circle')).toHaveCount(5);
  await page.getByRole('button',{name:'Diagramm überprüfen',exact:true}).click();await expect(page.getByText('Lösung angesehen.',{exact:false})).toBeVisible();
- await page.getByRole('button',{name:'Neue Bearbeitung beginnen'}).click();await expect(page.locator('#diagram-x-quantity')).toBeFocused();await expect(page.getByRole('img',{name:'Mein Diagramm',exact:true}).locator('circle')).toHaveCount(0);await expect(page.getByText('Lösung angesehen.',{exact:false})).toBeVisible();
+ await page.getByRole('button',{name:'Neue Bearbeitung beginnen'}).click();await expect(page.locator('#diagram-x-quantity').getByRole('radio').first()).toBeFocused();await expect(page.locator('.axis-choice input:checked')).toHaveCount(0);await expect(page.getByRole('img',{name:'Mein Diagramm',exact:true}).locator('circle')).toHaveCount(0);await expect(page.getByText('Lösung angesehen.',{exact:false})).toBeVisible();
 });
 test('M10.02 narrow 320/390 layouts and large text retain focus and complete coordinate controls',async({page},info)=>{
  await page.goto('#/m1002');await axes(page);await page.getByRole('button',{name:'Koordinatenzeile hinzufügen'}).click();
