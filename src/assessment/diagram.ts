@@ -74,15 +74,18 @@ export function assessDiagram(input: unknown) {
   const points=answer.points.map(p=>{
     const px=coordinate(p.x,'mol_per_litre'),py=coordinate(p.y,'percent');
     const status=combineStatuses([px.decision.status,py.decision.status]);
-    if(status!=='correct')return {...result(status==='empty'?'partial':status,status==='empty'||status==='partial'?'Ergänze beide Koordinaten dieses Punktes.':(px.decision.status===status?px:py).decision.message),row:-1};
+    if(status!=='correct')return {...result(status,status==='empty'||status==='partial'?'Ergänze beide Koordinaten dieses Punktes.':(px.decision.status===status?px:py).decision.message),row:-1};
     const row=M1002_POINTS.findIndex(r=>evaluateNumeric(p.x,{expected:r.x,tolerance:'0.005',unit:'mol_per_litre',grammar}).status==='correct' && evaluateNumeric(p.y,{expected:r.y,tolerance:'0.2',unit:'percent',grammar}).status==='correct');
     return {...result(row<0?'incorrect':'correct',row<0?'Dieses Koordinatenpaar stimmt mit keinem Materialpaar innerhalb ±0,005 mol/L und ±0,2 Prozentpunkten überein. Vergleiche beide Werte gemeinsam.':`Materialpaar ${row+1} ist innerhalb der Toleranzen richtig eingetragen.`),row};
   });
   for(const p of points)if(p.row>=0 && points.filter(q=>q.row===p.row).length>1)Object.assign(p,result('incorrect',`Materialpaar ${p.row+1} wurde mehrfach eingetragen. Entferne das Duplikat oder korrigiere seine Koordinaten.`));
+  // An empty editing row makes no extra data claim. Keep its fields neutral;
+  // an unfinished row alongside five valid points remains incomplete overall.
+  const enteredCount=answer.points.filter(p=>p.x.trim()!==''||p.y.trim()!=='').length;
   let ps=combineStatuses(points.map(p=>p.status));
-  if(answer.points.length>5)ps='incorrect';
-  else if(answer.points.length<5 && ps==='correct')ps='partial';
-  const pointDecision=result(ps,answer.points.length>5?'Es gibt mehr als fünf Punkte. Das Material enthält genau fünf Paare; zusätzliche Werte sind nicht belegt.':`Eingetragen: ${answer.points.length} von 5 Punkten. Jeder Materialpunkt muss genau einmal vorkommen.`);
+  if(enteredCount>5)ps='incorrect';
+  else if(enteredCount<5 && ps==='correct')ps='partial';
+  const pointDecision=result(ps,enteredCount>5?'Es gibt mehr als fünf Punkte. Das Material enthält genau fünf Paare; zusätzliche Werte sind nicht belegt.':`Eingetragen: ${enteredCount} von 5 Punkten. Jeder Materialpunkt muss genau einmal vorkommen.`);
   const criteria=Object.freeze([{id:'M10.02.C01',status:x.status,message:'x-Achse: Größe, Einheit und lineare Skalierung.'},{id:'M10.02.C02',status:y.status,message:'y-Achse: Größe, Einheit und lineare Skalierung.'},{id:'M10.02.C03',...pointDecision}]);
   return Object.freeze({status:combineStatuses(criteria.map(c=>c.status)),axes:Object.freeze({x,y}),points:Object.freeze(points.map(p=>Object.freeze(p))),criteria});
 }

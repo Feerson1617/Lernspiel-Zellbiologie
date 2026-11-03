@@ -49,3 +49,9 @@ it('keeps the preimplementation corpus and coordinate contract separate from the
  const coordinate=JSON.parse(readFileSync('contracts/coordinate-decimal-1.0.0.json','utf8'));expect(coordinate.version).toBe('coordinate-decimal/1.0.0');
  const old=JSON.parse(readFileSync('contracts/m1001-numeric-1.0.0.json','utf8'));expect(old.version).toBe('numeric-input/1.0.0');expect(cases.length).toBe(102);
 });
+it('treats empty editable rows as empty input, not as additional measured points',()=>{
+ const extraEmpty={...good,points:[...good.points,{id:'blank',x:'  ',y:''}]};
+ const r=assessDiagram(extraEmpty);expect(r.status).toBe('partial');expect(r.points[5]?.status).toBe('empty');
+ const empty=createM1002Learning({resumed:false});empty.addPoint();expect(empty.submit().status).toBe('empty');
+ expect(assessDiagram({...good,points:[...good.points,{id:'extra',x:'0.15',y:'1'}]}).status).toBe('incorrect');
+});
