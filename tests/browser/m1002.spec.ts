@@ -4,7 +4,7 @@ const pairs=[['0','8'],['0.100','3'],['0.2','-1'],['0.3','-5'],['0.4','-8']];
 async function axes(page:Page,reverse=false,native=false){
  for(const [id,value,steps] of [['x-quantity','concentration',1],['x-unit','mol/L',1],['y-quantity','mass_change',2],['y-unit','%',3]] as const){
   const s=page.locator(`#diagram-${id}`);
-  if(native){await s.focus();for(let i=0;i<steps;i++)await page.keyboard.press('ArrowDown');await page.keyboard.press('Enter');await expect(s).toHaveValue(value);}else await s.selectOption(value);
+  if(native){await s.focus();await page.keyboard.press('Space');for(let i=0;i<steps;i++)await page.keyboard.press('ArrowDown');await page.keyboard.press('Enter');await expect(s).toHaveValue(value);}else await s.selectOption(value);
  }
  const values=reverse?['0.4','0.2','0','10','0','-10']:['0','0.2','0.4','-10','0','10'];
  for(const [i,id] of ['x-tick-0','x-tick-1','x-tick-2','y-tick-0','y-tick-1','y-tick-2'].entries()){
@@ -26,7 +26,9 @@ async function plotPoint(page:Page,x:number,y:number,touch:boolean){
   const sx=90+(0.4-x)/0.4*520,sy=40+(y+10)/20*320;
   const matrix=svg.getScreenCTM()!;const initial=new DOMPoint(sx,sy).matrixTransform(matrix);
   box.scrollLeft+=initial.x-(box.getBoundingClientRect().left+box.clientWidth/2);
-  const target=new DOMPoint(sx,sy).matrixTransform(svg.getScreenCTM()!);return {x:target.x,y:target.y};
+  // Native touch dispatch may quantize CSS coordinates. Choose the nearest
+  // whole screen pixel explicitly; keep all data/pixel expectations unchanged.
+  const target=new DOMPoint(sx,sy).matrixTransform(svg.getScreenCTM()!);return {x:Math.round(target.x),y:Math.round(target.y)};
  },{x,y});
  if(touch)await page.touchscreen.tap(p.x,p.y);else await page.mouse.click(p.x,p.y);
 }
