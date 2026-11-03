@@ -16,6 +16,9 @@ geprüfte öffentliche Oberfläche in Testbrowsern, kein echter iPad-, Screenrea
 oder Lerngruppennachweis. „Berichtet“ bezeichnet die Nutzeraussage zur externen
 PR-9-Prüfung; deren vollständiger R2-Bericht liegt hier nicht vor.
 
+M10.01 ist im separaten [Nachweis](M1001.md) dokumentiert; die folgenden
+M6.04-Nachweise gelten weiterhin für diesen früheren Entwicklungsschritt.
+
 Für den endgültigen Commit gelten die ausgeführten Zählungen, Erstfehler,
 Wiederholungen und Umgebungen im mitgelieferten Nachweis
 `qa/generated/m604-r1-evidence/manifest.json`. Die neuen M6.04-Teilprüfungen sind
@@ -139,7 +142,7 @@ zerlegt; die gesamte Restmenge ist kein einzelner Implementierungsauftrag.
 | U0 | Wartung und Abnahme des aktuellen Stands | [Gezielte Sammeltest-Wartung](Teststabilitaet-M604.md), unabhängige neue M6.04-Sollfälle, R2-Grafikprüfung | Vollständige unveränderte Regression; keine falschen Grün-/Rotwerte; getrennter Gegenprüfbericht. Echte Geräte-/Nutzerproben gesondert. |
 | U1 | Z1.01–Z1.04 (4) | Zuerst Organellen- und Membrangrenzen; vorhandenen Begriffsprüfer integrieren, eine typisierte Zuordnung mit semantischen Ankern sowie begründete Auswahl ergänzen | Blatt-, Tier- und Zwiebelprofil; acht sichtbare Anker, Funktion/Struktur und Chloroplastengrenzen; öffentliche Bedienwege. |
 | U2 | M1.01–M3.04 (12) | Wasser/Ladung → amphiphile Bausteine → Membranaufbau/Passage/FRAP. Zuordnung und begrenzte Auswahl aus U1; Kausalnetz-Darstellung aus M6.03 mit jeweils eigener Fachregel | Keine Verwechslung polar/geladen, hydrophil/hydrophob oder Doppelschicht/Doppelmembran; Membranbeweglichkeit nicht mit Durchlässigkeit verwechseln. Neue Textprofile vorher gesondert validieren. |
-| U3 | Z4.02, M4.02, M4.04, M9.02, M10.01–M10.03 (7) | Gemeinsamer strikter Zahlen-/Einheitenbaustein, anschließend Diagramm mit Dateneingabealternative. Priorität auf quantitative Klausurarbeit | Dezimalkomma, Vorzeichen, Prozent/Prozentpunkte, Bilanz und zulässige Skalierung; Messung von Interpolation unterscheiden. Einzelaufgaben schalten nicht ihre gesamte Mission frei. |
+| U3 | Z4.02, M4.02, M4.04, M9.02, M10.02–M10.03 (6) | Gemeinsamer strikter Zahlen-/Einheitenbaustein, anschließend Diagramm mit Dateneingabealternative. Priorität auf quantitative Klausurarbeit | Dezimalkomma, Vorzeichen, Prozent/Prozentpunkte, Bilanz und zulässige Skalierung; Messung von Interpolation unterscheiden. Einzelaufgaben schalten nicht ihre gesamte Mission frei. |
 | U4 | M4.01, M4.03, M5.01–M5.04, M6.01 (7) | Diffusion/Osmose systematisch ergänzen; Auswahl-, Zuordnungs- und Datenbausteine nutzen. Eigenes reines Fachmodell vor dynamischer Darstellung | Zufall und Erwartung, gleiche Konzentration statt gleicher Anzahl, Druckanteil und beide Membranen; Wand/Protoplast korrekt. Eine spätere berechnete Osmosesimulation braucht das eigene Bilanz-/Numerikpaket aus B/D. |
 | U5 | M7.01–M8.04, M9.01 (9) | Integrierte Transportauswertung: Weg, antreibendes Gefälle, Energie und Membrantopologie; vorhandene Zuordnung/Teilordnung | Proteintransport nicht automatisch aktiv; ATP-Abhängigkeit kein direkter ATPase-Nachweis; elektrische und chemische Beiträge, beide Membranseiten und drei Räume. |
 | U6 | Z2.01–Z3.04 (8) | Kompartimentierung, Produktwege, Befund/Deutung und Endosymbiose; vorhandene gerichtete Beziehungen, Teilordnung und begründete Auswahl | Mitochondrium nicht als Cargo-Durchgangsstation; Evidenzbündel und Reichweite historischer Erklärungen; Organellenwissen fachlich verknüpfen. |
