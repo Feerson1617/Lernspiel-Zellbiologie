@@ -131,3 +131,12 @@ flüchtige Texte, Maus/Touch/Tastatur sowie 1440/820/390/320 px bei 100/200 % Sc
 Die Gesamtzahl wächst damit von 762 auf **810 Browserfälle je Engine**. Drei neue
 Controllerfälle ergänzen die Unitregression. Die folgende vollständige lokale
 und reguläre CI-Prüfung bleibt maßgeblich für den Übergabecommit.
+
+Erste vollständige lokale Regression am Produktstand `25c27b0`: 18.607 Unit-
+und 277 Contentfälle bestanden; Buildtests 75/76. Ein Bundle-Inhaltstest suchte
+noch die auftragsgemäß ersetzte Überschrift „Erklären im Heft“. Er prüft jetzt
+„Optionaler Zwischenvergleich“; alle Import-/Lösungsschutzassertions und die
+Fallzahl bleiben erhalten. Der Browserteil wurde wegen dieses Buildtestfehlers
+in diesem Vollaufruf nicht gestartet. Vollbericht und alle drei JSON-Berichte
+sind archiviert. Die folgende vollständige Wiederholung prüft den korrigierten
+Test; es wurde kein Produktcode und keine fachliche Erwartung dafür verändert.
