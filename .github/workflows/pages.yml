@@ -153,11 +153,14 @@ jobs:
       - run: python -m pip install -r requirements-spec.txt
       - run: npx playwright install webkit
       - run: npm run build
+        id: webkit_build
       - name: Native keyboard path preflight on macOS
         run: npx playwright test --config=playwright.webkit.config.ts tests/browser/p03b-causal.spec.ts --grep 'keyboard alone' --reporter=line
       - name: R1 paint and readability preflight on macOS
+        if: ${{ !cancelled() && steps.webkit_build.outcome == 'success' }}
         run: npx playwright test --config=playwright.webkit.config.ts tests/browser/p03b-r1.spec.ts --reporter=line
       - name: Three bounded unknown-input probes on Intel WebKit
+        if: ${{ !cancelled() && steps.webkit_build.outcome == 'success' }}
         run: |
           node tools/check-m602-browser-split.ts
           for probe in 1 2 3; do
@@ -175,6 +178,7 @@ jobs:
             qa/generated/m602-probe-*-results/**/trace.zip
             qa/generated/m602-probe-*-results/**/error-context.md
       - name: Complete WebKit suite (WEBKIT_SUITE=all)
+        if: ${{ !cancelled() && steps.webkit_build.outcome == 'success' }}
         id: webkit_all
         continue-on-error: true
         env:
