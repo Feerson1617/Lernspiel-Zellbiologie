@@ -65,6 +65,18 @@ jobs:
           path: |
             qa/generated/*.json
             test-results/**/*.png
+      - name: Retain didactic V1 evidence (synthetic data only)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: didaktik-v1-chromium
+          retention-days: 7
+          path: |
+            qa/generated/playwright.json
+            test-results/didaktik-v1-*/**/*.png
+            test-results/didaktik-v1-*/**/*.json
+            test-results/didaktik-v1-*/**/trace.zip
+            test-results/didaktik-v1-*/**/error-context.md
       - name: Retain targeted M10.02 R1 evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -207,6 +219,18 @@ jobs:
           path: |
             qa/generated/webkit-*.json
             test-results/**/*.png
+      - name: Retain didactic V1 evidence (synthetic data only)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: didaktik-v1-webkit
+          retention-days: 7
+          path: |
+            qa/generated/webkit-all.json
+            test-results/didaktik-v1-*/**/*.png
+            test-results/didaktik-v1-*/**/*.json
+            test-results/didaktik-v1-*/**/trace.zip
+            test-results/didaktik-v1-*/**/error-context.md
       - name: Retain targeted M10.02 R1 evidence
         if: always()
         uses: actions/upload-artifact@v4

@@ -10,7 +10,8 @@ test('loads the built start page without external requests, broken assets or bro
   page.on('request', (request) => requests.push(request.url()));
   await page.goto('./');
   await expect(page.getByRole('heading', { level: 1 })).toContainText('Zelllabor 11');
-  await expect(page.getByText('Noch in Entwicklung.', { exact: false })).toBeVisible();
+  await expect(page.getByText('Begrenzte Entwicklungsvorschau.', { exact: false })).toBeVisible();
+  await page.getByRole('link',{name:'Zum Entwicklungsstand'}).click();
   await expect(page.getByText('Noch kein für den Unterricht freigegebenes Lernspiel.')).toBeVisible();
   await page.waitForLoadState('networkidle');
   expect(requests.length).toBeGreaterThanOrEqual(3);
@@ -32,7 +33,9 @@ test('offers working keyboard navigation and a readable responsive layout', asyn
   await page.keyboard.press(key);
   await expect(page.getByRole('link', { name: 'Erste Übung ausprobieren – Wasserhaushalt der Zelle' })).toBeFocused();
   const link = page.getByRole('link', { name: 'Zum Entwicklungsstand' });
-  await page.keyboard.press(key);
+  for (const name of ['Kausalnetz ausprobieren – Ursache und Wirkung','Untersuchung planen – Kontrolle und Rücktausch','Relative Massenänderung berechnen','Ein Diagramm selbst erstellen','Zum Entwicklungsstand']) {
+    await page.keyboard.press(key); await expect(page.getByRole('link',{name,exact:true})).toBeFocused();
+  }
   await expect(link).toBeFocused();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL(/#entwicklungsstand$/);

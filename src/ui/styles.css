@@ -80,3 +80,21 @@
   @media (max-width: 700px) { .lab-sheet { min-height: 370px; padding: 20px; } .diagram { min-height: 240px; } }
   @media (forced-colors: active) { .phase-label, .lab-sheet { border-color: CanvasText; } .diagram { display: none; } }
 }
+
+@layer components {
+  .hero { grid-template-columns: minmax(0, 1fr); }
+  .hero-copy { min-width: 0; overflow-wrap: anywhere; }
+  .hero h1 > span { font-size: 2rem; line-height: 1.2; }
+  .hero .eyebrow { display: block; }
+  .hero .status-dot { display: inline-block; margin-right: .5em; }
+  .brand-mark { flex-shrink: 0; }
+  .hero .lab-sheet { display: none; }
+  .learning-path { margin-block: 2rem; padding: 1.25rem; border: 1px solid #c9d3c5; border-radius: 4px; background: #fffef9; overflow-wrap: anywhere; }
+  .learning-path h2 { font-size: 1.4rem; }
+  .learning-path p { margin-top: 0.75rem; }
+  .learning-path ol { padding-left: 1.5rem; }
+  .learning-path .text-link { margin-top: 0.5rem; }
+  details.development { display: block; }
+  details.development > summary { overflow-wrap: anywhere; min-height: 44px; cursor: pointer; font-weight: 650; }
+  details.development[open] > .section-heading { margin-block: 1rem; }
+}

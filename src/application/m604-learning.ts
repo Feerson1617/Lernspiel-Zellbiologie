@@ -25,7 +25,7 @@ export function createM604Learning(options: { readonly idPrefix?: string; readon
   let historyUnverified = options.resumed ?? (navigation !== undefined && navigation.type !== 'navigate');
   let caseId: M604CaseId = 'recovery', revision = 0, evaluatedRevision = -1, step = 0;
   const empty = () => parseM604Answer(Object.fromEntries(M604_FIELDS.map(id => [id, []])));
-  let answer = empty(), prediction = '', writing = '', observationsVisible = false, revisedAfterFeedback = false;
+  let answer = empty(), prediction = '', writing = '', planning = '', observationsVisible = false, revisedAfterFeedback = false;
   let predictionBeforeData: Readonly<{ text: string; hypothesis: readonly string[]; contextHash: string }> | null = null;
   let predictionAfterData = false;
   const seenCases = new Set<M604CaseId>(), events: M604HelpEvent[] = [], priorIds = new Set<string>();
@@ -49,6 +49,7 @@ export function createM604Learning(options: { readonly idPrefix?: string; readon
   }
   function help(source: 'planning' | 'evidence' | 'limits' | 'comparison', level: 1 | 2 | 3) {
     if (!['planning','evidence','limits','comparison'].includes(source) || ![1,2,3].includes(level) || (source === 'comparison' && level !== 3)) throw new Error('Invalid help.');
+    if (source === 'comparison') revealObservations();
     events.push(Object.freeze({ id: `m604/${events.length + 1}`, taskId: 'M6.04', source, level,
       contextHash: contexts[caseId].contextHash, kind: level === 3 ? 'solution_viewed' : 'hint' }));
     invalidate();
@@ -84,7 +85,7 @@ export function createM604Learning(options: { readonly idPrefix?: string; readon
     return outcome;
   }
   function clearDraft() {
-    answer = empty(); prediction = ''; writing = ''; outcome = null; receipt = null;
+    answer = empty(); prediction = ''; writing = ''; planning = ''; outcome = null; receipt = null;
     observationsVisible = false; predictionBeforeData = null; predictionAfterData = seenCases.has(caseId);
     revisedAfterFeedback = false; step = 0; invalidate();
   }
@@ -96,8 +97,9 @@ export function createM604Learning(options: { readonly idPrefix?: string; readon
   return Object.freeze({ edit, revealObservations, help, syncPriorHelp, submit, confirm, activateCase, reset: clearDraft,
     setStep: (next: number) => { if (!Number.isInteger(next) || next < 0 || next > 6) throw new Error('Unknown step.'); step = next; },
     editPrediction: (value: string) => { if (typeof value !== 'string') throw new Error('Invalid draft.'); if (value !== prediction && seenCases.has(caseId)) predictionAfterData = true; prediction = value; },
+    editPlanning: (value: string) => { if (typeof value !== 'string') throw new Error('Invalid draft.'); planning = value; },
     editWriting: (value: string) => { if (typeof value !== 'string') throw new Error('Invalid draft.'); writing = value; },
-    getState: () => Object.freeze({ caseId, context: contexts[caseId], material: materials[caseId], answer, step, prediction, writing,
+    getState: () => Object.freeze({ caseId, context: contexts[caseId], material: materials[caseId], answer, step, prediction, writing, planning,
       predictionBeforeData, predictionAfterData, observationsVisible, seenDataBefore: seenCases.has(caseId),
       outcome, receipt, revision, stale: outcome !== null && revision !== evaluatedRevision, assistance: assistance(), historyUnverified,
       help: Object.freeze([...events]), revisedAfterFeedback }),

@@ -103,7 +103,7 @@ export function mountM602Learning(root: HTMLElement, model: M602LearningControll
   material.dataset['case'] = model.getState().caseIndex === 0 ? 'water-loss-a' : 'water-loss-b';
   node('p', '02 · Material untersuchen', material, 'eyebrow');
   node('h2', `Materialfall ${model.getState().caseIndex === 0 ? 'A' : 'B'}`, material);
-  node('p', 'Eine intakte Zwiebel-Epidermiszelle befindet sich in der frühen Phase des Wasserverlusts nach einem Lösungswechsel. Nicht betrachtet wird der exakte Austauschzeitpunkt.', material);
+  node('p', 'Eine intakte Zwiebel-Epidermiszelle wird in einem frühen Zustand nach einem Lösungswechsel betrachtet. Nicht betrachtet wird der exakte Austauschzeitpunkt.', material);
   const anatomy = node('div', '', material, 'material-anatomy');
   const figure = node('figure', '', anatomy);
   renderOnionCell(figure, model.getState().material);
@@ -120,7 +120,7 @@ export function mountM602Learning(root: HTMLElement, model: M602LearningControll
   for (const [label, value] of [['Vakuole', p.vacuole], ['Cytosol', p.cytosol], ['Außenraum', p.external]]) {
     const row = node('tr', '', tbody); node('th', String(label), row).scope = 'row'; node('td', pa(Number(value)), row);
   }
-  node('p', 'Es gilt ausdrücklich: ΨVakuole > ΨCytosol > ΨAußenraum. Weniger negativ bedeutet hier höher. Die Gesamtwerte berücksichtigen auch Druckbeiträge; eine Konzentration allein genügt nicht für diesen Vergleich.', material, 'material-explanation');
+  node('p', 'Vergleiche die drei Werte selbst. Weniger negativ bedeutet hier höher. Die Gesamtwerte berücksichtigen auch Druckbeiträge; eine Konzentration allein genügt nicht für diesen Vergleich.', material, 'material-explanation');
   const conditions = node('ul', '', material, 'material-conditions');
   for (const text of ['Wasser kann Zellmembran und Tonoplast passieren.', 'Saccharose wird im betrachteten Zeitraum weitgehend zurückgehalten.', 'Andere Transportprozesse sind ausgeschlossen.', 'Die Zellwand bleibt eine vergleichsweise formstabile Struktur.']) node('li', text, conditions);
   const toAnswers = node('a', 'Vom Material zu deinen Antworten', material, 'learning-jump'); toAnswers.href = '#lernantworten'; scrollLink(toAnswers, 'lernantworten');
@@ -201,13 +201,13 @@ export function mountM602Learning(root: HTMLElement, model: M602LearningControll
   }
   const support = node('section', '', main, 'learning-support'); support.setAttribute('aria-label', 'Unterstützung und Lernstand');
   const notebook = node('section', '', main, 'learning-notebook'); notebook.id = 'weiterdenken'; notebook.tabIndex = -1;
-  node('p', '04 · Weiterdenken', notebook, 'eyebrow'); node('h2', 'Erklären im Heft', notebook);
-  node('p', 'Freiwillig: Erkläre auf Papier mit eigenen Worten, wie die Gesamtwasserpotenziale im bearbeiteten Material, die beiden Membrangrenzen und die Volumenfolge zusammenhängen. Verwende die Werte mit Einheit und unterscheide die Vakuole von der Zellwand.', notebook);
-  node('p', 'Schreibe möglichst zuerst selbst. Vergleiche anschließend und besprich deine Begründung im Unterricht. Dieses Unterrichtsprodukt wird nicht durch die drei Kurzfelder automatisch bewertet und nicht in der Anwendung gespeichert.', notebook, 'learning-note');
-  node('p', 'Im Selbstlernen ist der Heftauftrag freiwillig. Deine Lehrkraft kann ihn im Unterricht verbindlich stellen.', notebook, 'learning-note');
+  node('p', '04 · Weiterdenken', notebook, 'eyebrow'); node('h2', 'Optionaler Zwischenvergleich', notebook);
+  node('p', 'Du kannst hier deine Kurzantworten mit einer Erklärung vergleichen. Der gemeinsame schriftliche Abschluss des Lernwegs folgt nach dem Kausalnetz.', notebook);
+  node('p', 'Antworte möglichst zuerst selbst. Nutze die aufklappbaren Kriterien bei Bedarf zur Besprechung deiner Kurzantworten. Sie sind keine weitere bewertete Abschlussaufgabe; eine freie Erklärung wird nicht durch die drei Kurzfelder automatisch bewertet.', notebook, 'learning-note');
+  node('p', 'Weiter im Lernweg: Baue in der nächsten Übung dein Kausalnetz und formuliere danach eine eigene Erklärung.', notebook, 'learning-note');
   const reflection = node('details', '', notebook, 'notebook-reflection');
-  node('summary', 'Nach dem Schreiben: Selbst- oder Partnerprüfung öffnen', reflection);
-  node('p', 'Lies deinen Hefttext selbst oder mit einer Partnerperson. Prüfe die Begründungen, nicht nur einzelne Fachwörter. Die Häkchen sind deine Einschätzung, keine automatische Fachbewertung. Sie bleiben nur in dieser Ansicht und ergeben keinen gespeicherten Erfolgsnachweis.', reflection);
+  node('summary', 'Nach dem Antworten: Selbst- oder Partnerprüfung öffnen', reflection);
+  node('p', 'Lies deine Antworten selbst oder mit einer Partnerperson. Prüfe die Begründungen, nicht nur einzelne Fachwörter. Die Häkchen sind deine Einschätzung, keine automatische Fachbewertung. Sie bleiben nur in dieser Ansicht und ergeben keinen gespeicherten Erfolgsnachweis.', reflection);
   for (const [i, text] of [
     'Ich vergleiche die gegebenen Gesamtwasserpotenziale der passenden Räume mit Zahlen und Pa. Ich berücksichtige dabei auch Druckbeiträge.',
     'Ich unterscheide die beiden Wege: über die Zellmembran zwischen Cytosol und Außenraum sowie über den Tonoplasten zwischen Vakuole und Cytosol.',
@@ -231,7 +231,7 @@ export function mountM602Learning(root: HTMLElement, model: M602LearningControll
   node('p', 'In M6.03 verbindest du Wasserverlust, Volumen, Turgor und die Bedingungen einer möglichen Ablösung zu einem eigenen Kausalnetz. Du kannst direkt weitergehen; die drei Kurzantworten sind keine Zugangsvoraussetzung.', causalNext);
   const causalLink = node('a', 'Weiter zu M6.03: eigenes Kausalnetz aufbauen', causalNext, 'learning-jump'); causalLink.href = '#/m603';
   const repeat = node('section', '', main, 'learning-repeat'); node('h2', 'Am zweiten Material weiterüben', repeat);
-  node('p', 'Die beiden Fälle zeigen denselben frühen Wasserverlustzustand mit unterschiedlichen Gesamtwasserpotenzialen. Das ist Wiederholung desselben Beziehungstyps, kein Transfernachweis. Beim Wechsel starten alle Antworten leer.', repeat);
+  node('p', 'Die beiden Fälle zeigen frühe Zustände nach dem Lösungswechsel mit unterschiedlichen Gesamtwasserpotenzialen. Das ist Wiederholung desselben Beziehungstyps, kein Transfernachweis. Beim Wechsel starten alle Antworten leer.', repeat);
   const next = node('button', 'Weiterer Materialfall', repeat, 'learning-primary');
   next.addEventListener('click', () => perform(() => { model.activateCase(model.getState().caseIndex === 0 ? 1 : 0); mountM602Learning(root, model); root.querySelector<HTMLElement>('#lernmaterial h2')?.focus(); }));
   const footer = node('footer', '', root, 'site-footer'); node('span', 'Übungsvorschau · noch keine Unterrichtsfreigabe', footer); const back = node('a', 'Zur Startseite', footer); back.href = '#/';
@@ -262,7 +262,7 @@ export function mountM602Learning(root: HTMLElement, model: M602LearningControll
       if (complete) {
         node('p', 'Bestätigt sind Fachbegriff, Nettorichtung und Vakuolenvolumen für diesen Materialfall. Eine vollständige Kausalerklärung oder Klausurreife ist damit nicht nachgewiesen.', feedback);
         const nextStep = node('a', 'Nächster Lernschritt: eigene biologische Erklärung schreiben', feedback, 'learning-jump');
-        nextStep.href = '#weiterdenken'; scrollLink(nextStep, 'weiterdenken');
+        nextStep.href = '#/m603';
       }
       for (const field of M602_FIELDS) {
         const f = o.fields[field], status = STATUS_PRESENTATION[f.result.status], panel = node('section', '', feedback, 'field-feedback');

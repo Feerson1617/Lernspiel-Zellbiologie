@@ -20,9 +20,10 @@ export function mountM603Learning(root: HTMLElement, model: M603LearningControll
     if (cls) element.className = cls;
     parent.append(element); return element;
   }
+  let setWritingMode: (active: boolean) => void = () => {};
   function jump(link: HTMLAnchorElement, target: HTMLElement) {
     link.href = `#${target.id}`;
-    link.addEventListener('click', event => { event.preventDefault(); target.focus({ preventScroll: true }); target.scrollIntoView({ block: 'start' }); });
+    link.addEventListener('click', event => { event.preventDefault(); setWritingMode(target.id === 'kausal-erklaerung'); target.focus({ preventScroll: true }); target.scrollIntoView({ block: 'start' }); });
   }
   const narrowText = matchMedia('(max-width: 360px)');
   const scientificTexts = new Map<HTMLElement, string>();
@@ -52,7 +53,7 @@ export function mountM603Learning(root: HTMLElement, model: M603LearningControll
   node('p', 'Eine begrenzte Erklärungsaufgabe. M6.02 und M6.03 sind noch nicht die vollständige Mission M6.', intro, 'learning-note');
   const nav = node('nav', '', intro, 'learning-steps'); nav.setAttribute('aria-label', 'Dein Lernweg');
   const back = node('a', 'Vorherige Übung: Wasserhaushalt', nav); back.href = '#/m602';
-  node('a', 'Weitere Übung: Kontrolle und Rücktausch', nav).href = '#/m604';
+  node('a', 'Optionale Vertiefung: Kontrolle und Rücktausch', nav).href = '#/m604';
   const toMaterial = node('a', '1 Material', nav), toNet = node('a', '2 Netz bauen', nav), toHelp = node('a', 'Hilfen', nav), toWriting = node('a', '3 Eigene Erklärung', nav);
   const live = node('p', '', main, 'visually-hidden'); live.setAttribute('role', 'status'); live.setAttribute('aria-atomic', 'true');
 
@@ -227,22 +228,36 @@ export function mountM603Learning(root: HTMLElement, model: M603LearningControll
   const support = node('section', '', main, 'learning-support'); support.setAttribute('aria-label', 'Hilfehistorie und Sitzungsstand');
   const writing = node('section', '', main, 'learning-notebook'); writing.id = 'kausal-erklaerung'; writing.tabIndex = -1;
   node('h2', 'Erkläre den Zusammenhang in eigenen Worten.', writing);
-  node('p', 'Formuliere zwei bis vier zusammenhängende biologische Sätze auf Papier oder im flüchtigen Arbeitsbereich. Nutze das Material und dein überarbeitetes Netz. Begründe die Zusammenhänge mit „weil“, „dadurch“ oder „unter der Bedingung“.', writing);
+  node('p', 'Der Turgor einer Pflanzenzelle sinkt. Kann man daraus bereits auf eine sichtbare Ablösung des Protoplasten schließen? Begründe. Schreibe zwei bis vier zusammenhängende biologische Sätze auf Papier oder im flüchtigen Arbeitsbereich.', writing);
   node('p', 'Deine eigene Erklärung wird nicht automatisch bewertet. Sie erhält keine Note und kein Klausururteil. Der Text wird weder dauerhaft gespeichert noch übertragen und geht beim Neuladen oder Materialwechsel verloren.', writing, 'learning-note');
   const draftLabel = node('label', 'Eigene Erklärung – unbewerteter flüchtiger Arbeitsbereich', writing); draftLabel.htmlFor = 'causal-explanation';
   const draft = node('textarea', '', writing); draft.id = draftLabel.htmlFor; draft.rows = 5; draft.value = model.getState().explanation; draft.autocomplete = 'off';
   draft.addEventListener('input', () => { model.editExplanation(draft.value); });
-  const reflection = node('details', '', writing); node('summary', 'Kriterien für Selbst- oder Partnerprüfung', reflection);
+  const writingFeedback = node('p', '', writing, 'learning-note'); writingFeedback.id = 'causal-writing-feedback';
+  const reflection = node('details', '', writing); reflection.id = 'causal-writing-rubric'; node('summary', 'Kriterien für Selbst- oder Partnerprüfung', reflection);
   node('p', 'Die Häkchen dienen nur deiner Selbstprüfung. Sie erzeugen keine automatische Fachbewertung oder Erfolgsbestätigung deiner Erklärung.', reflection);
   for (const text of M603_SELF_CHECK) {
     const label = node('label', '', reflection, 'reflection-item'); const check = node('input', '', label); check.type = 'checkbox'; node('span', text, label);
   }
+  const writingComparison = node('button', 'Mustererklärung zum eigenen Vergleich öffnen', writing); writingComparison.type = 'button';
+  const writingExample = node('div', '', writing); writingExample.id = 'causal-writing-example';
+  writingComparison.addEventListener('click', () => {
+    model.help('comparison', 3);
+    writingExample.textContent = 'Sinkender Turgor allein belegt noch keine sichtbare Ablösung: Es kann weiterhin positiver Druck gegen die Wand bestehen. Erst vollständiger Turgorverlust zusammen mit hinreichendem weiterem Wasserverlust und Volumenrückgang ermöglicht im Modell eine Ablösung des Protoplasten von der vergleichsweise formstabilen Wand. Diese Bedingungen beschreiben eine Möglichkeit; eine sichtbare Ablösung müsste beobachtet werden.';
+    update('Mustererklärung angesehen; dein eigener Text bleibt unbewertet.');
+  });
+  const returnToNet = node('a', 'Zurück zum eigenen Kausalnetz', writing); jump(returnToNet, workspace);
   node('p', 'Überarbeite eine noch nicht begründete Verbindung in deinem Text. Besprich offene Fragen mit einer Partnerperson oder deiner Lehrkraft.', writing);
   const repeat = node('section', '', main, 'learning-repeat'); node('h2', 'Mit anderem Material wiederholen', repeat);
   node('p', 'Der zweite Fall verwendet andere Gesamtwasserpotenziale für denselben Beziehungstyp. Das ist kein Transfernachweis. Beim Wechsel werden Netz und eigener Text geleert; aufgerufene Hilfen bleiben erfasst.', repeat);
   const next = node('button', 'Materialfall wechseln', repeat); next.type = 'button';
   next.addEventListener('click', () => { model.activateCase(model.getState().caseIndex === 0 ? 1 : 0); remount(); root.querySelector<HTMLElement>('#kausal-material')?.focus(); });
   const footer = node('footer', '', root, 'site-footer'); node('span', 'Übungsvorschau · noch keine Unterrichtsfreigabe', footer); const footerHome = node('a', 'Zur Startseite', footer); footerHome.href = '#/';
+  setWritingMode = active => {
+    for (const element of [material, workspace, feedback, helpers, repeat]) element.hidden = active;
+    writing.dataset['focused'] = String(active);
+    if (!active) requestAnimationFrame(drawGraph);
+  };
   jump(skip, workspace); jump(toMaterial, material); jump(toNet, workspace); jump(toHelp, helpers); jump(toWriting, writing);
 
   function drawGraph() {
@@ -387,6 +402,9 @@ export function mountM603Learning(root: HTMLElement, model: M603LearningControll
         const revise = node('button', 'Netz selbst überarbeiten', feedback); revise.type = 'button'; revise.addEventListener('click', () => { from.focus(); from.scrollIntoView({ block: 'center' }); });
       }
     }
+    writingFeedback.textContent = current.outcome && !current.stale
+      ? 'Strukturierte Teilaufgaben geprüft – schriftliche Erklärung noch nicht fachlich überprüft.'
+      : 'Der schriftliche Abschluss bleibt unbewertet. Prüfe dein aktuelles Netz gesondert.';
     support.replaceChildren(); node('h2', 'Unterstützung und Sitzungsstand', support);
     node('p', current.assistance === 'solution_viewed' ? 'Lösung angesehen. Ein richtiges Netz bleibt richtig, seine Unterstützung bleibt sichtbar.'
       : current.assistance === 'hint' ? 'Digitale Unterstützung aufgerufen. Die Bewertung und die Hilfenutzung werden getrennt angezeigt.'

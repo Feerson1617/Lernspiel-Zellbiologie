@@ -77,3 +77,29 @@ it('invalid controller operations are atomic and preserve the current verified d
     () => app.help('comparison',1), () => app.syncPriorHelp([{ id: 'x', taskId: 'M6.03', source:'help', contextHash:'invalid', kind:'hint' }],false)]) expect(action).toThrow();
   expect(app.getState().answer).toBe(state.answer); expect(app.confirm(old)).toBe(state.receipt);
 });
+
+it('comparison disclosure freezes the actual first prediction before marking findings seen', () => {
+  const app=fresh(); app.editPrediction('Synthetische ursprüngliche Erwartung'); app.edit('hypothesis',['loss_prediction']);
+  app.help('comparison',3);
+  const original=app.getState().predictionBeforeData!;
+  expect(app.getState()).toMatchObject({observationsVisible:true,seenDataBefore:true,assistance:'solution_viewed'});
+  expect(original.text).toBe('Synthetische ursprüngliche Erwartung'); expect(original.hypothesis).toEqual(['loss_prediction']);
+  app.editPrediction('Spätere Erklärung'); app.help('comparison',3);
+  expect(app.getState().predictionBeforeData).toBe(original); expect(app.getState().predictionAfterData).toBe(true);
+  app.reset(); expect(app.getState().seenDataBefore).toBe(true); app.editPrediction('Nach Rücksetzen'); app.revealObservations();
+  expect(app.getState().predictionBeforeData).toBeNull(); expect(app.getState().predictionAfterData).toBe(true);
+});
+it('disclosure without prediction and returning to a seen case cannot invent a first prediction', () => {
+  const app=fresh(); app.revealObservations(); expect(app.getState().predictionBeforeData?.text).toBe('');
+  app.editPrediction('Nach den Daten'); expect(app.getState().predictionAfterData).toBe(true);
+  app.activateCase('limited'); expect(app.getState().seenDataBefore).toBe(false); app.help('comparison',3);
+  app.activateCase('recovery'); expect(app.getState().seenDataBefore).toBe(true); app.help('comparison',3);
+  expect(app.getState().predictionBeforeData).toBeNull(); expect(app.getState().help).toHaveLength(2);
+});
+it('open planning is volatile and does not grade text or replace structured evidence', () => {
+  const app=fresh(); app.editPlanning('Synthetischer erster Plan'); app.help('planning',2);
+  expect(app.getState().seenDataBefore).toBe(false); expect(app.getState().planning).toBe('Synthetischer erster Plan');
+  expect(app.submit().status).toBe('empty'); app.setStep(2); expect(app.getState().planning).toBe('Synthetischer erster Plan');
+  app.activateCase('limited'); expect(app.getState().planning).toBe('');
+  app.editPlanning('Zweiter Plan'); app.reset(); expect(app.getState().planning).toBe('');
+});

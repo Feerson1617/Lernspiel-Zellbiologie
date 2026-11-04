@@ -25,6 +25,7 @@ async function open(page: Page) {
 }
 async function step(page: Page,index: number) { await press(page,page.getByRole('navigation',{name:'Schritte der Untersuchung'}).getByRole('button').nth(index)); }
 async function choose(page: Page,field: string,values: readonly string[]) {
+  if (await page.locator('#m604-depth').getAttribute('aria-expanded') === 'false') await press(page,page.locator('#m604-depth'));
   const group = page.locator(`fieldset[data-field="${field}"]`);
   for (const input of await group.locator('input').all()) {
     if (await input.isChecked() && !(values.includes(await input.inputValue()))) {
@@ -52,7 +53,7 @@ test('normal start and prior exercises reach M6.04 without prerequisites or auto
   await shot(page,info,'m604-initial','.investigation-workspace');
   await page.getByRole('link',{name:'Ursache und Wirkung verknüpfen (M6.03)',exact:true}).click();
   await expect(page.locator('.causal-edge-list')).toContainText('Noch keine Verbindung');
-  await page.getByRole('link',{name:'Weitere Übung: Kontrolle und Rücktausch',exact:true}).click();
+  await page.getByRole('link',{name:'Optionale Vertiefung: Kontrolle und Rücktausch',exact:true}).click();
   await expect(result(page)).toHaveAttribute('data-status','empty');
   await page.getByRole('link',{name:'Wasserhaushalt wiederholen (M6.02)',exact:true}).click(); await expect(page.locator('#learner-process')).toHaveValue('');
   await page.goto('./#/m901'); await expect(page.getByRole('link',{name:'Untersuchung planen – Kontrolle und Rücktausch',exact:true})).toBeVisible();
@@ -140,7 +141,7 @@ test('actual prior exercise help is attributed and route changes preserve volati
   await open(page); await page.locator('#m604-prediction').fill('Synthetischer Vorhersageentwurf'); await choose(page,'hypothesis',['loss_prediction']);
   await page.getByRole('link',{name:'Ursache und Wirkung verknüpfen (M6.03)',exact:true}).click();
   await page.getByRole('button',{name:'Begründete Vergleichslösung ausdrücklich ansehen',exact:true}).click();
-  await page.getByRole('link',{name:'Weitere Übung: Kontrolle und Rücktausch',exact:true}).click();
+  await page.getByRole('link',{name:'Optionale Vertiefung: Kontrolle und Rücktausch',exact:true}).click();
   await expect(page.locator('#m604-prediction')).toHaveValue('Synthetischer Vorhersageentwurf'); await expect(page.locator('#m604-hypothesis-loss_prediction')).toBeChecked();
   await expect(support(page)).toContainText('Vergleichslösung angesehen'); await support(page).locator('summary').click(); await expect(support(page)).toContainText('M6.03');
 });
@@ -217,6 +218,7 @@ test('keyboard alone completes the investigation, opens findings, uses help and 
     }
     throw new Error(`Unreachable by ${tab}: ${await target.getAttribute('id')}`);
   }
+  await tabTo(page.locator('#m604-depth')); await page.keyboard.press('Enter');
   for (let index = 0; index < steps.length; index++) {
     const nav = page.getByRole('navigation',{name:'Schritte der Untersuchung'}).getByRole('button').nth(index);
     await tabTo(nav); await page.keyboard.press('Enter');

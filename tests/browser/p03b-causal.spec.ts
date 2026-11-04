@@ -168,7 +168,7 @@ test('responsive board and text at 200 percent retain visible focus and complete
   await page.getByLabel('Startknoten', { exact: true }).focus();
   expect(await page.locator('#causal-from').evaluate(element => getComputedStyle(element).outlineStyle)).not.toBe('none');
   for (const button of await page.locator('.causal-node').all()) { const box = await button.boundingBox(); expect(box!.width).toBeGreaterThanOrEqual(44); expect(box!.height).toBeGreaterThanOrEqual(44); }
-  await expect(page.locator('.causal-edge-list')).toContainText('hinreichender weiterer Volumenabnahme');
+  await expect(page.locator('.causal-edge-list')).toContainText('hinreichend weitere Volumenabnahme');
   await screenshot(page, info, 'p03b-200-percent');
 });
 
@@ -206,6 +206,10 @@ test('keyboard alone can build every required relation, check, edit, remove, ope
   await page.keyboard.press('Space'); await expect(result(page)).toHaveAttribute('data-status', 'correct');
   await page.keyboard.press(tab); await expect(result(page).getByRole('link')).toBeFocused(); await page.keyboard.press('Enter');
   await expect(page.locator('#kausal-erklaerung')).toBeFocused(); await page.keyboard.press(tab); await expect(page.locator('#causal-explanation')).toBeFocused(); await page.keyboard.type('Eigene biologische Erklaerung.');
+  // Return from the isolated writing view with real keyboard activation.
+  const returnToNet = page.getByRole('link',{name:'Zurück zum eigenen Kausalnetz',exact:true});
+  for (let i = 0; i < 12 && !(await returnToNet.evaluate(el => el === document.activeElement)); i++) await page.keyboard.press(tab);
+  await expect(returnToNet).toBeFocused(); await page.keyboard.press('Enter');
   // Buttons also expose native keyboard activation; edit/remove are reached by tab.
   const edit = page.getByRole('button', { name: 'Verbindung 1 bearbeiten', exact: true });
   for (let i = 0; i < 60 && !(await edit.evaluate(el => el === document.activeElement)); i++) await page.keyboard.press(reverse);
