@@ -140,3 +140,30 @@ Fallzahl bleiben erhalten. Der Browserteil wurde wegen dieses Buildtestfehlers
 in diesem Vollaufruf nicht gestartet. Vollbericht und alle drei JSON-Berichte
 sind archiviert. Die folgende vollständige Wiederholung prüft den korrigierten
 Test; es wurde kein Produktcode und keine fachliche Erwartung dafür verändert.
+
+Die zweite vollständige lokale Regression bestand 18.607 Unit-, 277 Content-
+und 76 Buildfälle; Chromium endete mit **801/810**, neun Fehlern und ohne
+Flakes/Skips. Ausschließlich die drei alten Startseitenprüfungen in assessment,
+osmosis und p02b-second suchten je Profil noch exakt „Noch in Entwicklung.“.
+Ihre Fach-, Evidenz-, Datenschutz- und Paritätsassertions bestanden davor. Nur
+die erwartete sichtbare Entwicklungskennzeichnung wird auf den neuen vollständigen
+Wortlaut angepasst. Der reguläre CI-Build an `220eb5e` bestätigt dieselben Zahlen
+(801/810); der erste CI-Build an `25c27b0` bestätigte den Bundle-Titelfehler.
+Originalprotokolle und lokale Fehlertraces bleiben erhalten. Zwischenstände mit
+ersetztem Head sind keine finalen WebKit-Nachweise; durch den normalen
+Concurrency-Mechanismus abgebrochene/ersetzte Jobs werden getrennt ausgewiesen.
+
+Zusätzliche eigene Bedienprobe: Nach einer falschen Vertiefungsentscheidung und
+Wechsel zum Kernweg zeigte „selbst überarbeiten“ zunächst nur die Schrittüberschrift,
+während das betreffende Feld verborgen blieb. Das wurde im Browser reproduziert
+(`core-revision-before.json`: incorrect, Feld unsichtbar). Der Rücksprung öffnet
+nun die Vertiefung und fokussiert das tatsächliche Feld. Der vorhandene neue
+Kernwegtest prüft diesen Weg zusätzlich; die neue Befundprüfung erfasst auch Fall B
+und die Rückkehr zu Fall A. Fachlogik, Fallzahl und Budgets bleiben unverändert.
+
+Nach diesen begrenzten Korrekturen bestehen **69/69 gezielte Chromiumfälle**
+(alle neuen didaktischen Fälle und sämtliche Fälle der drei betroffenen älteren
+Browserdateien), 0 Fehler, 0 Skips und 0 Flakes. TypeScript, Build und
+Publikationsschutz bestehen ebenfalls. Der finale Head erhält erneut die
+vollständigen regulären CI-Gates einschließlich Intel-WebKit; allein diese
+gezielte Wiederholung wird nicht als vollständige Endregression ausgegeben.

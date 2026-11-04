@@ -39,5 +39,5 @@ test('runs the complete 156-case countercheck and 80 fresh cases through both re
   }
   expect(errors).toEqual([]); expect(external).toEqual([]);
   expect(await page.evaluate(() => Object.keys(localStorage))).toEqual([]);
-  await expect(page.getByText('Noch in Entwicklung.', { exact: true })).toBeVisible();
+  await expect(page.getByText('Begrenzte Entwicklungsvorschau. Noch keine Unterrichtsfreigabe.', { exact: true })).toBeVisible();
 });

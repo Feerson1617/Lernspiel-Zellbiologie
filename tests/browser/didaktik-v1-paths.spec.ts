@@ -22,6 +22,11 @@ test('DID-V1 advanced fields, all steps and non-solution help keep findings clos
  await page.locator('#m604-reveal').click();await step(page,0);await expect(page.locator('#m604-step-0')).toContainText(unseen);
  await page.locator('#m604-prediction').fill('Nach Daten: eine Erklärung');await page.getByText('Meine Vorhersage vor der ersten Datenansicht',{exact:true}).click();
  await expect(page.locator('#m604-step-0 details')).toContainText('Vor Daten: eigene Erwartung');await expect(page.locator('#m604-step-0 details')).not.toContainText('Nach Daten: eine Erklärung');
+ await page.locator('#m604-case').click();await step(page,3);
+ expect(await page.locator('main').ariaSnapshot()).not.toMatch(/58\s*%|60\s*%/);
+ await page.locator('#m604-help-3').click();await expect(page.locator('.investigation-data')).toContainText('58 %');
+ await step(page,0);await expect(page.locator('#m604-step-0')).toContainText(unseen);
+ await page.locator('#m604-case').click();await expect(page.locator('#m604-step-0')).toContainText(unseen);
 });
 
 test('DID-V1 compact investigation completion stays partial and C18 remains mandatory',async({page})=>{
@@ -39,6 +44,11 @@ test('DID-V1 compact investigation completion stays partial and C18 remains mand
  await expect(page.locator('[data-criterion-feedback="M6.04.C18"]')).toHaveAttribute('data-status','correct');
  await expect(page.locator('.investigation-feedback')).toHaveAttribute('data-status','partial');
  await page.locator('#m604-depth').click();await expect(page.locator('[data-field-feedback]')).toHaveCount(17);
+ await step(page,1);await page.locator('#m604-independent-volume_result').check();await page.locator('#m604-check').click();
+ await page.locator('#m604-depth').click();await expect(page.locator('[data-field=independent]')).toBeHidden();
+ await expect(page.locator('[data-field-feedback=independent]')).toHaveAttribute('data-status','incorrect');
+ await page.getByRole('button',{name:'Unabhängige Größe selbst überarbeiten',exact:true}).click();
+ await expect(page.locator('[data-field=independent]')).toBeVisible();await expect(page.locator('#m604-independent-volume_result')).toBeFocused();
 });
 
 test('DID-V1 water path uses neutral material, actual feedback, isolated writing and conscious comparison',async({page},info)=>{

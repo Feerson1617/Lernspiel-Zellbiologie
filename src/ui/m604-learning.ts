@@ -227,6 +227,9 @@ export function mountM604Learning(root: HTMLElement, model: M604LearningControll
           const choice = STATUS_PRESENTATION[decision.status], p = node('p',`${choice.symbol} ${decision.label} ${decision.reason}`,detail); p.dataset['color'] = choice.color;
         }
         if (criterion.status !== 'correct') button(`${title} selbst überarbeiten`,li,() => {
+          if (!expanded && !coreFields.includes(criterion.field)) {
+            expanded = true; depth.setAttribute('aria-expanded','true'); depth.textContent = 'Kernweg anzeigen';
+          }
           const index = M604_STEPS.findIndex(s => s.fields.includes(criterion.field)); go(index);
           fields.get(criterion.field)!.element.querySelector<HTMLInputElement>('input:not(:disabled)')?.focus();
         });

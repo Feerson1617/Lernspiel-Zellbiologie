@@ -38,7 +38,7 @@ test('runs the actual corrector and separate feedback/presentation descriptors w
   expect(result.span.value).toBe(result.originalSlice);
   expect(result.storageKeys).toEqual([]);
   expect(result.title).toBe('Zelllabor 11 – Die Zelle erforschen');
-  await expect(page.getByText('Noch in Entwicklung.', { exact: true })).toBeVisible();
+  await expect(page.getByText('Begrenzte Entwicklungsvorschau. Noch keine Unterrichtsfreigabe.', { exact: true })).toBeVisible();
 });
 
 test('blocks stale result handoff after version/material changes and keeps help distinct from factual correctness', async ({ page, baseURL }) => {
