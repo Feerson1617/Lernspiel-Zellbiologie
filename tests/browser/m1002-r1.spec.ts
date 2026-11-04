@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
 import { writeFile } from 'node:fs/promises';
-import cases from '../fixtures/m1002-r1-cases.json';
+import cases from '../fixtures/m1002-r1-cases.json' with { type: 'json' };
 
 const plot = (page: Page) => page.getByRole('img', { name: 'Mein Diagramm', exact: true });
 const check = (page: Page) => page.getByRole('button', { name: 'Diagramm überprüfen', exact: true }).click();
