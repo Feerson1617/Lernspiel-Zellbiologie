@@ -4,7 +4,7 @@ import { M1002_POINTS } from '../content/m1002.ts';
 import type { DiagramAnswer, DiagramAxis, Decision } from '../assessment/diagram.ts';
 import type { M1002Learning } from '../application/m1002-learning.ts';
 import { STATUS_PRESENTATION, ASSISTANCE_LABELS } from './feedback-presentation.ts';
-import { drawM1002Plot, pointerCoordinates } from './m1002-plot.ts';
+import { drawM1002Plot, pointerCoordinates, disposeM1002Plot } from './m1002-plot.ts';
 const quantities=[['concentration','Außenkonzentration'],['mass_change','Relative Massenänderung'],['final_mass','Endmasse'],['temperature','Temperatur']] as const;
 const units=['mol/L','mmol/L','%','g','Prozentpunkte'];
 const NS='http://www.w3.org/2000/svg';
@@ -83,7 +83,7 @@ export function mountM1002Learning(root:HTMLElement,model:M1002Learning) {
   const pointsFeedback=node('p','',main);pointsFeedback.id='diagram-points-feedback';
   node('h2','4. Verbessern und vergleichen',main);const help=node('section','',main);help.setAttribute('aria-label','Rechen- und Zeichenhilfen');
   for(const level of [1,2,3] as const)button(level===1?'Hinweis':level===2?'Skalierung erklären':'Vergleichsdiagramm ansehen',help,()=>{
-    model.help(level);helpContent.replaceChildren();
+    model.help(level);clearHelpContent();
     if(level===1)node('p','Die Außenkonzentration ist die x-Größe. Die relative Massenänderung gehört auf die y-Achse. Prüfe zu jeder Größe die Einheit im Material.',helpContent);
     else if(level===2)node('p','Die mittlere Marke muss genau den Zahlenmittelwert der beiden äußeren Marken tragen. Null und die kleinsten und größten Materialwerte müssen zwischen den Endmarken liegen. Die Werte dürfen auch gleichmäßig abnehmen.',helpContent);
     else {
@@ -97,13 +97,14 @@ export function mountM1002Learning(root:HTMLElement,model:M1002Learning) {
     refresh();
   });
   const helpContent=node('div','',help);helpContent.setAttribute('role','status');
+  function clearHelpContent(){for(const svg of helpContent.querySelectorAll('svg'))disposeM1002Plot(svg);helpContent.replaceChildren();}
   node('h2','5. Daten beschreiben und Grenzen erklären',main);
   node('p','Beschreibe die dargestellten Veränderungen mit mindestens zwei Zahlenbelegen und erkläre, welche Aussagen sich aus dem Diagramm allein nicht sicher ableiten lassen.',main);
   label('Meine Erklärung – nicht automatisch bewertet','diagram-writing',main);const writing=node('textarea','',main);writing.id='diagram-writing';writing.rows=6;writing.addEventListener('input',()=>model.editWriting(writing.value));
   const rubric=node('ul','',main);for(const text of ['Ich beschreibe die Daten fachlich richtig.','Ich verwende mindestens zwei passende Zahlenbelege.','Ich benenne die Größen und Einheiten präzise.','Ich trenne den Datenbefund von einer biologischen Erklärung.','Ich begründe Schlussfolgerungsgrenzen: kein allgemeines lineares Gesetz, keine exakt bestimmte innere Zellkonzentration und keine unmittelbare Messung von Vakuolenvolumen, Turgor oder Membranintegrität.'])node('li',text,rubric);
   node('p','Die Punkte werden nicht durch eine Musterkurve verbunden. Das Diagramm belegt weder zusätzliche Messwerte zwischen den Punkten noch ein allgemeines biologisches Gesetz. Ein grünes Diagramm bestätigt nur die geprüfte Diagrammleistung, nicht deinen Erklärungstext.',main);
   const support=node('p','',main,'learning-note');support.id='diagram-support';node('p','Koordinaten und Texte bleiben nur in dieser Sitzung. Es gibt keine dauerhafte Rohantwortspeicherung und keine automatische Übertragung. Nach Neuladen ist die frühere Hilfehistorie ungesichert.',main,'learning-note');
-  button('Neue Bearbeitung beginnen',main,()=>{model.reset();selectedId=null;helpContent.replaceChildren();syncInputs();renderRows();refresh();axisControls.x.quantity.focus();});
+  button('Neue Bearbeitung beginnen',main,()=>{model.reset();selectedId=null;clearHelpContent();syncInputs();renderRows();refresh();axisControls.x.quantity.focus();});
   function syncInputs(){const s=model.getState();for(const dim of ['x','y'] as const){const a=s.answer[dim==='x'?'xAxis':'yAxis'],c=axisControls[dim];c.quantity.setValue(a.quantity);c.unit.setValue(a.unit);c.ticks.forEach((t,i)=>{t.value=a.ticks[i]!;});}writing.value=s.writing;}
   function axisLabel(a:DiagramAxis){return `${quantities.find(q=>q[0]===a.quantity)?.[1]??'Größe noch offen'} (${a.unit||'Einheit noch offen'})`;}
   function refresh(){const s=model.getState(),r=s.outcome,stale=s.stale;
