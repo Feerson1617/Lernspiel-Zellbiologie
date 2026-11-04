@@ -1,3 +1,4 @@
+import { numericFormatMessage } from '../assessment/numeric.ts';
 import './m602-learning.css';
 import './m1001-learning.css';
 import { M1001_ROWS } from '../content/m1001.ts';
@@ -49,6 +50,7 @@ export function mountM1001Learning(root: HTMLElement, model: M1001Learning): voi
     else M1001_ROWS.forEach((r,i)=>node('p',`Ansatz ${i+1}: 100 × (${r.final} − ${r.initial}) / ${r.initial} = ${Number(r.expected)>0?'+':''}${r.expected.replace('-','−')} %.`,helpText));
     refresh();
   });
+  node('a','Die Daten in einem eigenen Diagramm darstellen',main).href='#/m1002';
   node('h2','4. Ergebnis biologisch deuten',main);
   node('p','Ein positives Ergebnis bedeutet eine Massenzunahme gegenüber dem Ausgangswert, ein negatives eine Massenabnahme. Die Daten können im gegebenen Versuchsrahmen einen Netto-Wasseraustausch stützen. Relative Massenänderungen messen jedoch nicht unmittelbar Vakuolenvolumen, Turgor oder Membranintegrität.',main);
   node('p','Erkläre, warum die Anfangsmasse die Bezugsgröße ist und was eine positive beziehungsweise negative relative Massenänderung bedeutet.',main);
@@ -66,7 +68,7 @@ export function mountM1001Learning(root: HTMLElement, model: M1001Learning): voi
       const r=s.results?.[i], row=M1001_ROWS[i]!;
       const status=s.stale?'empty':r?.status??'empty', display=STATUS_PRESENTATION[status];
       p.dataset['status']=s.stale?'stale':status;p.dataset['color']=display.color;
-      p.textContent=s.stale?'○ Eingabe oder Hilfe geändert. Erneut prüfen.':`${display.symbol} ${display.label}. `+(!r||r.reason==='empty'?'Trage deine eigene Rechnung ein.':r.reason==='format'?'Bitte eine eindeutige Dezimalzahl ohne weitere Aussagen eingeben.':r.reason==='unit'?'Hier wird die relative Änderung in Prozent verlangt; Gramm und Prozentpunkte sind andere Größen.':r.reason==='value'?`Der Wert liegt außerhalb der Toleranz für 100 × (${row.final} − ${row.initial}) / ${row.initial}. Prüfe Vorzeichen, Anfangsmasse als Nenner und den Faktor 100.`:'Der Prozentwert stimmt innerhalb von ±0,05 Prozentpunkten.');
+      p.textContent=s.stale?'○ Eingabe oder Hilfe geändert. Erneut prüfen.':`${display.symbol} ${display.label}. `+(!r||r.reason==='empty'?'Trage deine eigene Rechnung ein.':r.reason==='format'?numericFormatMessage(s.answers[row.field] ?? ''):r.reason==='unit'?'Hier wird die relative Änderung in Prozent verlangt; Gramm und Prozentpunkte sind andere Größen.':r.reason==='value'?`Der Wert liegt außerhalb der Toleranz für 100 × (${row.final} − ${row.initial}) / ${row.initial}. Prüfe Vorzeichen, Anfangsmasse als Nenner und den Faktor 100.`:'Der Prozentwert stimmt innerhalb von ±0,05 Prozentpunkten.');
     });
     summary.textContent=s.stale?'Rückmeldung nicht mehr aktuell. Zahlen erneut überprüfen.':s.results?`${s.results.filter(r=>r.status==='correct').length} von 5 Zahlen stimmen. Eigene Erklärung nicht bewertet.`:'Noch keine Zahlen geprüft.';
     support.textContent=`${s.assistance==='independent' && !s.results ? 'Bisher keine digitale Hilfe aufgerufen' : ASSISTANCE_LABELS[s.assistance]}. ${s.historyUnverified?'Frühere Hilfehistorie ungesichert; kein aktueller Erfolgsbeleg.':s.receipt?'Aktueller Sitzungsbeleg für die fünf Zahlen.':'Kein aktueller Erfolgsbeleg.'} Hilfen bleiben auch nach einer neuen Bearbeitung erfasst.`;

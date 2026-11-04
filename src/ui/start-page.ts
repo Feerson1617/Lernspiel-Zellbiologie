@@ -20,7 +20,7 @@ export function renderStartPage(root: HTMLElement): void {
           <a class="text-link exercise-link" href="#/m602">Erste Übung ausprobieren – Wasserhaushalt der Zelle</a><br />
           <a class="text-link" href="#entwicklungsstand">Zum Entwicklungsstand <span class="link-arrow" aria-hidden="true"></span></a><br />
           <a class="text-link exercise-link" href="#/m603">Kausalnetz ausprobieren – Ursache und Wirkung</a><br />
-          <a class="text-link exercise-link" href="#/m604">Untersuchung planen – Kontrolle und Rücktausch</a><br /><a class="text-link exercise-link" href="#/m1001">Relative Massenänderung berechnen</a>
+          <a class="text-link exercise-link" href="#/m604">Untersuchung planen – Kontrolle und Rücktausch</a><br /><a class="text-link exercise-link" href="#/m1001">Relative Massenänderung berechnen</a><br /><a class="text-link exercise-link" href="#/m1002">Ein Diagramm selbst erstellen</a>
         </div>
         <div class="lab-sheet" aria-hidden="true">
           <div class="sheet-caption"><span>ZL / 11</span><span>Perspektiven verbinden</span></div>

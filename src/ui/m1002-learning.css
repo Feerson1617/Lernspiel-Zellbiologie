@@ -1,0 +1,25 @@
+.diagram-page { max-width:72rem; }
+.diagram-page h1 { overflow-wrap:anywhere; }
+.diagram-page fieldset { min-width:0; padding:1rem; margin:1rem 0; border:1px solid #a9bcb4; }
+.diagram-page label { display:block; margin:.7rem 0 .2rem; }
+.diagram-page input,.diagram-page select,.diagram-page textarea { box-sizing:border-box; max-width:100%; width:100%; font:inherit; padding:.5rem; }
+.diagram-page button { font:inherit; white-space:normal; overflow-wrap:anywhere; max-width:100%; padding:.6rem; margin:.3rem; min-height:44px; }
+.diagram-page .axis-grid,.diagram-page .point-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+.diagram-page .axis-choice label { display:flex; align-items:center; gap:.65rem; min-height:44px; margin:.25rem 0; overflow-wrap:anywhere; }
+.diagram-page .axis-choice input { flex:0 0 1.3rem; width:1.3rem; height:1.3rem; min-height:0; margin:0; padding:0; }
+.diagram-page .axis-choice span { min-width:0; }
+.diagram-page .tick-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.6rem; }
+.diagram-page .plot-scroll { overflow:auto; max-width:100%; border:1px solid #a9bcb4; background:#f5f7f3; }
+.diagram-page svg { display:block; width:100%; min-width:640px; height:auto; font-size:1rem; }
+.diagram-page svg .point-number { font-size:.85rem; }
+.diagram-page .plot-axis-label { font-weight:600; overflow-wrap:anywhere; }
+.diagram-page table { border-collapse:collapse; width:100%; }
+.diagram-page td,.diagram-page th { text-align:left; padding:.6rem; border-bottom:1px solid #bac9c1; overflow-wrap:anywhere; }
+.diagram-page .material-table { overflow:auto; }
+.diagram-page [data-color=green] { border-left:4px solid #387252; padding-left:.6rem; }
+.diagram-page [data-color=red] { border-left:4px solid #ad3933; padding-left:.6rem; }
+.diagram-page [data-color=yellow] { border-left:4px solid #997116; padding-left:.6rem; }
+.diagram-page :focus-visible { outline:3px solid #91611a; outline-offset:3px; }
+@media(max-width:650px) { .diagram-page .axis-grid,.diagram-page .point-grid,.diagram-page .tick-grid { grid-template-columns:minmax(0,1fr); } }
+
+.diagram-page figure { margin:0; }

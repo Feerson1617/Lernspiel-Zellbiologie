@@ -1,0 +1,11 @@
+{
+  "version": "coordinate-decimal/1.0.0",
+  "extensionOf": "numeric-input/1.0.0 (unchanged default)",
+  "unit": "mol_per_litre: mol/L",
+  "grammar": "Full-input parse; comma or dot decimal, ASCII/Unicode minus, optional plus, matching optional unit. Exactly three fractional digits are accepted if the integer part is zero (0.095, 0,105, -0.005); nonzero integer plus exactly three digits remains ambiguous grouping and clarifies. Grouping, exponent, fractions, additional numbers and prose never prefix-accepted. No rescaling.",
+  "limits": {
+    "characters": 128,
+    "digits": 40
+  },
+  "arithmetic": "Exact BigInt decimal rational; inclusive comparisons. M10.01 keeps its exact previous statuses, grammar, units and tolerances."
+}

@@ -1,0 +1,55 @@
+{
+  "version": "m1002-diagram/1.0.0",
+  "task": "M10.02",
+  "criteria": [
+    "M10.02.C01",
+    "M10.02.C02",
+    "M10.02.C03"
+  ],
+  "data": [
+    [
+      "0",
+      "8"
+    ],
+    [
+      "0.1",
+      "3"
+    ],
+    [
+      "0.2",
+      "-1"
+    ],
+    [
+      "0.3",
+      "-5"
+    ],
+    [
+      "0.4",
+      "-8"
+    ]
+  ],
+  "source": "Explicit public didactic data, not measurements",
+  "axes": {
+    "x": "concentration; mol/L",
+    "y": "mass_change; %",
+    "scale": "Three learner-provided labels at equal screen intervals; nonzero equal exact numerical differences; endpoints must include zero and the complete reference data range. Scaling belongs to C01/C02. Any such linear scale is accepted independent of pixel position.",
+    "direction": "Both increasing and explicitly labelled decreasing axes are accepted: the affine coordinate mapping is invertible and preserves numerical distances. No reversal penalty.",
+    "empty": "No preselected quantity/unit/ticks and no points."
+  },
+  "points": {
+    "xTolerance": "0.005",
+    "yTolerance": "0.2",
+    "inclusive": true,
+    "matching": "Order-independent one-to-one matching in data coordinates. Five points required; duplicate matches and extra points incorrect. Missing/incomplete coordinates partial, unknown format clarify. Correct individual decisions remain visible.",
+    "boundary": "Tolerances apply also at zero and extrema; a value just outside the reference axis endpoints can still be within tolerance and is drawn in the plot margin. Out-of-view points remain in the editable coordinate list and are explicitly reported.",
+    "pointer": "Same semantic raw coordinate strings as keyboard. Pointer inverse affine transform rounded to 0.001 mol/L and 0.1 percentage points, disclosed in UI; never snap to reference points. Recheck with pure assessor.",
+    "lines": "Scatter points only; no inferred line or model law."
+  },
+  "aggregation": "Known incorrect > clarify > partial; all empty neutral, mixture of correct and empty partial; green only all required decisions correct.",
+  "context": "Exact versioned material and immutable binding; edits/help/reset invalidate results; aid provenance monotonic; solution shown separately, never inserted into learner answer; writing ungraded; no raw answers persisted/transmitted.",
+  "limits": [
+    "No universal linear law",
+    "No exact internal concentration inferred",
+    "No independent specialist acceptance or real-device test claimed"
+  ]
+}

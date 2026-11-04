@@ -1,0 +1,384 @@
+{
+  "version": "m1002-r1-cases/1.0.0",
+  "contract": "m1002-diagram/1.0.0",
+  "originalFixtureSha256": "fc20894d622fb4054cb67cf1656b70b22e844b97fbadd8097ce4d5c3c61c64ff",
+  "base": {
+    "xAxis": {
+      "quantity": "concentration",
+      "unit": "mol/L",
+      "ticks": [
+        "0",
+        "0.2",
+        "0.4"
+      ]
+    },
+    "yAxis": {
+      "quantity": "mass_change",
+      "unit": "%",
+      "ticks": [
+        "-10",
+        "0",
+        "10"
+      ]
+    },
+    "points": [
+      {
+        "id": "1",
+        "x": "0",
+        "y": "8"
+      },
+      {
+        "id": "2",
+        "x": "0.1",
+        "y": "3"
+      },
+      {
+        "id": "3",
+        "x": "0.2",
+        "y": "-1"
+      },
+      {
+        "id": "4",
+        "x": "0.3",
+        "y": "-5"
+      },
+      {
+        "id": "5",
+        "x": "0.4",
+        "y": "-8"
+      }
+    ]
+  },
+  "rows": [
+    {
+      "id": "empty",
+      "extra": [
+        {
+          "id": "6",
+          "x": "",
+          "y": ""
+        }
+      ],
+      "status": "partial",
+      "criterion": "partial",
+      "rows": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "empty"
+      ]
+    },
+    {
+      "id": "whitespace",
+      "extra": [
+        {
+          "id": "6",
+          "x": "  ",
+          "y": " "
+        }
+      ],
+      "status": "partial",
+      "criterion": "partial",
+      "rows": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "empty"
+      ]
+    },
+    {
+      "id": "x-only",
+      "extra": [
+        {
+          "id": "6",
+          "x": "0.3",
+          "y": ""
+        }
+      ],
+      "status": "partial",
+      "criterion": "partial",
+      "rows": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "partial"
+      ]
+    },
+    {
+      "id": "y-only",
+      "extra": [
+        {
+          "id": "6",
+          "x": "",
+          "y": "−5"
+        }
+      ],
+      "status": "partial",
+      "criterion": "partial",
+      "rows": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "partial"
+      ]
+    },
+    {
+      "id": "unknown-x",
+      "extra": [
+        {
+          "id": "6",
+          "x": "???",
+          "y": ""
+        }
+      ],
+      "status": "clarify",
+      "criterion": "clarify",
+      "rows": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "clarify"
+      ]
+    },
+    {
+      "id": "unknown-pair",
+      "extra": [
+        {
+          "id": "6",
+          "x": "???",
+          "y": "3"
+        }
+      ],
+      "status": "clarify",
+      "criterion": "clarify",
+      "rows": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "clarify"
+      ]
+    },
+    {
+      "id": "unknown-y",
+      "extra": [
+        {
+          "id": "6",
+          "x": "0.3",
+          "y": "unbekannt"
+        }
+      ],
+      "status": "clarify",
+      "criterion": "clarify",
+      "rows": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "clarify"
+      ]
+    },
+    {
+      "id": "ambiguous",
+      "extra": [
+        {
+          "id": "6",
+          "x": "1,000",
+          "y": "3"
+        }
+      ],
+      "status": "clarify",
+      "criterion": "clarify",
+      "rows": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "clarify"
+      ]
+    },
+    {
+      "id": "extra-pair",
+      "extra": [
+        {
+          "id": "6",
+          "x": "0.35",
+          "y": "2"
+        }
+      ],
+      "status": "incorrect",
+      "criterion": "incorrect",
+      "rows": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "incorrect"
+      ]
+    },
+    {
+      "id": "wrong-unit-x",
+      "extra": [
+        {
+          "id": "6",
+          "x": "0.3 g",
+          "y": ""
+        }
+      ],
+      "status": "incorrect",
+      "criterion": "incorrect",
+      "rows": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "incorrect"
+      ]
+    },
+    {
+      "id": "wrong-unit-y",
+      "extra": [
+        {
+          "id": "6",
+          "x": "",
+          "y": "−5 g"
+        }
+      ],
+      "status": "incorrect",
+      "criterion": "incorrect",
+      "rows": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "incorrect"
+      ]
+    },
+    {
+      "id": "complete-duplicate",
+      "extra": [
+        {
+          "id": "6",
+          "x": "0.3",
+          "y": "-5"
+        }
+      ],
+      "status": "incorrect",
+      "criterion": "incorrect",
+      "rows": [
+        "correct",
+        "correct",
+        "correct",
+        "incorrect",
+        "correct",
+        "incorrect"
+      ]
+    },
+    {
+      "id": "two-incomplete",
+      "extra": [
+        {
+          "id": "6",
+          "x": "0.3",
+          "y": ""
+        },
+        {
+          "id": "7",
+          "x": "",
+          "y": "-5"
+        }
+      ],
+      "status": "partial",
+      "criterion": "partial",
+      "rows": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "partial",
+        "partial"
+      ]
+    },
+    {
+      "id": "known-error-before-unknown",
+      "extra": [
+        {
+          "id": "6",
+          "x": "???",
+          "y": ""
+        }
+      ],
+      "firstY": "9",
+      "status": "incorrect",
+      "criterion": "incorrect",
+      "rows": [
+        "incorrect",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "clarify"
+      ]
+    }
+  ],
+  "labels": [
+    {
+      "id": "decimal",
+      "x": [
+        "0,00",
+        "0,20",
+        "0,40"
+      ],
+      "y": [
+        "−100,00",
+        "0,00",
+        "100,00"
+      ]
+    },
+    {
+      "id": "units",
+      "x": [
+        "0 mol/L",
+        "0.2 mol/L",
+        "0.4 mol/L"
+      ],
+      "y": [
+        "−10 Prozent",
+        "0 Prozent",
+        "10 Prozent"
+      ]
+    }
+  ],
+  "visualExpectation": {
+    "widths": [
+      1440,
+      820,
+      320,
+      390
+    ],
+    "fontPercent": [
+      100,
+      200
+    ],
+    "allTextInsideViewBox": true,
+    "originalInputsUnchanged": true,
+    "noReducedFontScale": true
+  }
+}
