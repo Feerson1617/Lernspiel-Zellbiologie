@@ -47,13 +47,26 @@ export function mountM604Learning(root: HTMLElement, model: M604LearningControll
   node('p','In der betrachteten Wasserverlustphase gilt für die Gesamtwasserpotenziale einschließlich Druck: Vakuole > Cytosol > Außenraum. Wasser kann Tonoplast und Zellmembran passieren; Saccharose bleibt im Beobachtungszeitraum weitgehend außen. Ein höheres Wasserpotenzial bedeutet hier einen weniger negativen Wert.',foundation);
   node('p','Wasserverlust kann Vakuolen- und Protoplastvolumen und Turgor vermindern. Die Zellwand bleibt vergleichsweise formstabil. Nach vollständigem Turgorverlust kann hinreichender weiterer Wasserverlust eine Ablösung des Protoplasten ermöglichen. Anfangs Wasserverlust bedeutet noch keine garantierte Ablösung.',foundation);
   node('p','Beim Rücktausch wird wieder Wasser angeboten. Aufnahme hängt erneut von Gesamtwasserpotenzialen und funktionsfähigen wasserpermeablen Membranen ab. Vollständiger Austausch, spätere Potenziale und Membranfunktion sind keine gesicherten Messwerte. Eine sofortige vollständige Deplasmolyse wird nicht vorausgesetzt.',foundation);
-  node('p','Versuchsrahmen: drei gepaarte Durchgänge an frischen Präparaten derselben Zwiebel – ein erster Durchgang und zwei technische Wiederholungen. Behandlung und Kontrolle erhalten jeweils eigene markierte Felder mit zehn Zellen. In jedem Feld werden dieselben Zellen erneut betrachtet.',foundation);
-  node('p','Geplante Zeitpunkte: Ausgangsbefund in Wasser; Befund 6 Minuten nach Saccharosezugabe (Kontrolle: Wasser); weiterer Befund 6 Minuten nach Rücktausch zu Wasser. Das sind didaktisch gewählte Beobachtungsabstände, keine gemessene universelle Reaktionsdauer.',foundation);
-  node('p','Messgrößen: mittleres relatives Protoplastvolumen, als Schätzung aus gedachten Bildstapeln (eigener Ausgangswert = 100 %; Unsicherheit ±4 Prozentpunkte je Schätzung), und Zahl abgelöster Protoplasten unter den zehn markierten Zellen. Ein einzelnes flaches Bild würde keine direkte Volumenmessung liefern.',foundation);
-  node('p','Drei technische Wiederholungen derselben Zwiebel sind kein Nachweis für alle Zwiebeln oder Pflanzenzellen. Die Übung bestätigt weder praktisches Präparieren noch Mikroskopieren.',foundation,'learning-note');
+  node('p','Verfügbare Methoden: Lösungswechsel, wiederholte Bildstapel zur Volumenschätzung und Zählen sichtbarer Ablösungen. Überlege selbst: Welche Messgröße prüft deine Hypothese? Womit vergleichst du? Welche Bedingungen hältst du gleich?',foundation);
+  const planningLabel = node('label','Mein erster Plan: Messgröße, Vergleich und konstante Bedingungen – unbewertet',foundation); planningLabel.htmlFor = 'm604-planning';
+  const planning = node('textarea','',foundation); planning.id = planningLabel.htmlFor; planning.rows = 3; planning.value = initial.planning;
+  planning.addEventListener('input',() => model.editPlanning(planning.value));
+  node('p','Notiere zuerst deinen Plan. Danach kannst du ihn mit dem Standardplan vergleichen, aus dem die bereitgestellten Daten stammen.',foundation);
+  const standardPlan = node('details','',foundation); standardPlan.id = 'm604-standard-plan';
+  node('summary','Standardplan zum Vergleich bewusst öffnen',standardPlan);
+  standardPlan.addEventListener('toggle',() => { if (standardPlan.open) { model.help('planning',2); refresh(); } });
+  node('p','Versuchsrahmen: drei gepaarte Durchgänge an frischen Präparaten derselben Zwiebel – ein erster Durchgang und zwei technische Wiederholungen. Behandlung und Kontrolle erhalten jeweils eigene markierte Felder mit zehn Zellen. In jedem Feld werden dieselben Zellen erneut betrachtet.',standardPlan);
+  node('p','Geplante Zeitpunkte: Ausgangsbefund in Wasser; Befund 6 Minuten nach Saccharosezugabe (Kontrolle: Wasser); weiterer Befund 6 Minuten nach Rücktausch zu Wasser. Das sind didaktisch gewählte Beobachtungsabstände, keine gemessene universelle Reaktionsdauer.',standardPlan);
+  node('p','Messgrößen: mittleres relatives Protoplastvolumen, als Schätzung aus gedachten Bildstapeln (eigener Ausgangswert = 100 %; Unsicherheit ±4 Prozentpunkte je Schätzung), und Zahl abgelöster Protoplasten unter den zehn markierten Zellen. Ein einzelnes flaches Bild würde keine direkte Volumenmessung liefern.',standardPlan);
+  node('p','Drei technische Wiederholungen derselben Zwiebel sind kein Nachweis für alle Zwiebeln oder Pflanzenzellen. Die Übung bestätigt weder praktisches Präparieren noch Mikroskopieren.',standardPlan,'learning-note');
 
   const workspace = node('section','',main,'investigation-workspace'); workspace.id = 'untersuchung'; workspace.tabIndex = -1;
   skip.addEventListener('click',event => { event.preventDefault(); workspace.focus(); workspace.scrollIntoView({ block:'start' }); });
+  const coreFields: readonly M604Field[] = ['hypothesis','dependent','control','observation','interpretation','limits'];
+  let expanded = false;
+  node('p','Kernweg: Hypothese → Messgröße → Kontrolle → Befund → begrenzte Deutung. Die Vertiefung ergänzt weitere Entscheidungen. Ein bearbeiteter Kernweg bestätigt noch keine vollständige Untersuchung.',workspace,'learning-note');
+  const depth = button('Vertiefung: alle Entscheidungen anzeigen',workspace,() => { expanded = !expanded; depth.setAttribute('aria-expanded',String(expanded)); depth.textContent = expanded ? 'Kernweg anzeigen' : 'Vertiefung: alle Entscheidungen anzeigen'; refresh(); }); depth.id = 'm604-depth'; depth.setAttribute('aria-expanded','false');
+  const coreProgress = node('p','',workspace,'learning-note'); coreProgress.id = 'm604-core-progress';
   const stepsNav = node('nav','',workspace,'investigation-steps'); stepsNav.setAttribute('aria-label','Schritte der Untersuchung');
   const stepButtons = M604_STEPS.map((step,index) => button(`${index + 1}. ${step.title}`,stepsNav,() => go(index)));
   const panels = M604_STEPS.map((step,index) => {
@@ -70,9 +83,9 @@ export function mountM604Learning(root: HTMLElement, model: M604LearningControll
   node('summary','Meine Vorhersage vor der ersten Datenansicht',originalPrediction);
   const originalText = node('p','',originalPrediction), originalChoice = node('p','',originalPrediction);
   prediction.addEventListener('input',() => { model.editPrediction(prediction.value); updatePrediction(); });
-  node('p','Lege Behandlung, Messgrößen und zeitlichen Vergleich fest. Die bereitgestellten Befunde stammen aus dem im Material beschriebenen Standardplan. Sie werden durch deine Auswahl nicht neu simuliert.',panels[1]);
+  node('p','Lege deine Messgröße fest. In der Vertiefung ergänzt du Behandlung und zeitlichen Vergleich. Die bereitgestellten Befunde stammen aus dem bewusst aufrufbaren Standardplan. Sie werden durch deine Auswahl nicht neu simuliert.',panels[1]);
   node('p','Ein geeigneter Kontrollansatz lässt die Behandlung als gezielten Unterschied stehen und macht andere Einflüsse vergleichbar. Wähle die Bausteine einzeln.',panels[2]);
-  node('p','Öffne die Befunde nach deiner Planung. Die erste Vorhersage bleibt in dieser Sitzung als Entwurf vor der Datenansicht nachvollziehbar. Eine spätere Änderung wird als Überarbeitung nach Einsicht gekennzeichnet.',panels[3]);
+  node('p','Öffne die Befunde nach deiner Planung. Die erste Vorhersage bleibt in dieser Sitzung als Entwurf vor der Datenansicht nachvollziehbar. Eine spätere Änderung wird als Überarbeitung nach Einsicht gekennzeichnet. Du darfst die Daten auch schon vor deiner Planung öffnen.',panels[3]);
   const reveal = button('Didaktische Befunde öffnen',panels[3]!,() => { model.revealObservations(); refresh(); data.focus(); live.textContent = 'Befunde geöffnet. Die eigene Vorhersage bleibt unbewertet.'; },'learning-primary'); reveal.id = 'm604-reveal';
   const data = node('section','',panels[3],'investigation-data'); data.tabIndex = -1; data.setAttribute('aria-label','Didaktische Beobachtungsdaten'); data.hidden = !initial.observationsVisible;
   node('h3','Bereitgestellte Befunde · keine echten Messungen',data);
@@ -132,7 +145,7 @@ export function mountM604Learning(root: HTMLElement, model: M604LearningControll
 
   const feedback = node('section','',main,'learning-feedback investigation-feedback'); feedback.tabIndex = -1; feedback.setAttribute('aria-label','Rückmeldung zur Untersuchung');
   const help = node('section','',main,'learning-helpers'); help.setAttribute('aria-label','Hilfen zur Untersuchung'); node('h2','Hilfen zum aktuellen Schritt',help);
-  node('p','Hinweise, Strukturhilfe und eine ausdrücklich aufgerufene Vergleichslösung bleiben getrennt vom fachlichen Ergebnis vermerkt. Deine Auswahl wird nicht automatisch ausgefüllt.',help,'learning-note');
+  node('p','Die Vergleichslösung öffnet auch die Befunde. Hinweise, Strukturhilfe und eine ausdrücklich aufgerufene Vergleichslösung bleiben getrennt vom fachlichen Ergebnis vermerkt. Deine Auswahl wird nicht automatisch ausgefüllt.',help,'learning-note');
   const helpActions = node('div','',help,'help-actions'), helpText = node('div','',help,'help-text'); helpText.setAttribute('role','status');
   const hints = {
     planning: ['Welche Einflüsse außer der Lösung könnten einen Unterschied erzeugen? Welche Messgröße würde deine Erwartung überhaupt prüfen?', 'Trenne gezielt veränderte Lösung, gemessene Reaktion und konstante Bedingungen. Plane dieselben markierten Felder, vergleichbare Zeitabstände sowie einen ersten Durchgang und zwei vollständige Wiederholungen.'],
@@ -163,10 +176,10 @@ export function mountM604Learning(root: HTMLElement, model: M604LearningControll
   const footer = node('footer','',root,'site-footer'); node('span','Übungsvorschau · keine Unterrichtsfreigabe und kein praktischer Methodennachweis',footer);
 
   function updatePrediction() {
-    const current = model.getState(); predictionNote.textContent = current.predictionAfterData
+    const current = model.getState(); predictionNote.textContent = (current.seenDataBefore ? 'Die Befunde wurden bereits angesehen. Eine jetzt formulierte Erklärung ist keine ursprüngliche Vorhersage mehr. ' : '') + (current.predictionAfterData
       ? 'Nach Einsicht in die Befunde formuliert oder überarbeitet. Der eigene Satz bleibt unbewertet.'
       : current.predictionBeforeData ? 'Die erste Vorhersage wurde vor der Datenansicht in dieser Sitzung festgehalten. Der eigene Satz bleibt unbewertet.'
-        : 'Noch vor der ersten Datenansicht dieses Falls in dieser Sitzung. Eigener Text wird nicht automatisch bewertet.';
+        : 'Noch vor der ersten Datenansicht dieses Falls in dieser Sitzung. Eigener Text wird nicht automatisch bewertet.');
     originalPrediction.hidden = current.predictionBeforeData === null;
     originalText.textContent = current.predictionBeforeData?.text || 'Vor der ersten Datenansicht war kein eigener Satz notiert.';
     const hypothesis = definitions.find(field => field.id === 'hypothesis')!;
@@ -181,7 +194,14 @@ export function mountM604Learning(root: HTMLElement, model: M604LearningControll
     panels.forEach((panel,index) => { panel.hidden = current.step !== index; });
     stepButtons.forEach((btn,index) => { if (index === current.step) btn.setAttribute('aria-current','step'); else btn.removeAttribute('aria-current'); });
     previous.disabled = current.step === 0; next.disabled = current.step === 6;
-    for (const [id,field] of fields) { field.refresh(current.answer[id]); field.element.disabled = !current.observationsVisible && ['observation','observationType','interpretation'].includes(id); }
+    for (const [id,field] of fields) {
+      field.refresh(current.answer[id]);
+      const closedData = !current.observationsVisible && ['observation','observationType','interpretation'].includes(id);
+      field.element.hidden = closedData || (!expanded && !coreFields.includes(id));
+      field.element.disabled = field.element.hidden;
+    }
+    const coreDone = current.observationsVisible && coreFields.every(id => current.answer[id].length > 0);
+    coreProgress.textContent = coreDone ? 'Kernweg bearbeitet. Dies beschreibt den Bearbeitungsstand, keine fachliche Richtigkeit und keinen vollständigen Untersuchungsbeleg. Prüfe deine Entscheidungen; für die vollständige strukturierte Leistung sind auch alle Vertiefungen nötig.' : 'Kernweg noch offen. Bearbeite Hypothese, Messgröße, Kontrolle, Befund und begrenzte Deutung.';
     data.hidden = !current.observationsVisible; reveal.disabled = current.observationsVisible; reveal.textContent = current.observationsVisible ? 'Befunde sind geöffnet' : 'Didaktische Befunde öffnen';
     dataNeeded.forEach(note => { note.hidden = current.observationsVisible; }); updatePrediction();
     feedback.replaceChildren();
@@ -193,6 +213,8 @@ export function mountM604Learning(root: HTMLElement, model: M604LearningControll
       node('p',current.outcome.message,feedback);
       const list = node('ol','',feedback,'investigation-criteria');
       for (const criterion of current.outcome.criteria) {
+        if ((!current.observationsVisible && ['observation','observationType','interpretation'].includes(criterion.field))
+          || (!expanded && !coreFields.includes(criterion.field) && criterion.id !== 'M6.04.C18' && current.answer[criterion.field].length === 0)) continue;
         const display = STATUS_PRESENTATION[criterion.status], li = node('li','',list);
         const title = criterion.id === 'M6.04.C18' ? 'Hypothese und Messgröße verbinden' : criterionNames[criterion.field];
         li.dataset['criterionFeedback'] = criterion.id;
@@ -205,6 +227,9 @@ export function mountM604Learning(root: HTMLElement, model: M604LearningControll
           const choice = STATUS_PRESENTATION[decision.status], p = node('p',`${choice.symbol} ${decision.label} ${decision.reason}`,detail); p.dataset['color'] = choice.color;
         }
         if (criterion.status !== 'correct') button(`${title} selbst überarbeiten`,li,() => {
+          if (!expanded && !coreFields.includes(criterion.field)) {
+            expanded = true; depth.setAttribute('aria-expanded','true'); depth.textContent = 'Kernweg anzeigen';
+          }
           const index = M604_STEPS.findIndex(s => s.fields.includes(criterion.field)); go(index);
           fields.get(criterion.field)!.element.querySelector<HTMLInputElement>('input:not(:disabled)')?.focus();
         });

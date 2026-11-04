@@ -418,7 +418,11 @@
     "tests/fixtures/m1002-r1-cases.json",
     "tests/unit/m1002-r1.test.ts",
     "tests/browser/m1002-r1.spec.ts",
-    "qa/M1002-R1.md"
+    "qa/M1002-R1.md",
+    "tests/browser/didaktik-v1.spec.ts",
+    "contracts/didaktik-v1-1.0.0.json",
+    "qa/Didaktik-V1.md",
+    "tests/browser/didaktik-v1-paths.spec.ts"
   ],
   "distPatterns": [
     "^index\\.html$",

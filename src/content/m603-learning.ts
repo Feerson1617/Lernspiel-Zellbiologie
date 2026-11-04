@@ -6,10 +6,10 @@ export const M603_NODE_TEXT = Object.freeze({
 } satisfies Record<M603Node, string>);
 export const M603_RELATION_TEXT = Object.freeze({
   causes: 'führt zu',
-  enables_if: 'kann ermöglichen: bei hinreichender weiterer Volumenabnahme, nach vollständigem Turgorverlust',
-  requires_zero: 'notwendige Bedingung: vollständiger Turgorverlust; allein nicht hinreichend',
+  enables_if: 'kann ermöglichen: hinreichend weitere Volumenabnahme bei Turgor null',
+  requires_zero: 'notwendige Bedingung: Turgor null; allein nicht hinreichend',
   coupled: 'hängt zusammen mit – ohne strikte Zeitfolge',
-  possible_together: 'kann ermöglichen: nur bei Turgor null UND hinreichendem weiterem Wasserverlust',
+  possible_together: 'kann ermöglichen: Turgor null UND hinreichend weiterer Wasserverlust',
   strictly_before: 'muss vollständig vorher geschehen, erst danach folgt',
   prevents: 'verhindert',
 } satisfies Record<M603Relation, string>);
@@ -27,23 +27,23 @@ export type M603HelpTopic = (typeof M603_HELP_TOPICS)[number];
 export const M603_HELP = Object.freeze({
   water: Object.freeze({ title: 'Wasserbilanz und Volumen',
     hint: 'Vergleiche die Gesamtwasserpotenziale beiderseits des Tonoplasten. Was bedeutet eine negative Wasserbilanz für den gefüllten Raum?',
-    structure: 'Beginne mit dem Wasserverlust. Suche die Aussage zum Volumen und wähle eine Bedeutung, die eine Folge beschreibt. Unterscheide Vakuolenraum und Zellwand.',
+    structure: 'Welche Volumenfolge hat Wasserverlust? Unterscheide Vakuolenraum und Zellwand.',
     solution: 'A → B / „führt zu“: Wasser passiert den Tonoplasten von der Vakuole ins Cytosol und die Zellmembran nach außen entlang der gegebenen Gesamtpotenziale. Die Wasserbilanz der Vakuole ist negativ, ihr Volumen nimmt ab. Die Zellwand schrumpft dabei nicht im gleichen Ausmaß.',
   }),
   turgor: Object.freeze({ title: 'Druck und Turgor',
     hint: 'Turgor bezeichnet den Druck des Zellinhalts gegen die Zellwand. Wie verändert Wasserabgabe diesen Druck?',
-    structure: 'Verbinde den Wasserverlust mit der Aussage zum Turgor. Erzwinge keine Reihenfolge zwischen Volumenabnahme und Druckabnahme: Beide hängen zusammen.',
+    structure: 'Wie hängen Wasserverlust und Turgor zusammen? Volumen- und Druckabnahme bilden keine strikte Zeitfolge.',
     solution: 'A → C / „führt zu“: Durch Wasserverlust sinkt der Turgor. Volumen- und Druckänderung sind gekoppelt. Eine strikte Folge B → C oder C → B als „erst vollständig vorher“ ist nicht begründet.',
   }),
   detachment: Object.freeze({ title: 'Bedingungen der Ablösung',
     hint: 'D ist als Möglichkeit formuliert. Reicht schon eine anfängliche Abnahme, um einen sichtbaren Abstand zur Wand zu belegen?',
-    structure: 'Für D brauchst du zwei gemeinsam geltende Bedingungen: vollständiger Turgorverlust und hinreichender weiterer Wasserverlust mit Volumenabnahme. Suche zwei passende Ausgangsaussagen und bedingte Bedeutungen.',
+    structure: 'Prüfe für D zwei gemeinsam geltende Bedingungen: Turgor null und hinreichend weiterer Wasserverlust mit Volumenabnahme. Keine Bedingung allein genügt.',
     solution: 'B → D / „kann ermöglichen“ und C → D / „notwendige Bedingung“ gehören zusammen: Erst vollständiger Turgorverlust und hinreichender weiterer Wasserverlust mit Volumenrückgang erlauben im Erklärungsmodell eine mögliche Ablösung. Keine der beiden Kanten allein bestätigt D; selbst gemeinsam sind sie keine echte Beobachtung oder Garantie sichtbarer Plasmolyse.',
   }),
 });
 export const M603_SELF_CHECK = Object.freeze([
-  'Ich begründe die Wasserbewegung mit den gegebenen Gesamtwasserpotenzialen, Zahlen in Pa und dem enthaltenen Druckbeitrag.',
-  'Ich unterscheide die Zellmembran (Cytosol ↔ Außenraum) vom Tonoplasten (Vakuole ↔ Cytosol) und benenne beide Wasserwege.',
-  'Ich verbinde Wasserverlust mit der Wasserbilanz, dem Vakuolen-/Protoplastvolumen und sinkendem Turgor, ohne eine strikte zeitliche Folge von Volumen und Druck zu erfinden.',
-  'Ich erkläre die mögliche Ablösung mit vollständigem Turgorverlust UND hinreichendem weiterem Wasserverlust. Die Zellwand bleibt vergleichsweise formstabil; das Modell beweist keine reale sichtbare Plasmolyse.',
+  'Ich beantworte die Frage und unterscheide sinkenden Turgor von vollständig verlorenem Turgor.',
+  'Ich begründe den Zusammenhang von Wasserverlust, Volumen und Turgor, ohne eine starre Reihenfolge zu behaupten.',
+  'Ich erkläre, welche Bedingungen gemeinsam eine Ablösung ermöglichen und warum eine notwendige Bedingung allein nicht genügt.',
+  'Ich unterscheide eine begründete Möglichkeit von einer sichtbaren Beobachtung und berücksichtige die formstabile Zellwand.',
 ]);

@@ -43,7 +43,7 @@ test('runs all fixed osmosis cases with bound criteria, original evidence, feedb
   }
   expect(results.find(({ result }) => result.feedbackCode === 'OSMOSIS_WRONG_PLASMOLYSIS')?.feedback).toContain('Zellreaktion');
   expect(await page.evaluate(() => Object.keys(localStorage))).toEqual([]);
-  await expect(page.getByText('Noch in Entwicklung.', { exact: true })).toBeVisible();
+  await expect(page.getByText('Begrenzte Entwicklungsvorschau. Noch keine Unterrichtsfreigabe.', { exact: true })).toBeVisible();
 });
 
 test('uses shared new naming frames with separate scientific meanings for both real runtime interfaces', async ({ page, baseURL }) => {

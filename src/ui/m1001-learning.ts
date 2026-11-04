@@ -14,7 +14,7 @@ export function mountM1001Learning(root: HTMLElement, model: M1001Learning): voi
   node('p','Übungsvorschau · M10.01',main,'eyebrow'); node('h1','Relative Massenänderung',main).tabIndex=-1;
   node('p','Material verstehen → selbst rechnen → Zahlen überprüfen → Fehler verbessern → biologisch deuten',main,'learning-lead');
   node('h2','1. Material verstehen',main);
-  node('p','Fünf ausdrücklich didaktische Datensätze, kein realer Versuch. Die Außenkonzentrationen gelten für einen im betrachteten Zeitfenster nicht permeierenden Stoff.',main);
+  node('p','Neu formulierter didaktischer Kartoffelgewebe-Fall: fünf vergleichbare frische Proben aus derselben Knolle, gleich zugeschnitten und jeweils 20 Minuten bei gleicher Temperatur behandelt. Vor beiden Wägungen wird anhaftende Flüssigkeit auf gleiche Weise vorsichtig abgetupft. Die Außenkonzentrationen gelten für einen im Zeitfenster nicht permeierenden Stoff. Die Zahlen sind konstruiert, keine realen Messungen; 20 Minuten sind eine gewählte Versuchsbedingung, keine allgemeine Reaktionsdauer.',main);
   node('p','Relative Massenänderung = 100 × (Endmasse − Anfangsmasse) / Anfangsmasse. Die Anfangsmasse ist die Bezugsgröße: Sie entspricht dem Ausgangswert von 100 %.',main);
   const scroll=node('div','',main,'mass-table'); scroll.tabIndex=0; scroll.setAttribute('role','region'); scroll.setAttribute('aria-label','Massentabelle, bei Bedarf seitlich scrollen');
   // Native horizontal arrow scrolling differs on touch-enabled WebKit.
@@ -51,17 +51,20 @@ export function mountM1001Learning(root: HTMLElement, model: M1001Learning): voi
     refresh();
   });
   node('a','Die Daten in einem eigenen Diagramm darstellen',main).href='#/m1002';
-  node('h2','4. Ergebnis biologisch deuten',main);
-  node('p','Ein positives Ergebnis bedeutet eine Massenzunahme gegenüber dem Ausgangswert, ein negatives eine Massenabnahme. Die Daten können im gegebenen Versuchsrahmen einen Netto-Wasseraustausch stützen. Relative Massenänderungen messen jedoch nicht unmittelbar Vakuolenvolumen, Turgor oder Membranintegrität.',main);
-  node('p','Erkläre, warum die Anfangsmasse die Bezugsgröße ist und was eine positive beziehungsweise negative relative Massenänderung bedeutet.',main);
+  node('h2','4. Bezugsgrößen vergleichen · unbewertete Zwischennotiz',main);
+  node('p','Zwei weitere gedachte Proben wiegen anfangs 2,00 g und 4,00 g. Beide nehmen um 0,20 g zu. Vergleiche ihre relativen Änderungen: Warum ist dieselbe absolute Zunahme nicht derselbe relative Zuwachs? Du kannst deine Überlegung kurz hier oder auf Papier notieren.',main);
   const label=node('label','Meine Erklärung – nicht automatisch bewertet',main);label.htmlFor='mass-writing';
-  const writing=node('textarea','',main);writing.id=label.htmlFor;writing.rows=6;writing.value=initial.writing;writing.addEventListener('input',()=>model.editWriting(writing.value));
-  node('h3','Kriterienraster für Selbst-, Partner- oder Lehrkraftprüfung',main);
-  const rubric=node('ul','',main);
-  for(const text of ['Ich begründe die Anfangsmasse als gemeinsamen Ausgangsbezug und unterscheide relative Änderung und Endmasse.','Ich erkläre positives und negatives Vorzeichen und verwende einen eigenen Zahlenbeleg aus der Tabelle.','Ich trenne Massendaten von Aussagen über Vakuolenvolumen, Turgor und Membranintegrität.']) node('li',text,rubric);
+  const writing=node('textarea','',main);writing.id=label.htmlFor;writing.rows=4;writing.value=initial.writing;writing.addEventListener('input',()=>model.editWriting(writing.value));
+  node('p','Das ist eine Zwischennotiz zur Normierung. Der schriftliche Abschluss des Datenwegs folgt nach deinem eigenen Diagramm.',main,'learning-note');
+  const interpretation=node('div','',main); interpretation.id='mass-interpretation';
+  button('Biologische Deutung zum Vergleich öffnen',main,()=>{
+    model.help(3);
+    interpretation.textContent='Ein positives Ergebnis bedeutet eine Massenzunahme gegenüber dem Ausgangswert, ein negatives eine Massenabnahme. Die Daten können im gegebenen Versuchsrahmen einen Netto-Wasseraustausch stützen. Relative Massenänderungen messen jedoch nicht unmittelbar Vakuolenvolumen, Turgor oder Membranintegrität. Bei der zusätzlichen Normierungsfrage ergeben 0,20 g bezogen auf 2,00 g einen Zuwachs von 10 %, bezogen auf 4,00 g von 5 %.';
+    refresh();
+  });
   const support=node('p','',main,'learning-note');
   node('p','Deine Zahlen und Texte bleiben nur in dieser Sitzung. Es gibt keine automatische Übertragung oder dauerhafte Speicherung. Eine grüne Zahlenprüfung bewertet deinen Erklärungstext nicht. Nach Neuladen ist die frühere Hilfenutzung nicht gesichert.',main,'learning-note');
-  button('Neue Bearbeitung beginnen',main,()=>{model.reset();inputs.forEach(i=>{i.value='';});writing.value='';helpText.replaceChildren();refresh();inputs[0]?.focus();});
+  button('Neue Bearbeitung beginnen',main,()=>{model.reset();inputs.forEach(i=>{i.value='';});writing.value='';helpText.replaceChildren();interpretation.replaceChildren();refresh();inputs[0]?.focus();});
   function refresh() {
     const s=model.getState();
     feedback.forEach((p,i)=>{

@@ -67,8 +67,8 @@ test('complete success has one next step and retains optional detailed field fee
     const summary = feedback.getByText(`Fachliche Erklärung: ${field}`, { exact: true });
     await summary.click(); await expect(summary.locator('..').getByText('Bezug zum Material', { exact: true })).toBeVisible(); await summary.click();
   }
-  await next.click(); await expect(page.locator('#weiterdenken')).toBeFocused();
-  await expect(page).toHaveURL(/#\/m602$/);
+  await next.click(); await expect(page.getByRole('heading',{level:1})).toBeFocused();
+  await expect(page).toHaveURL(/#\/m603$/);
 });
 
 for (const kind of ['hint', 'notebook'] as const) {
@@ -94,7 +94,7 @@ for (const kind of ['hint', 'notebook'] as const) {
 
 test('notebook self-reflection is voluntary and never grades, stores or certifies a written explanation', async ({ page }) => {
   await exercise(page);
-  await page.getByText('Nach dem Schreiben: Selbst- oder Partnerprüfung öffnen', { exact: true }).click();
+  await page.getByText('Nach dem Antworten: Selbst- oder Partnerprüfung öffnen', { exact: true }).click();
   const reflection = page.locator('.notebook-reflection');
   await expect(reflection).toContainText('keine automatische Fachbewertung');
   await expect(reflection).toContainText('Zahlen und Pa');

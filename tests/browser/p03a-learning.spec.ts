@@ -353,7 +353,7 @@ test('prior knowledge stays optional and the notebook example is explicit soluti
   await expect(page.locator('#vorwissen')).toContainText('Vergleiche deine Einschätzung');
   await expect(page.getByRole('button', { name: 'Drei Antworten prüfen', exact: true })).toBeEnabled();
   await expect(result(page)).not.toHaveAttribute('data-status', 'correct');
-  await expect(page.getByRole('heading', { name: 'Erklären im Heft', exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Optionaler Zwischenvergleich', exact: true })).toBeVisible();
   await press(page, 'Beispiellösung im Heftvergleich ansehen');
   await expect(support(page)).toContainText('Lösung angesehen');
   for (const name of ['Fachbegriff', 'Nettorichtung', 'Vakuolenvolumen']) await expect(support(page)).toContainText(`${name}: Lösung angesehen`);

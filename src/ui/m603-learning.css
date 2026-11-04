@@ -77,3 +77,8 @@
     .causal-arrows text { fill: CanvasText; }
   }
 }
+
+@layer components {
+  .causal-page [hidden] { display: none !important; }
+  .learning-notebook[data-focused="true"] { margin-top: 1rem; }
+}

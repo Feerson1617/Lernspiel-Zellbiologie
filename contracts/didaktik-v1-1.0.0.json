@@ -1,0 +1,21 @@
+{
+  "version": "zelllabor11.learning-paths/1.0.0",
+  "scope": ["M6.02", "M6.03", "M6.04", "M10.01", "M10.02"],
+  "source": "Public concepts A–F, existing contracts and explicit user request; private teaching and examination originals unavailable and not used",
+  "paths": {
+    "water": ["M6.02", "M6.03", "one ungraded written explanation (2–4 sentences)"],
+    "data": ["M10.01", "M10.02", "one ungraded written data description with quantities, units, approximate interpolation and inference limit"],
+    "optional": "M6.04 compact core plus full existing investigation in optional depth"
+  },
+  "contentChanges": {
+    "M6.02": "Neutral initial state and all three unchanged total water potentials; ranking/consequences only in consciously opened aid or actual answer feedback. Supersedes initial presentation in F/C/spec; original source retained.",
+    "M6.03": "Shortened relation labels retain direction, joint conditions and necessity versus sufficiency. New ungraded closure asks whether declining turgor already proves visible detachment; isolated writing view and subsequent criteria/example.",
+    "M6.04": "Every actual case-result disclosure, including full comparison, marks seen data and freezes only the real pre-disclosure prediction. Initially offer methods and an open planning note; standard plan is explicitly disclosed. Core completion describes participation only, never correct status or full evidence.",
+    "M10.01": "New fictional potato-tissue context: comparable fresh samples from one tuber, equal cutting, 20-minute treatment at equal temperature, equal gentle blotting before weighing. All five original masses/results unchanged. Ungraded normalization comparison: 2.00 g/4.00 g each gain 0.20 g; 10%/5%.",
+    "M10.02": "Same fictional context, table/plot links, ungraded written closure and separate readability guidance. All scales, exact tolerances, coordinate mappings and original data unchanged. No M10.03 implementation."
+  },
+  "assessment": "Existing task/rubric/model versions, pure assessors, fixtures and eight progress metadata fields unchanged. Presentation version is separate from bounded assessment contexts.",
+  "priorEvidence": "Existing receipts still mean only their versioned bounded task. No migration grants evidence for a new written closure, independent prediction, classroom readiness or practical competence. Written answers and open planning notes remain volatile, ungraded and untransmitted.",
+  "M604CoreFields": ["hypothesis", "dependent", "control", "observation", "interpretation", "limits"],
+  "M604FullCriteria": "All 17 fields and C18 remain required for a correct full result and receipt. Compact view does not change aggregation."
+}

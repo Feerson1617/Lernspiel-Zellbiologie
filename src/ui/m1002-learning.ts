@@ -27,10 +27,13 @@ export function mountM1002Learning(root:HTMLElement,model:M1002Learning) {
   node('p','Übungsvorschau · M10.02',main,'eyebrow');node('h1','Ein Diagramm selbst erstellen',main).tabIndex=-1;
   node('p','Material lesen → Achsen und Skalen festlegen → fünf Punkte eintragen → prüfen und verbessern → Daten beschreiben',main,'learning-lead');
   node('h2','1. Material verstehen',main);
-  node('p','Diese fünf Datensätze sind ausdrücklich konstruiert, keine realen Messungen. Stelle die relative Massenänderung gegen die Außenkonzentration dar.',main);
-  const table=node('table','',node('div','',main,'material-table'));node('caption','Didaktische Daten',table);
+  node('p','Die fünf konstruierten Datensätze stammen aus dem neu formulierten didaktischen Kartoffelgewebe-Fall: vergleichbare frische Proben, 20 Minuten Behandlung bei gleicher Temperatur und vergleichbare Wägeweise. Es sind keine realen Messungen. Stelle die relative Massenänderung gegen die Außenkonzentration dar.',main);
+  node('a','Zurück zur Berechnung und zur Normierungsfrage',main).href='#/m1001';
+  const material=node('section','',main);material.id='diagram-material';material.tabIndex=-1;
+  const table=node('table','',node('div','',material,'material-table'));node('caption','Didaktische Daten',table);
   const tr=node('tr','',node('thead','',table));for(const t of ['Außenkonzentration (mol/L)','Relative Massenänderung (%)'])node('th',t,tr).scope='col';
   const tb=node('tbody','',table);for(const p of M1002_POINTS){const row=node('tr','',tb);node('td',p.x.replace('.',','),row);node('td',p.y.replace('-','−'),row);}
+  const toPlot=node('a','Von der Tabelle zu meinem Diagramm',material);
   node('h2','2. Achsen und lineare Skalen festlegen',main);
   node('p','Wähle Größen und Einheiten selbst. Beschrifte je Achse drei gleich weit auseinanderliegende Marken. Gleiche Abstände brauchen gleiche Zahlenschritte. Die Skala muss null und alle Datenwerte einschließen. Klar beschriftete umgekehrte Richtungen sind ebenso zulässig.',main);
   const axisGrid=node('div','',main,'axis-grid');
@@ -53,7 +56,10 @@ export function mountM1002Learning(root:HTMLElement,model:M1002Learning) {
   node('p','Beim Tippen werden x-Koordinaten auf 0,001 mol/L und y-Koordinaten auf 0,1 Prozentpunkte gerundet, ohne Einrasten an Musterpunkten. Die Prüfung toleriert einschließlich ±0,005 mol/L und ±0,2 Prozentpunkte. Auch 0,095 und 0,105 sind als x-Werte zulässig. Keine Tausendertrennzeichen verwenden.',main);
   const mode=node('p','',main);mode.setAttribute('role','status');let selectedId:string|null=null;
   button('Neuen Punkt per Tipp setzen',main,()=>{selectedId=null;refresh();});
-  const figure=node('figure','',main);figure.id='diagram-figure';
+  const figure=node('figure','',main);figure.id='diagram-figure';figure.tabIndex=-1;
+  const toTable=node('a','Vom Diagramm zurück zur Datentabelle',figure);
+  for(const [link,target] of [[toPlot,figure],[toTable,material]] as const){link.href=`#${target.id}`;link.addEventListener('click',e=>{e.preventDefault();target.focus();target.scrollIntoView({block:'start'});});}
+  node('p','Prüfe, ob andere Personen die fünf Datenpunkte in deiner Darstellung gut unterscheiden können.',figure,'learning-note').id='diagram-readability';
   const yLabel=node('p','',figure,'plot-axis-label');yLabel.id='diagram-y-label';
   const scroll=node('div','',figure,'plot-scroll');scroll.tabIndex=0;scroll.setAttribute('role','region');scroll.setAttribute('aria-label','Diagramm, bei Bedarf seitlich scrollen');
   scroll.addEventListener('keydown',e=>{if(e.target===scroll&&(e.key==='ArrowLeft'||e.key==='ArrowRight')){e.preventDefault();scroll.scrollLeft+=e.key==='ArrowRight'?64:-64;}});
@@ -99,10 +105,13 @@ export function mountM1002Learning(root:HTMLElement,model:M1002Learning) {
   const helpContent=node('div','',help);helpContent.setAttribute('role','status');
   function clearHelpContent(){for(const svg of helpContent.querySelectorAll('svg'))disposeM1002Plot(svg);helpContent.replaceChildren();}
   node('h2','5. Daten beschreiben und Grenzen erklären',main);
-  node('p','Beschreibe die dargestellten Veränderungen mit mindestens zwei Zahlenbelegen und erkläre, welche Aussagen sich aus dem Diagramm allein nicht sicher ableiten lassen.',main);
+  node('p','Schriftlicher Abschluss: Beschreibe den Verlauf mit mindestens zwei Zahlenbelegen und den zugehörigen Einheiten. Schätze eine zwischen zwei Datenpunkten liegende Größe und kennzeichne sie als Näherung. Formuliere eine begrenzte Schlussfolgerung und begründe eine Grenze dessen, was das Diagramm zeigen kann.',main);
   label('Meine Erklärung – nicht automatisch bewertet','diagram-writing',main);const writing=node('textarea','',main);writing.id='diagram-writing';writing.rows=6;writing.addEventListener('input',()=>model.editWriting(writing.value));
-  const rubric=node('ul','',main);for(const text of ['Ich beschreibe die Daten fachlich richtig.','Ich verwende mindestens zwei passende Zahlenbelege.','Ich benenne die Größen und Einheiten präzise.','Ich trenne den Datenbefund von einer biologischen Erklärung.','Ich begründe Schlussfolgerungsgrenzen: kein allgemeines lineares Gesetz, keine exakt bestimmte innere Zellkonzentration und keine unmittelbare Messung von Vakuolenvolumen, Turgor oder Membranintegrität.'])node('li',text,rubric);
-  node('p','Die Punkte werden nicht durch eine Musterkurve verbunden. Das Diagramm belegt weder zusätzliche Messwerte zwischen den Punkten noch ein allgemeines biologisches Gesetz. Ein grünes Diagramm bestätigt nur die geprüfte Diagrammleistung, nicht deinen Erklärungstext.',main);
+  const comparisonCriteria=node('details','',main);comparisonCriteria.id='diagram-writing-rubric';node('summary','Nach dem Schreiben: Kriterienvergleich öffnen',comparisonCriteria);
+  node('p','Für Selbst-, Partner- oder Lehrkraftprüfung. Begründe jeden Punkt am eigenen Text; es gibt keine automatische Textbewertung.',comparisonCriteria);
+  const rubric=node('ul','',comparisonCriteria);for(const text of ['Beschreibe ich den Verlauf fachlich richtig und belege ihn mit mindestens zwei passenden Zahlen samt Größen und Einheiten?','Verknüpfe ich meine Zahlenbelege nachvollziehbar mit der beschriebenen Veränderung, statt sie nur aufzulisten?','Kennzeichne und begründe ich meine Schätzung zwischen den Datenpunkten als Näherung?','Unterscheide ich Datenbefund und biologische Deutung und begründe eine Grenze meiner Schlussfolgerung?'])node('li',text,rubric);
+  node('p','Die Punkte werden nicht durch eine Musterkurve verbunden. Ein grünes Diagramm bestätigt nur die geprüfte Diagrammleistung, nicht deinen Erklärungstext.',main);
+  const writingFeedback=node('p','',main,'learning-note');writingFeedback.id='diagram-writing-feedback';
   const support=node('p','',main,'learning-note');support.id='diagram-support';node('p','Koordinaten und Texte bleiben nur in dieser Sitzung. Es gibt keine dauerhafte Rohantwortspeicherung und keine automatische Übertragung. Nach Neuladen ist die frühere Hilfehistorie ungesichert.',main,'learning-note');
   button('Neue Bearbeitung beginnen',main,()=>{model.reset();selectedId=null;clearHelpContent();syncInputs();renderRows();refresh();axisControls.x.quantity.focus();});
   function syncInputs(){const s=model.getState();for(const dim of ['x','y'] as const){const a=s.answer[dim==='x'?'xAxis':'yAxis'],c=axisControls[dim];c.quantity.setValue(a.quantity);c.unit.setValue(a.unit);c.ticks.forEach((t,i)=>{t.value=a.ticks[i]!;});}writing.value=s.writing;}
@@ -115,6 +124,7 @@ export function mountM1002Learning(root:HTMLElement,model:M1002Learning) {
     for(const dim of ['x','y'] as const){const box=axisControls[dim].feedback;box.replaceChildren();const axis=r?.axes?.[dim];if(!axis||stale)node('p',stale?'○ Antwort oder Hilfe geändert. Erneut prüfen.':'○ Noch nicht geprüft.',box);else for(const key of ['quantity','unit','scale'] as const)present(node('p','',box),axis[key]);}
     outputs.forEach((p,i)=>{if(r?.points[i]&&!stale)present(p,r.points[i]!);else{p.dataset['status']=stale?'stale':'empty';p.dataset['color']='neutral';p.textContent=stale?'○ Antwort oder Hilfe geändert. Erneut prüfen.':'○ Noch nicht geprüft.';}});
     if(r&&!stale){present(summary,{status:r.status,message:'Geprüft sind Achsen, Skalen und die fünf Datenpunkte. Eigene Erklärung nicht bewertet.'});present(pointsFeedback,r.criteria[2]!);}else{summary.dataset['status']=stale?'stale':'empty';summary.removeAttribute('data-color');summary.textContent=stale?'○ Rückmeldung nicht mehr aktuell. Diagramm erneut überprüfen.':'○ Noch kein Diagramm geprüft.';pointsFeedback.textContent='';pointsFeedback.removeAttribute('data-color');}
+    writingFeedback.textContent=r&&!stale?'Strukturierte Teilaufgaben geprüft – schriftliche Erklärung noch nicht fachlich überprüft.':'Der schriftliche Abschluss bleibt unbewertet. Prüfe dein aktuelles Diagramm gesondert.';
     support.textContent=`${s.assistance==='independent'&&!s.receipt?'Bisher keine digitale Hilfe aufgerufen':ASSISTANCE_LABELS[s.assistance]}. ${s.historyUnverified?'Frühere Hilfehistorie ungesichert; kein aktueller Erfolgsbeleg.':s.receipt?'Aktueller Sitzungsbeleg für die Diagrammleistung.':'Kein aktueller Erfolgsbeleg.'} Hilfen bleiben nach neuer Bearbeitung erfasst.`;
   }
   syncInputs();renderRows();refresh();
