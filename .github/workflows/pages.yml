@@ -65,6 +65,18 @@ jobs:
           path: |
             qa/generated/*.json
             test-results/**/*.png
+      - name: Retain M7.02 evidence (synthetic data only)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: m702-chromium
+          retention-days: 7
+          path: |
+            qa/generated/playwright.json
+            test-results/m702-*/**/*.png
+            test-results/m702-*/**/*.json
+            test-results/m702-*/**/trace.zip
+            test-results/m702-*/**/error-context.md
       - name: Retain didactic V1 evidence (synthetic data only)
         if: always()
         uses: actions/upload-artifact@v4
@@ -211,6 +223,18 @@ jobs:
           }
           if (failed) process.exit(1);
           JS
+      - name: Retain M7.02 evidence (synthetic data only)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: m702-webkit
+          retention-days: 7
+          path: |
+            qa/generated/webkit-all.json
+            test-results/m702-*/**/*.png
+            test-results/m702-*/**/*.json
+            test-results/m702-*/**/trace.zip
+            test-results/m702-*/**/error-context.md
       - name: Retain actual WebKit reports and browser images
         if: always()
         uses: actions/upload-artifact@v4

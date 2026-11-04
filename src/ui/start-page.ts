@@ -33,6 +33,11 @@ export function renderStartPage(root: HTMLElement): void {
               <li><a class="text-link exercise-link" href="#/m1002">Ein Diagramm selbst erstellen</a><p>Hier schließt du den Lernweg mit deiner eigenen Datenbeschreibung ab.</p></li>
             </ol>
           </section>
+          <section class="learning-path" aria-labelledby="transport-block">
+            <h2 id="transport-block">Zusätzlicher Baustein · Transportbefunde prüfen</h2>
+            <p>Prüfe einen Materialbefund, begründe eine zusätzliche Untersuchung und überarbeite deine eigene Argumentation.</p>
+            <a class="text-link exercise-link" href="#/m702">Stoffaufnahme untersuchen – Protein und Energie</a>
+          </section>
           <p>Alle Übungen sind frei erreichbar und wiederholbar. Du kannst innerhalb dieser Sitzung wechseln; beim Neuladen gehen eigene Entwürfe verloren.</p>
           <p class="development-note">Begrenzte Entwicklungsvorschau. Noch keine Unterrichtsfreigabe.</p>
           <a class="text-link" href="#entwicklungsstand">Zum Entwicklungsstand <span class="link-arrow" aria-hidden="true"></span></a>

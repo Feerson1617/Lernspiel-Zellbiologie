@@ -33,7 +33,7 @@ test('offers working keyboard navigation and a readable responsive layout', asyn
   await page.keyboard.press(key);
   await expect(page.getByRole('link', { name: 'Erste Übung ausprobieren – Wasserhaushalt der Zelle' })).toBeFocused();
   const link = page.getByRole('link', { name: 'Zum Entwicklungsstand' });
-  for (const name of ['Kausalnetz ausprobieren – Ursache und Wirkung','Untersuchung planen – Kontrolle und Rücktausch','Relative Massenänderung berechnen','Ein Diagramm selbst erstellen','Zum Entwicklungsstand']) {
+  for (const name of ['Kausalnetz ausprobieren – Ursache und Wirkung','Untersuchung planen – Kontrolle und Rücktausch','Relative Massenänderung berechnen','Ein Diagramm selbst erstellen','Stoffaufnahme untersuchen – Protein und Energie','Zum Entwicklungsstand']) {
     await page.keyboard.press(key); await expect(page.getByRole('link',{name,exact:true})).toBeFocused();
   }
   await expect(link).toBeFocused();

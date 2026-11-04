@@ -1,0 +1,37 @@
+{
+  "version": "m702-evidence/1.0.0",
+  "task": "M7.02",
+  "source": "Public M7.02 core in F/spec; explicit M7.02 follow-up. No private source used.",
+  "relationshipToCatalogue": "Keeps the original single-choice contract unchanged as historical design. This explicitly commissioned runtime variant adds ungraded argument/research drafts and one optional bounded claim selection; it is not a whole-text assessment.",
+  "material": {
+    "kind": "new_constructed_didactic_model_data_not_measured",
+    "substance": "uncharged X; no chemical change, binding or redistribution to another compartment",
+    "externalConcentration": "4 mmol/L",
+    "internalConcentration": "1 mmol/L",
+    "rateWithoutP": "1 nmol/(min·cm²)",
+    "rateWithP": "3 nmol/(min·cm²)",
+    "conditions": "initial net uptake into comparable membrane compartments; same concentrations, temperature and membrane area; only presence of P differs; energy dependence and energy source not investigated"
+  },
+  "scope": "Only chosen authored claims about the rate evidence and its energy limit. Free argument and proposed investigation are never parsed, graded, or counted toward success.",
+  "options": {
+    "rate": { "status": "correct", "criterion": "material", "reason": "Higher initial net uptake with P is the provided finding, not a claim about energy." },
+    "energy_open": { "status": "correct", "criterion": "limit", "reason": "Energy dependence was not investigated. No ATP consumption or direct hydrolysis by P is proven." },
+    "atp_pump": { "status": "incorrect", "reason": "A claimed proof of an ATP pump contradicts the actual evidential scope. This does not prove that P cannot use ATP." },
+    "active_proven": { "status": "incorrect", "reason": "A higher rate with P does not entail energy-coupled active transport." },
+    "passive_proven": { "status": "incorrect", "reason": "Downhill transport is compatible with passive transport but these data do not exclude coupling or prove its absence." },
+    "other": { "status": "clarify", "reason": "The pupil explicitly states the offered selection does not represent their claim. No interpretation of free writing is invented." }
+  },
+  "aggregation": {
+    "empty": "No selected claims.",
+    "incorrect": "At least one selected, specifically unjustified proof claim; correct selected parts remain green.",
+    "clarify": "Other or unknown string ID, unless a known incorrect selected claim supplies an independent contradiction.",
+    "partial": "Only one of rate/energy_open selected; this does not negate that correct individual part.",
+    "correct": "Both required claims selected, no incorrect or unassessed claim. Only this selection is confirmed.",
+    "technical": "Invalid input shape, duplicates, or foreign/changed context; no biological judgment. No prefix is evaluated."
+  },
+  "feedback": "Recognized selected claim + specific reason + exactly one next thinking/revision action + optional staged help. No full model explanation as initial error response.",
+  "help": ["thinking prompt", "argument structure", "reasoned comparison"],
+  "history": "Criteria/check or first comparison freezes the actual draft before disclosure, even when empty. Later writing is revision; empty snapshot is not called an independent first answer. Earlier hints and uncertain reload history are recorded separately and never change scientific correctness. Reset preserves seen help in this session.",
+  "persistence": "None for this block: no raw text, choices, help ledger or success receipt persisted/transmitted; existing eight progress metadata untouched.",
+  "limits": ["Not a complete experiment plan", "No general essay checker", "No complete transport mission", "No independent acceptance or classroom certification"]
+}

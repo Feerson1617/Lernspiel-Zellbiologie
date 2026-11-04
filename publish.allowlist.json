@@ -422,7 +422,19 @@
     "tests/browser/didaktik-v1.spec.ts",
     "contracts/didaktik-v1-1.0.0.json",
     "qa/Didaktik-V1.md",
-    "tests/browser/didaktik-v1-paths.spec.ts"
+    "tests/browser/didaktik-v1-paths.spec.ts",
+    "contracts/m702-evidence-1.0.0.json",
+    "src/content/m702.ts",
+    "src/assessment/m702.ts",
+    "src/application/m702-learning.ts",
+    "src/ui/m702-learning.ts",
+    "src/ui/m702-learning.css",
+    "tests/fixtures/m702-cases.json",
+    "tests/unit/m702.test.ts",
+    "tests/content/m702.test.ts",
+    "tests/browser/m702.spec.ts",
+    "qa/M702.md",
+    "qa/Feedback-Gestaltung.md"
   ],
   "distPatterns": [
     "^index\\.html$",
