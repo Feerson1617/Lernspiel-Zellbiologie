@@ -414,7 +414,11 @@
     "tests/unit/m1002.test.ts",
     "tests/content/m1002.test.ts",
     "tests/browser/m1002.spec.ts",
-    "qa/M1002.md"
+    "qa/M1002.md",
+    "tests/fixtures/m1002-r1-cases.json",
+    "tests/unit/m1002-r1.test.ts",
+    "tests/browser/m1002-r1.spec.ts",
+    "qa/M1002-R1.md"
   ],
   "distPatterns": [
     "^index\\.html$",

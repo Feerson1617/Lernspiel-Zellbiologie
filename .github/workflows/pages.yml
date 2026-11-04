@@ -65,6 +65,19 @@ jobs:
           path: |
             qa/generated/*.json
             test-results/**/*.png
+      - name: Retain targeted M10.02 R1 evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: m1002-r1-chromium
+          retention-days: 7
+          path: |
+            qa/generated/unit.json
+            qa/generated/playwright.json
+            test-results/m1002-r1-*/**/*.png
+            test-results/m1002-r1-*/**/*.json
+            test-results/m1002-r1-*/**/trace.zip
+            test-results/m1002-r1-*/**/error-context.md
       - name: Retain compact Chromium R1 visual evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -194,6 +207,18 @@ jobs:
           path: |
             qa/generated/webkit-*.json
             test-results/**/*.png
+      - name: Retain targeted M10.02 R1 evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: m1002-r1-webkit
+          retention-days: 7
+          path: |
+            qa/generated/webkit-all.json
+            test-results/m1002-r1-*/**/*.png
+            test-results/m1002-r1-*/**/*.json
+            test-results/m1002-r1-*/**/trace.zip
+            test-results/m1002-r1-*/**/error-context.md
       - name: Retain compact WebKit R1 visual evidence
         if: always()
         uses: actions/upload-artifact@v4
