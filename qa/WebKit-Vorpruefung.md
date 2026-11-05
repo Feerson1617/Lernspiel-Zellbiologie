@@ -65,3 +65,9 @@ abbrechen; er wird nicht als vollständig bestanden gezählt. Am neuen finalen
 Head gilt erneut die vorab festgelegte Dreierserie samt vollständiger Regression.
 Dies ist eine Korrektur der Nachweiszugänglichkeit, keine belegte Timeoutreparatur
 und kein selektiver Fehlertest-Rerun. Ursache und Freigabe bleiben offen.
+
+Zusätzliche lokale Isolationskontrolle: Ein verlinktes `node_modules` würde vom
+strengen Basispublikationsschutz als unzulässiger neuer Pfad erfasst. Der bedingte
+Basisvergleich installiert deshalb regulär mit dem unveränderten Basis-Lockfile
+(`npm ci`). Auch dieser reine Diagnoseaufbau-Fix erhält einen eigenen Commit;
+der dadurch abgelöste Zwischenlauf wird nicht als vollständige Regression gezählt.

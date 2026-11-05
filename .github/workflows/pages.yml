@@ -196,8 +196,8 @@ jobs:
           git init "$RUNNER_TEMP/webkit-preflight-base"
           git -C "$RUNNER_TEMP/webkit-preflight-base" fetch "$GITHUB_WORKSPACE" "$PR_BASE_SHA"
           git -C "$RUNNER_TEMP/webkit-preflight-base" checkout --detach FETCH_HEAD
-          ln -s "$GITHUB_WORKSPACE/node_modules" "$RUNNER_TEMP/webkit-preflight-base/node_modules"
           cd "$RUNNER_TEMP/webkit-preflight-base"
+          npm ci
           npm run build
           node "$GITHUB_WORKSPACE/tools/run-webkit-preflight.ts" keyboard-base "$GITHUB_WORKSPACE/qa/generated/webkit-preflight/base"
       - name: Preserve unchanged-base comparison 1 before later suites
