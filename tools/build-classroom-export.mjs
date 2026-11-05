@@ -29,14 +29,14 @@ function inlineHtml(folder) {
   const scriptTags = [...html.matchAll(/<script\b[^>]*\bsrc=["']([^"']+\.js)["'][^>]*><\/script>/gi)];
   assert.equal(scriptTags.length, 1, 'The HTML export needs one JS bundle, without split runtime chunks');
   const js = readFileSync(resolveAsset(folder, scriptTags[0][1]), 'utf8');
-  html = html.replace(scriptTags[0][0], '<script type="module">\n' + js.replace(/<\/script/gi, '<\\/script') + '\n</script>');
+  html = html.replace(scriptTags[0][0], () => '<script type="module">\n' + js.replace(/<\/script/gi, '<\\/script') + '\n</script>');
   const linkTags = [...html.matchAll(/<link\b[^>]*>/gi)].filter(m => /\brel=["']stylesheet["']/i.test(m[0]));
   for (const tag of linkTags) {
     const match = tag[0].match(/\bhref=["']([^"']+\.css)["']/i);
     assert(match, 'CSS tag without local asset');
     const css = readFileSync(resolveAsset(folder, match[1]), 'utf8');
     assert(!/url\(\s*["']?(?:https?:|\/|\.\/|\.\.\/)/i.test(css), 'External CSS dependency');
-    html = html.replace(tag[0], '<style>\n' + css.replace(/<\/style/gi, '<\\/style') + '\n</style>');
+    html = html.replace(tag[0], () => '<style>\n' + css.replace(/<\/style/gi, '<\\/style') + '\n</style>');
   }
   const favicon = readFileSync(join(root, 'src/assets/favicon.svg'));
   const icon = '<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,' + favicon.toString('base64') + '">';
