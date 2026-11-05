@@ -434,7 +434,9 @@
     "tests/content/m702.test.ts",
     "tests/browser/m702.spec.ts",
     "qa/M702.md",
-    "qa/Feedback-Gestaltung.md"
+    "qa/Feedback-Gestaltung.md",
+    "tools/run-webkit-preflight.ts",
+    "qa/WebKit-Vorpruefung.md"
   ],
   "distPatterns": [
     "^index\\.html$",
