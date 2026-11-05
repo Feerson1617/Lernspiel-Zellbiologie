@@ -30,6 +30,8 @@ try {
     if (/^https?:\/\//i.test(req.url())) errors.push('Backup unexpected network request: ' + req.url());
   });
   await backupPage.goto(pathToFileURL(htmlPath).href);
+  await backupPage.waitForTimeout(250);
+  console.log('BACKUP DEBUG', JSON.stringify({ title: await backupPage.title(), visible: (await backupPage.locator('body').innerText()).slice(0,700), errors }));
   await verifyLoaded(backupPage, 'offline file');
   await backupPage.close();
 
