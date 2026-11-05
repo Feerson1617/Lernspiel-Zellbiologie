@@ -1,0 +1,20 @@
+@layer components {
+  .transport-page { max-width: 1000px; }
+  .transport-page [hidden] { display: none !important; }
+  .transport-materials { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); gap: 18px; margin-block: 28px; }
+  .transport-materials > section { min-width: 0; }
+  .transport-page table { table-layout: fixed; }
+  .transport-step { border-top: 1px solid var(--lab-line); padding-top: 24px; margin-top: 24px; }
+  .transport-step > label { display: block; font-weight: 600; margin-top: 16px; }
+  .transport-page fieldset { border: 0; padding: 0; min-width: 0; margin-top: 24px; }
+  .transport-page legend { font-weight: 600; max-width: 100%; }
+  .transport-choice { margin-top: 16px; }
+  .transport-choice > label { display: flex; align-items: start; gap: 12px; min-height: 48px; padding-block: 8px; cursor: pointer; }
+  .transport-page .transport-choice input { width: 24px; height: 24px; min-height: 24px; flex: 0 0 24px; margin: .25em 0 0; padding: 0; }
+  .transport-choice span { min-width: 0; }
+  .transport-choice .field-feedback { margin-top: 0; }
+  .transport-original { white-space: pre-wrap; padding: 12px; background: var(--lab-paper); }
+  .transport-page #m702-help:empty { display: none; }
+  .transport-page :is(button, summary) { overflow-wrap: anywhere; }
+  .transport-page li + li { margin-top: 12px; }
+}

@@ -91,3 +91,11 @@ export function createM1002View():HTMLElement {
   if(!diagramView){diagramView=document.createElement('div');mountM1002Learning(diagramView,createM1002Learning());}
   return diagramView;
 }
+
+import { createM702Learning } from './m702-learning.ts';
+import { mountM702Learning } from '../ui/m702-learning.ts';
+let transportView: HTMLElement | undefined;
+export function createM702View(): HTMLElement {
+  if (!transportView) { transportView = document.createElement('div'); mountM702Learning(transportView, createM702Learning()); }
+  return transportView;
+}

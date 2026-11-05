@@ -1,0 +1,30 @@
+{
+  "provenance": "Own material/rubric-derived expectations fixed before implementation, 2026-11-04. Implementation-independent derivation; not a separate independent acceptance.",
+  "version": "m702-evidence/1.0.0",
+  "cases": [
+    { "id": "M702-01", "selected": [], "status": "empty", "parts": {} },
+    { "id": "M702-02", "selected": ["rate"], "status": "partial", "parts": {"rate":"correct"} },
+    { "id": "M702-03", "selected": ["energy_open"], "status": "partial", "parts": {"energy_open":"correct"} },
+    { "id": "M702-04", "selected": ["rate","energy_open"], "status": "correct", "parts": {"rate":"correct","energy_open":"correct"} },
+    { "id": "M702-05", "selected": ["energy_open","rate"], "status": "correct", "parts": {"rate":"correct","energy_open":"correct"} },
+    { "id": "M702-06", "selected": ["atp_pump"], "status": "incorrect", "parts": {"atp_pump":"incorrect"} },
+    { "id": "M702-07", "selected": ["active_proven"], "status": "incorrect", "parts": {"active_proven":"incorrect"} },
+    { "id": "M702-08", "selected": ["passive_proven"], "status": "incorrect", "parts": {"passive_proven":"incorrect"} },
+    { "id": "M702-09", "selected": ["rate","atp_pump"], "status": "incorrect", "parts": {"rate":"correct","atp_pump":"incorrect"} },
+    { "id": "M702-10", "selected": ["energy_open","atp_pump"], "status": "incorrect", "parts": {"energy_open":"correct","atp_pump":"incorrect"} },
+    { "id": "M702-11", "selected": ["rate","energy_open","atp_pump"], "status": "incorrect", "parts": {"rate":"correct","energy_open":"correct","atp_pump":"incorrect"} },
+    { "id": "M702-12", "selected": ["rate","energy_open","active_proven"], "status": "incorrect", "parts": {"rate":"correct","energy_open":"correct","active_proven":"incorrect"} },
+    { "id": "M702-13", "selected": ["rate","energy_open","passive_proven"], "status": "incorrect", "parts": {"rate":"correct","energy_open":"correct","passive_proven":"incorrect"} },
+    { "id": "M702-14", "selected": ["active_proven","passive_proven"], "status": "incorrect", "parts": {"active_proven":"incorrect","passive_proven":"incorrect"} },
+    { "id": "M702-15", "selected": ["other"], "status": "clarify", "parts": {"other":"clarify"} },
+    { "id": "M702-16", "selected": ["rate","other"], "status": "clarify", "parts": {"rate":"correct","other":"clarify"} },
+    { "id": "M702-17", "selected": ["rate","energy_open","other"], "status": "clarify", "parts": {"rate":"correct","energy_open":"correct","other":"clarify"} },
+    { "id": "M702-18", "selected": ["unknown_valid_wording"], "status": "clarify", "parts": {"unknown_valid_wording":"clarify"} },
+    { "id": "M702-19", "selected": ["energy_open","unknown_valid_wording"], "status": "clarify", "parts": {"energy_open":"correct","unknown_valid_wording":"clarify"} },
+    { "id": "M702-20", "selected": ["atp_pump","other"], "status": "incorrect", "parts": {"atp_pump":"incorrect","other":"clarify"} },
+    { "id": "M702-21", "selected": ["active_proven","unknown_valid_wording"], "status": "incorrect", "parts": {"active_proven":"incorrect","unknown_valid_wording":"clarify"} },
+    { "id": "M702-22", "selected": ["rate","rate"], "status": "technical", "parts": {} },
+    { "id": "M702-23", "selected": "Die Daten belegen keinen ATP-Verbrauch.", "status": "technical", "parts": {} },
+    { "id": "M702-24", "selected": ["energy_open",23], "status": "technical", "parts": {} }
+  ]
+}

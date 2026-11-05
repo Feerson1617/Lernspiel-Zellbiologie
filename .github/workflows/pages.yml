@@ -65,6 +65,18 @@ jobs:
           path: |
             qa/generated/*.json
             test-results/**/*.png
+      - name: Retain M7.02 evidence (synthetic data only)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: m702-chromium
+          retention-days: 7
+          path: |
+            qa/generated/playwright.json
+            test-results/m702-*/**/*.png
+            test-results/m702-*/**/*.json
+            test-results/m702-*/**/trace.zip
+            test-results/m702-*/**/error-context.md
       - name: Retain didactic V1 evidence (synthetic data only)
         if: always()
         uses: actions/upload-artifact@v4
@@ -141,11 +153,76 @@ jobs:
       - run: python -m pip install -r requirements-spec.txt
       - run: npx playwright install webkit
       - run: npm run build
+        id: webkit_build
       - name: Native keyboard path preflight on macOS
-        run: npx playwright test --config=playwright.webkit.config.ts tests/browser/p03b-causal.spec.ts --grep 'keyboard alone' --reporter=line
+        id: webkit_keyboard
+        run: node tools/run-webkit-preflight.ts keyboard
+      - name: Preserve original keyboard preflight 1 before later suites
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: webkit-keyboard-preflight-1
+          retention-days: 7
+          path: qa/generated/webkit-preflight/keyboard-1/
+      - name: Preserve original keyboard preflight 2 before later suites
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: webkit-keyboard-preflight-2
+          retention-days: 7
+          path: qa/generated/webkit-preflight/keyboard-2/
+      - name: Preserve original keyboard preflight 3 before later suites
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: webkit-keyboard-preflight-3
+          retention-days: 7
+          path: qa/generated/webkit-preflight/keyboard-3/
       - name: R1 paint and readability preflight on macOS
-        run: npx playwright test --config=playwright.webkit.config.ts tests/browser/p03b-r1.spec.ts --reporter=line
+        if: ${{ !cancelled() && steps.webkit_build.outcome == 'success' }}
+        run: node tools/run-webkit-preflight.ts r1
+      - name: Preserve original R1 preflight before later suites
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: webkit-r1-preflight
+          retention-days: 7
+          path: qa/generated/webkit-preflight/r1-*/
+      - name: Compare a reproduced keyboard failure with the unchanged PR base
+        if: ${{ !cancelled() && steps.webkit_keyboard.outcome == 'failure' }}
+        env:
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          git init "$RUNNER_TEMP/webkit-preflight-base"
+          git -C "$RUNNER_TEMP/webkit-preflight-base" fetch "$GITHUB_WORKSPACE" "$PR_BASE_SHA"
+          git -C "$RUNNER_TEMP/webkit-preflight-base" checkout --detach FETCH_HEAD
+          cd "$RUNNER_TEMP/webkit-preflight-base"
+          npm ci
+          npm run build
+          node "$GITHUB_WORKSPACE/tools/run-webkit-preflight.ts" keyboard-base "$GITHUB_WORKSPACE/qa/generated/webkit-preflight/base"
+      - name: Preserve unchanged-base comparison 1 before later suites
+        if: ${{ !cancelled() && steps.webkit_keyboard.outcome == 'failure' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: webkit-keyboard-preflight-base-1
+          retention-days: 7
+          path: qa/generated/webkit-preflight/base/keyboard-base-1/
+      - name: Preserve unchanged-base comparison 2 before later suites
+        if: ${{ !cancelled() && steps.webkit_keyboard.outcome == 'failure' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: webkit-keyboard-preflight-base-2
+          retention-days: 7
+          path: qa/generated/webkit-preflight/base/keyboard-base-2/
+      - name: Preserve unchanged-base comparison 3 before later suites
+        if: ${{ !cancelled() && steps.webkit_keyboard.outcome == 'failure' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: webkit-keyboard-preflight-base-3
+          retention-days: 7
+          path: qa/generated/webkit-preflight/base/keyboard-base-3/
       - name: Three bounded unknown-input probes on Intel WebKit
+        if: ${{ !cancelled() && steps.webkit_build.outcome == 'success' }}
         run: |
           node tools/check-m602-browser-split.ts
           for probe in 1 2 3; do
@@ -163,6 +240,7 @@ jobs:
             qa/generated/m602-probe-*-results/**/trace.zip
             qa/generated/m602-probe-*-results/**/error-context.md
       - name: Complete WebKit suite (WEBKIT_SUITE=all)
+        if: ${{ !cancelled() && steps.webkit_build.outcome == 'success' }}
         id: webkit_all
         continue-on-error: true
         env:
@@ -211,6 +289,18 @@ jobs:
           }
           if (failed) process.exit(1);
           JS
+      - name: Retain M7.02 evidence (synthetic data only)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: m702-webkit
+          retention-days: 7
+          path: |
+            qa/generated/webkit-all.json
+            test-results/m702-*/**/*.png
+            test-results/m702-*/**/*.json
+            test-results/m702-*/**/trace.zip
+            test-results/m702-*/**/error-context.md
       - name: Retain actual WebKit reports and browser images
         if: always()
         uses: actions/upload-artifact@v4

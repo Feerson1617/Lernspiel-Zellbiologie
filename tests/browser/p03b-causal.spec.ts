@@ -1,5 +1,6 @@
 import { expect, test } from '@playwright/test';
 import type { Page, TestInfo } from '@playwright/test';
+import { appendFileSync } from 'node:fs';
 
 // Own UI checks. All actions use the production entry, no internal testing API.
 const core = [['A', 'B', 'causes'], ['A', 'C', 'causes'], ['B', 'D', 'enables_if'], ['C', 'D', 'requires_zero']] as const;
@@ -173,7 +174,20 @@ test('responsive board and text at 200 percent retain visible focus and complete
 });
 
 test('keyboard alone can build every required relation, check, edit, remove, open help and write', async ({ page, browserName }, info) => {
+  const started = performance.now();
+  // Read-only phase observations in the bounded preflight only. No values/texts
+  // from the learner's editor are captured; the normal full suite is unchanged.
+  async function mark(phase: string) {
+    if (!process.env['WEBKIT_PREFLIGHT_PHASE']) return;
+    const observed = await page.evaluate(() => ({ visibility: document.visibilityState, hasFocus: document.hasFocus(),
+      focus: { tag: document.activeElement?.tagName, id: document.activeElement?.id,
+        label: document.activeElement?.getAttribute('aria-label') } }));
+    appendFileSync(info.outputPath('keyboard-timeline.jsonl'), JSON.stringify({ phase,
+      elapsedMs: performance.now() - started, ...observed }) + '\n');
+  }
+  await mark('navigation-start');
   await open(page); const macWebKit = browserName === 'webkit' && process.platform === 'darwin';
+  await mark('navigation-complete');
   const tab = macWebKit ? 'Alt+Tab' : 'Tab';
   const reverse = macWebKit ? 'Alt+Shift+Tab' : 'Shift+Tab';
   async function tabTo(id: string, backwards = false) {
@@ -199,29 +213,39 @@ test('keyboard alone can build every required relation, check, edit, remove, ope
     await expect(page.locator(`#causal-kind-${relation}`)).toBeChecked(); await expect(page.locator('#causal-relation')).toHaveValue(relation);
     await tabTo('causal-add'); await page.keyboard.press('Space'); await expect(page.locator('#causal-from')).toBeFocused();
     await expect(page.locator('.causal-edge-text')).toHaveCount(index + 1);
+    await mark(`connection-${index + 1}-complete`);
   }
   // Continue through the real document order, rather than replacing navigation with focus().
   for (let i = 0; i < 25 && !(await page.getByRole('button', { name: 'Kausalnetz prüfen', exact: true }).evaluate(el => el === document.activeElement)); i++) await page.keyboard.press(tab);
   await expect(page.getByRole('button', { name: 'Kausalnetz prüfen', exact: true })).toBeFocused();
   await page.keyboard.press('Space'); await expect(result(page)).toHaveAttribute('data-status', 'correct');
+  await mark('check-complete');
   await page.keyboard.press(tab); await expect(result(page).getByRole('link')).toBeFocused(); await page.keyboard.press('Enter');
   await expect(page.locator('#kausal-erklaerung')).toBeFocused(); await page.keyboard.press(tab); await expect(page.locator('#causal-explanation')).toBeFocused(); await page.keyboard.type('Eigene biologische Erklaerung.');
+  await mark('writing-complete');
   // Return from the isolated writing view with real keyboard activation.
   const returnToNet = page.getByRole('link',{name:'Zurück zum eigenen Kausalnetz',exact:true});
   for (let i = 0; i < 12 && !(await returnToNet.evaluate(el => el === document.activeElement)); i++) await page.keyboard.press(tab);
   await expect(returnToNet).toBeFocused(); await page.keyboard.press('Enter');
+  await mark('return-complete');
   // Buttons also expose native keyboard activation; edit/remove are reached by tab.
   const edit = page.getByRole('button', { name: 'Verbindung 1 bearbeiten', exact: true });
   for (let i = 0; i < 60 && !(await edit.evaluate(el => el === document.activeElement)); i++) await page.keyboard.press(reverse);
   await expect(edit).toBeFocused(); await page.keyboard.press('Space'); await expect(page.locator('#causal-from')).toBeFocused();
+  await mark('edit-open');
   await tabTo('causal-add'); await page.keyboard.press('Space');
+  await mark('edit-complete');
   const remove = page.getByRole('button', { name: 'Verbindung 1 entfernen', exact: true });
   for (let i = 0; i < 15 && !(await remove.evaluate(el => el === document.activeElement)); i++) await page.keyboard.press(reverse);
   await expect(remove).toBeFocused(); await page.keyboard.press('Space'); await expect(page.locator('.causal-edge-text')).toHaveCount(3);
+  await mark('remove-complete');
   const help = page.getByRole('button', { name: 'Kurzer Hinweis: Wasserbilanz und Volumen', exact: true });
   for (let i = 0; i < 30 && !(await help.evaluate(el => el === document.activeElement)); i++) await page.keyboard.press(tab);
   await expect(help).toBeFocused(); await page.keyboard.press('Space'); await expect(support(page)).toContainText('Digitale Unterstützung aufgerufen');
+  await mark('help-complete');
+  await mark('screenshot-start');
   await screenshot(page, info, 'p03b-keyboard');
+  await mark('screenshot-complete');
 });
 
 test('node tapping is a complete no-drag pointer alternative', async ({ page }) => {
