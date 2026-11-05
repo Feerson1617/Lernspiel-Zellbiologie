@@ -1,0 +1,60 @@
+name: Zelllabor 11 - HTML Backup und SCORM 1.2 Export
+
+on:
+  push:
+    branches:
+      - feature/zelllabor-offline-scorm-export
+    paths:
+      - .github/workflows/classroom-export.yml
+      - tools/build-classroom-export.mjs
+      - tools/test-classroom-export.mjs
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    name: HTML und SCORM 1.2 bauen und im Browser pruefen
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Abhaengigkeiten installieren
+        run: npm ci
+      - name: Chromium fuer lokale Exportpruefung installieren
+        run: npx playwright install --with-deps chromium
+      - name: Aus aktuellem Zelllabor zwei unabhaengige Pakete erstellen
+        run: node tools/build-classroom-export.mjs
+      - name: Einzeldatei, sechs Lernwege, SCORM API und keine dauerhafte Speicherung pruefen
+        run: node tools/test-classroom-export.mjs
+      - name: Exportpruefsummen und Quellenstand anzeigen
+        run: cat classroom-export/EXPORT-MANIFEST.json
+      - name: HTML-Backup als herunterladbares Artefakt
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Zelllabor11-Einzel-HTML
+          path: classroom-export/Zelllabor11-Backup.html
+          retention-days: 30
+          if-no-files-found: error
+      - name: SCORM-1.2-Paket als herunterladbares Artefakt
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Zelllabor11-SCORM-1.2
+          path: classroom-export/Zelllabor11-SCORM-1.2.zip
+          retention-days: 30
+          if-no-files-found: error
+      - name: Provenienz und Hashwerte aufbewahren
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Zelllabor11-Export-Pruefsummen
+          path: classroom-export/EXPORT-MANIFEST.json
+          retention-days: 30
+          if-no-files-found: error
