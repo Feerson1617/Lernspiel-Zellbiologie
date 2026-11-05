@@ -157,13 +157,27 @@ jobs:
       - name: Native keyboard path preflight on macOS
         id: webkit_keyboard
         run: node tools/run-webkit-preflight.ts keyboard
-      - name: Preserve original keyboard preflights before later suites
+      - name: Preserve original keyboard preflight 1 before later suites
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: webkit-keyboard-preflight
+          name: webkit-keyboard-preflight-1
           retention-days: 7
-          path: qa/generated/webkit-preflight/keyboard-*/
+          path: qa/generated/webkit-preflight/keyboard-1/
+      - name: Preserve original keyboard preflight 2 before later suites
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: webkit-keyboard-preflight-2
+          retention-days: 7
+          path: qa/generated/webkit-preflight/keyboard-2/
+      - name: Preserve original keyboard preflight 3 before later suites
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: webkit-keyboard-preflight-3
+          retention-days: 7
+          path: qa/generated/webkit-preflight/keyboard-3/
       - name: R1 paint and readability preflight on macOS
         if: ${{ !cancelled() && steps.webkit_build.outcome == 'success' }}
         run: node tools/run-webkit-preflight.ts r1
@@ -186,13 +200,27 @@ jobs:
           cd "$RUNNER_TEMP/webkit-preflight-base"
           npm run build
           node "$GITHUB_WORKSPACE/tools/run-webkit-preflight.ts" keyboard-base "$GITHUB_WORKSPACE/qa/generated/webkit-preflight/base"
-      - name: Preserve the unchanged-base comparison
+      - name: Preserve unchanged-base comparison 1 before later suites
         if: ${{ !cancelled() && steps.webkit_keyboard.outcome == 'failure' }}
         uses: actions/upload-artifact@v4
         with:
-          name: webkit-keyboard-preflight-base
+          name: webkit-keyboard-preflight-base-1
           retention-days: 7
-          path: qa/generated/webkit-preflight/base/
+          path: qa/generated/webkit-preflight/base/keyboard-base-1/
+      - name: Preserve unchanged-base comparison 2 before later suites
+        if: ${{ !cancelled() && steps.webkit_keyboard.outcome == 'failure' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: webkit-keyboard-preflight-base-2
+          retention-days: 7
+          path: qa/generated/webkit-preflight/base/keyboard-base-2/
+      - name: Preserve unchanged-base comparison 3 before later suites
+        if: ${{ !cancelled() && steps.webkit_keyboard.outcome == 'failure' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: webkit-keyboard-preflight-base-3
+          retention-days: 7
+          path: qa/generated/webkit-preflight/base/keyboard-base-3/
       - name: Three bounded unknown-input probes on Intel WebKit
         if: ${{ !cancelled() && steps.webkit_build.outcome == 'success' }}
         run: |

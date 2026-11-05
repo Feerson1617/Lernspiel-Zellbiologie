@@ -37,7 +37,7 @@ Die wenigen zusätzlichen Leseaufrufe sind Diagnoseinstrumentierung, keine
 behauptete Beschleunigung; die Vollsuite aktiviert sie nicht.
 
 Upload unmittelbar nach der jeweiligen Serie, vor späteren Suiten, auch bei Fehler.
-Sieben Tage Aufbewahrung für alle drei neuen Artefakte. Bestehende Artefakte und
+Sieben Tage Aufbewahrung für jedes neue Artefakt. Bestehende Artefakte und
 Pflichtgates bleiben erhalten. Eine spätere erfolgreiche Wiederholung ersetzt
 keinen Erstfehler. Tatsächliche Ergebnisse und Artefaktfristen werden im
 Abschlussbericht anhand des ausgeführten Laufs ergänzt, nicht vorweggenommen.
@@ -53,3 +53,15 @@ bestanden (13,6 s Gesamtzeit). Lokale WebKit-Serie: neun Startfehler wegen fehle
 Browserdatei, kein Bedienfall gestartet; Download durch Netzwerkpolicy (403)
 gesperrt, R1 lokal anschließend nicht ausgeführt. Originalberichte bleiben erhalten.
 Diese lokale Umgebung ersetzt ausdrücklich nicht die anstehende Intel-Serie.
+
+Die erste Intel-Diagnoseserie an `5fcc114` bestand mit 9/9 Tastatur- und 6/6
+R1-Fällen. Der bedingte Basisvergleich wurde mangels reproduzierten Fehlers
+nicht ausgeführt. Das Tastatur-Sammelartefakt (47.207.166 Byte) überschreitet die
+32-MiB-Transfergrenze des Prüfwerkzeugs; direkter Transfer ist ebenfalls durch
+die Netzwerkpolicy gesperrt. Deshalb wird nur die Upload-Gruppierung korrigiert:
+je Aufruf ein Artefakt. Die ursprünglichen Artefakte bleiben erhalten. Der Push
+kann den laufenden Diagnose-Workflow durch die bestehende Concurrency-Regel
+abbrechen; er wird nicht als vollständig bestanden gezählt. Am neuen finalen
+Head gilt erneut die vorab festgelegte Dreierserie samt vollständiger Regression.
+Dies ist eine Korrektur der Nachweiszugänglichkeit, keine belegte Timeoutreparatur
+und kein selektiver Fehlertest-Rerun. Ursache und Freigabe bleiben offen.
